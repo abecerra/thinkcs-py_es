@@ -1,0 +1,10 @@
+Index('dex') # .html will be added
+Chapter('foreword.lore', '')#Foreword
+Chapter('contrib.lore', '')#Contributors
+Chapter('traduccion.lore','')#Traduccion
+for n in range(1,21):
+    Chapter('chap%02d.lore' % n, '%d' % n)
+Chapter('app01.lore', 'A')
+Chapter('app02.lore', 'B')
+Chapter('app03.lore', 'C')
+Chapter('app04.lore', 'D')
