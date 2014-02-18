@@ -159,11 +159,6 @@ la condición es falsa, y el cuerpo del ciclo no se ejecuta. El
 último carácter accedido es el que tiene el índice \texttt{len(fruta)-1},
 es decir, el último.
 
-\begin{quote}
-{\em Como ejercicio, escriba una función que tome una cadena como argumento
-y despliegue las letras al revés, una por cada línea.}
-\end{quote}
-
 Usar un índice para recorrer un conjunto de valores es tan común
 que Python tiene una sintaxis alternativa más simple---el ciclo \texttt{for} :
 
@@ -220,11 +215,6 @@ Qack
 %
 Por supuesto que hay un error, ya que ``Ouack'' y
 ``Quack'' no están bien deletreados.
-
-\begin{quote}
-{\em Como ejercicio, modifique el programa para corregir
-este error.}
-\end{quote}
 
 
 \section{Segmentos de cadenas }
@@ -405,12 +395,6 @@ Este patrón computacional se denomina recorrido ``eureka'', ya que
 tan pronto encontremos lo que buscamos, gritamos ``Eureka!'' y dejamos
 de buscar.
 
-\begin{quote}
-{\em Como ejercicio, modifique la función \texttt{buscar} de forma que reciba
-un tercer parámetro, el índice en la cadena donde debe empezar 
-a buscar.}
-\end{quote}
-
 
 \section{Iterando y contando}
 \label{counter}
@@ -439,17 +423,6 @@ y se incrementa cada vez que se encuentre una  \texttt{a}.
 es un sustantivo.)  Cuando el ciclo finaliza, \texttt{cont}
 contiene el resultado---el número total de \texttt{a}'s.
 
-\begin{quote}
-{\em Como ejercicio, encapsule este código en una  función 
-llamada \texttt{contarLetras}, y  generalícela de forma que reciba
-la cadena y la letra como parámetros.}
-\end{quote}
-
-\begin{quote}
-{\em Otro ejercicio, reescriba esta función de forma que
-en lugar de recorrer la cadena, llame a la  función  {\tt
-buscar} anterior que recibe tres parámetros.}
-\end{quote}
 
 
 \section{El módulo \texttt{string} }
@@ -580,12 +553,6 @@ def esMinuscula(c):
 %
 Si \texttt{c} está entre {\em a} y  {\em z}, debe ser una letra minúscula.
 
-\begin{quote}
-{\em Como ejercicio, discuta qué versión de \texttt{esMinuscula} cree
-que es la más rápida. ¿Puede pensar en otra razón distinta de la
-velocidad para preferir alguna de ellas sobre las otras?}
-\end{quote}
-
 Otra constante definida en el módulo \texttt{string} puede sorprenderlo
 cuando la imprima:
 
@@ -656,3 +623,175 @@ contiene todos los carácteres que representan espacios en blanco.
 \index{espacio en blanco}
 
 \end{description}
+
+\section{Ejercicios}
+
+
+Para cada función, agregue chequeo de tipos y pruebas unitarias.
+
+
+\begin{enumerate}
+
+ \item Escriba una función que tome una cadena como argumento
+  y despliegue las letras al revés, una por cada línea.
+
+ \item Modifique el programa de la sección \ref{for} para corregir el error
+ con los patos Ouack y Quack.
+ 
+ \item Modifique la función \texttt{buscar} de forma que reciba
+  un tercer parámetro, el índice en la cadena donde debe empezar 
+  a buscar.
+
+  \item Encapsule el código de la sección \ref{counter} en una  función 
+  llamada \texttt{contarLetras}, y  generalícela de forma que reciba
+  la cadena y la letra como parámetros.
+
+  \item  Reescriba la función que obtuvo en el punto anterior de forma que
+  en lugar de recorrer la cadena, llame a la  función  {\tt
+  buscar} que recibe tres parámetros.
+
+  \item Discuta qué versión de \texttt{esMinuscula} cree
+  que es la más rápida. ¿Puede pensar en otra razón distinta de la
+   velocidad para preferir alguna de ellas sobre las otras?
+   
+  \item Cree un archivo llamado \verb+cadenas.py+ y escriba lo siguiente en él:
+  
+  \beforeverb
+  \begin{verbatim}
+  def invertir(s):
+    """
+      >>> invertir('feliz')
+      'zilef'
+      >>> invertir('Python')
+      'nohtyP'
+      >>> invertir("")
+      ''
+      >>> invertir("P")
+      'P'
+    """
+
+  if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
+  \end{verbatim}
+  \afterverb
+
+  Agregue un cuerpo a la función invertir que haga que pase la prueba unitaria.
+  
+  Agregue al archivo \verb+cadenas.py+  cuerpos a cada una de las siguientes funciones, una a la vez.
+  
+  \item Reflejar:
+  
+  \beforeverb
+  \begin{verbatim}
+  def reflejar(s):
+    """
+      >>> reflejar("bien")
+      'bienneib'
+      >>> reflejar("sí")
+      'síís'
+      >>> reflejar('Python')
+      'PythonnohtyP'
+      >>> reflejar("")
+      ''
+      >>> reflejar("a")
+      'aa'
+    """
+  \end{verbatim}
+  \afterverb
+  
+  \item Eliminar letra:
+  
+  \beforeverb
+  \begin{verbatim}
+  def elimina_letra(letra, cadena):
+    """
+      >>> elimina_letra('a', 'manzana')
+      'mnzn'
+      >>> elimina_letra('a', 'banana')
+      'bnn'
+      >>> elimina_letra('z', 'banana')
+      'banana'
+      >>> elimina_letra('i', 'Mississippi')
+      'Msssspp'
+    """
+  \end{verbatim}
+  \afterverb
+  
+  \item Es palíndromo:
+  
+  \beforeverb
+  \begin{verbatim}
+  def es_palindromo(s):
+    """
+      >>> es_palindromo('abba')
+      True
+      >>> es_palindromo('abab')
+      False
+      >>> es_palindromo('tenet')
+      True
+      >>> es_palindromo('banana')
+      False
+      >>> es_palindromo('zorra arroz')
+      True
+    """
+  \end{verbatim}
+  \afterverb
+  
+  \item Cuenta el número de ocurrencias:
+  
+  \beforeverb
+  \begin{verbatim}
+  def cuenta(sub, s):
+    """
+      >>> cuenta('is', 'Mississippi')
+      2
+      >>> cuenta('an', 'banana')
+      2
+      >>> cuenta('ana', 'banana')
+      2
+      >>> cuenta('nana', 'banana')
+      1
+      >>> cuenta('nanan', 'banana')
+      0
+    """
+  \end{verbatim}
+  \afterverb
+  
+  \item Eliminar la primera ocurrencia:
+  
+  \beforeverb
+  \begin{verbatim}
+  def elimina(sub, s):
+    """
+      >>> elimina('an', 'banana')
+      'bana'
+      >>> elimina('cic', 'bicicleta')
+      'bileta'
+      >>> elimina('iss', 'Mississippi')
+      'Missippi'
+      >>> elimina('huevo', 'bicicleta')
+      'bicicleta'
+    """
+  \end{verbatim}
+  \afterverb
+  
+  \item Eliminar todas las ocurrencias:
+  
+  \beforeverb
+  \begin{verbatim}
+  def elimina_todo(sub, s):
+    """
+      >>> elimina_todo('an', 'banana')
+      'ba'
+      >>> elimina_todo('cic', 'bicicleta')
+      'bileta'
+      >>> elimina_todo('iss', 'Mississippi')
+      'Mippi'
+      >>> elimina_todo('huevos', 'bicicleta')
+      'bicicleta'
+    """
+  \end{verbatim}
+  \afterverb
+ 
+\end{enumerate}

@@ -526,7 +526,8 @@ código.
 \index{variable local}
 
 Puede estar preguntándose cómo usamos la misma variable, \texttt{i} en 
-las dos funciones \texttt{imprimaMultiplos} y \texttt{imprimaTabla}. ¿ No ocurren problemas cuando una de ellas cambia el valor de la variable?
+las dos funciones \texttt{imprimaMultiplos} y \texttt{imprimaTabla}. ¿No 
+ocurren problemas cuando una de ellas cambia el valor de la variable?
 
 La respuesta es no, porque la  \texttt{i} en \texttt{imprimaMultiplos} y la
 \texttt{i} en \texttt{imprimaTabla} {\em no} son la misma variable.
@@ -794,6 +795,20 @@ produzca
  \item Escriba un programa que despliegue las
 potencias de 2 hasta 65,536 (esto es $2^{16}$).  
 
+ \item Escriba una función \verb+muestra_numeros_triangulares(n)+ que 
+ muestre los primeros n números triangulares. Una llamada a \verb+muestra_numeros_triangulares(5)+ 
+ produciría la siguiente salida:
+ \beforeverb
+  \begin{verbatim}
+  1       1
+  2       3
+  3       6
+  4       10
+  5       15
+  \end{verbatim}
+\afterverb
+
+
  \item Muchos cálculos de funciones matemáticas se realizan con series infinitas, por ejemplo:
 
 $\ln{x} = \sum_{n=1}^\infty {1 \over {n}} \left( {x - 1 \over x} \right)^n = \left( {x - 1 \over x} \right) + {1 \over 2} \left( {x - 1 \over x} \right)^2 + {1 \over 3} \left( {x - 1 \over x} \right)^3 + \cdots $
@@ -810,5 +825,10 @@ correctas del valor calculado, sea buena.
  \item Compare los valores de $n$  que obtuvo para el punto anterior y para el primero. Explique si encuentra
  diferencias.
  
+ \item Escriba una función, \verb+es_primo+, que tome un solo argumento entero y devuelva \verb+True+ cuando el argumento 
+ es un número primo y \verb+False+ en caso contrario. 
+ 
+ 
+ \item Agregue el código para chequeo de tipo de datos y para las prueba unitarias a todas las funciones desarrolladas previamente.
  
 \end{enumerate}

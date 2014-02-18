@@ -235,11 +235,6 @@ viendo como un elemento único. La longitud de esta lista es cuatro:
 \end{verbatim}
 \afterverb
 %
-\begin{quote}
-{\em Como ejercicio, escriba un ciclo que recorra la lista anterior
-imprimiendo la longitud de cada elemento. ¿Qué pasa si usted
-le pasa un entero a  \texttt{len}?}
-\end{quote}
 
 
 \section{Pertenencia}
@@ -883,14 +878,6 @@ adicional separador que se inserta entre los elementos:
 \end{verbatim}
 \afterverb
 
-\begin{quote}
-\begin{quote}
-{\em Como ejercicio, describa la relación entre las expresiones \texttt{cadena} 
-y {\tt string.join(string.split(cadena))}. ¿Son iguales
-para todas las cadenas? ¿Cuando serían diferentes?}
-\end{quote}
-\end{quote}
-
 
 \section{Glosario}
 
@@ -932,3 +919,66 @@ Copiar una referencia a un objeto crea un alias, pero no clona el objeto.
 \index{delimitador}
 
 \end{description}
+
+\section{Ejercicios}
+
+
+Para cada función, agregue chequeo de tipos y pruebas unitarias.
+
+
+\begin{enumerate}
+
+ \item Escriba una función que  recorra una lista de cadenas 
+   imprimiendo la longitud de cada una. ¿Qué pasa si usted
+   le pasa un entero a  \texttt{len}?
+
+ \item Describa la relación entre las expresiones: 
+ 
+ \texttt{cadena} \hfill  {\tt string.join(string.split(cadena))}
+ 
+ ¿Son iguales para todas las cadenas? 
+ 
+ ¿Cuando serían diferentes?
+  
+  \item Escriba una función llamada \verb+esta_ordenada+ que tome una lista como parámetro y
+  retorne True si la lista está ordenada de forma ascendente o False si no lo está.
+  Usted puede asumir como precondición que los elementos son comparables con los 
+  operadores relacionales <, >, etc. Por ejemplo: \verb+esta_ordenada([1,2,2])+ debe retornar
+  True y \verb+esta_ordenada(['b','a'])+ debe retornar False.
+  
+  \item Dos palabras son anagramas si se pueden reordenar las letras de una para formar
+  la otra. Escriba una función llamada es_anagrama que tome dos cadenas y retorne True
+  si son anagramas y False en caso contrario.
+  
+  \item La paradoja del cumpleaños:
+  
+The (so-called) Birthday Paradox:
+Write a function called has_duplicates that takes a list and returns True if there is any element that appears more than once. It should not modify the original list.
+If there are 23 students in your class, what are the chances that two of you have the same birthday? You can estimate this probability by generating random samples of 23 birthdays and checking for matches. Hint: you can generate random birthdays with the randint function in the random module.
+You can read about this problem at http://en.wikipedia.org/wiki/Birthday_paradox, and you can download my solution from http://thinkpython.com/code/birthday.py.
+
+
+   \item 
+Write a function called remove_duplicates that takes a list and returns a new list with only the unique elements from the original. Hint: they don’t have to be in the same order.
+Exercise 10  
+Write a function that reads the file words.txt and builds a list with one element per word. Write two versions of this function, one using the append method and the other using the idiom t = t + [x]. Which one takes longer to run? Why?
+Hint: use the time module to measure elapsed time. Solution: http://thinkpython.com/code/wordlist.py.
+
+   \item  
+To check whether a word is in the word list, you could use the in operator, but it would be slow because it searches through the words in order.
+Because the words are in alphabetical order, we can speed things up with a bisection search (also known as binary search), which is similar to what you do when you look a word up in the dictionary. You start in the middle and check to see whether the word you are looking for comes before the word in the middle of the list. If so, then you search the first half of the list the same way. Otherwise you search the second half.
+
+Either way, you cut the remaining search space in half. If the word list has 113,809 words, it will take about 17 steps to find the word or conclude that it’s not there.
+
+Write a function called bisect that takes a sorted list and a target value and returns the index of the value in the list, if it’s there, or None if it’s not.
+
+Or you could read the documentation of the bisect module and use that! Solution: http://thinkpython.com/code/inlist.py.
+  
+  \item   
+Two words are a “reverse pair” if each is the reverse of the other. Write a program that finds all the reverse pairs in the word list. Solution: http://thinkpython.com/code/reverse_pair.py.
+Exercise 13  
+Two words “interlock” if taking alternating letters from each forms a new word. For example, “shoe” and “cold” interlock to form “schooled.” Solution: http://thinkpython.com/code/interlock.py. Credit: This exercise is inspired by an example at http://puzzlers.org.
+Write a program that finds all pairs of words that interlock. Hint: don’t enumerate all pairs!
+Can you find any words that are three-way interlocked; that is, every third letter forms a word, starting from the first, second or third?
+ 
+\end{enumerate}
