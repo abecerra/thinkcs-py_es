@@ -1,0 +1,13 @@
+Permission is granted to copy, distribute and/or modify this
+document under the terms of the GNU Free Documentation License,
+Version 1.1  or any later version published by the Free Software
+Foundation; with the Invariant Sections being "Contributor List",
+with no Front-Cover Texts, and with no Back-Cover Texts. A copy of
+the license is included in the section entitled "GNU Free
+"Documentation License".
+
+This distribution includes a file named fdl.tex that contains the text
+of the GNU Free Documentation License.  If it is missing, you can obtain
+it from www.gnu.org or by writing to the Free Software Foundation,
+Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
