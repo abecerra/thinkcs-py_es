@@ -220,10 +220,7 @@ Es un ejemplo de error semántico.
 
 \index{error semántico}
 
-\begin{quote}
-{\em Como ejercicio, dibuje un diagrama de estados para esta función de 
-manera que se visualice por qué no funciona como debería.}
-\end{quote}
+
 
 
 \section{Números aleatorios}
@@ -263,15 +260,6 @@ for i in range(10):
 Para generar un número aleatorio entre 0.0 y un límite superior
 como \texttt{sup}, multiplique \texttt{x} por \texttt{sup}.
 
-\begin{quote}
-{\em Como ejercicio, genere un número aleatorio entre \texttt{inf} y
-\texttt{sup}.}
-\end{quote}
-
-\begin{quote}
-{\em Como ejercico adicional genere un número aleatorio {\em entero}
-entre \texttt{inf} y  \texttt{sup}, incluyendo ambos extremos.}
-\end{quote}
 
 
 \section{Lista de números aleatorios}
@@ -490,11 +478,7 @@ Todos estos valores están muy cerca a 125, que es lo que esperamos.
 Al menos, están lo suficientemente cerca como para creer que el
 generador de números pseudoaleatorios está funcionando bien.
 
-\begin{quote}
-{\em Como ejercicio, envuelva este código en una función, 
-pruébela con listas más grandes y vea si los números
-de valores en cada región tienden a emparejarse}
-\end{quote}
+
 
 
 \section{Una solución en una sola pasada}
@@ -542,14 +526,7 @@ de rango (por ser negativo o mayor que \texttt{len(Regiones)-1})?
 Una lista como  \texttt{Regiones} que almacena los conteos del número
 de valores que hay en cada rango se denomina {\bf histograma}.
 
-\begin{quote}
-{\em Como ejercicio, escriba una función llamada \texttt{histograma} que
-tome una lista y un número de regiones como parámetros. Debe retornar
-un histograma del número de regiones dado.}
-\end{quote}
 
-%\adjustpage{-2}
-%\pagebreak
 
 \section{Glosario}
 
@@ -596,3 +573,28 @@ solución de un problema similar.
 
 \end{description}
 
+\section{Ejercicios}
+
+
+Para cada función, agregue chequeo de tipos y pruebas unitarias.
+
+
+\begin{enumerate}
+
+ \item Escriba una función llamada \texttt{histograma} que
+tome una lista y un número de regiones como parámetros. Debe retornar
+un histograma del número de regiones dado.
+
+ \item Escriba una función que genere un número aleatorio entre \texttt{inf} y
+\texttt{sup}.
+ 
+ \item Escriba una función que genere un número aleatorio {\em entero}
+entre \texttt{inf} y  \texttt{sup}, incluyendo ambos extremos.
+
+ \item Envuelva el código de la sección en una función, 
+pruébela con listas más grandes y vea si los números
+de valores en cada región tienden a emparejarse
+
+ \item Dibuje un diagrama de estados para la función de la sección
+manera que se visualice por qué no funciona como debería.
+\end{enumerate}
