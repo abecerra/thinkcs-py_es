@@ -583,21 +583,55 @@ Para cada función, agregue chequeo de tipos y pruebas unitarias.
 
 \begin{enumerate}
 
- \item Escriba una función llamada \texttt{histograma} que
-tome una lista y un número de regiones como parámetros. Debe retornar
-un histograma del número de regiones dado.
-
- \item Escriba una función que genere un número aleatorio entre \texttt{inf} y
-\texttt{sup}.
+ \item Escriba una función mas\_frecuentes que tome una cadena e imprima las letras en orden descendente por frecuencia.
+ Ejecutela con textos de diferentes lenguajes y observe como varían las frecuencias de letras. Compare sus resultados
+ con las tablas en:
  
- \item Escriba una función que genere un número aleatorio {\em entero}
-entre \texttt{inf} y  \texttt{sup}, incluyendo ambos extremos.
+ http://en.wikipedia.org/wiki/Letter\_frequencies. 
+ 
+ Solución: http://thinkpython.com/code/most\_frequent.py. 
+  
+ \item Escriba un programa que lea una lista de palabras de un archivos e imprima todos los conjuntos de palabras que 
+ son anagramas.
+ 
+ Este es un ejemplo con palabras en inglés de la salida del programa:
 
- \item Envuelva el código de la sección \ref{muchasregiones} en una función, 
-pruébela con listas más grandes y vea si los números
-de valores en cada región tienden a emparejarse.
+ ['deltas', 'desalt', 'lasted', 'salted', 'slated', 'staled']
+ ['retainers', 'ternaries']
+ ['generating', 'greatening']
+ ['resmelts', 'smelters', 'termless']
 
- \item Dibuje un diagrama de estados para la función de la sección \ref{histograma}
-  de manera que se visualice por qué no funciona como debería.
+ Pista: cree un diccionario que asocie cada conjunto de letras a una lista de palabras que puedan ser formadas con 
+ esas letras. ¿Como se puede representar el conjunto de letras de forma que pueda ser usado como llave?
+ Modifique el programa que obtuvo para que imprima en orden descendente por tamaño los conjuntos de anagramas.
+ En el juego Scrabble, un 'bingo' se da cuando se juegan las 7 fichas, junto con otra letra en el tablero, para formar
+ una palabra de 8 letras. ¿Que conjunto de 8 letras forma los bingos mas posibles? 
+ 
+ 
+ Solución: http://thinkpython.com/code/anagram\_sets.py.
 
+ \item Dos palabras forma un 'par de metatesis' si se puede transformar una en otra intercambiando dos letras. Por ejemplo,
+ 'conversación' y 'conservación'. Escriba un programa que encuentre todos los pares de metatesis en el diccionario. Pista: 
+ no pruebe todos los pares.
+ 
+ Solución: http://thinkpython.com/code/metathesis.py. 
+ 
+ Crédito: el ejercicio está inspirado por un ejemplo en http://puzzlers.org.
+
+ 
+ \item
+ ¿Cual es la palabra mas larga que sigue siendo válida a medida que se remueven una a una sus letras?
+ Por ejemplo, en inglés, 'sprite' sin la 'r' es 'spite', que sin la 'e', es 'spit', que sin la 's' es
+ 'pit', que sin la 'p' es 'it' que sin la 't' es 'i'. Las letras se pueden remover de cualquier posición, pero no se 
+ pueden reordenar.
+ 
+ Escriba un programa que encuentre todas las palabras que pueden reducirse de esta forma y que encuentre la mas larga.
+
+ Pistas:
+ 
+ Escriba una función que tome una palabra y calcule todas las palabras que pueden formarse al removerle una letra. Estas
+ son las palabras 'hijas'.
+ Recursivamente, una palabra es reducible si alguno de sus hijas es reducible. El caso base lo da la cadena vacía.
+  
+ Solución: http://thinkpython.com/code/reducible.py.
 \end{enumerate}

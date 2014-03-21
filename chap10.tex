@@ -440,7 +440,7 @@ así que no tenemos que hacer mucho para adaptar \texttt{fibonacci}:
 
 \beforeverb
 \begin{verbatim}
->>> anterior = {0:1L, 1:1L}
+>>> anteriores = {0:1L, 1:1L}
 >>> fibonacci(50)
 20365011074L
 \end{verbatim}
@@ -451,9 +451,7 @@ Simplemente cambiando el contenido inicial de \texttt{anteriores} cambiamos el c
 \index{forzado de tipo de datos}
 \index{coerción!tipo}
 
-\begin{quote}
-{\em Como ejercicio, modifica \texttt{factorial} de forma que produzca un \texttt{long int} como resultado.}
-\end{quote}
+
 
 
 \section{Contar letras}
@@ -531,3 +529,46 @@ en formato numérico.
 \index{invocar}
 
 \end{description}
+
+\section{Ejercicios}
+
+
+Para cada función, agregue chequeo de tipos y pruebas unitarias.
+
+
+\begin{enumerate}
+ 
+ \item Como ejercicio, modifique \texttt{factorial} de forma que produzca un \texttt{long int} como resultado.
+ 
+ \item Escriba una función booleana que averigue si una lista tiene algún elemento duplicado usando un 
+ diccionario.
+ 
+ \item Una cadena de ARN puede representarse como una lista en la que los elementos pueden ser los
+ caracteres A,C,G y U. Escriba una función booleana que averigue si una lista de caracteres es una cadena 
+ de ARN válida. 
+ 
+ \item Generalize la función anterior de forma que reciba una biosecuencia (ADN, ARN ó Proteína) y un 
+ alfabeto de referencia para averiguar si está bien formada. Para ADN el alfabeto es A,C,T y G, para las
+ proteínas es:
+ 
+ A,R,N,D,C,E,Q,G,H,I,L,K,M,F,P,S,T,W,Y,V,U,O
+
+ \item Escriba una función que reciba una cadena de ADN y cuente cuantos nucleotidos de cada tipo tiene (cuantas
+ veces tiene A,C,G y T) usando un diccionario.
+ 
+ \item Generalize la función anterior de forma que reciba una biosecuencia (ADN, ARN ó Proteína) y un alfabeto.
+ Debe contar cuantos elementos tiene de cada tipo usando un diccionario.
+ 
+ \item Escriba una función producto que reciba una matriz dispersa M, implementada con un diccionario, y un nuḿero. Debe
+ retornar la matriz que resulta de multiplicar cada elemento de M por el número.
+ 
+ \item Escriba una función que reciba dos matrices dispersas, implementadas con diccionarios, y las sume, produciendo
+ otra matriz dispersa.
+ 
+ \item Escriba una función que reciba dos matrices dispersas, implementadas con diccionarios, y las multiplique, produciendo
+ otra matriz dispersa. Base su solución en las dos soluciones anteriores.
+ 
+ \item Escriba una función booleana que reciba una matriz dispersa y averigue si es la matriz identidad.
+\end{enumerate}
+
+

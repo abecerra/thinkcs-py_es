@@ -656,11 +656,6 @@ ErrorNúmeroMalo: 17 es un mal número
 El mensaje de error incluye el tipo de excepción y la información
 adicional proporcionada.
 
-\begin{quote}
-{\em Como ejercicio, escribe una función que use \texttt{tomaNumero}
-para leer un número del teclado y que maneje la excepción
-\texttt{ErrorNumeroMalo}.}
-\end{quote}
 
 
 \section{Glosario}
@@ -720,8 +715,36 @@ información sobre su tipo de forma que pueda ser reconstituido más tarde.
 \item[Manejar:] impedir que una excepción detenga un programa utilizando
 las sentencias \texttt{except} y \texttt{try}.
 
-% \item[Lanzar:] crausar una excepción usando la sentencia \texttt{raise}.
-
+\item[Lanzar:] causar una excepción usando la sentencia \texttt{raise}.
 
 \end{description}
+
+
+\section{Ejercicios}
+
+Para cada función, agregue chequeo de tipos y pruebas unitarias.
+
+\begin{enumerate}
+ 
+ \item Escriba una función que use \texttt{tomaNumero} para leer un número del teclado y que 
+ maneje la excepción \texttt{ErrorNumeroMalo}
+
+ \item Escriba una función que reciba el nombre de un archivo y averigue si contiene una cadena
+ de ADN válida. Es decir, cada caracter del archivo es A,C,T, ó G.
+ 
+ \item Generalice la función anterior para trabajar con cualquier biosecuencia (ARN, ADN, proteína).
+ 
+ \item Escriba una función que permita escribir una matriz, implementada como una lista de listas,
+ en un archivo.
+ 
+ \item Escriba una función que permita leer una matriz, implementada como una lista de listas,
+ de un archivo.
+ 
+ \item Escriba una función que permita escribir una matriz dispersa, implementada con un diccionario,
+ en un archivo.
+ 
+ \item Escriba una función que permita leer una matriz dispersa, implementada con un diccionario,
+ de un archivo.
+ 
+\end{enumerate}
 
