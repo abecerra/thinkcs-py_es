@@ -163,13 +163,6 @@ Probablemente ésta no es la manera más clara de mostrar un objeto
 
 \index{imprimir!objeto}
 
-\begin{quote}
-{\em Como ejercicio, cree e imprima un objeto \texttt{Punto} y luego use
-\texttt{id} para imprimir el identificador único del objeto. Traduzca 
-el número hexadecimal a decimal y asegúrese de que coincidan.}
-\end{quote}
-
-
 \section{Instancias como parámetro}
 \index{instancia}
 \index{parámetro}
@@ -187,12 +180,6 @@ def imprimePunto(p):
 \texttt{imprimePunto} acepta un punto como argumento y lo muestra
 en el formato estándar de la matemática. Si llamas a \texttt{imprimePunto(limpio)}, el
 resultado es \texttt{(3.0, 4.0)}.
-
-\begin{quote}
-{\em Como ejercicio, reescriba la función \texttt{distancia} de la
-Sección~\ref{program development} de forma que acepte dos \texttt{Puntos} como
-parámetros en lugar de cuatro números.}
-\end{quote}
 
 
 \section{Mismidad}
@@ -286,7 +273,7 @@ devuelve verdadero.
 
 
 \section{Rectángulos}
-\ref{embedded}
+\label{embedded}
 \index{rectángulo}
 
 Digamos que queremos una clase que represente un rectángulo. La pregunta es,
@@ -425,12 +412,6 @@ Mientras \texttt{agrandarRect} se está ejecutando, el parámetro \texttt{caja} 
 alias de \texttt{b}. Cualquier cambio que se hagas a \texttt{caja} afectará también a
 \texttt{b}.
 
-\begin{quote}
-{\em A modo de ejercicio, escriba una función llamada \texttt{mueveRect} que tome
-un \texttt{Rectangulo} y dos parámetros llamados \texttt{dx} y \texttt{dy}. Tiene que cambiar
-la posición del rectángulo añadiendo en la  \texttt{esquina}: \texttt{dx} a la coordenada \texttt{x}  y  \texttt{dy} a la coordenada \texttt{y}.}
-\end{quote}
-
 
 \section{Copiado}
 \index{uso de alias}
@@ -516,12 +497,6 @@ def agrandaRect(caja, danchura, daltura) :
 \afterverb
 %
 
-\begin{quote}
-{\em Como ejercicio, reescriba \texttt{mueveRect} de modo que cree y devuelva
-un nuevo \texttt{Rectangulo} en lugar de modificar el viejo.}
-\end{quote}
-
-
 \section{Glosario}
 
 \begin{description}
@@ -552,7 +527,8 @@ cualquier referencia a objetos incrustados; implementada por la función \texttt
 del módulo \texttt{copy}.
 
 \item[Copia profunda:] copiar el contenido de un objeto así como cualesquiera
-objetos incrustados, y los incrustados en estos, y así sucesivamente. Está implementada en la función \texttt{deepcopy} del módulo \texttt{copy}.
+objetos incrustados, y los incrustados en estos, y así sucesivamente. Está implementada 
+en la función \texttt{deepcopy} del módulo \texttt{copy}.
 
 \index{clase}
 \index{instanciar}
@@ -566,3 +542,30 @@ objetos incrustados, y los incrustados en estos, y así sucesivamente. Está imp
 \index{copia profunda}
 
 \end{description}
+
+\section{Ejercicios}
+
+\begin{enumerate}
+\item  Cree e imprima un objeto \texttt{Punto} y luego use
+\texttt{id} para imprimir el identificador único del objeto. Traduzca 
+el número hexadecimal a decimal y asegúrese de que coincidan.
+
+\item  Reescriba la función \texttt{distancia} de la
+Sección~\ref{program development} de forma que acepte dos \texttt{Puntos} como
+parámetros en lugar de cuatro números.
+
+\item Reescriba \texttt{mueveRect} de modo que cree y devuelva
+un nuevo \texttt{Rectangulo} en lugar de modificar el viejo.
+
+\item Investigue la documentación del módulo Turtle de Python. 
+Escriba una función que dibuje un rectángulo con la tortuga.
+
+\item Escriba un programa que dibuje dos tortugas haciendo un movimiento circular 
+permanente.Pista: Piense en como intercalar los movimientos de las dos tortugas.
+
+\item Escriba una función llamada \texttt{mueveRect} que tome
+un \texttt{Rectangulo} y dos parámetros llamados \texttt{dx} y \texttt{dy}. 
+Tiene que cambiar la posición del rectángulo añadiendo en la  \texttt{esquina}: 
+\texttt{dx} a la coordenada \texttt{x}  y  \texttt{dy} a la coordenada \texttt{y}.
+
+\end{enumerate}

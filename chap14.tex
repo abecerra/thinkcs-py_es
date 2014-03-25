@@ -225,13 +225,6 @@ Nuevamente, el objeto con el cual se invoca el método se asigna
 al primer parámetro, \texttt{self}. El segundo parámetro, 
 \texttt{segundos} recibe el valor \texttt{500}.
 
-\begin{quote}
-{\em Como ejercicio, convierta \texttt{convertirASegundos} 
-(de la Sección~\ref{convert}) a un método de la clase
-\texttt{Hora}.}
-\end{quote}
-
-
 \section{Un ejemplo más complejo}
 
 El método \texttt{despues} es un poco más complejo ya que opera sobre
@@ -336,17 +329,6 @@ por defecto:
 \end{verbatim}
 \afterverb
 %
-\begin{quote}
-{\em Como ejercicio, añada un cuarto parámetro, \texttt{fin}, que especifique
-hasta donde continuar la búsqueda.
-
-Advertencia: Este ejercicio tiene una cascarita. El valor por defecto de
-\texttt{fin} debería ser \texttt{len(cad)}, pero esto no funciona.  Los
-valores por defecto se evalúan en el momento de definición de las funciones, 
-no cuando se llaman. Cuando se define \texttt{buscar}, \texttt{cad} no 
-existe todavía, así que no se puede obtener su longitud.}
-\end{quote}
-
 
 \section{El método de inicialización}
 \index{método de inicialización}
@@ -529,11 +511,6 @@ hace el llamado del método \texttt{\_\_add\_\_}:
 %
 La expresión  \texttt{p1 + p2} es equivalente a
 \texttt{p1.\_\_add\_\_(p2)}, pero luce mucho mas elegante.
-
-\begin{quote}
-{\em Como ejercicio, agregue un método  \texttt{\_\_sub\_\_(self, otro)} que
-sobrecargue el operador resta, y pruébelo}
-\end{quote}
 
 Hay varias formas de sobrecargar el comportamiento del operador 
 multiplicación: definiendo un método \texttt{\_\_mul\_\_}, o \texttt{\_\_rmul\_\_}, 
@@ -778,3 +755,24 @@ aplicar al tipo de dato, entonces la función puede aplicársela al tipo.
 \index{polimórfica}
 
 \end{description}
+
+\section{Ejercicios}
+\begin{enumerate}
+
+\item Convierta \texttt{convertirASegundos} 
+(de la Sección~\ref{convert}) a un método de la clase
+\texttt{Hora}.
+
+\item Añada un cuarto parámetro \texttt{fin} a la función \texttt{buscar} que 
+especifique hasta donde continuar la búsqueda.
+
+Advertencia: Este ejercicio tiene una cascarita. El valor por defecto de
+\texttt{fin} debería ser \texttt{len(cad)}, pero esto no funciona.  Los
+valores por defecto se evalúan en el momento de definición de las funciones, 
+no cuando se llaman. Cuando se define \texttt{buscar}, \texttt{cad} no 
+existe todavía, así que no se puede obtener su longitud.
+
+\item Agregue un método  \texttt{\_\_sub\_\_(self, otro)} que
+sobrecargue el operador resta, y pruébelo.
+
+\end{enumerate}

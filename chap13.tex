@@ -50,19 +50,6 @@ El diagrama para el objeto \texttt{Hora} luce así:
 \centerline{\includegraphics{illustrations/time.eps}}
 \afterfig
 
-\begin{quote}
-{\em Como ejercicio, escriba una función  \texttt{imprimirHora} que reciba
-un objeto \texttt{Hora} como argumento y lo imprima de la forma
- \texttt{horas:minutos:segundos}.}
-\end{quote}
-
-\begin{quote}
-{\em Escriba una  función booleana \texttt{despues} que reciba dos
-objetos \texttt{Hora}, \texttt{t1} y \texttt{t2} como argumentos, y 
-retorne cierto si  \texttt{t1} va después de \texttt{t2} cronológicamente
-y falso en caso contrario.}
-\end{quote}
-
 
 \section{Funciones puras}
 \index{función pura}
@@ -222,17 +209,6 @@ def incrementar(hora, segundos):
 Ahora, la función sí es correcta, aunque no sigue el proceso
  más eficiente. 
 
-\begin{quote}
-{\em Como ejercicio, reescriba la función de forma que no
-contenga ciclos y siga siendo correcta.}
-\end{quote}
-
-\begin{quote}
-{\em Reescriba \texttt{incrementar} como una función 
-pura, y escriba llamados a funciones de las dos versiones.}
-\end{quote}
-
-
 \section{¿Cual es el mejor estilo?}
 \index{estilo de programación funcional}
 
@@ -335,10 +311,6 @@ Esta versión es mucho más corta que la original, y es mucho
 más fácil de demostrar que es correcta (asumiendo, como de 
 costumbre, que las funciones que llama son correctas).
 
-\begin{quote}
-{\em Como ejercicio, reescriba \texttt{incrementar} usando 
-convertirASegundos y crearHora.}
-\end{quote}
 
 
 \section{Generalización}
@@ -445,3 +417,26 @@ problemas por medio de un proceso mecánico, no inteligente.
 \index{algoritmo}
 
 \end{description}
+
+\section{Ejercicios}
+\begin{enumerate}
+
+\item Reescriba la función \texttt{incrementar} 
+de forma que no contenga ciclos y siga siendo correcta.
+
+\item Reescriba \texttt{incrementar} usando 
+convertirASegundos y crearHora.
+
+\item Reescriba \texttt{incrementar} como una función 
+pura, y escriba llamados a funciones de las dos versiones.
+
+\item Escriba una función  \texttt{imprimirHora} que reciba
+un objeto \texttt{Hora} como argumento y lo imprima de la forma
+ \texttt{horas:minutos:segundos}.
+
+\item Escriba una  función booleana \texttt{despues} que reciba dos
+objetos \texttt{Hora}, \texttt{t1} y \texttt{t2} como argumentos, y 
+retorne cierto si  \texttt{t1} va después de \texttt{t2} cronológicamente
+y falso en caso contrario.
+
+\end{enumerate}
