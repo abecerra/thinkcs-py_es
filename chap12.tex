@@ -282,7 +282,7 @@ simplificar las cosas, supongamos que el rectángulo está orientado vertical u
 horizontalmente, nunca en diagonal.
 
 Tenemos varias posibilidades: podemos señalar el centro del rectángulo
-(dos coordenadas) y su tamaño (anchura y altura); o podemos señalar una de
+(dos coordenadas) y su tamaño (ancho y altura); o podemos señalar una de
 las esquinas y el tamaño; o podemos señalar dos esquinas opuestas. Un modo
 convencional es señalar la esquina superior izquierda del rectángulo y el tamaño.
 
@@ -301,7 +301,7 @@ Y la instanciaremos:
 \beforeverb
 \begin{verbatim}
 caja = Rectangulo()
-caja.anchura = 100.0
+caja.ancho = 100.0
 caja.altura = 200.0
 \end{verbatim}
 \afterverb
@@ -341,7 +341,7 @@ contiene las coordenadas del centro del \texttt{Rectangulo}:
 \begin{verbatim}
 def encuentraCentro(caja):
   p = Punto()
-  p.x = caja.esquina.x + caja.anchura/2.0
+  p.x = caja.esquina.x + caja.ancho/2.0
   p.y = caja.esquina.y + caja.altura/2.0
   return p
 \end{verbatim}
@@ -366,11 +366,11 @@ a una variable:
 Podemos cambiar el estado de un objeto efectuando una asignación
 sobre uno de sus atributos. Por ejemplo, para cambiar el tamaño de
 un rectángulo sin cambiar su posición, podemos cambiar los valores de
-\texttt{anchura} y \texttt{altura}:
+\texttt{ancho} y \texttt{altura}:
 
 \beforeverb
 \begin{verbatim}
-caja.anchura = caja.anchura + 50
+caja.ancho = caja.ancho + 50
 caja.altura = caja.altura + 100
 \end{verbatim}
 \afterverb
@@ -383,13 +383,13 @@ para agrandar el rectángulo en cualquier cantidad:
 
 \beforeverb
 \begin{verbatim}
-def agrandarRect(caja, danchura, daltura) :
-  caja.anchura = caja.anchura + danchura
+def agrandarRect(caja, dancho, daltura) :
+  caja.ancho = caja.ancho + dancho
   caja.altura = caja.altura + daltura
 \end{verbatim}
 \afterverb
 %
-Las variables \texttt{danchura} y \texttt{daltura} indican cuánto debe agrandarse
+Las variables \texttt{dancho} y \texttt{daltura} indican cuánto debe agrandarse
 el rectángulo en cada dirección. Invocar este método tiene el efecto de
 modificar el \texttt{Rectangulo} que se pasa como argumento.
 
@@ -399,7 +399,7 @@ y pasárselo a la función \texttt{agrandarRect}:
 \beforeverb
 \begin{verbatim}
 >>> b = Rectangulo()
->>> b.anchura = 100.0
+>>> b.ancho = 100.0
 >>> b.altura = 200.0
 >>> b.esquina = Punto()
 >>> b.esquina.x = 0.0;
@@ -487,10 +487,10 @@ dimensiones:
 
 \beforeverb
 \begin{verbatim}
-def agrandaRect(caja, danchura, daltura) :
+def agrandaRect(caja, dancho, daltura) :
   import copy
   nuevaCaja = copy.deepcopy(caja)
-  nuevaCaja.anchura = nuevaCaja.anchura + danchura
+  nuevaCaja.ancho = nuevaCaja.ancho + dancho
   nuevaCaja.altura = nuevaCaja.altura + daltura
   return nuevaCaja
 \end{verbatim}

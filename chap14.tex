@@ -193,8 +193,8 @@ usted debe conservarlos en su programa:
 class Hora:
   # Las definiciones anteriores van aquí...
   
-  def incrementar(h, segundos):
-    hora.segundos = self.segundos + segundos
+  def incrementar(self, segundos):
+    self.segundos = self.segundos + segundos
 
     if self.segundos >= 60:
       self.segundos = self.segundos - 60
