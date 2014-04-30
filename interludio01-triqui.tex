@@ -23,9 +23,9 @@
 
 Con el fin de poner en práctica varios elementos (funciones, ciclos, listas)
 vamos a desarrollar un sencillo juego de triqui para dos jugadores. La idea
-es seguir un desarrollo iterativo.
+es seguir un desarrollo iterativo. El tablero de juego es una matriz 3x3. 
 
-El tablero de juego es una matriz 3x3. Si tablero[i][j] es:
+Si tablero[i][j] es:
 
 \begin{description}
   \item[' ':]  nadie ha jugado en esa casilla
@@ -108,7 +108,7 @@ def ganaDiagonal2(jugador,tablero):
 \afterverb
 
 Falta llamar las funciones en el ciclo del juego, y si gana terminamos el juego 
-con la sentencia break, por ejemplo, para el primer jugador:
+con la sentencia break. Por ejemplo, para el primer jugador:
 
 \beforeverb
 \begin{verbatim}
@@ -148,7 +148,7 @@ def ganaHorizontal(jugador,tablero):
 \end{verbatim}
 \afterverb
 
-Para llamar las funciones modificamos el ciclo del juego, por ejemplo para el jugador 'X':
+Para llamar las funciones modificamos el ciclo del juego. Por ejemplo, para el jugador 'X':
 \beforeverb
 \begin{verbatim}
 # triqui4.py
