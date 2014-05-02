@@ -1,0 +1,185 @@
+% LaTeX source for textbook ``How to think like a computer scientist''
+% Copyright (c)  2001  Allen B. Downey, Jeffrey Elkner, and Chris Meyers.
+
+% Permission is granted to copy, distribute and/or modify this
+% document under the terms of the GNU Free Documentation License,
+% Version 1.1  or any later version published by the Free Software
+% Foundation; with the Invariant Sections being "Contributor List",
+% with no Front-Cover Texts, and with no Back-Cover Texts. A copy of
+% the license is included in the section entitled "GNU Free
+% Documentation License".
+
+% This distribution includes a file named fdl.tex that contains the text
+% of the GNU Free Documentation License.  If it is missing, you can obtain
+% it from www.gnu.org or by writing to the Free Software Foundation,
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+\chapter{Interludio 2: Triqui con interfaz gráfica}
+\index{Triqui}
+
+
+\section{Motivación}
+En el capítulo \ref{cap:inter1:triqui} desarrollamos un juego de triqui completo
+para integrar varios conceptos de programación. Ahora, para integrar varios
+conceptos de programación con objetos haremos lo mismo, construiremos un triqui
+con interfaz gráfica de usuario
+
+El programa utiliza la biblioteca Kivy, que permite realizar interfaces
+gráficas que corran en celulares, tablets (con pantallas sensibles al tacto) 
+y computadores tradicionales (corriendo MacOS X, Windows y Linux). Hay que 
+conseguir el instalador de http://kivy.org.
+
+\section{Ganar y empatar}
+Para empezar tomamos el código final del triqui desarrollado en el capítulo \ref{cap:inter1:triqui}
+y lo convertimos en un módulo que nos permite verificar si alguien gana el juego o
+si hay un empate. El proceso es sencillo: eliminamos todo el código que no tenga que ver con 
+verificar quien gana o si hay empate, tomando triqui9.py y resultando en validar.py, un 
+módulo con 9 funciones: crear,  ganaDiagonal1,  ganaDiagonal2, ganaFila, ganaHorizontal, ganaColumna,
+ganaVertical, gana y empate. Mas adelante utilizaremos este módulo dentro del nuevo programa.
+
+Este es un ejemplo de reutilización de código.
+\index{reutilización}
+
+\section{Programación orientada a eventos}
+
+En muchas bibliotecas gráficas como kivy existe un gran ciclo que procesa
+los eventos generados a través del teclado, apuntador o la pantalla
+sensible al tacto. Este ciclo es infinito, pero se le hace un "break"
+cuando se cierra la ventana de la aplicación.
+
+En Kivy, el ciclo reside en la clase App, de la que heredamos la clase
+Programa. Cuando arranca el programa, al ejecutar run() se corre este
+ciclo que procesa eventos.
+
+El flujo del programa está determinado por lo que haga el usuario con
+los elementos gráficos de la pantalla. Kivy procesará cada evento (click,
+tecla digitada, etc.) de manera predeterminada, por ejemplo cerrar la
+ventana hará un break en el gran ciclo.
+
+Además, Kivy se encarga de redibujar partes de la ventana cuando otra
+ventana se pase por encima, o cuando se cambie de tamaño, o minimize en
+la barra de tareas.
+
+El método build de programa retorna un objeto Triqui, que es nuestra ventana.
+La clase Triqui hereda de GridLayout, una ventana que contiene elementos
+en disposición de cuadrícula (como una matriz). El método init de Triqui
+llama al médodo init de la clase madre y le pasa una lista con un número
+de argumentos variable (**kwargs). 
+
+Por ahora nuestra ventana, el objeto de la clase Triqui, está vacío.
+
+
+# Para evitar la duplicación de código se pasa la lógica de revisar el
+# estado del juego a un método llamado revisar, que:
+# - si el jugador actual gana, muestra el mensaje y resetea todo
+# - si hay empate, muestra el mensaje y resetea todo
+# - si nadie gana y no hay empate, se cambia el turno al otro jugador.
+
+# Y voilà, listo el Triqui con todos los chequeos!!
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\beforeverb
+\begin{verbatim}
+# triqui8.py
+\end{verbatim}
+\afterverb
+
+\section{Resumen}
+
+\begin{description}
+
+\item[triqui0.py:] crea una ventana vacía
+\item[triqui1.py:] Agrega un botón a la ventana (se ve feo!)
+\item[triqui2.py:] Agrega 9 botones para formar el tablero del triqui
+\item[triqui3.py:] Permite jugar a los dos jugadores sin ningún chequeo
+\item[triqui4.py:] Agrega una clase heredada de Button para llevar fila y columna 
+\item[triqui5.py:] Cada vez que se juega se copia el estado de los botones a una matriz
+\item[triqui6.py:] Se valida si los jugadores ganan el juego con el código del triqui viejo
+	    y se resetea el juego.
+\item[triqui7.py:] Se revisa si hay empate, si lo hay, se resetea el juego.
+\item[triqui8.py:] Se mejora el código evitando la duplicación.
+\end{description}
+
+\section{Glosario}
+
+\begin{description}
+
+\item[def:] texto
+
+
+\index{def}
+
+
+\end{description}

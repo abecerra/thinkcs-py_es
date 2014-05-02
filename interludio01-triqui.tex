@@ -15,6 +15,7 @@
 % Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
 \chapter{Interludio 1: Triqui}
+\label{cap:inter1:triqui}
 \index{Triqui}
 
 
@@ -24,9 +25,14 @@
 Con el fin de poner en práctica los conceptos de los capítulos anteriores
 vamos a desarrollar un sencillo juego de triqui para dos jugadores. La idea
 es seguir un desarrollo iterativo que toma un pequeño programa y lo convierte,
-poco a poco, en un juego con toda la funcionalidad esperada.
+poco a poco, en un juego de triqui con toda la funcionalidad esperada.
 
-El código fuente para los diez programas puede descargarse de:
+El código fuente tiene diez versiones, comenzando desde triqui0.py hasta
+triqui9.py. En las secciones a continuación se discuten los fragmentos del 
+programa a medida que se van agregando, cada fragmento tiene el nombre del 
+archivo en que se introdujo.
+
+Los diez programas puede descargarse de:
 
 
 \section{Estructuras de datos}
@@ -34,14 +40,14 @@ El código fuente para los diez programas puede descargarse de:
 El código fuente de un programa extenso puede ser difícil de comprender. Esta es
 la razón por la que lo primero que se debe explicar de un software son sus 
 estructuras de datos: las variables, listas, matrices que usa para representar
-la información.
+la información. 
 
 En nuestro triqui, el tablero de juego es una matriz de 3 filas y 3 columnas que
-se almacena en una lista de listas usando la representación 
-usual en la que cada fila es una de las sublistas.
+se almacena en una lista de listas usando la representación usual del capítulo 
+\ref{cap:listas}. 
 
-Todos los elementos de la matriz serán aracteres de texto con la 
-convención que sigue. Si tablero[i][j] es:
+Todos los elementos de la matriz serán caracteres de texto con la 
+convención que sigue. Si elemento de la matriz es:
 
 \begin{description}
   \item[' ' (esto es el caracter espacio):]   nadie ha jugado en esa casilla.
@@ -177,7 +183,7 @@ def ganaHorizontal(jugador,tablero):
 \end{verbatim}
 \afterverb
 
-Las funciones para chequear las columnas son muy parecidas. Para llamar las funciones 
+Las funciones para chequear las columnas son muy parecidas. Para llamarlas  
 modificamos el ciclo del juego. Por ejemplo, para el jugador 'X':
 
 \beforeverb
@@ -197,15 +203,16 @@ while True:
 \afterverb
 
 \section{Reestructurando el código}
+\index{reestructuración}
 
 Casi siempre que se está desarrollando un programa y uno encuentra que está copiando y
 pegando código para hacer pequeños cambios vale la pena analizar si se pueden crear
-funciones para evitar problemas. Una función correcta y se llame desde
-varios partes del programa es más fácil de mantener que una serie de porciones de 
+funciones para evitar problemas futuros. Una función correcta, que se llama desde
+varias partes del programa es más fácil de mantener que una serie de porciones de 
 código parecidas, pero con cambios, que se han copiado, pegado y modificado.
 
 En el triqui podemos observar que el código dentro del ciclo para el jugador 'O' 
-y el 'X' es muy parecido. Asi que  lo podemos poner en una
+y el 'X' es muy parecido. Así que  lo podemos poner en una
 función que tenga como parámetro el símbolo del jugador:
 
 \beforeverb
@@ -223,7 +230,7 @@ def jugar(jugador,tablero):
 \end{verbatim}
 \afterverb
 
-Con este cambio nuestro ciclo de juego es más pequeño, y el programa es mas
+Con este cambio nuestro ciclo de juego es más pequeño, y el programa es más
 fácil de mantener:
 
 \beforeverb
@@ -240,10 +247,11 @@ while True:
 \afterverb
 
 \section{Validaciones}
+\index{validación}
 
 Los usuarios pueden cometer errores, por esta razón los programas deben revisar
-todos los datos que los usuarios generan para ver si cumplen las condiciones
-en las que el programa puede operar. El código que revisa una condición 
+todos los datos que generan para ver si cumplen las condiciones
+para operar. El código que revisa una condición 
 o restricción de este tipo se llama validación.
 
 En el triqui podemos agregar validación al juego. Tanto f como  c, que son 
@@ -352,7 +360,8 @@ def jugar(jugador,tablero):
 
 \section{Reestructurando más}
 
-Podemos crear una función 'gana', fructífera:
+Podemos crear una función 'gana', fructífera, que nos permita que jugar sea
+mas pequeña:
 
 \begin{verbatim}
 # triqui9.py
@@ -365,8 +374,12 @@ def gana(jugador,tablero):
 \end{verbatim}
 \afterverb
 
-Que se llame en el ciclo principal. Todo esto se puede poner en la parte principal
-del programa:
+Con este cambio también ganamos algo: la verificación de quien gana el juego
+puede hacerse con una sola función en otro programa, por ejemplo uno con 
+una interfaz gráfica de usuario.
+
+Ahora, 'gana' se llama en el ciclo principal. Y todo esto se puede poner en 
+la parte principal del programa:
 
 \begin{verbatim}
 # triqui9.py
@@ -393,8 +406,8 @@ if __name__ == '__main__':
 \afterverb
 
 Asi terminamos con triqui9.py, un programa con 12 funciones y un ciclo de juego que
-tiene 124 líneas de código, pero empezó como una simple impresión de una matriz 
-vacía.
+tiene en total 124 líneas de código, ¡pero empezó como una simple impresión de una 
+matriz vacía!
 
 \section{Resumen}
 
@@ -410,5 +423,19 @@ vacía.
 \item[triqui8.py:] llama a empate 2 veces en lugar de 1 y añade un mensaje al jugador
 \item[triqui9.py:] crea una función 'gana' para que 'jugar' sea mas pequeña y pone el ciclo 
             del juego en la parte principal.
-            
+\end{description}
+
+\section{Glosario}
+
+\begin{description}
+
+\item[validación:] análisis de los datos que genera un usuario humano para que estén dentro
+de los límites de operación del software.
+
+\item[reestructuración:] reescritura de porciones del código para mejorar la calidad del programa. 
+Por ejemplo, se puede mejorar la legibilidad del código, también se puede eliminar la redundancia.
+
+\index{validación}
+\index{reestructuración}
+
 \end{description}
