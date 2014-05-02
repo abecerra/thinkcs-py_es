@@ -14,28 +14,44 @@
 % it from www.gnu.org or by writing to the Free Software Foundation,
 % Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-\chapter{Interludio 2: Triqui con interfaz gráfica}
+\chapter{Triqui con interfaz gráfica}
 \index{Triqui}
 
 
 \section{Motivación}
 En el capítulo \ref{cap:inter1:triqui} desarrollamos un juego de triqui completo
 para integrar varios conceptos de programación. Ahora, para integrar varios
-conceptos de programación con objetos haremos lo mismo, construiremos un triqui
+conceptos de programación con objetos haremos casi lo mismo, construiremos un triqui
 con interfaz gráfica de usuario
 
 El programa utiliza la biblioteca Kivy, que permite realizar interfaces
 gráficas que corran en celulares, tablets (con pantallas sensibles al tacto) 
 y computadores tradicionales (corriendo MacOS X, Windows y Linux). Hay que 
-conseguir el instalador de http://kivy.org.
+conseguir el instalador de: 
+
+\begin{verbatim}
+   http://kivy.org
+\end{verbatim}
+
+Los archivos triqui0.py a triqui8.py están en:
+
+\begin{verbatim}
+http://cic.javerianacali.edu.co/~abecerra/files/triqui-kivy.zip
+\end{verbatim}
+
+Para comprender el capítulo hay que ejecutar cada versión del programa a 
+medida que se avanza en la lectura. En las secciones a continuación se discuten 
+los fragmentos del programa a medida que se van agregando, cada fragmento tiene 
+el nombre del archivo en que se introdujo como comentario inicial.
 
 \section{Ganar y empatar}
 Para empezar tomamos el código final del triqui desarrollado en el capítulo \ref{cap:inter1:triqui}
 y lo convertimos en un módulo que nos permite verificar si alguien gana el juego o
 si hay un empate. El proceso es sencillo: eliminamos todo el código que no tenga que ver con 
-verificar quien gana o si hay empate, tomando triqui9.py y para transformarlo en validar.py, un 
-módulo con 9 funciones: crear,  ganaDiagonal1,  ganaDiagonal2, ganaFila, ganaHorizontal, ganaColumna,
-ganaVertical, gana y empate. Mas adelante lo utilizaremos, reutilizando el código.
+verificar quien gana o si hay empate, tomando \texttt{triqui9.py} y para transformarlo en 
+\texttt{validar.py}, un módulo con 9 funciones: crear,  ganaDiagonal1,  ganaDiagonal2, ganaFila, ganaHorizontal, ganaColumna,
+ganaVertical, gana y empate. Mas adelante lo importaremos, para reutilizar el código.
+
 
 \index{reutilización}
 
@@ -83,26 +99,27 @@ if __name__ == '__main__':
 \end{verbatim}
 \afterverb
 
-El gran ciclo reside en la clase App de Kivy, de la que heredamos la clase
-Programa. Cuando arranca el programa, al ejecutar run() se corre este
+El gran ciclo reside en la clase \texttt{App} de Kivy, de la que heredamos la clase
+\texttt{Programa}. Cuando arranca el programa, al ejecutar \texttt{run()} se corre este
 gran ciclo que procesa eventos.
 
 El método build de programa retorna un objeto Triqui, que es nuestra ventana.
 La clase Triqui hereda de GridLayout, una ventana que contiene elementos
-en disposición de cuadrícula (como una matriz). El método init de Triqui
-llama al médodo init de la clase madre y le pasa una lista con un número
+en disposición de cuadrícula (como una matriz). El método \texttt{init} de Triqui
+llama al médodo \texttt{init} de la clase madre y le pasa una lista con un número
 de argumentos variable (**kwargs). 
 
-Por ahora nuestra ventana, instancia de la clase Triqui, está vacía.
+Por ahora nuestra ventana, instancia de la clase \texttt{Triqui}, está vacía.
 
 \section{Widgets}
 Las ventanas suelen tener muchos elementos gráficos como menús, botones, paneles
 entre otros. En bibliotecas como kivy se llaman widgets. Por 
-ejemplo, un botón es un tipo de widget que  se define en la clase Button.
+ejemplo, un botón es un tipo de widget que  se define en la clase \texttt{Button}.
 
 Como el flujo de los programas gráficos no está determinado por el programador,
 sino por el usuario al interactuar con los widgets de la ventana, el mecanismo
-que se utiliza para reaccionar es el de registrar métodos que atiendan a los eventos.
+que se utiliza para reaccionar ante los eventos es el de registrar métodos que 
+serán invocados automáticamente por el gran ciclo.
 
 \beforeverb
 \begin{verbatim}
@@ -119,14 +136,15 @@ class Triqui(GridLayout):
 \end{verbatim}
 \afterverb
 
-Los widgets se agregan a una ventana mediante el método add\_widget. Aquí agregamos
-un botón y registramos un método que responde al evento de presionarlo. Por ahora 
-el método no hace nada.
+Los widgets se agregan a una ventana mediante el método \texttt{add\_widget}. Aquí agregamos
+un botón y registramos un método que responde al evento de presionarlo (\texttt{on\_press}). 
+Por ahora el método no hace nada.
 
 \section{El Triqui}
 
 A continuación, definimos la geometría de la ventana como una matriz de 3 filas 
-y 3 columnas en la que cada elemento es un botón. Ahora, en el método boton\_presionado
+y 3 columnas en la que cada elemento es un botón. Ahora, en el método 
+\texttt{boton\_presionado}
 vamos a mostrar un cuadro de diálogo que muestra un texto sencillo.
 
 \beforeverb
@@ -148,7 +166,7 @@ class Triqui(GridLayout):
 \end{verbatim}
 \afterverb
 
-MostrarMensaje es una clase que heredamos de PopUp, la clase que tiene kivy para
+\texttt{MostrarMensaje} es una clase que heredamos de \texttt{PopUp}, la clase que tiene kivy para
 cuadros de diálogo:
 
 \beforeverb
@@ -175,7 +193,7 @@ todo el cuadro.
 Como el flujo de ejecución depende de los usuarios, vamos a llevar pista en el 
 programa de quien tiene el turno de juego con un atributo en la clase Triqui.
 Hay que crear el atributo en el método de inicialización y modificarlo en 
-cada jugada. El turno será 'O' para el primer jugador y 'X' para el segundo.
+cada jugada. El \texttt{turno} será 'O' para el primer jugador y 'X' para el segundo.
 
 \beforeverb
 \begin{verbatim}
@@ -206,13 +224,16 @@ class Triqui(GridLayout):
 
 Cuando se presiona un botón se verifica si la casilla está vacía para poder jugar en 
 ella. Si no es así se cambia el texto del botón y se cambia el turno para el otro 
-jugador. Observe que en el método de inicialización de Triqui al texto de todos los 
+jugador. Observe que en el método de inicialización de \texttt{Triqui} al texto de todos los 
 botones se le asigna un espacio.
 
 \section{Reutilización}
+\index{reutilización}
 
 Agregamos un botón que tiene propiedades para 
-registrar la fila y la columna.
+registrar la fila y la columna, heredando de la 
+clase \texttt{Button}.
+
 \beforeverb
 \begin{verbatim}
 # triqui4.py
@@ -228,7 +249,7 @@ class Boton(Button):
 \afterverb
         
 Esto nos permite pasar el estado de los botones a una matriz con 
-el siguiente método de la clase Triqui:
+el siguiente método de la clase \texttt{Triqui}:
 
 \beforeverb
 \begin{verbatim}
@@ -241,7 +262,7 @@ el siguiente método de la clase Triqui:
 \end{verbatim}
 \afterverb
 
-Así podremos reutilizar el módulo validar, creando la matriz
+Así podremos reutilizar el módulo \texttt{validar}, creando la matriz
 que lleva el estado del juego :
 
 \beforeverb
@@ -287,7 +308,7 @@ cada vez que se halla realizado una jugada:
 \section{Reset}
 
 Podemos reiniciar el juego cada vez que un jugador gane, mediante la 
-creación del siguiente método de Triqui:
+creación del siguiente método de \texttt{Triqui}:
 
 \beforeverb
 \begin{verbatim}
@@ -339,9 +360,9 @@ mejorar la calidad del programa. Para esto definimos el método
 revisar, que:
 
 \begin{itemize}
- \item Si el jugador actual gana, muestra el mensaje y resetea todo.
+ \item Si el jugador actual gana, muestra el mensaje y resetea.
  
- \item Si hay empate, muestra el mensaje y resetea todo.
+ \item Si hay empate, muestra el mensaje y resetea.
  
  \item Si nadie gana y no hay empate, pasa el turno al otro jugador.
 \end{itemize}
@@ -377,7 +398,7 @@ Que depende del método otro:
 \end{verbatim}
 \afterverb
 
-Así terminamos con un programa que tiene en total cuatro clases, con 9 métodos
+Así terminamos con un programa que tiene en total 4 clases, con 9 métodos
 distribuidos en ellas, además de las 9 funciones del módulo validar. Tiene 96
 líneas de código en triqui9.py y 66 en validar, para un total de 162.
 
@@ -386,9 +407,13 @@ a gráficos se aumenta el código substancialmente. La ventaja, aparte de la est
 es que el Triqui con la biblioteca kivy puede ejecutarse en Linux, Windows, Mac OS X,
 Android y iOS (el sistema operativo de los teléfonos iphone y de los tablets ipad).
 
-Por ejemplo, el paquete para android del triqui puede descargarse de:
+Por ejemplo, el paquete para Android del triqui puede descargarse de:
 
+\begin{verbatim}
+http://cic.javerianacali.edu.co/~abecerra/files/KivyTriquiABe-1.1.0-debug.apk
+\end{verbatim}
 
+Para instalarlo en un smartphone o tablet. 
 
 \section{Resumen}
 
@@ -411,10 +436,29 @@ Por ejemplo, el paquete para android del triqui puede descargarse de:
 
 \begin{description}
 
-\item[Evento:] Acción  
-\item[Evento:] Acción  
+\item[Evento:] Acción generada por el usuario de una aplicación gráfica.
 
-\index{Evento}
-
+\item[Widget:] Elemento de  una aplicación gráfica que se coloca en una ventana. 
+Hay botones, paneles, barras deslizadoras, áreas de texto, entre otras clases
+de widgets.
 
 \end{description}
+
+\section{Ejercicios}
+\texttt{Punto}
+
+\begin{enumerate}
+
+\item Modifique el triqui para que el computador juegue automáticamente, seleccionando
+una casilla vacía al azar. 
+
+\item Agregue un sonido cada vez que se haga una jugada válida y otro sonido de error
+para cuando el jugador seleccione una casilla en la que ya se ha jugado.
+
+\item Modifique el triqui para que tenga un menú gráfico de entrada en el que se pueda
+escoger entre dos modalidades: 1 jugador contra el computador, 2 jugadores entre si
+por turnos y 3, salir del programa. Ahora, cada vez que termine una partida el programa debe desplegar 
+el flujo de ejecución debe volver al menú.
+
+
+\end{enumerate}
