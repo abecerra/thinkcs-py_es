@@ -21,19 +21,37 @@
 
 \section{Motivación}
 
-Con el fin de poner en práctica varios elementos (funciones, ciclos, listas)
+Con el fin de poner en práctica los conceptos de los capítulos anteriores
 vamos a desarrollar un sencillo juego de triqui para dos jugadores. La idea
-es seguir un desarrollo iterativo. El tablero de juego es una matriz 3x3. 
+es seguir un desarrollo iterativo que toma un pequeño programa y lo convierte,
+poco a poco, en un juego con toda la funcionalidad esperada.
 
-Si tablero[i][j] es:
+El código fuente para los diez programas puede descargarse de:
+
+
+\section{Estructuras de datos}
+
+El código fuente de un programa extenso puede ser difícil de comprender. Esta es
+la razón por la que lo primero que se debe explicar de un software son sus 
+estructuras de datos: las variables, listas, matrices que usa para representar
+la información.
+
+En nuestro triqui, el tablero de juego es una matriz de 3 filas y 3 columnas que
+se almacena en una lista de listas usando la representación 
+usual en la que cada fila es una de las sublistas.
+
+Todos los elementos de la matriz serán aracteres de texto con la 
+convención que sigue. Si tablero[i][j] es:
 
 \begin{description}
-  \item[' ':]  nadie ha jugado en esa casilla
-  \item['O': ] el primer jugador jugó en esa casilla
-  \item['X':] el segundo jugador jugó en esa casilla
+  \item[' ' (esto es el caracter espacio):]   nadie ha jugado en esa casilla.
+  \item['O': ] el primer jugador jugó en esa casilla.
+  \item['X':] el segundo jugador jugó en esa casilla.
 \end{description}
 
-Asi que nuestro programa empieza humildemente:
+\section{Inicio}
+
+Con la convención anterior, nuestro triqui empieza humildemente:
 
 \beforeverb
 \begin{verbatim}
@@ -74,9 +92,13 @@ while True:
 \end{verbatim}
 \afterverb
 
-Agregar al segundo jugador es sencillo, está en triqui2.py. Para verificar si 
-un jugador gana la partida, vamos a empezar por las diagonales, implementando
-un ciclo para la verificar si alguien gana en la diagonal principal:
+Agregar al segundo jugador es casi idéntico al fragmento anterior y  está en el 
+archivo triqui2.py. 
+
+\section{¿Quien gana?}
+
+Para verificar si un jugador gana la partida, vamos a empezar por las diagonales, 
+implementando un ciclo para la verificar si alguien gana en la diagonal principal:
 
 \beforeverb
 \begin{verbatim}
@@ -107,7 +129,7 @@ def ganaDiagonal2(jugador,tablero):
 \end{verbatim}
 \afterverb
 
-Falta llamar las funciones en el ciclo del juego, y si gana terminamos el juego 
+Falta llamar las funciones en el ciclo del juego, y si gana, terminamos el juego 
 con la sentencia break. Por ejemplo, para el primer jugador:
 
 \beforeverb
@@ -126,8 +148,7 @@ print "Juegue jugador O"
 
 Agregar las funciones para verificar si alguien gana por alguna fila es sencillo.
 Seguimos la misma estructura de las diagonales, creando una función ganaFila, que
-es llamada para todas las filas por ganaHorizontal. Las funciones para chequear
-las columnas son casi idénticas.
+verifica si el jugador gana en una de las filas del tablero.
 
 \beforeverb
 \begin{verbatim}
@@ -138,6 +159,14 @@ def ganaFila(fila,jugador,tablero):
         if tablero[fila][i]!=jugador:
             return False
     return True
+\end{verbatim}
+\afterverb
+
+La función anterior debe ser llamada para todas las filas:
+
+\beforeverb
+\begin{verbatim}
+# triqui4.py
 
 def ganaHorizontal(jugador,tablero):
     """ Chequea todas las filas """
@@ -148,7 +177,9 @@ def ganaHorizontal(jugador,tablero):
 \end{verbatim}
 \afterverb
 
-Para llamar las funciones modificamos el ciclo del juego. Por ejemplo, para el jugador 'X':
+Las funciones para chequear las columnas son muy parecidas. Para llamar las funciones 
+modificamos el ciclo del juego. Por ejemplo, para el jugador 'X':
+
 \beforeverb
 \begin{verbatim}
 # triqui4.py
@@ -158,13 +189,23 @@ while True:
     c = input("columna? ")
     triqui[f][c] = "X"
     imprimir(triqui)
-    if ganaDiagonal1("X",triqui) or ganaDiagonal2("X",triqui) or ganaHorizontal("X",triqui) or ganaVertical("X",triqui):
+    if ganaDiagonal1("X",triqui) or ganaDiagonal2("X",triqui) or 
+       ganaHorizontal("X",triqui) or ganaVertical("X",triqui):
         print "Gana el jugador X!!!!"
         break
 \end{verbatim}
 \afterverb
 
-Como el código dentro del ciclo para el jugador 'O' y el 'X' es casi idéntico, lo podemos poner en una
+\section{Reestructurando el código}
+
+Casi siempre que se está desarrollando un programa y uno encuentra que está copiando y
+pegando código para hacer pequeños cambios vale la pena analizar si se pueden crear
+funciones para evitar problemas. Una función correcta y se llame desde
+varios partes del programa es más fácil de mantener que una serie de porciones de 
+código parecidas, pero con cambios, que se han copiado, pegado y modificado.
+
+En el triqui podemos observar que el código dentro del ciclo para el jugador 'O' 
+y el 'X' es muy parecido. Asi que  lo podemos poner en una
 función que tenga como parámetro el símbolo del jugador:
 
 \beforeverb
@@ -182,7 +223,8 @@ def jugar(jugador,tablero):
 \end{verbatim}
 \afterverb
 
-Con esto nuestro ciclo de juego es más pequeño:
+Con este cambio nuestro ciclo de juego es más pequeño, y el programa es mas
+fácil de mantener:
 
 \beforeverb
 \begin{verbatim}
@@ -197,10 +239,20 @@ while True:
 \end{verbatim}
 \afterverb
 
+\section{Validaciones}
 
-Ahora podemos agregar validación al juego. Tanto f como  c deben ser enteros
-en el intervalo [0,2], y la casilla tablero[f][c] debe estar vacía para que
-una jugada sea válida. Esto se puede poner en un ciclo que le pida al jugador
+Los usuarios pueden cometer errores, por esta razón los programas deben revisar
+todos los datos que los usuarios generan para ver si cumplen las condiciones
+en las que el programa puede operar. El código que revisa una condición 
+o restricción de este tipo se llama validación.
+
+En el triqui podemos agregar validación al juego. Tanto f como  c, que son 
+generados por los usuarios deben ser enteros en el intervalo [0,2] para 
+que podamos representarlos en la matriz de 3 filas y 3 columnas. Además,
+la casilla tablero[f][c] debe estar vacía para que
+una jugada nueva pueda hacerse allí.  
+
+Estas validaciones pueden ponerse en un ciclo que le pida al jugador
 digitar los valores para f y c varias veces, hasta que sean correctos:
 
 \beforeverb
@@ -215,7 +267,8 @@ def jugar(jugador,tablero):
         print "Juegue jugador ", jugador
         f = input("fila? ")
         c = input("columna? ")
-        if type(f)==type(c)==type(1) and valido(f) and valido(c) and tablero[f][c]==' ':
+        if type(f)==type(c)==type(1) and valido(f) 
+           and valido(c) and tablero[f][c]==' ':
             tablero[f][c] = jugador
             break      
 
@@ -227,6 +280,7 @@ def jugar(jugador,tablero):
 \end{verbatim}
 \afterverb
 
+\section{Empates}
 
 Ahora agregamos una función para chequear si hay empate entre los jugadores.
 Esto sucede si el tablero está lleno, o sea que no hay ninguna casilla vacía 
@@ -281,7 +335,8 @@ def jugar(jugador,tablero):
         print "Juegue jugador ", jugador
         f = input("fila? ")
         c = input("columna? ")
-        if type(f)==type(c)==type(1) and valido(f) and valido(c) and tablero[f][c]==' ':
+        if type(f)==type(c)==type(1) and valido(f) 
+           and valido(c) and tablero[f][c]==' ':
             tablero[f][c] = jugador
             break
         else:
@@ -295,6 +350,65 @@ def jugar(jugador,tablero):
 \end{verbatim}
 \afterverb
 
-Finalmente, tenemos un programa completo que permite jugar triqui, textualmente, en 
-el archivo triqui9.py.
+\section{Reestructurando más}
 
+Podemos crear una función 'gana', fructífera:
+
+\begin{verbatim}
+# triqui9.py
+def gana(jugador,tablero):
+    """ Analiza si el jugador gana la partida """
+    diag = ganaDiagonal1(jugador,tablero) or ganaDiagonal2(jugador,tablero)
+    linea = ganaHorizontal(jugador,tablero) or ganaVertical(jugador,tablero)
+    return  diag or linea
+
+\end{verbatim}
+\afterverb
+
+Que se llame en el ciclo principal. Todo esto se puede poner en la parte principal
+del programa:
+
+\begin{verbatim}
+# triqui9.py
+if __name__ == '__main__':
+    triqui = crear()
+    imprimir(triqui)
+
+    while True:
+        jugar("O",triqui)
+        if gana("O",triqui):
+            print "Gana el jugador O !!!!"
+            break
+        if empate(triqui):
+            print "Empate !!!"
+            break
+        jugar("X",triqui)
+        if gana("X",triqui):
+            print "Gana el jugador X !!!!"
+            break
+        if empate(triqui):
+            print "Empate !!!"
+            break
+\end{verbatim}
+\afterverb
+
+Asi terminamos con triqui9.py, un programa con 12 funciones y un ciclo de juego que
+tiene 124 líneas de código, pero empezó como una simple impresión de una matriz 
+vacía.
+
+\section{Resumen}
+
+\begin{description}
+\item[triqui0.py:] crea e imprime el tablero vacío
+\item[triqui1.py:] permite que un solo jugador juegue por siempre
+\item[triqui2.py:] permite que dos jugadores jueguen por siempre
+\item[triqui3.py:] revisa si algun jugador gana en las diagonales
+\item[triqui4.py:] revisa si algun jugador gana en filas o columnas
+\item[triqui5.py:] evita la duplicación de código creando una función 'jugar'
+\item[triqui6.py:] introduce un ciclo en 'jugar' para validar las jugadas 
+\item[triqui7.py:] introduce la verificación de empates en el juego
+\item[triqui8.py:] llama a empate 2 veces en lugar de 1 y añade un mensaje al jugador
+\item[triqui9.py:] crea una función 'gana' para que 'jugar' sea mas pequeña y pone el ciclo 
+            del juego en la parte principal.
+            
+\end{description}
