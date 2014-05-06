@@ -314,12 +314,12 @@ sintaxis luce así:
 
 \beforeverb
 \begin{verbatim}
-def nuevaLínea():
+def nuevaLinea():
   print
 \end{verbatim}
 \afterverb
 %
-Esta función se llama \texttt{nuevaLínea}.  Los paréntesis vacíos indican que no 
+Esta función se llama \texttt{nuevaLinea}.  Los paréntesis vacíos indican que no 
 tiene parámetros. Contiene solamente una sentencia, que produce como salida
 una línea vacía. Eso es lo que ocurre cuando se usa el comando \texttt{print}
 sin argumentos.
@@ -330,7 +330,7 @@ predefinidas en Python:
 \beforeverb
 \begin{verbatim}
 print "Primera Línea."
-nuevaLínea()
+nuevaLinea()
 print "Segunda Línea."
 \end{verbatim}
 \afterverb
@@ -352,25 +352,25 @@ repetidamente:
 \beforeverb
 \begin{verbatim}
 print "Primera Línea."
-nuevaLínea()
-nuevaLínea()
-nuevaLínea()
+nuevaLinea()
+nuevaLinea()
+nuevaLinea()
 print "Segunda Línea."
 \end{verbatim}
 \afterverb
 %
-O podemos escribir una nueva función llamada \texttt{tresLíneas} que imprima
+O podemos escribir una nueva función llamada \texttt{tresLineas} que imprima
 tres líneas:
 
 \beforeverb
 \begin{verbatim}
-def tresLíneas():
-  nuevaLínea()
-  nuevaLínea()
-  nuevaLínea()
+def tresLineas():
+  nuevaLinea()
+  nuevaLinea()
+  nuevaLinea()
 
 print "Primera Línea."
-tresLíneas()
+tresLineas()
 print "Segunda Línea."
 \end{verbatim}
 \afterverb
@@ -387,7 +387,7 @@ Hay que enfatizar dos hechos sobre este programa:
 muy común y útil.
 
 \item Usted puede llamar una función dentro de otra función; en este caso
-\texttt{tresLíneas} llama a \texttt{nuevaLínea}.
+\texttt{tresLineas} llama a \texttt{nuevaLinea}.
 
 \end{enumerate}
 
@@ -404,7 +404,7 @@ natural, en lugar de un código arcano.
 
 \item Crear una nueva función puede recortar el tamaño de un programa eliminando
 el código repetitivo. Por ejemplo, una forma más corta de imprimir nueve
-líneas consecutivas consiste en llamar la función \texttt{tresLíneas} tres veces.
+líneas consecutivas consiste en llamar la función \texttt{tresLineas} tres veces.
 
 \end{itemize}
 
@@ -416,22 +416,22 @@ Uniendo los fragmentos de la sección 3.6, el programa completo luce así:
 
 \beforeverb
 \begin{verbatim}
-def nuevaLínea():
+def nuevaLinea():
   print
 
-def tresLíneas():
-  nuevaLínea()
-  nuevaLínea()
-  nuevaLínea()
+def tresLineas():
+  nuevaLinea()
+  nuevaLinea()
+  nuevaLinea()
 
 print "Primera Línea."
-tresLíneas()
+tresLineas()
 print "Segunda Línea."
 \end{verbatim}
 \afterverb
 %
-Este programa contiene dos definiciones de funciones: \texttt{nuevaLínea} y
-\texttt{tresLíneas}.  Las definiciones de funciones se ejecutan como 
+Este programa contiene dos definiciones de funciones: \texttt{nuevaLinea} y
+\texttt{tresLineas}.  Las definiciones de funciones se ejecutan como 
 las otras sentencias, pero su efecto es crear nuevas funciones. Las
 sentencias, dentro de la función, no se ejecutan hasta que la función
 sea llamada, y la definición no genera salida.
@@ -665,7 +665,7 @@ es una coincidencia.
 \section{Funciones con resultados}
 
 Usted ya puede haber notado que algunas de las funciones que estamos usando,
-como las matemáticas, entregan resultados. Otras funciones, como \texttt{nuevaLínea}, 
+como las matemáticas, entregan resultados. Otras funciones, como \texttt{nuevaLinea}, 
 ejecutan una acción pero no entregan un resultado. Esto genera algunas preguntas:
 
 \begin{enumerate}
@@ -674,10 +674,10 @@ ejecutan una acción pero no entregan un resultado. Esto genera algunas pregunta
 asigna a una variable o no lo usa como parte de una expresión mas grande)?
 
 \item ¿Qué pasa si usted usa una función sin un resultado como parte de 
-una expresión, tal como  \texttt{nuevaLínea() + 7}?
+una expresión, tal como  \texttt{nuevaLinea() + 7}?
 
 \item ¿Se pueden escribir funciones que entreguen resultados, o estamos limitados
-a funciones tan simples como \texttt{nuevaLínea} y \texttt{imprimaDoble}?
+a funciones tan simples como \texttt{nuevaLinea} y \texttt{imprimaDoble}?
 
 \end{enumerate}
 
