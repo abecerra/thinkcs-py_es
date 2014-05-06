@@ -461,18 +461,18 @@ Despegue!
 \end{verbatim}
 \afterverb
 %
-Como otro ejemplo, utilizaremos nuevamente las funciones \texttt{nuevaLinea} y
-\texttt{tresLineas}:
+Como otro ejemplo, utilizaremos nuevamente las funciones \texttt{nuevaLínea} y
+\texttt{tresLíneas}:
 
 \beforeverb
 \begin{verbatim}
 def nuevalinea():
   print
 
-def tresLineas():
-  nuevaLinea()
-  nuevaLinea()
-  nuevaLinea()
+def tresLíneas():
+  nuevaLínea()
+  nuevaLínea()
+  nuevaLínea()
 \end{verbatim}
 \afterverb
 %
@@ -481,10 +481,10 @@ Una mejor alternativa sería:
 
 \beforeverb
 \begin{verbatim}
-def nLineas(n):
+def nLíneas(n):
   if n > 0:
     print
-    nLineas(n-1)
+    nLíneas(n-1)
 \end{verbatim}
 \afterverb
 %
