@@ -90,7 +90,7 @@ La función  \texttt{len} retorna el número de carácteres en una cadena:
 
 \beforeverb
 \begin{verbatim}
->>> fruta = "banano"
+>>> fruta = "banana"
 >>> len(fruta)
 6
 \end{verbatim}
@@ -122,7 +122,7 @@ ultima = fruta[longitud-1]
 %
 Alternativamente, podemos usar índices negativos, que cuentan hacia atrás 
 desde el fin de la cadena. La expresión \texttt{fruta[-1]} retorna la última letra
-\texttt{fruit[-2]} retorna la penúltima, y así sucesivamente.
+\texttt{fruta[-2]} retorna la penúltima, y así sucesivamente.
 
 \index{índice!negativo}
 
@@ -164,14 +164,14 @@ que Python tiene una sintaxis alternativa más simple---el ciclo \texttt{for} :
 
 \beforeverb
 \begin{verbatim}
-for carácter in fruta:
+for caracter in fruta:
   print carácter
 \end{verbatim}
 \afterverb
 %
 
 Cada vez que el ciclo itera, el próximo carácter en la cadena se asigna
-a la variable \texttt{carácter}. El ciclo continúa hasta que no quedan más
+a la variable \texttt{caracter}. El ciclo continúa hasta que no quedan más
 carácteres.
 
 \index{concatenación}
@@ -248,7 +248,7 @@ carácteres, como en el siguiente diagrama:
 \centerline{\includegraphics{illustrations/banana.eps}}
 \afterfig
 
-Si usted omite el primer índice (despues de los puntos seguidos), el
+Si usted omite el primer índice (antes de los puntos seguidos), el
 segmento comienza en el inicio de la cadena. Si se omite el segundo
 índice, el segmento va hasta el final. Entonces:
 
