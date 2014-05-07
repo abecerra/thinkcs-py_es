@@ -329,9 +329,9 @@ predefinidas en Python:
 
 \beforeverb
 \begin{verbatim}
-print "Primera Línea."
+print "Primera Linea."
 nuevaLinea()
-print "Segunda Línea."
+print "Segunda Linea."
 \end{verbatim}
 \afterverb
 %
@@ -339,9 +339,9 @@ La salida para este programa es:
 
 \beforeverb
 \begin{verbatim}
-Primera Línea.
+Primera Linea.
 
-Segunda Línea
+Segunda Linea.
 \end{verbatim}
 \afterverb
 %
@@ -351,11 +351,11 @@ repetidamente:
 
 \beforeverb
 \begin{verbatim}
-print "Primera Línea."
+print "Primera Linea."
 nuevaLinea()
 nuevaLinea()
 nuevaLinea()
-print "Segunda Línea."
+print "Segunda Linea."
 \end{verbatim}
 \afterverb
 %
@@ -369,14 +369,14 @@ def tresLineas():
   nuevaLinea()
   nuevaLinea()
 
-print "Primera Línea."
+print "Primera Linea."
 tresLineas()
-print "Segunda Línea."
+print "Segunda Linea."
 \end{verbatim}
 \afterverb
 %
 Esta función contiene tres sentencias, y todas están sangradas por dos espacios.
-Como la próxima sentencia (print "Primera Línea") no está sangrada, Python la
+Como la próxima sentencia (print "Primera Linea") no está sangrada, Python la
 interpreta afuera de la función.
 
 Hay que enfatizar dos hechos sobre este programa:
@@ -424,9 +424,9 @@ def tresLineas():
   nuevaLinea()
   nuevaLinea()
 
-print "Primera Línea."
+print "Primera Linea."
 tresLineas()
-print "Segunda Línea."
+print "Segunda Linea."
 \end{verbatim}
 \afterverb
 %
@@ -758,12 +758,12 @@ imprime cuando ocurre un error en tiempo de ejecución.
 \begin{enumerate}
 
  \item Con un editor de texto cree un guión de Python que se llame pruebame3.py. Escriba en este 
- archivo una función que se llame \verb+nueve_lineas+ que use la función \verb+tres_lineas+ para mostrar nueve líneas 
- en blanco. Enseguida agregue una función que se llame \verb+limpia_pantalla+ que muestre veinticinco líneas en 
- blanco. La última instrucción en su programa debe ser una llamada a \verb+limpia_pantalla+.
+ archivo una función que se llame \verb+nueveLineas+ que use la función \verb+tresLineas+ para mostrar nueve líneas 
+ en blanco. Enseguida agregue una función que se llame \verb+limpiaPantalla+ que muestre veinticinco líneas en 
+ blanco. La última instrucción en su programa debe ser una llamada a \verb+limpiaPantalla+.
  
  \item Mueva la última instrucción del archivo pruebame3.py al inicio del programa, de forma tal que la llamada a la 
- función \verb+limpia_pantalla+ esté antes que la definición de función. Ejecute el programa y registre qué mensaje de 
+ función \verb+limpiaPantalla+ esté antes que la definición de función. Ejecute el programa y registre qué mensaje de 
  error obtiene. ¿Puede establecer una regla sobre las definciones de funciones y las llamadas a función que describa 
  la posición relativa entre ellas en el programa?
  

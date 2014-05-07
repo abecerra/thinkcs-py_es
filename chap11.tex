@@ -323,8 +323,8 @@ el siguiente elemento como una cadena:
 
 \beforeverb
 \begin{verbatim}
->>> "En %d días ganamos %f millones de %s." % (4,1.2,'pesos')
-'En 34 días ganamos 1.200000 millones de pesos.'
+>>> "En %d dias ganamos %f millones de %s." % (4,1.2,'pesos')
+'En 4 dias ganamos 1.200000 millones de pesos.'
 \end{verbatim}
 \afterverb
 %
@@ -340,7 +340,7 @@ expresiones deben coincidir con las secuencias de formato:
 \begin{verbatim}
 >>> "%d %d %d" % (1,2)
 TypeError: not enough arguments for format string
->>> "%d" % 'dólares'
+>>> "%d" % 'dolares'
 TypeError: illegal argument type for built-in operation
 \end{verbatim}
 \afterverb
@@ -408,11 +408,11 @@ imprimiremos el contenido:
 
 \beforeverb
 \begin{verbatim}
->>> tarifas = {'maría': 6.23, 'josé': 5.45, 'jesús': 4.25}
+>>> tarifas = {'maria': 6.23, 'jose': 5.45, 'jesus': 4.25}
 >>> informe (tarifas)
-josé                         5.45
-jesús                        4.25
-maría                        6.23
+jose                         5.45
+jesus                        4.25
+maria                        6.23
 \end{verbatim}
 \afterverb
 %
