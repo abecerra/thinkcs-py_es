@@ -498,7 +498,7 @@ class JuegoSolterona(JuegoDeCartas):
     cartaEscogida = self.manos[vecino].eliminarCarta()
     self.manos[i].agregarCarta(cartaEscogida)
     print "Mano", self.manos[i].nombre, 
-          "escogió", cartaEscogida
+          "escogio", cartaEscogida
     cont = self.manos[i].eliminarParejas()
     self.manos[i].barajar()
     return cont
