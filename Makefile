@@ -1,17 +1,8 @@
 LATEX = latex
 DVIPS = dvips
 
-%.dvi: %.tex
-	$(LATEX) $<
 
-%.ps: %.dvi
-	$(DVIPS) -o $@ $<
-
-%.pdf: %.ps
-	ps2pdf $@
-
-
-top.dvi: top.tex
+top.dvi: top.tex 
 	latex --src-specials  top
 	latex --src-specials top
 	latex --src-specials top
@@ -62,7 +53,7 @@ dist:
 	tar -czf thinkCSpy.tar.gz thinkCSpy
 
 clean:
-	rm -f *~ *.aux *.log *.idx *.ilg *.ind *.toc *.lore *.dvi *.ps
+	rm -f *~ *.aux *.log *.idx *.ilg *.ind *.toc *.lore *.ps
 
 
 
