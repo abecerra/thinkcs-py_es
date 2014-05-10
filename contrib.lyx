@@ -1,0 +1,1051 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+LyX source for textbook 
+\begin_inset Quotes eld
+\end_inset
+
+How to think like a computer scientist'' 
+\end_layout
+
+\begin_layout Plain Layout
+Copyright (c) 2001 Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Lista de los colaboradores
+\end_layout
+
+\begin_layout Standard
+Este libro vino a la luz debido a una colaboración que no sería posible
+ sin la licencia de documentación libre de la GNU (Free Documentation License).
+ Quisiéramos agradecer a la Free Software Foundation por desarrollar esta
+ licencia y, por supuesto, por ponerla a nuestra disposición.
+\end_layout
+
+\begin_layout Standard
+Nosotros queremos agradecer a los mas de 100 juiciosos y reflexivos lectores
+ que nos han enviado sugerencias y correcciones durante los años pasados.
+ En el espíritu del software libre, decidimos expresar nuestro agradecimiento
+ en la forma de una lista de colaboradores.
+ Desafortunadamente, esta lista no está completa, pero estamos haciendo
+ nuestro mejor esfuerzo para mantenerla actualizada.
+\end_layout
+
+\begin_layout Standard
+Si tiene la oportunidad de leer la lista, tenga en cuenta que cada persona
+ mencionada aquí le ha ahorrado a usted y a todos los lectores subsecuentes
+ la confusión debida a un error técnico o debido a una explicación confusa,
+ solo por enviarnos una nota.
+\end_layout
+
+\begin_layout Standard
+Después de tantas correcciones, todavía pueden haber errores en este libro.
+ Si ve uno, esperamos que tome un minuto para contactarnos.
+ El correo electrónico es 
+\family typewriter
+feedback@thinkpython.com
+\family default
+.
+ Si hacemos un cambio debido a su sugerencias, usted aparecerá en la siguiente
+ versión de la lista de colaboradores (a menos que usted pida ser omitido).
+ Gracias!
+\end_layout
+
+\begin_layout Itemize
+Lloyd Hugh Allen remitió una corrección a la Sección 8.4.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{lha2@columbia.edu}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Yvon Boulianne corrigió un error semántico en el Capítulo 5.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%She can be reached at: 
+\backslash
+texttt{mystic@monuniverse.net}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Fred Bremmer hizo una corrección en la Sección 2.1.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at:  
+\backslash
+texttt{Fred.Bremmer@ubc.cu}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Jonah Cohen escribió los guiones en Perl para convertir la fuente 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+LaTeX
+\end_layout
+
+\end_inset
+
+, de este libro, a un maravilloso HTML.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%His Web page is 
+\backslash
+texttt{jonah.ticalc.org}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%and his email is 
+\backslash
+texttt{JonahCohen@aol.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Michael Conlon remitió una corrección de gramática en el Capítulo 3 una
+ mejora de estilo en el Capítulo 2, e inició la discusión de los aspectos
+ técnicos de los intérpretes.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Michael can be reached at: 
+\backslash
+texttt{michael.conlon@sru.edu}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Benoit Girard envió una corrección a un extraño error en la Sección 5.6.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Benoit can be reached at:
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+texttt{benoit.girard@gouv.qc.ca}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Courtney Gleason y Katherine Smith escribieron 
+\family typewriter
+horsebet.py
+\family default
+, que se usaba como un caso de estudio en una versión anterior de este libro.
+ Su programa se puede encontrar en su website.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Courtney can be reached at: {
+\backslash
+tt
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%orion1558@aol.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Lee Harr sometió más correcciones de las que tenemos espacio para enumerar
+ aquí, y, por supuesto, debería ser listado como uno de los editores principales
+ del texto.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{missive@linuxfreemail.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+James Kaylin es un estudiante usando el texto.
+ Él ha enviado numerosas correcciones.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%James can be reached by email at: 
+\backslash
+texttt{Jamarf@aol.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+David Kershaw arregló la función errónea 
+\family typewriter
+imprimaDoble
+\family default
+ en la Sección 3.10.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{david
+\backslash
+_kershaw@merck.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Eddie Lam ha enviado numerosas correcciones a los Capítulos 1, 2, y 3.
+ Él corrigió el Makefile para que creara un índice, la primera vez que se
+ compilaba el documento, y nos ayudó a instalar un sistema de control de
+ versiones.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Eddie can be reached at:
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+texttt{nautilus@yoyo.cc.monash.edu.au}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Man-Yong Lee envió una corrección al código de ejemplo en la Sección 2.4.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reaced at: 
+\backslash
+texttt{yong@linuxkorea.co.kr}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+David Mayo notó que la palabra 
+\begin_inset Quotes eld
+\end_inset
+
+inconscientemente
+\begin_inset Quotes erd
+\end_inset
+
+ debe cambiarse por 
+\begin_inset Quotes eld
+\end_inset
+
+subconscientemente
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%David can be reached at:
+\backslash
+texttt{bdbear44@netscape.net}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Chris McAloon envió varias correcciones a las Secciones 3.9 y 3.10.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{cmcaloon@ou.edu}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Matthew J.
+ Moelter ha sido un contribuidor de mucho tiempo quien remitió numerosas
+ correcciones y sugerencias al libro.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at:
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+texttt{mmoelter@calpoly.edu}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Simon Dicon Montford reportó una definición de función que faltaba y varios
+ errores en el Capítulo 3.
+ Él también encontró errores en la función 
+\family typewriter
+incrementar
+\family default
+ del Capítulo 13.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{dicon@bigfoot.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+John Ouzts corrigió la definición de 
+\begin_inset Quotes eld
+\end_inset
+
+valor de retorno
+\begin_inset Quotes erd
+\end_inset
+
+ en el Capítulo 3.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{jouzts@bigfoot.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Kevin Parks envió sugerencias valiosas para mejorar la distribución del
+ libro.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{cpsoct@lycos.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+David Pool envió la corrección de un error en el glosario del Capítulo 1
+ y palabras de estímulo.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{pooldavid@hotmail.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Michael Schmitt envió una corrección al capítulo de archivos y excepciones.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{ipv6
+\backslash
+_128@yahoo.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Robin Shaw notó un error en la Sección 13.1, donde la función imprimirHora
+ se usaba en un ejemplo sin estar definida.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Robin can be reached at: 
+\backslash
+texttt{randj@iowatelecom.net}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Paul Sleigh encontró un error en el Capítulo 7 y otro en los guiones de
+ Perl de Jonah Cohen que generan HTML a partir de 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+LaTeX
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{bat@atdot.dotat.org}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+item Christopher Smith is a computer science teacher at the Blake
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%School in Minnesota who teaches Python to his beginning students.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{csmith@blakeschool.org or smiles@saysomething.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Craig T.
+ Snydal está probando el texto en un curso en Drew University.
+ El ha aportado varias sugerencias valiosas y correcciones.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%and can be reached at: 
+\backslash
+texttt{csnydal@drew.edu}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ian Thomas y sus estudiantes están usando el texto en un curso de programación.
+ Ellos son los primeros en probar los capítulos de la segunda mitad del
+ libro y han enviado numerosas correcciones y sugerencias.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Ian can be reached at: 
+\backslash
+texttt{ithomas@sd70.bc.ca}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Keith Verheyden envió una corrección al Capítulo 3.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{kverheyd@glam.ac.uk}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Peter Winstanley descubrió un viejo error en nuestro Latín, en el capítulo
+ 3.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at:
+\backslash
+texttt{Peter.Winstanley@scotland.gsi.gov.uk} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Chris Wrobel hizo correcciones al código en el capítulo sobre archivos,
+ E/S y excepciones.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{ferz980@yahoo.com}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Moshe Zadka hizo contribuciones inestimables a este proyecto.
+ Además de escribir el primer bosquejo del capítulo sobre Diccionarios,
+ también proporcionó una dirección continua en los primeros años del libro.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%He can be reached at: 
+\backslash
+texttt{moshez@math.huji.ac.il}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Christoph Zwerschke envió varias correcciones y sugerencias pedagógicas,
+ y explicó la diferencia entre 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ gleich
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ selbe
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+James Mayer nos envió un montón de errores tipográficos y de deletreo, incluyend
+o dos en la lista de colaboradores
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% james.mayer@acm.org
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Hayden McAfee descubrió una inconsistencia potencialmente confusa entre
+ dos ejemplos.
+\end_layout
+
+\begin_layout Itemize
+Angel Arnal hace parte de un equipo internacional de traductores que trabajan
+ en la versión española del texto.
+ Él también ha encontrado varios errores en la versión inglesa.
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,1984 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+LyX source for textbook 
+\begin_inset Quotes eld
+\end_inset
+
+How to think like a computer scientist'' 
+\end_layout
+
+\begin_layout Plain Layout
+Copyright (c) 2001 Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Depuración 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+depuración
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay diferentes tipos de error que pueden suceder en un programa y es muy
+ útil distinguirlos a fin de rastrearlos más rápidamente:
+\end_layout
+
+\begin_layout Itemize
+Los errores sintácticos se producen cuando Python traduce el código fuente
+ en código objeto.
+ Usualmente indican que hay algún problema en la sintaxis del programa.
+ Por ejemplo, omitir los puntos seguidos al final de una sentencia 
+\family typewriter
+def
+\family default
+ produce un mensaje de error un poco redundante 
+\family typewriter
+SyntaxError: invalid syntax
+\family default
+.
+\end_layout
+
+\begin_layout Itemize
+Los errores en tiempo de ejecución se producen por el sistema de ejecución,
+ si algo va mal mientras el programa corre o se ejecuta.
+ La mayoría de errores en tiempo de ejecución incluyen información sobre
+ la localización del error y las funciones que se estaban ejecutando.
+ Ejemplo: una recursión infinita eventualmente causa un error en tiempo
+ de ejecución de 
+\begin_inset Quotes eld
+\end_inset
+
+maximum recursion depth exceeded.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Los errores semánticos se dan en programas que compilan y se ejecutan normalment
+e, pero no hacen lo que se pretendía.
+ Ejemplo: una expresión podría evaluarse en un orden inesperado, produciendo
+ un resultado incorrecto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de compilación
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error sintáctico
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error semántico
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error!en tiempo de compilación
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error!sintaxis
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error!tiempo de ejecución
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error!semántica
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+excepción
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El primer paso en la depuración consiste en determinar la clase de error
+ con la que se está tratando.
+ Aunque las siguientes secciones se organizan por tipo de error, algunas
+ técnicas se aplican en más de una situación.
+\end_layout
+
+\begin_layout Section
+Errores sintácticos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+mensajes de error
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+compilador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los errores sintácticos se corrigen fácilmente una vez que usted ha determinado
+ a qué apuntan.
+ Desafortunadamente, en algunas ocasiones los mensajes de error no son de
+ mucha ayuda.
+ Los mensajes de error más comunes son 
+\family typewriter
+SyntaxError: invalid syntax
+\family default
+ y 
+\family typewriter
+SyntaxError: invalid token
+\family default
+, que no son muy informativos.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, el mensaje sí dice dónde ocurre el problema en el programa.
+ Más precisamente, dice dónde fue que Python encontró un problema, que no
+ necesariamente es el lugar dónde está el error.
+ Algunas veces el error está antes de la localización que da el mensaje
+ de error, a menudo en la línea anterior.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desarrollo incremental de programas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si usted está construyendo los programas incrementalmente, debería tener
+ una buena idea de dónde se localiza el error.
+ Estará en la última línea que se agregó.
+\end_layout
+
+\begin_layout Standard
+Si usted está copiando código desde un libro, comience por comparar su código
+ y el del libro muy cuidadosamente.
+ Chequee cada carácter.
+ Al mismo tiempo, recuerde que el libro puede tener errores, así que si
+ encuentra algo que parece un error sintáctico, entonces debe serlo.
+\end_layout
+
+\begin_layout Standard
+Aquí hay algunas formas de evitar los errores sintácticos más comunes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+syntax
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Asegúrese de no usar una palabra reservada de Python como nombre de variable
+\end_layout
+
+\begin_layout Enumerate
+Chequee que haya colocado dos puntos seguidos al final de la cabecera de
+ cada sentencia compuesta, incluyendo los ciclos 
+\family typewriter
+for
+\family default
+, 
+\family typewriter
+while
+\family default
+, los condicionales 
+\family typewriter
+if
+\family default
+, las definiciones de función 
+\family typewriter
+def
+\family default
+ y las 
+\family typewriter
+clases
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
+Chequee que la indentación o sangrado sea consistente.
+ Se puede indentar con espacios o tabuladores, pero es mejor no mezclarlos.
+ Cada nivel debe sangrarse la misma cantidad de espacios o tabuladores.
+\end_layout
+
+\begin_layout Enumerate
+Asegúrese de que las cadenas en los programas estén encerradas entre comillas.
+\end_layout
+
+\begin_layout Enumerate
+Si usted tiene cadenas multilínea creadas con tres comillas consecutivas,
+ verifique su terminación.
+ Una cadena no terminada puede causar un error denominado 
+\family typewriter
+invalid token
+\family default
+ al final de su programa, o puede tratar la siguiente parte del programa
+ como si fuera una cadena, hasta toparse con la siguiente cadena.
+ En el segundo caso, ¡puede que Python no produzca ningún mensaje de error!
+\end_layout
+
+\begin_layout Enumerate
+Un paréntesis sin cerrar---
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+(+
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+{+
+\end_layout
+
+\end_inset
+
+, o 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+[+
+\end_layout
+
+\end_inset
+
+---hace que Python continúe con la siguiente línea como si fuera parte de
+ la sentencia actual.
+ Generalmente, esto causa un error inmediato en la siguiente línea.
+\end_layout
+
+\begin_layout Enumerate
+Busque por la confusión clásica entre 
+\family typewriter
+=
+\family default
+ y 
+\family typewriter
+==
+\family default
+, adentro y afuera de los condicionales.
+\end_layout
+
+\begin_layout Standard
+Si nada de esto funciona, avance a la siguiente sección...
+\end_layout
+
+\begin_layout Subsection
+No puedo ejecutar mi programa sin importar lo que haga
+\end_layout
+
+\begin_layout Standard
+Si el compilador dice que hay un error y usted no lo ha visto, eso puede
+ darse porque usted y el compilador no están observando el mismo código.
+ Chequee su ambiente de programación para asegurarse de que el programa
+ que está editando es el que Python está tratando de ejecutar.
+ Si no está seguro, intente introducir deliberadamente un error sintáctico
+ obvio al principio del programa.
+ Ahora ejecútelo o impórtelo de nuevo.
+ Si el compilador no encuentra el nuevo error, probablemente hay algún problema
+ de configuración de su ambiente de programación.
+\end_layout
+
+\begin_layout Standard
+Si esto pasa, una posible salida es empezar de nuevo con un programa como
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Hola todo el mundo!,
+\begin_inset Quotes erd
+\end_inset
+
+ y asegurarse de que pueda ejecutarlo correctamente.
+ Después, añadir gradualmente a éste los trozos de su programa.
+\end_layout
+
+\begin_layout Section
+Errores en tiempo de ejecución
+\end_layout
+
+\begin_layout Standard
+Cuando su programa está bien sintácticamente Python puede importarlo y empezar
+ a ejecutarlo.
+ ¿Qué podría ir mal ahora?
+\end_layout
+
+\begin_layout Subsection
+Mi programa no hace absolutamente nada
+\end_layout
+
+\begin_layout Standard
+Este problema es el más común cuando su archivo comprende funciones y clases
+ pero no hace ningún llamado para empezar la ejecución.
+ Esto puede ser intencional si usted sólo planea importar este módulo para
+ proporcionar funciones y clases.
+\end_layout
+
+\begin_layout Standard
+Si no es intencional, asegúrese de que está llamando a una función para
+ empezar la ejecución, o ejecute alguna desde el indicador de entrada (prompt).
+ Revise la sección posterior sobre el 
+\begin_inset Quotes eld
+\end_inset
+
+Flujo de Ejecución
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Mi programa se detiene
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ciclo infinito
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión infinita
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+detención
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si un programa se detiene y parece que no está haciendo nada, decimos que
+ está 
+\begin_inset Quotes eld
+\end_inset
+
+detenido.
+\begin_inset Quotes erd
+\end_inset
+
+ Esto a veces sucede porque está atrapado en un ciclo infinito o en una
+ recursión infinita.
+\end_layout
+
+\begin_layout Itemize
+Si hay un ciclo sospechoso de ser la causa del problema, añada una sentencia
+ 
+\family typewriter
+print
+\family default
+ inmediatamente antes del ciclo que diga 
+\begin_inset Quotes eld
+\end_inset
+
+entrando al ciclo
+\begin_inset Quotes erd
+\end_inset
+
+ y otra inmediatamente después, que diga 
+\begin_inset Quotes eld
+\end_inset
+
+saliendo del ciclo.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Ejecute el programa.
+ Si obtiene el primer mensaje y no obtiene el segundo, ha encontrado su
+ ciclo infinito.
+ revise la sección posterior 
+\begin_inset Quotes eld
+\end_inset
+
+Ciclo Infinito
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+La mayoría de las veces, una recursión infinita causará que el programa
+ se ejecute por un momento y luego produzca un error 
+\begin_inset Quotes eld
+\end_inset
+
+RuntimeError: Maximum recursion depth exceeded
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Si esto ocurre revise la sección posterior 
+\begin_inset Quotes eld
+\end_inset
+
+Recursión Infinita
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Si no está obteniendo este error, pero sospecha que hay un problema con
+ una función recursiva o método, también puede usar las técnicas de la sección
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Recursión Infinita
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Si ninguno de estos pasos funciona, revise otros ciclos y otras funciones
+ recursivas, o métodos.
+\end_layout
+
+\begin_layout Itemize
+Si eso no funciona entonces es posible que usted no comprenda el flujo de
+ ejecución que hay en su programa.
+ Vaya a la sección posterior 
+\begin_inset Quotes eld
+\end_inset
+
+Flujo de ejecución
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Ciclo infinito
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ciclo infinito
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ciclo!infinito
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+condición
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ciclo!condición
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si usted cree que tiene un ciclo infinito añada una sentencia 
+\family typewriter
+print
+\family default
+ al final de éste que imprima los valores de las variables de ciclo (las
+ que aparecen en la condición) y el valor de la condición.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+while x > 0 and y < 0 :
+\end_layout
+
+\begin_layout Verbatim
+
+  # hace algo con x
+\end_layout
+
+\begin_layout Verbatim
+
+  # hace algo con y
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  print  "x: ", x
+\end_layout
+
+\begin_layout Verbatim
+
+  print  "y: ", y
+\end_layout
+
+\begin_layout Verbatim
+
+  print  "condicion: ", (x > 0 and y < 0)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora, cuando ejecute el programa, usted verá tres líneas de salida para
+ cada iteración del ciclo.
+ En la última iteración la condición debe ser 
+\family typewriter
+falsa
+\family default
+.
+ Si el ciclo sigue, usted podrá ver los valores de 
+\family typewriter
+x
+\family default
+ y 
+\family typewriter
+y
+\family default
+, y puede deducir por qué no se están actualizando correctamente.
+\end_layout
+
+\begin_layout Subsubsection
+Recursión infinita
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión Infinita
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión Infinita
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La mayoría de las veces una recursión infinita causará que el programa se
+ ejecute durante un momento y luego producirá un error: 
+\family typewriter
+Maximum recursion depth exceeded
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Si sospecha que una función o método está causando una recursión infinita,
+ empiece por chequear la existencia de un caso base.
+ En otras palabras, debe haber una condición que haga que el programa o
+ método retorne sin hacer un llamado recursivo.
+ Si no lo hay, es necesario reconsiderar el algoritmo e identificar un caso
+ base.
+\end_layout
+
+\begin_layout Standard
+Si hay un caso base, pero el programa no parece alcanzarlo, añada una sentencia
+ 
+\family typewriter
+print
+\family default
+ al principio de la función o método que imprima los parámetros.
+ Ahora, cuando ejecute el programa usted verá unas pocas líneas de salida
+ cada vez que la función o método es llamada, y podrá ver los parámetros.
+ Si no están cambiando de valor acercándose al caso base, usted podrá deducir
+ por qué ocurre esto.
+\end_layout
+
+\begin_layout Subsubsection
+Flujo de ejecución
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Flujo de Ejecución
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ejecución!flujo de
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si no está seguro de cómo se mueve el flujo de ejecución a través de su
+ programa, añada sentencias 
+\family typewriter
+print
+\family default
+ al comienzo de cada función con un mensaje como 
+\begin_inset Quotes eld
+\end_inset
+
+entrando a la función 
+\family typewriter
+foo
+\family default
+,
+\begin_inset Quotes erd
+\end_inset
+
+ donde 
+\family typewriter
+foo
+\family default
+ es el nombre de la función.
+\end_layout
+
+\begin_layout Standard
+Ahora, cuando ejecute el programa, se imprimirá una traza de cada función
+ a medida que van siendo llamadas.
+\end_layout
+
+\begin_layout Subsection
+Cuando ejecuto el programa obtengo una excepción
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+excepción
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si algo va mal durante la ejecución, Python imprime un mensaje que incluye
+ el nombre de la excepción, la línea del programa donde ocurrió, y un trazado
+ inverso.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+trazado inverso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El trazado inverso identifica la función que estaba ejecutándose, la función
+ que la llamó, la función que llamó a 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ esta
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ última, y así sucesivamente.
+ En otras palabras, traza el camino de llamados que lo llevaron al punto
+ actual de ejecución.
+ También incluye el número de línea en su archivo, donde cada uno de estos
+ llamados tuvo lugar.
+\end_layout
+
+\begin_layout Standard
+El primer paso consiste en examinar en el programa el lugar donde ocurrió
+ el error y ver si se puede deducir qué pasó.
+ Aquí están algunos de los errores en tiempo de ejecución más comunes:
+\end_layout
+
+\begin_layout Description
+NameError: usted está tratando de usar una variable que no existe en el
+ ambiente actual.
+ Recuerde que las variables locales son locales.
+ No es posible referirse a ellas afuera de la función donde se definieron.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+NameError
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TypeError
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+TypeError: hay varias causas:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Usted está tratando de usar un valor impropiamente.
+ Por ejemplo: indexar una cadena, lista o tupla con un valor que no es entero.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+índice
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No hay correspondencia entre los elementos en una cadena de formato y los
+ elementos pasados para hacer la conversión.
+ Esto puede pasar porque el número de elementos no coincide o porque se
+ está pidiendo una conversión invalida.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador de formato
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador!formato
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Usted está pasando el número incorrecto de argumentos a una función o método.
+ Para los métodos, mire la definición de métodos y chequee que el primer
+ parámetro sea 
+\family typewriter
+self
+\family default
+.
+ Luego mire el llamado, asegúrese de que se hace el llamado sobre un objeto
+ del tipo correcto y de pasar los otros parámetros correctamente.
+\end_layout
+
+\end_deeper
+\begin_layout Description
+KeyError: usted está tratando de acceder a un elemento de un diccionario
+ usando una llave que éste no contiene.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+KeyError
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diccionario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+AttributeError: está tratando de acceder a un atributo o método que no existe.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+AttributeError
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Description
+IndexError: el índice que está usando para acceder a una lista, cadena o
+ tupla es más grande que su longitud menos uno.
+ Inmediatamente, antes de la línea del error, agregue una sentencia 
+\family typewriter
+print
+\family default
+ para desplegar el valor del índice y la longitud del arreglo.
+ ¿Tiene éste el tamaño correcto? ¿Tiene el índice el valor correcto?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+IndexError
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Agregué tantas sentencias 
+\family typewriter
+print
+\family default
+ que estoy inundado de texto de salida
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia print
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!print
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uno de los problemas de usar sentencias 
+\family typewriter
+print
+\family default
+ para depurar es que uno puede terminar inundado de salida.
+ Hay dos formas de proceder: simplificar la salida o simplificar el programa.
+\end_layout
+
+\begin_layout Standard
+Para simplificar la salida se pueden eliminar o comentar sentencias 
+\family typewriter
+print
+\family default
+ que no son de ayuda, o se pueden combinar, o se puede dar formato a la
+ salida, de forma que quede más fácil de entender.
+\end_layout
+
+\begin_layout Standard
+Para simplificar el programa hay varias cosas que se pueden hacer.
+ Primero, disminuya la escala del problema que el programa intenta resolver.
+ Por ejemplo, si usted está ordenando un arreglo, utilice uno 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ pequeño
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ como entrada.
+ Si el programa toma entrada del usuario, pásele la entrada más simple que
+ causa el problema.
+\end_layout
+
+\begin_layout Standard
+Segundo, limpie el programa.
+ Borre el código muerto y reorganízelo para hacerlo lo más legible que sea
+ posible.
+ Por ejemplo, si usted sospecha que el problema está en una sección de código
+ profundamente anidada, intente reescribir esa parte con una estructura
+ más sencilla.
+ Si sospecha de una función grande, trate de partirla en funciones mas pequeñas
+ y pruébelas separadamente.
+\end_layout
+
+\begin_layout Standard
+Este proceso de encontrar el caso mínimo de prueba que activa el problema
+ a menudo permite encontrar el error.
+ Si usted encuentra que el programa funciona en una situación, pero no en
+ otras, esto le da una pista de lo que está sucediendo.
+\end_layout
+
+\begin_layout Standard
+Similarmente, reescribir un trozo de código puede ayudar a encontrar errores
+ muy sutiles.
+ Si usted hace un cambio que no debería alterar el comportamiento del programa,
+ y sí lo hace, esto es una señal de alerta.
+\end_layout
+
+\begin_layout Section
+Errores semánticos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error semántico 
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error!semántico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estos son los mas difíciles de depurar porque ni el compilador ni el sistema
+ de ejecución dan información sobre lo que está fallando.
+ Sólo usted sabe lo que el programa debe hacer y sólo usted sabe por qué
+ no lo está haciendo bien.
+\end_layout
+
+\begin_layout Standard
+El primer paso consiste en hacer una conexión entre el código fuente del
+ programa y el comportamiento que está dándose.
+ Ahora, usted necesita una hipótesis sobre lo que el programa está haciendo
+ realmente.
+ Una de las cosas que complica el asunto es que la ejecución de programas
+ en un computador moderno es muy rápida.
+\end_layout
+
+\begin_layout Standard
+A veces deseará desacelerar el programa hasta una velocidad humana, y con
+ algunos programas depuradores esto es posible.
+ Pero el tiempo que toma insertar unas sentencias 
+\family typewriter
+print
+\family default
+ bien situadas a menudo es mucho más corto comparado con la configuración
+ del depurador, la inserción y eliminación de puntos de quiebre (breakpoints
+ en inglés) y 
+\begin_inset Quotes eld
+\end_inset
+
+saltar
+\begin_inset Quotes erd
+\end_inset
+
+ por el programa al punto donde el error se da.
+\end_layout
+
+\begin_layout Subsection
+Mi programa no funciona
+\end_layout
+
+\begin_layout Standard
+Usted debe hacerse estas preguntas:
+\end_layout
+
+\begin_layout Itemize
+¿Hay algo que el programa debería hacer, pero no hace? Encuentre la sección
+ de código que tiene dicha funcionalidad y asegúrese de que se ejecuta en
+ los momentos adecuados.
+\end_layout
+
+\begin_layout Itemize
+¿Está pasando algo que no debería? Encuentre código en su programa que tenga
+ una funcionalidad y vea si ésta se ejecuta cuando no debería.
+\end_layout
+
+\begin_layout Itemize
+¿Hay una sección de código que produce un efecto que no esperaba usted?
+ Asegúrese de que entiende dicha sección de código, especialmente si tiene
+ llamados a funciones o métodos en otros módulos.
+ Lea la documentación para las funciones que usted llama.
+ Intente escribir casos de prueba más sencillos y chequee los resultados.
+\end_layout
+
+\begin_layout Standard
+Para programar, usted necesita un modelo mental de cómo trabajan los programas.
+ Si usted escribe un programa que no hace lo que se espera, muy frecuentemente
+ el problema no está en el programa, sino en su modelo mental.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+modelo!mental
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+modelo mental
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La mejor forma de corregir su modelo mental es descomponer el programa en
+ sus componentes (usualmente funciones y métodos) para luego probarlos independi
+entemente.
+ Una vez encuentre la discrepancia entre su modelo y la realidad, el problema
+ puede resolverse.
+\end_layout
+
+\begin_layout Standard
+Por supuesto, usted debería construir y probar componentes a medida que
+ desarrolla el programa.
+ Si encuentra un problema, debería haber una pequeña cantidad de código
+ nuevo que puede estar incorrecto.
+\end_layout
+
+\begin_layout Subsection
+He obtenido una expresión grande y peluda que no hace lo que espero
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+expresión!grande y peluda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Escribir expresiones complejas está bien en tanto queden legibles, sin embargo,
+ puede ser difícil depurarlas.
+ Es una buena idea separar una expresión compleja en una serie de asignaciones
+ a variables temporales.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+self.manos[i].agregarCarta(
+\end_layout
+
+\begin_layout Verbatim
+
+  self.manos[self.encontrarVecino(i)].eliminarCarta())
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esto puede reescribirse como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+vecino = self.encontrarVecino (i)
+\end_layout
+
+\begin_layout Verbatim
+
+cartaEscogida = self.manos[vecino].eliminarCarta()
+\end_layout
+
+\begin_layout Verbatim
+
+self.manos[i].agregarCarta(cartaEscogida)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La versión explícita es más fácil de leer porque los nombres de variables
+ proporcionan una documentación adicional y porque se pueden chequear los
+ tipos de los valores intermedios desplegándolos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable temporal
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable!temporal
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+orden de evaluación
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+precedencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Otro problema que ocurre con las expresiones grandes es que el orden de
+ evaluación puede no ser el que usted espera.
+ Por ejemplo, si usted está traduciendo la expresión 
+\begin_inset Formula $\frac{x}{2\pi}$
+\end_inset
+
+ a Python, podría escribir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+y = x / 2 * math.pi;
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esto es incorrecto, porque la multiplicación y la división tienen la misma
+ precedencia y se evalúan de izquierda a derecha.
+ Así que ese código calcula 
+\begin_inset Formula $x\pi/2$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Una buena forma de depurar expresiones es agregar paréntesis para hacer
+ explícito el orden de evaluación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+ y = x / (2 * math.pi);
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Cuando no esté seguro del orden de evaluación, use paréntesis.
+ No sólo corregirá el programa si había un error, sino que también lo hará
+ mas legible para otras personas que no se sepan las reglas de precedencia.
+\end_layout
+
+\begin_layout Subsection
+Tengo una función o método que no retorna lo que debería
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia return
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!return
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si usted tiene una sentencia 
+\family typewriter
+return
+\family default
+ con una expresión compleja no hay posibilidad de imprimir el valor del
+ 
+\family typewriter
+return
+\family default
+ antes de retornar.
+ Aquí también se puede usar una variable temporal.
+ Por ejemplo, en vez de:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+return self.manos[i].eliminarParejas()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ se podría escribir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+cont = self.manos[i].eliminarParejas()
+\end_layout
+
+\begin_layout Verbatim
+
+return cont
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora usted tiene la oportunidad de desplegar el valor de 
+\family typewriter
+count
+\family default
+ antes de retornar.
+\end_layout
+
+\begin_layout Subsection
+Estoy REALMENTE atascado y necesito ayuda
+\end_layout
+
+\begin_layout Standard
+Primero, intente alejarse del computador por unos minutos.
+ Los computadores emiten ondas que afectan al cerebro causando estos efectos:
+\end_layout
+
+\begin_layout Itemize
+Frustración e ira.
+\end_layout
+
+\begin_layout Itemize
+Creencias supersticiosas (
+\begin_inset Quotes eld
+\end_inset
+
+el computador me odia
+\begin_inset Quotes erd
+\end_inset
+
+) y pensamiento mágico (
+\begin_inset Quotes eld
+\end_inset
+
+el programa sólo funciona cuando me pongo la gorra al revés
+\begin_inset Quotes erd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Programación aleatoria (el intento de programar escribiendo cualquier programa
+ posible y escogiendo posteriormente el que funcione correctamente).
+\end_layout
+
+\begin_layout Standard
+Si usted está sufriendo de alguno de estos síntomas, tómese un paseo.
+ Cuando ya esté calmado, piense en el programa.
+ ¿Qué está haciendo? ¿Cuáles son las causas posibles de éste comportamiento?
+ ¿Cuándo fue la última vez que funcionaba bien, y qué hizo usted después
+ de eso?
+\end_layout
+
+\begin_layout Standard
+Algunas veces, sólo toma un poco de tiempo encontrar un error.
+ A menudo encontramos errores cuando estamos lejos del computador y dejamos
+ que la mente divague.
+ Algunos de los mejores lugares para encontrar errores son los trenes, duchas
+ y la cama, justo antes de dormir.
+\end_layout
+
+\begin_layout Subsection
+No, realmente necesito ayuda
+\end_layout
+
+\begin_layout Standard
+Esto sucede.
+ Hasta los mejores programadores se atascan alguna vez.
+ A veces se ha trabajado tanto tiempo en un programa que ya no se puede
+ ver el error.
+ Un par de ojos frescos es lo que se necesita.
+\end_layout
+
+\begin_layout Standard
+Antes de acudir a alguien más, asegúrese de agotar todas las técnicas descritas
+ aquí.
+ Su programa debe ser tan sencillo como sea posible y usted debería encontrar
+ la entrada más pequeña que causa el error.
+ Debería tener sentencias 
+\family typewriter
+print
+\family default
+ en lugares apropiados (y la salida que despliegan debe ser comprensible).
+ Usted debe entender el problema lo suficientemente bien como para describirlo
+ concisamente.
+\end_layout
+
+\begin_layout Standard
+Cuando acuda a alguien, asegúrese de darle la información necesaria:
+\end_layout
+
+\begin_layout Itemize
+Si hay un mensaje de error, ¿cuál es, y a qué parte del programa se refiere?
+\end_layout
+
+\begin_layout Itemize
+¿Cuál fue el último cambio antes de que se presentara el error? ¿Cuáles
+ fueron las últimas líneas de código que escribió usted o cuál es el nuevo
+ caso de prueba que falla?
+\end_layout
+
+\begin_layout Itemize
+¿Qué ha intentado hasta ahora, y qué ha aprendido sobre el programa?
+\end_layout
+
+\begin_layout Standard
+Cuando encuentre el error, tómese un segundo para pensar sobre lo que podría
+ haber realizado para encontrarlo más rápido.
+ La próxima vez que le ocurra algo similar, será capaz de encontrar el error
+ rápidamente.
+\end_layout
+
+\begin_layout Standard
+Recuerde, el objetivo no sólo es hacer que el programa funcione.
+ El objetivo es aprender cómo hacer que los programas funcionen.
+\begin_inset Flex Script
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

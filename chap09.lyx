@@ -1,0 +1,2646 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+LyX source for textbook 
+\begin_inset Quotes eld
+\end_inset
+
+How to think like a computer scientist'' 
+\end_layout
+
+\begin_layout Plain Layout
+Copyright (c) 2001 Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Tuplas
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "tuplechap"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tupla
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mutabilidad y tuplas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tupla
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo de dato!tupla
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo de dato!inmutable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hasta aquí, usted ha visto dos tipos de datos compuestos: cadenas, que están
+ compuestas de caracteres; y listas, compuestas de elementos de cualquier
+ tipo.
+ Una de las diferencias que notamos es que los elementos de una lista pueden
+ modificarse, pero los caracteres en una cadena no.
+ En otras palabras, las cadenas son 
+\series bold
+inmutables
+\series default
+ y las listas son 
+\series bold
+mutables
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+mutable
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+inmutable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay otro tipo de dato en Python denominado 
+\series bold
+tupla
+\series default
+, que se parece a una lista, con la excepción de que es inmutable.
+ Sintácticamente, una tupla es una lista de valores separados por comas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> tupla = 'a', 'b', 'c', 'd', 'e'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Aunque no es necesario, se pueden encerrar entre paréntesis:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> tupla = ('a', 'b', 'c', 'd', 'e')
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para crear una tupla con un único elemento, tenemos que incluir la coma
+ final:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> t1 = ('a',)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type(t1)
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'tuple'>
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Sin la coma, Python creería que 
+\family typewriter
+('a')
+\family default
+ es una cadena en paréntesis:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> t2 = ('a')
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type(t2)
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'string'>
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Las operaciones sobre tuplas son las mismas que vimos con las listas.
+ El operador corchete selecciona un elemento de la tupla.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> tupla = ('a', 'b', 'c', 'd', 'e')
+\end_layout
+
+\begin_layout Verbatim
+
+>>> tupla[0]
+\end_layout
+
+\begin_layout Verbatim
+
+'a'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Y el operador segmento selecciona un rango de elementos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> tupla[1:3]
+\end_layout
+
+\begin_layout Verbatim
+
+('b', 'c')
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Pero si intentamos modificar un elemento de la tupla obtenemos un error:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> tupla[0] = 'A'
+\end_layout
+
+\begin_layout Verbatim
+
+TypeError: object doesn't support item assignment
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Aunque no podemos modificar los elementos, sí podemos modificar toda la
+ tupla:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> tupla = ('A',) + tupla[1:]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> tupla
+\end_layout
+
+\begin_layout Verbatim
+
+('A', 'b', 'c', 'd', 'e')
+\end_layout
+
+\begin_layout Verbatim
+
+>>> tupla = (1,2,3)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> tupla
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Asignación de tuplas
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "tuple assignment"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+asignación de tuplas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Asignación!de tuplas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De vez en cuando necesitamos intercambiar los valores de dos variables.
+ Con el operador de asignación normal tenemos que usar una variable temporal.
+ Por ejemplo, para intercambiar 
+\family typewriter
+a
+\family default
+ y 
+\family typewriter
+b
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> temp = a
+\end_layout
+
+\begin_layout Verbatim
+
+>>> a = b
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b = temp
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si tenemos que intercambiar variables muchas veces, el código tiende a
+ ser engorroso.
+ Python proporciona una forma de 
+\series bold
+asignación de tuplas
+\series default
+ que resuelve este problema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> a, b = b, a
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El lado izquierdo es una tupla de variables; el derecho es una tupla de
+ valores.
+ Cada valor se asigna a su respectiva variable en el orden en que se presenta.
+ Las expresiones en el lado derecho se evalúan antes de cualquier asignación.
+ Esto hace a la asignación de tuplas una herramienta bastante versátil.
+\end_layout
+
+\begin_layout Standard
+Naturalmente, el número de variables a la izquierda y el número de valores
+ a la derecha deben coincidir.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> a, b, c, d = 1, 2, 3
+\end_layout
+
+\begin_layout Verbatim
+
+ValueError: unpack tuple of wrong size
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Tuplas como valores de retorno
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tupla
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valor!tupla
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valor de retorno!tupla
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función!tupla como valor de retorno
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las funciones pueden tener tuplas como valores de retorno.
+ Por ejemplo, podríamos escribir una función que intercambie sus dos parámetros:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def intercambiar(x, y):
+\end_layout
+
+\begin_layout Verbatim
+
+  return y, x
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Así podemos asignar el valor de retorno a una tupla con dos variables:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+a, b = intercambiar(a, b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En este caso, escribir una función 
+\family typewriter
+intercambio
+\family default
+ no es muy provechoso.
+ De hecho, hay un peligro al tratar de encapsular 
+\family typewriter
+intercambio
+\family default
+, que consiste en el siguiente error:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def intercambio(x, y):      # version incorrecta
+\end_layout
+
+\begin_layout Verbatim
+
+  x, y = y, x
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si llamamos a esta función así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+intercambio(a, b)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ entonces 
+\family typewriter
+a
+\family default
+ y 
+\family typewriter
+x
+\family default
+ son dos alias para el mismo valor.
+ Cambiar 
+\family typewriter
+x
+\family default
+ dentro de 
+\family typewriter
+intercambio
+\family default
+ hace que 
+\family typewriter
+x
+\family default
+ se refiera a un valor diferente, pero no tiene efecto en la 
+\family typewriter
+a
+\family default
+ dentro de 
+\family typewriter
+__main__
+\family default
+.
+ Igualmente, cambiar 
+\family typewriter
+y
+\family default
+ no tiene efecto en 
+\family typewriter
+b
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Esta función se ejecuta sin errores, pero no hace lo que se pretende.
+ Es un ejemplo de error semántico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error semántico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Números aleatorios
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+número aleatorio
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+número!aleatorio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La gran mayoría de los programas hacen lo mismo cada vez que se ejecutan,
+ esto es, son 
+\series bold
+determinísticos
+\series default
+.
+ El determinismo generalmente es una buena propiedad, ya que usualmente
+ esperamos que los cálculos produzcan el mismo resultado.
+ Sin embargo, para algunas aplicaciones necesitamos que el computador sea
+ impredecible.
+ Los juegos son un ejemplo inmediato, pero hay más.
+\end_layout
+
+\begin_layout Standard
+Lograr que un programa sea verdaderamente no determinístico no es una tarea
+ fácil, pero hay formas de que parezca no determinístico.
+ Una de ellas es generar números aleatorios y usarlos para determinar la
+ salida de un programa.
+ Python tiene una función primitiva que genera números 
+\series bold
+pseudoaleatorios
+\series default
+, que, aunque no sean aleatorios desde el punto de vista matemático, sirven
+ para nuestros propósitos.
+\end_layout
+
+\begin_layout Standard
+El módulo 
+\family typewriter
+random
+\family default
+ contiene una función llamada 
+\family typewriter
+random
+\family default
+ que retorna un número flotante entre 0.0 y 1.0.
+ Cada vez que se llama a 
+\family typewriter
+random
+\family default
+, se obtiene el siguiente número de una serie muy larga.
+ Para ver un ejemplo ejecute el siguiente ciclo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+import random
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+for i in range(10):
+\end_layout
+
+\begin_layout Verbatim
+
+  x = random.random()
+\end_layout
+
+\begin_layout Verbatim
+
+  print x
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para generar un número aleatorio entre 0.0 y un límite superior como 
+\family typewriter
+sup
+\family default
+, multiplique 
+\family typewriter
+x
+\family default
+ por 
+\family typewriter
+sup
+\family default
+.
+\end_layout
+
+\begin_layout Section
+Lista de números aleatorios
+\end_layout
+
+\begin_layout Standard
+Vamos a generar función que cree una lista de números aleatorios 
+\family typewriter
+listaAleatoria
+\family default
+, recibirá un parámetro entero que especifique el número de elementos a
+ generar.
+ Primero, genera una lista de 
+\family typewriter
+n
+\family default
+ ceros.
+ Luego cada vez que itera en un ciclo for, reemplaza uno de los ceros por
+ un número aleatorio.
+ El valor de retorno es una referencia a la lista construida:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def listaAleatoria(n):
+\end_layout
+
+\begin_layout Verbatim
+
+  s = [0] * n
+\end_layout
+
+\begin_layout Verbatim
+
+  for i in range(n):
+\end_layout
+
+\begin_layout Verbatim
+
+    s[i] = random.random()
+\end_layout
+
+\begin_layout Verbatim
+
+  return s
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La probaremos con ocho elementos.
+ Para depurar es una buena idea empezar con pocos datos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> listaAleatoria(8)
+\end_layout
+
+\begin_layout Verbatim
+
+0.15156642489
+\end_layout
+
+\begin_layout Verbatim
+
+0.498048560109
+\end_layout
+
+\begin_layout Verbatim
+
+0.810894847068
+\end_layout
+
+\begin_layout Verbatim
+
+0.360371157682
+\end_layout
+
+\begin_layout Verbatim
+
+0.275119183077
+\end_layout
+
+\begin_layout Verbatim
+
+0.328578797631
+\end_layout
+
+\begin_layout Verbatim
+
+0.759199803101
+\end_layout
+
+\begin_layout Verbatim
+
+0.800367163582
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Los números generados por 
+\family typewriter
+random
+\family default
+ deben distribuirse uniformemente, lo que significa que cada valor es igualmente
+ probable.
+\end_layout
+
+\begin_layout Standard
+Si dividimos el rango de valores posibles en 
+\begin_inset Quotes eld
+\end_inset
+
+regiones
+\begin_inset Quotes erd
+\end_inset
+
+ del mismo tamaño y contamos el número de veces que un valor aleatorio cae
+ en cada región, deberíamos obtener un resultado aproximado en todas las
+ regiones.
+\end_layout
+
+\begin_layout Standard
+Podemos probar esta hipótesis escribiendo un programa que divida el rango
+ en regiones y cuente el número de valores que caen en cada una.
+\end_layout
+
+\begin_layout Section
+Conteo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+conteo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un enfoque que funciona en problemas como éste es dividir el problema en
+ subproblemas que se puedan resolver con un patrón computacional que ya
+ sepamos.
+\end_layout
+
+\begin_layout Standard
+En este caso, necesitamos recorrer una lista de números y contar el número
+ de veces que un valor cae en un rango dado.
+ Esto parece familiar.
+ En la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "counter"
+
+\end_inset
+
+, escribimos un programa que recorría una cadena y contaba el números de
+ veces que aparecía una letra determinada.
+\end_layout
+
+\begin_layout Standard
+Entonces podemos copiar el programa viejo para adaptarlo posteriormente
+ a nuestro problema actual.
+ El original es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+cont = 0
+\end_layout
+
+\begin_layout Verbatim
+
+for c in fruta:
+\end_layout
+
+\begin_layout Verbatim
+
+  if c == 'a':
+\end_layout
+
+\begin_layout Verbatim
+
+    cont = cont + 1
+\end_layout
+
+\begin_layout Verbatim
+
+print cont
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El primer paso es reemplazar 
+\family typewriter
+fruta
+\family default
+ con 
+\family typewriter
+lista
+\family default
+ y 
+\family typewriter
+c
+\family default
+ por 
+\family typewriter
+num
+\family default
+.
+ Esto no cambia el programa, sólo lo hace más legible.
+\end_layout
+
+\begin_layout Standard
+El segundo paso es cambiar la prueba.
+ No queremos buscar letras.
+ Queremos ver si 
+\family typewriter
+num
+\family default
+ está entre dos valores dados 
+\family typewriter
+inf
+\family default
+ y 
+\family typewriter
+sup
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+cont = 0
+\end_layout
+
+\begin_layout Verbatim
+
+for num in lista:
+\end_layout
+
+\begin_layout Verbatim
+
+  if inf < num < sup:
+\end_layout
+
+\begin_layout Verbatim
+
+    cont = cont + 1
+\end_layout
+
+\begin_layout Verbatim
+
+print cont
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El último paso consiste en encapsular este código en una función denominada
+ 
+\family typewriter
+enRegion
+\family default
+.
+ Los parámetros son la lista y los valores 
+\family typewriter
+inf
+\family default
+ y 
+\family typewriter
+sup
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def enRegion(lista, inf, sup):
+\end_layout
+
+\begin_layout Verbatim
+
+  cont = 0
+\end_layout
+
+\begin_layout Verbatim
+
+  for num in lista:
+\end_layout
+
+\begin_layout Verbatim
+
+    if inf < num < sup:
+\end_layout
+
+\begin_layout Verbatim
+
+      cont = cont + 1
+\end_layout
+
+\begin_layout Verbatim
+
+  return cont
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Copiando y modificando un programa existente fuimos capaces de escribir
+ esta función rápidamente y ahorrarnos un buen tiempo de depuración.
+ Este plan de desarrollo se denomina 
+\series bold
+concordancia de patrones
+\series default
+.
+ Si se encuentra trabajando en un problema que ya ha resuelto antes, reutilice
+ la solución.
+\end_layout
+
+\begin_layout Section
+Muchas regiones
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "muchasregiones"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como el número de regiones aumenta, 
+\family typewriter
+enRegion
+\family default
+ es un poco engorroso.
+ Con dos no esta tan mal:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+inf = enRegion(a, 0.0, 0.5)
+\end_layout
+
+\begin_layout Verbatim
+
+sup = enRegion(a, 0.5, 1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Pero con cuatro:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+Region1 = enRegion(a, 0.0, 0.25)
+\end_layout
+
+\begin_layout Verbatim
+
+Region2 = enRegion(a, 0.25, 0.5)
+\end_layout
+
+\begin_layout Verbatim
+
+Region3 = enRegion(a, 0.5, 0.75)
+\end_layout
+
+\begin_layout Verbatim
+
+Region4 = enRegion(a, 0.75, 1.0)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Hay dos problemas.
+ Uno es que siempre tenemos que crear nuevos nombres de variables para cada
+ resultado.
+ El otro es que tenemos que calcular el rango de cada región.
+\end_layout
+
+\begin_layout Standard
+Primero resolveremos el segundo problema.
+ Si el número de regiones está dado por la variable 
+\family typewriter
+numRegiones
+\family default
+, entonces, el ancho de cada región está dado por la expresión 
+\family typewriter
+1.0/numRegiones
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Usaremos un ciclo para calcular el rango de cada región.
+ La variable de ciclo 
+\family typewriter
+i
+\family default
+ cuenta de 1 a 
+\family typewriter
+numRegiones-1
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+ancho = 1.0 / numRegiones
+\end_layout
+
+\begin_layout Verbatim
+
+for i in range(numRegiones):
+\end_layout
+
+\begin_layout Verbatim
+
+  inf = i * ancho
+\end_layout
+
+\begin_layout Verbatim
+
+  sup = inf + ancho
+\end_layout
+
+\begin_layout Verbatim
+
+  print inf, " hasta ", sup
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para calcular el extremo inferior de cada región, multiplicamos la variable
+ de ciclo por el ancho.
+ El extremo superior está a un 
+\family typewriter
+ancho
+\family default
+ de región de distancia.
+\end_layout
+
+\begin_layout Standard
+Con 
+\family typewriter
+numRegiones = 8
+\family default
+, la salida es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+0.0 hasta 0.125
+\end_layout
+
+\begin_layout Verbatim
+
+0.125 hasta 0.25
+\end_layout
+
+\begin_layout Verbatim
+
+0.25 hasta 0.375
+\end_layout
+
+\begin_layout Verbatim
+
+0.375 hasta 0.5
+\end_layout
+
+\begin_layout Verbatim
+
+0.5 hasta 0.625
+\end_layout
+
+\begin_layout Verbatim
+
+0.625 hasta 0.75
+\end_layout
+
+\begin_layout Verbatim
+
+0.75 hasta 0.875
+\end_layout
+
+\begin_layout Verbatim
+
+0.875 hasta 1.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Usted puede confirmar que cada región tiene el mismo ancho, que no se solapan
+ y que cubren el rango completo de 0.0 a 1.0.
+\end_layout
+
+\begin_layout Standard
+Ahora regresemos al primer problema.
+ Necesitamos una manera de almacenar ocho enteros, usando una variable para
+ indicarlos uno a uno.
+ Usted debe estar pensando 
+\begin_inset Quotes eld
+\end_inset
+
+¡una lista!
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tenemos que crear la lista de regiones fuera del ciclo, porque esto sólo
+ debe ocurrir una vez.
+ Dentro del ciclo, llamaremos a 
+\family typewriter
+enRegion
+\family default
+ repetidamente y actualizaremos el 
+\family typewriter
+i
+\family default
+ésimo elemento de la lista:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+numRegiones = 8
+\end_layout
+
+\begin_layout Verbatim
+
+Regiones = [0] * numRegiones
+\end_layout
+
+\begin_layout Verbatim
+
+ancho = 1.0 / numRegiones
+\end_layout
+
+\begin_layout Verbatim
+
+for i in range(numRegiones):
+\end_layout
+
+\begin_layout Verbatim
+
+  inf = i * ancho
+\end_layout
+
+\begin_layout Verbatim
+
+  sup = inf + ancho
+\end_layout
+
+\begin_layout Verbatim
+
+  Regiones[i] = enRegion(lista, inf, sup)
+\end_layout
+
+\begin_layout Verbatim
+
+print Regiones
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Con una lista de 1000 valores, este código produce la siguiente lista de
+ conteo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+[138, 124, 128, 118, 130, 117, 114, 131]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Todos estos valores están muy cerca a 125, que es lo que esperamos.
+ Al menos, están lo suficientemente cerca como para creer que el generador
+ de números pseudoaleatorios está funcionando bien.
+\end_layout
+
+\begin_layout Section
+Una solución en una sola pasada
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "histograma"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+histograma
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aunque funciona, este programa no es tan eficiente como debería.
+ Cada vez que llama a 
+\family typewriter
+enRegion
+\family default
+, recorre la lista entera.
+ A medida que el número de regiones incrementa, va a hacer muchos recorridos.
+\end_layout
+
+\begin_layout Standard
+Sería mejor hacer una sola pasada a través de la lista y calcular para cada
+ región el índice de la región en la que cae.
+ Así podemos incrementar el contador apropiado.
+\end_layout
+
+\begin_layout Standard
+En la sección anterior tomamos un índice 
+\family typewriter
+i
+\family default
+ y lo multiplicamos por el 
+\family typewriter
+ancho
+\family default
+ para encontrar el extremo inferior de una región.
+ Ahora vamos a encontrar el índice de la región en la que cae.
+\end_layout
+
+\begin_layout Standard
+Como este problema es el inverso del anterior, podemos intentar dividir
+ por 
+\family typewriter
+ancho
+\family default
+ en vez de multiplicar.
+ ¡Esto funciona!
+\end_layout
+
+\begin_layout Standard
+Como 
+\family typewriter
+ancho = 1.0 / numRegiones
+\family default
+, dividir por 
+\family typewriter
+ancho
+\family default
+ es lo mismo que multiplicar por 
+\family typewriter
+numRegiones
+\family default
+.
+ Si multiplicamos un número en el rango 0.0 a 1.0 por 
+\family typewriter
+numRegiones
+\family default
+, obtenemos un número en el rango de 0.0 a 
+\family typewriter
+numRegiones
+\family default
+.
+ Si redondeamos ese número al entero más cercano por debajo, obtenemos lo
+ que queremos: un índice de región:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+numRegiones = 8
+\end_layout
+
+\begin_layout Verbatim
+
+Regiones = [0] * numRegiones
+\end_layout
+
+\begin_layout Verbatim
+
+for i in lista:
+\end_layout
+
+\begin_layout Verbatim
+
+  ind = int(i * numRegiones)
+\end_layout
+
+\begin_layout Verbatim
+
+  Regiones[ind] = Regiones[ind] + 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Usamos la función 
+\family typewriter
+int
+\family default
+ para pasar de número de punto flotante a entero.
+\end_layout
+
+\begin_layout Standard
+¿Es posible que este programa produzca un índice que esté fuera de rango
+ (por ser negativo o mayor que 
+\family typewriter
+len(Regiones)-1
+\family default
+)?
+\end_layout
+
+\begin_layout Standard
+Una lista como 
+\family typewriter
+Regiones
+\family default
+ que almacena los conteos del número de valores que hay en cada rango se
+ denomina 
+\series bold
+histograma
+\series default
+.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Tipo inmutable:
+\end_layout
+
+\end_inset
+
+ es un tipo de dato en el que los elementos no pueden ser modificados.
+ Las asignaciones a elementos o segmentos de tipos inmutables causan errores.
+ Las cadenas y las tuplas son inmutables.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Tipo mutable:
+\end_layout
+
+\end_inset
+
+ tipo de dato en el que los elementos pueden ser modificados.
+ Todos los tipos mutables son compuestos.
+ Las listas y los diccionarios son mutables.
+\end_layout
+
+\begin_layout Description
+Tupla: tipo de dato secuencial similar a la lista, pero inmutable.
+ Las tuplas se pueden usar donde se requiera un tipo inmutable, por ejemplo
+ como llaves de un diccionario.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Asignación de tuplas:
+\end_layout
+
+\end_inset
+
+ una asignación a todos los elementos de una tupla en una sola sentencia.
+ La asignación ocurre en paralelo y no secuencialmente.
+ Es útil para intercambiar valores de variables.
+\end_layout
+
+\begin_layout Description
+Determinístico: programa que hace lo mismo cada vez que se llama.
+\end_layout
+
+\begin_layout Description
+Pseudoaleatoria: secuencia de números que parece aleatoria, pero en realidad
+ es el resultado de un cómputo determinístico, bien diseñado.
+\end_layout
+
+\begin_layout Description
+Histograma: lista de enteros en la que cada elemento cuenta el número de
+ veces que algo sucede.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Correspondencia de patrones:
+\end_layout
+
+\end_inset
+
+ plan de desarrollo de programas que implica identificar un patrón computacional
+ familiar y copiar la solución de un problema similar.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo mutable
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo inmutable
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tupla
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+asignación de tupla
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+asignación!de tupla
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+determinístic
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+pseudoaleatorio
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+histograma
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+correspondencia de patrones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Standard
+Para cada función, agregue chequeo de tipos y pruebas unitarias.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función mas_frecuentes que tome una cadena e imprima las letras
+ en orden descendente por frecuencia.
+ Ejecutela con textos de diferentes lenguajes y observe como varían las
+ frecuencias de letras.
+ Compare sus resultados con las tablas en:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://en.wikipedia.org/wiki/Letter_frequencies
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solución: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://thinkpython.com/code/most_frequent.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Escriba un programa que lea una lista de palabras de un archivos e imprima
+ todos los conjuntos de palabras que son anagramas.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Este es un ejemplo con palabras en inglés de la salida del programa:
+\end_layout
+
+\begin_layout Standard
+['deltas', 'desalt', 'lasted', 'salted', 'slated', 'staled'] ['retainers',
+ 'ternaries'] ['generating', 'greatening'] ['resmelts', 'smelters', 'termless']
+\end_layout
+
+\begin_layout Standard
+Pista: cree un diccionario que asocie cada conjunto de letras a una lista
+ de palabras que puedan ser formadas con esas letras.
+ ¿Como se puede representar el conjunto de letras de forma que pueda ser
+ usado como llave? Modifique el programa que obtuvo para que imprima en
+ orden descendente por tamaño los conjuntos de anagramas.
+ En el juego Scrabble, un 'bingo' se da cuando se juegan las 7 fichas, junto
+ con otra letra en el tablero, para formar una palabra de 8 letras.
+ ¿Que conjunto de 8 letras forma los bingos mas posibles?
+\end_layout
+
+\begin_layout Standard
+Solución: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://thinkpython.com/code/anagram_sets.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Dos palabras forma un 'par de metatesis' si se puede transformar una en
+ otra intercambiando dos letras.
+ Por ejemplo, 'conversación' y 'conservación'.
+ Escriba un programa que encuentre todos los pares de metatesis en el diccionari
+o.
+ Pista: no pruebe todos los pares.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Solución: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://thinkpython.com/code/metathesis.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Crédito: el ejercicio está inspirado por un ejemplo en http://puzzlers.org.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+¿Cual es la palabra mas larga que sigue siendo válida a medida que se remueven
+ una a una sus letras? Por ejemplo, en inglés, 'sprite' sin la 'r' es 'spite',
+ que sin la 'e', es 'spit', que sin la 's' es 'pit', que sin la 'p' es 'it'
+ que sin la 't' es 'i'.
+ Las letras se pueden remover de cualquier posición, pero no se pueden reordenar.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Escriba un programa que encuentre todas las palabras que pueden reducirse
+ de esta forma y que encuentre la mas larga.
+\end_layout
+
+\begin_layout Standard
+Pistas:
+\end_layout
+
+\begin_layout Standard
+Escriba una función que tome una palabra y calcule todas las palabras que
+ pueden formarse al removerle una letra.
+ Estas son las palabras 'hijas'.
+ Recursivamente, una palabra es reducible si alguno de sus hijas es reducible.
+ El caso base lo da la cadena vacía.
+\end_layout
+
+\begin_layout Standard
+Solución: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://thinkpython.com/code/reducible.py
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

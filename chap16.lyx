@@ -1,0 +1,2989 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms de the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Sdetware
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy de
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contiene the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% de the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Sdetware Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Herencia
+\end_layout
+
+\begin_layout Section
+Definición
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+herencia
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+programación orientada a objetos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase madre
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase hija
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+subclase
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La característica más asociada con la programación orientada a objetos quizás
+ sea la 
+\series bold
+herencia
+\series default
+.
+ Ésta es la capacidad de definir una nueva clase que constituye la versión
+ modificada de una clase preexistente.
+\end_layout
+
+\begin_layout Standard
+La principal ventaja de la herencia consiste en que se pueden agregar nuevos
+ métodos a una clase sin modificarla.
+ El nombre 
+\begin_inset Quotes eld
+\end_inset
+
+herencia
+\begin_inset Quotes erd
+\end_inset
+
+ se usa porque la nueva clase hereda todos los métodos de la clase existente.
+ Extendiendo esta metáfora, la clase preexistente se denomina la clase 
+\series bold
+madre
+\series default
+.
+ La nueva clase puede llamarse clase 
+\series bold
+hija
+\series default
+ o, 
+\begin_inset Quotes eld
+\end_inset
+
+subclase.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diseño orientado a objetos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La herencia es muy poderosa.
+ Algunos programas complicados se pueden escribir de una manera más sencilla
+ y compacta a través del uso de la herencia.
+ Además, facilita la reutilización de código, ya que se puede especializar
+ el comportamiento de una clase madre sin modificarla.
+ En algunos casos, las relaciones entre las clases reflejan la estructura
+ de las entidades del mundo real que se presentan en un problema, y esto
+ hace que los programas sean más comprensibles.
+\end_layout
+
+\begin_layout Standard
+Por otra parte, la herencia puede dificultar la lectura de los programas.
+ Cuando un método se llama, puede que no sea muy claro donde está definido.
+ El código relevante puede estar disperso entre varios módulos.
+ Además, muchas soluciones que se pueden escribir con el uso de herencia,
+ también se pueden escribir sin ella, y de una manera elegante (algunas
+ veces más elegante).
+ Si la estructura natural de las entidades que intervienen en un problema
+ no se presta a pensar en términos de herencia, este estilo de programación
+ puede causar más perjuicios que beneficios.
+\end_layout
+
+\begin_layout Standard
+En este capítulo demostraremos el uso de la herencia como parte de un programa
+ que implementa el juego de cartas la solterona.
+ Una de las metas es escribir una base de código que pueda reutilizarse
+ para implementar otros juegos de cartas.
+\end_layout
+
+\begin_layout Section
+Una mano de cartas
+\end_layout
+
+\begin_layout Standard
+Para casi todos los juegos de cartas vamos a requerir representar una mano
+ de cartas.
+ Hay una clara semejanza entre un mazo y una mano de cartas, ambos son conjuntos
+ de cartas y requieren operaciones como agregar o eliminar cartas.
+ También, podríamos barajar mazos y manos de cartas.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, una mano se diferencia de un mazo; dependiendo del juego
+ que estemos considerando podríamos ejecutar algunas operaciones sobre las
+ manos que no tienen sentido en un mazo.
+ Por ejemplo, en el póker, podríamos clasificar manos como un par, una terna,
+ 2 pares, escalera, o podríamos comparar un par de manos.
+ En el bridge, podríamos calcular el puntaje para una mano con el objetivo
+ de hacer una apuesta.
+\end_layout
+
+\begin_layout Standard
+Esta situación sugiere el uso de la herencia.
+ Si una 
+\family typewriter
+Mano
+\family default
+ es una subclase de 
+\family typewriter
+Mazo
+\family default
+, tendrá todos los métodos definidos en ésta y se podrán agregar nuevos
+ métodos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase madre
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase!madre
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la definición de una clase hija, el nombre de la clase madre se encierra
+ entre paréntesis:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Mano(Mazo):
+\end_layout
+
+\begin_layout Verbatim
+
+  pass
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta sentencia indica que la nueva clase 
+\family typewriter
+Mano
+\family default
+ hereda de la clase 
+\family typewriter
+Mazo
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+El constructor de 
+\family typewriter
+Mano
+\family default
+ inicializa los atributos 
+\family typewriter
+nombre
+\family default
+ y 
+\family typewriter
+cartas
+\family default
+.
+ La cadena 
+\family typewriter
+nombre
+\family default
+ identifica cada mano, probablemente con el nombre del jugador que la sostiene.
+ Por defecto, el parámetro nombre es una cadena vacía.
+ 
+\family typewriter
+cartas
+\family default
+ es la lista de cartas en la mano, inicializada a una lista vacía:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Mano(Mazo):
+\end_layout
+
+\begin_layout Verbatim
+
+  def __init__(self, nombre=""):
+\end_layout
+
+\begin_layout Verbatim
+
+    self.cartas = []
+\end_layout
+
+\begin_layout Verbatim
+
+    self.nombre = nombre
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para la gran mayoría de juegos de cartas es necesario agregar y remover
+ cartas del mazo.
+ Como 
+\family typewriter
+Mano
+\family default
+ hereda 
+\family typewriter
+eliminarCarta
+\family default
+ de 
+\family typewriter
+Mazo
+\family default
+, ya tenemos la mitad del trabajo hecho, solo tenemos que escribir 
+\family typewriter
+agregarCarta
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Mano(Mazo):
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def agregarCarta(self,carta) :
+\end_layout
+
+\begin_layout Verbatim
+
+    self.cartas.append(carta)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Recuerde que la elipsis (...) indica que estamos omitiendo los otros métodos.
+ El método 
+\family typewriter
+append
+\family default
+ de las listas permite agregar la nueva carta.
+\end_layout
+
+\begin_layout Section
+Repartiendo cartas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+repartiendo cartas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora que tenemos una clase 
+\family typewriter
+Mano
+\family default
+ deseamos transferir cartas del 
+\family typewriter
+Mazo
+\family default
+ a las manos.
+ No es fácil decidir que el método que implemente esta transferencia se
+ incluya en la clase 
+\family typewriter
+Mano
+\family default
+ o en la clase 
+\family typewriter
+Mazo
+\family default
+, pero como opera sobre un solo mazo y (probablemente) sobre varias manos,
+ es más natural incluirlo en 
+\family typewriter
+Mazo
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+El método 
+\family typewriter
+repartir
+\family default
+ debería ser muy general, ya que diferentes juegos tienen diversas reglas.
+ Podríamos transferir todo el mazo de una vez, o repartir carta a carta
+ alternando por cada mano, como se acostumbra en los casinos.
+\end_layout
+
+\begin_layout Standard
+El método 
+\family typewriter
+repartir
+\family default
+ toma dos parámetros, una lista (o tupla) de manos y el número total de
+ cartas que se deben entregar.
+ Si no hay suficientes cartas en el mazo para repartir, entrega todas las
+ cartas y se detiene:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Mazo:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def repartir(self, manos, nCartas=999):
+\end_layout
+
+\begin_layout Verbatim
+
+    nManos = len(manos)
+\end_layout
+
+\begin_layout Verbatim
+
+    for i in range(nCartas):
+\end_layout
+
+\begin_layout Verbatim
+
+      if self.estaVacia(): 
+\end_layout
+
+\begin_layout Verbatim
+
+            break    # se detiene si no hay cartas
+\end_layout
+
+\begin_layout Verbatim
+
+      # toma la carta en el tope
+\end_layout
+
+\begin_layout Verbatim
+
+      carta = self.eliminarCarta() 
+\end_layout
+
+\begin_layout Verbatim
+
+      # siguiente turno!
+\end_layout
+
+\begin_layout Verbatim
+
+      mano = manos[i % nManos] 
+\end_layout
+
+\begin_layout Verbatim
+
+      # agrega la carta a la mano
+\end_layout
+
+\begin_layout Verbatim
+
+      mano.agregarCarta(carta) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El segundo parámetro, 
+\family typewriter
+nCartas
+\family default
+, es opcional; y por defecto es un número entero grande que garantice que
+ todas las cartas del mazo se repartan.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable de ciclo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable!de ciclo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La variable de ciclo 
+\family typewriter
+i
+\family default
+ va de 0 a 
+\family typewriter
+nCartas-1
+\family default
+.
+ En cada iteración remueve una carta al tope del mazo usando el método 
+\family typewriter
+pop
+\family default
+, que elimina y retorna el último elemento de la lista.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador residuo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador!residuo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El operador residuo (
+\family typewriter
+%
+\family default
+) nos permite repartir cartas de manera circular (una carta a una mano distinta
+ en cada iteración).
+ Cuando 
+\family typewriter
+i
+\family default
+ es igual al número de manos en la lista, la expresión 
+\family typewriter
+i % nManos
+\family default
+ 
+\shape italic
+da la vuelta
+\shape default
+ retornando la primera posición de la lista (la posición 0).
+\end_layout
+
+\begin_layout Section
+Imprimiendo una mano
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+imprimiendo!manos de cartas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para imprimir el contenido de una mano podemos aprovechar los métodos 
+\family typewriter
+__str__
+\family default
+ e 
+\family typewriter
+imprimirMazo
+\family default
+ heredados de 
+\family typewriter
+Mazo
+\family default
+.
+ Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> mazo = Mazo()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> mazo.barajar()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> mano = Mano("Rafael")
+\end_layout
+
+\begin_layout Verbatim
+
+>>> mazo.repartir([mano], 5)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print mano
+\end_layout
+
+\begin_layout Verbatim
+
+La Mano Rafael contiene
+\end_layout
+
+\begin_layout Verbatim
+
+2 de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+ 3 de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+  4 de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+   As de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+    9 de tréboles
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ No es una gran mano, pero se puede mejorar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%FIXME %%
+\backslash
+index{straight flush}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aunque es conveniente heredar los métodos existentes, hay un dato adicional
+ que un objeto 
+\family typewriter
+Mano
+\family default
+ puede incluir cuando se imprime, para lograr esto implementamos 
+\family typewriter
+__str__
+\family default
+ sobrecargando el que está definido en la clase 
+\family typewriter
+Mazo
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Mano(Mazo)
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def __str__(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    s = "Mano " + self.nombre
+\end_layout
+
+\begin_layout Verbatim
+
+    if self.estaVacia():
+\end_layout
+
+\begin_layout Verbatim
+
+      s = s + " esta vacia
+\backslash
+n"
+\end_layout
+
+\begin_layout Verbatim
+
+    else:
+\end_layout
+
+\begin_layout Verbatim
+
+      s = s + " contiene
+\backslash
+n"
+\end_layout
+
+\begin_layout Verbatim
+
+    return s + Mazo.__str__(self)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Inicialmente, 
+\family typewriter
+s
+\family default
+ es una cadena que identifica la mano.
+ Si está vacía, se añade la cadena 
+\family typewriter
+esta vacia
+\family default
+.
+ Si esto no es así se añade la cadena 
+\family typewriter
+contiene
+\family default
+ y la representación textual de la clase 
+\family typewriter
+Mazo
+\family default
+, que se obtiene aplicando el método 
+\family typewriter
+__str__
+\family default
+ a 
+\family typewriter
+self
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Parece extraño aplicar el método 
+\family typewriter
+__str__
+\family default
+ de la clase 
+\family typewriter
+Mazo
+\family default
+ a 
+\family typewriter
+self
+\family default
+ que se refiere a la 
+\family typewriter
+Mano
+\family default
+ actual.
+ Para disipar cualquier duda, recuerde que 
+\family typewriter
+Mano
+\family default
+ es una clase de 
+\family typewriter
+Mazo
+\family default
+.
+ Los objetos 
+\family typewriter
+Mano
+\family default
+ pueden hacer todo lo que los objetos 
+\family typewriter
+Mazo
+\family default
+ hacen, así que esto es legal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+subclase
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase padre
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase!padre
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En general, siempre se puede usar una instancia de una subclase en vez de
+ una instancia de la clase padre.
+\end_layout
+
+\begin_layout Section
+La clase 
+\family typewriter
+JuegoDeCartas
+\end_layout
+
+\begin_layout Standard
+La clase 
+\family typewriter
+JuegoDeCartas
+\family default
+ se encarga de algunas operaciones básicas comunes a todos los juegos, tales
+ como crear el mazo y barajarlo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class JuegoDeCartas:
+\end_layout
+
+\begin_layout Verbatim
+
+  def __init__(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    self.mazo = Mazo()
+\end_layout
+
+\begin_layout Verbatim
+
+    self.mazo.barajar()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En este ejemplo vemos que la inicialización realiza algo más importante
+ que asignar valores iniciales a los atributos.
+\end_layout
+
+\begin_layout Standard
+Para implementar un juego específico podemos heredar de 
+\family typewriter
+JuegoDeCartas
+\family default
+ y agregar las características del juego particular que estemos desarrollando.
+\end_layout
+
+\begin_layout Standard
+A manera de ejemplo, escribiremos una simulación del juego La Solterona.
+\end_layout
+
+\begin_layout Standard
+El objetivo de La Solterona es deshacerse de todas las cartas.
+ Cada jugador hace esto emparejando cartas por figura y valor.
+ Por ejemplo el 4 de Treboles se empareja con el 4 de Picas, por que son
+ cartas negras.
+ La J de Corazones se empareja con la J de Diamantes, porque son cartas
+ rojas.
+\end_layout
+
+\begin_layout Standard
+Para empezar, la reina de Treboles se elimina del mazo, de forma que la
+ reina de Picas no tenga pareja.
+ Las otras 51 cartas se reparten equitativamente entre los jugadores.
+ Después de repartir cada jugador busca parejas en su mano y las descarta.
+\end_layout
+
+\begin_layout Standard
+Cuando ningún jugador pueda descartar más se empieza a jugar por turnos.
+ Cada jugador escoge una carta de su vecino a la izquierda (sin mirarla).
+ Si la carta escogida se empareja con alguna carta en la mano del jugador,
+ el par se elimina.
+ Si esto no es así, la carta debe agregarse a la mano del jugador que escoge.
+ Poco a poco, se realizarán todos los emparejamientos posibles, dejando
+ únicamente a la reina de Picas en la mano del perdedor.
+\end_layout
+
+\begin_layout Standard
+En nuestra simulación del juego, el computador juega todas las manos.
+ Desafortunadamente, algunos matices del juego real se pierden en la simulación
+ por computador.
+ En un juego, el jugador con la Solterona intenta deshacerse de ella de
+ diferentes formas, ya sea desplegándola de una manera prominente, o ocultándola
+ de alguna manera.
+ El programa simplemente escogerá una carta de algún vecino aleatoriamente.
+\end_layout
+
+\begin_layout Section
+La clase 
+\family typewriter
+ManoSolterona
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase!ManoSolterona
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una mano para jugar a la Solterona requiere algunas capacidades que no están
+ presentes en la clase 
+\family typewriter
+Mano
+\family default
+.
+ Vamos a definir una nueva clase 
+\family typewriter
+ManoSolterona
+\family default
+, que hereda de 
+\family typewriter
+Mano
+\family default
+ y provee un método adicional llamado 
+\family typewriter
+quitarPareja
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class ManoSolterona(Mano):
+\end_layout
+
+\begin_layout Verbatim
+
+  def quitarPareja(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    conteo = 0
+\end_layout
+
+\begin_layout Verbatim
+
+    cartasOriginales = self.cartas[:]
+\end_layout
+
+\begin_layout Verbatim
+
+    for carta in cartasOriginales:
+\end_layout
+
+\begin_layout Verbatim
+
+      m = Carta(3 - carta.figura, carta.valor)
+\end_layout
+
+\begin_layout Verbatim
+
+      if pareja in self.cartas:
+\end_layout
+
+\begin_layout Verbatim
+
+        self.cartas.remove(carta)
+\end_layout
+
+\begin_layout Verbatim
+
+        self.cartas.remove(m)
+\end_layout
+
+\begin_layout Verbatim
+
+        print "Mano %s: %s se empareja con %s" % 
+\end_layout
+
+\begin_layout Verbatim
+
+              (self.name,carta,m)
+\end_layout
+
+\begin_layout Verbatim
+
+        cont = cont + 1
+\end_layout
+
+\begin_layout Verbatim
+
+    return cont
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Empezamos haciendo una copia de la lista de cartas, de forma que podamos
+ recorrerla y simultaneamente eliminar cartas.
+ Como 
+\family typewriter
+self.cartas
+\family default
+ se modifica en el ciclo, no vamos a utilizarlo para controlar el recorrido.
+ ¡Python puede confundirse totalmente si empieza a recorrer una lista que
+ está cambiando!
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recorrido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para cada carta en la mano, averiguamos si se empareja con una carta escogida
+ de la mano de otra persona.
+ Para esto, tienen que tener el mismo valor y la otra figura del mismo color.
+ La expresión 
+\family typewriter
+3 - carta.figura
+\family default
+ convierte un trébol (figura 0) en una Pica (figura 3) y a un Diamante (figura
+ 1) en un Corazón (figura 2).
+ Usted puede comprobar que las operaciones inversas también funcionan.
+ Si hay una carta que se empareje, las dos se eliminan.
+\end_layout
+
+\begin_layout Standard
+El siguiente ejemplo demuestra cómo usar 
+\family typewriter
+quitarPareja
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> juego = JuegoDeCartas()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> mano = ManoSolterona("frank")
+\end_layout
+
+\begin_layout Verbatim
+
+>>> juego.mazo.repartir([mano], 13)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print mano
+\end_layout
+
+\begin_layout Verbatim
+
+Mano frank contiene
+\end_layout
+
+\begin_layout Verbatim
+
+As de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+ 2 de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+  7 de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+   8 de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+    6 de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+     8 de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+      7 de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+       Reina de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+        7 de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+         5 de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+          Jota de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+           10 de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+            10 de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+>>> mano.quitarPareja()
+\end_layout
+
+\begin_layout Verbatim
+
+Mano frank: 7 de Picas se empareja con 7 de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+Mano frank: 8 de Picas se empareja con 8 de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+Mano frank: 10 de Diamantes se empareja con 10 de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print mano
+\end_layout
+
+\begin_layout Verbatim
+
+Mano frank contiene
+\end_layout
+
+\begin_layout Verbatim
+
+Ace de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+ 2 de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+  6 de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+   Reina de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+    7 de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+     5 de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+      Jota de Diamantes
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Tenga en cuenta que no hay método 
+\family typewriter
+__init__
+\family default
+ en la clase 
+\family typewriter
+ManoSolterna
+\family default
+.
+ Lo heredamos de 
+\family typewriter
+Mano
+\family default
+.
+\end_layout
+
+\begin_layout Section
+La clase 
+\family typewriter
+JuegoSolterona
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase!JuegoSolterona
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora podemos dedicarnos a desarrollar el juego.
+ 
+\family typewriter
+JuegoSolterona
+\family default
+ es una subclase de 
+\family typewriter
+JuegoDeCartas
+\family default
+ con un nuevo método llamado 
+\family typewriter
+jugar
+\family default
+ que recibe una lista de jugadores como parámetro.
+\end_layout
+
+\begin_layout Standard
+Como 
+\family typewriter
+__init__
+\family default
+ se hereda de 
+\family typewriter
+JuegoDeCartas
+\family default
+, tendremos la garantía de que un objeto de tipo 
+\family typewriter
+JuegoSolterona
+\family default
+ contendrá un mazo barajado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class JuegoSolterona(JuegoDeCartas):
+\end_layout
+
+\begin_layout Verbatim
+
+  def jugar(self, nombres):
+\end_layout
+
+\begin_layout Verbatim
+
+    # elimina la Reina de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+    self.mazo.eliminarCarta(Carta(0,12))
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+    # prepara una mano para cada jugador
+\end_layout
+
+\begin_layout Verbatim
+
+    self.manos = []
+\end_layout
+
+\begin_layout Verbatim
+
+    for nombre in nombres :
+\end_layout
+
+\begin_layout Verbatim
+
+      self.manos.append(ManoJuegoSolterona(nombre))
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+    # reparte las  cartas
+\end_layout
+
+\begin_layout Verbatim
+
+    self.mazo.repartir(self.cartas)
+\end_layout
+
+\begin_layout Verbatim
+
+    print "---------- Cartas repartidas!"
+\end_layout
+
+\begin_layout Verbatim
+
+    self.imprimirManos()
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+    # quitar parejas iniciales
+\end_layout
+
+\begin_layout Verbatim
+
+    parejas = self.eliminarParejas()
+\end_layout
+
+\begin_layout Verbatim
+
+    print "---------- Parejas descartadas, comienza el juego"
+\end_layout
+
+\begin_layout Verbatim
+
+    self.imprimirManos()
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+    # jugar hasta que las 50 cartas sean descartadas
+\end_layout
+
+\begin_layout Verbatim
+
+    turno = 0
+\end_layout
+
+\begin_layout Verbatim
+
+    numManos = len(self.manos)
+\end_layout
+
+\begin_layout Verbatim
+
+    while parejas < 25:
+\end_layout
+
+\begin_layout Verbatim
+
+      parejas = parejas+self.jugarUnTurno(turno)
+\end_layout
+
+\begin_layout Verbatim
+
+      turno = (turno + 1) % numManos
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+    print "-------- Juego terminado"
+\end_layout
+
+\begin_layout Verbatim
+
+    self.printManos()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Algunos de las etapas del juego se han separado en métodos.
+ 
+\family typewriter
+eliminarParejas
+\family default
+ recorre la lista de manos invocando 
+\family typewriter
+eliminarPareja
+\family default
+ en cada una de ellas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class JuegoSolterona(JuegoDeCartas):
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def eliminarParejas(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    count = 0
+\end_layout
+
+\begin_layout Verbatim
+
+    for mano in self.manos:
+\end_layout
+
+\begin_layout Verbatim
+
+      cont = cont + mano.eliminarParejas()
+\end_layout
+
+\begin_layout Verbatim
+
+    return count
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+cont
+\family default
+ es un acumulador que lleva cuenta del número de parejas que se encontraron
+ en cada mano.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+acumulador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando el número total de parejas encontradas llega a ser veinticinco, se
+ han quitado cincuenta cartas de las manos, y esto implica que la única
+ carta que resta es la reina de Picas y que el juego ha terminado.
+\end_layout
+
+\begin_layout Standard
+La variable 
+\family typewriter
+turno
+\family default
+ lleva la pista de cual es el jugador que tiene el turno para jugar.
+ Empieza en 0 y se incrementa de uno en uno; cuando alcanza el valor 
+\family typewriter
+numManos
+\family default
+, el operador residuo lo reinicia en 0.
+\end_layout
+
+\begin_layout Standard
+El método 
+\family typewriter
+jugarUnTurno
+\family default
+ toma un parámetro que indica el jugador que tiene el turno.
+ El valor de retorno es el número de parejas encontradas durante este turno:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class JuegoSolterona(JuegoDeCartas):
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def jugarUnTurno(self, i):
+\end_layout
+
+\begin_layout Verbatim
+
+    if self.manos[i].estaVacia():
+\end_layout
+
+\begin_layout Verbatim
+
+      return 0
+\end_layout
+
+\begin_layout Verbatim
+
+    vecino = self.encontrarVecino(i)
+\end_layout
+
+\begin_layout Verbatim
+
+    cartaEscogida = self.manos[vecino].eliminarCarta()
+\end_layout
+
+\begin_layout Verbatim
+
+    self.manos[i].agregarCarta(cartaEscogida)
+\end_layout
+
+\begin_layout Verbatim
+
+    print "Mano", self.manos[i].nombre, 
+\end_layout
+
+\begin_layout Verbatim
+
+          "escogio", cartaEscogida
+\end_layout
+
+\begin_layout Verbatim
+
+    cont = self.manos[i].eliminarParejas()
+\end_layout
+
+\begin_layout Verbatim
+
+    self.manos[i].barajar()
+\end_layout
+
+\begin_layout Verbatim
+
+    return cont
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si la mano de un jugador está vacía, este jugador está fuera del juego,
+ así que no hace ninguna acción y retorna 0.
+\end_layout
+
+\begin_layout Standard
+Si esto no es así, un turno consiste en encontrar el primer jugador en la
+ izquierda que tenga cartas, tomar una de él, y buscar por parejas.
+ Antes de retornar, las cartas en la mano se barajan para que la elección
+ del siguiente jugador sea al azar.
+\end_layout
+
+\begin_layout Standard
+El método 
+\family typewriter
+encontrarVecino
+\family default
+ comienza con el jugador a la izquierda y continua buscando de manera circular
+ hasta que encuentra un jugador que tenga cartas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class JuegoSolterona(JuegoDeCartas):
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def encontrarVecino(self, i):
+\end_layout
+
+\begin_layout Verbatim
+
+    numManos = len(self.manos)
+\end_layout
+
+\begin_layout Verbatim
+
+    for siguiente in range(1,numManos):
+\end_layout
+
+\begin_layout Verbatim
+
+      vecino = (i + siguiente) % numManos
+\end_layout
+
+\begin_layout Verbatim
+
+      if not self.manos[vecino].estaVacia():
+\end_layout
+
+\begin_layout Verbatim
+
+        return vecino
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si 
+\family typewriter
+encontrarVecino
+\family default
+ diera toda la vuelta sin encontrar cartas, retornaría 
+\family typewriter
+None
+\family default
+ y causaría un error en algún otro lugar del programa.
+ Afortunadamente, usted puede comprobar que esto nunca va a pasar (siempre
+ y cuando el fin del juego se detecte correctamente).
+\end_layout
+
+\begin_layout Standard
+Hemos omitido el método 
+\family typewriter
+imprimaManos
+\family default
+.
+ Usted puede escribirlo.
+\end_layout
+
+\begin_layout Standard
+La siguiente salida es de un juego en el que solo las primeras 15 cartas
+ mas altas (con valor 10 y superior) se repartieron a tres jugadores.
+ Con este pequeño mazo, el juego termina después de siete parejas encontradas,
+ en vez de veinticinco.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> import cartas
+\end_layout
+
+\begin_layout Verbatim
+
+>>> juego = cartas.JuegoSolterona()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> juego.jugar(["Allen","Jeff","Chris"])
+\end_layout
+
+\begin_layout Verbatim
+
+---------- Las cartas se han repartido
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Allen contiene
+\end_layout
+
+\begin_layout Verbatim
+
+Rey de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+ Jota de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+  Reina de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+   Rey de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+    10 de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Jeff contiene
+\end_layout
+
+\begin_layout Verbatim
+
+Reina de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+ Jota de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+  Jota de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+   Rey de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+    Reina de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Chris contiene
+\end_layout
+
+\begin_layout Verbatim
+
+Jota de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+ Rey de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+  10 de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+   10 de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+    10 de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Jeff: Reina de Corazones se empareja con Reina de 
+\end_layout
+
+\begin_layout Verbatim
+
+Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Chris: 10 de Picas se empareja con 10 de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+----------  Parejas eliminadas, comienza el juego
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Allen contiene
+\end_layout
+
+\begin_layout Verbatim
+
+Rey de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+ Jota de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+  Reina de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+   Rey de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+    10 de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Jeff contiene
+\end_layout
+
+\begin_layout Verbatim
+
+Jota de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+ Jota de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+  Rey de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Chris contiene
+\end_layout
+
+\begin_layout Verbatim
+
+Jota de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+ Rey de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+  10 de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Allen escogio Rey de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Allen: Rey de Corazones se empareja con Rey de 
+\end_layout
+
+\begin_layout Verbatim
+
+Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Jeff escogio 10 de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Chris escogio Jota de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Allen escogio Jota de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Jeff escogio Jota de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Chris escogio Reina de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Allen escogio Jota de Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Allen: Jota de Corazones se empareja con Jota de 
+\end_layout
+
+\begin_layout Verbatim
+
+Diamantes
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Jeff escogio Rey de Treboles
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Chris escogio Rey de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Allen escogio 10 de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Allen: 10 de Diamantes se empareja con 10 de Corazones
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Jeff escogio Reina de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Chris escogio Jota de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Chris: Jota de Treboles se empareja con Jota de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Jeff escogio Rey de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Jeff: Rey de Treboles se empareja con Rey de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+---------- Game is Over
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Allen esta vacia
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Jeff contiene
+\end_layout
+
+\begin_layout Verbatim
+
+Reina de Picas
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+Mano Chris esta vacia
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Asi que Jeff pierde.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+Herencia: es la capacidad de definir una clase, modificando una clase definida
+ previamente.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Clase madre:
+\end_layout
+
+\end_inset
+
+ esta es la clase de la que una clase hereda.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Clase hija:
+\end_layout
+
+\end_inset
+
+ nueva clase creada por medio de herencia, también recibe el nombre de 
+\begin_inset Quotes eld
+\end_inset
+
+subclase.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+herencia
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase madre
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase madre
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+subclase
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Enumerate
+Escriba 
+\family typewriter
+imprimaManos
+\family default
+ que recorre la lista 
+\family typewriter
+self.manos
+\family default
+ e imprime cada mano.
+\end_layout
+
+\begin_layout Enumerate
+Con base en la clase 
+\family typewriter
+secuenciaADN
+\family default
+, escriba una clase más general que se denomine 
+\family typewriter
+biosecuencia
+\family default
+ que maneje el alfabeto de la biosecuencia como un atributo.
+\end_layout
+
+\begin_layout Enumerate
+Agregue un método para chequear que la secuencia está bien formada, esto
+ es, cada elemento pertenece al alfabeto.
+\end_layout
+
+\end_body
+\end_document

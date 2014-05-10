@@ -1,0 +1,2083 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+LyX source for textbook 
+\begin_inset Quotes eld
+\end_inset
+
+How to think like a computer scientist'' 
+\end_layout
+
+\begin_layout Plain Layout
+Copyright (c) 2001 Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Solución de problemas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+solución de problemas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Solución de acertijos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+acertijo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Todos nos hemos topado con acertijos como el siguiente.
+ Disponga los dígitos del 1 al 9 en el recuadro siguiente, de manera que
+ la suma de cada fila, cada columna y las dos diagonales dé el mismo resultado:
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este acertijo se denomina construcción de un 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+cuadrado mágico
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Un acertijo, normalmente, es un enigma o adivinanza que se propone como
+ pasatiempo.
+ Otros ejemplos de acertijo son un crucigrama, una sopa de letras y un sudoku.
+\end_layout
+
+\begin_layout Standard
+Los acertijos pueden tener varias soluciones, por ejemplo, la siguiente
+ es una solución propuesta al acertijo anterior:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Usted puede notar que esta solución candidata no es correcta.
+ Si tomamos la suma por filas, obtenemos valores distintos:
+\end_layout
+
+\begin_layout Itemize
+En la fila 1: 1+2+3=6 
+\end_layout
+
+\begin_layout Itemize
+En la fila 2: 4+5+6=15 
+\end_layout
+
+\begin_layout Itemize
+En la fila 3: 7+8+9=24
+\end_layout
+
+\begin_layout Standard
+Si tomamos las columnas, tampoco obtenemos el mismo resultado en cada suma:
+\end_layout
+
+\begin_layout Itemize
+En la columna 1: 1+4+7=12 
+\end_layout
+
+\begin_layout Itemize
+En la columna 2: 2+5+8=15 
+\end_layout
+
+\begin_layout Itemize
+En la columna 3: 3+6+9=18
+\end_layout
+
+\begin_layout Standard
+A pesar de que las diagonales sí suman lo mismo:
+\end_layout
+
+\begin_layout Itemize
+En la diagonal 1: 1+5+9=15 
+\end_layout
+
+\begin_layout Itemize
+En la diagonal 2: 7+5+3=15
+\end_layout
+
+\begin_layout Standard
+Tómese un par de minutos para resolver este acertijo, es decir, para construir
+ un cuadrado mágico y regrese a la lectura cuando obtenga la solución.
+\end_layout
+
+\begin_layout Standard
+Ahora, responda para sí mismo las siguientes preguntas:
+\end_layout
+
+\begin_layout Itemize
+¿Cuál es la solución que encontró? 
+\end_layout
+
+\begin_layout Itemize
+¿Es correcta su solución? 
+\end_layout
+
+\begin_layout Itemize
+¿Cómo le demuestra a alguien que su solución es correcta? 
+\end_layout
+
+\begin_layout Itemize
+¿Cuál fue el proceso de solución que llevo a cabo en su mente? 
+\end_layout
+
+\begin_layout Itemize
+¿Cómo le explicaría a alguien el proceso de solución que llevó a cabo? 
+\end_layout
+
+\begin_layout Itemize
+¿Puede poner por escrito el proceso de solución que llevó a cabo? 
+\end_layout
+
+\begin_layout Standard
+El reflexionar seriamente sobre estas preguntas es muy importante, tenga
+ la seguridad de que esta actividad será muy importante para continuar con
+ la lectura.
+\end_layout
+
+\begin_layout Standard
+Vamos a ir contestando las preguntas desde una solución particular, y desde
+ un proceso de solución particular, el de los autores.
+ Su solución y su proceso de solución son igualmente valiosos, el nuestro
+ solo es otra alternativa; es más, puede que hayamos descubierto la misma:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta solución es correcta, porque la suma por filas, columnas y de las dos
+ diagonales da el mismo valor, 15.
+ Ahora, para demostrarle a alguien este hecho podemos revisar las sumas
+ por filas, columnas y diagonales detalladamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+begin{itemize}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+item En la fila 1: 4+9+2=15
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+item En la fila 2: 3+5+7=15
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+item En la fila 3: 8+1+6=15
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+item En la columna 1: 4+3+8=15
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+item En la columna 2: 9+5+1=15
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+item En la columna 3: 2+7+6=15
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+item En la diagonal 1: 4+5+6=15
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+item En la diagonal 2: 8+5+2=15
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% 
+\backslash
+end{itemize}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El proceso de solución que llevamos a cabo fue el siguiente:
+\end_layout
+
+\begin_layout Itemize
+Sospechábamos que el 5 debía estar en la casilla central, ya que es el número
+ medio de los 9: 1 2 3 4 
+\series bold
+5
+\series default
+ 6 7 8 9.
+\end_layout
+
+\begin_layout Itemize
+Observamos un patrón interesante de la primera solución propuesta: las diagonale
+s sumaban igual, 15:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+1
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+5
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+7
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+9
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+La observación anterior, 1+5+9=7+5+3, también permite deducir otro hecho
+ interesante.
+ Como el 5 está en las dos sumas, podemos deducir que 1+9=7+3, y esto es
+ 10.
+\end_layout
+
+\begin_layout Itemize
+Una posible estrategia consiste en colocar parejas de números que sumen
+ 10, dejando al 5 
+\begin_inset Quotes eld
+\end_inset
+
+emparedado
+\begin_inset Quotes erd
+\end_inset
+
+, por ejemplo, poner la pareja 6,4:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+6
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+5
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+4
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Para agilizar ésta estrategia es conveniente enumerar todas las parejas
+ de números entre 1 y 9 que suman 10, excluyendo al 5: (1,9),(2,8),(3,7),(4,6)
+\end_layout
+
+\begin_layout Itemize
+Ahora, podemos probar colocando éstas parejas en filas, columnas y diagonales.
+\end_layout
+
+\begin_layout Itemize
+Un primer ensayo:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+6
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+5
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+4
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aquí encontramos que es imposible armar el cuadrado, pues no hay como situar
+ el 9 ni el 1.
+ Esto sugiere que la pareja (6,4) no va en la columna central, debemos cambiarla.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Después de varios ensayos, moviendo la pareja (6,4), y reacomodando los
+ otros números logramos llegar a la solución correcta.
+\end_layout
+
+\begin_layout Section
+El método de solución
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:metodosolucion"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método de solución de problemas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mas allá de la construcción de cuadrados mágicos, lo que el ejemplo anterior
+ pretende ilustrar es la importancia que tiene el usar un método ordenado
+ de solución de problemas, acertijos en este caso.
+\end_layout
+
+\begin_layout Standard
+Observe que la solución anterior fue conseguida a través de varios pasos
+ sencillos, aunque el encadenamiento de todos éstos hasta producir un resultado
+ correcto pueda parecer algo complejo.
+\end_layout
+
+\begin_layout Standard
+Lea cualquier historia de Sherlock Holmes y obtendrá la misma impresión.
+ Cada caso, tomado por el famoso detective, presenta un enigma difícil,
+ que al final es resuelto por un encadenamiento de averiguaciones, deducciones,
+ conjeturas y pruebas sencillas.
+ Aunque la solución completa de cada caso demanda un proceso complejo de
+ razonamiento, cada paso intermedio es sencillo y está guiado por preguntas
+ sencillas y puntuales.
+\end_layout
+
+\begin_layout Standard
+Las aventuras de Sherlock Holmes quizás constituyen una de las mejores referenci
+as bibliográficas en el proceso de solución de problemas.
+ Son como los capítulos de C.S.I
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.cbs.com/primetime/csi/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+, puestos por escrito.
+ Para Holmes, y quizás para Grissom, existen varios principios que se deben
+ seguir:
+\end_layout
+
+\begin_layout Itemize
+Obtenerr las soluciones y quedarse satisfecho con ellas.
+ El peor inconveniente para consolidar un método de solución de problemas
+ poderoso consiste en que cuando nos topemos con una solución completa de
+ un solo golpe nos quedemos sin reflexionar cómo llegamos a ella.
+ Así, nunca aprenderemos estrategias valiosas para resolver el siguiente
+ problema.
+ Holmes decía que nunca adivinaba, primero recolectaba la mayor información
+ posible sobre los problemas que tenía a mano, de forma que estos datos
+ le 
+\begin_inset Quotes eld
+\end_inset
+
+sugirieran
+\begin_inset Quotes erd
+\end_inset
+
+ alguna solución.
+\end_layout
+
+\begin_layout Itemize
+Todo empieza por la observación, un proceso minucioso de recolección de
+ datos sobre el problema a mano.
+ Ningún dato puede ignorarse de entrada, hasta que uno tenga una comprensión
+ profunda sobre el problema.
+\end_layout
+
+\begin_layout Itemize
+Hay que prepararse adecuadamente en una variedad de dominios.
+ Para Holmes esto iba desde tiro con pistola, esgrima, boxeo, análisis de
+ huellas, entre otros.
+ Para cada problema que intentemos resolver habrá un dominio en el cual
+ debemos aprender lo más que podamos, esto facilitará enormemente el proceso
+ de solución.
+\end_layout
+
+\begin_layout Itemize
+Prestar atención a los detalles 
+\begin_inset Quotes eld
+\end_inset
+
+inusuales
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Por ejemplo, en nuestro cuadrado mágico fue algo inusual que las diagonales
+ de la primera alternativa de solución, la más ingenua posible, sumaran
+ lo mismo.
+\end_layout
+
+\begin_layout Itemize
+Para deducir más hechos, a partir de los datos recolectados y los detalles
+ inusuales, hay que usar todas las armas del razonamiento: el poder de la
+ deducción (derivar nuevos hechos a partir de los datos), la inducción (generali
+zar a partir de casos), la refutación (el proceso de probar la falsedad
+ de alguna conjetura), el pensamiento analógico (encontrando relaciones,metáfora
+s, analogías) y, por último, pero no menos importante, el uso del sentido
+ común.
+\end_layout
+
+\begin_layout Itemize
+Después del análisis de datos, uno siempre debe proponer una alternativa
+ de solución, así sea simple e ingenua, y proceder intentando probarla y
+ 
+\series bold
+refutarla
+\series default
+ al mismo tiempo.
+ Vale la pena recalcar esto: no importa que tan ingenua, sencilla e incompleta
+ es una alternativa de solución, con tal de que nos permita seguir indagando.
+ Esto es como la primera frase que se le dice a una chica (o chico, dado
+ el caso) que uno quiere conocer; no importa qué frase sea, no importa que
+ tan trivial sea, con tal de que permita iniciar una conversación.
+\end_layout
+
+\begin_layout Itemize
+El proceso de búsqueda de soluciones es como una conversación que se inicia,
+ aunque en este caso el interlocutor no es una persona, sino el problema
+ que tenemos a mano.
+ Con una primera alternativa de solución---no importa lo sencilla e incompleta--
+- podemos formularnos una pregunta interesante: ¿resuelve esta alternativa
+ el problema?
+\end_layout
+
+\begin_layout Itemize
+Lo importante de responder la pregunta anterior no es la obtención de un
+ 
+\series bold
+No
+\series default
+ como respuesta; pues esto es lo que sucede la mayoría de las veces.
+ Lo importante viene cuando nos formulamos esta segunda pregunta ¿Con lo
+ que sabemos del problema hasta ahora 
+\series bold
+por qué mi alternativa no es capaz de resolverlo?
+\end_layout
+
+\begin_layout Itemize
+La respuesta a la pregunta anterior puede ser: todavía no sé lo suficiente
+ sobre el problema para entender por qué mi alternativa de solución no lo
+ resuelve; esto es una señal de alerta para recolectar más datos y estudiar
+ mas el dominio del problema.
+\end_layout
+
+\begin_layout Itemize
+Una respuesta más constructiva a la pregunta anterior puede ser: mi alternativa
+ de solución no resuelve el problema porque no considera algunos hechos
+ importantes, y no considera algunas restricciones que debe cumplir una
+ solución.
+ Un ejemplo de este tipo de respuesta lo da nuestro ensayo de colocar la
+ pareja (6,4) emparedando al 5 en el problema del cuadrado mágico:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+6
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+5
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+4
+\series default
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando notamos que la pareja (6,4) no puede colocarse en la columna central
+ del cuadrado, intentamos otra alternativa de solución, colocando estos
+ números en filas o en las esquinas.
+ Lo importante de este tipo de respuesta es que nos va a permitir avanzar
+ a 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ otra
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ alternativa de solución, casi siempre más compleja y más cercana a la solución.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+No poner obstáculos a la creatividad.
+ Es muy difícil lograr esto porque la mente humana siempre busca límites
+ para respetar; así, hay que realizar un esfuerzo consciente para eliminar
+ todo límite o restricción que nuestra mente va creando.
+ Una estrategia interesante es el uso y fortalecimiento del pensamiento
+ lateral.
+\end_layout
+
+\begin_layout Itemize
+Perseverar.
+ El motivo más común de fracaso en la solución de acertijos y problemas
+ es el abandono.
+ No existe una receta mágica para resolver problemas, lo único que uno puede
+ hacer es seguir un método y perseverar, perseverar sin importar cuantas
+ alternativas de solución incorrectas se hayan generado.
+ Esta es la clave para el éxito.
+ Holmes decía que eran muchísimos más los casos que no había podido resolver,
+ quizás Grissom reconocería lo mismo.
+ Lo importante entonces es perseverar ante cada nuevo caso, esta es la única
+ actitud razonable para enfrentar y resolver problemas.
+\end_layout
+
+\begin_layout Section
+Reflexión sobre este método de solución
+\end_layout
+
+\begin_layout Standard
+El proceso de solución de problemas que hemos presentado es muy sencillo.
+ Los grandes profesionales que tienen mucho éxito en su campo (científicos,
+ humanistas, ingenieros, médicos, empresarios, etc.) tienen métodos de solución
+ de problemas mucho más avanzados que el que hemos presentado aquí.
+ Con esto pretendemos ilustrar un punto: lo importante no es el método propuesto
+, porque muy probablemente no le servirá para resolver todos los problemas
+ o acertijos que enfrente; lo importante es:
+\end_layout
+
+\begin_layout Itemize
+Contar con un método de solución de problemas.
+ Si no hay método, podemos solucionar problemas, claro está, pero cada vez
+ que lo hagamos será por golpes de suerte o inspiración --que no siempre
+ nos acompaña, desafortunadamente.
+\end_layout
+
+\begin_layout Itemize
+Desarrollar, a medida que transcurra el tiempo y adquiera más conocimientos
+ sobre su profesión y la vida, un método propio de solución de problemas.
+ Este desarrollo personal puede tomar como base el método expuesto aquí,
+ o algún otro que encuentre en la literatura o a través de la interacción
+ con otras personas.
+\end_layout
+
+\begin_layout Section
+Acertijos propuestos
+\end_layout
+
+\begin_layout Standard
+Para que empiece inmediatamente a construir su método personal de solución
+ de problemas, tome cada uno de los siguientes acertijos, siga el proceso
+ de solución recomendado y documéntelo a manera de entrenamiento.
+ Si usted descubre estrategias generales que no han sido consideradas aquí,
+ compártalas con sus compañeros, profesores y, mejor aún, con los autores
+ del libro.
+\end_layout
+
+\begin_layout Enumerate
+Considere un tablero de ajedrez de 4x4 y 4 damas del mismo color.
+ Su misión es colocar las 4 damas en el tablero sin que éstas se ataquen
+ entre sí.
+ Recuerde que una dama ataca a otra ficha si se encuentran en la misma fila,
+ columna o diagonal.
+\end_layout
+
+\begin_layout Enumerate
+Partiendo de la igualdad 
+\begin_inset Formula $a=b$
+\end_inset
+
+, encuentre cuál es el problema en el siguiente razonamiento:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray*}
+a & = & b\\
+a^{2} & = & ba\\
+a^{2}-b^{2} & = & ba-b^{2}\\
+(a-b)(a+b) & = & b(a-b)\\
+a+b & = & b\\
+a & = & 2b\\
+\frac{a}{b} & = & 2\\
+1 & = & 2
+\end{eqnarray*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tenga en cuenta que en el último paso se volvió a usar el hecho de que 
+\begin_inset Formula $a=b$
+\end_inset
+
+, en la forma 
+\begin_inset Formula $\frac{a}{b}=1$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Encuentre el menor número entero positivo que pueda descomponerse como la
+ suma de los cubos de dos números enteros positivos de dos maneras distintas.
+ Esto es, encontrar el mínimo 
+\begin_inset Formula $A$
+\end_inset
+
+ tal que 
+\begin_inset Formula $A=b^{3}+c^{3}$
+\end_inset
+
+ y 
+\begin_inset Formula $A=d^{3}+e^{3}$
+\end_inset
+
+, con 
+\begin_inset Formula $A,b,c,d$
+\end_inset
+
+ y 
+\begin_inset Formula $e$
+\end_inset
+
+ números positivos, mayores a cero, y distintos entre si.
+\end_layout
+
+\begin_layout Section
+Mas allá de los acertijos: problemas computacionales
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+problema computacional
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un problema computacional es parecido a un acertijo; se presenta una situación
+ problemática y uno debe diseñar alguna solución.
+ En los problemas computacionales la solución consiste en una 
+\series bold
+descripción general de procesos
+\series default
+; esto es, un problema computacional tiene como solución la descripción
+ de un conjunto de pasos que se podrían llevar a cabo de manera general
+ para lograr un objetivo.
+\end_layout
+
+\begin_layout Standard
+Un ejemplo que ilustra esto es la multiplicación.
+ Todos sabemos multiplicar números de dos cifras, por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+newpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\begin{array}{cccc}
+\  & \  & 3 & 4\\
+\  & \times & 2 & 1\\
+\hline \  & \  & 3 & 4\\
++ & 6 & 8 & \ \\
+\hline \  & 7 & 1 & 4
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero el problema computacional asociado a la multiplicación de números de
+ dos cifras consiste en hallar la descripción general de todos los procesos
+ posibles de multiplicación de parejas de números de dos cifras.
+ Este problema ha sido resuelto, desde hace varios milenios, por diferentes
+ civilizaciones humanas, siguiendo métodos alternativos.
+ Un método de solución moderno podría describirse así:
+\end_layout
+
+\begin_layout Standard
+Tome los dos números de dos cifras, P y Q.
+ Suponga que las cifras de P son 
+\begin_inset Formula $p_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $p_{2}$
+\end_inset
+
+, esto es, 
+\begin_inset Formula $P=p_{1}p_{2}$
+\end_inset
+
+.
+ Igualmente, suponga que 
+\begin_inset Formula $Q=q_{1}q_{2}$
+\end_inset
+
+.
+ La descripción 
+\series bold
+general
+\series default
+ de todas las multiplicaciones de dos cifras puede hacerse así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{cccc}
+\  & \  & p_{1} & p_{2}\\
+\  & \times & q_{1} & q_{2}\\
+\hline \  & \  & q_{2}p_{1} & q_{2}p_{2}\\
++ & q_{1}p_{1} & q_{1}p_{2} & \ \\
+\hline \  & q_{1}p_{1} & q_{2}p_{1}+q_{1}p_{2} & q_{2}p_{2}
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Tome la cifra 
+\begin_inset Formula $q_{2}$
+\end_inset
+
+ y multiplíquela por las cifras de 
+\begin_inset Formula $P$
+\end_inset
+
+ (con ayuda de una tabla de multiplicación).
+ Ubique los resultados debajo de cada cifra de 
+\begin_inset Formula $P$
+\end_inset
+
+ correspondiente.
+\end_layout
+
+\begin_layout Itemize
+Tome la cifra 
+\begin_inset Formula $q_{1}$
+\end_inset
+
+ y multiplíquela por las cifras de 
+\begin_inset Formula $P$
+\end_inset
+
+ (con ayuda de una tabla de multiplicación).
+ Ubique los resultados debajo de las cifras que se generaron en el paso
+ anterior, aunque desplazadas una columna hacia la izquierda.
+\end_layout
+
+\begin_layout Itemize
+Si en alguno de los pasos anteriores el resultado llega a 10 o se pasa de
+ 10, ubique las unidades únicamente y lleve un acarreo, en decenas o centenas)
+ para la columna de la izquierda.
+\end_layout
+
+\begin_layout Itemize
+Sume los dos resultados parciales, obteniendo el resultado final.
+\end_layout
+
+\begin_layout Standard
+Usted puede estar quejándose en este momento, ¿para qué hay que complicar
+ tanto nuestro viejo y conocido proceso de multiplicación? Bueno, hay varias
+ razones para esto:
+\end_layout
+
+\begin_layout Itemize
+Una descripción impersonal como ésta puede ser leída y ejecutada por cualquier
+ persona ---o computador, como veremos mas adelante---.
+\end_layout
+
+\begin_layout Itemize
+Sólo creando descripciones generales de procesos se pueden analizar para
+ demostrar que funcionan correctamente.
+\end_layout
+
+\begin_layout Itemize
+Queríamos sorprenderlo, tomando algo tan conocido como la suma y dándole
+ una presentación que, quizás, nunca había visto.
+ Este cambio de perspectiva es una invitación a que abra su mente a pensar
+ en descripciones generales de procesos.
+ 
+\end_layout
+
+\begin_layout Standard
+Precisando un poco, un problema computacional es la descripción general
+ de una situación en la que se presentan unos datos de entrada y una salida
+ deseada que se quiere calcular.
+ Por ejemplo, en el problema computacional de la multiplicación de números
+ de dos cifras, los datos de entrada son los números a multiplicar; la salida
+ es el producto de los dos números.
+ Existen más problemas computacionales como el de ordenar un conjunto de
+ números y el problema de encontrar una palabra en un párrafo de texto.
+ Como ejercicio defina para estos problemas cuales son los datos de entrada
+ y la salida deseada.
+\end_layout
+
+\begin_layout Standard
+La solución de un problema computacional es una descripción general del
+ conjunto de pasos que se deben llevar a cabo con las entradas del problema
+ para producir los datos de salida deseados.
+ Solucionar problemas computacionales no es muy diferente de solucionar
+ acertijos, las dos actividades producen la misma clase de retos intelectuales,
+ y el método de solución de la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:metodosolucion"
+
+\end_inset
+
+ es aplicable en los dos casos.
+ Lo único que hay que tener en cuenta es que la solución de un problema
+ es una 
+\series bold
+descripción general o programa, como veremos más adelante
+\series default
+, que se refiere a las entradas y salidas de una manera más técnica de lo
+ que estamos acostumbrados.
+ Un ejemplo de esto lo constituyen los nombres 
+\begin_inset Formula $p_{1},p_{2},q_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $q_{2}$
+\end_inset
+
+ que usamos en la descripción general de la multiplicación de números de
+ dos cifras.
+\end_layout
+
+\begin_layout Standard
+Aunque la solución de problemas es una actividad compleja, es muy interesante,
+ estimulante e intelectualmente gratificante; incluso cuando no llegamos
+ a solucionar los problemas completamente.
+ En el libro vamos a enfocarnos en la solución de problemas computacionales
+ por medio de programas, y, aunque solo vamos a explorar este tipo de problemas,
+ usted verá que las estrategias de solución, los conceptos que aprenderá
+ y la actitud de científico de la computación que adquirirá serán valiosas
+ herramientas para resolver todo tipo de problemas de la vida real.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+Acertijo: enigma o adivinanza que se propone como pasatiempo.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Solución de problemas:
+\end_layout
+
+\end_inset
+
+ el proceso de formular un problema, hallar la solución y expresar la solución.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Método de solución de problemas:
+\end_layout
+
+\end_inset
+
+ un conjunto de pasos, estrategias y técnicas organizados que permiten soluciona
+r problemas de una manera ordenada.
+\end_layout
+
+\begin_layout Description
+Problema: una situación o circunstancia en la que se dificulta lograr un
+ fin.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Problema computacional:
+\end_layout
+
+\end_inset
+
+ una situación general con una especificación de los datos de entrada y
+ los datos de salida deseados.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Solución a un problema:
+\end_layout
+
+\end_inset
+
+ conjunto de pasos y estrategias que permiten lograr un fin determinado
+ en una situación problemática, cumpliendo ciertas restricciones.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Solución a un problema computacional:
+\end_layout
+
+\end_inset
+
+ descripción general de los pasos que toman cualquier entrada en un problema
+ computacional y la transforman en una salida deseada.
+\end_layout
+
+\begin_layout Description
+Restricción: una condición que tiene que cumplirse en un problema dado.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+acertijo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+solución de problemas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método de solución de problemas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método!de solución de problemas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+problema
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+solución a un problema
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+problema!solución
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+restricción
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Standard
+Intente resolver los siguientes problemas computacionales, proponiendo solucione
+s 
+\series bold
+generales e impersonales
+\series default
+:
+\end_layout
+
+\begin_layout Enumerate
+Describa cómo ordenar tres números a, b y c.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Describa cómo encontrar el menor elemento en un conjunto de números.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Describa cómo encontrar una palabra dentro de un texto más largo.
+ 
+\end_layout
+
+\end_body
+\end_document

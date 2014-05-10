@@ -1,0 +1,3082 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (C) 1999  Allen B.
+ Downey
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This LaTeX source is free software; you can redistribute it and/or
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% modify it under the terms of the GNU General Public License as
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% published by the Free Software Foundation (version 2).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This LaTeX source is distributed in the hope that it will be useful,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  See the GNU
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% General Public License for more derestos.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Compiling this LaTeX source has the effect of generating
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% a device-independent representation of a textbook, which
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% can be converted to other formats and printed.
+  All intermediate
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% representations (including DVI and Postscript), and all printed
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% copies of the textbook are also covered by the GNU General
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Public License.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named COPYING that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU General Public License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Listas enlazadas
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "lista"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Referencias incrustadas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+referencia
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+referencia incrustada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+referencia!incrustada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista enlazada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!enlazada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+nodo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+carga
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hemos visto ejemplos de atributos (denominados 
+\series bold
+referencias incrustadas
+\series default
+) que se refieren a otros objetos en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "embedded"
+
+\end_inset
+
+.
+ Una estructura de datos muy común (la 
+\series bold
+lista enlazada
+\series default
+), toma ventaja de esta posibilidad.
+\end_layout
+
+\begin_layout Standard
+Las listas enlazadas están hechas de 
+\series bold
+nodos
+\series default
+, que contienen una referencia al siguiente nodo en la lista.
+ Además, cada nodo contiene una información denominada la 
+\series bold
+carga
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Una lista enlazada se considera como una 
+\series bold
+estructura de datos recursiva
+\series default
+ si damos la siguiente definición.
+\end_layout
+
+\begin_layout Quote
+Una lista enlazada es: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+la lista vacía, representada por el valor 
+\family typewriter
+None
+\family default
+, o
+\end_layout
+
+\begin_layout Itemize
+un nodo que contiene una carga y una referencia a una lista enlazada.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+estructura de datos recursiva
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+estructura de datos!recursiva
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las estructuras de datos recursivas se implementan naturalmente con métodos
+ recursivos.
+\end_layout
+
+\begin_layout Section
+La clase 
+\family typewriter
+Nodo
+\family default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase Nodo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase!Nodo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Empezaremos con los métodos básicos de inicialización y el 
+\family typewriter
+__str__
+\family default
+ para que podamos crear y desplegar objetos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Nodo:
+\end_layout
+
+\begin_layout Verbatim
+
+  def __init__(self, carga=None, siguiente=None):
+\end_layout
+
+\begin_layout Verbatim
+
+    self.carga = carga
+\end_layout
+
+\begin_layout Verbatim
+
+    self.siguiente  = siguiente
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  def __str__(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    return str(self.carga)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Los parámetros para el método de inicialización son opcionales.
+ Por defecto la carga y el enlace 
+\family typewriter
+siguiente
+\family default
+, reciben el valor 
+\family typewriter
+None
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+La representación textual de un nodo es la representación de la carga.
+ Como cualquier valor puede ser pasado a la función 
+\family typewriter
+str
+\family default
+ , podemos almacenar cualquier tipo de valor en la lista.
+\end_layout
+
+\begin_layout Standard
+Para probar la implementación, podemos crear un 
+\family typewriter
+Nodo
+\family default
+ e imprimirlo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> nodo = Nodo("test")
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print nodo
+\end_layout
+
+\begin_layout Verbatim
+
+test
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para hacerlo más interesante, vamos a pensar en una lista con varios nodos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> nodo1 = Nodo(1)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> nodo2 = Nodo(2)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> nodo3 = Nodo(3)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este código crea tres nodos, pero todavía no tenemos una lista porque estos
+ no estan 
+\series bold
+enlazados
+\series default
+.
+ El diagrama de estados luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/link1.eps
+	scale 70
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para enlazar los nodos, tenemos que lograr que el primer nodo se refiera
+ al segundo, y que el segundo se refiera al tercero:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> nodo1.siguiente = nodo2
+\end_layout
+
+\begin_layout Verbatim
+
+>>> nodo2.siguiente = nodo3
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La referencia del tercer nodo es 
+\family typewriter
+None
+\family default
+, lo que indica que es el último nodo de la lista.
+ Ahora el diagrama de estados luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/link2.eps
+	scale 90
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora usted sabe cómo crear nodos y enlazarlos para crear listas.
+ Lo que todavía no está claro, es el por qué hacerlo.
+\end_layout
+
+\begin_layout Section
+Listas como colecciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+colección
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las listas son útiles porque proporcionan una forma de ensamblar múltiples
+ objetos en una entidad única, a veces llamada 
+\series bold
+colección
+\series default
+.
+ En el ejemplo, el primer nodo de la lista sirve como referencia a toda
+ la lista.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!imprimir
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!como parámetro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para pasar la lista como parámetro, sólo tenemos que pasar una referencia
+ al primer nodo.
+ Por ejemplo, la función 
+\family typewriter
+imprimirLista
+\family default
+ toma un solo nodo como argumento.
+ Empieza con la cabeza de la lista, imprime cada nodo hasta llegar al final:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def imprimirLista(nodo):
+\end_layout
+
+\begin_layout Verbatim
+
+  while nodo:
+\end_layout
+
+\begin_layout Verbatim
+
+    print nodo,
+\end_layout
+
+\begin_layout Verbatim
+
+    nodo = nodo.siguiente
+\end_layout
+
+\begin_layout Verbatim
+
+  print
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para llamar este método, pasamos una referencia al primer nodo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimirLista(nodo1)
+\end_layout
+
+\begin_layout Verbatim
+
+1 2 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Dentro de 
+\family typewriter
+imprimirLista
+\family default
+ tenemos una referencia al primer nodo de la lista, pero no hay variable
+ que se refiera a los otros nodos.
+ Tenemos que usar el valor 
+\family typewriter
+siguiente
+\family default
+ de cada nodo para obtener el siguiente nodo.
+\end_layout
+
+\begin_layout Standard
+Para recorrer una lista enlazada, es muy común usar una variable de ciclo
+ como 
+\family typewriter
+nodo
+\family default
+ para que se refiera a cada uno de los nodos en cada momento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable de ciclo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!recorrido
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recorrido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este diagrama muestra el valor de 
+\family typewriter
+lista
+\family default
+ y los valores que 
+\family typewriter
+nodo
+\family default
+ toma:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/link3.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Por convención, las listas se imprimen entre corchetes y los elementos
+ se separan por medio de comas, como en el ejemplo 
+\family typewriter
+[1, 2, 3]
+\family default
+.
+ Como ejercicio modifique 
+\family typewriter
+imprimirLista
+\family default
+ de forma que muestre la salida en este formato.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Listas y recursión
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "listrecursion"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!recorrido recursivo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recorrido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es natural implementar muchas operaciones sobre listas por medio de métodos
+ recursivos.
+ Por ejemplo, el siguiente algoritmo recursivo imprime una lista al revés:
+\end_layout
+
+\begin_layout Enumerate
+Separe la lista en dos partes: el primer nodo (la cabeza de la lista); y
+ el resto.
+\end_layout
+
+\begin_layout Enumerate
+Imprima el resto al revés.
+\end_layout
+
+\begin_layout Enumerate
+Imprima la cabeza.
+\end_layout
+
+\begin_layout Standard
+Por supuesto, el paso 2, el llamado recursivo asume que ya tenemos una forma
+ de imprimir una lista al revés.
+ Si asumimos que esto es así ---el salto de fe---entonces podemos convencernos
+ de que el algoritmo trabaja correctamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+salto de fe
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+listas!imprimiendo al revés
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Todo lo que necesitamos es un caso base y una forma de demostrar que para
+ cualquier lista, eventualmente llegaremos al caso base.
+ Dada la definición recursiva de una lista, un caso base natural es la lista
+ vacía, representada por 
+\family typewriter
+None
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def imprimirAlReves(lista):
+\end_layout
+
+\begin_layout Verbatim
+
+  if lista == None: 
+\end_layout
+
+\begin_layout Verbatim
+
+    return
+\end_layout
+
+\begin_layout Verbatim
+
+  cabeza = lista
+\end_layout
+
+\begin_layout Verbatim
+
+  resto = lista.siguiente
+\end_layout
+
+\begin_layout Verbatim
+
+  imprimirAlReves(resto)
+\end_layout
+
+\begin_layout Verbatim
+
+  print cabeza,
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La primera línea resuelve el caso base.
+ Las siguientes separan la 
+\family typewriter
+cabeza
+\family default
+ y el 
+\family typewriter
+resto
+\family default
+.
+ Las últimas dos líneas imprimen la lista.
+ La coma al final de la última línea evita que Python introduzca una nueva
+ línea después de cada nodo.
+\end_layout
+
+\begin_layout Standard
+Ahora llamamos a este método:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimirAlReves(nodo1)
+\end_layout
+
+\begin_layout Verbatim
+
+3 2 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El efecto es una impresión la lista, al revés.
+\end_layout
+
+\begin_layout Standard
+Una pregunta natural que usted se puede estar formulando es, ¿por qué razón
+ 
+\family typewriter
+imprimirAlReves
+\family default
+ e 
+\family typewriter
+imprimirLista
+\family default
+ son funciones y no métodos en la clase 
+\family typewriter
+Nodo
+\family default
+? La razón es que queremos usar a 
+\family typewriter
+None
+\family default
+ para representar la lista vacía y no se puede llamar un método sobre 
+\family typewriter
+None
+\family default
+ en Python.
+ Esta limitación hace un poco engorroso escribir el código para manipulación
+ de listas siguiendo la programación orientada a objetos.
+\end_layout
+
+\begin_layout Standard
+¿Podemos demostrar que 
+\family typewriter
+imprimirAlReves
+\family default
+ va a terminar siempre? En otras palabras, ¿llegará siempre al caso base?
+ De hecho, la respuesta es negativa, algunas listas causarán un error de
+ ejecución.
+\end_layout
+
+\begin_layout Section
+Listas infinitas 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista infinita
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!infinita
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ciclos!en listas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!ciclo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No hay manera de evitar que un nodo se refiera a un nodo anterior en la
+ lista hacia 
+\begin_inset Quotes eld
+\end_inset
+
+atrás
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Incluso, puede referirse a sí mismo.
+ Por ejemplo, la siguiente figura muestra una lista con dos nodos, uno de
+ los cuales se refiere a sí mismo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/link4.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si llamamos a 
+\family typewriter
+imprimirLista
+\family default
+ sobre esta lista, iteraría para siempre.
+ Si llamamos a 
+\family typewriter
+imprimirAlReves
+\family default
+, se haría recursión hasta causar un error en tiempo de ejecución.
+ Este comportamiento hace a las listas circulares muy difíciles de manipular.
+\end_layout
+
+\begin_layout Standard
+Sin embargo, a veces son muy útiles.
+ Por ejemplo, podemos representar un número como una lista de dígitos y
+ usar una lista infinita para representar una fracción periódica.
+\end_layout
+
+\begin_layout Standard
+Así que no es posible demostrar que 
+\family typewriter
+imprimirLista
+\family default
+ e 
+\family typewriter
+imprimirAlReves
+\family default
+ terminen.
+ Lo mejor que podemos hacer es probar la sentencia, 
+\begin_inset Quotes eld
+\end_inset
+
+Si la lista no tiene referencias hacia atrás, los métodos terminarán.
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Esto es una 
+\series bold
+precondición
+\series default
+.
+ Impone una restricción sobre los parámetros y describe el comportamiento
+ del método si ésta se cumple.
+ Más adelante veremos otros ejemplos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+precondición
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+El teorema de la ambigüedad fundamental
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ambigüedad!teorema fundamental
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+teorema!fundamental de la ambigüedad
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una parte de 
+\family typewriter
+imprimirAlReves
+\family default
+ puede haber suscitado su curiosidad:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+    cabeza = lista
+\end_layout
+
+\begin_layout Verbatim
+
+    resto = lista.siguiente
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Después de la primera asignación 
+\family typewriter
+cabeza
+\family default
+ y 
+\family typewriter
+lista
+\family default
+ tienen el mismo tipo y el mismo valor.
+ ¿Por qué creamos una nueva variable?
+\end_layout
+
+\begin_layout Standard
+La respuesta yace en que las dos variables tienen roles distintos.
+ 
+\family typewriter
+cabeza
+\family default
+ es una referencia a un nodo y lista es una referencia a toda la lista.
+ Estos 
+\begin_inset Quotes eld
+\end_inset
+
+roles
+\begin_inset Quotes erd
+\end_inset
+
+ están en la mente del programador y le ayudan a mantener la coherencia
+ de los programas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable!roles
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+rol!variable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En general, no podemos decir inmediatamente qué rol juega una variable en
+ un programa.
+ Esta ambigüedad puede ser útil, pero también dificulta la lectura.
+ Los nombres de las variables pueden usarse para documentar la forma en
+ que esperamos que se use una variable, y, a menudo, podemos crear variables
+ adicionates como 
+\family typewriter
+nodo
+\family default
+ y 
+\family typewriter
+lista
+\family default
+ para eliminar ambigüedades.
+\end_layout
+
+\begin_layout Standard
+Podríamos haber escrito 
+\family typewriter
+imprimirAlReves
+\family default
+ de una manera más concisa sin las variables 
+\family typewriter
+cabeza
+\family default
+ y 
+\family typewriter
+resto
+\family default
+, pero esto también dificulta su lectura:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def imprimirAlReves(lista) :
+\end_layout
+
+\begin_layout Verbatim
+
+  if lista == None : 
+\end_layout
+
+\begin_layout Verbatim
+
+     return
+\end_layout
+
+\begin_layout Verbatim
+
+  imprimirAlReves(lista.siguiente)
+\end_layout
+
+\begin_layout Verbatim
+
+  print lista,
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Cuando leamos el código, tenemos que recordar que 
+\family typewriter
+imprimirAlReves
+\family default
+ trata a su argumento como una colección y 
+\family typewriter
+print
+\family default
+ como a un solo nodo.
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+teorema de la ambigüedad fundamental
+\series default
+ describe la ambigüedad inherente en la referencia a un nodo:
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Una variable que se refiera a un nodo puede tratar el nodo como un objeto
+ único o como el acceso a la lista de nodos
+\series default
+ 
+\end_layout
+
+\begin_layout Section
+Modificando listas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!modificando
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+modificando listas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay varias formas de modificar una lista enlazada.
+ La obvia consiste en cambiar la carga de uno de sus nodos.
+ Las mas interesantes son las que agregan, eliminan o reordenan los nodos.
+\end_layout
+
+\begin_layout Standard
+Como ejemplo, escribamos un método que elimine el segundo nodo en la lista
+ y retorne una referencia al nodo eliminado
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def eliminarSegundo(lista):
+\end_layout
+
+\begin_layout Verbatim
+
+  if lista == None: 
+\end_layout
+
+\begin_layout Verbatim
+
+     return
+\end_layout
+
+\begin_layout Verbatim
+
+  primero = lista
+\end_layout
+
+\begin_layout Verbatim
+
+  segundo = lista.siguiente
+\end_layout
+
+\begin_layout Verbatim
+
+  # hacemos que el primer nodo se refiera al tercero
+\end_layout
+
+\begin_layout Verbatim
+
+  primero.siguiente = segundo.siguiente
+\end_layout
+
+\begin_layout Verbatim
+
+  # desconectamos el segundo nodo de la lista
+\end_layout
+
+\begin_layout Verbatim
+
+  segundo.siguiente = None
+\end_layout
+
+\begin_layout Verbatim
+
+  return segundo
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Aquí también estamos usando variables temporales para aumentar la legibilidad.
+ Aquí hay un ejemplo de uso del método:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimirLista(nodo1)
+\end_layout
+
+\begin_layout Verbatim
+
+1 2 3
+\end_layout
+
+\begin_layout Verbatim
+
+>>> borrado = eliminarSegundo(nodo1)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimirLista(borrado)
+\end_layout
+
+\begin_layout Verbatim
+
+2
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimirLista(nodo1)
+\end_layout
+
+\begin_layout Verbatim
+
+1 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este diagrama de estado muestra el efecto de la operación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/link5.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Qué pasa si usted llama este método con una lista que contiene un solo
+ elemento (un 
+\series bold
+singleton
+\series default
+)? ¿Qué pasa si se llama con la lista vacía como argumento? ¿Hay precondiciones
+ para este método? Si las hay, corríjalo de forma que maneje de manera razonable
+ las violaciones a la precondición.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+singleton
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Funciones facilitadoras (wrappers) y auxiliares (helpers)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método facilitador
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método!facilitador
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función facilitadora
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función!facilitadora
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método auxiliar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método!auxiliar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es bastante útil dividir las operaciones de listas en dos métodos.
+ Con la impresión al revés podemos ilustrarlo, para desplegar 
+\family typewriter
+[3, 2, 1]
+\family default
+ en pantalla podemos llamar el método 
+\family typewriter
+imprimirAlReves
+\family default
+ que desplegará 
+\family typewriter
+3, 2
+\family default
+, y llamar otro método para imprimir los corchetes y el primer nodo.
+ Nombrémosla así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def imprimirAlRevesBien(lista):
+\end_layout
+
+\begin_layout Verbatim
+
+  print "[",
+\end_layout
+
+\begin_layout Verbatim
+
+  if lista != None:
+\end_layout
+
+\begin_layout Verbatim
+
+    cabeza = lista
+\end_layout
+
+\begin_layout Verbatim
+
+    resto = lista.siguiente
+\end_layout
+
+\begin_layout Verbatim
+
+    imprimirAlReves(resto)
+\end_layout
+
+\begin_layout Verbatim
+
+    print cabeza,
+\end_layout
+
+\begin_layout Verbatim
+
+  print "]",
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Es conveniente chequear que estos métodos funcionen bien para casos especiales
+ como la lista vacía o una lista con un solo elemento (singleton).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+singleton
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando usamos este método en algún programa, llamamos directamente a la
+ función 
+\family typewriter
+imprimirAlRevesBien
+\family default
+ para que llame a 
+\family typewriter
+imprimirAlReves
+\family default
+.
+ En este sentido, 
+\family typewriter
+imprimirAlRevesBien
+\family default
+ es una función 
+\series bold
+facilitadora
+\series default
+, que utiliza a la otra, 
+\family typewriter
+imprimirAlReves
+\family default
+ como función 
+\series bold
+auxiliar
+\series default
+.
+\end_layout
+
+\begin_layout Section
+La clase 
+\family typewriter
+ListaEnlazada
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ListaEnlazada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase!ListaEnlazada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay problemas más sutiles en nuestra implementación de listas que vamos
+ a ilustrar desde los efectos a las causas, a partir de una implementación
+ alternativa exploraremos los problemas que resuelve.
+\end_layout
+
+\begin_layout Standard
+Primero, crearemos una clase nueva llamada 
+\family typewriter
+ListaEnlazada
+\family default
+.
+ Tiene como atributos un entero con el número de elementos de la lista y
+ una referencia al primer nodo.
+ Las instancias de 
+\family typewriter
+ListaEnlazada
+\family default
+ sirven como mecanismo de control de listas compuestas por instancias de
+ la clase 
+\family typewriter
+Nodo
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class ListaEnlazada :
+\end_layout
+
+\begin_layout Verbatim
+
+  def __init__(self) :
+\end_layout
+
+\begin_layout Verbatim
+
+    self.numElementos = 0
+\end_layout
+
+\begin_layout Verbatim
+
+    self.cabeza   = None
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Lo bueno de la clase 
+\family typewriter
+ListaEnlazada
+\family default
+ es que proporciona un lugar natural para definir las funciones facilitadores
+ como 
+\family typewriter
+imprimirAlRevesBien
+\family default
+ como métodos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class ListaEnlazada:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def imprimirAlReves(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    print "[",
+\end_layout
+
+\begin_layout Verbatim
+
+    if self.cabeza != None:
+\end_layout
+
+\begin_layout Verbatim
+
+      self.cabeza.imprimirAlReves()
+\end_layout
+
+\begin_layout Verbatim
+
+    print "]",
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+class Nodo:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def imprimirAlReves(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    if self.siguiente != None:
+\end_layout
+
+\begin_layout Verbatim
+
+      resto = self.siguiente
+\end_layout
+
+\begin_layout Verbatim
+
+      resto.imprimirAlReves()
+\end_layout
+
+\begin_layout Verbatim
+
+    print self.carga,
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Aunque inicialmente pueda parecer un poco confuso, vamos a renombrar a
+ la función 
+\family typewriter
+imprimirAlRevesBien
+\family default
+.
+ Ahora vamos a implementar dos métodos con el mismo nombre 
+\family typewriter
+imprimirAlReves
+\family default
+: uno en la clase 
+\family typewriter
+Nodo
+\family default
+ (el auxiliar); y uno en la clase 
+\family typewriter
+ListaEnlazada
+\family default
+ (el facilitador).
+ Cuando el facilitador llama al otro método, 
+\family typewriter
+self.cabeza.imprimirAlReves
+\family default
+, está invocando al auxiliar, porque 
+\family typewriter
+self.cabeza
+\family default
+ es una instancia de la clase 
+\family typewriter
+Nodo
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Otro beneficio de la clase 
+\family typewriter
+ListaEnlazada
+\family default
+ es que facilita agregar o eliminar el primer elemento de una lista.
+ Por ejemplo, 
+\family typewriter
+agregarAlPrincipio
+\family default
+ es un método de la clase 
+\family typewriter
+ListaEnlazada
+\family default
+ que toma una carga como argumento y la pone en un nuevo nodo al principio
+ de la lista:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class ListaEnlazada:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def agregarAlPrincipio(self, carga):
+\end_layout
+
+\begin_layout Verbatim
+
+    nodo = Nodo(carga)
+\end_layout
+
+\begin_layout Verbatim
+
+    nodo.siguiente = self.cabeza
+\end_layout
+
+\begin_layout Verbatim
+
+    self.cabeza = nodo
+\end_layout
+
+\begin_layout Verbatim
+
+    self.numElementos = self.numElementos + 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como de costumbre, usted debe revisar este código para verificar qué sucede
+ con los casos especiales.
+ Por ejemplo, ¿qué pasa si se llama cuando la lista está vacía?
+\end_layout
+
+\begin_layout Section
+Invariantes
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Invariante
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Invariante de objetos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!bien formada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Algunas listas están 
+\begin_inset Quotes eld
+\end_inset
+
+bien formadas".
+ Por ejemplo, si una lista contiene un ciclo, causará problemas graves a
+ nuestros métodos, así que deseamos evitar a toda costa que las listas tengan
+ ciclos.
+ Otro requerimiento de las listas es que el número almacenado en el atributo
+ 
+\family typewriter
+numElementos
+\family default
+ de la clase 
+\family typewriter
+ListaEnlazada
+\family default
+ sea igual al número de elementos en la lista.
+\end_layout
+
+\begin_layout Standard
+Estos requerimientos se denominan 
+\series bold
+Invariantes
+\series default
+ porque, idealmente, deberían ser ciertos para todo objeto de la clase en
+ todo momento.
+ Es una muy buena práctica especificar los Invariantes para los objetos
+ porque permite comprobar de manera mas sencilla la corrección del código,
+ revisar la integridad de las estructuras de datos y detectar errores.
+\end_layout
+
+\begin_layout Standard
+Algo que puede confundir acerca de los invariantes es que hay ciertos momentos
+ en que son violados.
+ Por ejemplo, en el medio de 
+\family typewriter
+agregarAlPrincipio
+\family default
+, después de que hemos agregado el nodo, pero antes de incrementar el atributo
+ 
+\family typewriter
+numElementos
+\family default
+, el Invariante se viola.
+ Esta clase de violación es aceptable, de hecho, casi siempre es imposible
+ modificar un objeto sin violar un Invariante, al menos momentáneamente.
+ Normalmente, requerimos que cada método que viole un invariante, lo establezca
+ nuevamente.
+\end_layout
+
+\begin_layout Standard
+Si hay una parte significativa de código en la que el Invariante se viola,
+ es importante documentarlo claramente, de forma que no se ejecuten operaciones
+ que dependan del Invariante.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+documentar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+referencia incrustada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+referencia!incrustada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+estructura de datos recursiva
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+estructura de datos!recursiva
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista enlazada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!enlazada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+nodo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+dato
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+enlace
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+precondición
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+invariante
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+facilitador
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método auxiliar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+teorema fundamental de la ambigüedad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+singleton
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Referencia incrustada:
+\end_layout
+
+\end_inset
+
+ referencia almacenada en un atributo de un objeto.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Lista enlazada:
+\end_layout
+
+\end_inset
+
+ es la estructura de datos que implementa una colección por medio de una
+ secuencia de nodos enlazados.
+\end_layout
+
+\begin_layout Description
+Nodo: elemento de la lista, usualmente implementado como un objeto que contiene
+ una referencia hacia otro objeto del mismo tipo.
+\end_layout
+
+\begin_layout Description
+Carga: dato contenido en un nodo.
+\end_layout
+
+\begin_layout Description
+Enlace: referencia incrustada, usada para enlazar un objeto con otro.
+\end_layout
+
+\begin_layout Description
+Precondición: condición lógica (o aserción) que debe ser cierta para que
+ un método funcione correctamente.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Teorema fundamental de la ambigüedad:
+\end_layout
+
+\end_inset
+
+ la referencia a un nodo de una lista puede interpretarse hacia un nodo
+ determinado o como la referencia a toda la lista de nodos.
+\end_layout
+
+\begin_layout Description
+Singleton: lista enlazada con un solo nodo.
+\end_layout
+
+\begin_layout Description
+Facilitador: método que actúa como intermediario entre alguien que llama
+ un método y un método auxiliar.
+ Se crean normalmente para facilitar los llamados y hacerlos menos propensos
+ a errores.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Método auxiliar:
+\end_layout
+
+\end_inset
+
+ es un método que el programador no llama directamente, sino que es usado
+ por otro método para realizar parte de una operación.
+\end_layout
+
+\begin_layout Description
+Invariante: aserción que debe ser cierta para un objeto en todo momento
+ (excepto cuando el objeto está siendo modificado).
+\end_layout
+
+\end_body
+\end_document

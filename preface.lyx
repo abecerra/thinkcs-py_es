@@ -1,0 +1,711 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+LyX source for textbook 
+\begin_inset Quotes eld
+\end_inset
+
+How to think like a computer scientist'' 
+\end_layout
+
+\begin_layout Plain Layout
+Copyright (c) 2001 Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Prefacio
+\end_layout
+
+\begin_layout Standard
+Por Jeff Elkner
+\end_layout
+
+\begin_layout Standard
+Este libro debe su existencia a la colaboración hecha posible por Internet
+ y el movimiento de software libre.
+ Sus tres autores---un profesor de colegio, un profesor de secundaria y
+ un programador profesional---tienen todavía que verse cara a cara, pero
+ han podido trabajar juntos y han sido ayudados por maravillosas personas,
+ quienes han donado su tiempo y energía para ayudar a hacer ver mejor este
+ libro.
+\end_layout
+
+\begin_layout Standard
+Nosotros pensamos que este libro es un testamento a los beneficios y futuras
+ posibilidades de esta clase de colaboración, el marco que se ha puesto
+ en marcha por Richard Stallman y el movimiento de software libre.
+\end_layout
+
+\begin_layout Section*
+Cómo y porqué vine a utilizar Python
+\end_layout
+
+\begin_layout Standard
+En 1999, el examen del College Board's Advanced Placement (AP) de Informática
+ se hizo en C++ por primera vez.
+ Como en muchas escuelas de Estados Unidos, la decisión para cambiar el
+ lenguaje tenía un impacto directo en el plan de estudios de informática
+ en la escuela secundaria de Yorktown en Arlington, Virginia, donde yo enseño.
+ Hasta este punto, Pascal era el lenguaje de instrucción en nuestros cursos
+ del primer año y del AP.
+ Conservando la práctica usual de dar a los estudiantes dos años de exposición
+ al mismo lenguaje, tomamos la decisión de cambiar a C++ en el curso del
+ primer año durante el periodo escolar 1997-98 de modo que siguiéramos el
+ cambio del College Board's para el curso del AP el año siguiente.
+\end_layout
+
+\begin_layout Standard
+Dos años después, estoy convencido de que C++ no era una buena opción para
+ introducir la informática a los estudiantes.
+ Aunque es un lenguaje de programación de gran alcance, también es extremadament
+e difícil de aprender y de enseñar.
+ Me encontré constantemente peleando con la sintaxis difícil de C++ y sus
+ múltiples maneras de hacer las cosas, y estaba perdiendo muchos estudiantes,
+ innecesariamente, como resultado.
+ Convencido de que tenía que haber una mejor opción para nuestras clases
+ de primer año, fui en busca de un alternativa a C++.
+\end_layout
+
+\begin_layout Standard
+Necesitaba un lenguaje que pudiera correr en las máquinas en nuestro laboratorio
+ Linux, también en las plataformas de Windows y Macintosh, que muchos de
+ los estudiantes tienen en casa.
+ Quería que fuese un lenguaje de código abierto, para que los estudiantes
+ lo pudieran usar en casa sin pagar por una licencia.
+ Quería un lenguaje usado por programadores profesionales, y que tuviera
+ una comunidad activa alrededor de él.
+ Tenía que soportar la programación procedural y orientada a objetos.
+ Y más importante, tenía que ser fácil de aprender y de enseñar.
+ Cuando investigué las opciones con estas metas en mente, Python saltó como
+ el mejor candidato para la tarea.
+\end_layout
+
+\begin_layout Standard
+Pedí a uno de los estudiantes más talentosos de Yorktown, Matt Ahrens, que
+ le diera a Python una oportunidad.
+ En dos meses él no sólo aprendió el lenguaje, sino que escribió una aplicación
+ llamada pyTicket que permitió a nuestro personal atender peticiones de
+ soporte tecnológico vía web.
+ Sabia que Matt no podría terminar una aplicación de esa escala en tan poco
+ tiempo con C++, y esta observación, combinada con el gravamen positivo
+ de Matt sobre Python, sugirió que este lenguaje era la solución que buscaba.
+\end_layout
+
+\begin_layout Section*
+Encontrando un libro de texto
+\end_layout
+
+\begin_layout Standard
+Al decidir utilizar Python en mis dos clases de informática introductoria
+ para el año siguiente, el problema más acuciante era la carencia de un
+ libro.
+\end_layout
+
+\begin_layout Standard
+El contenido libre vino al rescate.
+ A principios del año, Richard Stallman me presentó a Allen Downey.
+ Los dos habíamos escrito a Richard expresando interés en desarrollar un
+ contenido gratis y educativo.
+ Allen ya había escrito un libro de texto para el primer año de informática,
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Como pensar como un científico de la computación
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ Cuando leí este libro, inmediatamente quise usarlo en mi clase.
+ Era el texto más claro y mas provechoso de introducción a la informática
+ que había visto.
+ Acentúa los procesos del pensamiento implicados en la programación más
+ bien que las características de un lenguaje particular.
+ Leerlo me hizo sentir un mejor profesor inmediatamente.
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Como pensar como un científico de la computación con Java
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ no solo es un libro excelente, sino que también había sido publicado bajo
+ la licencia publica GNU, lo que significa que podría ser utilizado libremente
+ y ser modificado para resolver otras necesidades.
+ Una vez que decidí utilizar Python, se me ocurrió que podía traducir la
+ versión original del libro de Allen (en Java) al nuevo lenguaje (Python).
+ Aunque no podía escribir un libro de texto solo, tener el libro de Allen
+ me facilitó la tarea, y al mismo tiempo demostró que el modelo cooperativo
+ usado en el desarrollo de software también podía funcionar para el contenido
+ educativo.
+\end_layout
+
+\begin_layout Standard
+Trabajar en este libro, por los dos últimos años, ha sido una recompensa
+ para mis estudiantes y para mí; y mis estudiantes tuvieron una gran participaci
+ón en el proceso.
+ Puesto que podía realizar cambios inmediatos, siempre que alguien encontrara
+ un error de deletreo o un paso difícil, yo les animaba a que buscaran errores
+ en el libro, dándoles un punto cada vez que hicieran una sugerencia que
+ resultara en un cambio en el texto.
+ Eso tenía la ventaja doble de animarles a que leyeran el texto más cuidadosamen
+te y de conseguir la corrección del texto por sus lectores críticos más
+ importantes, los estudiantes usándolo para aprender informática.
+\end_layout
+
+\begin_layout Standard
+Para la segunda parte del libro, enfocada en la programación orientada a
+ objetos, sabía que alguien con más experiencia en programación que yo era
+ necesario para hacer el trabajo correctamente.
+ El libro estuvo incompleto la mayoría del año hasta que la comunidad de
+ software abierto me proporcionó de nuevo los medios necesarios para su
+ terminación.
+\end_layout
+
+\begin_layout Standard
+Recibí un correo electrónico de Chris Meyers, expresando su interés en el
+ libro.
+ Chris es un programador profesional que empezó enseñando un curso de programaci
+ón el año anterior, usando Python en el Lane Community College en Eugene,
+ Oregon.
+ La perspectiva de enseñar el curso llevó a Chris al libro, y él comenzó
+ a ayudarme inmediatamente.
+ Antes del fin de año escolar él había creado un proyecto complementario
+ en nuestro Sitio Web 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://www.ibiblio.org/obp
+\end_layout
+
+\end_inset
+
+, titulado 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Python for Fun
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ y estaba trabajando con algunos de mis estudiantes más avanzados como profesor
+ principal, guiándolos mas allá de donde yo podía llevarlos.
+\end_layout
+
+\begin_layout Section*
+Introduciendo la programación con Python
+\end_layout
+
+\begin_layout Standard
+El proceso de uso y traducción de 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Como pensar como un científico de la computación
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, por los últimos dos años, ha confirmado la conveniencia de Python para
+ enseñar a estudiantes principiantes.
+ Python simplifica bastante los ejemplos de programación y hace que las
+ ideas importantes sean más fáciles de enseñar.
+\end_layout
+
+\begin_layout Standard
+El primer ejemplo del texto ilustra este punto.
+ Es el tradicional 
+\begin_inset Quotes eld
+\end_inset
+
+hola, mundo
+\begin_inset Quotes erd
+\end_inset
+
+, programa que en la versión C++ del libro se ve así:
+\end_layout
+
+\begin_layout Verbatim
+
+   #include <iostream.h>
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+   void main()
+\end_layout
+
+\begin_layout Verbatim
+
+   {
+\end_layout
+
+\begin_layout Verbatim
+
+     cout << "Hola, mundo." << endl;
+\end_layout
+
+\begin_layout Verbatim
+
+   }
+\end_layout
+
+\begin_layout Standard
+en la versión Python es:
+\end_layout
+
+\begin_layout Verbatim
+
+    print "Hola, Mundo!"
+\end_layout
+
+\begin_layout Standard
+Aunque este es un ejemplo trivial, las ventajas de Python salen a la luz.
+ El curso de Informática I, en Yorktown, no tiene prerrequisitos, es por
+ eso que muchos de los estudiantes, que ven este ejemplo, están mirando
+ a su primer programa.
+ Algunos de ellos están un poco nerviosos, porque han oído que la programación
+ de computadores es difícil de aprender.
+ La versión C++ siempre me ha forzado a escoger entre dos opciones que no
+ me satisfacen: explicar el 
+\family typewriter
+#include
+\family default
+, 
+\family typewriter
+void main()
+\family default
+, y las sentencias {, y } y arriesgar a confundir o intimidar a algunos
+ de los estudiantes al principio, o decirles, 
+\begin_inset Quotes eld
+\end_inset
+
+No te preocupes por todo eso ahora; lo retomaré más tarde,
+\begin_inset Quotes erd
+\end_inset
+
+ y tomar el mismo riesgo.
+ Los objetivos educativos en este momento del curso son introducir a los
+ estudiantes la idea de sentencia y permitirles escribir su primer programa.
+ Python tiene exactamente lo que necesito para lograr esto, y nada más.
+\end_layout
+
+\begin_layout Standard
+Comparar el texto explicativo de este programa en cada versión del libro
+ ilustra más de lo que esto significa para los estudiantes principiantes.
+ Hay trece párrafos de explicación de 
+\begin_inset Quotes eld
+\end_inset
+
+Hola, mundo!
+\begin_inset Quotes erd
+\end_inset
+
+ en la versión C++; en la versión Python, solo hay dos.
+ Aún mas importante, los 11 párrafos que faltan no hablan de 
+\begin_inset Quotes eld
+\end_inset
+
+grandes ideas
+\begin_inset Quotes erd
+\end_inset
+
+ en la programación de computadores, sino de minucias de la sintaxis de
+ C++.
+ Encontré la misma situación al repasar todo el libro.
+ Párrafos enteros desaparecían en la versión Python del texto, porque su
+ sencilla sintaxis los hacía innecesarios.
+\end_layout
+
+\begin_layout Standard
+Usar un lenguaje de muy alto nivel, como Python, le permite a un profesor
+ posponer los detalles de bajo nivel de la máquina hasta que los estudiantes
+ tengan el bagaje que necesitan para entenderlos.
+ Permite 
+\begin_inset Quotes eld
+\end_inset
+
+poner cosas primero
+\begin_inset Quotes erd
+\end_inset
+
+ pedagógicamente.
+ Unos de los mejores ejemplos de esto es la manera en la que Python maneja
+ las variables.
+ En C++ una variable es un nombre para un lugar que almacena una cosa.
+ Las variables tienen que ser declaradas con tipos, al menos parcialmente,
+ porque el tamaño del lugar al cual se refieren tiene que ser predeterminado.
+ Así, la idea de una variable se liga con el hardware de la máquina.
+ El concepto poderoso y fundamental de variable ya es difícil para los estudiant
+es principiantes (de informática y álgebra).
+ Bytes y direcciones de memoria no ayudan para nada.
+ En Python una variable es un nombre que se refiere a una cosa.
+ Este es un concepto más intuitivo para los estudiantes principiantes y
+ está más cerca del significado de 
+\begin_inset Quotes eld
+\end_inset
+
+variable
+\begin_inset Quotes erd
+\end_inset
+
+ que aprendieron en los cursos de matemática del colegio.
+ Yo me demoré menos tiempo ayudándolos con el concepto de variable y en
+ su uso este año, que en el pasado.
+\end_layout
+
+\begin_layout Standard
+Otro ejemplo de cómo Python ayuda en la enseñanza y aprendizaje de la programaci
+ón es su sintaxis para las funciones.
+ Mis estudiantes siempre han tenido una gran dificultad comprendiendo las
+ funciones.
+ El problema principal se centra alrededor de la diferencia entre una definición
+ de función y un llamado de función, y la distinción relacionada entre un
+ parámetro y un argumento.
+ Python viene al rescate con una bella sintaxis.
+ Una definición de función empieza con la palabra clave 
+\family typewriter
+def
+\family default
+, y simplemente digo a mis estudiantes: 
+\begin_inset Quotes eld
+\end_inset
+
+cuando definas una función, empieza con 
+\family typewriter
+def
+\family default
+, seguido del nombre de la función que estás definiendo, cuando llames una
+ función, simplemente llama (digita) su nombre.
+\begin_inset Quotes erd
+\end_inset
+
+ Los parámetros van con las definiciones y los argumentos van con los llamados.
+ No hay tipos de retorno, tipos para los parámetros, o pasos de parámetro
+ por referencia y valor, y ahora yo puedo enseñar funciones en la mitad
+ de tiempo que antes, con una mejor comprensión.
+\end_layout
+
+\begin_layout Standard
+Usar Python ha mejorado la eficacia de nuestro programa de informática para
+ todos los estudiantes.
+ Veo un nivel general de éxito alto y un nivel bajo de la frustración, que
+ ya había experimentado durante los dos años que enseñé C++.
+ Avanzo más rápido y con mejores resultados.
+ Más estudiantes terminan el curso con la habilidad de crear programas significa
+tivos; esto genera una actitud positiva hacia la experiencia de la programación.
+\end_layout
+
+\begin_layout Section*
+Construyendo una comunidad
+\end_layout
+
+\begin_layout Standard
+He recibido correos electrónicos de todas partes del mundo, de personas
+ que están usando este libro para aprender o enseñar programación.
+ Una comunidad de usuarios ha comenzado a emerger, y muchas personas han
+ contribuido al proyecto mandando materiales a través del sitio Web complementar
+io: 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+ http://www.thinkpython.com 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con la publicación del libro, en forma impresa, espero que continúe y se
+ acelere el crecimiento de esta comunidad de usuarios.
+\end_layout
+
+\begin_layout Standard
+La emergencia de esta comunidad y la posibilidad que sugiere para otras
+ experiencias de colaboración similar entre educadores han sido las partes
+ más excitantes de trabajar en este proyecto, para mí.
+ Trabajando juntos, nosotros podemos aumentar la calidad del material disponible
+ para nuestro uso y ahorrar tiempo valioso.
+\end_layout
+
+\begin_layout Standard
+Yo les invito a formar parte de nuestra comunidad y espero escuchar de ustedes.
+ Por favor escriba a los autores a 
+\family typewriter
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+feedback@thinkpython.com
+\end_layout
+
+\end_inset
+
+
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.25in
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+Jeffrey Elkner
+\begin_inset Newline newline
+\end_inset
+
+ Escuela Secundaria Yortown
+\begin_inset Newline newline
+\end_inset
+
+ Arlington, Virginia.
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,3509 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Funciones 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "floatchap"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Llamadas a funciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "functionchap"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+llamada a función
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+llamada!función
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Usted ya ha visto un ejemplo de una 
+\series bold
+llamada a función
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type("32")
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'string'>
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El nombre de la función es 
+\family typewriter
+type
+\family default
+, y despliega el tipo de un valor o variable.
+ El valor o variable, que se denomina el 
+\series bold
+argumento
+\series default
+ de la función, tiene que encerrarse entre paréntesis.
+ Es usual decir que una función 
+\begin_inset Quotes eld
+\end_inset
+
+toma
+\begin_inset Quotes erd
+\end_inset
+
+ un argumento y 
+\begin_inset Quotes eld
+\end_inset
+
+retorna
+\begin_inset Quotes erd
+\end_inset
+
+ un resultado.
+ El resultado se denomina el 
+\series bold
+valor de retorno
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+argumento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valor de retorno
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En lugar de imprimir el valor de retorno, podemos asignarlo a una variable:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> betty = type("32")
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print betty
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'string'>
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Otro ejemplo es la función 
+\family typewriter
+id
+\family default
+ que toma un valor o una variable y retorna un entero que actúa como un
+ identificador único:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> id(3)
+\end_layout
+
+\begin_layout Verbatim
+
+134882108
+\end_layout
+
+\begin_layout Verbatim
+
+>>> betty = 3
+\end_layout
+
+\begin_layout Verbatim
+
+>>> id(betty)
+\end_layout
+
+\begin_layout Verbatim
+
+134882108
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Cada valor tiene un 
+\family typewriter
+id
+\family default
+ que es un número único relacionado con el lugar en la memoria en el que
+ está almacenado.
+ El 
+\family typewriter
+id
+\family default
+ de una variable es el 
+\family typewriter
+id
+\family default
+ del valor al que la variable se refiere.
+\end_layout
+
+\begin_layout Section
+Conversión de tipos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+conversión!tipo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+conversión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Python proporciona una colección de funciones que convierten valores de
+ un tipo a otro.
+ La función 
+\family typewriter
+int
+\family default
+ toma cualquier valor y lo convierte a un entero, si es posible, de lo contrario
+ se queja:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> int("32")
+\end_layout
+
+\begin_layout Verbatim
+
+32
+\end_layout
+
+\begin_layout Verbatim
+
+>>> int("Hola")
+\end_layout
+
+\begin_layout Verbatim
+
+ValueError: invalid literal for int(): Hola
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+int
+\family default
+ también puede convertir valores de punto flotante a enteros, pero hay que
+ tener en cuenta que va a eliminar la parte decimal:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> int(3.99999)
+\end_layout
+
+\begin_layout Verbatim
+
+3
+\end_layout
+
+\begin_layout Verbatim
+
+>>> int(-2.3)
+\end_layout
+
+\begin_layout Verbatim
+
+-2
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La función 
+\family typewriter
+float
+\family default
+ convierte enteros y cadenas a números de punto flotante:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> float(32)
+\end_layout
+
+\begin_layout Verbatim
+
+32.0
+\end_layout
+
+\begin_layout Verbatim
+
+>>> float("3.14159")
+\end_layout
+
+\begin_layout Verbatim
+
+3.14159
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Finalmente, la función 
+\family typewriter
+str
+\family default
+ convierte al tipo cadena (
+\family typewriter
+string
+\family default
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> str(32)
+\end_layout
+
+\begin_layout Verbatim
+
+'32'
+\end_layout
+
+\begin_layout Verbatim
+
+>>> str(3.14149)
+\end_layout
+
+\begin_layout Verbatim
+
+'3.14149'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Puede parecer extraño el hecho de que Python distinga el valor entero 
+\family typewriter
+1
+\family default
+ del valor en punto flotante 
+\family typewriter
+1.0
+\family default
+.
+ Pueden representar el mismo número pero tienen diferentes tipos.
+ La razón para esto es que su representación interna en la memoria del computado
+r es distinta.
+\end_layout
+
+\begin_layout Section
+Coerción de tipos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+coerción de tipos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+coerción!tipo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+división entera
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+división!entera
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora que podemos convertir entre tipos, tenemos otra forma de esquivar
+ a la división entera.
+ Retomando el ejemplo del capítulo anterior, suponga que deseamos calcular
+ la fracción de una hora que ha transcurrido.
+ La expresión más obvia 
+\family typewriter
+minuto/60
+\family default
+, hace división entera, así que el resultado siempre es 0, incluso cuando
+ han transcurrido 59 minutos.
+\end_layout
+
+\begin_layout Standard
+Una solución es convertir 
+\family typewriter
+minuto
+\family default
+ a punto flotante para realizar la división en punto flotante:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> minuto = 59
+\end_layout
+
+\begin_layout Verbatim
+
+>>> float(minute)/60.0
+\end_layout
+
+\begin_layout Verbatim
+
+0.983333333333
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Otra alternativa es sacar provecho de las reglas de conversión automática
+ de tipos, que se denominan 
+\series bold
+coerción de tipos
+\series default
+.
+ Para los operadores matemáticos, si algún operando es un número 
+\family typewriter
+flotante
+\family default
+, el otro se convierte automáticamente a 
+\family typewriter
+flotante
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> minuto = 59
+\end_layout
+
+\begin_layout Verbatim
+
+>>> minuto / 60.0
+\end_layout
+
+\begin_layout Verbatim
+
+0.983333333333
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Así que haciendo el denominador flotante, forzamos a Python a realizar
+ división en punto flotante.
+\end_layout
+
+\begin_layout Section
+Funciones matemáticas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función matemática
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función!matemática
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En matemática usted probablemente ha visto funciones como el 
+\family typewriter
+seno
+\family default
+ y el 
+\family typewriter
+logaritmo
+\family default
+, y ha aprendido a evaluar expresiones como 
+\family typewriter
+sen(pi/2)
+\family default
+ y 
+\family typewriter
+log(1/x)
+\family default
+.
+ Primero, se evalúa la expresión entre paréntesis (el argumento).
+ Por ejemplo, 
+\family typewriter
+pi/2
+\family default
+ es aproximadamente 1.571, y 
+\family typewriter
+1/x
+\family default
+ es 0.1 (si 
+\family typewriter
+x
+\family default
+ tiene el valor 10.0).
+\end_layout
+
+\begin_layout Standard
+Entonces, se evalúa la función, ya sea mirando el resultado en una tabla
+ o calculando varias operaciones.
+ El 
+\family typewriter
+seno
+\family default
+ de 1.571 es 1, y el 
+\family typewriter
+logaritmo
+\family default
+ de 0.1 es -1 (asumiendo que 
+\family typewriter
+log
+\family default
+ indica el logaritmo en base 10).
+\end_layout
+
+\begin_layout Standard
+Este proceso puede aplicarse repetidamente para evaluar expresiones más
+ complicadas como 
+\family typewriter
+log(1/sen(pi/2))
+\family default
+.
+ Primero se evalúa el argumento de la función más interna, luego la función,
+ y se continúa así.
+\end_layout
+
+\begin_layout Standard
+Python tiene un módulo matemático que proporciona la mayoría de las funciones
+ matemáticas.
+ Un módulo es un archivo que contiene una colección de funciones relacionadas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Antes de que podamos usar funciones de un módulo, tenemos que importarlas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> import math
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para llamar a una de las funciones, tenemos que especificar el nombre del
+ módulo y el nombre de la función, separados por un punto.
+ Este formato se denomina 
+\series bold
+notación punto
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+notación punto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> decibel = math.log10 (17.0)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> angulo = 1.5
+\end_layout
+
+\begin_layout Verbatim
+
+>>> altura = math.sin(angulo)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La primera sentencia le asigna a 
+\family typewriter
+decibel
+\family default
+ el logaritmo de 17, en base 
+\family typewriter
+10
+\family default
+.
+ También hay una función llamada 
+\family typewriter
+log
+\family default
+ que usa la base logarítmica 
+\family typewriter
+e
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+La tercera sentencia encuentra el seno del valor de la variable 
+\family typewriter
+angulo
+\family default
+.
+ 
+\family typewriter
+sin
+\family default
+ y las otras funciones trigonométricas (
+\family typewriter
+cos
+\family default
+, 
+\family typewriter
+tan
+\family default
+, etc.) reciben sus argumentos en radianes.
+ Para convertir de grados a radianes hay que dividir por 360 y multiplicar
+ por 
+\family typewriter
+2*pi
+\family default
+.
+ Por ejemplo, para encontrar el seno de 45 grados, primero calculamos el
+ ángulo en radianes y luego tomamos el seno:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> grados = 45
+\end_layout
+
+\begin_layout Verbatim
+
+>>> angulo = grados * 2 * math.pi / 360.0
+\end_layout
+
+\begin_layout Verbatim
+
+>>> math.sin(angulo)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La constante 
+\family typewriter
+pi
+\family default
+ también hace parte del módulo matemático.
+ Si usted recuerda geometría puede verificar el resultado comparándolo con
+ la raíz cuadrada de 2 dividida por 2:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> math.sqrt(2) / 2.0
+\end_layout
+
+\begin_layout Verbatim
+
+0.707106781187
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Composición
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+composición
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función!composición
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así como las funciones matemáticas, las funciones de Python pueden componerse,
+ de forma que una expresión sea parte de otra.
+ Por ejemplo, usted puede usar cualquier expresión como argumento a una
+ función:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> x = math.cos(angulo + math.pi/2)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta sentencia toma el valor de 
+\family typewriter
+pi
+\family default
+, lo divide por 2, y suma este resultado al valor de 
+\family typewriter
+angulo
+\family default
+.
+ Después, la suma se le pasa como argumento a la función coseno (
+\family typewriter
+cos
+\family default
+).
+\end_layout
+
+\begin_layout Standard
+También se puede tomar el resultado de una función y pasarlo como argumento
+ a otra:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> x = math.exp(math.log(10.0))
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta sentencia halla el logaritmo en base 
+\family typewriter
+e
+\family default
+ de 10 y luego eleva 
+\family typewriter
+e
+\family default
+ a dicho resultado.
+ El resultado se asigna a 
+\family typewriter
+x
+\family default
+.
+\end_layout
+
+\begin_layout Section
+Agregando nuevas funciones
+\end_layout
+
+\begin_layout Standard
+Hasta aquí solo hemos usado las funciones que vienen con Python, pero también
+ es posible agregar nuevas funciones.
+ Crear nuevas funciones para resolver nuestros problemas particulares es
+ una de las capacidades mas importantes de un lenguaje de programación de
+ propósito general.
+\end_layout
+
+\begin_layout Standard
+En el contexto de la programación, una 
+\series bold
+función
+\series default
+ es una secuencia de sentencias que ejecuta una operación deseada y tiene
+ un nombre.
+ Esta operación se especifica en una 
+\series bold
+definición de función
+\series default
+.
+ Las funciones que hemos usado hasta ahora ya han sido definidas para nosotros.
+ Esto es bueno, porque nos permite usarlas sin preocuparnos de los detalles
+ de sus definiciones.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función definición
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+definición!función
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La sintaxis para una definición de función es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def NOMBRE( LISTA DE PARAMETROS ):
+\end_layout
+
+\begin_layout Verbatim
+
+  SENTENCIAS
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Usted puede inventar los nombres que desee para sus funciones con tal de
+ que no use una palabra reservada.
+ La lista de parámetros especifica que información, si es que la hay, se
+ debe proporcionar a fin de usar la nueva función.
+\end_layout
+
+\begin_layout Standard
+Se puede incluir cualquier número de sentencias dentro de la función, pero
+ tienen que sangrarse o indentarse a partir de la margen izquierda.
+ En los ejemplos de este libro usaremos un sangrado de dos espacios.
+\end_layout
+
+\begin_layout Standard
+Las primeras funciones que vamos a escribir no tienen parámetros, así que
+ la sintaxis luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def nuevaLinea():
+\end_layout
+
+\begin_layout Verbatim
+
+  print
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta función se llama 
+\family typewriter
+nuevaLinea
+\family default
+.
+ Los paréntesis vacíos indican que no tiene parámetros.
+ Contiene solamente una sentencia, que produce como salida una línea vacía.
+ Eso es lo que ocurre cuando se usa el comando 
+\family typewriter
+print
+\family default
+ sin argumentos.
+\end_layout
+
+\begin_layout Standard
+La sintaxis para llamar la nueva función es la misma que para las funciones
+ predefinidas en Python:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+print "Primera Linea."
+\end_layout
+
+\begin_layout Verbatim
+
+nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+
+print "Segunda Linea."
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La salida para este programa es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+Primera Linea.
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+Segunda Linea.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Note el espacio extra entre las dos líneas.
+ ¿Qué pasa si deseamos más espacio entre las líneas? Podemos llamar la misma
+ función repetidamente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+print "Primera Linea."
+\end_layout
+
+\begin_layout Verbatim
+
+nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+
+nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+
+nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+
+print "Segunda Linea."
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ O podemos escribir una nueva función llamada 
+\family typewriter
+tresLineas
+\family default
+ que imprima tres líneas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def tresLineas():
+\end_layout
+
+\begin_layout Verbatim
+
+  nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+
+  nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+
+  nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+print "Primera Linea."
+\end_layout
+
+\begin_layout Verbatim
+
+tresLineas()
+\end_layout
+
+\begin_layout Verbatim
+
+print "Segunda Linea."
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta función contiene tres sentencias, y todas están sangradas por dos
+ espacios.
+ Como la próxima sentencia (print 
+\begin_inset Quotes eld
+\end_inset
+
+Primera Linea) no está sangrada, Python la interpreta afuera de la función.
+\end_layout
+
+\begin_layout Standard
+Hay que enfatizar dos hechos sobre este programa:
+\end_layout
+
+\begin_layout Enumerate
+Usted puede llamar la misma función repetidamente.
+ De hecho, es una práctica muy común y útil.
+\end_layout
+
+\begin_layout Enumerate
+Usted puede llamar una función dentro de otra función; en este caso 
+\family typewriter
+tresLineas
+\family default
+ llama a 
+\family typewriter
+nuevaLinea
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Hasta este punto, puede que no parezca claro porque hay que tomarse la molestia
+ de crear todas estas funciones.
+ De hecho, hay muchas razones, y este ejemplo muestra dos:
+\end_layout
+
+\begin_layout Itemize
+Crear una nueva función le da a usted la oportunidad de nombrar un grupo
+ de sentencias.
+ Las funciones pueden simplificar un programa escondiendo un cálculo complejo
+ detrás de un comando único que usa palabras en lenguaje natural, en lugar
+ de un código arcano.
+\end_layout
+
+\begin_layout Itemize
+Crear una nueva función puede recortar el tamaño de un programa eliminando
+ el código repetitivo.
+ Por ejemplo, una forma más corta de imprimir nueve líneas consecutivas
+ consiste en llamar la función 
+\family typewriter
+tresLineas
+\family default
+ tres veces.
+\end_layout
+
+\begin_layout Section
+Definiciones y uso
+\end_layout
+
+\begin_layout Standard
+Uniendo los fragmentos de la sección 3.6, el programa completo luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def nuevaLinea():
+\end_layout
+
+\begin_layout Verbatim
+
+  print
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+def tresLineas():
+\end_layout
+
+\begin_layout Verbatim
+
+  nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+
+  nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+
+  nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+print "Primera Linea."
+\end_layout
+
+\begin_layout Verbatim
+
+tresLineas()
+\end_layout
+
+\begin_layout Verbatim
+
+print "Segunda Linea."
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este programa contiene dos definiciones de funciones: 
+\family typewriter
+nuevaLinea
+\family default
+ y 
+\family typewriter
+tresLineas
+\family default
+.
+ Las definiciones de funciones se ejecutan como las otras sentencias, pero
+ su efecto es crear nuevas funciones.
+ Las sentencias, dentro de la función, no se ejecutan hasta que la función
+ sea llamada, y la definición no genera salida.
+\end_layout
+
+\begin_layout Standard
+Como usted puede imaginar, se tiene que crear una función antes de ejecutarla.
+ En otras palabras, la definición de función tiene que ejecutarse antes
+ de llamarla por primera vez.
+\end_layout
+
+\begin_layout Section
+Flujo de ejecución
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+flujo de ejecución
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con el objetivo de asegurar que una función se defina antes de su primer
+ uso usted tiene que saber el orden en el que las sentencias se ejecutan,
+ lo que denominamos 
+\series bold
+flujo de ejecución
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+La ejecución siempre empieza con la primera sentencia del programa.
+ Las sentencias se ejecutan una a una, desde arriba hacia abajo.
+\end_layout
+
+\begin_layout Standard
+Las definiciones de funciones no alteran el flujo de ejecución del programa,
+ recuerde que las sentencias que están adentro de las funciones no se ejecutan
+ hasta que éstas sean llamadas.
+ Aunque no es muy común, usted puede definir una función adentro de otra.
+ En este caso, la definición interna no se ejecuta hasta que la otra función
+ se llame.
+\end_layout
+
+\begin_layout Standard
+Las llamadas a función son como un desvío en el flujo de ejecución.
+ En lugar de continuar con la siguiente sentencia, el flujo salta a la primera
+ línea de la función llamada, ejecuta todas las sentencias internas, y regresa
+ para continuar donde estaba previamente.
+\end_layout
+
+\begin_layout Standard
+Esto suena sencillo, hasta que tenemos en cuenta que una función puede llamar
+ a otra.
+ Mientras se está ejecutando una función, el programa puede ejecutar las
+ sentencias en otra función.
+ Pero, mientras se está ejecutando la nueva función, ¡el programa puede
+ tener que ejecutar 
+\shape italic
+otra
+\shape default
+ función!.
+\end_layout
+
+\begin_layout Standard
+Afortunadamente, Python lleva la pista de donde está fielmente, así que
+ cada vez que una función termina, el programa continúa su ejecución en
+ el punto donde se la llamó.
+ Cuando llega al fin del programa, la ejecución termina.
+\end_layout
+
+\begin_layout Standard
+¿Cual es la moraleja de esta sórdida historia? Cuando lea un programa, no
+ lo haga de arriba hacia abajo.
+ En lugar de ésto, siga el flujo de ejecución.
+\end_layout
+
+\begin_layout Section
+Parámetros y argumentos
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "parameters"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+parámetro
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función!parámetro
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+argumento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función!argumento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Algunas de las funciones primitivas que usted ha usado requieren argumentos,
+ los valores que controlan el trabajo de la función.
+ Por ejemplo, si usted quiere encontrar el seno de un número, tiene que
+ indicar cual es el número.
+ Así que, 
+\family typewriter
+sin
+\family default
+ toma un valor numérico como argumento.
+\end_layout
+
+\begin_layout Standard
+Algunas funciones toman más de un argumento.
+ Por ejemplo 
+\family typewriter
+pow
+\family default
+ (potencia) toma dos argumentos, la base y el exponente.
+ Dentro de una función, los valores que se pasan se asignan a variables
+ llamadas 
+\series bold
+parámetros
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Aquí hay un ejemplo de una función definida por el programador que toma
+ un parámetro:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def imprimaDoble(pedro):
+\end_layout
+
+\begin_layout Verbatim
+
+  print pedro, pedro
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta función toma un argumento y lo asigna a un parámetro llamado 
+\family typewriter
+pedro
+\family default
+.
+ El valor del parámetro (en este momento no tenemos idea de lo que será)
+ se imprime dos veces, y después, se imprime una línea vacía.
+ El nombre 
+\family typewriter
+pedro
+\family default
+ se escogió para sugerir que el nombre que se le asigna a un parámetro queda
+ a su libertad; pero, en general, usted desea escoger algo mas ilustrativo
+ que 
+\family typewriter
+pedro
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+La función 
+\family typewriter
+imprimaDoble
+\family default
+ funciona para cualquier tipo que pueda imprimirse:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimaDoble('Spam')
+\end_layout
+
+\begin_layout Verbatim
+
+Spam Spam
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimaDoble(5)
+\end_layout
+
+\begin_layout Verbatim
+
+5 5
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimaDoble(3.14159)
+\end_layout
+
+\begin_layout Verbatim
+
+3.14159 3.14159
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En el primer llamado de función el argumento es una cadena.
+ En el segundo es un entero.
+ En el tercero es un flotante (
+\family typewriter
+float
+\family default
+).
+\end_layout
+
+\begin_layout Standard
+Las mismas reglas de composición que se aplican a las funciones primitivas,
+ se aplican a las definidas por el programador, así que podemos usar cualquier
+ clase de expresión como un argumento para 
+\family typewriter
+imprimaDoble
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimaDoble('Spam'*4)
+\end_layout
+
+\begin_layout Verbatim
+
+SpamSpamSpamSpam SpamSpamSpamSpam
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimaDoble(math.cos(math.pi))
+\end_layout
+
+\begin_layout Verbatim
+
+-1.0 -1.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como de costumbre, la expresión se evalúa antes de que la función se ejecute
+ así que 
+\family typewriter
+imprimaDoble
+\family default
+ retorna 
+\family typewriter
+SpamSpamSpamSpam SpamSpamSpamSpam
+\family default
+ en lugar de 
+\family typewriter
+'Spam'*4 'Spam'*4
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+También podemos usar una variable como argumento:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> m = 'Oh, mundo cruel.'
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimaDoble(m)
+\end_layout
+
+\begin_layout Verbatim
+
+Oh, mundo cruel.
+ Oh, mundo cruel.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Observe algo muy importante, el nombre de la variable que pasamos como
+ argumento (
+\family typewriter
+m
+\family default
+) no tiene nada que ver con el nombre del parámetro (
+\family typewriter
+pedro
+\family default
+).
+ No importa como se nombraba el valor originalmente (en el lugar donde se
+ hace el llamado); en la función 
+\family typewriter
+imprimaDoble
+\family default
+, la seguimos llamando de la misma manera 
+\family typewriter
+pedro
+\family default
+.
+\end_layout
+
+\begin_layout Section
+Las variables y los parámetros son locales
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable local
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable!local
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando usted crea una 
+\series bold
+variable local
+\series default
+ en una función, solamente existe dentro de ella, y no se puede usar por
+ fuera.
+ Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def concatenarDoble(parte1, parte2):
+\end_layout
+
+\begin_layout Verbatim
+
+  cat = parte1 + parte2
+\end_layout
+
+\begin_layout Verbatim
+
+  imprimaDoble(cat)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta función toma dos argumentos, los concatena, y luego imprime el resultado
+ dos veces.
+ Podemos llamar a la función con dos cadenas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> cantar1 = "Pie Jesu domine, "
+\end_layout
+
+\begin_layout Verbatim
+
+>>> cantar2 = "Dona eis requiem."
+\end_layout
+
+\begin_layout Verbatim
+
+>>> concatenarDoble(cantar1, cantar2)
+\end_layout
+
+\begin_layout Verbatim
+
+Pie Jesu domine, Dona eis requiem.
+ Pie Jesu domine, Dona 
+\end_layout
+
+\begin_layout Verbatim
+
+eis requiem.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Cuando 
+\family typewriter
+concatenarDoble
+\family default
+ termina, la variable 
+\family typewriter
+cat
+\family default
+ se destruye.
+ Si intentaramos imprimirla obtendríamos un error:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print cat
+\end_layout
+
+\begin_layout Verbatim
+
+NameError: cat
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Los parámetros también son locales.
+ Por ejemplo, afuera de la función 
+\family typewriter
+imprimaDoble
+\family default
+, no existe algo como 
+\family typewriter
+pedro
+\family default
+.
+ Si usted intenta usarlo Python se quejará.
+\end_layout
+
+\begin_layout Section
+Diagramas de pila
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "stackdiagram"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diagrama de pila
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+marco de función
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+marco
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para llevar pista de los lugares en que pueden usarse las variables es útil
+ dibujar un 
+\series bold
+diagrama de pila
+\series default
+.
+ Como los diagramas de estados, los diagramas de pila muestran el valor
+ de cada variable y además muestran a que función pertenece cada una.
+\end_layout
+
+\begin_layout Standard
+Cada función se representa por un 
+\series bold
+marco
+\series default
+.
+ Un marco es una caja con el nombre de una función al lado y los parámetros
+ y variables adentro.
+ El diagrama de pila para el ejemplo anterior luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-4
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/stack.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El orden de la pila muestra el flujo de ejecución.
+ 
+\family typewriter
+imprimaDoble
+\family default
+ fue llamada por 
+\family typewriter
+concatenarDoble
+\family default
+, y 
+\family typewriter
+concatenarDoble
+\family default
+ fue llamada por 
+\family typewriter
+__main__
+\family default
+, que es un nombre especial para la función más superior (la principal,
+ que tiene todo programa).
+ Cuando usted crea una variable afuera de cualquier función, pertenece a
+ 
+\family typewriter
+__main__
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Cada parámetro se refiere al mismo valor que su argumento correspondiente.
+ Así que 
+\family typewriter
+parte1
+\family default
+ tiene el mismo valor que 
+\family typewriter
+cantar1
+\family default
+, 
+\family typewriter
+parte2
+\family default
+ tiene el mismo valor que 
+\family typewriter
+cantar2
+\family default
+, y 
+\family typewriter
+pedro
+\family default
+ tiene el mismo valor que 
+\family typewriter
+cat
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Si hay un error durante una llamada de función, Python imprime el nombre
+ de ésta, el nombre de la función que la llamó, y así sucesivamente hasta
+ llegar a 
+\family typewriter
+__main__
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, si intentamos acceder a 
+\family typewriter
+cat
+\family default
+ desde 
+\family typewriter
+imprimaDoble
+\family default
+, obtenemos un 
+\family typewriter
+error de nombre (NameError)
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+Traceback (innermost last):
+\end_layout
+
+\begin_layout Verbatim
+
+  File "test.py", line 13, in __main__
+\end_layout
+
+\begin_layout Verbatim
+
+    concatenarDoble(cantar1, cantar2)
+\end_layout
+
+\begin_layout Verbatim
+
+  File "test.py", line 5, in concatenarDoble
+\end_layout
+
+\begin_layout Verbatim
+
+    imprimaDoble(cat)
+\end_layout
+
+\begin_layout Verbatim
+
+  File "test.py", line 9, in imprimaDoble
+\end_layout
+
+\begin_layout Verbatim
+
+    print cat
+\end_layout
+
+\begin_layout Verbatim
+
+NameError: cat
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta lista de funciones se denomina un 
+\series bold
+trazado inverso
+\series default
+.
+ Nos informa en qué archivo de programa ocurrió el error, en qué línea,
+ y qué funciones se estaban ejecutando en ese momento.
+ También muestra la línea de código que causó el error.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+trazado inverso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note la similaridad entre el trazado inverso y el diagrama de pila.
+ Esto no es una coincidencia.
+\end_layout
+
+\begin_layout Section
+Funciones con resultados
+\end_layout
+
+\begin_layout Standard
+Usted ya puede haber notado que algunas de las funciones que estamos usando,
+ como las matemáticas, entregan resultados.
+ Otras funciones, como 
+\family typewriter
+nuevaLinea
+\family default
+, ejecutan una acción pero no entregan un resultado.
+ Esto genera algunas preguntas:
+\end_layout
+
+\begin_layout Enumerate
+¿Qué pasa si usted llama a una función y no hace nada con el resultado (no
+ lo asigna a una variable o no lo usa como parte de una expresión mas grande)?
+\end_layout
+
+\begin_layout Enumerate
+¿Qué pasa si usted usa una función sin un resultado como parte de una expresión,
+ tal como 
+\family typewriter
+nuevaLinea() + 7
+\family default
+?
+\end_layout
+
+\begin_layout Enumerate
+¿Se pueden escribir funciones que entreguen resultados, o estamos limitados
+ a funciones tan simples como 
+\family typewriter
+nuevaLinea
+\family default
+ y 
+\family typewriter
+imprimaDoble
+\family default
+?
+\end_layout
+
+\begin_layout Standard
+La respuesta a la tercera pregunta es afirmativa y lo lograremos en el capítulo
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "funcReturn"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Llamada a función:
+\end_layout
+
+\end_inset
+
+ sentencia que ejecuta una función.
+ Consiste en el nombre de la función seguido por una lista de argumentos
+ encerrados entre paréntesis.
+\end_layout
+
+\begin_layout Description
+Argumento: valor que se le da a una función cuando se la está llamando.
+ Este valor se le asigna al parámetro correspondiente en la función.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Valor de retorno:
+\end_layout
+
+\end_inset
+
+ es el resultado de una función.
+ Si una llamada a función se usa como una expresión, el valor de ésta es
+ el valor de retorno de la función.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Conversión de tipo:
+\end_layout
+
+\end_inset
+
+ sentencia explícita que toma un valor de un tipo y calcula el valor correspondi
+ente de otro tipo.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Coerción de tipos:
+\end_layout
+
+\end_inset
+
+ conversión de tipo que se hace automáticamente de acuerdo a las reglas
+ de coerción del lenguaje de programación.
+\end_layout
+
+\begin_layout Description
+Módulo: archivo que contiene una colección de funciones y clases relacionadas.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Notación punto:
+\end_layout
+
+\end_inset
+
+ sintaxis para llamar una función que se encuentra en otro módulo, especificando
+ el nombre módulo seguido por un punto y el nombre de la función (sin dejar
+ espacios intermedios).
+\end_layout
+
+\begin_layout Description
+Función: es la secuencia de sentencias que ejecuta alguna operación útil
+ y que tiene un nombre definido.
+ Las funciones pueden tomar o no tomar parámetros y pueden entregar o no
+ entregar un resultado.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Definición de función:
+\end_layout
+
+\end_inset
+
+ sentencia que crea una nueva función especificando su nombre, parámetros
+ y las sentencias que ejecuta.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Flujo de ejecución:
+\end_layout
+
+\end_inset
+
+ orden en el que las sentencias se ejecutan cuando un programa corre.
+\end_layout
+
+\begin_layout Description
+Parámetro: nombre usado dentro de una función para referirse al valor que
+ se pasa como argumento.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Variable local:
+\end_layout
+
+\end_inset
+
+ variable definida dentro de una función.
+ Una variable local solo puede usarse dentro de su función.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Diagrama de pila:
+\end_layout
+
+\end_inset
+
+ es la representación gráfica de una pila de funciones, sus variables, y
+ los valores a los que se refieren.
+\end_layout
+
+\begin_layout Description
+Marco: una caja en un diagrama de pila que representa un llamado de función.
+ Contiene las variables locales y los parámetros de la función.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Trazado inverso:
+\end_layout
+
+\end_inset
+
+ lista de las funciones que se estaban ejecutando y que se imprime cuando
+ ocurre un error en tiempo de ejecución.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+llamada a función
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valor de retorno
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+argumento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+coerción
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+notación punto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+definición de función
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+flujo de ejecución
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+parámetro
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable local
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diagrama de pila
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+marco de función
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+marco
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+trazado inverso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Enumerate
+Con un editor de texto cree un guión de Python que se llame pruebame3.py.
+ Escriba en este archivo una función que se llame 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+nueveLineas+
+\end_layout
+
+\end_inset
+
+ que use la función 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+tresLineas+
+\end_layout
+
+\end_inset
+
+ para mostrar nueve líneas en blanco.
+ Enseguida agregue una función que se llame 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+limpiaPantalla+
+\end_layout
+
+\end_inset
+
+ que muestre veinticinco líneas en blanco.
+ La última instrucción en su programa debe ser una llamada a 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+limpiaPantalla+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Mueva la última instrucción del archivo pruebame3.py al inicio del programa,
+ de forma tal que la llamada a la función 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+limpiaPantalla+
+\end_layout
+
+\end_inset
+
+ esté antes que la definición de función.
+ Ejecute el programa y registre qué mensaje de error obtiene.
+ ¿Puede establecer una regla sobre las definciones de funciones y las llamadas
+ a función que describa la posición relativa entre ellas en el programa?
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que imprima la distancia que hay entre dos puntos ubicados
+ sobre el eje X de un plano cartesiano conociendo sus coordenadas horizontales.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que imprima la distancia que hay entre dos puntos ubicados
+ sobre el eje Y de un plano cartesiano conociendo sus coordenadas verticales.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que imprima la distancia que hay entre dos puntos en
+ un plano coordenado, recordando el teorema de Pitágoras.
+\end_layout
+
+\begin_layout Enumerate
+Tome la solución del último ejercicio del capítulo anterior y conviértala
+ en una función que calcule la nota definitiva de su curso de programación.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

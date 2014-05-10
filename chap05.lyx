@@ -1,0 +1,3895 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Funciones fructíferas 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "funcReturn"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Valores de retorno
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valor de retorno
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Algunas de las funciones primitivas que hemos usado, como las matemáticas,
+ entregan resultados.
+ El llamar a estas funciones genera un valor nuevo, que usualmente asignamos
+ a una variable o usamos como parte de una expresión.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+e = math.exp(1.0)
+\end_layout
+
+\begin_layout Verbatim
+
+altura = radio * math.sin(angulo)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Pero hasta ahora ninguna de las funciones que hemos escrito ha retornado
+ un valor.
+\end_layout
+
+\begin_layout Standard
+En este capítulo vamos a escribir funciones que retornan valores, los cuales
+ denominamos 
+\series bold
+funciones fructíferas
+\series default
+, o provechosas
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+En algunos libros de programación, las 
+\shape italic
+funciones
+\shape default
+ que desarrollamos en el capítulo anterior se denominan 
+\shape italic
+procedimientos
+\shape default
+ y las que veremos en este capítulo sí se denominan 
+\shape italic
+funciones
+\shape default
+, ya que los lenguajes de programación usados para enseñar (como Pascal)
+ hacían la distinción.
+ Muchos lenguajes de programación vigentes (incluido Python y C) no diferencian
+ sintacticamente entre procedimientos y funciones, por eso usamos esta terminolo
+gía
+\end_layout
+
+\end_inset
+
+.
+ El primer ejemplo es 
+\family typewriter
+area
+\family default
+, que retorna el área de un círculo dado su radio:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+import math
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+def area(radio):
+\end_layout
+
+\begin_layout Verbatim
+
+  temp = math.pi * radio**2
+\end_layout
+
+\begin_layout Verbatim
+
+  return temp
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ya nos habíamos topado con la sentencia 
+\family typewriter
+return
+\family default
+ antes, pero, en una función fructífera, la sentencia 
+\family typewriter
+return
+\family default
+ incluye un 
+\series bold
+valor de retorno
+\series default
+.
+ Esta sentencia significa: 
+\begin_inset Quotes eld
+\end_inset
+
+Retorne inmediatamente de esta función y use la siguiente expresión como
+ un valor de retorno.
+\begin_inset Quotes erd
+\end_inset
+
+ La expresión proporcionada puede ser arbitrariamente compleja, así que
+ podríamos escribir esta función más concisamente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def area(radio):
+\end_layout
+
+\begin_layout Verbatim
+
+  return math.pi * radio**2
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Por otro lado, las 
+\series bold
+variables temporales
+\series default
+, como 
+\family typewriter
+temp
+\family default
+, a menudo permiten depurar los programas más fácilmente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable temporal
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable!temporal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Algunas veces es muy útil tener múltiples sentencias return, ubicadas en
+ ramas distintas de un condicional:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def valorAbsoluto(x):
+\end_layout
+
+\begin_layout Verbatim
+
+  if x < 0:
+\end_layout
+
+\begin_layout Verbatim
+
+    return -x
+\end_layout
+
+\begin_layout Verbatim
+
+  else:
+\end_layout
+
+\begin_layout Verbatim
+
+    return x
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ya que estas sentencias 
+\family typewriter
+return
+\family default
+ están en un condicional alternativo, sólo una será ejecutada.
+ Tan pronto como esto suceda, la función termina sin ejecutar las sentencias
+ que siguen.
+\end_layout
+
+\begin_layout Standard
+El código que aparece después de la sentencia 
+\family typewriter
+return
+\family default
+, o en un lugar que el flujo de ejecución nunca puede alcanzar, se denomina
+ 
+\series bold
+código muerto
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+código muerto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En una función fructífera es una buena idea garantizar que toda ruta posible
+ de ejecución del programa llegue a una sentencia 
+\family typewriter
+return
+\family default
+.
+ Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def valorAbsoluto(x):
+\end_layout
+
+\begin_layout Verbatim
+
+  if x < 0:
+\end_layout
+
+\begin_layout Verbatim
+
+    return -x
+\end_layout
+
+\begin_layout Verbatim
+
+  elif x > 0:
+\end_layout
+
+\begin_layout Verbatim
+
+    return x
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este programa no es correcto porque si 
+\family typewriter
+x
+\family default
+ llega a ser 0, ninguna condición es cierta y la función puede terminar
+ sin alcanzar una sentencia 
+\family typewriter
+return
+\family default
+.
+ En este caso el valor de retorno que Python entrega es un valor especial
+ denominado 
+\family typewriter
+None
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print valorAbsoluto(0)
+\end_layout
+
+\begin_layout Verbatim
+
+None
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Desarrollo de programas
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "program development"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+andamiaje
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este momento usted debería ser capaz de leer funciones completas y deducir
+ lo que hacen.
+ También, si ha realizado los ejercicios, ya ha escrito algunas funciones
+ pequeñas.
+ A medida en que usted escriba funciones más grandes puede empezar a tener
+ una dificultad mayor, especialmente con los errores semánticos y de tiempo
+ de ejecución.
+\end_layout
+
+\begin_layout Standard
+Para desarrollar programas cada vez más complejos, vamos a sugerir una técnica
+ denominada 
+\series bold
+desarrollo incremental
+\series default
+.
+ El objetivo del desarrollo incremental es evitar largas sesiones de depuración
+ mediante la adición y prueba de una pequeña cantidad de código en cada
+ paso.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desarrollo incremental 
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desarrollo!incremental
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como ejemplo, suponga que usted desea hallar la distancia entre dos puntos
+ dados por las coordenadas 
+\begin_inset Formula $(x_{1},y_{1})$
+\end_inset
+
+ y 
+\begin_inset Formula $(x_{2},y_{2})$
+\end_inset
+
+.
+ Por el teorema de Pitágoras, la distancia se calcula con:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+distancia=\sqrt{(x_{2}-x_{1})^{2}+(y_{2}-y_{1})^{2}}
+\end{equation}
+
+\end_inset
+
+El primer paso es considerar cómo luciría la función 
+\family typewriter
+distancia
+\family default
+ en Python.
+ En otras palabras, ¿cuales son las entradas (parámetros) y cual es la salida
+ (valor de retorno)?
+\end_layout
+
+\begin_layout Standard
+En este caso, los dos puntos son las entradas, que podemos representar usando
+ cuatro parámetros.
+ El valor de retorno es la distancia, que es un valor de punto flotante.
+\end_layout
+
+\begin_layout Standard
+Ya podemos escribir un borrador de la función:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def distancia(x1, y1, x2, y2):
+\end_layout
+
+\begin_layout Verbatim
+
+  return 0.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Obviamente, esta versión de la función no calcula distancias; siempre retorna
+ cero.
+ Pero es correcta sintácticamente y puede correr, lo que implica que la
+ podemos probar antes de que la hagamos más compleja.
+\end_layout
+
+\begin_layout Standard
+Para probar la nueva función la llamamos con valores simples:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> distancia(1, 2, 4, 6)
+\end_layout
+
+\begin_layout Verbatim
+
+0.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Escogemos estos valores de forma que la distancia horizontal sea 3 y la
+ vertical 4; de esta forma el resultado es 5 (la hipotenusa de un triángulo
+ con medidas 3-4-5).
+ Cuando probamos una función es fundamental conocer algunas respuestas correctas.
+\end_layout
+
+\begin_layout Standard
+En este punto hemos confirmado que la función está bien sintácticamente,
+ y que podemos empezar a agregar líneas de código.
+ Después de cada cambio, probamos la función otra vez.
+ Si hay un error, sabemos dónde debe estar ---en la última línea que agregamos.
+\end_layout
+
+\begin_layout Standard
+Un primer paso lógico en este cómputo es encontrar las diferencias 
+\begin_inset Formula $x_{2}-x_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $y_{2}-y_{1}$
+\end_inset
+
+.
+ Almacenaremos estos valores en variables temporales llamadas 
+\family typewriter
+dx
+\family default
+ y 
+\family typewriter
+dy
+\family default
+ y los imprimiremos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def distancia(x1, y1, x2, y2):
+\end_layout
+
+\begin_layout Verbatim
+
+  dx = x2 - x1
+\end_layout
+
+\begin_layout Verbatim
+
+  dy = y2 - y1
+\end_layout
+
+\begin_layout Verbatim
+
+  print "dx es", dx
+\end_layout
+
+\begin_layout Verbatim
+
+  print "dy es", dy
+\end_layout
+
+\begin_layout Verbatim
+
+  return 0.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si la función trabaja bien, las salidas deben ser 3 y 4.
+ Si es así, sabemos que la función está obteniendo los parámetros correctos
+ y calculando el primer paso correctamente.
+ Si no ocurre ésto, entonces hay unas pocas líneas para chequear.
+\end_layout
+
+\begin_layout Standard
+Ahora calculamos la suma de los cuadrados de 
+\family typewriter
+dx
+\family default
+ y 
+\family typewriter
+dy
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def distancia(x1, y1, x2, y2):
+\end_layout
+
+\begin_layout Verbatim
+
+  dx = x2 - x1
+\end_layout
+
+\begin_layout Verbatim
+
+  dy = y2 - y1
+\end_layout
+
+\begin_layout Verbatim
+
+  discuadrado = dx**2 + dy**2
+\end_layout
+
+\begin_layout Verbatim
+
+  print "discuadrado es: ", discuadrado
+\end_layout
+
+\begin_layout Verbatim
+
+  return 0.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Note que hemos eliminado las sentencias 
+\family typewriter
+print
+\family default
+ que teníamos en el paso anterior.
+ Este código se denomina 
+\series bold
+andamiaje
+\series default
+ porque es útil para construir el programa pero no hace parte del producto
+ final.
+\end_layout
+
+\begin_layout Standard
+De nuevo, corremos el programa y chequeamos la salida (que debe ser 25).
+\end_layout
+
+\begin_layout Standard
+Finalmente, si importamos el módulo math, podemos usar la función 
+\family typewriter
+sqrt
+\family default
+ para calcular y retornar el resultado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def distancia(x1, y1, x2, y2):
+\end_layout
+
+\begin_layout Verbatim
+
+  dx = x2 - x1
+\end_layout
+
+\begin_layout Verbatim
+
+  dy = y2 - y1
+\end_layout
+
+\begin_layout Verbatim
+
+  discuadrado = dx**2 + dy**2
+\end_layout
+
+\begin_layout Verbatim
+
+  resultado = math.sqrt(discuadrado)
+\end_layout
+
+\begin_layout Verbatim
+
+  return resultado
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si esto funciona bien, usted ha terminado.
+ Si no, se podría imprimir el valor de 
+\family typewriter
+resultado
+\family default
+ antes de la sentencia return.
+\end_layout
+
+\begin_layout Standard
+Recapitulando, para empezar, usted debería agregar solamente una línea o
+ dos cada vez.
+\end_layout
+
+\begin_layout Standard
+A medida que gane más experiencia podrá escribir y depurar trozos mayores.
+ De cualquier forma el proceso de desarrollo incremental puede evitarle
+ mucho tiempo de depuración.
+\end_layout
+
+\begin_layout Standard
+Los aspectos claves del proceso son:
+\end_layout
+
+\begin_layout Enumerate
+Empezar con un programa correcto y hacer pequeños cambios incrementales.
+ Si en cualquier punto hay un error, usted sabrá exactamente donde está.
+\end_layout
+
+\begin_layout Enumerate
+Use variables temporales para almacenar valores intermedios de manera que
+ se puedan imprimir y chequear.
+\end_layout
+
+\begin_layout Enumerate
+Ya que el programa esté corriendo, usted puede remover parte del andamiaje
+ o consolidar múltiples sentencias en expresiones compuestas, pero sólo
+ si ésto no dificulta la lectura del programa.
+\end_layout
+
+\begin_layout Section
+Composición
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+composición
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función!composición
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como usted esperaría, se puede llamar una función fructífera desde otra.
+ Esta capacidad es la 
+\series bold
+composición
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Como ejemplo vamos a escribir una función que toma dos puntos: el centro
+ de un círculo y un punto en el perímetro, y que calcule el área total del
+ círculo.
+\end_layout
+
+\begin_layout Standard
+Asuma que el punto central está almacenado en las variables 
+\family typewriter
+xc
+\family default
+ y 
+\family typewriter
+yc
+\family default
+, y que el punto perimetral está en 
+\family typewriter
+xp
+\family default
+ y 
+\family typewriter
+yp
+\family default
+.
+ El primer paso es encontrar el radio del círculo, que es la distancia entre
+ los dos puntos.
+ Afortunadamente, hay una función, 
+\family typewriter
+distancia
+\family default
+, que hace eso:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+radio = distancia(xc, yc, xp, yp)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El segundo paso es encontrar el área de un círculo con dicho radio y retornarla
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+resultado = area(radio)
+\end_layout
+
+\begin_layout Verbatim
+
+return resultado
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Envolviendo todo en una función obtenemos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def area2(xc, yc, xp, yp):
+\end_layout
+
+\begin_layout Verbatim
+
+  radio = distancia(xc, yc, xp, yp)
+\end_layout
+
+\begin_layout Verbatim
+
+  resultado = area(radio)
+\end_layout
+
+\begin_layout Verbatim
+
+  return resultado
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Llamamos a esta función 
+\family typewriter
+area2
+\family default
+ para distinguirla de la función 
+\family typewriter
+area
+\family default
+ definida previamente.
+ Solo puede haber una función con un nombre dado dentro de un módulo.
+\end_layout
+
+\begin_layout Standard
+Las variables temporales 
+\family typewriter
+radio
+\family default
+ y 
+\family typewriter
+area
+\family default
+ son útiles para desarrollar y depurar, pero una vez que el programa está
+ funcionando podemos hacer la función más concisa componiendo las llamadas
+ a funciones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def area2(xc, yc, xp, yp):
+\end_layout
+
+\begin_layout Verbatim
+
+  return area(distancia(xc, yc, xp, yp))
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Funciones booleanas
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "boolean"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función booleana
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función booleana
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las funciones que pueden retornar un valor booleano son convenientes para
+ ocultar chequeos complicados adentro de funciones.
+ Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def esDivisible(x, y):
+\end_layout
+
+\begin_layout Verbatim
+
+  if x % y == 0:
+\end_layout
+
+\begin_layout Verbatim
+
+    return True       #  es cierto
+\end_layout
+
+\begin_layout Verbatim
+
+  else:
+\end_layout
+
+\begin_layout Verbatim
+
+    return False      # es falso
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El nombre de esta función es 
+\family typewriter
+esDivisible
+\family default
+.
+ Es muy usual nombrar las funciones booleanas con palabras o frases que
+ suenan como preguntas de sí o no (que tienen como respuesta un sí o un
+ no).
+ 
+\family typewriter
+esDivisible
+\family default
+ retorna 
+\family typewriter
+True
+\family default
+ ó 
+\family typewriter
+False
+\family default
+ para indicar si x es divisible exactamente por y.
+\end_layout
+
+\begin_layout Standard
+Podemos hacerla más concisa tomando ventaja del hecho de que una condición
+ dentro de una sentencia 
+\family typewriter
+if
+\family default
+ es una expresión booleana.
+ Podemos retornarla directamente, evitando completamente el 
+\family typewriter
+if
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def esDivisible(x, y):
+\end_layout
+
+\begin_layout Verbatim
+
+  return x % y == 0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta sesión muestra la nueva función en acción:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>>   esDivisible(6, 4)
+\end_layout
+
+\begin_layout Verbatim
+
+False
+\end_layout
+
+\begin_layout Verbatim
+
+>>>   esDivisible(6, 3)
+\end_layout
+
+\begin_layout Verbatim
+
+True
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Las funciones booleanas se usan a menudo en las sentencias condicionales:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+if esDivisible(x, y):
+\end_layout
+
+\begin_layout Verbatim
+
+  print "x es divisible por y"
+\end_layout
+
+\begin_layout Verbatim
+
+else:
+\end_layout
+
+\begin_layout Verbatim
+
+  print "x no es divisible por y"
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Puede parecer tentador escribir algo como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+if esDivisible(x, y) == True:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Pero la comparación extra es innecesaria.
+\end_layout
+
+\begin_layout Section
+Más recursión
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje completo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje!completo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Turing, Alan
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Turing, Tésis de 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hasta aquí, usted sólo ha aprendido un pequeño subconjunto de Python, pero
+ podría interesarle saber que este subconjunto es un lenguaje de programación
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ completo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, lo que quiere decir que cualquier cosa que pueda ser calculada puede ser
+ expresada en este subconjunto.
+ Cualquier programa escrito alguna vez puede ser reescrito usando solamente
+ las características que usted ha aprendido hasta ahora (de hecho, necesitaría
+ algunos comandos mas para manejar dispositivos como el teclado, el ratón,
+ los discos, etc., pero eso sería todo).
+\end_layout
+
+\begin_layout Standard
+Demostrar esta afirmación no es un ejercicio trivial y fue logrado por Alan
+ Turing, uno de los primeros científicos de la computación (algunos dirían
+ que el era un matemático, pero la mayoría de los científicos pioneros de
+ la computación eran matemáticos).
+ Esto se conoce como la Tesis de Turing.
+ Si usted toma un curso de Teoría de la Computación tendrá la oportunidad
+ de ver la demostración.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para darle una idea de lo que puede hacer con las herramientas que ha aprendido,
+ vamos a evaluar unas pocas funciones matemáticas definidas recursivamente.
+\end_layout
+
+\begin_layout Standard
+Una definición recursiva es similar a una circular, ya que éstas contienen
+ una referencia al concepto que se pretende definir.
+ Una definición circular verdadera no es muy útil:
+\end_layout
+
+\begin_layout Description
+frabjuoso: un adjetivo usado para describir algo que es frabjuoso.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+frabjuoso
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+definición circular
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+definición!circular
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si usted viera dicha definición en el diccionario, quedaría confundido.
+ Por otro lado, si encontrara la definición de la función factorial hallaría
+ algo como esto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -0.35in
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & 0!=1\\
+ &  & n!=n(n-1)!
+\end{eqnarray*}
+
+\end_inset
+
+
+\begin_inset VSpace -0.25in
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta definición dice que el factorial de 0 es 1, y que el factorial de cualquier
+ otro valor, 
+\begin_inset Formula $n$
+\end_inset
+
+, es 
+\begin_inset Formula $n$
+\end_inset
+
+ multiplicado por el factorial de 
+\begin_inset Formula $n-1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Así que 
+\begin_inset Formula $3!$
+\end_inset
+
+ es 3 veces 
+\begin_inset Formula $2!$
+\end_inset
+
+, que es 2 veces 
+\begin_inset Formula $1!$
+\end_inset
+
+, que es 1 vez 
+\begin_inset Formula $0!$
+\end_inset
+
+.
+ Juntando todo esto, 
+\begin_inset Formula $3!$
+\end_inset
+
+ es igual a 3 veces 2 veces 1 vez 1, lo que da 6.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función factorial
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función!factorial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si usted puede escribir una definición recursiva de algo, usualmente podrá
+ escribir un programa para evaluarlo.
+ El primer paso es decidir cuales son los parámetros para esta función.
+ Con un poco de esfuerzo usted concluiría que 
+\family typewriter
+factorial
+\family default
+ recibe un único parámetro:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def factorial(n):
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si el argumento es 0, todo lo que hacemos es retornar 1:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def factorial(n):
+\end_layout
+
+\begin_layout Verbatim
+
+  if n == 0:
+\end_layout
+
+\begin_layout Verbatim
+
+    return 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Sino, y ésta es la parte interesante, tenemos que hacer una llamada recursiva
+ para encontrar el factorial de 
+\begin_inset Formula $n-1$
+\end_inset
+
+ y, entonces, multiplicarlo por 
+\begin_inset Formula $n$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def factorial(n):
+\end_layout
+
+\begin_layout Verbatim
+
+  if n == 0:
+\end_layout
+
+\begin_layout Verbatim
+
+    return 1
+\end_layout
+
+\begin_layout Verbatim
+
+  else:
+\end_layout
+
+\begin_layout Verbatim
+
+    recur = factorial(n-1)
+\end_layout
+
+\begin_layout Verbatim
+
+    da = n * recur
+\end_layout
+
+\begin_layout Verbatim
+
+    return da
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El flujo de ejecución de este programa es similar al flujo de 
+\family typewriter
+conteo
+\family default
+ en la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "recursion"
+
+\end_inset
+
+.
+ Si llamamos a 
+\family typewriter
+factorial
+\family default
+ con el valor 3:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como 3 no es 0, tomamos la segunda rama y calculamos el factorial de 
+\family typewriter
+n-1
+\family default
+...
+\end_layout
+
+\begin_layout Quote
+Como 2 no es 0, tomamos la segunda rama y calculamos el factorial de 
+\family typewriter
+n-1
+\family default
+...
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+Como 1 no es 0, tomamos la segunda rama y calculamos el factorial de 
+\family typewriter
+n-1
+\family default
+...
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+Como 0 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ es
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 0, tomamos la primera rama y retornamos 1 sin hacer más llamados recursivos.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Quote
+El valor de retorno (1) se multiplica por 
+\begin_inset Formula $n$
+\end_inset
+
+, que es 1, y el resultado se retorna.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Quote
+El valor de retorno (1) se multiplica por 
+\begin_inset Formula $n$
+\end_inset
+
+, que es 2, y el resultado se retorna.
+ 
+\end_layout
+
+\begin_layout Standard
+El valor de retorno (2) se multiplica por 
+\begin_inset Formula $n$
+\end_inset
+
+, que es 3, y el resultado, 6, se convierte en el valor de retorno del llamado
+ de función que empezó todo el proceso.
+\end_layout
+
+\begin_layout Standard
+Así queda el diagrama de pila para esta secuencia de llamados de función:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.1in
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/stack3.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset VSpace 0.1in
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los valores de retorno mostrados se pasan hacia arriba a través de la pila.
+ En cada marco, el valor de retorno es el valor de 
+\family typewriter
+da
+\family default
+, que es el producto de 
+\family typewriter
+n
+\family default
+ y 
+\family typewriter
+recur
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Observe que en el último marco, las variables locales 
+\family typewriter
+recur
+\family default
+ y 
+\family typewriter
+da
+\family default
+ no existen porque la rama que las crea no se ejecutó.
+\end_layout
+
+\begin_layout Section
+El salto de fe
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+salto de fe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Seguir el flujo de ejecución es una forma de leer programas, pero rápidamente
+ puede tornarse algo laberíntico.
+ Una alternativa es lo que denominamos hacer el 
+\begin_inset Quotes eld
+\end_inset
+
+salto de fe.
+\begin_inset Quotes erd
+\end_inset
+
+ Cuando usted llega a un llamado de función, en lugar de seguir el flujo
+ de ejecución, se 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ asume
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ que la función trabaja correctamente y retorna el valor apropiado.
+\end_layout
+
+\begin_layout Standard
+De hecho, usted ya está haciendo el salto de fe cuando usa las funciones
+ primitivas.
+ Cuando llama a 
+\family typewriter
+math.cos
+\family default
+ ó a 
+\family typewriter
+math.exp
+\family default
+, no está examinando las implementaciones de estas funciones.
+ Usted sólo asume que están correctas porque los que escribieron el módulo
+ math son buenos programadores.
+\end_layout
+
+\begin_layout Standard
+Lo mismo se cumple para una de sus propias funciones.
+ Por ejemplo, en la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "boolean"
+
+\end_inset
+
+, escribimos una función llamada 
+\family typewriter
+esDivisible
+\family default
+ que determina si un número es divisible por otro.
+ Una vez que nos hemos convencido de que esta función es correcta ---probándola
+ y examinando el código---podemos usarla sin mirar el código nuevamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lo mismo vale para los programas recursivos.
+ Cuando usted llega a una llamada recursiva, en lugar de seguir el flujo
+ de ejecución, debería asumir que el llamado recursivo funciona (retorna
+ el resultado correcto) y luego preguntarse, 
+\begin_inset Quotes eld
+\end_inset
+
+Asumiendo que puedo encontrar el factorial de 
+\begin_inset Formula $n-1$
+\end_inset
+
+, ¿puedo calcular el factorial de 
+\begin_inset Formula $n$
+\end_inset
+
+?
+\begin_inset Quotes erd
+\end_inset
+
+ En este caso, es claro que se puede lograr, multiplicándolo por 
+\begin_inset Formula $n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por supuesto que es un poco raro asumir que la función trabaja correctamente
+ cuando ni siquiera hemos terminado de escribirla, ¡por eso es que denominamos
+ a esto el salto de fe!.
+\end_layout
+
+\begin_layout Section
+Un ejemplo más
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "one more example"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el ejemplo anterior usábamos variables temporales para desplegar los
+ pasos y depurar el código más fácilmente, pero podríamos ahorrar unas cuantas
+ líneas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def factorial(n):
+\end_layout
+
+\begin_layout Verbatim
+
+  if n == 0:
+\end_layout
+
+\begin_layout Verbatim
+
+    return 1
+\end_layout
+
+\begin_layout Verbatim
+
+  else:
+\end_layout
+
+\begin_layout Verbatim
+
+    return n * factorial(n-1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Desde ahora, vamos a usar esta forma más compacta, pero le recomendamos
+ que use la forma más explícita mientras desarrolla las funciones.
+ Cuando estén terminadas y funcionando, con un poco de inspiración se pueden
+ compactar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+La función de Fibonacci
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Después de 
+\family typewriter
+factorial
+\family default
+, el ejemplo más común de función matemática, definida recursivamente, es
+ la serie de 
+\family typewriter
+fibonacci
+\family default
+, que tiene la siguiente definición:
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace -0.25in
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{eqnarray*}
+ &  & fibonacci(0)=1\\
+ &  & fibonacci(1)=1\\
+ &  & fibonacci(n)=fibonacci(n-1)+fibonacci(n-2);
+\end{eqnarray*}
+
+\end_inset
+
+Traducida a Python, luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def fibonacci (n):
+\end_layout
+
+\begin_layout Verbatim
+
+  if n == 0 or n == 1:
+\end_layout
+
+\begin_layout Verbatim
+
+    return 1
+\end_layout
+
+\begin_layout Verbatim
+
+  else:
+\end_layout
+
+\begin_layout Verbatim
+
+    return fibonacci(n-1) + fibonacci(n-2)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si usted intenta seguir el flujo de ejecución de fibonacci, incluso para
+ valores pequeños de 
+\begin_inset Formula $n$
+\end_inset
+
+, le va a doler la cabeza.
+ Pero, si seguimos el salto de fe, si asumimos que los dos llamados recursivos
+ funcionan correctamente, es claro que el resultado correcto es la suma
+ de éstos dos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Chequeo de tipos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+chequeo de tipos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+chequeo de errores
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función factorial
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Qué pasa si llamamos a 
+\family typewriter
+factorial
+\family default
+ y le pasamos a 1.5 como argumento?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> factorial (1.5)
+\end_layout
+
+\begin_layout Verbatim
+
+RuntimeError: Maximum recursion depth exceeded
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Parece recursión infinita.
+ ¿Cómo puede darse? Hay un caso base ---cuando 
+\family typewriter
+n == 0
+\family default
+.
+ El problema reside en que los valores de 
+\family typewriter
+n
+\family default
+ se 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ saltan
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ al caso base .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión infinita
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión!infinita
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la primera llamada recursiva el valor de 
+\family typewriter
+n
+\family default
+ es 0.5.
+ En la siguiente es -0.5.
+ Desde allí se hace cada vez más pequeño, pero nunca será 0.
+\end_layout
+
+\begin_layout Standard
+Tenemos dos opciones, podemos intentar generalizar la función 
+\family typewriter
+factorial
+\family default
+ para que trabaje con números de punto flotante, o podemos chequear el tipo
+ del parámetro que llega.
+ La primera opción se denomina en matemática la función gama y está fuera
+ del alcance de este libro.
+ Optaremos por la segunda.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función gama
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos usar la función 
+\family typewriter
+type
+\family default
+ para comparar el tipo del parámetro al tipo de un valor entero conocido
+ (como 1).
+ Mientras estamos en eso también aseguraremos que el parámetro sea positivo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def factorial (n):
+\end_layout
+
+\begin_layout Verbatim
+
+  if type(n) != type(1):
+\end_layout
+
+\begin_layout Verbatim
+
+    print "Factorial solo esta definido para enteros."
+\end_layout
+
+\begin_layout Verbatim
+
+    return -1
+\end_layout
+
+\begin_layout Verbatim
+
+  elif n < 0:
+\end_layout
+
+\begin_layout Verbatim
+
+    print "Factorial solo esta definido para positivos"
+\end_layout
+
+\begin_layout Verbatim
+
+    return -1
+\end_layout
+
+\begin_layout Verbatim
+
+  elif n == 0:
+\end_layout
+
+\begin_layout Verbatim
+
+    return 1
+\end_layout
+
+\begin_layout Verbatim
+
+  else:
+\end_layout
+
+\begin_layout Verbatim
+
+    return n * factorial(n-1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora tenemos tres casos base.
+ El primero atrapa a los valores que no son enteros, el segundo a los enteros
+ negativos.
+ En ambos casos el programa imprime un mensaje de error y retorna un valor
+ especial, -1, para indicar que algo falló:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> factorial ("pedro")
+\end_layout
+
+\begin_layout Verbatim
+
+Factorial solo esta definido para enteros.
+\end_layout
+
+\begin_layout Verbatim
+
+-1
+\end_layout
+
+\begin_layout Verbatim
+
+>>> factorial (-2)
+\end_layout
+
+\begin_layout Verbatim
+
+Factorial solo esta definido para positivos.
+\end_layout
+
+\begin_layout Verbatim
+
+-1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si pasamos los dos chequeos, tenemos la garantía de que 
+\begin_inset Formula $n$
+\end_inset
+
+ es un número entero positivo, y podemos probar que la recursión termina.
+\end_layout
+
+\begin_layout Standard
+Este programa demuestra el uso de un patrón denominado 
+\series bold
+guarda
+\series default
+.
+ Los primeros dos condicionales actúan como guardas, protegiendo al código
+ interno de los valores que pueden causar un error.
+ Las guardas hacen posible demostrar que el código es correcto.
+\end_layout
+
+\begin_layout Section
+Pruebas unitarias con doctest
+\end_layout
+
+\begin_layout Standard
+Con funciones fructíferas podemos realizar pruebas unitarias.
+ Por ejemplo, la función área de un cuadrado puede adornarse con un bloque
+ de comentarios con triple comillas, que explica su propósito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def area(lado):
+\end_layout
+
+\begin_layout Verbatim
+
+    """ Calcula el area de un cuadrado
+\end_layout
+
+\begin_layout Verbatim
+
+        Parámetros:
+\end_layout
+
+\begin_layout Verbatim
+
+            radio: número
+\end_layout
+
+\begin_layout Verbatim
+
+    """
+\end_layout
+
+\begin_layout Verbatim
+
+    return lado**2
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si al bloque le agregamos una línea probando el llamado de la función, seguida
+ del valor de retorno que debe entregar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def area(lado):
+\end_layout
+
+\begin_layout Verbatim
+
+    """ Calcula el area de un cuadrado
+\end_layout
+
+\begin_layout Verbatim
+
+        Parámetros:
+\end_layout
+
+\begin_layout Verbatim
+
+            radio: número
+\end_layout
+
+\begin_layout Verbatim
+
+        Pruebas:
+\end_layout
+
+\begin_layout Verbatim
+
+        >>> area(1)
+\end_layout
+
+\begin_layout Verbatim
+
+        1        
+\end_layout
+
+\begin_layout Verbatim
+
+    """
+\end_layout
+
+\begin_layout Verbatim
+
+    return lado**2
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Logramos obtener una función que se puede probar en un caso particular.
+ El módulo doctest de Python permite ejecutar automáticamente los casos
+ de prueba que tengamos en las funciones agregando al final del guión su
+ importación y el llamado de la función testmod(), como se ilustra a continuació
+n con la función area, ahora con cuatro casos de prueba:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def area(lado):
+\end_layout
+
+\begin_layout Verbatim
+
+    """ Calcula el area de un cuadrado
+\end_layout
+
+\begin_layout Verbatim
+
+        Parámetros:
+\end_layout
+
+\begin_layout Verbatim
+
+            radio: número
+\end_layout
+
+\begin_layout Verbatim
+
+        Pruebas:
+\end_layout
+
+\begin_layout Verbatim
+
+        >>> area(1)
+\end_layout
+
+\begin_layout Verbatim
+
+        1
+\end_layout
+
+\begin_layout Verbatim
+
+        >>> area(2)
+\end_layout
+
+\begin_layout Verbatim
+
+        4
+\end_layout
+
+\begin_layout Verbatim
+
+        >>> area(4)
+\end_layout
+
+\begin_layout Verbatim
+
+        16
+\end_layout
+
+\begin_layout Verbatim
+
+        >>> area(10)
+\end_layout
+
+\begin_layout Verbatim
+
+        100
+\end_layout
+
+\begin_layout Verbatim
+
+        
+\end_layout
+
+\begin_layout Verbatim
+
+    """
+\end_layout
+
+\begin_layout Verbatim
+
+    return lado**2
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+if __name__ == '__main__':
+\end_layout
+
+\begin_layout Verbatim
+
+    import doctest
+\end_layout
+
+\begin_layout Verbatim
+
+    doctest.testmod()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si se ejecuta el guión se ejecutarán todas las pruebas unitarias de todas
+ las funciones, esto nos permite atrapar errores rapidamente y corregirlos.
+ En Unix/Linux, al ejecutar 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+python -m doctest -v guión.py+
+\end_layout
+
+\end_inset
+
+ se logran ejecutar los casos de prueba y visualizar detalladamente en la
+ pantalla.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Función fructífera:
+\end_layout
+
+\end_inset
+
+ función que retorna un resultado.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Valor de retorno:
+\end_layout
+
+\end_inset
+
+ el valor que entrega como resultado un llamado de función.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Variable temporal:
+\end_layout
+
+\end_inset
+
+ variable usada para almacenar un valor intermedio en un cálculo complejo.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Código muerto:
+\end_layout
+
+\end_inset
+
+ parte de un programa que nunca puede ser ejecutada, a menudo porque aparece
+ después de una sentencia 
+\family typewriter
+return
+\family default
+.
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+None
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: valor especial en Python retornado por las funciones que no tienen una
+ sentencia return, o que tienen una sentencia return sin un argumento.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Desarrollo incremental:
+\end_layout
+
+\end_inset
+
+ un plan de desarrollo de programas que evita la depuración, agregando y
+ probando solo pequeñas porciones de código en cada momento.
+\end_layout
+
+\begin_layout Description
+Andamiaje: código que se usa durante el desarrollo de programas, pero no
+ hace parte de la solución final.
+\end_layout
+
+\begin_layout Description
+Guarda: una condición que chequea y controla circunstancias que pueden causar
+ errores.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable temporal
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable!temporal
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valor de retorno
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+código muerto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+None
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desarrollo incremental
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+andamiaje
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+guarda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Enumerate
+Escriba la función 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+comparar(a,b)+
+\end_layout
+
+\end_inset
+
+ que devuelva 1 si 
+\begin_inset Formula $a<b$
+\end_inset
+
+, 0 si 
+\begin_inset Formula $a=b$
+\end_inset
+
+, y -1 si 
+\begin_inset Formula $a>b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Tome la solución del último ejercicio del capítulo anterior y conviértala
+ en una función que retorne la nota definitiva de su curso de programación.
+\end_layout
+
+\begin_layout Enumerate
+Calcule en una función el área de un disco, teniendo como entrada el radio
+ menor y el radio mayor.
+\end_layout
+
+\begin_layout Enumerate
+Escriba la función 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+pendiente(x1, y1, x2, y2)+
+\end_layout
+
+\end_inset
+
+ que calcule la pendiente de una línea que pasa por los puntos 
+\begin_inset Formula $(x_{1},y_{1})$
+\end_inset
+
+ y 
+\begin_inset Formula $(x_{2},y_{2})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Convierta las funciones de los capítulos pasados, y que se puedan transformar,
+ a fructíferas.
+\end_layout
+
+\begin_layout Enumerate
+Convierta las funciones que obtuvo en el punto anterior agregando guardas
+ para protegerlas de las situaciones en que reciben argumentos de un tipo
+ de dato que no pueden manipular.
+\end_layout
+
+\begin_layout Enumerate
+Agregue pruebas unitarias a las funciones que obtuvo en el punto anterior.
+\end_layout
+
+\end_body
+\end_document

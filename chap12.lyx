@@ -1,0 +1,3007 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Clases y objetos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objeto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tipos compuestos definidos por el usuario
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "point"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo de datos compuestos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo de datos!compuesto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo de datos definido por el usuario
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo de datos!definido por el usuario
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+constructor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez utilizados algunos de los tipos internos de Python, estamos listos
+ para crear un tipo definido por el usuario: el 
+\family typewriter
+Punto
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Piense en el concepto de un punto matemático.
+ En dos dimensiones, un punto tiene dos números (coordenadas) que se tratan
+ colectivamente como un solo objeto.
+ En notación matemática, los puntos suelen escribirse entre paréntesis con
+ una coma separando las coordenadas.
+ Por ejemplo, 
+\begin_inset Formula $(0,0)$
+\end_inset
+
+ representa el origen, y 
+\begin_inset Formula $(x,y)$
+\end_inset
+
+ representa el punto 
+\begin_inset Formula $x$
+\end_inset
+
+ unidades a la derecha e 
+\begin_inset Formula $y$
+\end_inset
+
+ unidades hacia arriba desde el origen.
+\end_layout
+
+\begin_layout Standard
+Una forma natural de representar un punto en Python es con dos valores en
+ punto flotante.
+ La cuestión es, entonces, cómo agrupar esos dos valores en un objeto compuesto.
+ La solución rápida y burda es utilizar una lista o tupla, y para algunas
+ aplicaciones esa podría ser la mejor opción.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+coma flotante
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una alternativa es que el usuario defina un nuevo tipo de dato compuesto,
+ también llamado una 
+\series bold
+clase
+\series default
+.
+ Esta aproximación exige un poco más de esfuerzo, pero tiene algunas ventajas
+ que pronto se harán evidentes.
+\end_layout
+
+\begin_layout Standard
+Una definición de clase se parece a esto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Punto:
+\end_layout
+
+\begin_layout Verbatim
+
+  pass
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Las definiciones de clase pueden aparecer en cualquier lugar de un programa,
+ pero normalmente están al principio (tras las sentencias 
+\family typewriter
+import
+\family default
+).
+ Las reglas sintácticas de la definición de clases son las mismas que para
+ las otras sentencias compuestas.
+ (ver la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "alternative execution"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Esta definición crea una nueva clase llamada 
+\family typewriter
+Punto
+\family default
+.
+ La sentencia 
+\series bold
+pass
+\series default
+ no tiene efectos; sólo es necesaria porque una sentencia compuesta debe
+ tener algo en su cuerpo.
+\end_layout
+
+\begin_layout Standard
+Al crear la clase 
+\family typewriter
+Punto
+\family default
+ hemos creado un nuevo tipo, que también se llama 
+\family typewriter
+Punto
+\family default
+.
+ Los miembros de este tipo se llaman 
+\series bold
+instancias
+\series default
+ del tipo u 
+\series bold
+objetos
+\series default
+.
+ La creación de una nueva instancia se llama 
+\series bold
+instanciación
+\series default
+.
+ Para instanciar un objeto 
+\family typewriter
+Punto
+\family default
+ ejecutamos una función que se llama 
+\family typewriter
+Punto
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+instancia!objeto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+instancia de un objeto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+instanciación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+limpio = Punto()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ A la variable 
+\family typewriter
+limpio
+\family default
+ se le asigna una referencia a un nuevo objeto 
+\family typewriter
+Punto
+\family default
+.
+ A una función como 
+\family typewriter
+Punto
+\family default
+ que crea un objeto nuevo se le llama 
+\series bold
+constructor
+\series default
+.
+\end_layout
+
+\begin_layout Section
+Atributos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+atributos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos añadir nuevos datos a una instancia utilizando la notación de punto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> limpio.x = 3.0
+\end_layout
+
+\begin_layout Verbatim
+
+>>> limpio.y = 4.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta sintaxis es similar a la sintaxis para seleccionar una variable de
+ un módulo, como 
+\family typewriter
+math.pi
+\family default
+ o 
+\family typewriter
+string.uppercase
+\family default
+.
+ En este caso, sin embargo, estamos seleccionando un dato de una instancia.
+ Estos datos con nombre se denominan 
+\series bold
+atributos
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+El diagrama de estados que sigue muestra el resultado de esas asignaciones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/point.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La variable 
+\family typewriter
+limpio
+\family default
+ apunta a un objeto Punto, que contiene dos atributos.
+ Cada atributo apunta a un número en punto flotante.
+\end_layout
+
+\begin_layout Standard
+Podemos leer el valor de un atributo utilizando la misma sintaxis:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print limpio.y
+\end_layout
+
+\begin_layout Verbatim
+
+4.0
+\end_layout
+
+\begin_layout Verbatim
+
+>>> x = limpio.x
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print x
+\end_layout
+
+\begin_layout Verbatim
+
+3.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La expresión 
+\family typewriter
+limpio.x
+\family default
+ significa, 
+\begin_inset Quotes eld
+\end_inset
+
+ve al objeto al que apunta 
+\family typewriter
+limpio
+\family default
+ y toma el valor de 
+\family typewriter
+x
+\family default
+
+\begin_inset Quotes erd
+\end_inset
+
+.
+ En este caso, asignamos ese valor a una variable llamada 
+\family typewriter
+x
+\family default
+.
+ No hay conflicto entre la variable 
+\family typewriter
+x
+\family default
+ y el atributo 
+\family typewriter
+x
+\family default
+.
+ El propósito de la notación punto es identificar de forma inequívoca a
+ qué variable se refiere el programador.
+\end_layout
+
+\begin_layout Standard
+Se puede usar la notación punto como parte de cualquier expresión.
+ Así, las sentencias que siguen son correctas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+print '(' + str(limpio.x) + ', ' + str(limpio.y) + ')'
+\end_layout
+
+\begin_layout Verbatim
+
+distanciaAlCuadrado = limpio.x * limpio.x + 
+\end_layout
+
+\begin_layout Verbatim
+
+                      limpio.y * limpio.y
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La primera línea presenta 
+\family typewriter
+(3.0, 4.0)
+\family default
+; la segunda línea calcula el valor 25.0.
+\end_layout
+
+\begin_layout Standard
+Usted puede estar tentado a imprimir el propio valor de 
+\family typewriter
+limpio
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print limpio
+\end_layout
+
+\begin_layout Verbatim
+
+<__main__.Point instance at 80f8e70>
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El resultado indica que 
+\family typewriter
+limpio
+\family default
+ es una instancia de la clase 
+\family typewriter
+Punto
+\family default
+ que se definió en 
+\family typewriter
+__main__
+\family default
+.
+ 
+\family typewriter
+80f8e70
+\family default
+ es el identificador único de este objeto, escrito en hexadecimal.
+ Probablemente ésta no es la manera más clara de mostrar un objeto 
+\family typewriter
+Punto
+\family default
+.
+ En breve veremos cómo cambiar esto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+imprimir!objeto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Instancias como parámetro
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+instancia
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+parámetro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se puede pasar una instancia como parámetro de la forma habitual.
+ Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def imprimePunto(p):
+\end_layout
+
+\begin_layout Verbatim
+
+  print '(' + str(p.x) + ', ' + str(p.y) + ')'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+imprimePunto
+\family default
+ acepta un punto como argumento y lo muestra en el formato estándar de la
+ matemática.
+ Si llamas a 
+\family typewriter
+imprimePunto(limpio)
+\family default
+, el resultado es 
+\family typewriter
+(3.0, 4.0)
+\family default
+.
+\end_layout
+
+\begin_layout Section
+Mismidad
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+mismidad
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El significado de la palabra 
+\begin_inset Quotes eld
+\end_inset
+
+mismo
+\begin_inset Quotes erd
+\end_inset
+
+ parece totalmente claro hasta que uno se detiene a pensarlo un poco y se
+ da cuenta de que hay algo más de lo que se supone comúnmente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ambigüedad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje natural
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, si alguien dice 
+\begin_inset Quotes eld
+\end_inset
+
+Pepe y yo tenemos la misma moto
+\begin_inset Quotes erd
+\end_inset
+
+, lo que quiere decir es que su moto y la de Pepe son de la misma marca
+ y modelo, pero que son dos motos distintas.
+ Si dice 
+\begin_inset Quotes eld
+\end_inset
+
+Pepe y yo tenemos la misma madre
+\begin_inset Quotes erd
+\end_inset
+
+, quiere decir que su madre y la de Pepe son la misma persona
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+No todas las lenguas tienen el mismo problema.
+ Por ejemplo, el alemán tiene palabras diferentes para los diferentes tipos
+ de identidad.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Misma moto
+\begin_inset Quotes erd
+\end_inset
+
+ en este contexto sería 
+\begin_inset Quotes eld
+\end_inset
+
+gleiche Motorrad
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes eld
+\end_inset
+
+misma madre
+\begin_inset Quotes erd
+\end_inset
+
+ sería 
+\begin_inset Quotes eld
+\end_inset
+
+selbe Mutter
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+.
+ Así que la idea de 
+\begin_inset Quotes eld
+\end_inset
+
+identidad
+\begin_inset Quotes erd
+\end_inset
+
+ es diferente según el contexto.
+\end_layout
+
+\begin_layout Standard
+Cuando uno habla de objetos, hay una ambigüedad parecida.
+ Por ejemplo, si dos 
+\family typewriter
+Puntos
+\family default
+ son el mismo, ¿significa que contienen los mismos datos (coordenadas) o
+ que son de verdad el mismo objeto?
+\end_layout
+
+\begin_layout Standard
+Para averiguar si dos referencias se refieren al mismo objeto, se utiliza
+ el operador 
+\family typewriter
+==
+\family default
+.
+ Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1 = Punto()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1.x = 3
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1.y = 4
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p2 = Punto()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p2.x = 3
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p2.y = 4
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1 == p2
+\end_layout
+
+\begin_layout Verbatim
+
+False
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Aunque 
+\family typewriter
+p1
+\family default
+ y 
+\family typewriter
+p2
+\family default
+ contienen las mismas coordenadas, no son el mismo objeto.
+ Si asignamos 
+\family typewriter
+p1
+\family default
+ a 
+\family typewriter
+p2
+\family default
+, las dos variables son alias del mismo objeto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p2 = p1
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1 == p2
+\end_layout
+
+\begin_layout Verbatim
+
+True
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este tipo de igualdad se llama 
+\series bold
+igualdad superficial
+\series default
+, porque sólo compara las referencias, pero no el contenido de los objetos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+igualdad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+identidad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+igualdad superficial
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+igualdad profunda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para comparar los contenidos de los objetos (
+\series bold
+igualdad profunda
+\series default
+) podemos escribir una función llamada 
+\family typewriter
+mismoPunto
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def mismoPunto(p1, p2) :
+\end_layout
+
+\begin_layout Verbatim
+
+  return (p1.x == p2.x) and (p1.y == p2.y)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si ahora creamos dos objetos diferentes que contienen los mismos datos
+ podremos usar 
+\family typewriter
+mismoPunto
+\family default
+ para averiguar si representan el mismo punto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1 = Punto()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1.x = 3
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1.y = 4
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p2 = Punto()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p2.x = 3
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p2.y = 4
+\end_layout
+
+\begin_layout Verbatim
+
+>>> mismoPunto(p1, p2)
+\end_layout
+
+\begin_layout Verbatim
+
+True
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Por supuesto, si las dos variables apuntan al mismo objeto 
+\family typewriter
+mismoPunto
+\family default
+ devuelve verdadero.
+\end_layout
+
+\begin_layout Section
+Rectángulos
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "embedded"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+rectángulo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Digamos que queremos una clase que represente un rectángulo.
+ La pregunta es, ¿qué información tenemos que proporcionar para definir
+ un rectángulo? Para simplificar las cosas, supongamos que el rectángulo
+ está orientado vertical u horizontalmente, nunca en diagonal.
+\end_layout
+
+\begin_layout Standard
+Tenemos varias posibilidades: podemos señalar el centro del rectángulo (dos
+ coordenadas) y su tamaño (ancho y altura); o podemos señalar una de las
+ esquinas y el tamaño; o podemos señalar dos esquinas opuestas.
+ Un modo convencional es señalar la esquina superior izquierda del rectángulo
+ y el tamaño.
+\end_layout
+
+\begin_layout Standard
+De nuevo, definiremos una nueva clase:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+# ¡Prohibidos los acentos fuera de las cadenas!
+\end_layout
+
+\begin_layout Verbatim
+
+class Rectangulo:	
+\end_layout
+
+\begin_layout Verbatim
+
+  pass
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Y la instanciaremos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+caja = Rectangulo()
+\end_layout
+
+\begin_layout Verbatim
+
+caja.ancho = 100.0
+\end_layout
+
+\begin_layout Verbatim
+
+caja.altura = 200.0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este código crea un nuevo objeto 
+\family typewriter
+Rectangulo
+\family default
+ con dos atributos flotantes.
+ ¡Para señalar la esquina superior izquierda podemos incrustar un objeto
+ dentro de otro!
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+caja.esquina = Punto()
+\end_layout
+
+\begin_layout Verbatim
+
+caja.esquina.x = 0.0;
+\end_layout
+
+\begin_layout Verbatim
+
+caja.esquina.y = 0.0;
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El operador punto compone.
+ La expresión 
+\family typewriter
+caja.esquina.x
+\family default
+ significa 
+\begin_inset Quotes eld
+\end_inset
+
+ve al objeto al que se refiere 
+\family typewriter
+caja
+\family default
+ y selecciona el atributo llamado 
+\family typewriter
+esquina
+\family default
+; entonces ve a ese objeto y selecciona el atributo llamado x
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La figura muestra el estado de este objeto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/rectangle.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Instancias como valores de retorno
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+instancia
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valor de retorno
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las funciones pueden devolver instancias.
+ Por ejemplo, 
+\family typewriter
+encuentraCentro
+\family default
+ acepta un 
+\family typewriter
+Rectangulo
+\family default
+ como argumento y devuelve un 
+\family typewriter
+Punto
+\family default
+ que contiene las coordenadas del centro del 
+\family typewriter
+Rectangulo
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def encuentraCentro(caja):
+\end_layout
+
+\begin_layout Verbatim
+
+  p = Punto()
+\end_layout
+
+\begin_layout Verbatim
+
+  p.x = caja.esquina.x + caja.ancho/2.0
+\end_layout
+
+\begin_layout Verbatim
+
+  p.y = caja.esquina.y + caja.altura/2.0
+\end_layout
+
+\begin_layout Verbatim
+
+  return p
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para llamar a esta función, se pasa 
+\family typewriter
+caja
+\family default
+ como argumento y se asigna el resultado a una variable:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> centro = encuentraCentro(caja)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimePunto(centro)
+\end_layout
+
+\begin_layout Verbatim
+
+(50.0, 100.0)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Los objetos son mutables
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objeto!mutable
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objeto mutable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos cambiar el estado de un objeto efectuando una asignación sobre uno
+ de sus atributos.
+ Por ejemplo, para cambiar el tamaño de un rectángulo sin cambiar su posición,
+ podemos cambiar los valores de 
+\family typewriter
+ancho
+\family default
+ y 
+\family typewriter
+altura
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+caja.ancho = caja.ancho + 50
+\end_layout
+
+\begin_layout Verbatim
+
+caja.altura = caja.altura + 100
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Podemos encapsular este código en un método y generalizarlo para agrandar
+ el rectángulo en cualquier cantidad:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+encapsulamiento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+generalización
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def agrandarRect(caja, dancho, daltura) :
+\end_layout
+
+\begin_layout Verbatim
+
+  caja.ancho = caja.ancho + dancho
+\end_layout
+
+\begin_layout Verbatim
+
+  caja.altura = caja.altura + daltura
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Las variables 
+\family typewriter
+dancho
+\family default
+ y 
+\family typewriter
+daltura
+\family default
+ indican cuánto debe agrandarse el rectángulo en cada dirección.
+ Invocar este método tiene el efecto de modificar el 
+\family typewriter
+Rectangulo
+\family default
+ que se pasa como argumento.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, podemos crear un nuevo 
+\family typewriter
+Rectangulo
+\family default
+ llamado 
+\family typewriter
+b
+\family default
+ y pasárselo a la función 
+\family typewriter
+agrandarRect
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b = Rectangulo()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b.ancho = 100.0
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b.altura = 200.0
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b.esquina = Punto()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b.esquina.x = 0.0;
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b.esquina.y = 0.0;
+\end_layout
+
+\begin_layout Verbatim
+
+>>> agrandarRect(b, 50, 100)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Mientras 
+\family typewriter
+agrandarRect
+\family default
+ se está ejecutando, el parámetro 
+\family typewriter
+caja
+\family default
+ es un alias de 
+\family typewriter
+b
+\family default
+.
+ Cualquier cambio que se hagas a 
+\family typewriter
+caja
+\family default
+ afectará también a 
+\family typewriter
+b
+\family default
+.
+\end_layout
+
+\begin_layout Section
+Copiado
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+uso de alias
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+copiado
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo copy
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo!copy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El uso de un alias puede hacer que un programa sea difícil de leer, porque
+ los cambios hechos en un lugar pueden tener efectos inesperados en otro
+ lugar.
+ Es difícil estar al tanto de todas las variables que pueden apuntar a un
+ objeto dado.
+\end_layout
+
+\begin_layout Standard
+Copiar un objeto es, muchas veces, una alternativa a la creación de un alias.
+ El módulo 
+\family typewriter
+copy
+\family default
+ contiene una función llamada 
+\family typewriter
+copy
+\family default
+ que puede duplicar cualquier objeto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> import copy
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1 = Punto()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1.x = 3
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1.y = 4
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p2 = copy.copy(p1)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> p1 == p2
+\end_layout
+
+\begin_layout Verbatim
+
+False
+\end_layout
+
+\begin_layout Verbatim
+
+>>> mismoPunto(p1, p2)
+\end_layout
+
+\begin_layout Verbatim
+
+True
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Una vez que hemos importado el módulo 
+\family typewriter
+copy
+\family default
+, podemos usar el método 
+\family typewriter
+copy
+\family default
+ para hacer un nuevo 
+\family typewriter
+Punto
+\family default
+.
+ 
+\family typewriter
+p1
+\family default
+ y 
+\family typewriter
+p2
+\family default
+ no son el mismo punto, pero contienen los mismos datos.
+\end_layout
+
+\begin_layout Standard
+Para copiar un objeto simple como un 
+\family typewriter
+Punto
+\family default
+, que no contiene objetos incrustados, 
+\family typewriter
+copy
+\family default
+ es suficiente.
+ Esto se llama 
+\series bold
+copiado superficial
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Para algo como un 
+\family typewriter
+Rectangulo
+\family default
+, que contiene una referencia a un 
+\family typewriter
+Punto
+\family default
+, 
+\family typewriter
+copy
+\family default
+ no lo hace del todo bien.
+ Copia la referencia al objeto 
+\family typewriter
+Punto
+\family default
+, de modo que tanto el 
+\family typewriter
+Rectangulo
+\family default
+ viejo como el nuevo apuntan a un único 
+\family typewriter
+Punto
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Si creamos una caja, 
+\family typewriter
+b1
+\family default
+, de la forma habitual y entonces hacemos una copia, 
+\family typewriter
+b2
+\family default
+, usando 
+\family typewriter
+copy
+\family default
+, el diagrama de estados resultante se ve así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/rectangle2.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es casi seguro que esto no es lo que queremos.
+ En este caso, la invocación de 
+\family typewriter
+agrandaRect
+\family default
+ sobre uno de los 
+\family typewriter
+Rectangulo
+\family default
+s no afectaría al otro, ¡pero la invocación de 
+\family typewriter
+mueveRect
+\family default
+ sobre cualquiera afectaría a ambos! Este comportamiento es confuso y propicia
+ los errores.
+\end_layout
+
+\begin_layout Standard
+Afortunadamente, el módulo 
+\family typewriter
+copy
+\family default
+ contiene un método llamado 
+\family typewriter
+deepcopy
+\family default
+ que copia no sólo el objeto, sino también cualesquiera objetos incrustados
+ en él.
+ No lo sorprenderá saber que esta operación se llama 
+\series bold
+copia profunda
+\series default
+ (deep copy).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b2 = copy.deepcopy(b1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora 
+\family typewriter
+b1
+\family default
+ y 
+\family typewriter
+b2
+\family default
+ son objetos totalmente independientes.
+\end_layout
+
+\begin_layout Standard
+Podemos usar 
+\family typewriter
+deepcopy
+\family default
+ para reescribir 
+\family typewriter
+agrandaRect
+\family default
+ de modo que en lugar de modificar un 
+\family typewriter
+Rectangulo
+\family default
+ existente, cree un nuevo 
+\family typewriter
+Rectangulo
+\family default
+ que tiene la misma localización que el viejo pero nuevas dimensiones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def agrandaRect(caja, dancho, daltura) :
+\end_layout
+
+\begin_layout Verbatim
+
+  import copy
+\end_layout
+
+\begin_layout Verbatim
+
+  nuevaCaja = copy.deepcopy(caja)
+\end_layout
+
+\begin_layout Verbatim
+
+  nuevaCaja.ancho = nuevaCaja.ancho + dancho
+\end_layout
+
+\begin_layout Verbatim
+
+  nuevaCaja.altura = nuevaCaja.altura + daltura
+\end_layout
+
+\begin_layout Verbatim
+
+  return nuevaCaja
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+Clase: tipo compuesto definido por el usuario.
+ También se puede pensar en una clase como una plantilla para los objetos
+ que son instancias de la misma.
+\end_layout
+
+\begin_layout Description
+Instanciar: Crear una instancia de una clase.
+\end_layout
+
+\begin_layout Description
+Instancia: objeto que pertenece a una clase.
+\end_layout
+
+\begin_layout Description
+Objeto: tipo de dato compuesto que suele usarse para representar una cosa
+ o concepto del mundo real.
+\end_layout
+
+\begin_layout Description
+Constructor: método usado para crear nuevos objetos.
+\end_layout
+
+\begin_layout Description
+Atributo: uno de los elementos de datos con nombre que constituyen una instancia.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Igualdad superficial:
+\end_layout
+
+\end_inset
+
+ igualdad de referencias, o dos referencias que apuntan al mismo objeto.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Igualdad profunda:
+\end_layout
+
+\end_inset
+
+ igualdad de valores, o dos referencias que apuntan a objetos que tienen
+ el mismo valor.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Copia superficial:
+\end_layout
+
+\end_inset
+
+ copiar el contenido de un objeto, incluyendo cualquier referencia a objetos
+ incrustados; implementada por la función 
+\family typewriter
+copy
+\family default
+ del módulo 
+\family typewriter
+copy
+\family default
+.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Copia profunda:
+\end_layout
+
+\end_inset
+
+ copiar el contenido de un objeto así como cualesquiera objetos incrustados,
+ y los incrustados en estos, y así sucesivamente.
+ Está implementada en la función 
+\family typewriter
+deepcopy
+\family default
+ del módulo 
+\family typewriter
+copy
+\family default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+instanciar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+instancia
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objeto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+constructor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+atributo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+igualdad superficial
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+igualdad profunda
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+copia superficial
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+copia profunda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Enumerate
+Cree e imprima un objeto 
+\family typewriter
+Punto
+\family default
+ y luego use 
+\family typewriter
+id
+\family default
+ para imprimir el identificador único del objeto.
+ Traduzca el número hexadecimal a decimal y asegúrese de que coincidan.
+\end_layout
+
+\begin_layout Enumerate
+Reescriba la función 
+\family typewriter
+distancia
+\family default
+ de la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "program development"
+
+\end_inset
+
+ de forma que acepte dos 
+\family typewriter
+Puntos
+\family default
+ como parámetros en lugar de cuatro números.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función llamada 
+\family typewriter
+mueveRect
+\family default
+ que tome un 
+\family typewriter
+Rectangulo
+\family default
+ y dos parámetros llamados 
+\family typewriter
+dx
+\family default
+ y 
+\family typewriter
+dy
+\family default
+.
+ Tiene que cambiar la posición del rectángulo añadiendo en la 
+\family typewriter
+esquina
+\family default
+: 
+\family typewriter
+dx
+\family default
+ a la coordenada 
+\family typewriter
+x
+\family default
+ y 
+\family typewriter
+dy
+\family default
+ a la coordenada 
+\family typewriter
+y
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
+Reescriba 
+\family typewriter
+mueveRect
+\family default
+ de modo que cree y devuelva un nuevo 
+\family typewriter
+Rectangulo
+\family default
+ en lugar de modificar el viejo.
+\end_layout
+
+\begin_layout Enumerate
+Investigue la documentación del módulo Turtle de Python.
+ Escriba una función que dibuje un rectángulo con la tortuga.
+\end_layout
+
+\begin_layout Enumerate
+Escriba un programa que dibuje dos tortugas haciendo un movimiento circular
+ permanente.Pista: Piense en como intercalar los movimientos de las dos tortugas.
+\end_layout
+
+\end_body
+\end_document

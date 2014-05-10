@@ -1,0 +1,2373 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+LyX source for textbook 
+\begin_inset Quotes eld
+\end_inset
+
+How to think like a computer scientist'' 
+\end_layout
+
+\begin_layout Plain Layout
+Copyright (c) 2001 Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+El camino hacia el programa
+\end_layout
+
+\begin_layout Standard
+El objetivo de este libro es el de enseñar al estudiante a pensar como lo
+ hacen los científicos informáticos.
+ Esta manera de pensar combina las mejores características de la matemática,
+ la ingeniería y las ciencias naturales.
+ Como los matemáticos, los científicos informáticos usan lenguajes formales
+ para diseñar ideas (específicamente, cómputos).
+ Como los ingenieros, ellos diseñan cosas, construyendo sistemas mediante
+ el ensamble de componentes y evaluando las ventajas y desventajas de cada
+ una de las alternativas de construcción.
+ Como los científicos, ellos observan el comportamiento de sistemas complejos,
+ forman hipótesis, y prueban sus predicciones.
+\end_layout
+
+\begin_layout Standard
+La habilidad más importante del científico informático es 
+\series bold
+la solución de problemas
+\series default
+.
+ La solución de problemas incluye poder formular problemas, pensar en soluciones
+ de manera creativa y expresar soluciones clara y precisamente.
+ Como se verá, el proceso de aprender a programar es la oportunidad perfecta
+ para desarrollar la habilidad de resolver problemas.
+ Por esa razón este capítulo se llama 
+\begin_inset Quotes eld
+\end_inset
+
+El camino hacia el programa
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A cierto nivel, usted aprenderá a programar, lo cual es una habilidad muy
+ útil por sí misma.
+ A otro nivel, usted utilizará la programación para obtener algún resultado.
+ Ese resultado se verá más claramente durante el proceso.
+\end_layout
+
+\begin_layout Section
+El lenguaje de programación Python
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje de programación
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje!programación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El lenguaje de programación que aprenderá es Python.
+ Python es un ejemplo de 
+\series bold
+lenguaje de alto nivel
+\series default
+; otros ejemplos de lenguajes de alto nivel son C, C++, Perl y Java.
+\end_layout
+
+\begin_layout Standard
+Como se puede deducir de la nomenclatura 
+\begin_inset Quotes eld
+\end_inset
+
+lenguaje de alto nivel,
+\begin_inset Quotes erd
+\end_inset
+
+ también existen 
+\series bold
+lenguajes de bajo nivel
+\series default
+, que también se denominan lenguajes de máquina o lenguajes ensambladores.
+ A propósito, las computadoras sólo ejecutan programas escritos en lenguajes
+ de bajo nivel.
+ Los programas de alto nivel tienen que ser traducidos antes de ser ejecutados.
+ Esta traducción lleva tiempo, lo cual es una pequeña desventaja de los
+ lenguajes de alto nivel.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+portátil
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje de alto nivel
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje de bajo nivel
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje!alto nivel
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje!bajo nivel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aun así, las ventajas son enormes.
+ En primer lugar, la programación en lenguajes de alto nivel es mucho más
+ fácil; escribir programas en un lenguaje de alto nivel toma menos tiempo
+ ya que los programas son más cortos, más fáciles de leer, y es más probable
+ que queden correctos.
+ En segundo lugar, los lenguajes de alto nivel son 
+\series bold
+portables
+\series default
+, lo que significa que los programas escritos con estos pueden ser ejecutados
+ en tipos diferentes de computadoras sin modificación alguna o con pocas
+ modificaciones.
+ Programas escritos en lenguajes de bajo nivel sólo pueden ser ejecutados
+ en un tipo de computadora y deben ser reescritos para ser ejecutados en
+ otra.
+\end_layout
+
+\begin_layout Standard
+Debido a estas ventajas, casi todo programa se escribe en un lenguaje de
+ alto nivel.
+ Los lenguajes de bajo nivel son sólo usados para unas pocas aplicaciones
+ especiales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+compilar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+interpretar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay dos tipos de programas que traducen lenguajes de alto nivel a lenguajes
+ de bajo nivel: 
+\series bold
+intérpretes
+\series default
+ y 
+\series bold
+compiladores
+\series default
+.
+ Una intérprete lee un programa de alto nivel y lo ejecuta, lo que significa
+ que lleva a cabo lo que indica el programa.
+ Traduce el programa poco a poco, leyendo y ejecutando cada comando.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.1in
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/interpret.eps
+	scale 70
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset VSpace 0.1in
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un compilador lee el programa y lo traduce todo al mismo tiempo, antes de
+ ejecutar alguno de los programas.
+ A menudo se compila un programa como un paso aparte, y luego se ejecuta
+ el código compilado.
+ En este caso, al programa de alto nivel se lo llama el 
+\series bold
+código fuente
+\series default
+, y al programa traducido es llamado el 
+\series bold
+código de objeto
+\series default
+ o el 
+\series bold
+código ejecutable
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.1in
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/compile.eps
+	scale 70
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset VSpace 0.1in
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A Python se lo considera un lenguaje interpretado, porque sus programas
+ son ejecutados por un intérprete.
+ Existen dos maneras de usar el intérprete: modo de comando y modo de guión.
+ En modo de comando se escriben sentencias en el lenguaje Python y el intérprete
+ muestra el resultado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+$ python
+\end_layout
+
+\begin_layout Verbatim
+
+Python 2.6.2 (r262:71600, Apr 30 2009, 20:29:58) 
+\end_layout
+
+\begin_layout Verbatim
+
+[GCC 4.3.3] on linux2
+\end_layout
+
+\begin_layout Verbatim
+
+Type "help", "copyright", "credits" or "license" for 
+\end_layout
+
+\begin_layout Verbatim
+
+more information.
+\end_layout
+
+\begin_layout Verbatim
+
+>>>1 + 1
+\end_layout
+
+\begin_layout Verbatim
+
+2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+La primera línea de este ejemplo es el comando que pone en marcha al intérprete
+ de Python.
+ Las dos líneas siguientes son mensajes del intérprete.
+ La tercera línea comienza con 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+>>>+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, lo que indica que el intérprete está listo para recibir comandos.
+ Escribimos 
+\family typewriter
+1+1
+\family default
+ y el intérprete contestó 
+\family typewriter
+2
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Alternativamente, se puede escribir el programa en un archivo y usar el
+ intérprete para ejecutar el contenido de dicho archivo.
+ El archivo, en este caso, se denomina un 
+\series bold
+guión (script)
+\series default
+; por ejemplo, en un editor de texto se puede crear un archivo 
+\family typewriter
+unomasuno.py
+\family default
+ que contenga esta línea:
+\end_layout
+
+\begin_layout Verbatim
+print 1 + 1
+\end_layout
+
+\begin_layout Standard
+Por acuerdo unánime, los archivos que contienen programas de Python tienen
+ nombres que terminan con 
+\family typewriter
+.py
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Para ejecutar el programa, se le tiene que indicar el nombre del guión a
+ la interpretadora.
+\end_layout
+
+\begin_layout Verbatim
+$ python unomasuno.py
+\end_layout
+
+\begin_layout Verbatim
+2
+\end_layout
+
+\begin_layout Standard
+En otros entornos de desarrollo, los detalles de la ejecución de programas
+ diferirán.
+ Además, la mayoría de programas son más interesantes que el anterior.
+\end_layout
+
+\begin_layout Standard
+La mayoría de ejemplos en este libro son ejecutados en la línea de comandos.
+ La línea de comandos es más conveniente para el desarrollo de programas
+ y para pruebas rápidas, porque las instrucciones de Python se pueden pasar
+ a la máquina para ser ejecutadas inmediatamente.
+ Una vez que el programa está completo, se lo puede archivar en un guión
+ para ejecutarlo o modificarlo en el futuro.
+\end_layout
+
+\begin_layout Section
+¿Qué es un programa?
+\end_layout
+
+\begin_layout Standard
+Un programa es una secuencia de instrucciones que especifican cómo ejecutar
+ un cómputo.
+ El cómputo puede ser matemático, cómo solucionar un sistema de ecuaciones
+ o determinar las raíces de un polinomio, pero también puede ser simbólico,
+ cómo buscar y reemplazar el texto de un documento o (aunque parezca raro)
+ compilar un programa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+instrucción
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las instrucciones (comandos, órdenes) tienen una apariencia diferente en
+ lenguajes de programación diferentes, pero existen algunas funciones básicas
+ que se presentan en casi todo lenguaje:
+\end_layout
+
+\begin_layout Description
+Entrada: recibir datos del teclado, o de un archivo o de otro aparato.
+\end_layout
+
+\begin_layout Description
+Salida: mostrar datos en el monitor o enviar datos a un archivo u otro aparato.
+\end_layout
+
+\begin_layout Description
+Matemáticas: ejecutar operaciones básicas, como la adición y la multiplicación.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Operación condicional:
+\end_layout
+
+\end_inset
+
+ probar la veracidad de alguna condición y ejecutar una secuencia de instruccion
+es apropiada.
+\end_layout
+
+\begin_layout Description
+Repetición ejecutar alguna acción repetidas veces, usualmente con alguna
+ variación.
+\end_layout
+
+\begin_layout Standard
+Aunque sea difícil de creer, todos los programas en existencia son formulados
+ exclusivamente con tales instrucciones.
+ Así, una manera de describir la programación es: el proceso de romper una
+ tarea en tareas cada vez más pequeñas hasta que éstas sean lo suficientemente
+ sencillas como para ser ejecutadas con una secuencia de estas instrucciones
+ básicas.
+\end_layout
+
+\begin_layout Standard
+Quizás esta descripción es un poco ambigua.
+ No se preocupe.
+ Explicaremos ésto con más detalle en el tema de 
+\series bold
+algoritmos
+\series default
+.
+\end_layout
+
+\begin_layout Section
+¿Qué es la depuración (debugging)?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+depuración (debugging)
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error (bug)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La programación es un proceso complejo, y a veces este proceso lleva a 
+\series bold
+errores indefinidos
+\series default
+, también llamados 
+\series bold
+defectos
+\series default
+ o 
+\series bold
+errores de programación
+\series default
+ (en inglés `bugs'), y el proceso de buscarlos y corregirlos es llamado
+ 
+\series bold
+depuración
+\series default
+ (en inglés `debugging').
+\end_layout
+
+\begin_layout Standard
+Hay tres tipos de errores que pueden ocurrir en un programa.
+ Es muy útil distinguirlos para encontrarlos más rápido.
+\end_layout
+
+\begin_layout Subsection
+Errores sintácticos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error sintáctico
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error!sintaxis
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Python sólo puede ejecutar un programa si está sintácticamente bien escrito.
+ Al contrario, es decir, si el programa tiene algún error de sintaxis, el
+ proceso falla y devuelve un mensaje de error.
+ La palabra 
+\series bold
+sintáctica
+\series default
+ se refiere a la estructura de cualquier programa y a las reglas de esa
+ estructura.
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sintáctica
+\end_layout
+
+\end_inset
+
+ Por ejemplo, en español, la primera letra de toda oración debe ser mayúscula
+ y el fin de toda oración debe llevar un punto.
+ esta oración tiene un error sintáctico.
+ Esta oración también
+\end_layout
+
+\begin_layout Standard
+Para la mayoría de lectores, unos pocos errores no impiden la comprensión
+ de los grafitis en la calle que, a menudo, rompen muchas reglas de sintaxis.
+ Sin embargo Python no es así.
+ Si hay aunque sea un error sintáctico en el programa, Python mostrará un
+ mensaje de error y abortará su ejecución.
+ Al principio usted pasará mucho tiempo buscando errores sintácticos, pero
+ con el tiempo no cometerá tantos errores y los encontrará rápidamente.
+\end_layout
+
+\begin_layout Subsection
+Errores en tiempo de ejecución
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "runtime"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error!en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+excepción
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje seguro
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+seguro!lenguaje
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El segundo tipo de error es el de tiempo de ejecución.
+ Este error aparece sólo cuando se ejecuta un programa.
+ Estos errores también se llaman 
+\series bold
+excepciones
+\series default
+, porque indican que algo excepcional ha ocurrido.
+\end_layout
+
+\begin_layout Standard
+Con los programas que vamos a escribir al principio, los errores de tiempo
+ de ejecución ocurrirán con poca frecuencia.
+\end_layout
+
+\begin_layout Subsection
+Errores semánticos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+semántica
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error semántico
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+semántico!error
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El tercer tipo de error es el 
+\series bold
+semántico
+\series default
+.
+ Si hay un error de lógica en su programa, éste será ejecutado sin ningún
+ mensaje de error, pero el resultado no será el deseado.
+ El programa ejecutará la lógica que usted le dijo que ejecutara.
+\end_layout
+
+\begin_layout Standard
+A veces ocurre que el programa escrito no es el que se tenía en mente.
+ El sentido o significado del programa no es correcto.
+ Es difícil hallar errores de lógica.
+ Eso requiere trabajar al revés, comenzando a analizar la salida para encontrar
+ al problema.
+\end_layout
+
+\begin_layout Subsection
+Depuración experimental
+\end_layout
+
+\begin_layout Standard
+Una de las técnicas más importantes que usted aprenderá es la depuración.
+ Aunque a veces es frustrante, la depuración es una de las partes de la
+ programación más estimulantes, interesantes e intelectualmente exigentes.
+\end_layout
+
+\begin_layout Standard
+La depuración es una actividad parecida a la tarea de un investigador: se
+ tienen que estudiar las pistas para inferir los procesos y eventos que
+ han generado los resultados encontrados.
+\end_layout
+
+\begin_layout Standard
+La depuración también es una ciencia experimental.
+ Una vez que se tiene conciencia de un error, se modifica el programa y
+ se intenta nuevamente.
+ Si la hipótesis fue la correcta se pueden predecir los resultados de la
+ modificación y estaremos más cerca a un programa correcto.
+ Si la hipótesis fue la errónea tendrá que idearse otra hipótesis.
+ Como dijo Sherlock Holmes: 
+\begin_inset Quotes eld
+\end_inset
+
+Cuando se ha descartado lo imposible, lo que queda, no importa cuan inverosímil,
+ debe ser la verdad
+\begin_inset Quotes erd
+\end_inset
+
+ (A.
+ Conan Doyle, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ The Sign of Four
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Holmes, Sherlock
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Doyle, Arthur Conan
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para algunas personas, la programación y la depuración son lo mismo: la
+ programación es el proceso de depurar un programa gradualmente, hasta que
+ el programa tenga el resultado deseado.
+ Esto quiere decir que el programa debe ser, desde un principio, un programa
+ que funcione, aunque su función sea solo mínima.
+ El programa es depurado mientras crece y se desarrolla.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, aunque el sistema operativo Linux contenga miles de líneas
+ de instrucciones, Linus Torvalds lo comenzó como un programa para explorar
+ el microprocesador Intel 80836.
+ Según Larry Greenfield: 
+\begin_inset Quotes eld
+\end_inset
+
+Uno de los proyectos tempranos de Linus fue un programa que intercambiaría
+ la impresión de AAAA con BBBB.
+ Este programa se convirtió en Linux
+\begin_inset Quotes erd
+\end_inset
+
+ (de 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ The Linux Users' Guide
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ Versión Beta 1).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Linux
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Otros capítulos tratarán más el tema de la depuración y otras técnicas de
+ programación.
+\end_layout
+
+\begin_layout Section
+Lenguajes formales y lenguajes naturales
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje formal
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje natural
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+formal!lenguaje
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+natural!lenguaje
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+lenguajes naturales
+\series default
+ son los hablados por seres humanos, como el español, el inglés y el francés.
+ Éstos no han sido diseñados artificialmente (aunque se trate de imponer
+ cierto orden en ellos), pues se han desarrollado naturalmente.
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+Lenguajes formales
+\series default
+ son diseñados por humanos y tienen aplicaciones específicas.
+ La notación matemática, por ejemplo, es un lenguaje formal, ya que se presta
+ a la representación de las relaciones entre números y símbolos.
+ Los químicos utilizan un lenguaje formal para representar la estructura
+ química de las moléculas.
+ Es necesario notar que:
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Los lenguajes de programación son formales y han sido desarrollados para
+ expresar cómputos.
+
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+Los lenguajes formales casi siempre tienen reglas sintácticas estrictas.
+ Por ejemplo, 
+\begin_inset Formula $3+3=6$
+\end_inset
+
+ es una expresión matemática correcta, pero 
+\begin_inset Formula $3=+6\$$
+\end_inset
+
+ no lo es.
+ De la misma manera, 
+\begin_inset Formula $H_{2}O$
+\end_inset
+
+ es una nomenclatura química correcta, pero 
+\begin_inset Formula $_{2}Zz$
+\end_inset
+
+ no lo es.
+\end_layout
+
+\begin_layout Standard
+Existen dos clases de reglas sintácticas, en cuanto a unidades y estructura.
+ Las unidades son los elementos básicos de un lenguaje, como lo son las
+ palabras, los números y los elementos químicos.
+ Por ejemplo, en 
+\family typewriter
+3=+6$
+\family default
+, 
+\family typewriter
+$
+\family default
+ no es una unidad matemática aceptada.
+ Similarmente, 
+\begin_inset Formula $_{2}Zz$
+\end_inset
+
+ no es formal porque no hay ningún elemento químico con la abreviación 
+\begin_inset Formula $Zz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La segunda clase de error sintáctico está relacionado con la estructura
+ de un elemento; mejor dicho, el orden de las unidades.
+ La estructura de la sentencia 
+\family typewriter
+3=+6$
+\family default
+ no es aceptada porque no se puede escribir el símbolo de igualdad seguido
+ de un símbolo más.
+ Similarmente, las fórmulas moleculares tienen que mostrar el número de
+ subíndice después del elemento, no antes.
+\end_layout
+
+\begin_layout Standard
+Al leer una oración, sea en un lenguaje natural o una sentencia en un lenguaje
+ técnico, se debe discernir la estructura de la oración.
+ En un lenguaje natural este proceso, llamado 
+\series bold
+análisis sintáctico
+\series default
+, ocurre subconscientemente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+analizar sintácticamente
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por ejemplo cuando se escucha una oración simple como 
+\begin_inset Quotes eld
+\end_inset
+
+el otro zapato se cayó
+\begin_inset Quotes erd
+\end_inset
+
+, se puede distinguir el sustantivo 
+\begin_inset Quotes eld
+\end_inset
+
+el otro zapato
+\begin_inset Quotes erd
+\end_inset
+
+ y el predicado 
+\begin_inset Quotes eld
+\end_inset
+
+se cayó
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Cuando se ha analizado la oración sintácticamente, se puede deducir el
+ significado, o la semántica, de la oración.
+ Si usted sabe lo que es un zapato y el significado de caer, comprenderá
+ el significado de la oración.
+\end_layout
+
+\begin_layout Standard
+Aunque existen muchas cosas en común entre los lenguajes naturales y los
+ formales---por ejemplo las unidades, la estructura, la sintáctica y la
+ semántica--- también existen muchas diferencias.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Ambigüedad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Redundancia
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Literalidad
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Ambigüedad: los lenguajes naturales tienen muchísimas ambigüedades que se
+ superan usando claves contextuales e información adicional.
+ Los lenguajes formales son diseñados para estar completamente libres de
+ ambigüedades o, tanto como sea posible, lo que quiere decir que cualquier
+ sentencia tiene sólo un significado sin importar el contexto en el que
+ se encuentra.
+\end_layout
+
+\begin_layout Description
+Redundancia: para reducir la ambigüedad y los malentendidos, los lenguajes
+ naturales utilizan bastante redundancia.
+ Como resultado tienen una abundancia de posibilidades para expresarse.
+ Los lenguajes formales son menos redundantes y mas concisos.
+\end_layout
+
+\begin_layout Description
+Literalidad: los lenguajes naturales tienen muchas metáforas y frases comunes.
+ El significado de un dicho, por ejemplo: 
+\begin_inset Quotes eld
+\end_inset
+
+Estirar la pata
+\begin_inset Quotes erd
+\end_inset
+
+, es diferente al significado de sus sustantivos y verbos.
+ En este ejemplo, la oración no tiene nada que ver con una pata y significa
+ 'morirse'.
+ En los lenguajes formales solo existe el significado literal.
+\end_layout
+
+\begin_layout Standard
+Los que aprenden a hablar un lenguaje natural---es decir todo el mundo---muchas
+ veces tienen dificultad en adaptarse a los lenguajes formales.
+ A veces la diferencia entre los lenguajes formales y los naturales es comparabl
+e a la diferencia entre la prosa y la poesía:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Poesía
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Prosa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Poesía: se utiliza una palabra por su cualidad auditiva tanto como por su
+ significado.
+ El poema, en su totalidad, produce un efecto o reacción emocional.
+ La ambigüedad no es sólo común, sino utilizada a propósito.
+\end_layout
+
+\begin_layout Description
+Prosa: el significado literal de la palabra es más importante y la estructura
+ contribuye más al significado.
+ La prosa se presta más al análisis que la poesía, pero todavía contiene
+ ambigüedad.
+\end_layout
+
+\begin_layout Description
+Programa: el significado de un programa es inequívoco y literal, y es entendido
+ en su totalidad analizando las unidades y la estructura.
+\end_layout
+
+\begin_layout Standard
+He aquí unas sugerencias para la lectura de un programa (y de otros lenguajes
+ formales).
+ Primero, recuerde que los lenguajes formales son mucho más densos que los
+ lenguajes naturales y, por consecuencia, toma mas tiempo dominarlos.
+ Además, la estructura es muy importante, entonces no es una buena idea
+ leerlo de pies a cabeza, de izquierda a derecha.
+ En lugar de ésto, aprenda a separar las diferentes partes en su mente,
+ identificar las unidades e interpretar la estructura.
+ Finalmente, ponga atención a los detalles.
+ La fallas de puntuación y la ortografía afectarán negativamente la ejecución
+ de sus programas.
+\end_layout
+
+\begin_layout Section
+El primer programa
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "hello"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "hello world"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tradicionalmente el primer programa en un lenguaje nuevo se llama 
+\begin_inset Quotes eld
+\end_inset
+
+Hola todo el mundo!
+\begin_inset Quotes erd
+\end_inset
+
+ (en inglés, Hello world!) porque sólo muestra las palabras 
+\begin_inset Quotes eld
+\end_inset
+
+Hola todo el mundo
+\begin_inset Quotes erd
+\end_inset
+
+ .
+ En el lenguaje Python es así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+print "Hola todo el mundo!"
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este es un ejemplo de una sentencia 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ print
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, la cual no imprime nada en papel, más bien muestra un valor.
+ En este caso, el resultado es mostrar en pantalla las palabras:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+Hola todo el mundo!
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Las comillas señalan el comienzo y el final del valor; no aparecen en el
+ resultado.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia print
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+print!sentencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay gente que evalúa la calidad de un lenguaje de programación por la simplicida
+d del programa 
+\begin_inset Quotes eld
+\end_inset
+
+Hola todo el mundo!
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Si seguimos ese criterio, Python cumple con esta meta.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Solución de problemas:
+\end_layout
+
+\end_inset
+
+ el proceso de formular un problema, hallar la solución y expresarla.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Lenguaje de alto nivel:
+\end_layout
+
+\end_inset
+
+ un lenguaje como Python que es diseñado para ser fácil de leer y escribir
+ por la gente.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Lenguaje de bajo nivel:
+\end_layout
+
+\end_inset
+
+ un lenguaje de programación que es diseñado para ser fácil de ejecutar
+ para una computadora; también se lo llama 
+\begin_inset Quotes eld
+\end_inset
+
+lenguaje de máquina
+\begin_inset Quotes erd
+\end_inset
+
+ o 
+\begin_inset Quotes eld
+\end_inset
+
+lenguaje ensamblador
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Portabilidad: la cualidad de un programa que puede ser ejecutado en más
+ de un tipo de computadora.
+\end_layout
+
+\begin_layout Description
+Interpretar: ejecutar un programa escrito en un lenguaje de alto nivel traducién
+dolo línea por línea.
+\end_layout
+
+\begin_layout Description
+Compilar: traducir un programa escrito en un lenguaje de alto nivel a un
+ lenguaje de bajo nivel de una vez, en preparación para la ejecución posterior.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Código fuente:
+\end_layout
+
+\end_inset
+
+ un programa escrito en un lenguaje de alto nivel antes de ser compilado.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Código objeto:
+\end_layout
+
+\end_inset
+
+ la salida del compilador una vez que el programa ha sido traducido.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Programa ejecutable:
+\end_layout
+
+\end_inset
+
+ otro nombre para el código de objeto que está listo para ser ejecutado.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Guión (script):
+\end_layout
+
+\end_inset
+
+ un programa archivado (que va a ser interpretado).
+\end_layout
+
+\begin_layout Description
+Programa: un grupo de instrucciones que especifica un cómputo.
+\end_layout
+
+\begin_layout Description
+Algoritmo: un proceso general para resolver una clase completa de problemas.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Error (bug):
+\end_layout
+
+\end_inset
+
+ un error en un programa.
+\end_layout
+
+\begin_layout Description
+Depuración: el proceso de hallazgo y eliminación de los tres tipos de errores
+ de programación.
+\end_layout
+
+\begin_layout Description
+Sintaxis: la estructura de un programa.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Error sintáctico:
+\end_layout
+
+\end_inset
+
+ un error estructural que hace que un programa sea imposible de analizar
+ sintácticamente (e imposible de interpretar).
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Error en tiempo de ejecución:
+\end_layout
+
+\end_inset
+
+ un error que no ocurre hasta que el programa ha comenzado a ejecutar e
+ impide que el programa continúe.
+\end_layout
+
+\begin_layout Description
+Excepción: otro nombre para un error en tiempo de ejecución.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Error semántico:
+\end_layout
+
+\end_inset
+
+ un error en un programa que hace que ejecute algo que no era lo deseado.
+\end_layout
+
+\begin_layout Description
+Semántica: el significado de un programa.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Lenguaje natural:
+\end_layout
+
+\end_inset
+
+ cualquier lenguaje hablado que evolucionó de forma natural.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Lenguaje formal:
+\end_layout
+
+\end_inset
+
+ cualquier lenguaje diseñado que tiene un propósito específico, como la
+ representación de ideas matemáticas o programas de computadoras; todos
+ los lenguajes de programación son lenguajes formales.
+\end_layout
+
+\begin_layout Description
+Unidad: uno de los elementos básicos de la estructura sintáctica de un programa,
+ análogo a una palabra en un lenguaje natural.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Análisis sintáctico:
+\end_layout
+
+\end_inset
+
+ la revisión de un programa y el análisis de su estructura sintáctica.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Sentencia print:
+\end_layout
+
+\end_inset
+
+ una instrucción que causa que el intérprete de Python muestre un valor
+ en el monitor.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+programa
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+solución de problemas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje de alto nivel
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje de bajo nivel
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+portabilidad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+interpretar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+compilar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+código de fuente
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+código de objeto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+código ejecutable
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+algoritmo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error(bug)
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+depuración
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sintaxis
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+semántica
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error sintáctico
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+excepción
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error semántico
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje formal
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje natural
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+análisis sintáctico
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+unidad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+guión
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia print
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+print!sentencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Standard
+En los ejercicios 1,2,3 y 4 escriba una oración en español:
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Con estructura válida pero compuesta de unidades irreconocibles.
+\end_layout
+
+\begin_layout Enumerate
+Con unidades aceptables pero con estructura no válida.
+\end_layout
+
+\begin_layout Enumerate
+Semánticamente comprensible pero sintácticamente incorrecta.
+\end_layout
+
+\begin_layout Enumerate
+Sintácticamente correcta pero que contenga errores semánticos.
+\end_layout
+
+\begin_layout Enumerate
+Inicie la terminal de Python.
+ Escriba 1 + 2 y luego presione la tecla Entrar.
+ Python evalúa esta expresión, presenta el resultado, y enseguida muestra
+ otro intérprete.
+ Considerando que el símbolo * es el signo de multiplicación y el doble
+ símbolo ** es el signo de potenciación, realice dos ejercicios adicionales
+ escribiendo diferentes expresiones y reportando lo mostrado por el intérprete
+ de Python.
+\end_layout
+
+\begin_layout Enumerate
+¿Qué sucede si utiliza el signo de división (/)? ¿Son los resultados obtenidos
+ los esperados? Explique.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Escriba 1 2 y presione la tecla Entrar.
+ Python trata de evaluar esta expresión, pero no puede, porque la expresión
+ es sintácticamente incorrecta.
+ Así, Python responde con el siguiente mensaje de error:
+\end_layout
+
+\begin_layout Verbatim
+  File "<stdin>", line 1
+\end_layout
+
+\begin_layout Verbatim
+    1 2
+\end_layout
+
+\begin_layout Verbatim
+      ^
+\end_layout
+
+\begin_layout Verbatim
+SyntaxError: invalid syntax
+\end_layout
+
+\begin_layout Standard
+Muchas veces Python indica la ubicación del error de sintaxis, sin embargo,
+ no siempre es precisa, por lo que no proporciona suficiente información
+ sobre cuál es el problema.
+ De esta manera, el mejor antídoto es que usted aprenda la sintaxis de Python.
+ En este caso, Python protesta porque no encuentra signo de operación alguno
+ entre los números.
+\end_layout
+
+\begin_layout Standard
+Escriba una entrada que produzca un mensaje de error cuando se introduzca
+ en el intérprete de Python.
+ Explique por qué no tiene una sintaxis válida.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Escriba 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+print 'hola'+
+\end_layout
+
+\end_inset
+
+.
+ Python ejecuta esta sentencia que muestra las letras h-o-l-a.
+ Nótese que las comillas simples en los extremos de la cadena no son parte
+ de la salida mostrada.
+ Ahora escriba 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+print '"hola"'+
+\end_layout
+
+\end_inset
+
+ y describa y explique el resultado.
+\end_layout
+
+\begin_layout Enumerate
+Escriba 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+print queso+
+\end_layout
+
+\end_inset
+
+ sin comillas.
+ ¿Que sucede?
+\end_layout
+
+\begin_layout Enumerate
+Escriba 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+'Esta es una prueba...'+
+\end_layout
+
+\end_inset
+
+ en el intérprete de Python y presione la tecla Entrar.
+ Observe lo que pasa.
+\end_layout
+
+\begin_layout Enumerate
+Ahora cree un guión de Python con el nombre prueba1.py que contenga lo siguiente
+ (asegúrese de guardar el archivo antes de intentar ejecutarlo): 'Esta es
+ una prueba...'
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+¿Qué pasa cuando ejecuta este guión?
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Ahora cambie el contenido del guión a: 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+print 'Esta es una prueba...'+
+\end_layout
+
+\end_inset
+
+ y ejecutelo de nuevo.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+¿Qué pasó esta vez?
+\end_layout
+
+\begin_layout Standard
+Cuando se escribe una expresión en el intérprete de Python, ésta es evaluada
+ y el resultado es mostrado en la línea siguiente.
+ 'Esta es una prueba...' es una expresión, que se evalúa a 'Esta es una prueba...'
+ (de la misma manera que 42 se evalúa a 42).
+ Sin embargo, la evaluación de expresiones en un guión no se envía a la
+ salida del programa, por lo que es necesario mostrarla explícitamente.
+ 
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

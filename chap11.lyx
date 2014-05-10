@@ -1,0 +1,3495 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Archivos y excepciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+archivos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando un programa se está ejecutando, sus datos están en la memoria.
+ Cuando un programa termina, o se apaga el computador, los datos de la memoria
+ desaparecen.
+ Para almacenar los datos de forma permanente se deben poner en un 
+\series bold
+archivo
+\series default
+.
+ Normalmente los archivos se guardan en un disco duro, disquete o CD-ROM.
+\end_layout
+
+\begin_layout Standard
+Cuando hay un gran número de archivos, suelen estar organizados en 
+\series bold
+directorios
+\series default
+ (también llamados 
+\begin_inset Quotes eld
+\end_inset
+
+carpetas
+\begin_inset Quotes erd
+\end_inset
+
+).
+ Cada archivo se identifica con un nombre único, o una combinación de nombre
+ de archivo y nombre de directorio.
+\end_layout
+
+\begin_layout Standard
+Leyendo y escribiendo archivos, los programas pueden intercambiar información
+ entre ellos y generar formatos imprimibles como PDF.
+\end_layout
+
+\begin_layout Standard
+Trabajar con archivos se parece mucho a hacerlo con libros.
+ Para usar un libro, hay que abrirlo.
+ Cuando uno ha terminado, hay que cerrarlo.
+ Mientras el libro está abierto, se puede escribir en él o leer de él.
+ En cualquier caso, uno sabe en qué lugar del libro se encuentra.
+ Casi siempre se lee un libro según su orden natural, pero también se puede
+ ir saltando de página en página.
+\end_layout
+
+\begin_layout Standard
+Todo esto sirve también para los archivos.
+ Para abrir un archivo, se especifica su nombre y se indica si se desea
+ leer o escribir.
+\end_layout
+
+\begin_layout Standard
+La apertura de un archivo crea un objeto archivo.
+ En este ejemplo, la variable 
+\family typewriter
+f
+\family default
+ apunta al nuevo objeto archivo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> f = open("test.dat","w")
+\end_layout
+
+\begin_layout Verbatim
+>>> print f
+\end_layout
+
+\begin_layout Verbatim
+<open file 'test.dat', mode 'w' at fe820>
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La función open toma dos argumentos: el primero, es el nombre del archivo
+ y el segundo, el modo.
+ El modo 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+"w"+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ significa que lo estamos abriendo para escribir.
+\end_layout
+
+\begin_layout Standard
+Si no hay un archivo llamado 
+\family typewriter
+test.dat
+\family default
+ se creará.
+ Si ya hay uno, el archivo que estamos escribiendo lo reemplazará.
+\end_layout
+
+\begin_layout Standard
+Al imprimir el objeto archivo, vemos el nombre del archivo, el modo y la
+ localización del objeto.
+\end_layout
+
+\begin_layout Standard
+Para escribir datos en el archivo invocamos al método 
+\family typewriter
+write
+\family default
+ sobre el objeto archivo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> f.write("Ya es hora")
+\end_layout
+
+\begin_layout Verbatim
+>>> f.write("de cerrar el archivo")
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El cierre del archivo le dice al sistema que hemos terminado de escribir
+ y deja el archivo listo para leer:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> f.close()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ya podemos abrir el archivo de nuevo, esta vez para lectura, y poner su
+ contenido en una cadena.
+ Esta vez el argumento de modo es 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+"r"+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, para lectura:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> f = open("test.dat","r")
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si intentamos abrir un archivo que no existe, recibimos un mensaje de error:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> f = open("test.cat","r")
+\end_layout
+
+\begin_layout Verbatim
+IOError: [Errno 2] No such file or directory: 'test.cat'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como era de esperar, el método 
+\family typewriter
+read
+\family default
+ lee datos del archivo.
+ Sin argumentos, lee el archivo completo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> texto = f.read()
+\end_layout
+
+\begin_layout Verbatim
+>>> print texto
+\end_layout
+
+\begin_layout Verbatim
+Ya es horade cerrar el archivo
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ No hay un espacio entre 
+\begin_inset Quotes eld
+\end_inset
+
+hora
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes eld
+\end_inset
+
+de
+\begin_inset Quotes erd
+\end_inset
+
+ porque no escribimos un espacio entre las cadenas.
+ 
+\family typewriter
+read
+\family default
+ también puede aceptar un argumento que le indica cuántos caracteres leer:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> f = open("test.dat","r")
+\end_layout
+
+\begin_layout Verbatim
+>>> print f.read(7)
+\end_layout
+
+\begin_layout Verbatim
+Ya es h
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si no quedan suficientes caracteres en el archivo, 
+\family typewriter
+read
+\family default
+ devuelve los que haya.
+ Cuando llegamos al final del archivo, 
+\family typewriter
+read
+\family default
+ devuelve una cadena vacía:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> print f.read(1000006)
+\end_layout
+
+\begin_layout Verbatim
+orade cerrar el archivo
+\end_layout
+
+\begin_layout Verbatim
+>>> print f.read()
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+>>>
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La siguiente función copia un archivo, leyendo y escribiendo los caracteres
+ de cincuenta en cincuenta.
+ El primer argumento es el nombre del archivo original; el segundo es el
+ nombre del archivo nuevo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def copiaArchivo(archViejo, archNuevo):
+\end_layout
+
+\begin_layout Verbatim
+  f1 = open(archViejo, "r")
+\end_layout
+
+\begin_layout Verbatim
+  f2 = open(archNuevo, "w")
+\end_layout
+
+\begin_layout Verbatim
+  while True:
+\end_layout
+
+\begin_layout Verbatim
+    texto = f1.read(50)
+\end_layout
+
+\begin_layout Verbatim
+    if texto == "":
+\end_layout
+
+\begin_layout Verbatim
+      break
+\end_layout
+
+\begin_layout Verbatim
+    f2.write(texto)
+\end_layout
+
+\begin_layout Verbatim
+  f1.close()
+\end_layout
+
+\begin_layout Verbatim
+  f2.close()
+\end_layout
+
+\begin_layout Verbatim
+  return
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La sentencia 
+\family typewriter
+break
+\family default
+ es nueva.
+ Su ejecución interrumpe el ciclo; el flujo de la ejecución pasa a la primera
+ sentencia después del while.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia break
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!break
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este ejemplo, el ciclo 
+\family typewriter
+while
+\family default
+ es infinito porque la condición 
+\family typewriter
+True
+\family default
+ siempre es verdadera.
+ La 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ única
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ forma de salir del ciclo es ejecutar 
+\family typewriter
+break
+\family default
+, lo que sucede cuando 
+\family typewriter
+texto
+\family default
+ es una cadena vacía, y esto pasa cuando llegamos al final del archivo.
+\end_layout
+
+\begin_layout Section
+Archivos de texto
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+archivo de texto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+archivo!texto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un 
+\series bold
+archivo de texto
+\series default
+ contiene caracteres imprimibles y espacios organizados en líneas separadas
+ por caracteres de salto de línea.
+ Como Python está diseñado específicamente para procesar archivos de texto,
+ proporciona métodos que facilitan esta tarea.
+\end_layout
+
+\begin_layout Standard
+Para hacer una demostración, crearemos un archivo de texto con tres líneas
+ de texto separadas por saltos de línea:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> f = open("test.dat","w")
+\end_layout
+
+\begin_layout Verbatim
+>>> f.write("línea uno
+\backslash
+nlínea dos
+\backslash
+nlínea tres
+\backslash
+n")
+\end_layout
+
+\begin_layout Verbatim
+>>> f.close()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El método 
+\family typewriter
+readline
+\family default
+ lee todos los caracteres hasta, e incluyendo, el siguiente salto de línea:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> f = open("test.dat","r")
+\end_layout
+
+\begin_layout Verbatim
+>>> print f.readline()
+\end_layout
+
+\begin_layout Verbatim
+línea uno
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+>>>
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+readlines
+\family default
+ devuelve todas las líneas que queden como una lista de cadenas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> print f.readlines()
+\end_layout
+
+\begin_layout Verbatim
+['línea dos
+\backslash
+012', 'línea tres
+\backslash
+012']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En este caso, la salida está en forma de lista, lo que significa que las
+ cadenas aparecen con comillas y el carácter de salto de línea aparece como
+ la secuencia de escape 
+\family typewriter
+012
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Al final del archivo, 
+\family typewriter
+readline
+\family default
+ devuelve una cadena vacía y 
+\family typewriter
+readlines
+\family default
+ devuelve una lista vacía:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> print f.readline()
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+>>> print f.readlines()
+\end_layout
+
+\begin_layout Verbatim
+[]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Lo que sigue es un ejemplo de un programa de proceso de líneas.
+ 
+\family typewriter
+filtraArchivo
+\family default
+ hace una copia de 
+\family typewriter
+archViejo
+\family default
+, omitiendo las líneas que comienzan por 
+\family typewriter
+#
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def filtraArchivo(archViejo, archNuevo):
+\end_layout
+
+\begin_layout Verbatim
+  f1 = open(archViejo, "r")
+\end_layout
+
+\begin_layout Verbatim
+  f2 = open(archNuevo, "w")
+\end_layout
+
+\begin_layout Verbatim
+  while 1:
+\end_layout
+
+\begin_layout Verbatim
+    texto = f1.readline()
+\end_layout
+
+\begin_layout Verbatim
+    if texto == "":
+\end_layout
+
+\begin_layout Verbatim
+      break
+\end_layout
+
+\begin_layout Verbatim
+    if texto[0] == '#':
+\end_layout
+
+\begin_layout Verbatim
+      continue
+\end_layout
+
+\begin_layout Verbatim
+    f2.write(texto)
+\end_layout
+
+\begin_layout Verbatim
+  f1.close()
+\end_layout
+
+\begin_layout Verbatim
+  f2.close()
+\end_layout
+
+\begin_layout Verbatim
+  return
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La sentencia 
+\family typewriter
+continue
+\family default
+ termina la iteración actual del ciclo, pero sigue haciendo las que le faltan.
+ El flujo de ejecución pasa al principio del ciclo, comprueba la condición
+ y continúa normalmemente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia continue
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!continue
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así, si 
+\family typewriter
+texto
+\family default
+ es una cadena vacía, el ciclo termina.
+ Si el primer caracter de 
+\family typewriter
+texto
+\family default
+ es una almohadilla 
+\family typewriter
+(#)
+\family default
+, el flujo de ejecución va al principio del ciclo.
+ Sólo si ambas condiciones fallan copiamos 
+\family typewriter
+texto
+\family default
+ en el archivo nuevo.
+\end_layout
+
+\begin_layout Section
+Escribir variables
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador de formato
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cadena de formato
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador!formato
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El argumento de 
+\family typewriter
+write
+\family default
+ debe ser una cadena, así que si queremos poner otros valores en un archivo,
+ tenemos que convertirlos previamente en cadenas.
+ La forma más fácil de hacerlo es con la función 
+\family typewriter
+str
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> x = 52
+\end_layout
+
+\begin_layout Verbatim
+>>> f.write (str(x))
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Una alternativa es usar el 
+\series bold
+operador de formato
+\series default
+ 
+\family typewriter
+%
+\family default
+.
+ Cuando aplica a enteros, 
+\family typewriter
+%
+\family default
+ es el operador de módulo.
+ Pero cuando el primer operando es una cadena, 
+\family typewriter
+%
+\family default
+ es el operador de formato.
+\end_layout
+
+\begin_layout Standard
+El primer operando es la 
+\series bold
+cadena de formato
+\series default
+, y el segundo, una tupla de expresiones.
+ El resultado es una cadena que contiene los valores de las expresiones,
+ formateados de acuerdo con la cadena de formato.
+\end_layout
+
+\begin_layout Standard
+A modo de ejemplo simple, la 
+\series bold
+secuencia de formato
+\series default
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+"%d"+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ significa que la primera expresión de la tupla debería formatearse como
+ un entero.
+ Aquí la letra 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ d
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ quiere decir 
+\begin_inset Quotes eld
+\end_inset
+
+decimal
+\begin_inset Quotes erd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> motos = 52
+\end_layout
+
+\begin_layout Verbatim
+>>> "%d" % motos
+\end_layout
+
+\begin_layout Verbatim
+'52'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El resultado es la cadena 
+\family typewriter
+'52'
+\family default
+, que no debe confundirse con el valor entero 
+\family typewriter
+52
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Una secuencia de formato puede aparecer en cualquier lugar de la cadena
+ de formato, de modo que podemos incrustar un valor en una frase:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> motos = 52
+\end_layout
+
+\begin_layout Verbatim
+>>> "En julio vendimos %d motos." % motos
+\end_layout
+
+\begin_layout Verbatim
+'En julio vendimos 52 motos.'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La secuencia de formato 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+"%f"+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ formatea el siguiente elemento de la tupla como un número en punto flotante,
+ y 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+"%s"+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ formatea el siguiente elemento como una cadena:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> "En %d dias ganamos %f millones de %s." % (4,1.2,'pesos')
+\end_layout
+
+\begin_layout Verbatim
+'En 4 dias ganamos 1.200000 millones de pesos.'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Por defecto, el formato de punto flotante imprime seis decimales.
+\end_layout
+
+\begin_layout Standard
+El número de expresiones en la tupla tiene que coincidir con el número de
+ secuencias de formato de la cadena.
+ Igualmente, los tipos de las expresiones deben coincidir con las secuencias
+ de formato:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> "%d %d %d" % (1,2)
+\end_layout
+
+\begin_layout Verbatim
+TypeError: not enough arguments for format string
+\end_layout
+
+\begin_layout Verbatim
+>>> "%d" % 'dolares'
+\end_layout
+
+\begin_layout Verbatim
+TypeError: illegal argument type for built-in operation
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En el primer ejemplo no hay suficientes expresiones; en el segundo, la
+ expresión es de un tipo incorrecto.
+\end_layout
+
+\begin_layout Standard
+Para tener más control sobre el formato de los números, podemos detallar
+ el número de dígitos como parte de la secuencia de formato:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> "%6d" % 62
+\end_layout
+
+\begin_layout Verbatim
+'    62'
+\end_layout
+
+\begin_layout Verbatim
+>>> "%12f" % 6.1
+\end_layout
+
+\begin_layout Verbatim
+'    6.100000'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El número tras el signo de porcentaje es el número mínimo de espacios que
+ ocupará el número.
+ Si el valor necesita menos dígitos, se añaden espacios en blanco delante
+ del número.
+ Si el número de espacios es negativo, se añaden los espacios tras el número:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> "%-6d" % 62
+\end_layout
+
+\begin_layout Verbatim
+'62    '
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ También podemos especificar el número de decimales para los números en
+ coma flotante:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> "%12.2f" % 6.1
+\end_layout
+
+\begin_layout Verbatim
+'        6.10'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En este ejemplo, el resultado ocupa doce espacios e incluye dos dígitos
+ tras la coma.
+ Este formato es útil para imprimir cantidades de dinero con las comas alineadas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diccionario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Imagine, por ejemplo, un diccionario que contiene los nombres de los estudiantes
+ como clave y las tarifas horarias como valores.
+ He aquí una función que imprime el contenido del diccionario como de un
+ informe formateado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def informe (tarifas) :
+\end_layout
+
+\begin_layout Verbatim
+  estudiantes = tarifas.keys()
+\end_layout
+
+\begin_layout Verbatim
+  estudiantes.sort()
+\end_layout
+
+\begin_layout Verbatim
+  for estudiante in estudiantes :
+\end_layout
+
+\begin_layout Verbatim
+    print "%-20s %12.02f"%(estudiante, tarifas[estudiante])
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para probar la función, crearemos un pequeño diccionario e imprimiremos
+ el contenido:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> tarifas = {'maria': 6.23, 'jose': 5.45, 'jesus': 4.25}
+\end_layout
+
+\begin_layout Verbatim
+>>> informe (tarifas)
+\end_layout
+
+\begin_layout Verbatim
+jose                         5.45
+\end_layout
+
+\begin_layout Verbatim
+jesus                        4.25
+\end_layout
+
+\begin_layout Verbatim
+maria                        6.23
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Controlando el ancho de cada valor nos aseguramos de que las columnas van
+ a quedar alineadas, siempre que los nombre tengan menos de veintiún caracteres
+ y las tarifas sean menos de mil millones la hora.
+\end_layout
+
+\begin_layout Section
+Directorios
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+directorio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando se crea un archivo nuevo abriéndolo y escribiendo, este va a quedar
+ en el directorio en uso (aquél en el que se estuviese al ejecutar el programa).
+ Del mismo modo, cuando se abre un archivo para leerlo, Python lo busca
+ en el directorio en uso.
+\end_layout
+
+\begin_layout Standard
+Si usted quiere abrir un archivo de cualquier otro sitio, tiene que especificar
+ la 
+\series bold
+ruta
+\series default
+ del archivo, que es el nombre del directorio (o carpeta) donde se encuentra
+ este:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>>   f = open("/usr/share/dict/words","r")
+\end_layout
+
+\begin_layout Verbatim
+>>>   print f.readline()
+\end_layout
+
+\begin_layout Verbatim
+Aarhus
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este ejemplo abre un archivo denominado 
+\family typewriter
+words
+\family default
+, que se encuentra en un directorio llamado 
+\family typewriter
+dict
+\family default
+, que está en 
+\family typewriter
+share
+\family default
+, en en 
+\family typewriter
+usr
+\family default
+, que está en el directorio de nivel superior del sistema, llamado 
+\family typewriter
+/
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ruta
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+delimitador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No se puede usar 
+\family typewriter
+/
+\family default
+ como parte del nombre de un archivo; está reservado como delimitador entre
+ nombres de archivo y directorios.
+\end_layout
+
+\begin_layout Standard
+El archivo 
+\family typewriter
+/usr/share/dict/words
+\family default
+ contiene una lista de palabras en orden alfabético, la primera de las cuales
+ es el nombre de una universidad danesa.
+\end_layout
+
+\begin_layout Section
+Encurtido
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+encurtido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para poner valores en un archivo, se deben convertir a cadenas.
+ Usted ya ha visto cómo hacerlo con 
+\family typewriter
+str
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> f.write (str(12.3))
+\end_layout
+
+\begin_layout Verbatim
+>>> f.write (str([1,2,3]))
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El problema es que cuando se vuelve a leer el valor, se obtiene una cadena.
+ Se ha perdido la información del tipo de dato original.
+ En realidad, no se puede distinguir dónde termina un valor y dónde comienza
+ el siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>>   f.readline()
+\end_layout
+
+\begin_layout Verbatim
+'12.3[1, 2, 3]'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La solución es el 
+\series bold
+encurtido
+\series default
+, llamado así porque 
+\begin_inset Quotes eld
+\end_inset
+
+encurte
+\begin_inset Quotes erd
+\end_inset
+
+ estructuras de datos.
+ El módulo 
+\family typewriter
+pickle
+\family default
+ contiene las órdenes necesarias.
+ Para usarlo, se importa 
+\family typewriter
+pickle
+\family default
+ y luego se abre el archivo de la forma habitual:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> import pickle
+\end_layout
+
+\begin_layout Verbatim
+>>> f = open("test.pck","w")
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para almacenar una estructura de datos, se usa el método 
+\family typewriter
+dump
+\family default
+ y luego se cierra el archivo de la forma habitual:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> pickle.dump(12.3, f)
+\end_layout
+
+\begin_layout Verbatim
+>>> pickle.dump([1,2,3], f)
+\end_layout
+
+\begin_layout Verbatim
+>>> f.close()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora podemos abrir el archivo para leer y cargar las estructuras de datos
+ que volcamos ahí:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> f = open("test.pck","r")
+\end_layout
+
+\begin_layout Verbatim
+>>> x = pickle.load(f)
+\end_layout
+
+\begin_layout Verbatim
+>>> x
+\end_layout
+
+\begin_layout Verbatim
+12.3
+\end_layout
+
+\begin_layout Verbatim
+>>> type(x)
+\end_layout
+
+\begin_layout Verbatim
+<type 'float'>
+\end_layout
+
+\begin_layout Verbatim
+>>> y = pickle.load(f)
+\end_layout
+
+\begin_layout Verbatim
+>>> y
+\end_layout
+
+\begin_layout Verbatim
+[1, 2, 3]
+\end_layout
+
+\begin_layout Verbatim
+>>> type(y)
+\end_layout
+
+\begin_layout Verbatim
+<type 'list'>
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Cada vez que invocamos 
+\family typewriter
+load
+\family default
+ obtenemos un valor del archivo completo con su tipo original.
+\end_layout
+
+\begin_layout Section
+Excepciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia try
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!try
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lanzar una excepción
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+manejar una excepción
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia except
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!except
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+excepción
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Siempre que ocurre un error en tiempo de ejecución, se crea una 
+\series bold
+excepción
+\series default
+.
+ Normalmente el programa se para y Python presenta un mensaje de error.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, la división por cero crea una excepción:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> print 55/0
+\end_layout
+
+\begin_layout Verbatim
+ZeroDivisionError: integer division or modulo
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Un elemento no existente en una lista hace lo mismo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> a = []
+\end_layout
+
+\begin_layout Verbatim
+>>> print a[5]
+\end_layout
+
+\begin_layout Verbatim
+IndexError: list index out of range
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ O el acceso a una clave que no está en el diccionario:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+>>> b = {}
+\end_layout
+
+\begin_layout Verbatim
+>>> print b['qué']
+\end_layout
+
+\begin_layout Verbatim
+KeyError: qué
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+En cada caso, el mensaje de error tiene dos partes: el tipo de error antes
+ de los dos puntos y detalles sobre el error después de los dos puntos.
+ Normalmente, Python también imprime una traza de dónde se encontraba el
+ programa, pero la hemos omitido en los ejemplos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+traza
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A veces queremos realizar una operación que podría provocar una excepción,
+ pero no queremos que se pare el programa.
+ Podemos 
+\series bold
+manejar
+\series default
+ la excepción usando las sentencias 
+\family typewriter
+try
+\family default
+ y 
+\family typewriter
+except
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, podemos preguntar al usuario por el nombre de un archivo y
+ luego intentar abrirlo.
+ Si el archivo no existe, no queremos que el programa se aborte; queremos
+ manejar la excepción.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+nombreArch = raw_input('Introduce un nombre de archivo: ')
+\end_layout
+
+\begin_layout Verbatim
+try:
+\end_layout
+
+\begin_layout Verbatim
+  f = open (nombreArch, "r")
+\end_layout
+
+\begin_layout Verbatim
+except:
+\end_layout
+
+\begin_layout Verbatim
+  print 'No hay ningún archivo que se llame', nombreArch
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+La sentencia 
+\family typewriter
+try
+\family default
+ ejecuta las sentencias del primer bloque.
+ Si no se produce ninguna excepción, pasa por alto la sentencia 
+\family typewriter
+except
+\family default
+.
+ Si ocurre cualquier excepción, ejecuta las sentencias de la rama 
+\family typewriter
+except
+\family default
+ y después continúa.
+\end_layout
+
+\begin_layout Standard
+Podemos encapsular esta capacidad en una función: 
+\family typewriter
+existe
+\family default
+, que acepta un nombre de archivo y devuelve verdadero si el archivo existe
+ y falso si no:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+def existe(nombreArch):
+\end_layout
+
+\begin_layout Verbatim
+  try:
+\end_layout
+
+\begin_layout Verbatim
+    f = open(nombreArch)
+\end_layout
+
+\begin_layout Verbatim
+    f.close()
+\end_layout
+
+\begin_layout Verbatim
+    return True
+\end_layout
+
+\begin_layout Verbatim
+  except:
+\end_layout
+
+\begin_layout Verbatim
+    return False
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+Se pueden usar múltiples bloques 
+\family typewriter
+except
+\family default
+ para manejar diferentes tipos de excepciones.
+ El 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Manual de Referencia de Python
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ contiene los detalles.
+\end_layout
+
+\begin_layout Standard
+Si su programa detecta una condición de error, se puede lanzar (
+\series bold
+raise
+\series default
+ en inglés) una excepción.
+ Aquí hay un ejemplo que acepta una entrada del usuario y comprueba si es
+ 17.
+ Suponiendo que 17 no es una entrada válida por cualquier razón, lanzamos
+ una excepción.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+def tomaNumero () :                 
+\end_layout
+
+\begin_layout Verbatim
+  # ¡Recuerda, los acentos están prohibidos
+\end_layout
+
+\begin_layout Verbatim
+  x = input ('Elige un número: ')   
+\end_layout
+
+\begin_layout Verbatim
+  # en los nombres de funciones y variables!
+\end_layout
+
+\begin_layout Verbatim
+  if x == 17 :
+\end_layout
+
+\begin_layout Verbatim
+    raise 'ErrorNúmeroMalo', '17 es un mal número'
+\end_layout
+
+\begin_layout Verbatim
+  return x
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+La sentencia 
+\family typewriter
+raise
+\family default
+ acepta dos argumentos: el tipo de excepción e información específica acerca
+ del error.
+ 
+\family typewriter
+ErrorNúmeroMalo
+\family default
+ es un nuevo tipo de excepción que hemos inventado para esta aplicación.
+\end_layout
+
+\begin_layout Standard
+Si la función llamada 
+\family typewriter
+tomaNumero
+\family default
+ maneja el error, el programa puede continuar; en caso contrario, Python
+ imprime el mensaje de error y sale:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> tomaNumero ()
+\end_layout
+
+\begin_layout Verbatim
+Elige un número: 17
+\end_layout
+
+\begin_layout Verbatim
+ErrorNúmeroMalo: 17 es un mal número
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El mensaje de error incluye el tipo de excepción y la información adicional
+ proporcionada.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+archivo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+archivo de texto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia break
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!break
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia continue
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!continue
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador de formato
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cadena de formato
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador!formato
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+directorio
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+encurtido
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+try
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lanzar excepción
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+manejar excepción
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia except
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+excepción
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Archivo: entidad con nombre, normalmente almacenada en un disco duro, disquete
+ o CD-ROM, que contiene una secuencia de caracteres.
+\end_layout
+
+\begin_layout Description
+Directorio: colección de archivos, con nombre, también llamado carpeta.
+\end_layout
+
+\begin_layout Description
+Ruta: secuencia de nombres de directorio que especifica la localización
+ exacta de un archivo.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Archivo de texto:
+\end_layout
+
+\end_inset
+
+ un archivo que contiene caracteres imprimibles organizados en líneas separadas
+ por caracteres de salto de línea.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Sentencia break:
+\end_layout
+
+\end_inset
+
+ es una sentencia que provoca que el flujo de ejecución salga de un ciclo.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Sentencia continue:
+\end_layout
+
+\end_inset
+
+ sentencia que provoca que termine la iteración actual de un ciclo.
+ El flujo de la ejecución va al principio del ciclo, evalúa la condición,
+ y procede en consecuencia.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Operador de formato:
+\end_layout
+
+\end_inset
+
+ el operador 
+\family typewriter
+%
+\family default
+ toma una cadena de formato y una tupla de expresiones y entrega una cadena
+ que incluye las expresiones, formateadas de acuerdo con la cadena de formato.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Cadena de formato:
+\end_layout
+
+\end_inset
+
+ una cadena que contiene caracteres imprimibles y secuencias de formato
+ que indican cómo dar formato a valores.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Secuencia de formato:
+\end_layout
+
+\end_inset
+
+ secuencia de caracteres que comienza con 
+\family typewriter
+%
+\family default
+ e indica cómo dar formato a un valor.
+\end_layout
+
+\begin_layout Description
+Encurtir: escribir el valor de un dato en un archivo junto con la información
+ sobre su tipo de forma que pueda ser reconstituido más tarde.
+\end_layout
+
+\begin_layout Description
+Excepción: error que ocurre en tiempo de ejecución.
+\end_layout
+
+\begin_layout Description
+Manejar: impedir que una excepción detenga un programa utilizando las sentencias
+ 
+\family typewriter
+except
+\family default
+ y 
+\family typewriter
+try
+\family default
+.
+\end_layout
+
+\begin_layout Description
+Lanzar: causar una excepción usando la sentencia 
+\family typewriter
+raise
+\family default
+.
+\end_layout
+
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Standard
+Para cada función, agregue chequeo de tipos y pruebas unitarias.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que use 
+\family typewriter
+tomaNumero
+\family default
+ para leer un número del teclado y que maneje la excepción 
+\family typewriter
+ErrorNumeroMalo
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que reciba el nombre de un archivo y averigue si contiene
+ una cadena de ADN válida.
+ Es decir, cada caracter del archivo es A,C,T, ó G.
+\end_layout
+
+\begin_layout Enumerate
+Generalice la función anterior para trabajar con cualquier biosecuencia
+ (ARN, ADN, proteína).
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que permita escribir una matriz, implementada como una
+ lista de listas, en un archivo.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que permita leer una matriz, implementada como una lista
+ de listas, de un archivo.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que permita escribir una matriz dispersa, implementada
+ con un diccionario, en un archivo.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que permita leer una matriz dispersa, implementada con
+ un diccionario, de un archivo.
+\end_layout
+
+\end_body
+\end_document

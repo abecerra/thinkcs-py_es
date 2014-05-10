@@ -1,0 +1,3373 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Clases y métodos
+\end_layout
+
+\begin_layout Section
+Características de orientación a objetos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje de programación orientado a objetos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+programación orientada a objetos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Python es un 
+\series bold
+lenguaje de programación orientado a objetos
+\series default
+, lo que quiere decir que proporciona características que soportan la 
+\series bold
+programación orientada a objetos
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+No es fácil definir la programación orientada a objetos, pero ya hemos notado
+ algunos de sus elementos clave:
+\end_layout
+
+\begin_layout Itemize
+Los programas se construyen a partir de definiciones de objetos y definiciones
+ de funciones; la mayoría de los cómputos se hacen con base en objetos.
+\end_layout
+
+\begin_layout Itemize
+Cada definición de objetos corresponde a algún concepto o cosa del mundo
+ real, y las funciones que operan sobre esos objetos corresponden a las
+ maneras en que los conceptos o cosas reales interactúan.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, la clase 
+\family typewriter
+Hora
+\family default
+, definida en el Capítulo
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "time"
+
+\end_inset
+
+, corresponde a la forma en que la gente registra las horas del día y las
+ funciones que definimos corresponden a la clase de cosas que la gente hace
+ con horas.
+ Similarmente, las clases 
+\family typewriter
+Punto
+\family default
+ y 
+\family typewriter
+Rectangulo
+\family default
+ corresponden a los conocidos conceptos geométricos
+\end_layout
+
+\begin_layout Standard
+Hasta aquí, no hemos aprovechado las características que Python proporciona
+ para soportar la programación orientada a objetos.
+ De hecho, estas características no son necesarias.
+ La mayoría sólo proporciona una sintaxis alternativa para cosas que ya
+ hemos logrado; pero, en muchos casos, esta forma alternativa es más concisa
+ y comunica de una manera mas precisa la estructura de los programas.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, en el programa 
+\family typewriter
+Hora
+\family default
+ no hay una conexión obvia entre la definición de clase y las definiciones
+ de funciones.
+ Después de examinarlo un poco, es evidente que todas las funciones toman
+ como parámetro al menos un objeto 
+\family typewriter
+Hora
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Esta observación es la motivación para los 
+\series bold
+métodos
+\series default
+.
+ Ya hemos visto algunos métodos como 
+\family typewriter
+keys
+\family default
+ y 
+\family typewriter
+values
+\family default
+, que llamamos sobre diccionarios.
+ Cada método se asocia con una clase y está pensado para invocarse sobre
+ instancias de dicha clase.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+instancia!objeto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objeto instancia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los métodos son como las funciones, pero con dos diferencias:
+\end_layout
+
+\begin_layout Itemize
+Los métodos se definen adentro de una definición de clase, a fin de marcar
+ explícitamente la relación entre la clase y éstos.
+\end_layout
+
+\begin_layout Itemize
+La sintaxis para llamar o invocar un método es distinta que para las funciones.
+\end_layout
+
+\begin_layout Standard
+En las siguientes secciones tomaremos las funciones de los capítulos anteriores
+ y las transformaremos en métodos.
+ Esta transformación es totalmente mecánica; se puede llevar a cabo siguiendo
+ una secuencia de pasos.
+ Si usted se siente cómodo al transformar de una forma a la otra, será capaz
+ de escoger lo mejor de cada lado para resolver los problemas que tenga
+ a la mano.
+\end_layout
+
+\begin_layout Section
+
+\family typewriter
+imprimirHora
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "printTime"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+imprimir!objetos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el capítulo
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "time"
+
+\end_inset
+
+, definimos una clase denominada 
+\family typewriter
+Hora
+\family default
+ y usted escribió una función denominada 
+\family typewriter
+imprimirHora
+\family default
+, que lucía así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+class Hora:
+\end_layout
+
+\begin_layout Verbatim
+  pass
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+def imprimirHora(h):
+\end_layout
+
+\begin_layout Verbatim
+  print str(h.hora) + ":" + 
+\end_layout
+
+\begin_layout Verbatim
+        str(h.minutos) + ":" + 
+\end_layout
+
+\begin_layout Verbatim
+        str(h.segundos)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para llamar esta función, le pasamos un objeto 
+\family typewriter
+Hora
+\family default
+ como parámetro:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual = Hora()
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual.hora = 9
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual.minutos = 14
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual.segundos = 30
+\end_layout
+
+\begin_layout Verbatim
+>>> imprimirHora(horaActual)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para convertir 
+\family typewriter
+imprimirHora
+\family default
+ en un método todo lo que tenemos que hacer es ponerla adentro de la definición
+ de clase.
+ Note como ha cambiado la indentación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+class Hora:
+\end_layout
+
+\begin_layout Verbatim
+  def imprimirHora(h):
+\end_layout
+
+\begin_layout Verbatim
+    print str(h.hora) + ":" + 
+\end_layout
+
+\begin_layout Verbatim
+          str(h.minutos) + ":" + 
+\end_layout
+
+\begin_layout Verbatim
+          str(h.segundos)
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora podemos llamar a 
+\family typewriter
+imprimirHora
+\family default
+ usando la notación punto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+notación punto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual.imprimirHora()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como de costumbre, el objeto en el que el método se llama aparece antes
+ del punto y el nombre del método va a la derecha.
+ El objeto al cual se invoca el método se asigna al primer parámetro, así
+ que 
+\family typewriter
+horaActual
+\family default
+ se asigna al parámetro 
+\family typewriter
+h
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Por convención, el primer parámetro de un método se denomina 
+\family typewriter
+self
+\family default
+ (en inglés, eso es algo como 
+\begin_inset Quotes eld
+\end_inset
+
+sí mismo
+\begin_inset Quotes erd
+\end_inset
+
+).
+ La razón para hacerlo es un poco tortuosa, pero se basa en una metáfora
+ muy útil.
+\end_layout
+
+\begin_layout Standard
+La sintaxis para una llamada de función, 
+\family typewriter
+imprimirHora(horaActual)
+\family default
+, sugiere que la función es el agente activo.
+ Dice algo como 
+\begin_inset Quotes eld
+\end_inset
+
+Hey, 
+\family typewriter
+imprimirHora
+\family default
+! Aquí hay un objeto para que imprimas
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En la programación orientada a objetos, los objetos son los agentes activos.
+ Una invocación como 
+\family typewriter
+horaActual.imprimirHora()
+\family default
+ dice algo como 
+\begin_inset Quotes eld
+\end_inset
+
+Hey, objeto 
+\family typewriter
+horaActual
+\family default
+! Por favor, imprímase a sí mismo!
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Este cambio de perspectiva parece ser sólo 
+\begin_inset Quotes eld
+\end_inset
+
+cortesía
+\begin_inset Quotes erd
+\end_inset
+
+, pero puede ser útil.
+ En los ejemplos que hemos visto no lo es.
+ Pero, el transferir la responsabilidad desde las funciones hacia los objetos
+ hace posible escribir funciones más versátiles y facilita la reutilización
+ y el mantenimiento de código.
+\end_layout
+
+\begin_layout Section
+Otro ejemplo
+\end_layout
+
+\begin_layout Standard
+Convirtamos 
+\family typewriter
+incrementar
+\family default
+ (de la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "increment"
+
+\end_inset
+
+) en un método.
+ Para ahorrar espacio, omitiremos los métodos que ya definimos, pero usted
+ debe conservarlos en su programa:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+class Hora:
+\end_layout
+
+\begin_layout Verbatim
+  # Las definiciones anteriores van aquí...
+\end_layout
+
+\begin_layout Verbatim
+  
+\end_layout
+
+\begin_layout Verbatim
+  def incrementar(self, segundos):
+\end_layout
+
+\begin_layout Verbatim
+    self.segundos = self.segundos + segundos
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+    if self.segundos >= 60:
+\end_layout
+
+\begin_layout Verbatim
+      self.segundos = self.segundos - 60
+\end_layout
+
+\begin_layout Verbatim
+      self.minutos = self.minutos + 1
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+    if self.minutos >= 60:
+\end_layout
+
+\begin_layout Verbatim
+      self.minutos = self.minutos - 60
+\end_layout
+
+\begin_layout Verbatim
+      self.hora = self.hora + 1
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+    return self
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La transformación es totalmente mecánica ---ponemos la definición del método
+ adentro de la clase y cambiamos el nombre del primer parámetro.
+\end_layout
+
+\begin_layout Standard
+Ahora podemos llamar a 
+\family typewriter
+incrementar
+\family default
+ como método
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+horaActual.incrementar(500)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Nuevamente, el objeto con el cual se invoca el método se asigna al primer
+ parámetro, 
+\family typewriter
+self
+\family default
+.
+ El segundo parámetro, 
+\family typewriter
+segundos
+\family default
+ recibe el valor 
+\family typewriter
+500
+\family default
+.
+\end_layout
+
+\begin_layout Section
+Un ejemplo más complejo
+\end_layout
+
+\begin_layout Standard
+El método 
+\family typewriter
+despues
+\family default
+ es un poco más complejo ya que opera sobre dos objetos 
+\family typewriter
+Hora
+\family default
+, no sólo uno.
+ Solamente podemos convertir uno de los parámetros a 
+\family typewriter
+self
+\family default
+; el otro continúa igual:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+class Hora:
+\end_layout
+
+\begin_layout Verbatim
+  # Las definiciones anteriores van aqui...
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+  def despues(self, hora2):
+\end_layout
+
+\begin_layout Verbatim
+    if self.hora > hora2.hora:
+\end_layout
+
+\begin_layout Verbatim
+      return True
+\end_layout
+
+\begin_layout Verbatim
+    if self.hora < hora2.hora:
+\end_layout
+
+\begin_layout Verbatim
+      return False
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+    if self.minutos > hora2.minutos:
+\end_layout
+
+\begin_layout Verbatim
+      return True
+\end_layout
+
+\begin_layout Verbatim
+    if self.minutos < hora2.minutos:
+\end_layout
+
+\begin_layout Verbatim
+      return False
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+    if self.segundos > hora2.segundos:
+\end_layout
+
+\begin_layout Verbatim
+      return True
+\end_layout
+
+\begin_layout Verbatim
+    return False
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Llamamos a este método sobre un objeto y le pasamos el otro como argumento:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+if horaComer.despues(horaActual):
+\end_layout
+
+\begin_layout Verbatim
+  print "El pan estará listo para comer en un momento."
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Casi se puede leer el llamado en lenguaje natural:
+\begin_inset Quotes eld
+\end_inset
+
+Si la hora para Comer viene despues de la hora Actual, entonces ...
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Argumentos opcionales
+\end_layout
+
+\begin_layout Standard
+Hemos visto varias funciones primitivas que toman un número variable de
+ argumentos.
+ Por ejemplo, 
+\family typewriter
+string.find
+\family default
+ puede tomar dos, tres o cuatro.
+\end_layout
+
+\begin_layout Standard
+Es posible escribir funciones con listas de argumentos opcionales.
+ Por ejemplo, podemos mejorar nuestra versión de 
+\family typewriter
+buscar
+\family default
+ para que sea tan sofisticada como 
+\family typewriter
+string.find
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Esta es la versión original que introdujimos en la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "find"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def buscar(cad, c):
+\end_layout
+
+\begin_layout Verbatim
+  indice = 0
+\end_layout
+
+\begin_layout Verbatim
+  while indice < len(cad):
+\end_layout
+
+\begin_layout Verbatim
+    if cad[indice] == c:
+\end_layout
+
+\begin_layout Verbatim
+      return indice
+\end_layout
+
+\begin_layout Verbatim
+    indice = indice + 1
+\end_layout
+
+\begin_layout Verbatim
+  return -1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta es la nueva versión, mejorada:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def buscar(cad, c,ini=0):
+\end_layout
+
+\begin_layout Verbatim
+  indice = ini
+\end_layout
+
+\begin_layout Verbatim
+  while indice < len(cad):
+\end_layout
+
+\begin_layout Verbatim
+    if cad[indice] == c:
+\end_layout
+
+\begin_layout Verbatim
+      return indice
+\end_layout
+
+\begin_layout Verbatim
+    indice = indice + 1
+\end_layout
+
+\begin_layout Verbatim
+  return -1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El tercer parámetro, 
+\family typewriter
+ini
+\family default
+, es opcional, ya que tiene un valor por defecto, 
+\family typewriter
+0
+\family default
+.
+ Si llamamos a 
+\family typewriter
+buscar
+\family default
+ con dos argumentos, se usa el valor por defecto y la búsqueda se hace desde
+ el principio de la cadena:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> buscar("apple", "p")
+\end_layout
+
+\begin_layout Verbatim
+1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si se pasa el tercer parámetro, este 
+\series bold
+sobreescribe
+\series default
+ el valor por defecto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> buscar("apple", "p", 2)
+\end_layout
+
+\begin_layout Verbatim
+2
+\end_layout
+
+\begin_layout Verbatim
+>>> buscar("apple", "p", 3)
+\end_layout
+
+\begin_layout Verbatim
+-1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+El método de inicialización
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método de inicialización
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método!de inicialización
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+de inicialización
+\series default
+ es un método especial que se llama cuando se crea un objeto.
+ El nombre de este método es 
+\family typewriter
+__init__
+\family default
+ (dos caracteres de subrayado, seguidos por 
+\family typewriter
+init
+\family default
+, y luego dos caracteres de subrayado más).
+ Un método de inicialización para la clase 
+\family typewriter
+Hora
+\family default
+ se presenta a continuación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+class Hora:
+\end_layout
+
+\begin_layout Verbatim
+  def __init__(self, hora=0, minutos=0, segundos=0):
+\end_layout
+
+\begin_layout Verbatim
+    self.hora = hora
+\end_layout
+
+\begin_layout Verbatim
+    self.minutos = minutos
+\end_layout
+
+\begin_layout Verbatim
+    self.segundos = segundos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ No hay conflicto entre el atributo 
+\family typewriter
+self.hora
+\family default
+ y el parámetro 
+\family typewriter
+hora
+\family default
+.
+ La notación punto especifica a qué variable nos estamos refiriendo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+notación punto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando llamamos al método constructor de 
+\family typewriter
+Hora
+\family default
+, los argumentos se pasan a 
+\family typewriter
+init
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual = Hora(9, 14, 30)
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual.imprimirHora()
+\end_layout
+
+\begin_layout Verbatim
+>>> 9:14:30
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como los parámetros son opcionales, se pueden omitir:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual = Hora()
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual.imprimirHora()
+\end_layout
+
+\begin_layout Verbatim
+>>> 0:0:0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ O podemos pasar solo un parámetro:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual = Hora(9)
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual.imprimirHora()
+\end_layout
+
+\begin_layout Verbatim
+>>> 9:0:0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ O, sólo los dos primeros:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual = Hora(9, 14)
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual.imprimirHora()
+\end_layout
+
+\begin_layout Verbatim
+>>> 9:14:0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Finalmente, podemos proporcionar algunos parámetros, nombrándolos explícitament
+e:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual = Hora(segundos = 30, hora = 9)
+\end_layout
+
+\begin_layout Verbatim
+>>> horaActual.imprimirHora()
+\end_layout
+
+\begin_layout Verbatim
+>>> 9:0:30
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Reconsiderando la clase Punto
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase Punto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase!Punto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Reescribamos la clase 
+\family typewriter
+Punto
+\family default
+ de la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "point"
+
+\end_inset
+
+ en un estilo más orientado a objetos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+class Punto:
+\end_layout
+
+\begin_layout Verbatim
+  def __init__(self, x=0, y=0):
+\end_layout
+
+\begin_layout Verbatim
+    self.x = x
+\end_layout
+
+\begin_layout Verbatim
+    self.y = y
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+  def __str__(self):
+\end_layout
+
+\begin_layout Verbatim
+    return '(' + str(self.x) + ', ' + str(self.y) + ')'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El método de inicialización toma los valores 
+\begin_inset Formula $x$
+\end_inset
+
+ y 
+\begin_inset Formula $y$
+\end_inset
+
+ como parámetros opcionales, el valor por defecto que tienen es 0.
+\end_layout
+
+\begin_layout Standard
+El método 
+\family typewriter
+__str__
+\family default
+, retorna una representación de un objeto 
+\family typewriter
+Punto
+\family default
+ en forma de cadena de texto.
+ Si una clase proporciona un método denominado 
+\family typewriter
+__str__
+\family default
+, éste sobreescribe el comportamiento por defecto de la función primitiva
+ 
+\family typewriter
+str
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> p = Punto(3, 4)
+\end_layout
+
+\begin_layout Verbatim
+>>> str(p)
+\end_layout
+
+\begin_layout Verbatim
+'(3, 4)'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Imprimir un objeto 
+\family typewriter
+Punto
+\family default
+ implícitamente invoca a 
+\family typewriter
+__str__
+\family default
+ o sobre éste, así que definir a 
+\family typewriter
+__str__
+\family default
+ también cambia el comportamiento de la sentencia 
+\family typewriter
+print
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> p = Punto(3, 4)
+\end_layout
+
+\begin_layout Verbatim
+>>> print p
+\end_layout
+
+\begin_layout Verbatim
+(3, 4)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Cuando escribimos una nueva clase, casi siempre empezamos escribiendo 
+\family typewriter
+__init__
+\family default
+, ya que facilita la instanciación de objetos, y 
+\family typewriter
+__str__
+\family default
+, que casi siempre es esencial para la depuración.
+\end_layout
+
+\begin_layout Section
+Sobrecarga de operadores
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "operator overloading"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operadores sobrecarga de
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operadores!sobrecarga
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+producto punto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+multiplicación escalar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Algunos lenguajes hacen posible cambiar la definición de los operadores
+ primitivos cuando se aplican sobre tipos definidos por el programador.
+ Esta característica se denomina 
+\series bold
+sobrecarga de operadores
+\series default
+.
+ Es especialmente útil para definir tipos de datos matemáticos.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, para sobrecargar el operador suma, 
+\family typewriter
++
+\family default
+, proporcionamos un método denominado 
+\family typewriter
+__add__
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+class Punto:
+\end_layout
+
+\begin_layout Verbatim
+  # los métodos definidos previamente van aquí...
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+  def __add__(self, otro):
+\end_layout
+
+\begin_layout Verbatim
+    return Punto(self.x + otro.x, self.y + otro.y)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como de costumbre, el primer parámetro es el objeto con el cual se invoca
+ el método.
+ El segundo parámetro se denomina con la palabra 
+\family typewriter
+otro
+\family default
+ para marcar la distinción entre éste y 
+\family typewriter
+self
+\family default
+.
+ Para sumar dos 
+\family typewriter
+Punto
+\family default
+s, creamos y retornamos un nuevo 
+\family typewriter
+Punto
+\family default
+ que contiene la suma de las coordenadas en el eje 
+\begin_inset Formula $x$
+\end_inset
+
+ y la suma de las coordenadas en el eje 
+\begin_inset Formula $y$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Ahora, cuando aplicamos el operador 
+\family typewriter
++
+\family default
+ a dos objetos 
+\family typewriter
+Punto
+\family default
+, Python hace el llamado del método 
+\family typewriter
+__add__
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>>   p1 = Punto(3, 4)
+\end_layout
+
+\begin_layout Verbatim
+>>>   p2 = Punto(5, 7)
+\end_layout
+
+\begin_layout Verbatim
+>>>   p3 = p1 + p2
+\end_layout
+
+\begin_layout Verbatim
+>>>   print p3
+\end_layout
+
+\begin_layout Verbatim
+(8, 11)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La expresión 
+\family typewriter
+p1 + p2
+\family default
+ es equivalente a 
+\family typewriter
+p1.__add__(p2)
+\family default
+, pero luce mucho mas elegante.
+\end_layout
+
+\begin_layout Standard
+Hay varias formas de sobrecargar el comportamiento del operador multiplicación:
+ definiendo un método 
+\family typewriter
+__mul__
+\family default
+, o 
+\family typewriter
+__rmul__
+\family default
+, o ambos.
+\end_layout
+
+\begin_layout Standard
+Si el operando izquierdo de 
+\family typewriter
+*
+\family default
+ es un 
+\family typewriter
+Punto
+\family default
+, Python invoca a 
+\family typewriter
+__mul__
+\family default
+, asumiendo que el otro operando también es un 
+\family typewriter
+Punto
+\family default
+.
+ Calcula el 
+\series bold
+producto escalar
+\series default
+ de los dos puntos de acuerdo a las reglas del álgebra lineal:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def __mul__(self, otro):
+\end_layout
+
+\begin_layout Verbatim
+  return self.x * otro.x + self.y * otro.y
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si el operando izquierdo de 
+\family typewriter
+*
+\family default
+ es un tipo primitivo y el operando derecho es un 
+\family typewriter
+Punto
+\family default
+, Python llama a 
+\family typewriter
+__rmul__
+\family default
+, que ejecuta la 
+\series bold
+multiplicación escalar 
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def __rmul__(self, otro):
+\end_layout
+
+\begin_layout Verbatim
+  return Punto(otro * self.x,  otro * self.y)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El resultado ahora es un nuevo 
+\family typewriter
+Punto
+\family default
+ cuyas coordenadas son múltiplos de las originales.
+ Si 
+\family typewriter
+otro
+\family default
+ pertenece a un tipo que no se puede multiplicar por un número de punto
+ flotante, la función 
+\family typewriter
+__rmul__
+\family default
+ producirá un error.
+\end_layout
+
+\begin_layout Standard
+Este ejemplo ilustra las dos clases de multiplicación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> p1 = Punto(3, 4)
+\end_layout
+
+\begin_layout Verbatim
+>>> p2 = Punto(5, 7)
+\end_layout
+
+\begin_layout Verbatim
+>>> print p1 * p2
+\end_layout
+
+\begin_layout Verbatim
+43
+\end_layout
+
+\begin_layout Verbatim
+>>> print 2 * p2
+\end_layout
+
+\begin_layout Verbatim
+(10, 14)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ ¿Que pasa si tratamos de evaluar 
+\family typewriter
+p2 * 2
+\family default
+? Ya que el primer parámetro es un 
+\family typewriter
+Punto
+\family default
+, Python llama a 
+\family typewriter
+__mul__
+\family default
+ con 
+\family typewriter
+2
+\family default
+ como segundo argumento.
+ Dentro de 
+\family typewriter
+__mul__
+\family default
+, el programa intenta acceder al valor 
+\family typewriter
+x
+\family default
+ de 
+\family typewriter
+otro
+\family default
+, lo que falla porque un número entero no tiene atributos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> print p2 * 2
+\end_layout
+
+\begin_layout Verbatim
+AttributeError: 'int' object has no attribute 'x'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Desafortunadamente, el mensaje de error es un poco opaco.
+ Este ejemplo demuestra una de las dificultades de la programación orientada
+ a objetos.
+ Algunas veces es difícil saber qué código está ejecutándose.
+\end_layout
+
+\begin_layout Standard
+Para un ejemplo completo de sobrecarga de operadores vea el Apéndice
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "overloading"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Polimorfismo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+polimorfismo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La mayoría de los métodos que hemos escrito sólo funcionan para un tipo
+ de dato específico.
+ Cuando se crea un nuevo tipo de objeto, se escriben métodos que operan
+ sobre ese tipo.
+\end_layout
+
+\begin_layout Standard
+Pero hay ciertas operaciones que se podrían aplicar a muchos tipos, un ejemplo
+ de éstas son las operaciones aritméticas de las secciones anteriores.
+ Si muchos tipos soportan el mismo conjunto de operaciones, usted puede
+ escribir funciones que trabajen con cualquiera de estos tipos.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo la operación 
+\family typewriter
+multsuma
+\family default
+ (que se usa en el álgebra lineal) toma tres parámetros, multiplica los
+ primeros dos y luego suma a esto el tercero.
+ En Python se puede escribir así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def multsuma (x, y, z):
+\end_layout
+
+\begin_layout Verbatim
+  return x * y + z
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este método funcionará para cualesquier valores de 
+\family typewriter
+x
+\family default
+ e 
+\family typewriter
+y
+\family default
+ que puedan multiplicarse, y para cualquier valor de 
+\family typewriter
+z
+\family default
+ que pueda sumarse al producto.
+\end_layout
+
+\begin_layout Standard
+Podemos llamarla sobre números:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> multsuma (3, 2, 1)
+\end_layout
+
+\begin_layout Verbatim
+7
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ O sobre 
+\family typewriter
+Punto
+\family default
+s:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> p1 = Punto(3, 4)
+\end_layout
+
+\begin_layout Verbatim
+>>> p2 = Punto(5, 7)
+\end_layout
+
+\begin_layout Verbatim
+>>> print multsuma (2, p1, p2)
+\end_layout
+
+\begin_layout Verbatim
+(11, 15)
+\end_layout
+
+\begin_layout Verbatim
+>>> print multsuma (p1, p2, 1)
+\end_layout
+
+\begin_layout Verbatim
+44
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En el primer caso, el 
+\family typewriter
+Punto
+\family default
+ se multiplica por un escalar y luego se suma a otro 
+\family typewriter
+Punto
+\family default
+.
+ En el segundo caso, el producto punto produce un valor numérico, así que
+ el tercer parámetro también tiene que ser un número.
+\end_layout
+
+\begin_layout Standard
+Una función como ésta, que puede tomar parámetros con tipos distintos se
+ denomina 
+\series bold
+polimórfica
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Otro ejemplo es la función 
+\family typewriter
+derechoyAlReves
+\family default
+, que imprime una lista dos veces, al derecho y al revés:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def derechoyAlReves(l):
+\end_layout
+
+\begin_layout Verbatim
+  import copy
+\end_layout
+
+\begin_layout Verbatim
+  r = copy.copy(l)
+\end_layout
+
+\begin_layout Verbatim
+  r.reverse()
+\end_layout
+
+\begin_layout Verbatim
+  print str(l) + str(r)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como el método 
+\family typewriter
+reverse
+\family default
+ es una función modificadora, tenemos que tomar la precaución de hacer una
+ copia de la lista antes de llamarlo.
+ De esta forma la lista que llega como parámetro no se modifica.
+\end_layout
+
+\begin_layout Standard
+Aquí hay un ejemplo que aplica 
+\family typewriter
+derechoyAlReves
+\family default
+ a una lista:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>>   miLista = [1, 2, 3, 4]
+\end_layout
+
+\begin_layout Verbatim
+>>>   derechoyAlReves(miLista)
+\end_layout
+
+\begin_layout Verbatim
+[1, 2, 3, 4][4, 3, 2, 1]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Por supuesto que funciona para listas, esto no es sorprendente.
+ Lo que sería sorprendente es que pudiéramos aplicarla a un 
+\family typewriter
+Punto
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Para determinar si una función puede aplicarse a un nuevo tipo de dato usamos
+ la regla fundamental del polimorfismo:
+\end_layout
+
+\begin_layout Quote
+
+\series bold
+Si todas las operaciones adentro de la función pueden aplicarse al otro
+ tipo, la función puede aplicarse al tipo.
+
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+Las operaciones que usa el método son 
+\family typewriter
+copy
+\family default
+, 
+\family typewriter
+reverse
+\family default
+, y 
+\family typewriter
+print
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+copy
+\family default
+ funciona para cualquier objeto, y como ya hemos escrito un método 
+\family typewriter
+__str__
+\family default
+ para los 
+\family typewriter
+Punto
+\family default
+s, lo único que nos falta es el método 
+\family typewriter
+reverse
+\family default
+ dentro de la clase 
+\family typewriter
+Punto
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def reverse(self):
+\end_layout
+
+\begin_layout Verbatim
+  self.x , self.y = self.y, self.x
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Entonces podemos aplicar 
+\family typewriter
+derechoyAlReves
+\family default
+ a objetos 
+\family typewriter
+Punto
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>>   p = Punto(3, 4)
+\end_layout
+
+\begin_layout Verbatim
+>>>   derechoyAlReves(p)
+\end_layout
+
+\begin_layout Verbatim
+(3, 4)(4, 3)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El mejor tipo de polimorfismo es el que no se pretendía lograr, aquel en
+ el que se descubre que una función escrita puede aplicarse a un tipo, para
+ el cual no se había planeado hacerlo.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Lenguaje orientado a objetos:
+\end_layout
+
+\end_inset
+
+ lenguaje que tiene características, como las clases definidas por el usuario
+ y la herencia, que facilitan la programación orientada a objetos.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Programación orientada a objetos:
+\end_layout
+
+\end_inset
+
+ estilo de programación en el que los datos y las operaciones que los manipulan
+ se organizan en clases y métodos.
+\end_layout
+
+\begin_layout Description
+Método: función que se define adentro de una clase y se llama sobre instancias
+ de ésta.
+\end_layout
+
+\begin_layout Description
+Sobreescribir: reemplazar un valor preexistente.
+ Por ejemplo, se puede reemplazar un parámetro por defecto con un argumento
+ particular y un método ya definido, proporcionando un nuevo método con
+ el mismo nombre.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Método de inicialización:
+\end_layout
+
+\end_inset
+
+ método especial que se llama automáticamente cuando se crea un nuevo objeto.
+ Inicializa los atributos del objeto.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Sobrecarga de operadores:
+\end_layout
+
+\end_inset
+
+ extender el significado de los operadores primitivos (
+\family typewriter
++
+\family default
+, 
+\family typewriter
+-
+\family default
+, 
+\family typewriter
+*
+\family default
+, 
+\family typewriter
+>
+\family default
+, 
+\family typewriter
+<
+\family default
+, etc.) de forma que acepten tipos definidos por el usuario.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Producto punto:
+\end_layout
+
+\end_inset
+
+ operación del álgebra lineal que multiplica dos 
+\family typewriter
+Punto
+\family default
+s y produce un valor numérico.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Multiplicación escalar:
+\end_layout
+
+\end_inset
+
+ operación del álgebra lineal que multiplica cada una de las coordenadas
+ de un 
+\family typewriter
+Punto
+\family default
+ por un valor numérico.
+\end_layout
+
+\begin_layout Description
+Polimórfica: función que puede operar sobre varios tipos de datos.
+ Si todas las operaciones que se llaman dentro de la función se le pueden
+ aplicar al tipo de dato, entonces la función puede aplicársela al tipo.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lenguaje de programación orientado a objetos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método de inicialización
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sobreescribir
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sobrecarga
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sobrecarga de operadores
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+producto punto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+multiplicación escalar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+polimórfica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Enumerate
+Convierta 
+\family typewriter
+convertirASegundos
+\family default
+ (de la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "convert"
+
+\end_inset
+
+) a un método de la clase 
+\family typewriter
+Hora
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
+Añada un cuarto parámetro 
+\family typewriter
+fin
+\family default
+ a la función 
+\family typewriter
+buscar
+\family default
+ que especifique hasta donde continuar la búsqueda.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Advertencia: Este ejercicio tiene una cascarita.
+ El valor por defecto de 
+\family typewriter
+fin
+\family default
+ debería ser 
+\family typewriter
+len(cad)
+\family default
+, pero esto no funciona.
+ Los valores por defecto se evalúan en el momento de definición de las funciones
+, no cuando se llaman.
+ Cuando se define 
+\family typewriter
+buscar
+\family default
+, 
+\family typewriter
+cad
+\family default
+ no existe todavía, así que no se puede obtener su longitud.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Agregue un método 
+\family typewriter
+__sub__(self, otro)
+\family default
+ que sobrecargue el operador resta, y pruébelo.
+\end_layout
+
+\end_body
+\end_document

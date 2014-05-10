@@ -1,0 +1,4091 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Cadenas 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "strings"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Un tipo de dato compuesto
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo de dato compuesto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo de dato!compuesto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hasta aquí hemos visto tres tipos de datos: 
+\family typewriter
+int
+\family default
+, 
+\family typewriter
+float
+\family default
+ y 
+\family typewriter
+string
+\family default
+.
+ Las cadenas son cualitativamente diferentes de los otros dos tipos porque
+ están compuestas de piezas más pequeñas---los caracteres.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+carácter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los tipos que comprenden piezas más pequeñas se denominan 
+\series bold
+tipos de datos compuestos
+\series default
+.
+ Dependiendo de lo que hagamos podemos tratar un tipo compuesto como unidad
+ o podemos acceder a sus partes.
+ Esta ambigüedad es provechosa.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador corchete
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador!corchete
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El operador corchete selecciona un carácter de una cadena.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> fruta = "banano"
+\end_layout
+
+\begin_layout Verbatim
+>>> letra = fruta[1]
+\end_layout
+
+\begin_layout Verbatim
+>>> print letra
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La expresión 
+\family typewriter
+fruta[1]
+\family default
+ selecciona el carácter número 1 de 
+\family typewriter
+fruta
+\family default
+.
+ La variable 
+\family typewriter
+letra
+\family default
+ se refiere al resultado.
+ Cuando desplegamos 
+\family typewriter
+letra
+\family default
+, obtenemos una pequeña sorpresa:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+a
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La primera letra de 
+\begin_inset Quotes eld
+\end_inset
+
+banano
+\begin_inset Quotes erd
+\end_inset
+
+ no es 
+\family typewriter
+a
+\family default
+.
+ ¡A menos que usted sea un científico de la computación! Por razones perversas,
+ los científicos de la computación empiezan a contar desde cero.
+ La letra número 0 de 
+\family typewriter
+
+\begin_inset Quotes eld
+\end_inset
+
+banano
+\begin_inset Quotes erd
+\end_inset
+
+
+\family default
+ es 
+\family typewriter
+b
+\family default
+.
+ La letra 1 es a, y la letra 2 es n.
+\end_layout
+
+\begin_layout Standard
+Si usted desea la primera letra de una cadena se pone 0, o cualquier expresión
+ con el valor 0, dentro de los corchetes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> letra = fruta[0]
+\end_layout
+
+\begin_layout Verbatim
+>>> print letra
+\end_layout
+
+\begin_layout Verbatim
+b
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La expresión en corchetes se denomina 
+\series bold
+índice
+\series default
+.
+ Un índice especifica un miembro de un conjunto ordenado, en este caso el
+ conjunto de caracteres de la cadena.
+ El índice 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ indica
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ cual elemento desea usted, por eso se llama así.
+ Puede ser cualquier expresión entera.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+índice
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Longitud
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cadena!longitud
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error de tiempo de ejecución
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La función 
+\family typewriter
+len
+\family default
+ retorna el número de caracteres en una cadena:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> fruta = "banano"
+\end_layout
+
+\begin_layout Verbatim
+>>> len(fruta)
+\end_layout
+
+\begin_layout Verbatim
+6
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para acceder a la última letra de una cadena usted podría caer en algo
+ como esto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+longitud = len(fruta)
+\end_layout
+
+\begin_layout Verbatim
+ultima = fruta[longitud]       # ERROR!
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Y no funcionará.
+ Causa un error en tiempo de ejecución, 
+\family typewriter
+IndexError: string index out of range
+\family default
+.
+ La razón yace en que no hay una letra 6 en 
+\begin_inset Quotes eld
+\end_inset
+
+banano
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Como empezamos a contar desde cero, las seis letras se numeran de 0 a 5.
+ En general, para obtener la última letra, tenemos que restar 1 a la 
+\family typewriter
+longitud
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+longitud = len(fruta)
+\end_layout
+
+\begin_layout Verbatim
+ultima = fruta[longitud-1]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Alternativamente, podemos usar índices negativos, que cuentan hacia atrás
+ desde el fin de la cadena.
+ La expresión 
+\family typewriter
+fruta[-1]
+\family default
+ retorna la última letra 
+\family typewriter
+fruta[-2]
+\family default
+ retorna la penúltima, y así sucesivamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+índice!negativo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Recorridos en cadenas y el ciclo 
+\family typewriter
+for
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "for"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+recorridos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ciclo!recorrido
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ciclo for
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ciclo!ciclo for
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Muchos cálculos implican procesar una cadena carácter por carácter.
+ A menudo empiezan al inicio, seleccionan cada carácter en cada paso, le
+ hacen algo y continúan hasta el final.
+ Este patrón de procesamiento se denomina 
+\series bold
+recorrido
+\series default
+.
+ Hay una forma de realizarlo con la sentencia 
+\family typewriter
+while
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+indice = 0
+\end_layout
+
+\begin_layout Verbatim
+while indice < len(fruta):
+\end_layout
+
+\begin_layout Verbatim
+  letra = fruta[indice]
+\end_layout
+
+\begin_layout Verbatim
+  print letra
+\end_layout
+
+\begin_layout Verbatim
+  indice = indice + 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este ciclo recorre la cadena y despliega cada letra en una línea independiente.
+ La condición del ciclo es 
+\family typewriter
+indice < len(fruta)
+\family default
+, así que cuando 
+\family typewriter
+indice
+\family default
+ se hace igual a la longitud de la cadena, la condición es falsa, y el cuerpo
+ del ciclo no se ejecuta.
+ El último carácter accedido es el que tiene el índice 
+\family typewriter
+len(fruta)-1
+\family default
+, es decir, el último.
+\end_layout
+
+\begin_layout Standard
+Usar un índice para recorrer un conjunto de valores es tan común que Python
+ tiene una sintaxis alternativa más simple---el ciclo 
+\family typewriter
+for
+\family default
+ :
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+for caracter in fruta:
+\end_layout
+
+\begin_layout Verbatim
+%   print caracter
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Cada vez que el ciclo itera, el próximo carácter en la cadena se asigna
+ a la variable 
+\family typewriter
+caracter
+\family default
+.
+ El ciclo continúa hasta que no quedan más caracteres.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+concatenación
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lexicográfico
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+McCloskey, Robert
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Make Way for Ducklings
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El siguiente ejemplo muestra cómo usar la concatenación y un ciclo 
+\family typewriter
+for
+\family default
+ para generar una serie en orden lexicográfico.
+ Lexicográfico se refiere a una lista en la que los elementos aparecen en
+ orden alfabético.
+ Por ejemplo, en el libro 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Make Way for Ducklings
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ de Robert McCloskey, los nombres de los patos son Jack, Kack, Lack, Mack,
+ Nack, Ouack, Pack, and Quack.
+ Este ciclo los despliega en orden:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+prefijos = "JKLMNOPQ"
+\end_layout
+
+\begin_layout Verbatim
+sufijo = "ack"
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+for letra in prefijos:
+\end_layout
+
+\begin_layout Verbatim
+  print letra + sufijo
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La salida de este programa es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+Jack
+\end_layout
+
+\begin_layout Verbatim
+Kack
+\end_layout
+
+\begin_layout Verbatim
+Lack
+\end_layout
+
+\begin_layout Verbatim
+Mack
+\end_layout
+
+\begin_layout Verbatim
+Nack
+\end_layout
+
+\begin_layout Verbatim
+Oack
+\end_layout
+
+\begin_layout Verbatim
+Pack
+\end_layout
+
+\begin_layout Verbatim
+Qack
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Por supuesto que hay un error, ya que 
+\begin_inset Quotes eld
+\end_inset
+
+Ouack
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes eld
+\end_inset
+
+Quack
+\begin_inset Quotes erd
+\end_inset
+
+ no están bien deletreados.
+\end_layout
+
+\begin_layout Section
+Segmentos de cadenas 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "slice"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+segmento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cadena!segmento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una porción de una cadena de caracteres se denomina 
+\series bold
+segmento
+\series default
+.
+ Seleccionar un segmento es similar a seleccionar un carácter:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> s = "Pedro, Pablo, y Maria"
+\end_layout
+
+\begin_layout Verbatim
+>>> print s[0:5]
+\end_layout
+
+\begin_layout Verbatim
+Pedro
+\end_layout
+
+\begin_layout Verbatim
+>>> print s[7:12]
+\end_layout
+
+\begin_layout Verbatim
+Pablo
+\end_layout
+
+\begin_layout Verbatim
+>>> print s[16:21]
+\end_layout
+
+\begin_layout Verbatim
+Maria
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El operador 
+\family typewriter
+[n:m]
+\family default
+ retorna la parte de la cadena que va desde el carácter n hasta el m, incluyendo
+ el primero y excluyendo el último.
+ Este comportamiento es contraintuitivo, tiene más sentido si se imagina
+ que los índices van 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ antes
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ de los caracteres, como en el siguiente diagrama:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/banana.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si usted omite el primer índice (antes de los puntos seguidos), el segmento
+ comienza en el inicio de la cadena.
+ Si se omite el segundo índice, el segmento va hasta el final.
+ Entonces:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> fruta  = "banano"
+\end_layout
+
+\begin_layout Verbatim
+>>> fruta[:3]
+\end_layout
+
+\begin_layout Verbatim
+'ban'
+\end_layout
+
+\begin_layout Verbatim
+>>> f[3:]
+\end_layout
+
+\begin_layout Verbatim
+'ano'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ ¿Que cree que significa 
+\family typewriter
+s[:]
+\family default
+?
+\end_layout
+
+\begin_layout Section
+Comparación de cadenas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+comparación de cadenas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+comparación!de cadenas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El operador de comparación funciona con cadenas.
+ Para ver si dos cadenas son iguales:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+if palabra == "banana":
+\end_layout
+
+\begin_layout Verbatim
+  print  "No hay bananas!"
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-2
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las otras operaciones de comparación son útiles para poner las palabras
+ en orden alfabético:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+if palabra < "banana":
+\end_layout
+
+\begin_layout Verbatim
+  print "Su palabra," + palabra + ", va antes que banana."
+\end_layout
+
+\begin_layout Verbatim
+elif palabra > "banana":
+\end_layout
+
+\begin_layout Verbatim
+  print "Su palabra," + palabra + ", va después de banana."
+\end_layout
+
+\begin_layout Verbatim
+else:
+\end_layout
+
+\begin_layout Verbatim
+  print "No hay bananas!"
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Sin embargo, usted debe ser consciente de que Python no maneja las letras
+ minúsculas y mayúsculas de la misma forma en que lo hace la gente.
+ Todas las letras mayúsculas vienen antes de las minúsculas.
+ Si palabra vale 
+\begin_inset Quotes eld
+\end_inset
+
+Zebra
+\begin_inset Quotes erd
+\end_inset
+
+ la salida sería:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+Su palabra, Zebra, va antes que banana.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este problema se resuelve usualmente convirtiendo las cadenas a un formato
+ común, todas en minúsculas por ejemplo, antes de hacer la comparación.
+ Un problema más difícil es lograr que el programa reconozca que una zebra
+ no es una fruta.
+\end_layout
+
+\begin_layout Section
+Las cadenas son inmutables
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+mutable
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cadena inmutable
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cadena!inmutable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uno puede caer en la trampa de usar el operador 
+\family typewriter
+[]
+\family default
+ al lado izquierdo de una asignación con la intención de modificar un carácter
+ en una cadena.
+ Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+saludo = "Hola mundo"
+\end_layout
+
+\begin_layout Verbatim
+saludo[0] = 'J'            # ERROR!
+\end_layout
+
+\begin_layout Verbatim
+print saludo
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En lugar de desplegar 
+\family typewriter
+Jola mundo!
+\family default
+, se produce un error en tiempo de ejecución 
+\family typewriter
+TypeError: object doesn't support item assignment
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las cadenas son 
+\series bold
+inmutables
+\series default
+, lo que quiere decir que no se puede cambiar una cadena existente.
+ Lo máximo que se puede hacer es crear otra cadena que cambia un poco a
+ la original:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+saludo = "Hola mundo!"
+\end_layout
+
+\begin_layout Verbatim
+nuevoSaludo = 'J' + saludo[1:]
+\end_layout
+
+\begin_layout Verbatim
+print nuevoSaludo
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La solución consiste en concatenar la primera nueva letra con un segmento
+ de 
+\family typewriter
+saludo
+\family default
+.
+ Esto no tiene efecto sobre la primera cadena, usted puede chequearlo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+concatenación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+adjustpage{-2}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Una función 
+\family typewriter
+buscar
+\family default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "find"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recorrido
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recorrido eureka
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+patrón
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+patrón computacional
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Qué hace la siguiente función?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def buscar(cad, c):
+\end_layout
+
+\begin_layout Verbatim
+  indice = 0
+\end_layout
+
+\begin_layout Verbatim
+  while indice < len(cad):
+\end_layout
+
+\begin_layout Verbatim
+    if cad[indice] == c:
+\end_layout
+
+\begin_layout Verbatim
+      return indice
+\end_layout
+
+\begin_layout Verbatim
+    indice = indice + 1
+\end_layout
+
+\begin_layout Verbatim
+  return -1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ De cierta manera 
+\family typewriter
+buscar
+\family default
+ es el opuesto del operador 
+\family typewriter
+[]
+\family default
+.
+ En vez de tomar un índice y extraer el carácter correspondiente, toma un
+ carácter y encuentra el índice donde éste se encuentra.
+ Si no se encuentra el carácter en la cadena, la función retorna 
+\family typewriter
+-1
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Este es el primer ejemplo de una sentencia 
+\family typewriter
+return
+\family default
+ dentro de un ciclo.
+ Si se cumple que 
+\family typewriter
+cadena[indice] == c
+\family default
+, la función retorna inmediatamente, rompiendo el ciclo prematuramente.
+\end_layout
+
+\begin_layout Standard
+Si el carácter no está en la cadena, el programa completa todo el ciclo
+ y retorna 
+\family typewriter
+-1
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Este patrón computacional se denomina recorrido 
+\begin_inset Quotes eld
+\end_inset
+
+eureka
+\begin_inset Quotes erd
+\end_inset
+
+, ya que tan pronto encontremos lo que buscamos, gritamos 
+\begin_inset Quotes eld
+\end_inset
+
+Eureka!
+\begin_inset Quotes erd
+\end_inset
+
+ y dejamos de buscar.
+\end_layout
+
+\begin_layout Section
+Iterando y contando
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "counter"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+contador
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+patrón
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El siguiente programa cuenta el número de veces que la letra 
+\family typewriter
+a
+\family default
+ aparece en una cadena:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+fruta = "banano"
+\end_layout
+
+\begin_layout Verbatim
+cont = 0
+\end_layout
+
+\begin_layout Verbatim
+for car in fruta:
+\end_layout
+
+\begin_layout Verbatim
+  if car == 'a':
+\end_layout
+
+\begin_layout Verbatim
+    cont = cont + 1
+\end_layout
+
+\begin_layout Verbatim
+print cont
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este programa demuestra otro patrón computacional denominado 
+\series bold
+contador
+\series default
+.
+ La variable 
+\family typewriter
+cont
+\family default
+ se inicializa a 0 y se incrementa cada vez que se encuentre una 
+\family typewriter
+a
+\family default
+.
+ ( 
+\series bold
+incrementar
+\series default
+ es añadir uno; es el opuesto de 
+\series bold
+decrementar
+\series default
+, y no tienen nada que ver con 
+\begin_inset Quotes eld
+\end_inset
+
+excremento,
+\begin_inset Quotes erd
+\end_inset
+
+ que es un sustantivo.) Cuando el ciclo finaliza, 
+\family typewriter
+cont
+\family default
+ contiene el resultado---el número total de 
+\family typewriter
+a
+\family default
+'s.
+\end_layout
+
+\begin_layout Section
+El módulo 
+\family typewriter
+string
+\family default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo string
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El módulo 
+\family typewriter
+string
+\family default
+ contiene funciones útiles para manipular cadenas.
+ Como de costumbre, tenemos que importarlo antes de usarlo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> import string
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El módulo 
+\family typewriter
+string
+\family default
+ incluye una función denominada 
+\family typewriter
+find
+\family default
+ que hace lo mismo que buscar.
+ Para llamarla tenemos que especificar el nombre del módulo y de la función,
+ usando la notación punto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> fruta = "banano"
+\end_layout
+
+\begin_layout Verbatim
+>>> ind = string.find(fruta, "a")
+\end_layout
+
+\begin_layout Verbatim
+>>> print ind
+\end_layout
+
+\begin_layout Verbatim
+1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Uno de los beneficios de los módulos es que ayudan a evitar colisiones
+ entre los nombres de las funciones primitivas y los nombres de las funciones
+ creadas por el programador.
+ Si hubiéramos nombrado a nuestra función buscar con la palabra inglesa
+ 
+\family typewriter
+find
+\family default
+, podríamos usar la notación punto para especificar que queremos llamar
+ a la función find del módulo string, y no a la nuestra.
+\end_layout
+
+\begin_layout Standard
+De hecho 
+\family typewriter
+string.find
+\family default
+ es más general que buscar, también puede buscar subcadenas, no solo caracteres:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> string.find("banano", "na")
+\end_layout
+
+\begin_layout Verbatim
+2
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ También tiene un argumento adicional que especifica el índice desde el
+ que debe empezar la búsqueda:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> string.find("banana", "na", 3)
+\end_layout
+
+\begin_layout Verbatim
+4
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Igualmente, puede tomar dos argumentos adicionales que especifican un rango
+ de índices:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> string.find("bob", "b", 1, 2)
+\end_layout
+
+\begin_layout Verbatim
+-1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Aquí la búsqueda falló porque la letra 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ b
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ no está en en el rango de índices de 
+\family typewriter
+1
+\family default
+ a 
+\family typewriter
+2
+\family default
+ (recuerde que no se incluye el último índice, el 
+\family typewriter
+2
+\family default
+).
+\end_layout
+
+\begin_layout Section
+Clasificación de caracteres 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "in"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clasificación de caracteres
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clasificación!de caracteres
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+mayúsculas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+minúsculas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+espacios en blanco
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Con frecuencia es útil examinar un carácter y decidir si está en mayúsculas
+ o en minúsculas, o si es un dígito.
+ El módulo 
+\family typewriter
+string
+\family default
+ proporciona varias constantes que sirven para lograr estos objetivos.
+\end_layout
+
+\begin_layout Standard
+La cadena 
+\family typewriter
+string.lowercase
+\family default
+ contiene todas las letras que el sistema considera como minúsculas.
+ Igualmente, 
+\family typewriter
+string.uppercase
+\family default
+ contiene todas las letras mayúsculas.
+ Intente lo siguiente y vea por sí mismo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> print string.lowercase
+\end_layout
+
+\begin_layout Verbatim
+>>> print string.uppercase
+\end_layout
+
+\begin_layout Verbatim
+>>> print string.digits
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Podemos usar estas constantes y la función 
+\family typewriter
+find
+\family default
+ para clasificar los caracteres.
+ Por ejemplo, si 
+\family typewriter
+find(lowercase, c)
+\family default
+ retorna un valor distinto de 
+\family typewriter
+-1
+\family default
+, entonces 
+\family typewriter
+c
+\family default
+ debe ser una letra minúscula:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def esMinuscula(c):
+\end_layout
+
+\begin_layout Verbatim
+  return string.find(string.lowercase, c) != -1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Otra alternativa la da el operador 
+\family typewriter
+in
+\family default
+ que determina si un carácter aparece en una cadena:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def esMinuscula(c):
+\end_layout
+
+\begin_layout Verbatim
+  return c in string.lowercase
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Y otra alternativa más, con el operador de comparación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def esMinuscula(c):
+\end_layout
+
+\begin_layout Verbatim
+  return 'a' <= c <= 'z'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si 
+\family typewriter
+c
+\family default
+ está entre 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ a
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ z
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, debe ser una letra minúscula.
+\end_layout
+
+\begin_layout Standard
+Otra constante definida en el módulo 
+\family typewriter
+string
+\family default
+ puede sorprenderlo cuando la imprima:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> print string.whitespace
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Un carácter de los que pertenecen a 
+\series bold
+whitespace
+\series default
+ mueve el cursor sin imprimir nada.
+ Crean un espacio en blanco que se puede evidenciar entre caracteres.
+ La constante 
+\family typewriter
+string.whitespace
+\family default
+ contiene todos los caracteres que representan espacios en blanco: espacio,
+ tab (
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+
+\backslash
+t+
+\end_layout
+
+\end_inset
+
+), y nueva línea (
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+
+\backslash
+n+
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo string
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo!string
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay otras funciones útiles en el módulo string, pero este libro no es un
+ manual de referencia.
+ Para esto usted puede consultar la referencia de las bibliotecas de Python
+ (
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Python Library Reference
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+).
+ Además, hay un gran cúmulo de documentación en el sitio web de Python 
+\family typewriter
+www.python.org
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Python Library Reference
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Tipo de dato compuesto:
+\end_layout
+
+\end_inset
+
+ un tipo de dato en el que los valores están compuestos por componentes
+ o elementos, que, a su vez, son valores.
+\end_layout
+
+\begin_layout Description
+Recorrido: iteración sobre todos los elementos de un conjunto ejecutando
+ una operación similar en cada uno.
+\end_layout
+
+\begin_layout Description
+Índice: variable o valor que se usa para seleccionar un miembro de un conjunto
+ ordenado, tal como los caracteres de una cadena.
+ También se puede usar el término 
+\family typewriter
+posición
+\family default
+ como sinónimo de índice.
+\end_layout
+
+\begin_layout Description
+Segmento: parte de una cadena, especificada por un rango de índices.
+\end_layout
+
+\begin_layout Description
+Mutable: un tipo de dato compuesto a cuyos elementos pueden asignarseles
+ nuevos valores.
+\end_layout
+
+\begin_layout Description
+Contador: una variable que se usa para contar algo, usualmente se inicializa
+ en cero y se incrementa posteriormente dentro de un ciclo.
+\end_layout
+
+\begin_layout Description
+Incrementar: agregar uno al valor de una variable
+\end_layout
+
+\begin_layout Description
+Decrementar: restar uno al valor de una variable
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Espacio en blanco:
+\end_layout
+
+\end_inset
+
+ cualquiera de los caracteres que mueven el cursor sin imprimir nada visible.
+ La constante 
+\family typewriter
+string.whitespace
+\family default
+ contiene todos los caracteres que representan espacios en blanco.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo de dato compuesto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recorrido
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+índice
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+segmento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+mutable
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+contador
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+incrementar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+decrementar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+espacio en blanco
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Standard
+Para cada función, agregue chequeo de tipos y pruebas unitarias.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que tome una cadena como argumento y despliegue las
+ letras al revés, una por cada línea.
+\end_layout
+
+\begin_layout Enumerate
+Modifique el programa de la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "for"
+
+\end_inset
+
+ para corregir el error con los patos Ouack y Quack.
+\end_layout
+
+\begin_layout Enumerate
+Modifique la función 
+\family typewriter
+buscar
+\family default
+ de forma que reciba un tercer parámetro, el índice en la cadena donde debe
+ empezar a buscar.
+\end_layout
+
+\begin_layout Enumerate
+Encapsule el código de la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "counter"
+
+\end_inset
+
+ en una función llamada 
+\family typewriter
+contarLetras
+\family default
+, y generalícela de forma que reciba la cadena y la letra como parámetros.
+\end_layout
+
+\begin_layout Enumerate
+Reescriba la función que obtuvo en el punto anterior de forma que en lugar
+ de recorrer la cadena, llame a la función 
+\family typewriter
+buscar
+\family default
+ que recibe tres parámetros.
+\end_layout
+
+\begin_layout Enumerate
+Discuta qué versión de 
+\family typewriter
+esMinuscula
+\family default
+ cree que es la más rápida.
+ ¿Puede pensar en otra razón distinta de la velocidad para preferir alguna
+ de ellas sobre las otras?
+\end_layout
+
+\begin_layout Enumerate
+Cree un archivo llamado 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+cadenas.py+
+\end_layout
+
+\end_inset
+
+ y escriba lo siguiente en él:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+  def invertir(s):
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+      >>> invertir('feliz')
+\end_layout
+
+\begin_layout Verbatim
+      'zilef'
+\end_layout
+
+\begin_layout Verbatim
+      >>> invertir('Python')
+\end_layout
+
+\begin_layout Verbatim
+      'nohtyP'
+\end_layout
+
+\begin_layout Verbatim
+      >>> invertir("")
+\end_layout
+
+\begin_layout Verbatim
+      ''
+\end_layout
+
+\begin_layout Verbatim
+      >>> invertir("P")
+\end_layout
+
+\begin_layout Verbatim
+      'P'
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+  if __name__ == '__main__':
+\end_layout
+
+\begin_layout Verbatim
+    import doctest
+\end_layout
+
+\begin_layout Verbatim
+    doctest.testmod()
+\end_layout
+
+\begin_layout Verbatim
+  
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Agregue un cuerpo a la función invertir que haga que pase la prueba unitaria.
+\end_layout
+
+\begin_layout Standard
+Agregue al archivo 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+cadenas.py+
+\end_layout
+
+\end_inset
+
+ cuerpos a cada una de las siguientes funciones, una a la vez.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Reflejar:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+  def reflejar(s):
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+      >>> reflejar("bien")
+\end_layout
+
+\begin_layout Verbatim
+      'bienneib'
+\end_layout
+
+\begin_layout Verbatim
+      >>> reflejar("sí")
+\end_layout
+
+\begin_layout Verbatim
+      'síís'
+\end_layout
+
+\begin_layout Verbatim
+      >>> reflejar('Python')
+\end_layout
+
+\begin_layout Verbatim
+      'PythonnohtyP'
+\end_layout
+
+\begin_layout Verbatim
+      >>> reflejar("")
+\end_layout
+
+\begin_layout Verbatim
+      ''
+\end_layout
+
+\begin_layout Verbatim
+      >>> reflejar("a")
+\end_layout
+
+\begin_layout Verbatim
+      'aa'
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+  
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Eliminar letra:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+  def elimina_letra(letra, cadena):
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina_letra('a', 'manzana')
+\end_layout
+
+\begin_layout Verbatim
+      'mnzn'
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina_letra('a', 'banana')
+\end_layout
+
+\begin_layout Verbatim
+      'bnn'
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina_letra('z', 'banana')
+\end_layout
+
+\begin_layout Verbatim
+      'banana'
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina_letra('i', 'Mississippi')
+\end_layout
+
+\begin_layout Verbatim
+      'Msssspp'
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+  
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Es palíndromo:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+  def es_palindromo(s):
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+      >>> es_palindromo('abba')
+\end_layout
+
+\begin_layout Verbatim
+      True
+\end_layout
+
+\begin_layout Verbatim
+      >>> es_palindromo('abab')
+\end_layout
+
+\begin_layout Verbatim
+      False
+\end_layout
+
+\begin_layout Verbatim
+      >>> es_palindromo('tenet')
+\end_layout
+
+\begin_layout Verbatim
+      True
+\end_layout
+
+\begin_layout Verbatim
+      >>> es_palindromo('banana')
+\end_layout
+
+\begin_layout Verbatim
+      False
+\end_layout
+
+\begin_layout Verbatim
+      >>> es_palindromo('zorra arroz')
+\end_layout
+
+\begin_layout Verbatim
+      True
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+  
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Cuenta el número de ocurrencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+  def cuenta(sub, s):
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+      >>> cuenta('is', 'Mississippi')
+\end_layout
+
+\begin_layout Verbatim
+      2
+\end_layout
+
+\begin_layout Verbatim
+      >>> cuenta('an', 'banana')
+\end_layout
+
+\begin_layout Verbatim
+      2
+\end_layout
+
+\begin_layout Verbatim
+      >>> cuenta('ana', 'banana')
+\end_layout
+
+\begin_layout Verbatim
+      2
+\end_layout
+
+\begin_layout Verbatim
+      >>> cuenta('nana', 'banana')
+\end_layout
+
+\begin_layout Verbatim
+      1
+\end_layout
+
+\begin_layout Verbatim
+      >>> cuenta('nanan', 'banana')
+\end_layout
+
+\begin_layout Verbatim
+      0
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+  
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Eliminar la primera ocurrencia:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+  def elimina(sub, s):
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina('an', 'banana')
+\end_layout
+
+\begin_layout Verbatim
+      'bana'
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina('cic', 'bicicleta')
+\end_layout
+
+\begin_layout Verbatim
+      'bileta'
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina('iss', 'Mississippi')
+\end_layout
+
+\begin_layout Verbatim
+      'Missippi'
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina('huevo', 'bicicleta')
+\end_layout
+
+\begin_layout Verbatim
+      'bicicleta'
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+  
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Eliminar todas las ocurrencias:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+  def elimina_todo(sub, s):
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina_todo('an', 'banana')
+\end_layout
+
+\begin_layout Verbatim
+      'ba'
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina_todo('cic', 'bicicleta')
+\end_layout
+
+\begin_layout Verbatim
+      'bileta'
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina_todo('iss', 'Mississippi')
+\end_layout
+
+\begin_layout Verbatim
+      'Mippi'
+\end_layout
+
+\begin_layout Verbatim
+      >>> elimina_todo('huevos', 'bicicleta')
+\end_layout
+
+\begin_layout Verbatim
+      'bicicleta'
+\end_layout
+
+\begin_layout Verbatim
+    """
+\end_layout
+
+\begin_layout Verbatim
+  
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,2574 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, y Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute y/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, y with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file nombred fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Colas
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "Cola"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cola
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TAD!Cola
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cola de prioridad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TAD!cola de prioridad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+PEPS
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+política para meter
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cola de prioridad
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este capítulo presenta dos TADs: la cola y la cola de prioridad.
+ En la vida real una 
+\series bold
+Cola
+\series default
+ es una línea de clientes esperando por algún servicio.
+ En la mayoría de los casos, el primer cliente en la línea es el próximo
+ en ser atendido.
+ Sin embargo, hay excepciones.
+ En los aeropuertos, los clientes cuyos vuelos están próximos a partir se
+ atienden, sin importar su posición en la cola.
+ En los supermercados, un cliente cortés puede dejar pasar a alguien que
+ va a pagar unos pocos víveres.
+\end_layout
+
+\begin_layout Standard
+La regla que dictamina quién se atiende a continuación se denomina 
+\series bold
+política de atención
+\series default
+.
+ La más sencilla se denomina 
+\series bold
+PEPS
+\series default
+, por la frase 
+\begin_inset Quotes eld
+\end_inset
+
+Primero que Entra - Primero que Sale
+\begin_inset Quotes erd
+\end_inset
+
+.
+ La política más general es la que implementa una 
+\series bold
+cola de prioridad
+\series default
+, en la que cada cliente tiene asignada una prioridad y siempre se atiende
+ el cliente con la prioridad más alta, sin importar el orden de llegada.
+ Es la política más general en el sentido de que la prioridad puede asignarse
+ bajo cualquier criterio: la hora de partida de un vuelo, cuántos víveres
+ se van a pagar, o qué tan importante es el cliente.
+ No todas las políticas de atención son 
+\begin_inset Quotes eld
+\end_inset
+
+justas,
+\begin_inset Quotes erd
+\end_inset
+
+ pero la justicia está definida por el que presta el servicio.
+\end_layout
+
+\begin_layout Standard
+El TAD Cola y la cola de prioridad TAD tienen el mismo conjunto de operaciones.
+ La diferencia está en la semántica de ellas: una cola utiliza la política
+ PEPS y una cola de prioridad usa la política de prioridad.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+El TAD Cola
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TAD!Cola
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Cola TAD
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+implementación!Cola
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Cola!implementación con lista
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El TAD Cola se define por la siguiente interfaz:
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+__init__
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: inicializa una Cola vacía.
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+meter
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: agrega un nuevo objeto a la cola.
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+sacar
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: elimina y retorna un objeto de la Cola.
+ Entre todos los que están dentro de la cola, el objeto retornado fue el
+ primero en agregarse
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+estaVacia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: revisa si la cola está vacía.
+\end_layout
+
+\begin_layout Section
+Cola enlazada
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Cola enlazada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Cola!implementación enlazada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta primera implementación del TAD Cola se denomina 
+\series bold
+Cola enlazada
+\series default
+ porque está compuesta de objetos 
+\family typewriter
+Nodo
+\family default
+ enlazados.
+ Aquí está la definición:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Cola:
+\end_layout
+
+\begin_layout Verbatim
+
+  def __init__(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    self.numElementos = 0
+\end_layout
+
+\begin_layout Verbatim
+
+    self.primero = None
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  def estaVacia(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    return (self.numElementos == 0)
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  def meter(self, carga):
+\end_layout
+
+\begin_layout Verbatim
+
+    nodo = Nodo(carga)
+\end_layout
+
+\begin_layout Verbatim
+
+    nodo.siguiente = None
+\end_layout
+
+\begin_layout Verbatim
+
+    if self.primero == None:
+\end_layout
+
+\begin_layout Verbatim
+
+      # si esta vacia este nodo sera el primero
+\end_layout
+
+\begin_layout Verbatim
+
+      self.primero = nodo
+\end_layout
+
+\begin_layout Verbatim
+
+    else:
+\end_layout
+
+\begin_layout Verbatim
+
+      # encontrar el ultimo nodo
+\end_layout
+
+\begin_layout Verbatim
+
+      ultimo = self.primero
+\end_layout
+
+\begin_layout Verbatim
+
+      while ultimo.siguiente: ultimo = ultimo.siguiente
+\end_layout
+
+\begin_layout Verbatim
+
+      # pegar el nuevo
+\end_layout
+
+\begin_layout Verbatim
+
+      ultimo.siguiente = nodo
+\end_layout
+
+\begin_layout Verbatim
+
+    self.numElementos = self.numElementos + 1
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  def sacar(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    carga = self.primero.carga
+\end_layout
+
+\begin_layout Verbatim
+
+    self.primero = self.primero.siguiente
+\end_layout
+
+\begin_layout Verbatim
+
+    self.numElementos = self.numElementos - 1
+\end_layout
+
+\begin_layout Verbatim
+
+    return carga
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El método 
+\family typewriter
+estaVacia
+\family default
+ es idéntico al de la 
+\family typewriter
+ListaEnlazada
+\family default
+, 
+\family typewriter
+sacar
+\family default
+ es quitar el enlace del primer nodo.
+ El método 
+\family typewriter
+meter
+\family default
+ es un poco más largo.
+\end_layout
+
+\begin_layout Standard
+Si la cola está vacía, le asignamos a 
+\family typewriter
+primero
+\family default
+ el nuevo nodo.
+\end_layout
+
+\begin_layout Standard
+Si tiene elementos, recorremos la lista hasta el último nodo y pegamos el
+ nuevo nodo al final.
+ Podemos detectar si hemos llegado al final de la lista porque el atributo
+ 
+\family typewriter
+siguiente
+\family default
+ tiene el valor 
+\family typewriter
+None
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Hay dos invariantes que un objeto 
+\family typewriter
+Cola
+\family default
+ bien formado debe cumplir.
+ El valor de 
+\family typewriter
+numElementos
+\family default
+ debe ser el número de nodos en la Cola, y el último nodo debe tener en
+ 
+\family typewriter
+siguiente
+\family default
+ el valor 
+\family typewriter
+None
+\family default
+.
+ Verifique que este método satisfaga los dos invariantes.
+\end_layout
+
+\begin_layout Section
+Desempeño
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desempeño
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Usualmente, cuando llamamos un método, no nos interesan los detalles de
+ la implementación.
+ Sin embargo, hay un 
+\begin_inset Quotes eld
+\end_inset
+
+detalle
+\begin_inset Quotes erd
+\end_inset
+
+ que quisiéramos saber ---el desempeño del nuevo método.
+ ¿Cuánto tarda en ejecutarse y cómo cambia el tiempo de ejecución a medida
+ que el número de objetos en la Cola crece?
+\end_layout
+
+\begin_layout Standard
+Primero observemos al método 
+\family typewriter
+sacar
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+No hay ciclos ni llamados a funciones, así que el tiempo de ejecución de
+ este método es el mismo cada vez que se ejecuta.
+ Los métodos de este tipo se denominan operaciones de 
+\series bold
+tiempo constante
+\series default
+.
+ De hecho, el método puede ser mas rápido cuando la lista está vacía ya
+ que no entra al cuerpo del condicional, pero esta diferencia no es significativ
+a.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tiempo constante
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El desempeño de 
+\family typewriter
+meter
+\family default
+ es muy diferente.
+ En el caso general, tenemos que recorrer la lista para encontrar el último
+ elemento.
+\end_layout
+
+\begin_layout Standard
+Este recorrido toma un tiempo proporcional al atributo numElementos de la
+ lista.
+ Ya que el tiempo de ejecución es una función lineal de numElementos, se
+ dice que este método tiene un tiempo de ejecución de 
+\series bold
+tiempo lineal
+\series default
+.
+ Comparado con el tiempo constante, es bastante malo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tiempo lineal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cola Enlazada mejorada
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Cola!implementación mejorada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Cola mejorada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nos gustaría contar con una implementación del TAD Cola, cuyas operaciones
+ tomen tiempo constante.
+ Una forma de hacerlo es manteniendo una referencia al último nodo, como
+ se ilustra en la figura siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/queue1.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La implementación de 
+\family typewriter
+ColaMejorada
+\family default
+ es la siguiente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class ColaMejorada:
+\end_layout
+
+\begin_layout Verbatim
+
+  def __init__(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    self.numElementos = 0
+\end_layout
+
+\begin_layout Verbatim
+
+    self.primero   = None
+\end_layout
+
+\begin_layout Verbatim
+
+    self.ultimo   = None
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  def estaVacia(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    return (self.numElementos == 0)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Hasta aquí el único cambio es al nuevo atributo 
+\family typewriter
+ultimo
+\family default
+.
+ Este debe ser usado en los métodos 
+\family typewriter
+meter
+\family default
+ y 
+\family typewriter
+sacar
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class ColaMejorada:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def meter(self, carga):
+\end_layout
+
+\begin_layout Verbatim
+
+    nodo = nodo(carga)
+\end_layout
+
+\begin_layout Verbatim
+
+    nodo.siguiente = None
+\end_layout
+
+\begin_layout Verbatim
+
+    if self.numElementos == 0:
+\end_layout
+
+\begin_layout Verbatim
+
+      # si está vacía, el nuevo nodo es primero y ultimo
+\end_layout
+
+\begin_layout Verbatim
+
+      self.primero = self.ultimo = nodo
+\end_layout
+
+\begin_layout Verbatim
+
+    else:
+\end_layout
+
+\begin_layout Verbatim
+
+      # encontrar el ultimo nodo
+\end_layout
+
+\begin_layout Verbatim
+
+      ultimo = self.ultimo
+\end_layout
+
+\begin_layout Verbatim
+
+      # pegar el nuevo nodo
+\end_layout
+
+\begin_layout Verbatim
+
+      ultimo.siguiente = nodo
+\end_layout
+
+\begin_layout Verbatim
+
+      self.ultimo = nodo
+\end_layout
+
+\begin_layout Verbatim
+
+    self.numElementos = self.numElementos + 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ya que 
+\family typewriter
+ultimo
+\family default
+ lleva la pista del último nodo, no tenemos que buscarlo.
+ Como resultado, este método tiene un tiempo constante de ejecución.
+\end_layout
+
+\begin_layout Standard
+Hay un precio que pagar por esta mejora.
+ Tenemos que agregar un caso especial a 
+\family typewriter
+sacar
+\family default
+ que asigne a 
+\family typewriter
+ultimo
+\family default
+ el valor 
+\family typewriter
+None
+\family default
+ cuando se saca el único elemento:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class ColaMejorada:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def sacar(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    carga     = self.primero.carga
+\end_layout
+
+\begin_layout Verbatim
+
+    self.primero = self.primero.siguiente
+\end_layout
+
+\begin_layout Verbatim
+
+    self.numElementos = self.numElementos - 1
+\end_layout
+
+\begin_layout Verbatim
+
+    if self.numElementos == 0:
+\end_layout
+
+\begin_layout Verbatim
+
+      self.ultimo = None
+\end_layout
+
+\begin_layout Verbatim
+
+    return carga
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta implementación es más compleja que la inicial y es más difícil demostrar
+ su corrección.
+ La ventaja es que hemos logrado el objetivo ---
+\family typewriter
+meter
+\family default
+ y 
+\family typewriter
+sacar
+\family default
+ son operaciones que se ejecutan en un tiempo constante.
+\end_layout
+
+\begin_layout Quote
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Como ejercicio, escriba una implementación del TAD Cola usando una lista
+ de Python.
+ Compare el desempeño de esta implementación con el de la 
+\family typewriter
+ColaMejorada
+\family default
+ para un distintos valores de numElementos.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Cola de prioridad
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cola de prioridad!TAD
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TAD!cola de prioridad
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El TAD cola de prioridad tiene la misma interfaz que el TAD Cola, pero su
+ semántica es distinta.
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+__init__
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: inicializa una Cola vacía.
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+meter
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: agrega un objeto a la Cola.
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+sacar
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: saca y retorna un objeto de la Cola.
+ El objeto que se retorna es el de la mas alta prioridad.
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+estaVacia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: verifica si la Cola está vacía.
+\end_layout
+
+\begin_layout Standard
+La diferencia semántica está en el objeto que se saca, que necesariamente
+ no es el primero que se agregó.
+ En vez de esto, es el que tiene el mayor valor de prioridad.
+ Las prioridades y la manera de compararlas no se especifica en la implementació
+n de la cola de prioridad.
+ Depende de cuáles objetos estén en la Cola.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, si los objetos en la Cola tienen nombres, podríamos escogerlos
+ en orden alfabético.
+ Si son puntajes de bolos iríamos sacando del más alto al más bajo; pero
+ si son puntajes de golf, iríamos del más bajo al más alto.
+ En tanto que podamos comparar los objetos en la Cola, podemos encontrar
+ y sacar el que tenga la prioridad más alta.
+\end_layout
+
+\begin_layout Standard
+Esta implementación de la cola de prioridad tiene como atributo una lista
+ de Python que contiene los elementos en la Cola.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class ColaPrioridad:
+\end_layout
+
+\begin_layout Verbatim
+
+  def __init__(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    self.items = []
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  def estaVacia(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    return self.items == []
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  def meter(self, item):
+\end_layout
+
+\begin_layout Verbatim
+
+    self.items.append(item)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El método de inicialización, 
+\family typewriter
+estaVacia
+\family default
+, y 
+\family typewriter
+meter
+\family default
+ solo son barniz para operaciones sobre listas.
+ El único interesante es 
+\family typewriter
+sacar
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class ColaPrioridad:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def sacar(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    maxi = 0
+\end_layout
+
+\begin_layout Verbatim
+
+    for i in range(1,len(self.items)):
+\end_layout
+
+\begin_layout Verbatim
+
+      if self.items[i] > self.items[maxi]:
+\end_layout
+
+\begin_layout Verbatim
+
+        maxi = i
+\end_layout
+
+\begin_layout Verbatim
+
+    item = self.items[maxi]
+\end_layout
+
+\begin_layout Verbatim
+
+    self.items[maxi:maxi+1] = []
+\end_layout
+
+\begin_layout Verbatim
+
+    return item
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Al iniciar cada iteración, 
+\family typewriter
+maxi
+\family default
+ almacena el índice del ítem más grande (con la prioridad más alta) que
+ hayamos encontrado 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ hasta el momento
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+ En cada iteración, el programa compara el 
+\family typewriter
+i
+\family default
+ésimo ítem con el que iba ganando.
+ Si el nuevo es mejor, el valor de 
+\family typewriter
+maxi
+\family default
+ se actualiza con el de 
+\family typewriter
+i
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recorrido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando el 
+\family typewriter
+for
+\family default
+ se completa, 
+\family typewriter
+maxi
+\family default
+ es el índice con el mayor ítem de todos.
+ Éste se saca de la lista y se retorna.
+\end_layout
+
+\begin_layout Standard
+Probemos la implementación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> q = ColaPrioridad()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> q.meter(11)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> q.meter(12)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> q.meter(14)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> q.meter(13)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> while not q.estaVacia(): print q.sacar()
+\end_layout
+
+\begin_layout Verbatim
+
+14
+\end_layout
+
+\begin_layout Verbatim
+
+13
+\end_layout
+
+\begin_layout Verbatim
+
+12
+\end_layout
+
+\begin_layout Verbatim
+
+11
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si la Cola contiene números o cadenas, se sacan en orden alfabético o numérico,
+ del más alto al más bajo.
+ Python puede encontrar el mayor entero o cadena a través de los operadores
+ de comparación primitivos.
+\end_layout
+
+\begin_layout Standard
+Si la Cola contiene otro tipo de objeto, creado por el programador, tiene
+ que proporcionar el método 
+\family typewriter
+__cmp__
+\family default
+.
+ Cuando 
+\family typewriter
+sacar
+\family default
+ use al operador 
+\family typewriter
+>
+\family default
+ para comparar ítems, estaría llamando el método 
+\family typewriter
+__cmp__
+\family default
+ sobre el primero y pasándole al segundo como parámetro.
+ En tanto que 
+\family typewriter
+__cmp__
+\family default
+ funcione correctamente, la cola de prioridad será correcta.
+\end_layout
+
+\begin_layout Section
+La clase 
+\family typewriter
+golfista
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+golfista
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase!golfista
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+prioridad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sobrecarga de operadores
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sobrecarga!operador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un ejemplo poco usado de definición de prioridad es la clase 
+\family typewriter
+golfista
+\family default
+ que lleva el registro de los nombres y los puntajes de jugadores de golf.
+ Primero definimos 
+\family typewriter
+__init__
+\family default
+ y 
+\family typewriter
+__str__
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class golfista:
+\end_layout
+
+\begin_layout Verbatim
+
+  def __init__(self, nombre, puntaje):
+\end_layout
+
+\begin_layout Verbatim
+
+    self.nombre = nombre
+\end_layout
+
+\begin_layout Verbatim
+
+    self.puntaje= puntaje
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  def __str__(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    return "%-16s: %d" % (self.nombre, self.puntaje)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+__str__
+\family default
+ utiliza el operador de formato para poner los nombres y los puntajes en
+ dos columnas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador de formato
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador!de formato
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A continuación definimos una versión de 
+\family typewriter
+__cmp__
+\family default
+ en la que el puntaje mas bajo tenga la prioridad mas alta.
+ Recuerde que para Python 
+\family typewriter
+__cmp__
+\family default
+ retorna 1 si 
+\family typewriter
+self
+\family default
+ es 
+\begin_inset Quotes eld
+\end_inset
+
+mayor que
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\family typewriter
+otro
+\family default
+, -1 si 
+\family typewriter
+self
+\family default
+ es 
+\begin_inset Quotes eld
+\end_inset
+
+menor
+\begin_inset Quotes erd
+\end_inset
+
+ otro, y 0 si son iguales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class golfista:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def __cmp__(self, otro):
+\end_layout
+
+\begin_layout Verbatim
+
+    # el menor tiene mayor prioridad
+\end_layout
+
+\begin_layout Verbatim
+
+    if self.puntaje < otro.puntaje: return  1   
+\end_layout
+
+\begin_layout Verbatim
+
+    if self.puntaje > otro.puntaje: return -1
+\end_layout
+
+\begin_layout Verbatim
+
+    return 0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora estamos listos para probar la cola de prioridad almacenando instancias
+ de la clase 
+\family typewriter
+golfista
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> tiger = golfista("Tiger Woods",    61)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> phil  = golfista("Phil Mickelson", 72)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> hal   = golfista("Hal Sutton",     69)
+\end_layout
+
+\begin_layout Verbatim
+
+>>>
+\end_layout
+
+\begin_layout Verbatim
+
+>>> pq = ColaPrioridad()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> pq.meter(tiger)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> pq.meter(phil)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> pq.meter(hal)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> while not pq.estaVacia(): print pq.sacar()
+\end_layout
+
+\begin_layout Verbatim
+
+Tiger Woods    : 61
+\end_layout
+
+\begin_layout Verbatim
+
+Hal Sutton     : 69
+\end_layout
+
+\begin_layout Verbatim
+
+Phil Mickelson : 72
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quote
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Como ejercicio, escriba una implementación del TAD cola de prioridad TAD
+ usando una lista enlazada.
+ Ésta debe mantenerse ordenada, de forma que sacar sea una operación de
+ tiempo constante.
+ Compare el desempeño de esta implementación con la implementación basada
+ en listas de Python.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Cola
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+política de atención
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+PEPS
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cola de prioridad
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+barniz
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tiempo constante
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tiempo lineal
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desempeño
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Cola enlazada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+buffer circular
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase abstracta
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+interfaz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Cola: conjunto ordenado de objetos (o personas) esperando a que se les preste
+ algún servicio
+\end_layout
+
+\begin_layout Description
+Cola: TAD con las operaciones que se realizan en una Cola.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Política de atención:
+\end_layout
+
+\end_inset
+
+ reglas que determinan cuál es el siguiente objeto que se saca (atiende)
+ en una Cola.
+\end_layout
+
+\begin_layout Description
+PEPS: 
+\begin_inset Quotes eld
+\end_inset
+
+Primero que Entra, Primero que Sale
+\begin_inset Quotes erd
+\end_inset
+
+ , política de atención en la que se saca el primer elemento de la Cola.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Atención por prioridad:
+\end_layout
+
+\end_inset
+
+ una política de atención en la que se saca el elemento de la Cola que tenga
+ la mayor prioridad.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Cola de prioridad:
+\end_layout
+
+\end_inset
+
+ un TAD que define las operaciones que se pueden realizar en una cola de
+ prioridad.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Cola enlazada:
+\end_layout
+
+\end_inset
+
+ implementación de una Cola que utiliza una lista enlazada.
+\end_layout
+
+\begin_layout Description
+Desempeño: toda función de un TAD realiza un número de operaciones básicas
+ que dependen del número de elementos que éste contiene en un momento dado.
+ Por medio de este número de operaciones básicas se pueden comparar distintas
+ alternativas de implementación de una operación.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Tiempo constante:
+\end_layout
+
+\end_inset
+
+ desempeño de una operación, cuyo tiempo de ejecución no depende del tamaño
+ de la estructura de datos.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Tiempo lineal:
+\end_layout
+
+\end_inset
+
+ desempeño de una operación, cuyo tiempo de ejecución es una función lineal
+ del tamaño de la estructura de datos.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

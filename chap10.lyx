@@ -1,0 +1,3049 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Diccionarios
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diccionarios
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diccionario
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo de datos!diccionario
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clave
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+par clave-valor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+índice
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los tipos compuestos que ha visto hasta ahora (cadenas, listas y tuplas)
+ usan enteros como índices.
+ Si usted intenta usar cualquier otro tipo como índice provocará un error.
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+diccionarios
+\series default
+ son similares a otros tipos compuestos, excepto en que pueden usar como
+ índice cualquier tipo inmutable.
+ A modo de ejemplo, crearemos un diccionario que traduzca palabras inglesas
+ al español.
+ En este diccionario, los índices son cadenas 
+\family typewriter
+(strings)
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Una forma de crear un diccionario es empezar con el diccionario vacío y
+ añadir elementos.
+ El diccionario vacío se expresa como 
+\family typewriter
+{}
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> ing_a_esp = {}
+\end_layout
+
+\begin_layout Verbatim
+
+>>> ing_a_esp['one'] = 'uno'
+\end_layout
+
+\begin_layout Verbatim
+
+>>> ing_a_esp['two'] = 'dos'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La primera asignación crea un diccionario llamado 
+\family typewriter
+ing_a_esp
+\family default
+; las otras asignaciones añaden nuevos elementos al diccionario.
+ Podemos desplegar el valor actual del diccionario del modo habitual:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print ing_a_esp
+\end_layout
+
+\begin_layout Verbatim
+
+{'one': 'uno', 'two': 'dos'}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Los elementos de un diccionario aparecen en una lista separada por comas.
+ Cada entrada contiene un índice y un valor separado por dos puntos (:).
+ En un diccionario, los índices se llaman 
+\series bold
+claves
+\series default
+, por eso los elementos se llaman 
+\series bold
+pares clave-valor
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Otra forma de crear un diccionario es dando una lista de pares clave-valor
+ con la misma sintaxis que la salida del ejemplo anterior:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> ing_a_esp={'one': 'uno', 'two': 'dos', 'three': 'tres'}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si volvemos a imprimir el valor de 
+\family typewriter
+ing_a_esp
+\family default
+, nos llevamos una sorpresa:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print ing_a_esp
+\end_layout
+
+\begin_layout Verbatim
+
+{'one': 'uno', 'three': 'tres', 'two': 'dos'}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ ¡Los pares clave-valor no están en orden! Afortunadamente, no necesitamos
+ preocuparnos por el orden, ya que los elementos de un diccionario nunca
+ se indexan con índices enteros.
+ En lugar de eso, usamos las claves para buscar los valores correspondientes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print ing_a_esp['two']
+\end_layout
+
+\begin_layout Verbatim
+
+'dos'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La clave 
+\family typewriter
+'two'
+\family default
+ nos da el valor 
+\family typewriter
+'dos'
+\family default
+ aunque aparezca en el tercer par clave-valor.
+\end_layout
+
+\begin_layout Section
+Operaciones sobre diccionarios
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diccionario!operaciones
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diccionarios!operaciones sobre
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La sentencia 
+\family typewriter
+del
+\family default
+ elimina un par clave-valor de un diccionario.
+ Por ejemplo, el diccionario siguiente contiene los nombres de varias frutas
+ y el número de esas frutas en un almacén:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> inventario = {'manzanas': 430, 'bananas': 312, 
+\end_layout
+
+\begin_layout Verbatim
+
+       'naranjas': 525,   'peras': 217}
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print inventario
+\end_layout
+
+\begin_layout Verbatim
+
+{'naranjas': 525, 'manzanas': 430, 'peras': 217, 
+\end_layout
+
+\begin_layout Verbatim
+
+ 'bananas': 312}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si alguien compra todas las peras, podemos eliminar la entrada del diccionario:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> del inventario['peras']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print inventario
+\end_layout
+
+\begin_layout Verbatim
+
+{'naranjas': 525, 'manzanas': 430, 'bananas': 312}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ O si esperamos recibir más peras pronto, podemos simplemente cambiar el
+ inventario asociado con las peras:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> inventario['peras'] = 0
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print inventario
+\end_layout
+
+\begin_layout Verbatim
+
+{'naranjas': 525, 'manzanas': 430, 'peras': 0, 
+\end_layout
+
+\begin_layout Verbatim
+
+ 'bananas': 312}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La función 
+\family typewriter
+len
+\family default
+ también funciona con diccionarios; devuelve el número de pares clave-valor:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> len(inventario)
+\end_layout
+
+\begin_layout Verbatim
+
+4
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Métodos del diccionario
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diccionario!métodos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método!invocación
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diccionarios!métodos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+métodos sobre diccionarios
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+invocar métodos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un 
+\series bold
+método
+\series default
+ es similar a una función, acepta parámetros y devuelve un valor, pero la
+ sintaxis es diferente.
+ Por ejemplo, el método 
+\family typewriter
+keys
+\family default
+ acepta un diccionario y devuelve una lista con las claves que aparecen,
+ pero en lugar de la sintaxis de llamado de función 
+\family typewriter
+keys(ing_a_esp)
+\family default
+, usamos la sintaxis para un método 
+\family typewriter
+ing_a_esp.keys()
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+notación de punto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> ing_a_esp.keys()
+\end_layout
+
+\begin_layout Verbatim
+
+['one', 'three', 'two']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta forma de notación punto especifica el nombre de la función, 
+\family typewriter
+keys
+\family default
+, y el nombre del objeto al que se va a aplicar la función, 
+\family typewriter
+ing_a_esp
+\family default
+.
+ Los paréntesis indican que este método no admite parámetros.
+\end_layout
+
+\begin_layout Standard
+La llamada a un método se denomina 
+\series bold
+invocación
+\series default
+; en este caso, diríamos que estamos invocando 
+\family typewriter
+keys
+\family default
+ sobre el objeto 
+\family typewriter
+ing_a_esp
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+El método 
+\family typewriter
+values
+\family default
+ es similar; devuelve una lista de los valores del diccionario:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> ing_a_esp.values()
+\end_layout
+
+\begin_layout Verbatim
+
+['uno', 'tres', 'dos']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El método 
+\family typewriter
+items
+\family default
+ devuelve ambos, una lista de tuplas con los pares clave-valor del diccionario:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> ing_a_esp.items()
+\end_layout
+
+\begin_layout Verbatim
+
+[('one','uno'), ('three', 'tres'), ('two', 'dos')]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La sintaxis nos proporciona información muy útil acerca del tipo de datos.
+ Los corchetes indican que es una lista.
+ Los paréntesis indican que los elementos de la lista son tuplas.
+\end_layout
+
+\begin_layout Standard
+Si un método acepta un argumento, usa la misma sintaxis que una llamada
+ a una función.
+ Por ejemplo, el método 
+\family typewriter
+has_key
+\family default
+ acepta una clave y devuelve verdadero (1) si la clave aparece en el diccionario
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> ing_a_esp.has_key('one')
+\end_layout
+
+\begin_layout Verbatim
+
+True
+\end_layout
+
+\begin_layout Verbatim
+
+>>> ing_a_esp.has_key('deux')
+\end_layout
+
+\begin_layout Verbatim
+
+False
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si se invoca un método sin especificar un objeto, se genera un error.
+ En este caso, el mensaje de error no es de mucha ayuda:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> has_key('one')
+\end_layout
+
+\begin_layout Verbatim
+
+NameError: has_key
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Copiado y alias
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+asignación de alias
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+copiado
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clonado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Usted debe estar atento a los alias debido a la mutabilidad de los diccionarios.
+ Si dos variables se refieren al mismo objeto los cambios en una afectan
+ a la otra.
+\end_layout
+
+\begin_layout Standard
+Si quiere modificar un diccionario y mantener una copia del original, se
+ puede usar el método 
+\family typewriter
+copy
+\family default
+.
+ Por ejemplo, 
+\family typewriter
+opuestos
+\family default
+ es un diccionario que contiene pares de opuestos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> opuestos = {'arriba': 'abajo', 'derecho': 'torcido', 
+\end_layout
+
+\begin_layout Verbatim
+
+  'verdadero': 'falso'}
+\end_layout
+
+\begin_layout Verbatim
+
+>>> alias = opuestos
+\end_layout
+
+\begin_layout Verbatim
+
+>>> copia = opuestos.copy()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+alias
+\family default
+ y 
+\family typewriter
+opuestos
+\family default
+ se refieren al mismo objeto; 
+\family typewriter
+copia
+\family default
+ se refiere a una copia nueva del mismo diccionario.
+ Si modificamos 
+\family typewriter
+alias
+\family default
+, 
+\family typewriter
+opuestos
+\family default
+ también resulta cambiado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> alias['derecho'] = 'sentado'
+\end_layout
+
+\begin_layout Verbatim
+
+>>> opuestos['derecho']
+\end_layout
+
+\begin_layout Verbatim
+
+'sentado'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si modificamos 
+\family typewriter
+copia
+\family default
+, 
+\family typewriter
+opuestos
+\family default
+ no varía:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> copia['derecho'] = 'privilegio'
+\end_layout
+
+\begin_layout Verbatim
+
+>>> opuestos['derecho']
+\end_layout
+
+\begin_layout Verbatim
+
+'sentado'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Matrices dispersas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+matriz!dispersa
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista anidada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!anidada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "nested lists"
+
+\end_inset
+
+ usamos una lista de listas para representar una matriz.
+ Es una buena opción para una matriz en la que la mayoría de los valores
+ es diferente de cero, pero piense en una matriz como ésta:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/sparse.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La representación de la lista contiene un montón de ceros:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+
+>>> matriz = [ [0,0,0,1,0],
+\end_layout
+
+\begin_layout Verbatim
+
+           [0,0,0,0,0],
+\end_layout
+
+\begin_layout Verbatim
+
+           [0,2,0,0,0],
+\end_layout
+
+\begin_layout Verbatim
+
+           [0,0,0,0,0],
+\end_layout
+
+\begin_layout Verbatim
+
+           [0,0,0,3,0] ]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+Una posible alternativa consiste en usar un diccionario.
+ Como claves, podemos usar tuplas que contengan los números de fila y columna.
+ Ésta es la representación de la misma matriz por medio de un diccionario:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+
+>>> matriz = {(0,3): 1, (2, 1): 2, (4, 3): 3}
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+Sólo hay tres pares clave-valor, uno para cada elemento de la matriz diferente
+ de cero.
+ Cada clave es una tupla, y cada valor es un entero.
+\end_layout
+
+\begin_layout Standard
+Para acceder a un elemento de la matriz, podemos usar el operador 
+\family typewriter
+[]
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> matriz[0,3]
+\end_layout
+
+\begin_layout Verbatim
+
+1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Observe que la sintaxis para la representación por medio del diccionario
+ no es la misma de la representación por medio de la lista anidada.
+ En lugar de dos índices enteros, usamos un índice compuesto que es una
+ tupla de enteros.
+\end_layout
+
+\begin_layout Standard
+Hay un problema.
+ Si apuntamos a un elemento que es cero, se produce un error porque en el
+ diccionario no hay una entrada con esa clave:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> matriz[1,3]
+\end_layout
+
+\begin_layout Verbatim
+
+KeyError: (1, 3)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El método 
+\family typewriter
+get
+\family default
+ soluciona este problema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> matriz.get((0,3), 0)
+\end_layout
+
+\begin_layout Verbatim
+
+1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El primer argumento es la clave; el segundo argumento es el valor que debe
+ devolver 
+\family typewriter
+get
+\family default
+ en caso de que la clave no esté en el diccionario:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> matriz.get((1,3), 0)
+\end_layout
+
+\begin_layout Verbatim
+
+0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+get
+\family default
+ mejora sensiblemente la semántica del acceso a una matriz dispersa.
+ ¡Lástima que la sintaxis no sea tan clara!
+\end_layout
+
+\begin_layout Section
+Pistas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+pista
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función de Fibonacci
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si ha jugado con la función 
+\family typewriter
+fibonacci
+\family default
+ de la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "one more example"
+
+\end_inset
+
+, es posible que haya notado que cuanto más grande es el argumento que recibe,
+ más tiempo le cuesta ejecutarse.
+ De hecho, el tiempo de ejecución aumenta muy rápidamente.
+ En nuestra máquina, 
+\family typewriter
+fibonacci(20)
+\family default
+ acaba instantáneamente, 
+\family typewriter
+fibonacci(30)
+\family default
+ tarda más o menos un segundo, y 
+\family typewriter
+fibonacci(40)
+\family default
+ tarda una eternidad.
+\end_layout
+
+\begin_layout Standard
+Para entender por qué, observe este 
+\series bold
+gráfico de llamadas
+\series default
+ de 
+\family typewriter
+fibonacci
+\family default
+ con 
+\family typewriter
+n=4
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/fibonacci.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un gráfico de llamadas muestra un conjunto de cajas de función con líneas
+ que conectan cada caja con las cajas de las funciones a las que llama.
+ En lo alto del gráfico, 
+\family typewriter
+fibonacci
+\family default
+ con 
+\family typewriter
+n=4
+\family default
+ llama a 
+\family typewriter
+fibonacci
+\family default
+ con 
+\family typewriter
+n=3
+\family default
+ y 
+\family typewriter
+n=2
+\family default
+.
+ A su vez, 
+\family typewriter
+fibonacci
+\family default
+ con 
+\family typewriter
+n=3
+\family default
+ llama a 
+\family typewriter
+fibonacci
+\family default
+ con 
+\family typewriter
+n=2
+\family default
+ y 
+\family typewriter
+n=1
+\family default
+.
+ Y así sucesivamente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+caja de función
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+caja
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+gráfico de llamadas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuente cuántas veces se llama a 
+\family typewriter
+fibonacci(0)
+\family default
+ y 
+\family typewriter
+fibonacci(1)
+\family default
+.
+ Esta función es una solución ineficiente para el problema, y empeora mucho
+ a medida que crece el argumento.
+\end_layout
+
+\begin_layout Standard
+Una buena solución es llevar un registro de los valores que ya se han calculado
+ almacenándolos en un diccionario.
+ A un valor que ya ha sido calculado y almacenado para un uso posterior
+ se le llama 
+\series bold
+pista
+\series default
+.
+ Aquí hay una implementación de 
+\family typewriter
+fibonacci
+\family default
+ con pistas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+anteriores = {0:1, 1:1}
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+def fibonacci(n):
+\end_layout
+
+\begin_layout Verbatim
+
+  if anteriores.has_key(n):
+\end_layout
+
+\begin_layout Verbatim
+
+    return anteriores[n]
+\end_layout
+
+\begin_layout Verbatim
+
+  else:
+\end_layout
+
+\begin_layout Verbatim
+
+    nuevoValor = fibonacci(n-1) + fibonacci(n-2)
+\end_layout
+
+\begin_layout Verbatim
+
+    anteriores[n] = nuevoValor
+\end_layout
+
+\begin_layout Verbatim
+
+    return nuevoValor
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El diccionario llamado 
+\family typewriter
+anteriores
+\family default
+ mantiene un registro de los valores de Fibonacci que ya conocemos.
+ El programa comienza con sólo dos pares: 0 corresponde a 1 y 1 corresponde
+ a 1.
+\end_layout
+
+\begin_layout Standard
+Siempre que se llama a 
+\family typewriter
+fibonacci
+\family default
+ comprueba si el diccionario contiene el resultado ya calculado.
+ Si está ahí, la función puede devolver el valor inmediatamente sin hacer
+ más llamadas recursivas.
+ Si no, tiene que calcular el nuevo valor.
+ El nuevo valor se añade al diccionario antes de que la función retorne.
+\end_layout
+
+\begin_layout Standard
+Con esta versión de 
+\family typewriter
+fibonacci
+\family default
+, nuestra máquina puede calcular 
+\family typewriter
+fibonacci(40)
+\family default
+ en un abrir y cerrar de ojos.
+ Pero cuando intentamos calcular 
+\family typewriter
+fibonacci(50)
+\family default
+, nos encontramos con otro problema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desbordamiento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> fibonacci(50)
+\end_layout
+
+\begin_layout Verbatim
+
+OverflowError: integer addition
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La respuesta, como se verá en un momento, es 20.365.011.074.
+ El problema es que este número es demasiado grande para caber en un entero
+ de Python.
+ Se 
+\series bold
+desborda
+\series default
+.
+ Afortunadamente, hay una solución fácil para este problema.
+\end_layout
+
+\begin_layout Section
+Enteros largos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+enteros largos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipos de datos!enteros largos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+enteros!largos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Python proporciona un tipo llamado 
+\family typewriter
+long int
+\family default
+ que puede manejar enteros de cualquier tamaño.
+ Hay dos formas de crear un valor 
+\family typewriter
+long int
+\family default
+.
+ Una es escribir un entero con una 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ L
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ mayúscula al final:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type(1L)
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'long int'>
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La otra es usar la función 
+\family typewriter
+long
+\family default
+ para convertir un valor en 
+\family typewriter
+long int
+\family default
+.
+ 
+\family typewriter
+long
+\family default
+ acepta cualquier tipo numérico e incluso cadenas de dígitos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> long(1)
+\end_layout
+
+\begin_layout Verbatim
+
+1L
+\end_layout
+
+\begin_layout Verbatim
+
+>>> long(3.9)
+\end_layout
+
+\begin_layout Verbatim
+
+3L
+\end_layout
+
+\begin_layout Verbatim
+
+>>> long('57')
+\end_layout
+
+\begin_layout Verbatim
+
+57L
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Todas las operaciones matemáticas funcionan sobre los datos de tipo 
+\family typewriter
+long int
+\family default
+, así que no tenemos que hacer mucho para adaptar 
+\family typewriter
+fibonacci
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> anteriores = {0:1L, 1:1L}
+\end_layout
+
+\begin_layout Verbatim
+
+>>> fibonacci(50)
+\end_layout
+
+\begin_layout Verbatim
+
+20365011074L
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Simplemente cambiando el contenido inicial de 
+\family typewriter
+anteriores
+\family default
+ cambiamos el comportamiento de 
+\family typewriter
+fibonacci
+\family default
+.
+ Los primeros dos números de la secuencia son de tipo 
+\family typewriter
+long int
+\family default
+, así que todos los números subsiguientes lo serán también.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+forzado de tipo de datos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+coerción!tipo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Contar letras
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recuento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+histograma
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+compresión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el capítulo
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "strings"
+
+\end_inset
+
+ escribimos una función que contaba el número de apariciones de una letra
+ en una cadena.
+ Una versión más genérica de este problema es crear un histograma de las
+ letras de la cadena, o sea, cuántas veces aparece cada letra.
+\end_layout
+
+\begin_layout Standard
+Ese histograma podría ser útil para comprimir un archivo de texto.
+ Como las diferentes letras aparecen con frecuencias distintas, podemos
+ comprimir un archivo usando códigos cortos para las letras más habituales
+ y códigos más largos para las que aparecen con menor frecuencia.
+\end_layout
+
+\begin_layout Standard
+Los diccionarios facilitan una forma elegante de generar un histograma:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> cuentaLetras = {}
+\end_layout
+
+\begin_layout Verbatim
+
+>>> for letra in "Mississippi":
+\end_layout
+
+\begin_layout Verbatim
+
+...
+   cuentaLetras[letra] = cuentaLetras.get(letra, 0)+1
+\end_layout
+
+\begin_layout Verbatim
+
+...
+\end_layout
+
+\begin_layout Verbatim
+
+>>> cuentaLetras
+\end_layout
+
+\begin_layout Verbatim
+
+{'M': 1, 's': 4, 'p': 2, 'i': 4}
+\end_layout
+
+\begin_layout Verbatim
+
+>>>
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Inicialmente, tenemos un diccionario vacío.
+ Para cada letra de la cadena, buscamos el recuento actual (posiblemente
+ cero) y la incrementamos.
+ Al final, el diccionario contiene pares de letras y sus frecuencias.
+\end_layout
+
+\begin_layout Standard
+Puede ser más atractivo mostrar el histograma en orden alfabético.
+ Podemos hacerlo con los métodos 
+\family typewriter
+items
+\family default
+ y 
+\family typewriter
+sort
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> itemsLetras = cuentaLetras.items()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> itemsLetras.sort()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print itemsLetras
+\end_layout
+
+\begin_layout Verbatim
+
+[('M', 1), ('i', 4), ('p', 2), ('s', 4)]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Usted ya ha visto el método 
+\family typewriter
+items
+\family default
+ aplicable a los diccionarios; 
+\family typewriter
+sort
+\family default
+ es un método aplicable a listas.
+ Hay varios más, como 
+\family typewriter
+append
+\family default
+, 
+\family typewriter
+extend
+\family default
+ y 
+\family typewriter
+reverse
+\family default
+.
+ Consulte la documentación de Python para ver los detalles.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método!lista
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método de lista
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+Diccionario: es una colección de pares clave-valor que establece una corresponde
+ncia entre claves y valores.
+ Las claves pueden ser de cualquier tipo inmutable, los valores pueden ser
+ de cualquier tipo.
+\end_layout
+
+\begin_layout Description
+Clave: un valor que se usa para buscar una entrada en un diccionario.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Par clave-valor:
+\end_layout
+
+\end_inset
+
+ uno de los elementos de un diccionario, también llamado 
+\begin_inset Quotes eld
+\end_inset
+
+asociación
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Método: tipo de función al que se llama con una sintaxis diferente y al
+ que se invoca 
+\begin_inset Quotes eld
+\end_inset
+
+sobre
+\begin_inset Quotes erd
+\end_inset
+
+ un objeto.
+\end_layout
+
+\begin_layout Description
+Invocar: llamar a un método.
+\end_layout
+
+\begin_layout Description
+Pista: almacenamiento temporal de un valor precalculado, para evitar cálculos
+ redundantes.
+\end_layout
+
+\begin_layout Description
+Desbordamiento: resultado numérico que es demasiado grande para representarse
+ en formato numérico.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diccionario
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clave
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+par clave-valor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+pista
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+invocar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Standard
+Para cada función, agregue chequeo de tipos y pruebas unitarias.
+\end_layout
+
+\begin_layout Enumerate
+Como ejercicio, modifique 
+\family typewriter
+factorial
+\family default
+ de forma que produzca un 
+\family typewriter
+long int
+\family default
+ como resultado.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función booleana que averigue si una lista tiene algún elemento
+ duplicado usando un diccionario.
+\end_layout
+
+\begin_layout Enumerate
+Una cadena de ARN puede representarse como una lista en la que los elementos
+ pueden ser los caracteres A,C,G y U.
+ Escriba una función booleana que averigue si una lista de caracteres es
+ una cadena de ARN válida.
+\end_layout
+
+\begin_layout Enumerate
+Generalize la función anterior de forma que reciba una biosecuencia (ADN,
+ ARN ó Proteína) y un alfabeto de referencia para averiguar si está bien
+ formada.
+ Para ADN el alfabeto es A,C,T y G, para las proteínas es:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+A,R,N,D,C,E,Q,G,H,I,L,K,M,F,P,S,T,W,Y,V,U,O
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Escriba una función que reciba una cadena de ADN y cuente cuantos nucleotidos
+ de cada tipo tiene (cuantas veces tiene A,C,G y T) usando un diccionario.
+\end_layout
+
+\begin_layout Enumerate
+Generalize la función anterior de forma que reciba una biosecuencia (ADN,
+ ARN ó Proteína) y un alfabeto.
+ Debe contar cuantos elementos tiene de cada tipo usando un diccionario.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función producto que reciba una matriz dispersa M, implementada
+ con un diccionario, y un número.
+ Debe retornar la matriz que resulta de multiplicar cada elemento de M por
+ el número.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que reciba dos matrices dispersas, implementadas con
+ diccionarios, y las sume, produciendo otra matriz dispersa.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que reciba dos matrices dispersas, implementadas con
+ diccionarios, y las multiplique, produciendo otra matriz dispersa.
+ Base su solución en las dos soluciones anteriores.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función booleana que reciba una matriz dispersa y averigue si
+ es la matriz identidad.
+ 
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,4883 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+LyX source for textbook 
+\begin_inset Quotes eld
+\end_inset
+
+How to think like a computer scientist'' 
+\end_layout
+
+\begin_layout Plain Layout
+Copyright (c) 2001 Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Listas
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:listas"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+elemento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+secuencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una 
+\series bold
+lista
+\series default
+ es un conjunto ordenado de valores que se identifican por medio de un índice.
+ Los valores que componen una lista se denominan 
+\series bold
+elementos
+\series default
+.
+ Las listas son similares a las cadenas, que son conjuntos ordenados de
+ caracteres, pero son mas generales, ya que pueden tener elementos de cualquier
+ tipo de dato.
+ Las listas y las cadenas---y otras conjuntos ordenados que veremos--- se
+ denominan 
+\series bold
+secuencias
+\series default
+.
+\end_layout
+
+\begin_layout Section
+Creación de listas
+\end_layout
+
+\begin_layout Standard
+Hay varias formas de crear una nueva lista; la más simple es encerrar los
+ elementos entre corchetes (
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+[+
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+]+
+\end_layout
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+[10, 20, 30, 40]
+\end_layout
+
+\begin_layout Verbatim
+
+["correo", "lapiz", "carro"]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El primer ejemplo es una lista de cuatro enteros, la segunda, una lista
+ de tres cadenas.
+ Los elementos de una lista no tienen que tener el mismo tipo.
+ La siguiente lista contiene una cadena, un flotante, un entero y (mirabile
+ dictu) otra lista:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+["hola", 2.0, 5, [10, 20]]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Cuando una lista está contenida por otra se dice que está 
+\series bold
+anidada
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!anidada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las listas que contienen enteros consecutivos son muy comunes, así que Python
+ proporciona una forma de crearlas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> range(1,5)
+\end_layout
+
+\begin_layout Verbatim
+
+[1, 2, 3, 4]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La función 
+\family typewriter
+range
+\family default
+ toma dos argumentos y retorna una lista que contiene todos los enteros
+ desde el primero hasta el segundo, ¡incluyendo el primero y no el último!
+\end_layout
+
+\begin_layout Standard
+Hay otras formas de usar a 
+\family typewriter
+range
+\family default
+.
+ Con un solo argumento crea una lista que empieza en 0:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> range(10)
+\end_layout
+
+\begin_layout Verbatim
+
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si hay un tercer argumento, este especifica el espacio entre los valores
+ sucesivos, que se denomina el 
+\series bold
+tamaño del paso
+\series default
+.
+ Este ejemplo cuenta de 1 a 10 con un paso de tamaño 2:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> range(1, 10, 2)
+\end_layout
+
+\begin_layout Verbatim
+
+[1, 3, 5, 7, 9]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Finalmente, existe una lista especial que no contiene elementos.
+ Se denomina lista vacía, y se denota con 
+\family typewriter
+[]
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Con todas estas formas de crear listas sería decepcionante si no pudiéramos
+ asignar listas a variables o pasarlas como parámetros a funciones.
+ De hecho, podemos hacerlo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> vocabulario = ["mejorar", "castigar", "derrocar"]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> numeros = [17, 123]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> vacia = []
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print vocabulario, numeros, vacia
+\end_layout
+
+\begin_layout Verbatim
+
+["mejorar", "castigar", "derrocar"] [17, 123] []
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Accediendo a los elementos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!elemento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+acceso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La sintaxis para acceder a los elementos de una lista es la misma que usamos
+ en las cadenas---el operador corchete (
+\family typewriter
+[]
+\family default
+).
+ La expresión dentro de los corchetes especifica el índice.
+ Recuerde que los índices o posiciones empiezan desde 0:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+print numeros[0]
+\end_layout
+
+\begin_layout Verbatim
+
+numeros[1] = 5
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El operador corchete para listas puede aparecer en cualquier lugar de una
+ expresión.
+ Cuanto aparece al lado izquierdo de una asignación cambia uno de los elementos
+ de la lista de forma que el elemento 1 de 
+\family typewriter
+numeros
+\family default
+, que tenía el valor 123, ahora es 5.
+\end_layout
+
+\begin_layout Standard
+Cualquier expresión entera puede usarse como índice:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> numeros[3-2]
+\end_layout
+
+\begin_layout Verbatim
+
+5
+\end_layout
+
+\begin_layout Verbatim
+
+>>> numeros[1.0]
+\end_layout
+
+\begin_layout Verbatim
+
+TypeError: sequence index must be integer
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si usted intenta leer o escribir un elemento que no existe, obtiene un
+ error en tiempo de ejecución:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error en tiempo de ejecución
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> numeros[2] = 5
+\end_layout
+
+\begin_layout Verbatim
+
+IndexError: list assignment index out of range
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si el índice tiene un valor negativo, cuenta hacia atrás desde el final
+ de la lista:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> numeros[-1]
+\end_layout
+
+\begin_layout Verbatim
+
+5
+\end_layout
+
+\begin_layout Verbatim
+
+>>> numeros[-2]
+\end_layout
+
+\begin_layout Verbatim
+
+17
+\end_layout
+
+\begin_layout Verbatim
+
+>>> numeros[-3]
+\end_layout
+
+\begin_layout Verbatim
+
+IndexError: list index out of range
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+numeros[-1]
+\family default
+ es el último elemento de la lista, 
+\family typewriter
+numeros[-2]
+\family default
+ es el penúltimo, y 
+\family typewriter
+numeros[-3]
+\family default
+ no existe.
+\end_layout
+
+\begin_layout Standard
+Usualmente se usan variables de ciclo como índices de listas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+combatientes = ["guerra", "hambruna", "peste", "muerte"]
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+i = 0
+\end_layout
+
+\begin_layout Verbatim
+
+while i < 4:
+\end_layout
+
+\begin_layout Verbatim
+
+  print combatientes[i]
+\end_layout
+
+\begin_layout Verbatim
+
+  i = i + 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este ciclo 
+\family typewriter
+while
+\family default
+ cuenta de 0 a 4.
+ Cuando la variable de ciclo 
+\family typewriter
+i
+\family default
+ es 4, la condición falla y el ciclo termina.
+ El cuerpo del ciclo se ejecuta solamente cuando 
+\family typewriter
+i
+\family default
+ es 0, 1, 2, y 3.
+\end_layout
+
+\begin_layout Standard
+En cada iteración del ciclo, la variable 
+\family typewriter
+i
+\family default
+ se usa como un índice a la lista, imprimiendo el 
+\family typewriter
+i
+\family default
+-ésimo elemento.
+ Este patrón se denomina 
+\series bold
+recorrido de una lista
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!recorrido de una
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recorrido!lista
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Longitud de una lista
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+longitud
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!longitud
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La función 
+\family typewriter
+len
+\family default
+ retorna la longitud de una lista.
+ Es una buena idea usar este valor como límite superior de un ciclo en vez
+ de una constante.
+ De ésta forma, si la lista cambia, usted no tendrá que cambiar todos los
+ ciclos del programa, ellos funcionarán correctamente para listas de cualquier
+ tamaño:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+adjustpage{-2}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+combatientes = ["guerra", "hambruna", "peste", "muerte"]
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+i = 0
+\end_layout
+
+\begin_layout Verbatim
+
+while i < len(combatientes):
+\end_layout
+
+\begin_layout Verbatim
+
+  print combatientes[i]
+\end_layout
+
+\begin_layout Verbatim
+
+  i = i + 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La última vez que el ciclo se ejecuta 
+\family typewriter
+i
+\family default
+ es 
+\family typewriter
+len(combatientes) - 1
+\family default
+, que es la posición del último elemento.
+ Cuando 
+\family typewriter
+i
+\family default
+ es igual a 
+\family typewriter
+len(combatientes)
+\family default
+, la condición falla y el cuerpo no se ejecuta, lo que está muy bien , ya
+ que 
+\family typewriter
+len(combatientes)
+\family default
+ no es un índice válido.
+\end_layout
+
+\begin_layout Standard
+Aunque una lista puede contener a otra, la lista anidada se sigue viendo
+ como un elemento único.
+ La longitud de esta lista es cuatro:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+['basura!', 1, ['Brie', 'Roquefort', 'Pol le Veq'], 
+\end_layout
+
+\begin_layout Verbatim
+
+ [1, 2, 3]]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Pertenencia
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!pertenencia 
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador in
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador!in
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+in
+\family default
+ es un operador booleano que chequea la pertenencia de un valor a una secuencia.
+ Lo usamos en la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "in"
+
+\end_inset
+
+ con cadenas, pero también funciona con listas y otras secuencias:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> combatientes = ["guerra", "hambruna", "peste", "muerte"]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> 'peste' in combatientes
+\end_layout
+
+\begin_layout Verbatim
+
+True
+\end_layout
+
+\begin_layout Verbatim
+
+>>> 'corrupcion' in combatientes
+\end_layout
+
+\begin_layout Verbatim
+
+False
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ya que 
+\begin_inset Quotes eld
+\end_inset
+
+peste
+\begin_inset Quotes erd
+\end_inset
+
+ es un miembro de la lista 
+\family typewriter
+combatientes
+\family default
+, el operador 
+\family typewriter
+in
+\family default
+ retorna cierto.
+ Como 
+\begin_inset Quotes eld
+\end_inset
+
+corrupcion
+\begin_inset Quotes erd
+\end_inset
+
+ no está en la lista, 
+\family typewriter
+in
+\family default
+ retorna falso.
+\end_layout
+
+\begin_layout Standard
+Podemos usar el operador lógico 
+\family typewriter
+not
+\family default
+ en combinación con el 
+\family typewriter
+in
+\family default
+ para chequear si un elemento no es miembro de una lista:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> 'corrupcion' not in combatientes
+\end_layout
+
+\begin_layout Verbatim
+
+True
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Listas y ciclos 
+\family typewriter
+for
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ciclo for
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!ciclo for
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recorrido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El ciclo 
+\family typewriter
+for
+\family default
+ que vimos en la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "for"
+
+\end_inset
+
+ también funciona con listas.
+ La sintaxis generalizada de un ciclo 
+\family typewriter
+for
+\family default
+ es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+for VARIABLE in LISTA:
+\end_layout
+
+\begin_layout Verbatim
+
+  CUERPO
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esto es equivalente a:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+i = 0
+\end_layout
+
+\begin_layout Verbatim
+
+while i < len(LISTA):
+\end_layout
+
+\begin_layout Verbatim
+
+  VARIABLE = LISTA[i]
+\end_layout
+
+\begin_layout Verbatim
+
+  CUERPO
+\end_layout
+
+\begin_layout Verbatim
+
+  i = i + 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El ciclo 
+\family typewriter
+for
+\family default
+ es más conciso porque podemos eliminar la variable de ciclo 
+\family typewriter
+i
+\family default
+.
+ Aquí está el ciclo de la sección anterior escrito con un 
+\family typewriter
+for
+\family default
+ en vez de un while:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+for combatiente in combatientes:
+\end_layout
+
+\begin_layout Verbatim
+
+  print combatiente
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Casi se lee como en español: 
+\begin_inset Quotes eld
+\end_inset
+
+Para (cada) combatiente en (la lista de) combatientes, imprima (el nombre
+ del) combatiente
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Cualquier expresión que cree una lista puede usarse en un ciclo 
+\family typewriter
+for
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+for numero in range(20):
+\end_layout
+
+\begin_layout Verbatim
+
+  if numero % 2 == 0:
+\end_layout
+
+\begin_layout Verbatim
+
+    print  numero
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+for fruta in ["banano", "manzana", "pera"]:
+\end_layout
+
+\begin_layout Verbatim
+
+  print "Me gustaria comer " + fruta + "s!"
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El primer ejemplo imprime todos los números pares entre uno y diecinueve.
+ El segundo expresa entusiasmo sobre varias frutas.
+\end_layout
+
+\begin_layout Section
+Operaciones sobre listas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operaciones sobre listas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operación!sobre listas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El operador 
+\family typewriter
++
+\family default
+ concatena listas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+concatenación!de listas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> a = [1, 2, 3]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b = [4, 5, 6]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> c = a + b
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print c
+\end_layout
+
+\begin_layout Verbatim
+
+[1, 2, 3, 4, 5, 6]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Similarmente, el operador 
+\family typewriter
+*
+\family default
+ repite una lista un número de veces determinado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+repetición!de listas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> [0] * 4
+\end_layout
+
+\begin_layout Verbatim
+
+[0, 0, 0, 0]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> [1, 2, 3] * 3
+\end_layout
+
+\begin_layout Verbatim
+
+[1, 2, 3, 1, 2, 3, 1, 2, 3]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El primer ejemplo repite 
+\family typewriter
+[0]
+\family default
+ cuatro veces.
+ El segundo repite 
+\family typewriter
+[1, 2, 3]
+\family default
+ tres veces.
+\end_layout
+
+\begin_layout Section
+Segmentos de listas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+segmento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!segmento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las operaciones para sacar segmentos de cadenas que vimos en la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "slice"
+
+\end_inset
+
+ también funcionan con listas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista[1:3]
+\end_layout
+
+\begin_layout Verbatim
+
+['b', 'c']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista[:4]
+\end_layout
+
+\begin_layout Verbatim
+
+['a', 'b', 'c', 'd']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista[3:]
+\end_layout
+
+\begin_layout Verbatim
+
+['d', 'e', 'f']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista[:]
+\end_layout
+
+\begin_layout Verbatim
+
+['a', 'b', 'c', 'd', 'e', 'f']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Las listas son mutables
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+mutable!lista
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!mutable
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las listas son mutables y no tienen la restricción de las cadenas, esto
+ quiere decir que podemos cambiar los elementos internos usando el operador
+ corchete al lado izquierdo de una asignación.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> fruta = ["banano", "manzana", "pera"]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> fruta[0] = "mandarina"
+\end_layout
+
+\begin_layout Verbatim
+
+>>> fruta[-1] = "naranja"
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print fruta
+\end_layout
+
+\begin_layout Verbatim
+
+['mandarina', 'manzana', 'naranja']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Con el operador segmento podemos actualizar varios elementos a la vez:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista[1:3] = ['x', 'y']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print lista
+\end_layout
+
+\begin_layout Verbatim
+
+['a', 'x', 'y', 'd', 'e', 'f']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ También podemos eliminar varios elementos asignándoles la lista vacía:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista[1:3] = []
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print lista
+\end_layout
+
+\begin_layout Verbatim
+
+['a', 'd', 'e', 'f']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Igualmente, podemos agregar elementos a una lista apretándolos dentro de
+ un segmento vacío en la posición que deseamos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista = ['a', 'd', 'f']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista[1:1] = ['b', 'c']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print lista
+\end_layout
+
+\begin_layout Verbatim
+
+['a', 'b', 'c', 'd', 'f']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista[4:4] = ['e']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print lista
+\end_layout
+
+\begin_layout Verbatim
+
+['a', 'b', 'c', 'd', 'e', 'f']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Otras operaciones sobre listas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operación sobre listas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Usar segmentos para insertar y borrar elemenos de una lista es extraño y
+ propenso a errores.
+ Hay mecanismos alternativos más legibles como 
+\family typewriter
+del
+\family default
+ que elimina un elemento de una lista.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+borrado!en listas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+borrado en listas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+del
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> a = ['one', 'two', 'three']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> del a[1]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> a
+\end_layout
+
+\begin_layout Verbatim
+
+['one', 'three']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como es de esperar, 
+\family typewriter
+del
+\family default
+ recibe índices negativos, y causa errores en tiempo de ejecución si el
+ índice está fuera de rango.
+\end_layout
+
+\begin_layout Standard
+También se puede usar un segmento como argumento a 
+\family typewriter
+del
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> del lista[1:5]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print lista
+\end_layout
+
+\begin_layout Verbatim
+
+['a', 'f']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como de costumbre, los segmentos seleccionan todos los elementos hasta
+ el segundo índice, sin incluirlo.
+\end_layout
+
+\begin_layout Standard
+La función 
+\family typewriter
+append
+\family default
+ agrega un elemento (o una lista) al final de una lista existente:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> a = ['uno', 'dos']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> a.append('tres')
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print a
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Objetos y valores
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objeto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si ejecutamos estas asignaciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+a = "banana"
+\end_layout
+
+\begin_layout Verbatim
+
+b = "banana"
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ sabemos que 
+\family typewriter
+a
+\family default
+ y 
+\family typewriter
+b
+\family default
+ se referirán a una cadena con las letras 
+\family typewriter
+
+\begin_inset Quotes eld
+\end_inset
+
+banana
+\begin_inset Quotes erd
+\end_inset
+
+
+\family default
+.
+ Pero no podemos afirmar que sea la 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ misma
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ cadena.
+\end_layout
+
+\begin_layout Standard
+Hay dos situaciones posibles:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/list1.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En un caso, 
+\family typewriter
+a
+\family default
+ y 
+\family typewriter
+b
+\family default
+ se refieren a cosas distintas que tienen el mismo valor.
+ En el segundo caso, se refieren a la misma cosa.
+ Estas 
+\begin_inset Quotes eld
+\end_inset
+
+cosas
+\begin_inset Quotes erd
+\end_inset
+
+ tienen nombres---se denominan 
+\series bold
+objetos
+\series default
+.
+ Un objeto es algo a lo que se puede referir una variable.
+\end_layout
+
+\begin_layout Standard
+Cada objeto tiene un 
+\series bold
+identificador
+\series default
+ único, que podemos obtener con la función 
+\family typewriter
+id
+\family default
+.
+ Imprimiendo el identificador de 
+\family typewriter
+a
+\family default
+ y 
+\family typewriter
+b
+\family default
+, podemos saber si se refieren al mismo objeto.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> id(a)
+\end_layout
+
+\begin_layout Verbatim
+
+135044008
+\end_layout
+
+\begin_layout Verbatim
+
+>>> id(b)
+\end_layout
+
+\begin_layout Verbatim
+
+135044008
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ De hecho, obtenemos el mismo identificador dos veces, lo que nos dice que
+ Python sólo creó una cadena, y que 
+\family typewriter
+a
+\family default
+ y 
+\family typewriter
+b
+\family default
+ se refieren a ella.
+\end_layout
+
+\begin_layout Standard
+Las listas, por otro lado, se comportan de manera diferente.
+ Cuando creamos dos listas obtenemos dos objetos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> a = [1, 2, 3]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b = [1, 2, 3]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> id(a)
+\end_layout
+
+\begin_layout Verbatim
+
+135045528
+\end_layout
+
+\begin_layout Verbatim
+
+>>> id(b)
+\end_layout
+
+\begin_layout Verbatim
+
+135041704
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así que el diagrama de estados luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/list2.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+a
+\family default
+ y 
+\family typewriter
+b
+\family default
+ tienen el mismo valor pero no se refieren al mismo objeto.
+\end_layout
+
+\begin_layout Section
+Alias
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+alias
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+referencia!alias
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como las variables se pueden referir a objetos, si asignamos una variable
+ a otra, las dos se referirán al mismo objeto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> a = [1, 2, 3]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b = a
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En este caso el diagrama de estados luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/list3.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como la misma lista tiene dos nombres distintos, 
+\family typewriter
+a
+\family default
+ y 
+\family typewriter
+b
+\family default
+, podemos decir que b es un 
+\series bold
+alias
+\series default
+ de a.
+ Los cambios que se hagan a través de un alias afectan al otro:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b[0] = 5
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print a
+\end_layout
+
+\begin_layout Verbatim
+
+[5, 2, 3]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Aunque este comportamiento puede ser útil, algunas veces puede ser indeseable.
+ En general, es más seguro evitar los alias cuando se está trabajando con
+ objetos mutables.
+ Para objetos inmutables no hay problema.
+ Esta es la razón por la que Python tiene la libertad de crear alias a cadenas
+ cuando ve la oportunidad de economizar memoria.
+ Pero tenga en cuenta que esto puede variar en las diferentes versiones
+ de Python; por lo tanto no es recomendable realizar programas que dependan
+ de este comportamiento.
+\end_layout
+
+\begin_layout Section
+Clonando listas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!clonando
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clonando
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si queremos modificar una lista y conservar una copia de la original, necesitamo
+s realizar una copia de la lista, no sólo de la referencia.
+ Este proceso se denomina 
+\series bold
+clonación
+\series default
+, para evitar la ambigüedad de la palabra 
+\begin_inset Quotes eld
+\end_inset
+
+copiar
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La forma más sencilla de clonar una lista es usar el operador segmento:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> a = [1, 2, 3]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b = a[:]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print b
+\end_layout
+
+\begin_layout Verbatim
+
+[1, 2, 3]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Al tomar cualquier segmento de 
+\family typewriter
+a
+\family default
+ creamos una nueva lista.
+ En este caso el segmento comprende toda la lista.
+\end_layout
+
+\begin_layout Standard
+Ahora podemos realizar cambios a 
+\family typewriter
+b
+\family default
+ sin preocuparnos por 
+\family typewriter
+a
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> b[0] = 5
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print a
+\end_layout
+
+\begin_layout Verbatim
+
+[1, 2, 3]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Quote
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Como ejercicio, dibuje un diagrama de estados para 
+\family typewriter
+a
+\family default
+ y 
+\family typewriter
+b
+\family default
+ antes y después de este cambio.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Listas como parámetros
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+listas!como parámetros
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+parámetro
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+parámetro!lista
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pasar una lista como argumento es pasar una referencia, no una copia de
+ ella.
+ Por ejemplo, la función 
+\family typewriter
+cabeza
+\family default
+ toma una lista como parámetro y retorna el primer elemento:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def cabeza(lista):
+\end_layout
+
+\begin_layout Verbatim
+
+  return lista[0]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Se puede usar así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> numeros = [1, 2, 3]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> cabeza(numeros)
+\end_layout
+
+\begin_layout Verbatim
+
+1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El parámetro 
+\family typewriter
+lista
+\family default
+ y la variable 
+\family typewriter
+numeros
+\family default
+ son alias para el mismo objeto.
+ El diagrama de estados luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/stack5.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como el objeto lista está compartido por dos marcos, lo dibujamos en el
+ medio.
+\end_layout
+
+\begin_layout Standard
+Si una función modifica un parámetro de tipo lista, el que hizo el llamado
+ ve los cambios.
+ Por ejemplo, 
+\family typewriter
+borrarCabeza
+\family default
+ borra el primer elemento de una lista:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def borrarCabeza(lista):
+\end_layout
+
+\begin_layout Verbatim
+
+  del lista[0]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Y se puede usar así::
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> numeros = [1, 2, 3]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> borrarCabeza(numeros)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print numeros
+\end_layout
+
+\begin_layout Verbatim
+
+[2, 3]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si una función retorna una lista, retorna una referencia a ella.
+ Por ejemplo, la función 
+\family typewriter
+cola
+\family default
+ retorna una lista que contiene todos los elementos, excepto el primero:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def cola(lista):
+\end_layout
+
+\begin_layout Verbatim
+
+  return lista[1:]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+cola
+\family default
+ se puede usar así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> numeros = [1, 2, 3]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> resto = cola(numeros)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print resto
+\end_layout
+
+\begin_layout Verbatim
+
+[2, 3]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como el valor de retorno se creó con el operador segmento, es una nueva
+ lista.
+ La creación de 
+\family typewriter
+resto
+\family default
+, y los cambios subsecuentes sobre esta variable no tienen efecto sobre
+ 
+\family typewriter
+numeros
+\family default
+.
+\end_layout
+
+\begin_layout Section
+Listas anidadas
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "nested lists"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+listas anidadas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!anidada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una lista anidada aparece como elemento dentro de otra lista.
+ En la siguiente lista, el tercer elemento es una lista anidada:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista = ["hola", 2.0, 5, [10, 20]]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si imprimimos 
+\family typewriter
+lista[3]
+\family default
+, vemos 
+\family typewriter
+[10, 20]
+\family default
+.
+ Para tomar un elemento de la lista anidada podemos realizar dos pasos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> elt = lista[3]
+\end_layout
+
+\begin_layout Verbatim
+
+>>> elt[0]
+\end_layout
+
+\begin_layout Verbatim
+
+10
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ O, los podemos combinar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> lista[3][1]
+\end_layout
+
+\begin_layout Verbatim
+
+20
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Las aplicaciones del operador corchete se evalúan de izquierda a derecha,
+ así que ésta expresión obtiene el elemento 3 de 
+\family typewriter
+lista
+\family default
+ y extrae de allí el elemento 1.
+\end_layout
+
+\begin_layout Section
+Matrices
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+matriz
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista!anidada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las listas anidadas se usan a menudo para representar matrices.
+ Por ejemplo, la matriz:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/matrix.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+se puede representar así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+matriz
+\family default
+ es una lista con tres elementos, cada uno es una fila.
+ Podemos seleccionar una fila de la manera usual:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> matriz[1]
+\end_layout
+
+\begin_layout Verbatim
+
+[4, 5, 6]
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ O podemos extraer un elemento individual de la matriz usando dos índices:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> matriz[1][1]
+\end_layout
+
+\begin_layout Verbatim
+
+5
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El primero escoge la fila, y el segundo selecciona la columna.
+ Aunque esta forma de representar matrices es común, no es la única posibilidad.
+ Una pequeña variación consiste en usar una lista de columnas en lugar de
+ una lista de filas.
+ Más adelante veremos una alternativa más radical, usando un diccionario.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diccionario
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+fila
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+columna
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Cadenas y listas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función split
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función join
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dos de las funciones más usadas del módulo 
+\family typewriter
+string
+\family default
+ implican listas de cadenas.
+ 
+\family typewriter
+split
+\family default
+ separa una cadena en una lista de palabras.
+ Por defecto, cualquier número de espacios en blanco sirven como criterio
+ de separación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> import string
+\end_layout
+
+\begin_layout Verbatim
+
+>>> cancion = "La vida es un ratico..."
+\end_layout
+
+\begin_layout Verbatim
+
+>>> string.split(cancion)
+\end_layout
+
+\begin_layout Verbatim
+
+['La', 'vida', 'es', 'un', 'ratico...']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Un argumento opcional denominado 
+\series bold
+delimitador
+\series default
+ se puede usar para especificar que caracteres usar como criterio de separación.
+ El siguiente ejemplo usa la cadena 
+\family typewriter
+an
+\family default
+ como delimitador:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> string.split( "La rana que canta", "an")
+\end_layout
+
+\begin_layout Verbatim
+
+['La r', 'a que c', 'ta']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Note que el delimitador no aparece en la lista resultante.
+\end_layout
+
+\begin_layout Standard
+La función 
+\family typewriter
+join
+\family default
+ es la inversa de 
+\family typewriter
+split
+\family default
+.
+ Toma una lista de cadenas y las concatena con un espacio entre cada par:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> m = ['La', 'vida', 'es', 'un', 'ratico']
+\end_layout
+
+\begin_layout Verbatim
+
+>>> string.join(m)
+\end_layout
+
+\begin_layout Verbatim
+
+'La vida es un ratico'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como 
+\family typewriter
+split
+\family default
+, 
+\family typewriter
+join
+\family default
+ puede recibir un argumento adicional separador que se inserta entre los
+ elementos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> string.join(m, '_')
+\end_layout
+
+\begin_layout Verbatim
+
+'La_vida_es_un_ratico'
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+Lista: colección de objetos que recibe un nombre.
+ Cada objeto se identifica con un índice o número entero positivo.
+\end_layout
+
+\begin_layout Description
+Índice: valor o variable entero que indica la posición de un elemento en
+ una lista.
+\end_layout
+
+\begin_layout Description
+Elemento: uno de los valores dentro de una lista (u otra secuencia).
+ El operador corchete selecciona elementos de una lista.
+\end_layout
+
+\begin_layout Description
+Secuencia: los tipos de datos que contienen un conjunto ordenado de elementos,
+ identificados por índices.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Lista anidada:
+\end_layout
+
+\end_inset
+
+ lista que es elemento de otra lista.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Recorrido de una lista:
+\end_layout
+
+\end_inset
+
+ es el acceso secuencial de cada elemento de una lista.
+\end_layout
+
+\begin_layout Description
+Objeto: una cosa a la que una variable se puede referir.
+\end_layout
+
+\begin_layout Description
+Alias: cuando varias variables tienen referencias hacia el mismo objeto.
+\end_layout
+
+\begin_layout Description
+Clonar: crear un objeto con el mismo valor que un objeto preexistente.
+ Copiar una referencia a un objeto crea un alias, pero no clona el objeto.
+\end_layout
+
+\begin_layout Description
+Delimitador: carácter o cadena que se usa para indicar el lugar donde una
+ cadena debe ser separada.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+índice
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+secuencia
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+elemento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lista anidada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recorrido de una lista
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+objeto
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+alias
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clonar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+delimitador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Standard
+Para cada función, agregue chequeo de tipos y pruebas unitarias.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función llamada medio que reciba una lista y retorne una nueva
+ lista que contenga todos los elementos de la lista de entrada excepto el
+ primero y el último.
+ Por ejemplo, medio([1,2,3,4]) debe retornar [2,3].
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función llamada cortar que reciba una lista y la modifique eliminand
+o el primer y el último elemento, retornando None.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función que recorra una lista de cadenas imprimiendo la longitud
+ de cada una.
+ ¿Qué pasa si usted le pasa un entero a 
+\family typewriter
+len
+\family default
+?
+\end_layout
+
+\begin_layout Enumerate
+Describa la relación entre las expresiones:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\family typewriter
+cadena
+\family default
+ 
+\begin_inset space \hfill{}
+\end_inset
+
+
+\family typewriter
+string.join(string.split(cadena))
+\end_layout
+
+\begin_layout Standard
+¿Son iguales para todas las cadenas?
+\end_layout
+
+\begin_layout Standard
+¿Cuando serían diferentes?
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Escriba una función llamada 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+esta_ordenada+
+\end_layout
+
+\end_inset
+
+ que tome una lista como parámetro y retorne True si la lista está ordenada
+ de forma ascendente o False si no lo está.
+ Usted puede asumir como precondición que los elementos son comparables
+ con los operadores relacionales.
+ Por ejemplo:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+esta_ordenada([1,2,2])+
+\end_layout
+
+\end_inset
+
+ debe retornar True
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+esta_ordenada(['b','a'])+
+\end_layout
+
+\end_inset
+
+ debe retornar False.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Dos palabras son anagramas si se pueden reordenar las letras de una palabra
+ para formar la otra.
+ Escriba una función llamada 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+es_anagrama+
+\end_layout
+
+\end_inset
+
+ que tome dos cadenas y retorne True si son anagramas y False en caso contrario.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función llamada 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+eliminar_duplicados+
+\end_layout
+
+\end_inset
+
+ que reciba una lista y retorne una nueva lista con los elementos únicos
+ de la original.
+ No necesitan estar en el mismo orden.
+\end_layout
+
+\begin_layout Enumerate
+Escriba dos versiones de una función que lea el archivo palabras.txt y construya
+ una lista con un elemento por palabra.
+ Una versión usará el método append y la otra la construcción t=t+[x].
+ ¿Cual es mas lenta? ¿Por qué? Pista: use el módulo time para medir lo que
+ tarda la ejecución de las versiones.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+palabras.txt: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://cic.javerianacali.edu.co/abecerra/files/palabras.txt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Solución: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://thinkpython.com/code/wordlist.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Si hay un grupo de 23 personas, ¿cual es la probabilidad de que dos tengan
+ la misma fecha de nacimiento?.
+ Este valor puede estimarse generando muestras aleatorias de 23 cumpleaños
+ y contando las coincidencias.
+ Pista: consulte la función randint del módulo random.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Solución: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://thinkpython.com/code/birthday.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Dos palabras son un 
+\begin_inset Quotes eld
+\end_inset
+
+par inverso
+\begin_inset Quotes erd
+\end_inset
+
+ si cada una es la inversa de la otra.
+ Escriba un programa que encuentre todos los pares inversos del español
+ (palabras.txt).
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Solución: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://thinkpython.com/code/reverse_pair.py
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Dos palabras se entretejen si tomando las letras de las dos, alternándose,
+ se puede formar una nueva palabra.
+ Por ejemplo: 'pie' y 'en' se entretejen en 'peine'.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Solución: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://thinkpython.com/code/interlock.py
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

@@ -1,0 +1,1940 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Clases y funciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "time"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Hora
+\end_layout
+
+\begin_layout Standard
+Como otro ejemplo de tipo de dato definido por el usuario definiremos una
+ clase llamada 
+\family typewriter
+Hora
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Hora:
+\end_layout
+
+\begin_layout Verbatim
+
+  pass
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora podemos crear un nuevo objeto 
+\family typewriter
+Hora
+\family default
+ y asignarle atributos para las horas, minutos y segundos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+tiempo = Hora()
+\end_layout
+
+\begin_layout Verbatim
+
+tiempo.hora = 11
+\end_layout
+
+\begin_layout Verbatim
+
+tiempo.minutos = 59
+\end_layout
+
+\begin_layout Verbatim
+
+tiempo.segundos = 30
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El diagrama para el objeto 
+\family typewriter
+Hora
+\family default
+ luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/time.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Funciones puras
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función pura
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo función!pura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En las siguientes secciones escribiremos dos versiones de una función denominada
+ 
+\family typewriter
+sumarHoras
+\family default
+, que calcule la suma de dos 
+\family typewriter
+Horas
+\family default
+.
+ Esto demostrará dos clases de funciones: las puras y los modificadores.
+\end_layout
+
+\begin_layout Standard
+La siguiente es una versión de 
+\family typewriter
+sumarHoras
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def sumarHoras(t1, t2):
+\end_layout
+
+\begin_layout Verbatim
+
+  sum = Hora()
+\end_layout
+
+\begin_layout Verbatim
+
+  sum.hora = t1.hora + t2.hora
+\end_layout
+
+\begin_layout Verbatim
+
+  sum.minutos = t1.minutos + t2.minutos
+\end_layout
+
+\begin_layout Verbatim
+
+  sum.segundos = t1.segundos + t2.segundos
+\end_layout
+
+\begin_layout Verbatim
+
+  return sum
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La función crea un nuevo objeto 
+\family typewriter
+Hora
+\family default
+, inicializa sus atributos y retorna una referencia hacia el nuevo objeto.
+ Esto se denomina 
+\series bold
+función pura
+\series default
+, porque no modifica ninguno de los objetos que se le pasaron como parámetro
+ ni tiene efectos laterales, como desplegar un valor o leer entrada del
+ usuario.
+\end_layout
+
+\begin_layout Standard
+Aquí hay un ejemplo de uso de esta función.
+ Crearemos dos objetos 
+\family typewriter
+Hora
+\family default
+: 
+\family typewriter
+horaPan
+\family default
+, que contiene el tiempo que le toma a un panadero hacer pan y 
+\family typewriter
+horaActual
+\family default
+, que contiene la hora actual.
+ Luego usaremos 
+\family typewriter
+sumarHoras
+\family default
+ para averiguar a qué hora estará listo el pan.
+ Si no ha terminado la función 
+\family typewriter
+imprimirHora
+\family default
+ aún, adelántese a la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "printTime"
+
+\end_inset
+
+ antes de intentar esto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> horaActual = Hora()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> horaActual.hora = 9
+\end_layout
+
+\begin_layout Verbatim
+
+>>> horaActual.minutos = 14
+\end_layout
+
+\begin_layout Verbatim
+
+>>> horaActual.segundos =  30
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+>>> horaPan = Hora()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> horaPan.hora =  3
+\end_layout
+
+\begin_layout Verbatim
+
+>>> horaPan.minutos =  35
+\end_layout
+
+\begin_layout Verbatim
+
+>>> horaPan.segundos =  0
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+>>> horaComer = sumarHoras(horaActual, horaPan)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> imprimirHora(horaComer)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La salida de este programa es 
+\family typewriter
+12:49:30
+\family default
+, que está correcta.
+ Por otro lado, hay casos en los que no funciona bien.
+ ¿Puede pensar en uno?
+\end_layout
+
+\begin_layout Standard
+El problema radica en que esta función no considera los casos donde el número
+ de segundos o minutos suman más de sesenta.
+ Cuando eso ocurre tenemos que 
+\begin_inset Quotes eld
+\end_inset
+
+acarrear
+\begin_inset Quotes erd
+\end_inset
+
+ los segundos extra a la columna de minutos.
+ También puede pasar lo mismo con los minutos.
+\end_layout
+
+\begin_layout Standard
+Aquí hay una versión correcta:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+
+def sumarHoras(t1, t2):
+\end_layout
+
+\begin_layout Verbatim
+
+  sum = Hora()
+\end_layout
+
+\begin_layout Verbatim
+
+  sum.hora = t1.hora + t2.hora
+\end_layout
+
+\begin_layout Verbatim
+
+  sum.minutos = t1.minutos + t2.minutos
+\end_layout
+
+\begin_layout Verbatim
+
+  sum.segundos = t1.segundos + t2.segundos
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  if sum.segundos >= 60:
+\end_layout
+
+\begin_layout Verbatim
+
+    sum.segundos = sum.segundos - 60
+\end_layout
+
+\begin_layout Verbatim
+
+    sum.minutos = sum.minutos + 1
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  if sum.minutos >= 60:
+\end_layout
+
+\begin_layout Verbatim
+
+    sum.minutos = sum.minutos - 60
+\end_layout
+
+\begin_layout Verbatim
+
+    sum.hora = sum.hora + 1
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  return sum
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aunque ahora ha quedado correcta, ha empezado a agrandarse.
+ Más adelante sugeriremos un enfoque alternativo que produce un código más
+ corto.
+\end_layout
+
+\begin_layout Section
+Modificadoras
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "increment"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+modificadora
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo función!modificadora
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A veces es deseable que una función modifique uno o varios de los objetos
+ que recibe como parámetros.
+ Usualmente, el código que hace el llamado a la función conserva una referencia
+ a los objetos que está pasando, así que cualquier cambio que la función
+ les haga será evidenciado por dicho código.
+ Este tipo de funciones se denominan 
+\series bold
+modificadoras
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+incrementar
+\family default
+, que agrega un número de segundos a un objeto 
+\family typewriter
+Hora
+\family default
+, se escribiría más naturalmente como función modificadora.
+ Un primer acercamiento a la función luciría así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+adjustpage{-2}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+
+def incrementar(h, segundos):
+\end_layout
+
+\begin_layout Verbatim
+
+  h.segundos = h.segundos + segundos
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  if h.segundos >= 60:
+\end_layout
+
+\begin_layout Verbatim
+
+    h.segundos = h.segundos - 60
+\end_layout
+
+\begin_layout Verbatim
+
+    h.minutos = h.minutos + 1
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  if h.minuto >= 60:
+\end_layout
+
+\begin_layout Verbatim
+
+    h.minutos = h.minutos - 60
+\end_layout
+
+\begin_layout Verbatim
+
+    h.hora = h.hora + 1
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  return h
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+La primera línea ejecuta la operación básica, las siguientes consideran
+ los casos especiales que ya habíamos visto.
+\end_layout
+
+\begin_layout Standard
+¿Es correcta esta función? ¿Que pasa si el parámetro 
+\family typewriter
+segundos
+\family default
+ es mucho más grande que sesenta? En ese caso, no sólo es suficiente añadir
+ uno, tenemos que sumar de uno en uno hasta que 
+\family typewriter
+segundos
+\family default
+ sea menor que sesenta.
+ Una solución consiste en reemplazar las sentencias 
+\family typewriter
+if
+\family default
+ por sentencias 
+\family typewriter
+while
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def incrementar(hora, segundos):
+\end_layout
+
+\begin_layout Verbatim
+
+  hora.segundos = hora.segundos + segundos
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  while hora.segundos >= 60:
+\end_layout
+
+\begin_layout Verbatim
+
+    hora.segundos = hora.segundos - 60
+\end_layout
+
+\begin_layout Verbatim
+
+    hora.minutos = hora.minutos + 1
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  while hora.minutos >= 60:
+\end_layout
+
+\begin_layout Verbatim
+
+    hora.minutos = hora.minutos - 60
+\end_layout
+
+\begin_layout Verbatim
+
+    hora.hora = hora.hora + 1
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  return hora
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  time.segundos = time.segundos + segundos
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora, la función sí es correcta, aunque no sigue el proceso más eficiente.
+\end_layout
+
+\begin_layout Section
+¿Cual es el mejor estilo?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+estilo de programación funcional
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+adjustpage{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Todo lo que puede hacerse con modificadoras también se puede hacer con funciones
+ puras.
+ De hecho, algunos lenguajes de programación sólo permiten funciones puras.
+ La evidencia apoya la tesis de que los programas que usan solamente funciones
+ puras se desarrollan más rápido y son menos propensos a errores que los
+ programas que usan modificadoras.
+ Sin embargo, las funciones modificadoras, a menudo, son convenientes y,
+ a menudo, los programas funcionales puros son menos eficientes.
+\end_layout
+
+\begin_layout Standard
+En general, le recomendamos que escriba funciones puras cada vez que sea
+ posible y recurrir a las modificadoras solamente si hay una ventaja en
+ usar este enfoque.
+ Esto se denomina un 
+\series bold
+estilo de programación funcional
+\series default
+.
+\end_layout
+
+\begin_layout Section
+Desarrollo con prototipos vs.
+ planificación
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "convert"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desarrollo con prototipos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En este capítulo mostramos un enfoque de desarrollo de programas que denominamos
+ 
+\series bold
+desarrollo con prototipos
+\series default
+.
+ Para cada problema escribimos un bosquejo (o prototipo) que ejecutará el
+ cálculo básico y lo probará en unos cuantos casos de prueba, corrigiendo
+ errores a medida que surgen.
+\end_layout
+
+\begin_layout Standard
+Aunque este enfoque puede ser efectivo, puede conducirnos a código innecesariame
+nte complicado ---ya que considera muchos casos especiales---y poco confiable---
+ya que es difícil asegurar que hemos descubierto todos los errores.
+\end_layout
+
+\begin_layout Standard
+Una alternativa es el 
+\series bold
+desarrollo planificado
+\series default
+, en el que la profundización en el dominio del problema puede darnos una
+ comprensión profunda que facilita bastante la programación.
+ En el caso anterior, comprendimos que un objeto 
+\family typewriter
+Hora
+\family default
+ realmente es un número de tres dígitos en base 60! El componente 
+\family typewriter
+segundos
+\family default
+ contiene las 
+\begin_inset Quotes eld
+\end_inset
+
+unidades,
+\begin_inset Quotes erd
+\end_inset
+
+ el componente 
+\family typewriter
+minutos
+\family default
+ la 
+\begin_inset Quotes eld
+\end_inset
+
+columna de sesentas,
+\begin_inset Quotes erd
+\end_inset
+
+ y el componente 
+\family typewriter
+hora
+\family default
+ contiene la 
+\begin_inset Quotes eld
+\end_inset
+
+columna de tres mil seiscientos.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando escribimos 
+\family typewriter
+sumarHoras
+\family default
+ e 
+\family typewriter
+incrementar
+\family default
+, realmente estábamos haciendo una suma en base 60, razón por la cual teníamos
+ que efectuar un acarreo de una columna a la siguiente.
+\end_layout
+
+\begin_layout Standard
+Esta observación sugiere otro enfoque al problema---podemos convertir un
+ objeto 
+\family typewriter
+Hora
+\family default
+ en un número único y aprovecharnos del hecho de que el computador sabe
+ realizar aritmética.
+ La siguiente función convierte un objeto 
+\family typewriter
+Hora
+\family default
+ en un entero:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def convertirASegundos(t):
+\end_layout
+
+\begin_layout Verbatim
+
+  minutos = t.hora * 60 + t.minutos
+\end_layout
+
+\begin_layout Verbatim
+
+  segundos = minutos * 60 + t.segundos
+\end_layout
+
+\begin_layout Verbatim
+
+  return segundos
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora necesitamos una forma de convertir desde entero a un objeto 
+\family typewriter
+Hora
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def crearHora(segundos):
+\end_layout
+
+\begin_layout Verbatim
+
+  h = Hora()
+\end_layout
+
+\begin_layout Verbatim
+
+  h.hora = segundos/3600
+\end_layout
+
+\begin_layout Verbatim
+
+  segundos = segundos - h.hora * 3600
+\end_layout
+
+\begin_layout Verbatim
+
+  h.minutos = segundos/60
+\end_layout
+
+\begin_layout Verbatim
+
+  segundos = segundos - h.minutos * 60
+\end_layout
+
+\begin_layout Verbatim
+
+  h.segundos = segundos
+\end_layout
+
+\begin_layout Verbatim
+
+  return h
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Usted debe pensar unos minutos para convencerse de que esta técnica sí
+ convierte, de una base a otra, correctamente.
+ Asumiendo que ya está convencido, se pueden usar las funciones anteriores
+ para reescribir 
+\family typewriter
+sumarHoras
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def sumarHoras(t1, t2):
+\end_layout
+
+\begin_layout Verbatim
+
+  segundos = convertirASegundos(t1) + convertirASegundos(t2)
+\end_layout
+
+\begin_layout Verbatim
+
+  return crearHora(segundos)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta versión es mucho más corta que la original, y es mucho más fácil de
+ demostrar que es correcta (asumiendo, como de costumbre, que las funciones
+ que llama son correctas).
+\end_layout
+
+\begin_layout Section
+Generalización
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+generalización
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Desde cierto punto de vista, convertir de base 60 a base 10 y viceversa
+ es más difícil que calcular solamente con horas.
+ La conversión de bases es más abstracta, mientras que nuestra intuición
+ para manejar horas está más desarrollada.
+\end_layout
+
+\begin_layout Standard
+Pero si tenemos la intuición de tratar las horas como números en base 60
+ y hacemos la inversión de escribir las funciones de conversión (
+\family typewriter
+convertirASegundos
+\family default
+ y 
+\family typewriter
+crearHora
+\family default
+), obtenemos un programa más corto, legible, depurable y confiable.
+\end_layout
+
+\begin_layout Standard
+También facilita la adición de más características.
+ Por ejemplo, piense en el problema de restar dos 
+\family typewriter
+Hora
+\family default
+s para averiguar el tiempo que transcurre entre ellas.
+ La solución ingenua haría resta llevando préstamos.
+ En cambio, usar las funciones de conversión sería mas fácil.
+\end_layout
+
+\begin_layout Standard
+Irónicamente, algunas veces el hacer de un problema algo más difícil (o
+ más general) lo hace más fácil (porque hay menos casos especiales y menos
+ oportunidades para caer en errores).
+\end_layout
+
+\begin_layout Section
+Algoritmos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+algoritmo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando usted escribe una solución general para una clase de problemas, en
+ vez de encontrar una solución específica a un solo problema, ha escrito
+ un 
+\series bold
+algoritmo
+\series default
+.
+ Mencionamos esta palabra antes, pero no la definimos cuidadosamente.
+ No es fácil de definir, así que intentaremos dos enfoques.
+\end_layout
+
+\begin_layout Standard
+Primero, considere algo que no es un algoritmo.
+ Cuando usted aprendió a multiplicar dígitos, probablemente memorizó la
+ tabla de multiplicación.
+ De hecho, usted memorizó 100 soluciones específicas.
+ Este tipo de conocimiento no es algorítmico.
+\end_layout
+
+\begin_layout Standard
+Pero si usted fuera 
+\begin_inset Quotes eld
+\end_inset
+
+perezoso,
+\begin_inset Quotes erd
+\end_inset
+
+ probablemente aprendió a hacer trampa por medio de algunos trucos.
+ Por ejemplo, para encontrar el producto entre 
+\begin_inset Formula $n$
+\end_inset
+
+ y 9, usted puede escribir 
+\begin_inset Formula $n-1$
+\end_inset
+
+ como el primer dígito y 
+\begin_inset Formula $10-n$
+\end_inset
+
+ como el segundo.
+ Este truco es una solución general para multiplicar cualquier dígito por
+ el 9.
+ ¡Este es un algoritmo!
+\end_layout
+
+\begin_layout Standard
+Similarmente, las técnicas que aprendió para hacer suma con acarreo ( llevando
+ para la columna hacia la derecha), resta con préstamos, y división larga,
+ todas son algoritmos.
+ Una de las características de los algoritmos es que no requieren inteligencia
+ para ejecutarse.
+ Son procesos mecánicos en el que cada paso sigue al anterior de acuerdo
+ con un conjunto de reglas sencillas.
+\end_layout
+
+\begin_layout Standard
+En nuestra opinión, es vergonzoso que los seres humanos pasemos tanto tiempo
+ en la escuela aprendiendo a ejecutar algoritmos que, literalmente, no requieren
+ inteligencia.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, el proceso de diseñar algoritmos es interesante, intelectualmente
+ desafiante y una parte central de lo que denominamos programación.
+\end_layout
+
+\begin_layout Standard
+Algunas cosas que la gente hace naturalmente sin dificultad o pensamiento
+ consciente, son las mas difíciles de expresar algorítmicamente.
+ Entender el lenguaje natural es una de ellas.
+ Todos lo hacemos, pero hasta ahora nadie ha sido capaz de explicar 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ como
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ lo hacemos, al menos no con un algoritmo.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Función pura:
+\end_layout
+
+\end_inset
+
+ función que no modifica ninguno de los objetos que recibe como parámetros.
+ La mayoría de las funciones puras son fructíferas.
+\end_layout
+
+\begin_layout Description
+Modificadora: función que cambia uno o varios de los objetos que recibe
+ como parámetros.
+ La mayoría de los modificadoras no retornan nada.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Estilo de programación funcional
+\end_layout
+
+\end_inset
+
+ estilo de diseño de programas en el que la mayoría de funciones son puras.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Desarrollo con prototipos:
+\end_layout
+
+\end_inset
+
+ es la forma de desarrollar programas empezando con un prototipo que empieza
+ a mejorarse y probarse gradualmente.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Desarrollo planeado:
+\end_layout
+
+\end_inset
+
+ es la forma de desarrollar programas que implica un conocimiento de alto
+ nivel sobre el problema y mas planeación que el desarrollo incremental
+ o el desarrollo con prototipos.
+\end_layout
+
+\begin_layout Description
+Algoritmo: conjunto de instrucciones para resolver una clase de problemas
+ por medio de un proceso mecánico, no inteligente.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función pura
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+modificadora
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+estilo de programació funcional
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desarrollo incremental
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desarrollo!incremental
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desarrollo planeado
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+desarrollo!planeado
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+algoritmo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Enumerate
+Reescriba la función 
+\family typewriter
+incrementar
+\family default
+ de forma que no contenga ciclos y siga siendo correcta.
+\end_layout
+
+\begin_layout Enumerate
+Reescriba 
+\family typewriter
+incrementar
+\family default
+ usando convertirASegundos y crearHora.
+\end_layout
+
+\begin_layout Enumerate
+Reescriba 
+\family typewriter
+incrementar
+\family default
+ como una función pura, y escriba llamados a funciones de las dos versiones.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función 
+\family typewriter
+imprimirHora
+\family default
+ que reciba un objeto 
+\family typewriter
+Hora
+\family default
+ como argumento y lo imprima de la forma 
+\family typewriter
+horas:minutos:segundos
+\family default
+.
+\end_layout
+
+\begin_layout Enumerate
+Escriba una función booleana 
+\family typewriter
+despues
+\family default
+ que reciba dos objetos 
+\family typewriter
+Hora
+\family default
+, 
+\family typewriter
+t1
+\family default
+ y 
+\family typewriter
+t2
+\family default
+ como argumentos, y retorne cierto si 
+\family typewriter
+t1
+\family default
+ va después de 
+\family typewriter
+t2
+\family default
+ cronológicamente y falso en caso contrario.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

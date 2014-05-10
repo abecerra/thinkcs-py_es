@@ -1,0 +1,2024 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Interludio 2: Creando un nuevo tipo de datos 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "overloading"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo de dato!definido por el usuario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los lenguajes de programación orientados a objetos permiten a los programadores
+ crear nuevos tipos de datos que se comportan de manera muy similar a los
+ tipos primitivos.
+ Exploraremos esta característica construyendo una clase 
+\family typewriter
+Fraccionario
+\family default
+ que se comporte como los tipos de datos numéricos primitivos (enteros y
+ flotantes).
+\end_layout
+
+\begin_layout Standard
+Los números fraccionario o racionales son valores que se pueden expresar
+ como una división entre dos números enteros, como 
+\begin_inset Formula $\frac{1}{3}$
+\end_inset
+
+.
+ El número superior es el numerador y el inferior es es el denominador.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+racional
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+fracción
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+numerador
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+denominador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La clase 
+\family typewriter
+Fraccion
+\family default
+ empieza con un método constructor que recibe como parámetros al numerador
+ y al denominador:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+adjustpage{-2}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+
+class Fraccion:
+\end_layout
+
+\begin_layout Verbatim
+
+  def __init__(self, numerador, denominador=1):
+\end_layout
+
+\begin_layout Verbatim
+
+    self.numerador = numerador
+\end_layout
+
+\begin_layout Verbatim
+
+    self.denominador = denominador
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+El denominador es opcional.
+ Una Fracción con un solo parámetro representa a un número entero.
+ Si el numerador es 
+\begin_inset Formula $n$
+\end_inset
+
+, construimos la fracción 
+\begin_inset Formula $n/1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El siguiente paso consiste en escribir un método 
+\family typewriter
+__str__
+\family default
+ que despliegue las fracciones de una manera natural.
+ Como estamos acostumbrados a la notación 
+\begin_inset Quotes eld
+\end_inset
+
+numerador/denominador
+\begin_inset Quotes erd
+\end_inset
+
+, lo más natural es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Fraccion:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def __str__(self):
+\end_layout
+
+\begin_layout Verbatim
+
+    return "%d/%d" % (self.numerador, self.denominador)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para realizar pruebas, ponemos este código en un archivo 
+\family typewriter
+Fraccion.py
+\family default
+ y lo importamos en el intérprete de Python.
+ Ahora creamos un objeto fracción y lo imprimimos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> from Fraccion import Fraccion
+\end_layout
+
+\begin_layout Verbatim
+
+>>> s = Fraccion(5,6)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print "La fraccion es", s
+\end_layout
+
+\begin_layout Verbatim
+
+La fraccion es 5/6
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El método 
+\family typewriter
+print
+\family default
+, automáticamente invoca al método 
+\family typewriter
+__str__
+\family default
+ de manera implícita.
+\end_layout
+
+\begin_layout Section
+Multiplicación de fracciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+multiplicación!de fracciones
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+fracciones!multiplicación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nos gustaría aplicar los mismos operadores de suma, resta, multiplicación
+ y división a las fracciones.
+ Para lograr esto podemos sobrecargar los operadores matemáticos en la clase
+ 
+\family typewriter
+Fraccion
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sobrecarga
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operadores!sobrecarga de
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador matemático
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La multiplicación es la operación más sencilla entre fraccionarios.
+ El resultado de multiplicar dos fracciones a y v es una nueva fracción
+ en la que el numerador es el producto de los dos numeradores (de a y b)
+ y el denominador es el producto de los dos denominadores (de a y b).
+\end_layout
+
+\begin_layout Standard
+Python define que el método 
+\family typewriter
+__mul__
+\family default
+ se puede definir en una clase para sobrecargar el operador 
+\family typewriter
+*
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Fraccion:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def __mul__(self, otro):
+\end_layout
+
+\begin_layout Verbatim
+
+    return Fraccion(self.numerador*otro.numerador,
+\end_layout
+
+\begin_layout Verbatim
+
+                    self.denominador*otro.denominador)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Podemos probar este método calculando un producto sencillo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print Fraccion(5,6) * Fraccion(3,4)
+\end_layout
+
+\begin_layout Verbatim
+
+15/24
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Funciona, pero se puede mejorar.
+ Podemos manejar el caso en el que se multiplique una fracción por un número
+ entero.
+ Por medio de la función 
+\family typewriter
+type
+\family default
+ se puede probar si 
+\family typewriter
+otro
+\family default
+ es un entero y convertirlo a una fracción antes de realizar el producto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Fraccion:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def __mul__(self, otro):
+\end_layout
+
+\begin_layout Verbatim
+
+    if type(otro) == type(5):
+\end_layout
+
+\begin_layout Verbatim
+
+      otro = Fraccion(otro)
+\end_layout
+
+\begin_layout Verbatim
+
+    return Fraccion(self.numerador   * otro.numerador,
+\end_layout
+
+\begin_layout Verbatim
+
+                    self.denominador * otro.denominador)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora, la multiplicación entre enteros y fracciones funciona, pero sólo
+ si la fracción es el operando a la izquierda :
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print Fraccion(5,6) * 4
+\end_layout
+
+\begin_layout Verbatim
+
+20/6
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print 4 * Fraccion(5,6)
+\end_layout
+
+\begin_layout Verbatim
+
+TypeError: __mul__ nor __rmul__ defined for these operands
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para evaluar un operador binario como la multiplicación, Python chequea
+ el operando izquierdo primero, para ver si su clase define el método 
+\family typewriter
+__mul__
+\family default
+, y que tenga soporte para el tipo del segundo operando.
+ En este caso el operador primitivo para multiplicar enteros no soporta
+ las fracciones.
+\end_layout
+
+\begin_layout Standard
+Después, Python chequea si el operando a la derecha provee un método 
+\family typewriter
+__rmul__
+\family default
+ que soporte el tipo del operando de la izquierda.
+ En este caso, como no hay definición de 
+\family typewriter
+__rmul__
+\family default
+ en la clase 
+\family typewriter
+Fraccion
+\family default
+, se genera un error de tipo.
+\end_layout
+
+\begin_layout Standard
+Hay una forma sencilla de definir 
+\family typewriter
+__rmul__
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Fraccion:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  __rmul__ = __mul__
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta asignación dice que 
+\family typewriter
+__rmul__
+\family default
+ contiene el mismo código que 
+\family typewriter
+__mul__
+\family default
+.
+ Si ahora evaluamos 
+\family typewriter
+4 * Fraccion(5,6)
+\family default
+, Python llama a 
+\family typewriter
+__rmul__
+\family default
+ y le pasa al 4 como parámetro:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print 4 * Fraccion(5,6)
+\end_layout
+
+\begin_layout Verbatim
+
+20/6
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como 
+\family typewriter
+__rmul__
+\family default
+ tiene el mismo código que 
+\family typewriter
+__mul__
+\family default
+, y el método 
+\family typewriter
+__mul__
+\family default
+ puede recibir un parámetro entero, nuestra multiplicación de fracciones
+ funciona bien.
+\end_layout
+
+\begin_layout Section
+Suma de fracciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+suma!de fracciones
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+fracciones!suma
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La suma es más complicada que la multiplicación.
+ La suma 
+\begin_inset Formula $a/b+c/d$
+\end_inset
+
+ da como resultado 
+\begin_inset Formula $\frac{(ad+cb)}{bd}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Basándonos en la multiplicación, podemos escribir los métodos 
+\family typewriter
+__add__
+\family default
+ y 
+\family typewriter
+__radd__
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Fraccion:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def __add__(self, otro):
+\end_layout
+
+\begin_layout Verbatim
+
+    if type(otro) == type(5):
+\end_layout
+
+\begin_layout Verbatim
+
+      otro = Fraccion(otro)
+\end_layout
+
+\begin_layout Verbatim
+
+    return Fraccion(self.numerador   * otro.denominador +
+\end_layout
+
+\begin_layout Verbatim
+
+                    self.denominador * otro.numerador,
+\end_layout
+
+\begin_layout Verbatim
+
+                    self.denominador * otro.denominador)
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  __radd__ = __add__
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Podemos probar estos métodos con objetos 
+\family typewriter
+Fraccion
+\family default
+ y con números enteros.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print Fraccion(5,6) + Fraccion(5,6)
+\end_layout
+
+\begin_layout Verbatim
+
+60/36
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print Fraccion(5,6) + 3
+\end_layout
+
+\begin_layout Verbatim
+
+23/6
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print 2 + Fraccion(5,6)
+\end_layout
+
+\begin_layout Verbatim
+
+17/6
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Los primeros ejemplos llaman al método 
+\family typewriter
+__add__
+\family default
+; el último ejemplo llama al método 
+\family typewriter
+__radd__
+\family default
+.
+\end_layout
+
+\begin_layout Section
+El algoritmo de Euclides
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+máximo divisor común
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Euclides
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+pseudocódigo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+simplificar
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En el ejemplo anterior, calculamos 
+\begin_inset Formula $5/6+5/6$
+\end_inset
+
+ y obtuvimos 
+\begin_inset Formula $60/36$
+\end_inset
+
+.
+ Es correcto, pero no es la manera más sencilla de presentar la respuesta.
+ Para 
+\series bold
+simplificar
+\series default
+ la fracción tenemos que dividir el numerador y el denominador por su 
+\series bold
+máximo divisor común (MDC)
+\series default
+, que para este caso es 12.
+ Entonces, un resultado mas sencillo es 
+\begin_inset Formula $5/3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En general, cada vez que creamos un nuevo objeto de tipo 
+\family typewriter
+Fraccion
+\family default
+ deberiamos simplificarlo dividiendo el numerador y el denominador por su
+ MDC.
+ Si la fracción no se puede simplificar, el MDC es 1.
+\end_layout
+
+\begin_layout Standard
+Euclides de Alejandría (aprox.
+ 325--265 A.C) presentó un algoritmo para encontrar el MDC de dos números
+ enteros 
+\begin_inset Formula $m$
+\end_inset
+
+ y 
+\begin_inset Formula $n$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Quote
+Si 
+\begin_inset Formula $n$
+\end_inset
+
+ divide a 
+\begin_inset Formula $m$
+\end_inset
+
+ exactamente, entonces 
+\begin_inset Formula $n$
+\end_inset
+
+ es el MDC.
+ Sino, el MDC de 
+\begin_inset Formula $m$
+\end_inset
+
+ y 
+\begin_inset Formula $n$
+\end_inset
+
+ es el MDC de 
+\begin_inset Formula $n$
+\end_inset
+
+ y el residuo de la división 
+\begin_inset Formula $m/n$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta definición recursiva se puede implementar en una función:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+def MDC (m, n):
+\end_layout
+
+\begin_layout Verbatim
+
+  if m % n == 0:
+\end_layout
+
+\begin_layout Verbatim
+
+    return n
+\end_layout
+
+\begin_layout Verbatim
+
+  else:
+\end_layout
+
+\begin_layout Verbatim
+
+    return MDC(n, m%n)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En la primera línea el operador residuo nos permite chequear si n divide
+ a n exactamente.
+ En la última línea, lo usamos para calcular el residuo de la división.
+\end_layout
+
+\begin_layout Standard
+Como todas las operaciones que hemos escrito crean nuevas fracciones como
+ resultado, podemos simplificar todos los valores de retorno modificando
+ el método constructor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Fraccion:
+\end_layout
+
+\begin_layout Verbatim
+
+  def __init__(self, numerador, denominador=1):
+\end_layout
+
+\begin_layout Verbatim
+
+    g = MDC (numerador, denominador)
+\end_layout
+
+\begin_layout Verbatim
+
+    self.numerador   =   numerador / g
+\end_layout
+
+\begin_layout Verbatim
+
+    self.denominador = denominador / g
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Ahora, cada vez que creamos una nueva 
+\family typewriter
+Fraccion
+\family default
+, ¡se simplifica!.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> Fraccion(100,-36)
+\end_layout
+
+\begin_layout Verbatim
+
+-25/9
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Una característica adicional que nos provee 
+\family typewriter
+MDC
+\family default
+ es que si la fracción es negativa, el signo menos siempre se mueve hacia
+ el numerador.
+\end_layout
+
+\begin_layout Section
+Comparando fracciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+comparación!de fracciones
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+fracciones!comparación de
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si vamos a comparar dos objetos 
+\family typewriter
+Fraccion
+\family default
+, digamos 
+\family typewriter
+a
+\family default
+ y 
+\family typewriter
+b
+\family default
+, evaluando la expresión 
+\family typewriter
+a == b
+\family default
+.
+ Como la implementación de 
+\family typewriter
+==
+\family default
+ chequea igualdad superficial de objetos por defecto, sólo retornará cierto
+ si 
+\family typewriter
+a
+\family default
+ y 
+\family typewriter
+b
+\family default
+ 
+\shape italic
+son
+\shape default
+ el mismo objeto.
+\end_layout
+
+\begin_layout Standard
+Es mucho más probable que deseemos retornar cierto si 
+\begin_inset Formula $a$
+\end_inset
+
+ y 
+\begin_inset Formula $b$
+\end_inset
+
+ tienen el mismo valor ---esto es, chequear igualdad profunda.
+\end_layout
+
+\begin_layout Standard
+Tenemos que enseñarle a las fracciones cómo compararse entre sí.
+ Como vimos en la sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "comparecard"
+
+\end_inset
+
+, podemos sobrecargar todos los operadores de comparación por medio de la
+ implementación de un método 
+\family typewriter
+__cmp__
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Por convención, el método 
+\family typewriter
+__cmp__
+\family default
+ retorna un número negativo si 
+\family typewriter
+self
+\family default
+ es menos que 
+\family typewriter
+otro
+\family default
+, cero si son iguales, y un número positivo si 
+\family typewriter
+self
+\family default
+ es mayor que 
+\family typewriter
+otro
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+La forma más sencilla de comparar fracciones consiste en hacer una multiplicació
+n cruzada.
+ Si 
+\begin_inset Formula $a/b>c/d$
+\end_inset
+
+, entonces 
+\begin_inset Formula $ad>bc$
+\end_inset
+
+.
+ Con esto en mente, implementamos 
+\family typewriter
+__cmp__
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Fraccion:
+\end_layout
+
+\begin_layout Verbatim
+
+  ...
+\end_layout
+
+\begin_layout Verbatim
+
+  def __cmp__(self, otro):
+\end_layout
+
+\begin_layout Verbatim
+
+    dif = (self.numerador  * otro.denominador -
+\end_layout
+
+\begin_layout Verbatim
+
+            otro.numerador * self.denominador)
+\end_layout
+
+\begin_layout Verbatim
+
+    return dif
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si 
+\family typewriter
+self
+\family default
+ es mayor que 
+\family typewriter
+otro
+\family default
+, entonces 
+\family typewriter
+dif
+\family default
+ será positivo.
+ Si 
+\family typewriter
+otro
+\family default
+ es mayor, 
+\family typewriter
+dif
+\family default
+ será negativo.
+ Si son iguales, 
+\family typewriter
+dif
+\family default
+ es cero.
+\end_layout
+
+\begin_layout Section
+Extendiendo las fracciones
+\end_layout
+
+\begin_layout Standard
+Todavía no hemos terminado.
+ Tenemos que implementar la resta sobrecargando el método 
+\family typewriter
+__sub__
+\family default
+ y la división con el método 
+\family typewriter
+__div__
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Podemos restar por medio de la suma si antes negamos (cambiamos de signo)
+ al segundo operando.
+ También podemos dividir por medio de la multiplicación si antes invertimos
+ el segundo operando.
+\end_layout
+
+\begin_layout Standard
+Siguiendo este razonamiento, una forma de realizar las operaciones resta
+ y división consiste en definir primero la negación por medio de la sobrecarga
+ de 
+\family typewriter
+__neg__
+\family default
+ y la inversión sobre sobrecargando a 
+\family typewriter
+__invert__
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Un paso adicional sería implementar 
+\family typewriter
+__rsub__
+\family default
+ y 
+\family typewriter
+__rdiv__
+\family default
+.
+ Desafortunadamente no podemos usar el mismo truco que aplicamos para la
+ suma y la multiplicación, porque la resta y la división no son conmutativas.
+ En estas operaciones el orden de los operandos altera el resultado, así
+ que no podemos asignar a 
+\family typewriter
+__rsub__
+\family default
+ y a 
+\family typewriter
+__rdiv__
+\family default
+ los método 
+\family typewriter
+__sub__
+\family default
+ y 
+\family typewriter
+__div__
+\family default
+, respectivamente.
+\end_layout
+
+\begin_layout Standard
+Para realizar la 
+\series bold
+negación unaria
+\series default
+, sobrecargamos a 
+\family typewriter
+__neg__
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador unario
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+negación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos calcular potencias sobrecargando a 
+\family typewriter
+__pow__
+\family default
+, pero la implementación tiene un caso difícil: si el exponente no es un
+ entero, puede que no sea posible representar el resultado como una 
+\family typewriter
+Fraccion
+\family default
+.
+ Por ejemplo, la siguiente expresión 
+\family typewriter
+Fraccion(2) ** Fraccion(1,2)
+\family default
+ es la raíz cuadrada de 2, que es un número irracional (no puede representarse
+ por ninguna fracción).
+ Así que no es fácil escribir una función general para 
+\family typewriter
+__pow__
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+irracional
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay otra extensión a la clase 
+\family typewriter
+Fraccion
+\family default
+ que usted puede imaginar.
+ Hasta aquí, hemos asumido que el numerador y el denominador son enteros.
+ También podemos permitir que sean de tipo long.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Máximo divisor común (MDC):
+\end_layout
+
+\end_inset
+
+ el entero positivo más grande que divide exactamente a dos números (por
+ ejemplo, el numerador y el denominador en una fracción).
+\end_layout
+
+\begin_layout Description
+Simplificar: cambiar una fracción en otra equivalente que tenga un MDC de
+ 1.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+negación unaria:
+\end_layout
+
+\end_inset
+
+ la operación que calcula un inverso aditivo, usualmente representada con
+ un signo menos.
+ Es 
+\begin_inset Quotes eld
+\end_inset
+
+unaria
+\begin_inset Quotes erd
+\end_inset
+
+ en contraposición con el menos binario que representa a la resta.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+máximo divisor común
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+simplificar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+negación unaria
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Enumerate
+Complemente la implementación de la clase 
+\family typewriter
+Fraccion
+\family default
+ para que soporte denominadores y numeradores de tipo long (enteros grandes).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Agruege la operación resta
+\end_layout
+
+\begin_layout Enumerate
+Agruege la operación división
+\end_layout
+
+\begin_layout Enumerate
+Agruege la operación exponenciación.
+ 
+\end_layout
+
+\end_body
+\end_document

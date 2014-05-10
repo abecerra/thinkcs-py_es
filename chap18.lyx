@@ -1,0 +1,1929 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source Por textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Pilas
+\end_layout
+
+\begin_layout Section
+Tipos abstractos de datos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipos abstractos de datos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TAD
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+encapsulamiento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los tipos de datos que ha visto hasta el momento son concretos, en el sentido
+ que hemos especificado completamente como se implementan.
+ Por ejemplo, la clase 
+\family typewriter
+Carta
+\family default
+ representa una carta por medio de dos enteros.
+ Pero esa no es la única forma de representar una carta; hay muchas representaci
+ones alternativas.
+\end_layout
+
+\begin_layout Standard
+Un 
+\series bold
+tipo abstracto de datos
+\series default
+, o TAD, especifica un conjunto de operaciones (o métodos) y la semántica
+ de las operaciones (lo que hacen), pero no especifica la implementación
+ de las operaciones.
+ Eso es lo que los hace abstractos.
+\end_layout
+
+\begin_layout Standard
+¿Qué es lo que los hace tan útiles?
+\end_layout
+
+\begin_layout Itemize
+La tarea de especificar un algoritmo se simplifica si se pueden denotar
+ las operaciones sin tener que pensar al mismo tiempo como se implementan.
+\end_layout
+
+\begin_layout Itemize
+Como usualmente hay muchas formas de implementar un TAD, puede ser provechoso
+ escribir un algoritmo que pueda usarse con cualquier implementación alternativa.
+\end_layout
+
+\begin_layout Itemize
+Los TADs bien conocidos, como el TAD Pila de este capítulo, a menudo se
+ encuentran implementados en las bibliotecas estándar de los lenguajes de
+ programación, así que pueden escribirse una sola vez y usarse muchas veces.
+\end_layout
+
+\begin_layout Itemize
+Las operaciones de los TADs nos proporcionan un lenguaje de alto nivel para
+ especificar algoritmos.
+\end_layout
+
+\begin_layout Standard
+Cuando hablamos de TADs hacemos la distinción entre el código que utiliza
+ el TAD, denominado código 
+\series bold
+cliente
+\series default
+, del código que implementa el TAD, llamado código 
+\series bold
+proveedor
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cliente
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+proveedor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+El TAD Pila
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+pila
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+colección
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TAD!Pila
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como ya hemos aprendido a usar otras colecciones como los diccionarios y
+ las listas, en este capítulo exploraremos un TAD muy general, la 
+\series bold
+pila
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Una pila es una colección, esto es, una estructura de datos que contiene
+ múltiples elementos.
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+interfaz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un TAD se define por las operaciones que se pueden ejecutar sobre él, lo
+ que recibe el nombre de 
+\series bold
+interfaz
+\series default
+.
+ La interfaz de una pila comprende las siguientes operaciones:
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+__init__
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: inicializa una pila vacía.
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+meter
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: agrega un objeto a la pila.
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+sacar
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: elimina y retorna un elemento de la pila.
+ El objeto que se retorna siempre es el último que se agregó.
+\end_layout
+
+\begin_layout Description
+texttt
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+estaVacia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+: revisa si la pila está vacía.
+\end_layout
+
+\begin_layout Standard
+Una pila también se conoce como una estructura
+\begin_inset Quotes eld
+\end_inset
+
+último que Entra, Primero que Sale 
+\begin_inset Quotes erd
+\end_inset
+
+ o UEPS, porque el último dato que entró es el primero que va a salir.
+\end_layout
+
+\begin_layout Section
+Implementando pilas por medio de listas de Python
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Pila
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+clase!Pila
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Estructura de datos genérica
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+Estructura de datos!genérica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las operaciones de listas que Python proporciona son similares a las operaciones
+ que definen una pila.
+ La interfaz no es lo que uno se espera, pero podemos escribir código que
+ traduzca desde el TAD pila a las operaciones primitivas de Python.
+\end_layout
+
+\begin_layout Standard
+Este código se denomina la 
+\series bold
+implementación
+\series default
+ del TAD Pila.
+ En general, una implementación es un conjunto de métodos que satisfacen
+ los requerimientos sintácticos y semánticos de una interfaz.
+\end_layout
+
+\begin_layout Standard
+Aquí hay una implementación del TAD Pila que usa una lista de Python:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+class Pila :
+\end_layout
+
+\begin_layout Verbatim
+
+  def __init__(self) :
+\end_layout
+
+\begin_layout Verbatim
+
+    self.items = []
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  def meter(self, item) :
+\end_layout
+
+\begin_layout Verbatim
+
+    self.items.append(item)
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  def sacar(self) :
+\end_layout
+
+\begin_layout Verbatim
+
+    return self.items.pop()
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
+  def estaVacia(self) :
+\end_layout
+
+\begin_layout Verbatim
+
+    return (self.items == [])
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Una objeto 
+\family typewriter
+Pila
+\family default
+ contiene un atributo llamado 
+\family typewriter
+items
+\family default
+ que es una lista de los objetos que están en la Pila.
+ El método de inicialización le asigna a 
+\family typewriter
+items
+\family default
+ la lista vacía.
+\end_layout
+
+\begin_layout Standard
+Para meter un nuevo objeto en la Pila, 
+\family typewriter
+meter
+\family default
+ lo pega a 
+\family typewriter
+items
+\family default
+.
+ Para sacar un objeto de la Pila, 
+\family typewriter
+sacar
+\family default
+ usa al método 
+\family typewriter
+pop
+\family default
+ que proporciona Python para eliminar el último elemento de una lista.
+\end_layout
+
+\begin_layout Standard
+Finalmente, para verificar si la Pila está vacía, 
+\family typewriter
+estaVacia
+\family default
+ compara a 
+\family typewriter
+items
+\family default
+ con la lista vacía.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+barniz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una implementación como ésta, en la que los métodos son simples llamados
+ de métodos existentes, se denomina 
+\series bold
+barniz
+\series default
+.
+ En la vida real, el barniz es una delgada capa de protección que se usa
+ algunas veces en la fabricación de muebles para ocultar la calidad de la
+ madera que recubre.
+ Los científicos de la computación usan esta metáfora para describir una
+ pequeña porción de código que oculta los detalles de una implementación
+ para proporcionar una interfaz más simple o más estandarizada.
+\end_layout
+
+\begin_layout Section
+Meter y sacar
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+meter
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sacar
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+estructura de datos genérica
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+estructura de datos!genérica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una Pila es una 
+\series bold
+estructura de datos genérica
+\series default
+, o sea que podemos agregar datos de cualquier tipo a ella.
+ El siguiente ejemplo mete dos enteros y una cadena en la Pila:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> s = Pila()
+\end_layout
+
+\begin_layout Verbatim
+
+>>> s.meter(54)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> s.meter(45)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> s.meter("+")
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Podemos usar los métodos 
+\family typewriter
+estaVacia
+\family default
+ y 
+\family typewriter
+sacar
+\family default
+ para eliminar e imprimir todos los objetos en la Pila:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+while not s.estaVacia() :
+\end_layout
+
+\begin_layout Verbatim
+
+  print s.sacar(),
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La salida es 
+\family typewriter
++ 45 54
+\family default
+.
+ En otras palabras, acabamos de usar la Pila para imprimir los objetos al
+ revés, ¡y de una manera muy sencilla!
+\end_layout
+
+\begin_layout Standard
+Compare esta porción de código con la implementación de 
+\family typewriter
+imprimirAlReves
+\family default
+ en la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "listrecursion"
+
+\end_inset
+
+.
+ Hay una relación muy profunda e interesante entre la versión recursiva
+ de 
+\family typewriter
+imprimirAlReves
+\family default
+ y el ciclo anterior.
+ La diferencia reside en que 
+\family typewriter
+imprimirAlReves
+\family default
+ usa la Pila que provee el ambiente de ejecución de Python para llevar pista
+ de los nodos mientras recorre la lista, y luego los imprime cuando la recursión
+ se empieza a devolver.
+ El ciclo anterior hace lo mismo, pero explícitamente por medio de un objeto
+ Pila.
+\end_layout
+
+\begin_layout Section
+Evaluando expresiones postfijas con una Pila
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+postfija
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+infija
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+expresión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la mayoría de los lenguajes de programación las expresiones matemáticas
+ se escriben con el operador entre los operandos, como en 
+\family typewriter
+1+2
+\family default
+.
+ Esta notación se denomina 
+\series bold
+infija
+\series default
+.
+ Una alternativa que algunas calculadoras usan se denomina notación 
+\series bold
+postfija
+\series default
+.
+ En la notación postfija, el operador va después de los operandos, como
+ en 
+\family typewriter
+1 2 +
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+La razón por la que esta notación es útil reside en que hay una forma muy
+ natural de evaluar una expresión postfija usando una Pila:
+\end_layout
+
+\begin_layout Itemize
+Comenzando por el inicio de la expresión, ir leyendo cada término (operador
+ u operando).
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Si el término es un operando, meterlo en la Pila.
+\end_layout
+
+\begin_layout Itemize
+Si el término es un operador, sacar dos operandos de la Pila, ejecutar la
+ operación sobre ellos, y meter el resultado en la Pila.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Cuando llegue al final de la expresión, tiene que haber un solo aperando
+ en la Pila, ese es el resultado de la expresión.
+\end_layout
+
+\begin_layout Quote
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Como ejercicio, aplique este algoritmo a la expresión 
+\family typewriter
+1 2 + 3 *
+\family default
+.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Este ejemplo demuestra una de las ventajas de la notación postfija---no
+ hay necesidad de usar paréntesis para controlar el orden de las operaciones.
+ Para obtener el mismo resultado en notación infija tendríamos que haber
+ escrito 
+\family typewriter
+(1 + 2) * 3
+\family default
+.
+\end_layout
+
+\begin_layout Quote
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Como ejercicio, escriba una expresión postfija equivalente a 
+\family typewriter
+1 + 2 * 3
+\family default
+.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Análisis sintáctico
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+análisis sintáctico
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lexema
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+delimitador
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+expresión regular
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para implementar el algoritmo anterior, necesitamos recorrer una cadena
+ y separarla en operandos y operadores.
+ Este proceso es un ejemplo de 
+\series bold
+análisis sintáctico
+\series default
+, y los resultados --los trozos individuales que obtenemos---se denominan
+ 
+\series bold
+lexemas
+\series default
+.
+ Tal vez recuerde estos conceptos introducidos en el capítulo 2.
+\end_layout
+
+\begin_layout Standard
+Python proporciona el método 
+\family typewriter
+split
+\family default
+ en los módulos 
+\family typewriter
+string
+\family default
+ y 
+\family typewriter
+re
+\family default
+ (expresiones regulares).
+ La función 
+\family typewriter
+string.split
+\family default
+ parte una cadena en una lista de cadenas usando un caracter como 
+\series bold
+delimitador
+\series default
+.
+ Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> import string
+\end_layout
+
+\begin_layout Verbatim
+
+>>> string.split("Ha llegado la hora"," ")
+\end_layout
+
+\begin_layout Verbatim
+
+['Ha', 'llegado', 'la', 'hora']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En este caso, el delimitador es el caracter espacio, así que la cadena
+ se separa cada vez que se encuentra un espacio.
+\end_layout
+
+\begin_layout Standard
+La función 
+\family typewriter
+re.split
+\family default
+ es mas poderosa, nos permite especificar una expresión regular en lugar
+ de un delimitador.
+ Una expresión regular es una forma de especificar un conjunto de cadenas.
+ Por ejemplo, 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+[A-Z]+
+\end_layout
+
+\end_inset
+
+ es el conjunto de todas las letras y 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+[0-9]+
+\end_layout
+
+\end_inset
+
+ es el conjunto de todos los números.
+ El operador 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+^+
+\end_layout
+
+\end_inset
+
+ niega un conjunto, así que 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+[^0-9]+
+\end_layout
+
+\end_inset
+
+ es el conjunto complemento al de números (todo lo que no es un número),
+ y esto es exactamente lo que deseamos usar para separar una expresión postfija:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> import re
+\end_layout
+
+\begin_layout Verbatim
+
+>>> re.split("([^0-9])", "123+456*/")
+\end_layout
+
+\begin_layout Verbatim
+
+['123', '+', '456', '*', '', '/', '']
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Observe que el orden de los argumentos es diferente al que se usa en la
+ función 
+\family typewriter
+string.split
+\family default
+; el delimitador va antes de la cadena.
+\end_layout
+
+\begin_layout Standard
+La lista resultante contiene a los operandos 
+\family typewriter
+123
+\family default
+ y 
+\family typewriter
+456
+\family default
+, y a los operadores 
+\family typewriter
+*
+\family default
+ y 
+\family typewriter
+/
+\family default
+.
+ También incluye dos cadenas vacías que se insertan después de los operandos.
+\end_layout
+
+\begin_layout Section
+Evaluando expresiones postfijas
+\end_layout
+
+\begin_layout Standard
+Para evaluar una expresión postfija, utilizaremos el analizador sintáctico
+ de la sección anterior y el algoritmo de la anterior a esa.
+ Por simplicidad, empezamos con un evaluador que solo implementa los operadores
+ 
+\family typewriter
++
+\family default
+ y 
+\family typewriter
+*
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+-3
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+pagebreak
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+
+def evalPostfija(expr):
+\end_layout
+
+\begin_layout Verbatim
+
+  import re
+\end_layout
+
+\begin_layout Verbatim
+
+  listaLexemas = re.split("([^0-9])", expr)
+\end_layout
+
+\begin_layout Verbatim
+
+  Pila = Pila()
+\end_layout
+
+\begin_layout Verbatim
+
+  Por lexema in listaLexemas:
+\end_layout
+
+\begin_layout Verbatim
+
+    if  lexema == '' or lexema == ' ':
+\end_layout
+
+\begin_layout Verbatim
+
+      continue
+\end_layout
+
+\begin_layout Verbatim
+
+    if  lexema == '+':
+\end_layout
+
+\begin_layout Verbatim
+
+      suma = Pila.sacar() + Pila.sacar()
+\end_layout
+
+\begin_layout Verbatim
+
+      Pila.meter(suma)
+\end_layout
+
+\begin_layout Verbatim
+
+    elif lexema == '*':
+\end_layout
+
+\begin_layout Verbatim
+
+      producto = Pila.sacar() * Pila.sacar()
+\end_layout
+
+\begin_layout Verbatim
+
+      Pila.meter(producto)
+\end_layout
+
+\begin_layout Verbatim
+
+    else:
+\end_layout
+
+\begin_layout Verbatim
+
+      Pila.meter(int(lexema))
+\end_layout
+
+\begin_layout Verbatim
+
+  return Pila.sacar()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+La primera condición ignora los espacios y las cadenas vacías.
+ Las siguientes dos condiciones detectan los operadores.
+ Asumimos por ahora ---intrépidamente---, que cualquier caracter no numérico
+ es un operando.
+\end_layout
+
+\begin_layout Standard
+Verifiquemos la función evaluando la expresión 
+\family typewriter
+(56+47)*2
+\family default
+ en notación postfija:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print evalPostfija ("56 47 + 2 *")
+\end_layout
+
+\begin_layout Verbatim
+
+206
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Bien, por ahora.
+\end_layout
+
+\begin_layout Section
+Clientes y proveedores
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+encapsulamiento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TAD
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una de los objetivos fundamentales de un TAD es separar los intereses del
+ proveedor, el que escribe el código que implementa el Tipo Abstracto de
+ Datos, y los del cliente, el que lo usa.
+ El proveedor sólo tiene que preocuparse por que la implementación sea correcta
+ ---de acuerdo con la especificación del TAD---y no por el cómo va a ser
+ usado.
+\end_layout
+
+\begin_layout Standard
+Por otro lado, el cliente 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ asume
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ que la implementación del TAD es correcta y no se preocupa por los detalles.
+ Cuando usted utiliza los tipos primitivos de Python, se está dando el lujo
+ de pensar como cliente exclusivamente.
+\end_layout
+
+\begin_layout Standard
+Por supuesto, cuando se implementa un TAD, también hay que escribir algún
+ código cliente que permita chequear su funcionamiento.
+ En ese caso, usted asume los dos roles y la labor puede ser un tanto confusa.
+ Hay que concentrarse para llevar la pista del rol que se está jugando en
+ un momento determinado.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+TAD
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cliente
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+proveedor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+infija
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+postfija
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+análisis sintáctico
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+lexema
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+delimitador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Tipo Abstracto de Datos (TAD):
+\end_layout
+
+\end_inset
+
+ Un tipo de datos (casi siempre es una colección de objetos) que se define
+ por medio de un conjunto de operaciones y que puede ser implementado de
+ diferentes formas.
+\end_layout
+
+\begin_layout Description
+Interfaz: conjunto de operaciones que define al TAD.
+\end_layout
+
+\begin_layout Description
+Implementación: código que satisface los requerimientos sintácticos y semánticos
+ de una interfaz de un TAD.
+\end_layout
+
+\begin_layout Description
+Cliente: un programa (o la persona que lo escribió) que usa un TAD.
+\end_layout
+
+\begin_layout Description
+Proveedor: el código (o la persona que lo escribió) que implementa un TAD.
+\end_layout
+
+\begin_layout Description
+Barniz: una definición de clase que implementa un TAD con métodos que son
+ llamados a otros métodos, a menudo realizando unas transformaciones previas.
+ El barniz no realiza un trabajo significativo, pero sí mejora o estandariza
+ las interfaces a las que accede el cliente.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Estructura de datos genérica:
+\end_layout
+
+\end_inset
+
+ estructura de datos que puede contener objetos de todo tipo.
+\end_layout
+
+\begin_layout Description
+Infija: una forma de escribir expresiones matemáticas con los operadores
+ entre los operandos.
+\end_layout
+
+\begin_layout Description
+Postfija: una forma de escribir expresiones matemáticas con los operadores
+ después de los operandos.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Análisis sintáctico:
+\end_layout
+
+\end_inset
+
+ leer una cadena de caracteres o lexemas y analizar su estructura gramatical.
+\end_layout
+
+\begin_layout Description
+Lexema: conjunto de caracteres que se considera como una unidad para los
+ propósitos del análisis sintáctico, tal como las palabras del lenguaje
+ natural.
+\end_layout
+
+\begin_layout Description
+Delimitador: caracter que se usa para separar lexemas, tal como los signos
+ de puntuación en el lenguaje natural.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,308 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+LyX source for textbook 
+\begin_inset Quotes eld
+\end_inset
+
+How to think like a computer scientist'' 
+\end_layout
+
+\begin_layout Plain Layout
+Copyright (c) 2001 Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Prólogo
+\end_layout
+
+\begin_layout Standard
+Por David Beazley
+\end_layout
+
+\begin_layout Standard
+Como educador, investigador y autor de libros, estoy encantado de ver la
+ terminación de este texto.
+ Python es un lenguaje de programación divertido y extremadamente fácil
+ de usar, que ha ganado renombre constantemente en los años recientes.
+ Desarrollado hace diez años por Guido van Rossum, la sintaxis simple de
+ Python y su 
+\begin_inset Quotes eld
+\end_inset
+
+sabor
+\begin_inset Quotes erd
+\end_inset
+
+ se derivan, en gran parte del ABC, un lenguaje de programación para enseñanza
+ que se desarrolló en los 1980s.
+ Sin embargo, Python también fue creado para resolver problemas reales y
+ tiene una amplia gama de características que se encuentran en lenguajes
+ de programación como C++, Java, Modula-3, y Scheme.
+ Debido a esto, uno de las características notables de Python es la atracción
+ que ejerce sobre programadores profesionales, científicos, investigadores,
+ artistas y educadores.
+\end_layout
+
+\begin_layout Standard
+A pesar de ésta atracción presente en muchas comunidades diversas, usted
+ puede todavía preguntarse 
+\begin_inset Quotes eld
+\end_inset
+
+¿porque Python?
+\begin_inset Quotes erd
+\end_inset
+
+ o 
+\begin_inset Quotes eld
+\end_inset
+
+¿porque enseñar programación con Python?
+\begin_inset Quotes erd
+\end_inset
+
+ Responder éstas preguntas no es una tarea fácil--- especialmente cuando
+ la opinión popular está del lado masoquista de usar alternativas como C++
+ y Java.
+ Sin embargo, pienso que la respuesta mas directa es que la programación
+ en Python es simplemente mas divertida y mas productiva.
+\end_layout
+
+\begin_layout Standard
+Cuando enseño cursos de informática, yo quiero cubrir conceptos importantes,
+ hacer el material interesante y enganchar a los estudiantes.
+ Desafortunadamente, hay una tendencia en la que los cursos de programación
+ introductorios dedican demasiada atención hacia la abstracción matemática
+ y a hacer que los estudiantes se frustren con problemas molestos relacionados
+ con la sintaxis, la compilación y la presencia de reglas arcanas en los
+ lenguajes.
+ Aunque la abstracción y el formalismo son importantes para los ingenieros
+ de software y para los estudiantes de ciencias de la computación, usar
+ este enfoque hace la informática muy aburrida.
+ Cuando enseño un curso no quiero tener un grupo de estudiantes sin inspiración.
+ Quisiera verlos intentando resolver problemas interesantes, explorando
+ ideas diferentes, intentando enfoques no convencionales, rompiendo reglas
+ y aprendiendo de sus errores.
+ En el proceso no quiero perder la mitad del semestre tratando de resolver
+ problemas sintácticos oscuros, interpretando mensajes de error del compilador
+ incomprensibles, o descifrando cuál de las muchas maneras en que un programa
+ puede generar un error grave de memoria se está presentando.
+\end_layout
+
+\begin_layout Standard
+Una de las razones del por qué me gusta Python es que proporciona un equilibrio
+ muy bueno entre lo práctico y lo conceptual.
+ Puesto que se interpreta Python, los principiantes pueden empezar a hacer
+ cosas interesantes casi de inmediato sin perderse en problemas de compilación
+ y enlace.
+ Además, Python viene con una biblioteca grande de módulos, que pueden ser
+ usados en dominios que van desde programación en la web hasta aplicaciones
+ gráficas.
+ Tener un foco práctico es una gran manera de enganchar a los estudiantes
+ y permite que emprendan proyectos significativos.
+ Sin embargo, Python también puede servir como una excelente base para introduci
+r conceptos importantes de la informática.
+ Puesto que Python soporta completamente procedimientos y clases, los estudiante
+s pueden ser introducidos gradualmente a temas como la abstracción procedimental
+, las estructuras de datos y la programación orientada a objetos---lo que
+ se puede aplicar después a cursos posteriores en Java o C++.
+ Python proporciona, incluso, varias características de los lenguajes de
+ programación funcionales y puede usarse para introducir conceptos que se
+ pueden explorar con más detalle en cursos con Scheme y Lisp.
+\end_layout
+
+\begin_layout Standard
+Leyendo, el prefacio de Jeffrey, estoy sorprendido por sus comentarios de
+ que Python le permita ver un 
+\begin_inset Quotes eld
+\end_inset
+
+más alto nivel de éxito y un nivel bajo de frustración
+\begin_inset Quotes erd
+\end_inset
+
+ y que puede 
+\begin_inset Quotes eld
+\end_inset
+
+avanzar mas rápido con mejores resultados.
+\begin_inset Quotes erd
+\end_inset
+
+ Aunque estos comentarios se refieren a sus cursos introductorios, a veces
+ uso Python por estas mismas razones en los cursos de informática avanzada
+ en la Universidad de Chicago.
+ En estos cursos enfrento constantemente la tarea desalentadora de cubrir
+ un montón de material difícil durante nueve semanas.
+ Aunque es totalmente posible para mi infligir mucho dolor y sufrimiento
+ usando un lenguaje como C++, he encontrado a menudo que este enfoque es
+ improductivo---especialmente cuando el curso se trata de un asunto sin
+ relación directa con la 
+\begin_inset Quotes eld
+\end_inset
+
+programación.
+\begin_inset Quotes erd
+\end_inset
+
+ He encontrado que usar Python me permite enfocar el tema del curso y dejar
+ a los estudiantes desarrollar proyectos substanciales.
+\end_layout
+
+\begin_layout Standard
+Aunque Python siga siendo un lenguaje joven y en desarrollo, creo que tiene
+ un futuro brillante en la educación.
+ Este libro es un paso importante en esa dirección.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.25in
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align left
+David Beazley 
+\begin_inset Newline newline
+\end_inset
+
+ Universidad de Chicago, Autor de 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ Python Essential Reference
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document

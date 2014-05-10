@@ -1,0 +1,3600 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% LaTeX source for textbook ``How to think like a computer scientist''
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Copyright (c)  2001  Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Permission is granted to copy, distribute and/or modify this
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% document under the terms of the GNU Free Documentation License,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Version 1.1  or any later version published by the Free Software
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Foundation; with the Invariant Sections being "Contributor List",
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% with no Front-Cover Texts, and with no Back-Cover Texts.
+ A copy of
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% the license is included in the section entitled "GNU Free
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Documentation License".
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% This distribution includes a file named fdl.tex that contains the text
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% of the GNU Free Documentation License.
+  If it is missing, you can obtain
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% it from www.gnu.org or by writing to the Free Software Foundation,
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Condicionales y recursión
+\end_layout
+
+\begin_layout Section
+El operador residuo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador residuo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador!residuo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El 
+\series bold
+operador residuo
+\series default
+ trabaja con enteros (y expresiones enteras) calculando el residuo del primer
+ operando cuando se divide por el segundo.
+ En Python este operador es un signo porcentaje (
+\family typewriter
+%
+\family default
+).
+ La sintaxis es la misma que para los otros operadores:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> cociente = 7 / 3
+\end_layout
+
+\begin_layout Verbatim
+>>> print cociente
+\end_layout
+
+\begin_layout Verbatim
+2
+\end_layout
+
+\begin_layout Verbatim
+>>> residuo = 7 % 3
+\end_layout
+
+\begin_layout Verbatim
+>>> print residuo
+\end_layout
+
+\begin_layout Verbatim
+1
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Así que 7 dividido por 3 da 2 con residuo 1.
+\end_layout
+
+\begin_layout Standard
+El operador residuo resulta ser sorprendentemente útil.
+ Por ejemplo, usted puede chequear si un número es divisible por otro ---si
+ 
+\family typewriter
+x%y
+\family default
+ es cero, entonces 
+\family typewriter
+x
+\family default
+ es divisible por 
+\family typewriter
+y
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Usted también puede extraer el dígito o dígitos más a la derecha de un número.
+ Por ejemplo, 
+\family typewriter
+x % 10
+\family default
+ entrega el dígito más a la derecha de 
+\family typewriter
+x
+\family default
+ (en base 10).
+ Igualmente, 
+\family typewriter
+x % 100
+\family default
+ entrega los dos últimos dígitos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+1
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Expresiones booleanas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+expresión Booleana
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+expresión!booleana
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador lógico
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador!lógico
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El tipo que Python provee para almacenar valores de verdad (cierto o falso)
+ se denomina bool por el matemático británico George Bool.
+ Él creó el Álgebra Booleana, que es la base para la aritmética que se usa
+ en los computadores modernos.
+\end_layout
+
+\begin_layout Standard
+Sólo hay dos valores booleanos: True (cierto) y False (falso).
+ Las mayúsculas importan, ya que true y false no son valores booleanos.
+\end_layout
+
+\begin_layout Standard
+El operador 
+\family typewriter
+==
+\family default
+ compara dos valores y produce una expresión booleana:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> 5 == 5
+\end_layout
+
+\begin_layout Verbatim
+True
+\end_layout
+
+\begin_layout Verbatim
+>>> 5 == 6
+\end_layout
+
+\begin_layout Verbatim
+False
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En la primera sentencia, los dos operandos son iguales, así que la expresión
+ evalúa a True (cierto); en la segunda sentencia, 5 no es igual a 6, así
+ que obtenemos False (falso).
+\end_layout
+
+\begin_layout Standard
+El operador 
+\family typewriter
+==
+\family default
+ es uno de los 
+\series bold
+operadores de comparación
+\series default
+; los otros son:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+      x != y               # x no es igual y
+\end_layout
+
+\begin_layout Verbatim
+      x > y                # x es mayor que y
+\end_layout
+
+\begin_layout Verbatim
+      x < y                # x es menor que y
+\end_layout
+
+\begin_layout Verbatim
+      x >= y               # x es mayor o igual a y
+\end_layout
+
+\begin_layout Verbatim
+      x <= y               # x es menor o igual a y
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Aunque estas operaciones probablemente son familiares para usted, los símbolos
+ en Python difieren de los matemáticos.
+ Un error común consiste en usar un solo signo igual (
+\family typewriter
+=
+\family default
+) en lugar en un doble signo igual (
+\family typewriter
+==
+\family default
+).
+ Recuerde que 
+\family typewriter
+=
+\family default
+ es el operador para la asignación y que 
+\family typewriter
+==
+\family default
+ es el operador para comparación.
+ Tenga en cuenta que no existen los signos 
+\family typewriter
+=<
+\family default
+ o 
+\family typewriter
+=>
+\family default
+.
+\end_layout
+
+\begin_layout Section
+Operadores lógicos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operadores lógicos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador!lógicos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hay tres 
+\series bold
+operadores lógicos
+\series default
+: 
+\family typewriter
+and
+\family default
+, 
+\family typewriter
+or
+\family default
+ y 
+\family typewriter
+not
+\family default
+.
+ La semántica (el significado) de ellos es similar a su significado en inglés.
+ Por ejemplo, 
+\family typewriter
+x>0 and x<10
+\family default
+ es cierto, sólo si 
+\family typewriter
+x
+\family default
+ es mayor a cero 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ y
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ menor que 10.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+n%2 == 0 or n%3 == 0
+\family default
+ es cierto si 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ alguna
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ de las condiciones es cierta, esto es, si el número es divisible por 2
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ o
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ por 3.
+\end_layout
+
+\begin_layout Standard
+Finalmente, el operador 
+\family typewriter
+not
+\family default
+ niega una expresión booleana, así que 
+\family typewriter
+not(x>y)
+\family default
+ es cierta si 
+\family typewriter
+(x>y)
+\family default
+ es falsa, esto es, si 
+\family typewriter
+x
+\family default
+ es menor o igual a 
+\family typewriter
+y
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+Formalmente, los operandos de los operadores lógicos deben ser expresiones
+ booleanas, pero Python no es muy formal.
+ Cualquier número diferente de cero se interpreta como 
+\begin_inset Quotes eld
+\end_inset
+
+cierto.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>>  x = 5
+\end_layout
+
+\begin_layout Verbatim
+>>>  x and 1
+\end_layout
+
+\begin_layout Verbatim
+1
+\end_layout
+
+\begin_layout Verbatim
+>>>  y = 0
+\end_layout
+
+\begin_layout Verbatim
+>>>  y and 1
+\end_layout
+
+\begin_layout Verbatim
+0
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En general, esto no se considera un buen estilo de programación.
+ Si usted desea comparar un valor con cero, procure codificarlo explícitamente.
+\end_layout
+
+\begin_layout Section
+Ejecución condicional
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "alternative execution"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ramificación condicional
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+ejecución condicional 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A fin de escribir programas útiles, casi siempre necesitamos la capacidad
+ de chequear condiciones y cambiar el comportamiento del programa en consecuenci
+a.
+ Las 
+\series bold
+sentencias condicionales
+\series default
+ nos dan este poder.
+ La más simple es la sentencia 
+\family typewriter
+if
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+if x > 0:
+\end_layout
+
+\begin_layout Verbatim
+  print "x es positivo"
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La expresión después de la sentencia 
+\family typewriter
+if
+\family default
+ se denomina la 
+\series bold
+condición
+\series default
+.
+ Si es cierta, la sentencia de abajo se ejecuta.
+ Si no lo es, no pasa nada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia compuesta
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia compuesta!cabecera
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia compuesta!cuerpo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia compuesta!bloque de sentencias
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!compuesta
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como otras sentencias compuestas, la sentencia 
+\family typewriter
+if
+\family default
+ comprende una cabecera y un bloque de sentencias:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+CABECERA:
+\end_layout
+
+\begin_layout Verbatim
+  PRIMERA SENTENCIA
+\end_layout
+
+\begin_layout Verbatim
+  ...
+\end_layout
+
+\begin_layout Verbatim
+  ULTIMA SENTENCIA
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La cabecera comienza en una nueva línea y termina con dos puntos seguidos
+ (:).
+ Las sentencias sangradas o indentadas que vienen a continuación se denominan
+ el 
+\series bold
+bloque
+\series default
+.
+ La primera sentencia sin sangrar marca el fin del bloque.
+ Un bloque de sentencias dentro de una sentencia compuesta también se denomina
+ el 
+\series bold
+cuerpo
+\series default
+ de la sentencia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+bloque
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!bloque
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cuerpo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No hay límite en el número de sentencias que pueden aparecer en el cuerpo
+ de una sentencia, pero siempre tiene que haber, al menos, una.
+ Ocasionalmente, es útil tener un cuerpo sin sentencias (como un hueco para
+ código que aún no se ha escrito).
+ En ese caso se puede usar la sentencia 
+\family typewriter
+pass
+\family default
+, que no hace nada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia pass
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!pass
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ejecución alternativa
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "alternative execution"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una segunda forma de sentencia 
+\family typewriter
+if
+\family default
+ es la ejecución alternativa en la que hay dos posibilidades y la condición
+ determina cual de ellas se ejecuta.
+ La sintaxis luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+if x%2 == 0:
+\end_layout
+
+\begin_layout Verbatim
+  print x, "es par"
+\end_layout
+
+\begin_layout Verbatim
+else:
+\end_layout
+
+\begin_layout Verbatim
+  print x, "es impar"
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si el residuo de dividir 
+\family typewriter
+x
+\family default
+ por 2 es 0, entonces sabemos que 
+\family typewriter
+x
+\family default
+ es par, y el programa despliega un mensaje anunciando esto.
+ Si la condición es falsa, la segunda sentencia se ejecuta.
+ Como la condición, que es una expresión booleana, debe ser cierta o falsa,
+ exactamente una de las alternativas se va a ejecutar.
+ Estas alternativas se denominan 
+\series bold
+ramas
+\series default
+, porque, de hecho, son ramas en el flujo de ejecución.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+rama
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Yéndonos 
+\begin_inset Quotes eld
+\end_inset
+
+por las ramas
+\begin_inset Quotes erd
+\end_inset
+
+, si usted necesita chequear la paridad (si un número es par o impar) a
+ menudo, se podría 
+\begin_inset Quotes eld
+\end_inset
+
+envolver
+\begin_inset Quotes erd
+\end_inset
+
+ el código anterior en una función:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def imprimirParidad(x):
+\end_layout
+
+\begin_layout Verbatim
+  if x%2 == 0:
+\end_layout
+
+\begin_layout Verbatim
+    print x, "es par"
+\end_layout
+
+\begin_layout Verbatim
+  else:
+\end_layout
+
+\begin_layout Verbatim
+    print x, "es impar"
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para cualquier valor de 
+\family typewriter
+x
+\family default
+, 
+\family typewriter
+imprimirParidad
+\family default
+ despliega un mensaje apropiado.
+ Cuando se llama la función, se le puede pasar cualquier expresión entera
+ como argumento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> imprimirParidad(17)
+\end_layout
+
+\begin_layout Verbatim
+>>> imprimirParidad(y+1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Section
+Condicionales encadenados
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+condicional encadenados
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+condicional!encadenados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Algunas veces hay más de dos posibilidades y necesitamos más de dos ramas.
+ Una forma de expresar un cálculo así es un 
+\series bold
+condicional encadenado
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+if x < y:
+\end_layout
+
+\begin_layout Verbatim
+  print x, "es menor que", y
+\end_layout
+
+\begin_layout Verbatim
+elif x > y:
+\end_layout
+
+\begin_layout Verbatim
+  print x, "es mayor que", y
+\end_layout
+
+\begin_layout Verbatim
+else:
+\end_layout
+
+\begin_layout Verbatim
+  print x, "y", y, "son iguales"
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+elif
+\family default
+ es una abreviatura de 
+\begin_inset Quotes eld
+\end_inset
+
+else if.
+\begin_inset Quotes erd
+\end_inset
+
+ De nuevo, exactamente una de las ramas se ejecutará.
+ No hay límite en el número de sentencias 
+\family typewriter
+elif
+\family default
+, pero la última rama tiene que ser una sentencia 
+\family typewriter
+else
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+adjustpage
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+3
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+if eleccion == 'A':
+\end_layout
+
+\begin_layout Verbatim
+  funcionA()
+\end_layout
+
+\begin_layout Verbatim
+elif eleccion == 'B':
+\end_layout
+
+\begin_layout Verbatim
+  funcionB()
+\end_layout
+
+\begin_layout Verbatim
+elif eleccion == 'C':
+\end_layout
+
+\begin_layout Verbatim
+  funcionC()
+\end_layout
+
+\begin_layout Verbatim
+else:
+\end_layout
+
+\begin_layout Verbatim
+  print "Eleccion incorrecta."
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Cada condición se chequea en orden.
+ Si la primera es falsa, se chequea la siguiente, y así sucesivamente.
+ Si una de ellas es cierta, se ejecuta la rama correspondiente y la sentencia
+ termina.
+ Si hay más de una condición cierta, sólo la primera rama que evalúa a cierto
+ se ejecuta.
+\end_layout
+
+\begin_layout Section
+Condicionales anidados
+\end_layout
+
+\begin_layout Standard
+Un condicional también se puede anidar dentro de otro.
+ La tricotomía anterior se puede escribir así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+if x == y:
+\end_layout
+
+\begin_layout Verbatim
+  print x, "y", y, "son iguales"
+\end_layout
+
+\begin_layout Verbatim
+else:
+\end_layout
+
+\begin_layout Verbatim
+  if x < y:
+\end_layout
+
+\begin_layout Verbatim
+    print x, "es menor que", y
+\end_layout
+
+\begin_layout Verbatim
+  else:
+\end_layout
+
+\begin_layout Verbatim
+    print x, "es mayor que", y
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ El condicional externo contiene dos ramas: la primera contiene una sentencia
+ de salida sencilla, la segunda contiene otra sentencia 
+\family typewriter
+if
+\family default
+, que tiene dos ramas propias.
+ Esas dos ramas son sentencias de impresión, aunque también podrían ser
+ sentencias condicionales.
+\end_layout
+
+\begin_layout Standard
+Aunque la indentación o sangrado de las sentencias sugiere la estructura,
+ los condicionales anidados rápidamente se hacen difíciles de leer.
+ En general, es una buena idea evitarlos cada vez que se pueda.
+\end_layout
+
+\begin_layout Standard
+Los operadores lógicos proporcionan formas de simplificar las sentencias
+ condicionales anidadas.
+ Por ejemplo, podemos reescribir el siguiente código usando un solo condicional:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+if 0 < x:
+\end_layout
+
+\begin_layout Verbatim
+  if x < 10:
+\end_layout
+
+\begin_layout Verbatim
+    print "x es un digito positivo."
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La sentencia 
+\family typewriter
+print
+\family default
+ se ejecuta solamente si el flujo de ejecución ha pasado las dos condiciones,
+ así que podemos usar el operador 
+\family typewriter
+and
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+if 0 < x and x < 10:
+\end_layout
+
+\begin_layout Verbatim
+  print "x es un digito positivo."
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta clase de condiciones es muy común, por esta razón Python proporciona
+ una sintaxis alternativa que es similar a la notación matemática:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+if 0 < x < 10:
+\end_layout
+
+\begin_layout Verbatim
+  print "x es un digito positivo"
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Desde el punto de vista semántico ésta condición es la misma que la expresión
+ compuesta y que el condicional anidado.
+\end_layout
+
+\begin_layout Section
+La sentencia 
+\family typewriter
+return
+\family default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia return
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!return
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La sentencia 
+\family typewriter
+return
+\family default
+ permite terminar la ejecución de una función antes de llegar al final.
+ Una razón para usarla es reaccionar a una condición de error:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+import math
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+def imprimirLogaritmo(x):
+\end_layout
+
+\begin_layout Verbatim
+  if x <= 0:
+\end_layout
+
+\begin_layout Verbatim
+    print "Numeros positivos solamente.
+ Por favor"
+\end_layout
+
+\begin_layout Verbatim
+    return
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+  result = math.log(x)
+\end_layout
+
+\begin_layout Verbatim
+  print "El logaritmo de ",  x ," es ", result
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La función 
+\family typewriter
+imprimirLogaritmo
+\family default
+ toma un parámetro denominado 
+\family typewriter
+x
+\family default
+.
+ Lo primero que hace es chequear si 
+\family typewriter
+x
+\family default
+ es menor o igual a 0, caso en el que despliega un mensaje de error y luego
+ usa a 
+\family typewriter
+return
+\family default
+ para salir de la función.
+ El flujo de ejecución inmediatamente retorna al punto donde se había llamado
+ la función, y las líneas restantes de la función no se ejecutan.
+\end_layout
+
+\begin_layout Standard
+Recuerde que para usar una función del módulo matemático (math) hay que
+ importarlo previamente.
+\end_layout
+
+\begin_layout Section
+Recursión
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "recursion"
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hemos mencionado que es legal que una función llame a otra, y usted ha visto
+ varios ejemplos así.
+ Hemos olvidado mencionar el hecho de que una función también puede llamarse
+ a sí misma.
+ Al principio no parece algo útil, pero resulta ser una de las capacidades
+ más interesantes y mágicas que un programa puede tener.
+ Por ejemplo, observe la siguiente función:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def conteo(n):
+\end_layout
+
+\begin_layout Verbatim
+  if n == 0:
+\end_layout
+
+\begin_layout Verbatim
+    print "Despegue!"
+\end_layout
+
+\begin_layout Verbatim
+  else:
+\end_layout
+
+\begin_layout Verbatim
+    print n
+\end_layout
+
+\begin_layout Verbatim
+    conteo(n-1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ 
+\family typewriter
+conteo
+\family default
+ espera que el parámetro 
+\family typewriter
+n
+\family default
+ sea un número entero positivo.
+ Si 
+\family typewriter
+n
+\family default
+ es 0, despliega la cadena, 
+\begin_inset Quotes eld
+\end_inset
+
+Despegue!
+\begin_inset Quotes erd
+\end_inset
+
+.
+ Si no lo es, despliega 
+\family typewriter
+n
+\family default
+ y luego llama a la función llamada 
+\family typewriter
+conteo
+\family default
+---ella misma---pasando a 
+\family typewriter
+n-1
+\family default
+ como argumento.
+\end_layout
+
+\begin_layout Standard
+Analizemos lo que sucede si llamamos a esta función así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> conteo(3)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ La ejecución de 
+\family typewriter
+conteo
+\family default
+ comienza con 
+\family typewriter
+n=3
+\family default
+, y como 
+\family typewriter
+n
+\family default
+ no es 0, despliega el valor 3, y se llama a sí misma ...
+\end_layout
+
+\begin_layout Quote
+La ejecución de 
+\family typewriter
+conteo
+\family default
+ comienza con 
+\family typewriter
+n=2
+\family default
+, y como 
+\family typewriter
+n
+\family default
+ no es 0, despliega el valor 2, y se llama a si misma ...
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+La ejecución de 
+\family typewriter
+conteo
+\family default
+ comienza con 
+\family typewriter
+n=1
+\family default
+, y como 
+\family typewriter
+n
+\family default
+ no es 0, despliega el valor 1, y se llama a sí misma ...
+\end_layout
+
+\begin_deeper
+\begin_layout Quote
+La ejecución de 
+\family typewriter
+conteo
+\family default
+ comienza con 
+\family typewriter
+n=0
+\family default
+, y como 
+\family typewriter
+n
+\family default
+ es 0, despliega la cadena 
+\begin_inset Quotes eld
+\end_inset
+
+Despegue!
+\begin_inset Quotes erd
+\end_inset
+
+ y retorna (finaliza).
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Quote
+El 
+\family typewriter
+conteo
+\family default
+ que recibió 
+\family typewriter
+n=1
+\family default
+ retorna.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Quote
+El 
+\family typewriter
+conteo
+\family default
+ que recibió 
+\family typewriter
+n=2
+\family default
+ retorna.
+ 
+\end_layout
+
+\begin_layout Standard
+El 
+\family typewriter
+conteo
+\family default
+ que recibió 
+\family typewriter
+n=3
+\family default
+ retorna.
+\end_layout
+
+\begin_layout Standard
+Y el flujo de ejecución regresa a 
+\family typewriter
+__main__
+\family default
+ (vaya viaje!).
+ Así que, la salida total luce así:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+3
+\end_layout
+
+\begin_layout Verbatim
+2
+\end_layout
+
+\begin_layout Verbatim
+1
+\end_layout
+
+\begin_layout Verbatim
+Despegue!
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Como otro ejemplo, utilizaremos nuevamente las funciones 
+\family typewriter
+nuevaLinea
+\family default
+ y 
+\family typewriter
+tresLineas
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def nuevalinea():
+\end_layout
+
+\begin_layout Verbatim
+  print
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+def tresLineas():
+\end_layout
+
+\begin_layout Verbatim
+  nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+  nuevaLinea()
+\end_layout
+
+\begin_layout Verbatim
+  nuevaLinea()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este trabajo no sería de mucha ayuda si quisiéramos desplegar 2 líneas
+ o 106.
+ Una mejor alternativa sería:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def nLineas(n):
+\end_layout
+
+\begin_layout Verbatim
+  if n > 0:
+\end_layout
+
+\begin_layout Verbatim
+    print
+\end_layout
+
+\begin_layout Verbatim
+    nLineas(n-1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Esta función es similar a 
+\family typewriter
+conteo
+\family default
+; en tanto 
+\family typewriter
+n
+\family default
+ sea mayor a 0, despliega una nueva línea y luego se llama a sí misma para
+ desplegar 
+\family typewriter
+n-1
+\family default
+ líneas adicionales.
+ Así, el número total de nuevas líneas es 
+\family typewriter
+1 + (n - 1)
+\family default
+ que, si usted verifica con álgebra, resulta ser 
+\family typewriter
+n
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+El proceso por el cual una función se llama a sí misma es la 
+\series bold
+recursión
+\series default
+, y se dice que estas funciones son recursivas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+función!recursiva
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagramas de pila para funciones recursivas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diagrama de pila
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+marco de función
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+marco
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la Sección
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "stackdiagram"
+
+\end_inset
+
+, usamos un diagrama de pila para representar el estado de un programa durante
+ un llamado de función.
+ La misma clase de diagrama puede ayudarnos a interpretar una función recursiva.
+\end_layout
+
+\begin_layout Standard
+Cada vez que una función se llama, Python crea un nuevo marco de función
+ que contiene los parámetros y variables locales de ésta.
+ Para una función recursiva, puede existir más de un marco en la pila al
+ mismo tiempo.
+\end_layout
+
+\begin_layout Standard
+Este es el diagrama de pila para 
+\family typewriter
+conteo
+\family default
+ llamado con 
+\family typewriter
+n = 3
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/stack2.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como siempre, el tope de la pila es el marco para 
+\family typewriter
+__main__
+\family default
+.
+ Está vacío porque no creamos ninguna variable en 
+\family typewriter
+__main__
+\family default
+ ni le pasamos parámetros.
+\end_layout
+
+\begin_layout Standard
+Los cuatro marcos de 
+\family typewriter
+conteo
+\family default
+ tienen diferentes valores para el parámetro 
+\family typewriter
+n
+\family default
+.
+ El fondo de la pila, donde 
+\family typewriter
+n=0
+\family default
+, se denomina el 
+\series bold
+caso base 
+\series default
+.
+ Como no hace una llamada recursiva, no hay mas marcos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+case base
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión!caso base
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Recursión infinita
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión infinita
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión!infinita
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error de tiempo de ejecución
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+error!de tiempo de ejecución
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+trazado inverso
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si una función recursiva nunca alcanza un caso base va a hacer llamados
+ recursivos por siempre y el programa nunca termina.
+ Esto se conoce como 
+\series bold
+recursión infinita
+\series default
+, y, generalmente, no se considera una buena idea.
+ Aquí hay un programa minimalista con recursión infinita:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+def recurrir():
+\end_layout
+
+\begin_layout Verbatim
+  recurrir()
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ En la mayoría de ambientes de programación un programa con recursión infinita
+ no corre realmente para siempre.
+ Python reporta un mensaje de error cuando alcanza la máxima profundidad
+ de recursión:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+  File "<stdin>", line 2, in recurrir
+\end_layout
+
+\begin_layout Verbatim
+  (98 repeticiones omitidas)
+\end_layout
+
+\begin_layout Verbatim
+  File "<stdin>", line 2, in recurrir
+\end_layout
+
+\begin_layout Verbatim
+RuntimeError: Maximum recursion depth exceeded
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Este trazado inverso es un poco más grande que el que vimos en el capítulo
+ anterior.
+ Cuando se presenta el error, ¡hay más de 100 marcos de 
+\family typewriter
+recurrir
+\family default
+ en la pila!.
+\end_layout
+
+\begin_layout Section
+Entrada por el teclado
+\end_layout
+
+\begin_layout Standard
+Los programas que hemos escrito son un poco toscos ya que no aceptan entrada
+ de un usuario.
+ Sólo hacen la misma operación todo el tiempo.
+\end_layout
+
+\begin_layout Standard
+Python proporciona funciones primitivas que obtienen entrada desde el teclado.
+ La más sencilla se llama 
+\family typewriter
+raw_input
+\family default
+.
+ Cuando esta función se llama el programa se detiene y espera a que el usuario
+ digite algo.
+ Cuando el usuario digita la tecla Enter o Intro, el programa retoma la
+ ejecución y 
+\family typewriter
+raw_input
+\family default
+ retorna lo que el usuario digitó como una cadena (
+\family typewriter
+string
+\family default
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> entrada = raw_input ()
+\end_layout
+
+\begin_layout Verbatim
+Que esta esperando?
+\end_layout
+
+\begin_layout Verbatim
+>>> print entrada
+\end_layout
+
+\begin_layout Verbatim
+Que esta esperando?
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Antes de llamar a 
+\family typewriter
+raw_input
+\family default
+ es una muy buena idea desplegar un mensaje diciéndole al usuario qué digitar.
+ Este mensaje se denomina indicador de entrada (
+\series bold
+prompt
+\series default
+ en inglés).
+ Podemos dar un argumento prompt a 
+\family typewriter
+raw_input
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+prompt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> nombre = raw_input ("Cual es tu nombre? ")
+\end_layout
+
+\begin_layout Verbatim
+Cual es tu nombre? Arturo, Rey de los Bretones!
+\end_layout
+
+\begin_layout Verbatim
+>>> print nombre
+\end_layout
+
+\begin_layout Verbatim
+Arturo, Rey de los Bretones!
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si esperamos que la respuesta sea un entero, podemos usar la función 
+\family typewriter
+input
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+prompt = "¿Cual es la velocidad de una golondrina sin carga?
+\backslash
+n"
+\end_layout
+
+\begin_layout Verbatim
+velocidad = input(prompt)
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Si el usuario digita una cadena de dígitos, éstos se convierten a un entero
+ que se asigna a 
+\family typewriter
+velocidad
+\family default
+.
+ Desafortunadamente, si el usuario digita un carácter que no sea un dígito,
+ el programa se aborta:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforeverb
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Verbatim
+>>> velocidad = input (prompt)
+\end_layout
+
+\begin_layout Verbatim
+prompt = "¿Cual es la velocidad una golondrina sin carga?
+\backslash
+n"
+\end_layout
+
+\begin_layout Verbatim
+¿Que quiere decir, una golondria Africana o Europea?
+\end_layout
+
+\begin_layout Verbatim
+SyntaxError: invalid syntax
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterverb
+\end_layout
+
+\end_inset
+
+ Para evitar este error, es una buena idea usar 
+\family typewriter
+raw_input
+\family default
+ para obtener una cadena y las funciones de conversión para transformarla
+ en otros tipos.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Operador residuo:
+\end_layout
+
+\end_inset
+
+ operador que se denota con un signo porcentaje (
+\family typewriter
+%
+\family default
+), y trabaja sobre enteros produciendo el residuo de un número al dividirlo
+ por otro.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Expresión booleana:
+\end_layout
+
+\end_inset
+
+ expresión cierta o falsa.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Operador de comparación:
+\end_layout
+
+\end_inset
+
+ uno de los operadores que compara dos valores: 
+\family typewriter
+==
+\family default
+, 
+\family typewriter
+!=
+\family default
+, 
+\family typewriter
+>
+\family default
+, 
+\family typewriter
+<
+\family default
+, 
+\family typewriter
+>=
+\family default
+, y 
+\family typewriter
+<=
+\family default
+.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Operador lógico:
+\end_layout
+
+\end_inset
+
+ uno de los operadores que combina expresiones booleanas: 
+\family typewriter
+and
+\family default
+, 
+\family typewriter
+or
+\family default
+, y 
+\family typewriter
+not
+\family default
+.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Sentencia condicional:
+\end_layout
+
+\end_inset
+
+ sentencia que controla el flujo de ejecución dependiendo de alguna condición.
+\end_layout
+
+\begin_layout Description
+Condición: la expresión booleana en una sentencia condicional que determina
+ que rama se ejecuta.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Sentencia compuesta:
+\end_layout
+
+\end_inset
+
+ es la sentencia que comprende una cabecera y un cuerpo.
+ La cabecera termina con dos puntos seguidos (:).
+ El cuerpo se sangra o indenta con respecto a la cabecera.
+\end_layout
+
+\begin_layout Description
+Bloque: grupo de sentencias consecutivas con la misma indentación.
+\end_layout
+
+\begin_layout Description
+Cuerpo: el bloque, en una sentencia compuesta, que va después de la cabecera.
+\end_layout
+
+\begin_layout Description
+Anidamiento: situación en la que hay una estructura dentro de otra, tal
+ como una sentencia condicional dentro de una rama de otra sentencia condicional.
+\end_layout
+
+\begin_layout Description
+Recursión: es el proceso de llamar la función que se está ejecutando actualmente.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Caso base:
+\end_layout
+
+\end_inset
+
+ corresponde a una rama de la sentencia condicional dentro de una función
+ recursiva, que no hace un llamado recursivo.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Recursión infinita:
+\end_layout
+
+\end_inset
+
+ función que se llama a sí misma recursivamente sin alcanzar nunca el caso
+ base.
+ En Python una recursión infinita eventualmente causa un error en tiempo
+ de ejecución.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Prompt (indicador de entrada):
+\end_layout
+
+\end_inset
+
+ una pista visual que le indica al usuario que digite alguna información.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador residuo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+expresión booleana
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+expresión!booleana
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia condicional 
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!condicional
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+condición
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia compuesta
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+rama
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cuerpo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+bloque
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+anidamiento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+caso base
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+recursión infinita
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+prompt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Enumerate
+Evalue la expresión 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+7 % 0+
+\end_layout
+
+\end_inset
+
+.
+ Explique lo que ocurre.
+\end_layout
+
+\begin_layout Enumerate
+Envuelva el código que viene a continuación en una función llamada 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+comparar(x, y)+
+\end_layout
+
+\end_inset
+
+.
+ Llame a la función comparar tres veces: una en la que el primer argumento
+ sea menor que el segundo, otra en la que aquel sea mayor que éste, y una
+ tercera en la que los argumentos sean iguales.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Verbatim
+ 
+\end_layout
+
+\begin_layout Verbatim
+ if x < y:
+\end_layout
+
+\begin_layout Verbatim
+    print x, "es menor que", y
+\end_layout
+
+\begin_layout Verbatim
+ elif x > y:
+\end_layout
+
+\begin_layout Verbatim
+    print x, "es mayor que", y
+\end_layout
+
+\begin_layout Verbatim
+ else:
+\end_layout
+
+\begin_layout Verbatim
+    print x, "y", y, "son iguales"
+\end_layout
+
+\begin_layout Verbatim
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Copie este programa en un archivo llamado tabladeverdad.py: 
+\end_layout
+
+\begin_deeper
+\begin_layout Verbatim
+ def tabladeverdad(expresion):
+\end_layout
+
+\begin_layout Verbatim
+    print " p      q      %s"  % expresion
+\end_layout
+
+\begin_layout Verbatim
+    longitud = len( " p      q      %s"  % expresion)
+\end_layout
+
+\begin_layout Verbatim
+    print longitud*"="
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+    for p in True, False:
+\end_layout
+
+\begin_layout Verbatim
+        for q in True, False:
+\end_layout
+
+\begin_layout Verbatim
+            print "%-7s %-7s %-7s" % (p, q, eval(expresion))
+\end_layout
+
+\begin_layout Standard
+Pruébelo con el llamado 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+tabladeverdad("p or q")+
+\end_layout
+
+\end_inset
+
+.
+ Ahora ejecútelo con las siguientes expresiones: 
+\end_layout
+
+\begin_layout Enumerate
+"not(p or q)" 
+\end_layout
+
+\begin_layout Enumerate
+"p and q" 
+\end_layout
+
+\begin_layout Enumerate
+"not(p and q)" 
+\end_layout
+
+\begin_layout Enumerate
+"not(p) or not(q)" 
+\end_layout
+
+\begin_layout Enumerate
+"not(p) and not(q)" 
+\end_layout
+
+\begin_layout Standard
+¿Cuales de estas expresiones tienen el mismo valor de verdad (son logicamente
+ equivalentes)?
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
