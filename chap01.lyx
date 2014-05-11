@@ -442,43 +442,14 @@ A Python se lo considera un lenguaje interpretado, porque sus programas
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset ERT
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-$ python
-\end_layout
 
-\begin_layout Verbatim
-
-Python 2.6.2 (r262:71600, Apr 30 2009, 20:29:58) 
-\end_layout
-
-\begin_layout Verbatim
-
-[GCC 4.3.3] on linux2
-\end_layout
-
-\begin_layout Verbatim
-
-Type "help", "copyright", "credits" or "license" for 
-\end_layout
-
-\begin_layout Verbatim
-
-more information.
-\end_layout
-
-\begin_layout Verbatim
-
->>>1 + 1
-\end_layout
-
-\begin_layout Verbatim
-
-2
+\backslash
+scriptsize
 \end_layout
 
 \end_inset
@@ -487,6 +458,40 @@ more information.
 \end_layout
 
 \begin_layout Verbatim
+
+$ python Python 2.7.6 (default, Apr 28 2014, 10:47:40)  
+\end_layout
+
+\begin_layout Verbatim
+
+[GCC 4.8.2] on linux2 Type "help", "copyright", "credits" or "license" for
+ more information.
+ 
+\end_layout
+
+\begin_layout Verbatim
+
+>>> 1+1 
+\end_layout
+
+\begin_layout Verbatim
+
+2 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+normalsize
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -556,6 +561,7 @@ unomasuno.py
 \end_layout
 
 \begin_layout Verbatim
+
 print 1 + 1
 \end_layout
 
@@ -566,18 +572,17 @@ Por acuerdo unánime, los archivos que contienen programas de Python tienen
 .py
 \family default
 .
-\end_layout
-
-\begin_layout Standard
-Para ejecutar el programa, se le tiene que indicar el nombre del guión a
- la interpretadora.
+ Para ejecutar el programa, se le tiene que indicar el nombre del guión
+ al intérprete.
 \end_layout
 
 \begin_layout Verbatim
+
 $ python unomasuno.py
 \end_layout
 
 \begin_layout Verbatim
+
 2
 \end_layout
 
@@ -1474,39 +1479,18 @@ Hola todo el mundo
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
-\begin_layout Plain Layout
-
-%
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 print "Hola todo el mundo!"
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -1549,40 +1533,13 @@ status collapsed
  En este caso, el resultado es mostrar en pantalla las palabras:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 Hola todo el mundo!
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Las comillas señalan el comienzo y el final del valor; no aparecen en el
+Las comillas señalan el comienzo y el final del valor; no aparecen en el
  resultado.
 \end_layout
 
@@ -1825,7 +1782,7 @@ Excepción: otro nombre para un error en tiempo de ejecución.
 
 \begin_layout Description
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2227,18 +2184,22 @@ Escriba 1 2 y presione la tecla Entrar.
 \end_layout
 
 \begin_layout Verbatim
+
   File "<stdin>", line 1
 \end_layout
 
 \begin_layout Verbatim
+
     1 2
 \end_layout
 
 \begin_layout Verbatim
+
       ^
 \end_layout
 
 \begin_layout Verbatim
+
 SyntaxError: invalid syntax
 \end_layout
 

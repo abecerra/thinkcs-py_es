@@ -70,153 +70,38 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX source for textbook ``How to think like a computer scientist''
-\end_layout
-
+LyX source for textbook 
+\begin_inset Quotes eld
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
+How to think like a computer scientist'' 
+\end_layout
 
 \begin_layout Plain Layout
-
-% Copyright (c)  2001  Allen B.
+Copyright (c) 2001 Allen B.
  Downey, Jeffrey Elkner, and Chris Meyers.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
 \end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
-
-% Permission is granted to copy, distribute and/or modify this
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% document under the terms of the GNU Free Documentation License,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Version 1.1  or any later version published by the Free Software
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Foundation; with the Invariant Sections being ``Contributor List'',
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% with no Front-Cover Texts, and with no Back-Cover Texts.
- A copy of
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% the license is included in the section entitled ``GNU Free
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Documentation License''.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% This distribution includes a file named fdl.tex that contains the text
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% of the GNU Free Documentation License.
-  If it is missing, you can obtain
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% it from www.gnu.org or by writing to the Free Software Foundation,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
 \end_layout
 
 \end_inset
@@ -384,38 +269,18 @@ La sentencia de impresión también trabaja con enteros.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+inline false
 status open
 
-\begin_layout Plain Layout
-
-%
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 >>> print 4
 \end_layout
 
 \begin_layout Verbatim
+
 4
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -428,51 +293,40 @@ Si no está seguro del tipo que un valor tiene, el intérprete le puede decir.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+
+\begin_inset listings
+inline false
 status open
 
-\begin_layout Plain Layout
-
-%
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 >>> type("Hola, Mundo!")
 \end_layout
 
 \begin_layout Verbatim
+
 <type 'string'>
 \end_layout
 
 \begin_layout Verbatim
+
 >>> type(17)
 \end_layout
 
 \begin_layout Verbatim
+
 <type 'int'>
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Sin despertar ninguna sorpresa, las cadenas pertenecen al tipo 
+
+\lang spanish
+ 
+\end_layout
+
+\begin_layout Standard
+Sin despertar ninguna sorpresa, las cadenas pertenecen al tipo 
 \family typewriter
 string (cadena)
 \family default
@@ -567,43 +421,27 @@ tipo!float
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> type(3.2)
 \end_layout
 
 \begin_layout Verbatim
+
 <type 'float'>
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- ¿Qué ocurre con valores como 
+
+\end_layout
+
+\begin_layout Standard
+¿Qué ocurre con valores como 
 \begin_inset ERT
 status collapsed
 
@@ -677,51 +515,37 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> type("17")
 \end_layout
 
 \begin_layout Verbatim
+
 <type 'string'>
 \end_layout
 
 \begin_layout Verbatim
+
 >>> type("3.2")
 \end_layout
 
 \begin_layout Verbatim
+
 <type 'string'>
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Ellos son cadenas.
+
+\end_layout
+
+\begin_layout Standard
+Ellos son cadenas.
 \end_layout
 
 \begin_layout Standard
@@ -735,43 +559,27 @@ Cuando usted digita un número grande, podría estar tentado a usar comas
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> print 1,000,000
 \end_layout
 
 \begin_layout Verbatim
+
 1 0 0
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- ¡Bueno, eso no es lo que esperábamos!.
+
+\end_layout
+
+\begin_layout Standard
+¡Bueno, eso no es lo que esperábamos!.
  Resulta que 
 \family typewriter
 1,000,000
@@ -843,47 +651,32 @@ sentencia de asignación
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> mensaje = "¿Qué Onda?"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> n = 17
 \end_layout
 
 \begin_layout Verbatim
+
 >>> pi = 3.14159
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Este ejemplo hace tres asignaciones: la primera asigna la cadena 
+
+\end_layout
+
+\begin_layout Standard
+Este ejemplo hace tres asignaciones: la primera asigna la cadena 
 \begin_inset ERT
 status collapsed
 
@@ -1034,14 +827,38 @@ print
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset listings
+inline false
+status open
 
-\begin_layout Plain Layout
+\begin_layout Verbatim
 
+>>> print mensaje
+\end_layout
 
-\backslash
-beforeverb
+\begin_layout Verbatim
+
+Que Onda?
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print n
+\end_layout
+
+\begin_layout Verbatim
+
+17
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print pi
+\end_layout
+
+\begin_layout Verbatim
+
+3.14159
 \end_layout
 
 \end_inset
@@ -1049,57 +866,45 @@ beforeverb
  
 \end_layout
 
-\begin_layout Verbatim
->>> print mensaje
-\end_layout
-
-\begin_layout Verbatim
-Que Onda?
-\end_layout
-
-\begin_layout Verbatim
->>> print n
-\end_layout
-
-\begin_layout Verbatim
-17
-\end_layout
-
-\begin_layout Verbatim
->>> print pi
-\end_layout
-
-\begin_layout Verbatim
-3.14159
-\end_layout
-
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- En cada caso el resultado es el valor de la variable.
+En cada caso el resultado es el valor de la variable.
  Las variables también tienen tipos; nuevamente, le podemos preguntar al
  intérprete cuales son.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset listings
+inline false
+status open
 
-\begin_layout Plain Layout
+\begin_layout Verbatim
 
+>>> type(mensaje)
+\end_layout
 
-\backslash
-beforeverb
+\begin_layout Verbatim
+
+<type 'string'>
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type(n)
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'int'>
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type(pi)
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'float'>
 \end_layout
 
 \end_inset
@@ -1107,44 +912,8 @@ beforeverb
  
 \end_layout
 
-\begin_layout Verbatim
->>> type(mensaje)
-\end_layout
-
-\begin_layout Verbatim
-<type 'string'>
-\end_layout
-
-\begin_layout Verbatim
->>> type(n)
-\end_layout
-
-\begin_layout Verbatim
-<type 'int'>
-\end_layout
-
-\begin_layout Verbatim
->>> type(pi)
-\end_layout
-
-\begin_layout Verbatim
-<type 'float'>
-\end_layout
-
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- El tipo de una variable es el mismo del valor al que se refiere.
+El tipo de una variable es el mismo del valor al que se refiere.
 \end_layout
 
 \begin_layout Section
@@ -1229,107 +998,47 @@ Si usted le da un nombre ilegal a una variable obtendrá un error sintáctico:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
--2
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-pagebreak
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> 76trombones = "gran desfile"
 \end_layout
 
 \begin_layout Verbatim
+
 SyntaxError: invalid syntax
 \end_layout
 
 \begin_layout Verbatim
+
 >>> mas$ = 1000000
 \end_layout
 
 \begin_layout Verbatim
+
 SyntaxError: invalid syntax
 \end_layout
 
 \begin_layout Verbatim
+
 >>> class = "introducción a la programación"
 \end_layout
 
 \begin_layout Verbatim
+
 SyntaxError: invalid syntax
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
 76trombones
 \family default
@@ -1384,14 +1093,33 @@ Python tiene veintiocho palabras reservadas:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset listings
+inline false
+status open
 
-\begin_layout Plain Layout
+\begin_layout Verbatim
 
+and       continue  else      for       import    not       
+\end_layout
 
-\backslash
-beforeverb
+\begin_layout Verbatim
+
+assert    def       except    from      in        or        
+\end_layout
+
+\begin_layout Verbatim
+
+break     del       exec      global    is        pass      
+\end_layout
+
+\begin_layout Verbatim
+
+class     elif      finally   if        lambda    print     
+\end_layout
+
+\begin_layout Verbatim
+
+raise     return    try       while
 \end_layout
 
 \end_inset
@@ -1399,40 +1127,8 @@ beforeverb
  
 \end_layout
 
-\begin_layout Verbatim
-and       continue  else      for       import    not       
-\end_layout
-
-\begin_layout Verbatim
-assert    def       except    from      in        or        
-\end_layout
-
-\begin_layout Verbatim
-break     del       exec      global    is        pass      
-\end_layout
-
-\begin_layout Verbatim
-class     elif      finally   if        lambda    print     
-\end_layout
-
-\begin_layout Verbatim
-raise     return    try       while
-\end_layout
-
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Usted puede mantener esta lista a mano.
+Usted puede mantener esta lista a mano.
  Si el intérprete se queja por alguno de sus nombres de variables, y usted
  no sabe por qué, búsquelo en esta lista.
 \end_layout
@@ -1464,87 +1160,42 @@ Por ejemplo, el guión
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 print 1
 \end_layout
 
 \begin_layout Verbatim
+
 x = 2
 \end_layout
 
 \begin_layout Verbatim
+
 print x
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- produce la salida
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
+ produce la salida:
 \end_layout
 
 \begin_layout Verbatim
+
 1
 \end_layout
 
 \begin_layout Verbatim
+
 2
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Observe nuevamente que la sentencia de asignación no produce salida.
+Observe nuevamente que la sentencia de asignación no produce salida.
 \end_layout
 
 \begin_layout Section
@@ -1562,104 +1213,53 @@ evalúa
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> 1 + 1
 \end_layout
 
 \begin_layout Verbatim
+
 2
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Un valor, por si mismo, se considera como una expresión, lo mismo ocurre
+ 
+\end_layout
+
+\begin_layout Standard
+Un valor, por si mismo, se considera como una expresión, lo mismo ocurre
  para las variables.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> 17
 \end_layout
 
 \begin_layout Verbatim
+
 17
 \end_layout
 
 \begin_layout Verbatim
+
 >>> x
 \end_layout
 
 \begin_layout Verbatim
+
 2
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Aunque es un poco confuso, evaluar una expresión no es lo mismo que imprimir
- o desplegar un valor.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
 \end_layout
 
 \end_inset
@@ -1667,40 +1267,48 @@ beforeverb
  
 \end_layout
 
+\begin_layout Standard
+Aunque es un poco confuso, evaluar una expresión no es lo mismo que imprimir
+ o desplegar un valor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
 \begin_layout Verbatim
+
 >>> mensaje = "Como le va, Doc?"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> mensaje
 \end_layout
 
 \begin_layout Verbatim
+
 "Como le va, Doc?"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print mensaje
 \end_layout
 
 \begin_layout Verbatim
+
 Como le va, Doc?
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Cuando Python muestra el valor de una expresión que ha evaluado, utiliza
+ 
+\end_layout
+
+\begin_layout Standard
+Cuando Python muestra el valor de una expresión que ha evaluado, utiliza
  el mismo formato que se usaría para entrar un valor.
  En el caso de las cadenas, esto implica que se incluyen las comillas.
  Cuando se usa la sentencia print, el efecto es distinto como usted ya lo
@@ -1714,14 +1322,28 @@ En un guión, una expresión, por sí misma, es una sentencia legal, pero no
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset listings
+inline false
+status open
 
-\begin_layout Plain Layout
+\begin_layout Verbatim
 
+17
+\end_layout
 
-\backslash
-beforeverb
+\begin_layout Verbatim
+
+3.2
+\end_layout
+
+\begin_layout Verbatim
+
+"Hola, Mundo!"
+\end_layout
+
+\begin_layout Verbatim
+
+1 + 1
 \end_layout
 
 \end_inset
@@ -1729,36 +1351,8 @@ beforeverb
  
 \end_layout
 
-\begin_layout Verbatim
-17
-\end_layout
-
-\begin_layout Verbatim
-3.2
-\end_layout
-
-\begin_layout Verbatim
-"Hola, Mundo!"
-\end_layout
-
-\begin_layout Verbatim
-1 + 1
-\end_layout
-
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- no produce ninguna salida.
+no produce ninguna salida.
  ¿Cómo cambiaría el guión de manera que despliegue los valores de las cuatro
  expresiones?
 \end_layout
@@ -1817,78 +1411,34 @@ operandos
 \begin_layout Standard
 Los siguientes son expresiones válidas en Python, cuyo significado es más
  o menos claro: 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
 \end_layout
 
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-2
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 20+32       hora-1   hora*60+minuto   
 \end_layout
 
 \begin_layout Verbatim
+
 minuto/60   5**2     (5+9)*(15-7)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Los símbolos 
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+Los símbolos 
 \family typewriter
 +
 \family default
@@ -1911,11 +1461,8 @@ afterverb
 **
 \family default
  es el símbolo para la exponenciación.
-\end_layout
-
-\begin_layout Standard
-Cuando el nombre de una variable aparece en lugar de un operando, se reemplaza
- por su valor antes de calcular la operación
+ Cuando el nombre de una variable aparece en lugar de un operando, se reemplaza
+ por su valor antes de calcular la operación.
 \end_layout
 
 \begin_layout Standard
@@ -1925,47 +1472,32 @@ La suma, resta, multiplicación y exponenciación realizan lo que usted esperar�
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> minuto = 59
 \end_layout
 
 \begin_layout Verbatim
+
 >>> minuto/60
 \end_layout
 
 \begin_layout Verbatim
+
 0
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- El valor de 
+
+\end_layout
+
+\begin_layout Standard
+El valor de 
 \family typewriter
 minuto
 \family default
@@ -2036,14 +1568,18 @@ Una solución posible a este problema consiste en calcular un porcentaje,
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset listings
+inline false
+status open
 
-\begin_layout Plain Layout
+\begin_layout Verbatim
 
+>>> minuto*100/60
+\end_layout
 
-\backslash
-beforeverb
+\begin_layout Verbatim
+
+98
 \end_layout
 
 \end_inset
@@ -2051,29 +1587,9 @@ beforeverb
  
 \end_layout
 
-\begin_layout Verbatim
->>> minuto*100/60
-\end_layout
-
-\begin_layout Verbatim
-98
-\end_layout
-
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- De nuevo, el resultado se redondea; pero, al menos ahora, el resultado
- estará mas aproximado.
+De nuevo, el resultado se redondea; pero, al menos ahora, el resultado estará
+ mas aproximado.
  Otra alternativa es usar la división en punto flotante, lo que haremos
  en el Capítulo 
 \begin_inset CommandInset ref
@@ -2272,39 +1788,22 @@ cadena
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
  mensaje-1   "Hola"/123   mensaje*"Hola"   "15"+2
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Sin embargo, el operador 
+
+\end_layout
+
+\begin_layout Standard
+Sin embargo, el operador 
 \family typewriter
 +
 \family default
@@ -2335,47 +1834,32 @@ concatenación
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 fruta = "banano"
 \end_layout
 
 \begin_layout Verbatim
+
 bienCocinada = " pan con nueces"
 \end_layout
 
 \begin_layout Verbatim
+
 print fruta + bienCocinada
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- La salida de este programa es 
+
+\end_layout
+
+\begin_layout Standard
+La salida de este programa es 
 \family typewriter
 banano pan con nueces
 \family default
@@ -2422,14 +1906,19 @@ Estas interpretaciones de
 4+4+4
 \family default
 , esperamos que 
-\begin_inset Quotes eld
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+Fun*3+
+\end_layout
+
 \end_inset
 
-Fun
-\begin_inset Quotes erd
-\end_inset
-
-*3 sea lo mismo que 
+ sea lo mismo que 
 \begin_inset ERT
 status collapsed
 
@@ -2442,7 +1931,7 @@ status collapsed
 
 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2506,38 +1995,18 @@ componer
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>>  print 17 + 3
 \end_layout
 
 \begin_layout Verbatim
+
 20
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2554,38 +2023,18 @@ print
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 print "Número de minutos desde media noche: ", 
 \end_layout
 
 \begin_layout Verbatim
+
       hora*60+minuto
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2595,34 +2044,13 @@ afterverb
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 porcentaje = (minuto * 100) / 60
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2718,38 +2146,18 @@ y se marcan con el símbolo
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 # calcula el porcentaje de la hora que ha pasado
 \end_layout
 
 \begin_layout Verbatim
+
 porcentaje = (minuto * 100) / 60
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2759,43 +2167,27 @@ afterverb
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 # precaucion: division entera
 \end_layout
 
 \begin_layout Verbatim
-porcentaje = (minute * 100) / 60   
-\end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
+porcentaje = (minute * 100) / 60
 \end_layout
 
 \end_inset
 
- Todo lo que sigue desde el 
+
+\end_layout
+
+\begin_layout Standard
+todo lo que sigue desde el 
 \family typewriter
 #
 \family default
@@ -3149,54 +2541,47 @@ Ejercicios
 
 \begin_layout Enumerate
 Registre qué sucede cuando usa la sentencia print en combinación con una
- sentencia de asignación, por ejemplo 
-\begin_inset ERT
-status collapsed
+ sentencia de asignación, por ejemplo: 
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-verb+print n = 7+
+print n = 7
 \end_layout
 
 \end_inset
 
-.
+
 \end_layout
 
 \begin_layout Enumerate
-¿Que sucede cuando se usa la sentencia print con una expresión, por ejemplo
+¿Que sucede cuando se usa la sentencia print con una expresión?, por ejemplo:
  
-\begin_inset ERT
-status collapsed
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-verb# print 8+5 #
+print 8+5
 \end_layout
 
 \end_inset
 
- ?
+
 \end_layout
 
 \begin_layout Enumerate
 ¿Que sucede cuando se ejecuta esto?
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-verb+ print 5.2, "esto", 4 - 2, "aquello", 5/2.0 +
+print 5.2, "esto", 4 - 2, "aquello", 5/2.0
 \end_layout
 
 \end_inset
@@ -3204,7 +2589,6 @@ verb+ print 5.2, "esto", 4 - 2, "aquello", 5/2.0 +
 
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 Tome la siguiente oración: Sólo trabajo y nada de juegos hacen de Juan un
  niño aburrido.
@@ -3230,28 +2614,44 @@ La diferencia entre la función input y la función raw_input es que la función
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
 \begin_layout Verbatim
+
 >>> x = input()
 \end_layout
 
 \begin_layout Verbatim
+
 3.14
 \end_layout
 
 \begin_layout Verbatim
+
 >>> type(x)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> x = raw_input()
 \end_layout
 
 \begin_layout Verbatim
+
 3.14
 \end_layout
 
 \begin_layout Verbatim
+
 >>> type(x)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper

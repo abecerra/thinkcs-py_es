@@ -70,153 +70,38 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX source for textbook ``How to think like a computer scientist''
-\end_layout
-
+LyX source for textbook 
+\begin_inset Quotes eld
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
+How to think like a computer scientist'' 
+\end_layout
 
 \begin_layout Plain Layout
-
-% Copyright (c)  2001  Allen B.
+Copyright (c) 2001 Allen B.
  Downey, Jeffrey Elkner, and Chris Meyers.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
 \end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
-
-% Permission is granted to copy, distribute and/or modify this
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% document under the terms of the GNU Free Documentation License,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Version 1.1  or any later version published by the Free Software
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Foundation; with the Invariant Sections being "Contributor List",
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% with no Front-Cover Texts, and with no Back-Cover Texts.
- A copy of
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% the license is included in the section entitled "GNU Free
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Documentation License".
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% This distribution includes a file named fdl.tex that contains the text
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% of the GNU Free Documentation License.
-  If it is missing, you can obtain
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% it from www.gnu.org or by writing to the Free Software Foundation,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
 \end_layout
 
 \end_inset
@@ -281,20 +166,9 @@ llamada a función
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -306,20 +180,13 @@ beforeverb
 <type 'string'>
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El nombre de la función es 
+
+\end_layout
+
+\begin_layout Standard
+El nombre de la función es 
 \family typewriter
 type
 \family default
@@ -381,29 +248,18 @@ En lugar de imprimir el valor de retorno, podemos asignarlo a una variable:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset listings
+inline false
+status open
 
-\begin_layout Plain Layout
+\begin_layout Verbatim
 
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
+>>> b = type("32")
 \end_layout
 
 \begin_layout Verbatim
 
->>> betty = type("32")
-\end_layout
-
-\begin_layout Verbatim
-
->>> print betty
+>>> print b
 \end_layout
 
 \begin_layout Verbatim
@@ -411,20 +267,13 @@ beforeverb
 <type 'string'>
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Otro ejemplo es la función 
+ 
+\end_layout
+
+\begin_layout Standard
+Otro ejemplo es la función 
 \family typewriter
 id
 \family default
@@ -433,20 +282,9 @@ id
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -460,28 +298,17 @@ beforeverb
 
 \begin_layout Verbatim
 
->>> betty = 3
+>>> b = 3
 \end_layout
 
 \begin_layout Verbatim
 
->>> id(betty)
+>>> id(b)
 \end_layout
 
 \begin_layout Verbatim
 
 134882108
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -542,20 +369,9 @@ int
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -577,17 +393,6 @@ beforeverb
 ValueError: invalid literal for int(): Hola
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  
@@ -599,20 +404,9 @@ int
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -634,17 +428,6 @@ beforeverb
 -2
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  La función 
@@ -655,20 +438,9 @@ float
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -690,17 +462,6 @@ beforeverb
 3.14159
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  Finalmente, la función 
@@ -715,20 +476,9 @@ string
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -748,17 +498,6 @@ beforeverb
 \begin_layout Verbatim
 
 '3.14149'
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -846,20 +585,9 @@ minuto
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -874,17 +602,6 @@ beforeverb
 \begin_layout Verbatim
 
 0.983333333333
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -907,20 +624,9 @@ flotante
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -937,21 +643,14 @@ beforeverb
 0.983333333333
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Así que haciendo el denominador flotante, forzamos a Python a realizar
- división en punto flotante.
+
+\end_layout
+
+\begin_layout Standard
+Así que haciendo el denominador flotante, forzamos a Python a realizar división
+ en punto flotante.
 \end_layout
 
 \begin_layout Section
@@ -1068,35 +767,13 @@ Antes de que podamos usar funciones de un módulo, tenemos que importarlas:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 >>> import math
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1124,20 +801,9 @@ notación punto
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1152,17 +818,6 @@ beforeverb
 \begin_layout Verbatim
 
 >>> altura = math.sin(angulo)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1217,20 +872,9 @@ tan
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1247,17 +891,6 @@ beforeverb
 >>> math.sin(angulo)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  La constante 
@@ -1270,20 +903,9 @@ pi
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1293,17 +915,6 @@ beforeverb
 \begin_layout Verbatim
 
 0.707106781187
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1346,40 +957,22 @@ Así como las funciones matemáticas, las funciones de Python pueden componerse,
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 >>> x = math.cos(angulo + math.pi/2)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Esta sentencia toma el valor de 
+
+\end_layout
+
+\begin_layout Standard
+Esta sentencia toma el valor de 
 \family typewriter
 pi
 \family default
@@ -1398,43 +991,22 @@ cos
 \begin_layout Standard
 También se puede tomar el resultado de una función y pasarlo como argumento
  a otra:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 >>> x = math.exp(math.log(10.0))
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Esta sentencia halla el logaritmo en base 
+
+\end_layout
+
+\begin_layout Standard
+Esta sentencia halla el logaritmo en base 
 \family typewriter
 e
 \family default
@@ -1517,20 +1089,9 @@ La sintaxis para una definición de función es:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1540,17 +1101,6 @@ def NOMBRE( LISTA DE PARAMETROS ):
 \begin_layout Verbatim
 
   SENTENCIAS
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1573,20 +1123,9 @@ Las primeras funciones que vamos a escribir no tienen parámetros, así que
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1596,17 +1135,6 @@ def nuevaLinea():
 \begin_layout Verbatim
 
   print
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1631,20 +1159,9 @@ La sintaxis para llamar la nueva función es la misma que para las funciones
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1661,36 +1178,9 @@ nuevaLinea()
 print "Segunda Linea."
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  La salida para este programa es:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Verbatim
@@ -1708,38 +1198,15 @@ Segunda Linea.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Note el espacio extra entre las dos líneas.
+Note el espacio extra entre las dos líneas.
  ¿Qué pasa si deseamos más espacio entre las líneas? Podemos llamar la misma
  función repetidamente:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1766,20 +1233,13 @@ nuevaLinea()
 print "Segunda Linea."
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- O podemos escribir una nueva función llamada 
+ 
+\end_layout
+
+\begin_layout Standard
+O podemos escribir una nueva función llamada 
 \family typewriter
 tresLineas
 \family default
@@ -1787,20 +1247,9 @@ tresLineas
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1839,17 +1288,6 @@ tresLineas()
 \begin_layout Verbatim
 
 print "Segunda Linea."
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1918,20 +1356,9 @@ Uniendo los fragmentos de la sección 3.6, el programa completo luce así:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1984,17 +1411,6 @@ tresLineas()
 \begin_layout Verbatim
 
 print "Segunda Linea."
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2181,20 +1597,9 @@ Aquí hay un ejemplo de una función definida por el programador que toma
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2204,17 +1609,6 @@ def imprimaDoble(pedro):
 \begin_layout Verbatim
 
   print pedro, pedro
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2248,20 +1642,9 @@ imprimaDoble
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2293,17 +1676,6 @@ Spam Spam
 3.14159 3.14159
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  En el primer llamado de función el argumento es una cadena.
@@ -2326,20 +1698,9 @@ imprimaDoble
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2359,17 +1720,6 @@ SpamSpamSpamSpam SpamSpamSpamSpam
 \begin_layout Verbatim
 
 -1.0 -1.0
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2395,20 +1745,9 @@ También podemos usar una variable como argumento:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2424,17 +1763,6 @@ beforeverb
 
 Oh, mundo cruel.
  Oh, mundo cruel.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2499,20 +1827,9 @@ variable local
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2529,17 +1846,6 @@ def concatenarDoble(parte1, parte2):
   imprimaDoble(cat)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  Esta función toma dos argumentos, los concatena, y luego imprime el resultado
@@ -2548,20 +1854,9 @@ afterverb
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2589,20 +1884,13 @@ Pie Jesu domine, Dona eis requiem.
 eis requiem.
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Cuando 
+
+\end_layout
+
+\begin_layout Standard
+Cuando 
 \family typewriter
 concatenarDoble
 \family default
@@ -2615,20 +1903,9 @@ cat
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2638,17 +1915,6 @@ beforeverb
 \begin_layout Verbatim
 
 NameError: cat
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2909,22 +2175,6 @@ error de nombre (NameError)
 :
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
 
 Traceback (innermost last):
@@ -2966,19 +2216,7 @@ NameError: cat
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Esta lista de funciones se denomina un 
+Esta lista de funciones se denomina un 
 \series bold
 trazado inverso
 \series default

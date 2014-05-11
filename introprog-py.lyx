@@ -69,7 +69,34 @@
 \setcounter{tocdepth}{1}
 
 \usepackage{listings}
-\lstset{language=Python}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{textcomp}
+%\definecolor{red}{rgb}{0.6,0,0}  % comments
+%\definecolor{green}{rgb}{0.25,0.5,0.35}  % for strings 
+%\definecolor{purple}{rgb}{0.5,0,0.35} % primitive values, functions
+%\definecolor{docblue}{rgb}{0.25,0.35,0.75} % keywords 
+
+\definecolor{purple2}{RGB}{153,0,153} % there's actually no standard purple
+\definecolor{green2}{RGB}{0,153,0} % a darker green
+
+\lstdefinestyle{python-idle-code}{%
+  language=Python,                   % the language
+  basicstyle=\normalsize\ttfamily,   % size of the fonts for the code
+  % Color settings to match IDLE style
+  keywordstyle=\color{Orange},       % core keywords
+  keywordstyle={[2]\color{purple2}}, % built-ins
+  identifierstyle=\color{blue},
+  stringstyle=\color{green2},
+  commentstyle=\color{red},
+  morecomment=[s][\color{green2}]{"""}{"""},
+  upquote=true,                      % requires textcomp
+  showspaces=false,
+  showstringspaces=false
+}
+
+ 
+\lstset{style=python-idle-code}
+%\lstset{language=Python}
 \end_preamble
 \use_default_options false
 \begin_modules
