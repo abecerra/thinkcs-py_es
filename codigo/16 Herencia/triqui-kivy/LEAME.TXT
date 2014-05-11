@@ -1,0 +1,24 @@
+
+Este ejemplo de clase desarrolla poco a poco un juego de Triqui o Tic-Tac-Toe.
+
+Lo primero para notar es que validar.py contiene todas las funciones para
+revisar si hay triqui del viejo programa en modo texto. Aquí se reutilizan.
+
+Este programa utiliza la biblioteca Kivy, que permite realizar interfaces
+gráficas que corran en celulares, tablets (con pantallas sensibles al tacto) 
+y computadores tradicionales (corriendo MacOS X, Windows y Linux)
+
+En cada archivo los comentarios resaltan el código nuevo:
+
+triqui0.py: crea una ventana vacía
+triqui1.py: Agrega un botón a la ventana (se ve feo!)
+triqui2.py: Agrega 9 botones para formar el tablero del triqui
+triqui3.py: Permite jugar a los dos jugadores sin ningún chequeo
+triqui4.py: Agrega una clase heredada de Button para llevar fila y columna 
+triqui5.py: Cada vez que se juega se copia el estado de los botones a una matriz
+triqui6.py: Se valida si los jugadores ganan el juego con el código del triqui viejo
+	    y se resetea el juego.
+triqui7.py: Se revisa si hay empate, si lo hay, se resetea el juego.
+triqui8.py: Se mejora el código evitando la duplicación.
+
+Andrés Becerra Sandoval.

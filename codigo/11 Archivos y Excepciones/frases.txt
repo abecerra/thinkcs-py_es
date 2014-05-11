@@ -1,0 +1,442 @@
+Life is about enjoying it before death
+El sentido de la vida es disfrutarla antes de morir
+
+
+In 2010, M$ Windows will be a quantum processing emulation layer for a 128-bit 
+mod of a 64-bit hack of a 32-bit patch to a 16-bit GUI for an 8-bit operating 
+system written for a 4-bit processor from a 2-bit company that can't stand 
+1 bit of competition.
+
+"Things should be made as simple as possible, but not any simpler" 
+	- Albert Einstein
+
+- Los verdaderos programadores no hablan de su código. Fue difí­cil
+escribirlo, y aun mucho más entenderlo.
+
+- Los verdaderos programadores no dibujan organigramas. Los hombres de las
+cavernas dibujaban organigramas, y mira como les ha ido...
+
+- Los verdaderos programadores no trabajan de 9 a 6. Si puede verse alguno a
+las 9, es porque ha estado toda la noche trabajando.
+
+- Un programa de ordenador hace lo que usted le ordena que haga, no lo que
+usted quiere que haga.
+
+- Caminar sobre las aguas y desarrollar programas a partir de las
+especificaciones es fácil, si ambas están congeladas.  (Edward V. Berard)
+
+- Hay dos productos que han salido de Berkeley: el LSD y el UNIX. No creemos
+que sea una coincidencia. (Jeremy S. Anderson)
+
+- La programación es una carrera entre ingenieros de software luchando para
+construir programas cada vez más grandes, mejores y a prueba de idiotas, y
+el universo intentando producir cada vez más grandes y mejores idiotas. Por
+ahora, gana el universo. (Rich Cook)
+
+- Sean cuales sean las razones que muevan a una persona a comprarse una
+computadora, a la semana se pone a jugar con ella las 26 horas del dí­a.
+
+- Los ordenadores son como los dioses del Antiguo Testamento, repletos de
+reglas y faltos de piedad. (Joseph Campbell)
+
+- El objetivo de la informática es construir algo que dure al menos hasta
+que hayamos terminado de construirlo.
+
+- Tardo 300 años en construirse, y cuando iba por el 10%, ya se sabí­a que
+iba a ser un desastre.  Pero para entonces la inversión habí­a sido tan
+grande que se sintieron obligados a seguir. Desde que se terminó, ha costado
+una fortuna mantenerla y todaví­a esta en peligro de caerse. No hay ningún
+plan para sustituirla porque nunca ha sido necesaria. Supongo que toda
+instalación de software tiene programas análogos a lo anterior.
+    (K.E.Iverson) (sobre la torre inclinada de Pisa)
+
+- A veces pienso que la prueba más fehaciente de que existe vida inteligente
+en el universo es que nadie ha intentado contactar con nosotros. 
+  (Bill Watterson, humorista)
+
+- Nunca permitas que un objeto mecánico sepa que tienes prisa.
+
+- El esfuerzo de utilizar las máquinas para emular el pensamiento humano
+siempre me ha parecido bastante estúpido. Preferirí­a usarlas para emular
+algo mejor. (Edsger Dijkstra)
+
+- Después de dos años de intentos, cientí­ficos del Centro Regional de
+Primates de Yerkes han  conseguido dejar a una chimpancé embarazada. Lo  que
+prueba que no  hay tarea repugnante para un verdadero cientí­fico.
+(Cientí­fico anónimo)
+
+- Solo hay dos cosas infinitas: el universo y la estupidez humana. No se
+cual va primero. (Albert Einstein)
+
+- Sonreí­r cuando las cosas van mal, quiere decir que ya tienes a quien
+echarle la culpa.
+
+- Hay una teorí­a que afirma que si alguna vez alguien descubre exactamente
+para que es el Universo y por que existe, este desaparecerí­a
+instantáneamente y seria reemplazado por algo mucho mas raro e inexplicable.
+Hay otra teorí­a que afirma que esto ya ha sucedido. (Douglas Adams)
+
+- Si seguimos haciendo lo que estamos haciendo, seguiremos consiguiendo lo
+que estamos consiguiendo. (Stephen Covey)
+
+- Los astrónomos aseguran que el universo es finito, lo cual es
+reconfortante para aquellos que no podemos recordar donde dejamos las cosas.
+(Frank Zappa)
+
+- Se ha descubierto recientemente que la investigación causa cáncer en las
+ratas. (Anónimo)
+
+- La lógica es un método sistemático para llegar con confianza a la
+conclusión errónea. (Máxima de Manly)
+
+- Las computadoras sirven para optimizar la Ley de Murphy
+
+- Maldecir es el único lenguaje que dominan todos los programadores.
+
+- Los ordenadores no son inteligentes. Solo creen que lo son.
+
+- En el mundo de la informática los problemas no desaparecen, solo se
+solapan.
+
+- No puedes encontrar la verdad con la lógica si no la has encontrado ya sin ella.
+         G.K. Chesterton
+
+
+"A human being is part of a whole, called by us the "Universe," 
+a part limited in time and space. He experiences himself, 
+his thoughts and feelings, as something separated from the rest 
+-a kind of optical delusion of his consciousness. 
+This delusion is a kind of prison for us, restricting us to our 
+personal desires and to affection for a few persons nearest us. 
+Our task must be to free ourselves from this prison by widening our 
+circles of compassion to embrace all living creatures and the whole of 
+nature in its beauty. " 
+	Albert Einstein (1879-1955)
+
+"The most valuable acquisitions in a scientific or technical education are 
+the general-purpose mental tools, which remain serviceable for a lifetime. 
+I rate natural language and mathematics as the most important of these tools, 
+and computer science as a third. 
+[..] The learning of mathematics and computer science together has pedagogical
+advantages, for the basic concepts of each reinforce the learning of the other."
+	George Forsynthe
+		     
+The language in which we express our ideas has a strong influence on our 
+thought process
+	Donald Knuth, 1974
+
+
+It was like hearing rumors that a group of model rocket enthusiasts had created a 
+completely functional Saturn V by exchanging blueprints on the Net and mailing valves 
+and flanges to each other.
+	Neal Stephenson  "In the Beginning Was The Command Line"
+	About the Linux Kernel
+
+Censorship: the editing of the collective human consciousness
+        John Perry Barlow
+
+Agnotology: the study of culturally-induced ignorance or doubt, particularly 
+the publication of inaccurate or misleading scientific data. 
+    Robert N. Proctor
+
+Do not hate your oppressors. They need to be liberated just as you do.
+    Ghandi
+
+El precio que los hombres buenos pagan por la indiferencia con respecto a los 
+asuntos públicos es el de ser gobernados por los hombres malvados. 
+    Platón, 427-357 A.C
+
+I just hope that we are in the eve of a swing in a pendulum that tomorrow will 
+wake up and will realize that our fellow citizens have been aroused from their 
+stupor, from ther fear based religion and their fear based politics to see
+what we have to do to make this tiny, this really tiny pale blue dot a place 
+of peace and true goodness.
+    Ann Druyan
+
+I like the scientific spirit ---the holding off, the being sure --- but not
+too sure, the willingess to surrender ideas when the evidence is against them,
+this is ultimately fine -- it keeps the way beyond open.
+	Walt Whitman.
+
+
+They must find it difficult ...
+Those who have taken authority as the truth,
+Rather than truth as the authority
+	G. Massey, Egiptólogo
+
+
+Damos significado a nuestro mundo por la trascendencia de nuestras preguntas y por la profundidad de nuestras respuestas. 
+    Carl Sagan 
+    en la serie Cosmos, capí­tulo el espinazo de la noche
+
+"Dar ejemplo no es la principal manera de influir sobre los demás; es la única manera". 
+    Antanas Mockus.
+
+Ser optimista no es la principal manera de afrontar la vida, ¡es la única manera!
+
+
+"Recuerda siempre que tu propia resolución de triunfar es más importante que cualquier otra cosa."
+    Abraham Lincoln, 
+
+And every day, everywhere, our children spread their dreams beneath our feet. 
+And we should tread softly.
+    Ken Robinson.
+
+Theories are lies that help us to see the truth 
+    Picasso.
+
+Nothing makes sense in biology except in the light of evolution 
+  Dobzhansky.
+
+"Si supiera que el mundo se acaba mañana, yo, hoy todaví­a, plantarí­a un árbol".
+    Martin Luther King (1929-1968)
+
+"A designer knows he has achieved perfection not when there is nothing left to add, 
+but when there is nothing left to take away" 
+  Antoine de Saint-Exupéry
+
+"La vida es una enfermedad que se transmite sexualmente, con una tasa de mortalidad del ciento por ciento".  
+  R.D Lang , citado por Peter Hilmore ,Observer , 17 de marzo , 1985. 
+
+"To use violence is to already be defeated."
+                -- Chinese proverb
+
+"I personally like to imagine all human activities, including science, as individual fingers of a palm. 
+So long as each of these fingers is connected with the palm of basic human empathy and altruism, they 
+will continue to serve the well-being of humanity"
+    Dalai Lama
+    http://www.dalailama.com/messages/buddhism/science-at-the-crossroads
+
+
+Beneath the surface of the world are the rules of science.
+But beneath them, there is a far deeper set of rules.
+A matrix of pure mathematics, which explains the nature
+of the rules of science, and how it is we can understand
+them in the first place.
+Bajo la superficie del mundo están las reglas de la ciencia.
+Por debajo de ellas, hay un conjunto de reglas aún más profundo.
+Una matriz de matemáticas puras que explican la naturaleza
+de las reglas de la ciencia, y que hacen posible que
+podamos entenderlas.
+  David Malone ("Dangerous Knowledge" documentary)
+
+
+... in mathematics you don't understand things, you just get used to them.
+  John von Neumann
+
+If I have seen farther than others, it is because I have stood on the shoulders of giants.
+  Issac Newton
+
+The reasonable man adapts himself to the world; the unreasonable persists in trying 
+to adapt the world to himself. Therefore all progress depends on the unreasonable.
+  George Bernard Shaw
+
+"To be right in everything, we ought always to hold that the white which I see, 
+is black, if the Hierarchical Church so decides it"
+  Ignatius Loyola of the 16th century wrote in his Spiritual Exercises.
+
+
+"Just because you're paranoid don't mean they're not after you"
+  Kurt Cobain
+
+"Arguments that explain everything ... explain nothing."
+  Cristopher Hitchens
+
+All that is necessary for the triumph of evil is that good men do nothing
+    Edmund Burke (January 12, 1729 - July 9, 1797)
+
+What can be asserted without evidence can also be dismissed without evidence.
+  Cristopher Hitchens (2003, Slate)
+
+ ... there is a dialectical usefulness to considering the conventional arguments in reverse, 
+ as it were. For example, to the old theistic question, "Why is there something rather than nothing?" 
+ we can now counterpose the findings of Professor Lawrence Krauss and others, about the foreseeable 
+ heat death of the universe.... So, the question can and must be rephrased: Why will our brief "something" 
+ so soon be replaced with nothing? It's only once we shake our own innate belief in linear progression 
+ and consider the many recessions we have undergone and will undergo that we can grasp the gross stupidity 
+ of those who repose their faith in divine providence and godly design.
+  Cristopher Hitchens
+
+"Philosophy is a by-product of missunderstanding language"
+  Ludwig Wittgenstein
+
+"Preserve your memories; they're all that's left you."
+  Simon and Garfunkel sang on the Bookends album
+
+
+The more things you know, or pretend to know,
+the more powerful you are. It doesn't matter if the things are true.
+What counts, remember, is to possess a secret.
+    Umberto Eco
+
+La literatura crea una fraternidad dentro de la diversidad humana y eclipsa 
+las fronteras que erigen entre hombres y mujeres la ignorancia, las 
+ideologí­as, las religiones, los idiomas y la estupidez. 
+    Mario Vargas Llosa.
+
+
+Primero te ignoran, después se rí­en de ti, luego te atacan,
+entonces ganas.
+	Ghandi.
+
+
+
+"There is in this universe much of what seems to be designed. But instead, we 
+repeatedly discover that natural processes -- collisional selection of worlds, say, or
+natural selection of gene pools, or even the convection pattern in a pot of boiling 
+water -- can extract order out of chaos and deceive us into deducing purpose where 
+there is none.
+The significance of our lives, and our fragile planet, is then determined only by our 
+own wisdom and courage. We are the custodians of life's meaning. We long for a parent 
+to care for us, to forgive us our errors, to save us from our childish mistakes. But 
+knowledge is preferable to ignorance. Better by far to embrace the hard truth than a 
+reassuring fable. If we crave some cosmic purpose, then let us find ourselves a 
+worthy goal."
+    Carl Sagan, Pale Blue Dot
+
+
+
+"Si la creencia en dios fuera natural no habría necesidad de enseñarla. Los niños la tendrían
+al igual que los adultos, el lego y el cura, tanto el pagano como el misionero. No tenemos 
+que enseñar los elementos generales de la naturaleza humana; -- los cinco sentidos, ver, oir,
+oler, probar y sentir. Son universales; asi que la religión parecería ser natural, pero no lo
+es. Al contrario, es un hecho interesente y demostrable, que todos los niños son Ateos, y si la 
+religion no fuera inculcada en sus mentes asi continuarían. Incluso son grandes escépticos, hasta 
+que son blanco de la potente arma con la cual la religión ha sido propagada siempre, a saber, el
+temor -- temor del flagelo de la opinión publica aqui, del celoso y vengativo Dios en el mas allá. 
+No; no hay religión en la naturaleza humana, ni naturaleza humana en la religión. Es puramente
+artificial, el resultado de la educación, mientras el Ateismo es natural, y, si la mente humana
+no fuera pervertida y confundida por los misterios y las necedades de la superstición, sería
+universal.". Ernestine L. Rose "Una defensa del Ateismo" (1878, Mujeres sin Superstición ed.
+Annie Laurie Gaylor, Madison, WI: FFRF, 1997), p. 82
+
+
+"If the belief in god were natural, there would be no need to
+teach it. Children would possess it as well as adults, the layman
+as the priest, the heathean as much as the missionary. We don't
+have to teach the general elements of human nature; -- the five
+senses, seeing, hearing, smelling, tasting, and feeling. They are
+universal; so would religion be were it natural, but it is not. On
+the contrary, it is an interesting and demonstrable fact, that all
+children are Atheists, and were religion not inculcated into their
+minds they would remain so. Even as it is, they are great
+sceptics, until made sensible of the potent weapon by which
+religion has ever been propagated, namely, fear - - fear of the
+lash of public opinion here, and of jealous, vindictive God
+hereafter. No; there is no religion in human nature, nor human
+nature in religion. It is purely artificial, the result of education,
+while Atheism is natural, and, were the human mind not
+perverted and bewildered by the mysteries and follies of
+superstition, would be universal." 
+    Ernestine L. Rose, "A Defence of Atheism" 
+    (1878, Women Without Superstition ed. Annie Laurie Gaylor, Madison, WI: FFRF, 1997), p. 82. 
+
+
+We are all atheists about most of the gods that societies have ever believed in. 
+Some of us just go one god further.
+  -- Richard Dawkins
+
+By all means let's be open-minded, but not so open-minded that our brains drop out.
+  -- Richard Dawkins
+
+De cerca, nadie es normal
+  -- Caetano Veloso
+
+"What do you think about Western Civilisation?"
+"I think it would be a good idea!"
+  -- Mohandas Karamchad Ghandi
+
+When you’re scientifically literate, the world looks different to you. It’s a particular way of 
+questioning what you see and hear. When empowered by this state of mind, objective realities 
+matter. These are the truths of the world that exist outside of whatever your belief system 
+tells you.
+Neil deGrasse Tyson
+http://www.haydenplanetarium.org/tyson/read/2011/08/21/if-i-were-president
+
+
+Christianity: The belief that a cosmic Jewish Zombie who was his own father can make you live forever 
+if you symbolically eat his flesh and telepathically tell him you accept him as your master, so he 
+can remove an evil force from your soul that is present in humanity because a rib-woman was convinced 
+by a talking snake to eat from a magical tree.
+  - Anonymous post in:
+  http://entertainment.slashdot.org/story/12/02/17/0113220/james-randis-latest-debunking-operation
+
+"The ultimate measure of a person is not where they stand in moments
+of comfort and convenience, but where they stand in times of challenge
+and controversy." 
+  - Dr Martin Luther King, Jr 
+
+The generation of random numbers is too important to be left to chance.
+	- Robert R. Coveyou, Oak Ridge National Laboratory
+	
+In the fantastic 'A General Theory of Love', psychologists Thomas Lewis, Fari Amini, and Richard Lannon give this beautiful definition:
+"Science is an inherent contradiction — systematic wonder — applied to the natural world."
+
+“I know from teaching, you never really learn something until you have to teach it,” 
+    Anant Agarwal http://web.mit.edu/newsoffice/2012/mitx-anant-agarwal-profile-0420.html
+    
+“Just because you're paranoid doesn't mean they aren't after you”. 
+    Kurt Cobain
+
+The Scientific Revolution was when scientists—‘natural philosophers’—stopped bullshitting and started acting like engineers.
+	John Doyle. http://leecenter.caltech.edu/doyle-res.html
+
+
+Friends may come and go, but enemies accumulate.
+    Thomas Jones (1892 - 1969) 	
+
+I often say that when you can measure what you are speaking about and
+express it in numbers you know something about it; but when you cannot
+express it in numbers your knowledge is a meagre and unsatisfactory
+kind: it may be the beginning of knowledge but you have scarcely, in your
+thoughts, advanced to the stage of science, whatever the matter may be.
+    Lord Kelvin (1824–1907)
+   
+
+"It's a tragedy that we have to add the word Open to Science"
+ 	Will Schroeder 
+
+Human knowledge increasingly exists in digital form, so building new and 
+better models requires the improvement of software.
+	Keith Cary Curtis - "After the Software Wars"
+
+Reality is that which, when you stop believing in it, it doesn't go away.
+    Philip K. Dick
+    
+The foolish reject what they see, not what they think; the wise reject what they think, not what they see
+     Zen master Huang Po
+     
+"All models are wrong but some are useful" 
+     George Box
+     
+"I contend that we are both atheists. I just believe in one fewer god than you do.
+When you understand why you dismiss all the other possible gods, you will 
+understand why I dismiss yours.”
+     Stephen F. Roberts
+     
+"Auguste Comte, father of positivism, wrote in 1835 that we shall never know what stars are made of (2).
+A few decades later, the chemical composition of stars was deduced by spectral analysis of their light (3)"
+   Christof Koch in "Do not understimate science", letter to Science.
+References
+2. A. Comte, Cours de Philosophie Positive (1830-1842)
+3. G. R. Kirchhoff, R. BUnsen, Ann. Phys. (1860); pp 110,160.
+  
+
+"If there is no right to privacy, there can be no true freedom of expression and opinion,
+and therefore no effective democracy"
+	Dilma Roussef (UN speech after USA NSA leaks)
+
+	
+Why would I make one woman so miserable when I can make so many women very happy? 
+  - Benny Hill
+
+"The purpose of our lives is to be happy"
+  - Dalai Lama
+
+"A man is a success if he gets up in the morning and goes to bed at night and in between does what he wants to do.”
+  - Bob Dylan
+
+"When everything seems to be going against you, remember that the airplane takes off against the wind, not with it." 
+ - Henry Ford
+ 
+ “PRAY, v. To ask that the laws of the universe be annulled in behalf of a single petitioner confessedly unworthy.”

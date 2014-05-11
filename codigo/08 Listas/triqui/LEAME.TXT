@@ -1,0 +1,23 @@
+
+Este ejemplo de clase desarrolla poco a poco un juego de Triqui o Tic-Tac-Toe.
+
+Cada version, de la 0 a la 9 introduce mas funcionalidad y pretende ilustrar
+como desarrollo yo programas: desde un idea mínima que se puede ejecutar hasta
+un programa razonablemente completo.
+
+En cada archivo los comentarios resaltan el código nuevo:
+
+triqui0.py: crea e imprime el tablero vacío
+triqui1.py: permite que un solo jugador juegue por siempre
+triqui2.py: permite que dos jugadores jueguen por siempre
+triqui3.py: revisa si algun jugador gana en las diagonales
+triqui4.py: revisa si algun jugador gana en filas o columnas
+triqui5.py: evita la duplicación de código creando una función 'jugar'
+triqui6.py: introduce un ciclo en 'jugar' para validar las jugadas 
+triqui7.py: introduce la verificación de empates en el juego
+triqui8.py: llama a empate 2 veces en lugar de 1 y añade un mensaje al jugador
+triqui9.py: crea una función 'gana' para que 'jugar' sea mas pequeña y pone el ciclo 
+            del juego en la parte principal (para ejecutarlo con doble click)
+
+
+Andrés Becerra Sandoval.
