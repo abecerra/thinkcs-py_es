@@ -71,41 +71,33 @@
 \usepackage{listings}
 %\usepackage[usenames,dvipsnames]{color}
 \usepackage{textcomp}
-%\definecolor{red}{rgb}{0.6,0,0}  % comments
-%\definecolor{green}{rgb}{0.25,0.5,0.35}  % for strings 
-%\definecolor{purple}{rgb}{0.5,0,0.35} % primitive values, functions
-%\definecolor{docblue}{rgb}{0.25,0.35,0.75} % keywords 
 
-\definecolor{purple2}{RGB}{153,0,153} % there's actually no standard purple
-\definecolor{green2}{RGB}{0,153,0} % a darker green
+\definecolor{purple}{RGB}{153,0,153} 
+\definecolor{green}{RGB}{0,153,0} 
 
-\lstdefinestyle{python-idle-code}{%
-  language=Python,                   % the language
-  basicstyle=\normalsize\ttfamily,   % size of the fonts for the code
+\lstdefinestyle{python-idle-code}{
+  language=Python,                   
+  basicstyle=\normalsize\ttfamily,  
   % Color settings to match IDLE style
   keywordstyle=\color{Orange},       % core keywords
-  keywordstyle={[2]\color{purple2}}, % built-ins
-  identifierstyle=\color{blue},
-  stringstyle=\color{green2},
+  morekeywords=[2]{None,True,False,len,abs,id,type,input,raw_input,raise,open,range,str,int,self,super},
+  keywordstyle={[2]\color{purple}}, % built-ins
+  %identifierstyle=\color{blue}, (in IDLE only for defining functions and classes is blue)
+  stringstyle=\color{green},
   commentstyle=\color{red},
-  morecomment=[s][\color{green2}]{"""}{"""},
+  morecomment=[s][\color{green}]{"""}{"""},
   upquote=true,                      % requires textcomp
   showspaces=false,
-  showstringspaces=false
+  showstringspaces=false  
 }
 
- 
 \lstset{style=python-idle-code}
-%\lstset{language=Python}
 \end_preamble
 \options usenames,dvipsnames
 \use_default_options false
 \begin_modules
 customHeadersFooters
 \end_modules
-\begin_includeonly
-javeriana.lyx
-\end_includeonly
 \maintain_unincluded_children true
 \language spanish
 \language_package default
@@ -141,6 +133,7 @@ javeriana.lyx
 \pdf_colorlinks true
 \pdf_backref false
 \pdf_pdfusetitle true
+\pdf_quoted_options "urlcolor=blue,linkcolor=black"
 \papersize letterpaper
 \use_geometry false
 \use_package amsmath 1
