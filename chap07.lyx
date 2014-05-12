@@ -70,153 +70,38 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX source for textbook ``How to think like a computer scientist''
-\end_layout
-
+LyX source for textbook 
+\begin_inset Quotes eld
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
+How to think like a computer scientist'' 
+\end_layout
 
 \begin_layout Plain Layout
-
-% Copyright (c)  2001  Allen B.
+Copyright (c) 2001 Allen B.
  Downey, Jeffrey Elkner, and Chris Meyers.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
 \end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
-
-% Permission is granted to copy, distribute and/or modify this
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% document under the terms of the GNU Free Documentation License,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Version 1.1  or any later version published by the Free Software
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Foundation; with the Invariant Sections being "Contributor List",
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% with no Front-Cover Texts, and with no Back-Cover Texts.
- A copy of
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% the license is included in the section entitled "GNU Free
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Documentation License".
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% This distribution includes a file named fdl.tex that contains the text
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% of the GNU Free Documentation License.
-  If it is missing, you can obtain
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% it from www.gnu.org or by writing to the Free Software Foundation,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
 \end_layout
 
 \end_inset
@@ -332,50 +217,31 @@ operador!corchete
 
 \begin_layout Standard
 El operador corchete selecciona un carácter de una cadena.
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Verbatim
 >>> fruta = "banano"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 >>> letra = fruta[1]
 \end_layout
 
-\begin_layout Verbatim
->>> print letra
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
-\backslash
-afterverb
+>>> print letra
 \end_layout
 
 \end_inset
 
- La expresión 
+
+\end_layout
+
+\begin_layout Standard
+La expresión 
 \family typewriter
 fruta[1]
 \family default
@@ -396,40 +262,13 @@ letra
 , obtenemos una pequeña sorpresa:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 a
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- La primera letra de 
+La primera letra de 
 \begin_inset Quotes eld
 \end_inset
 
@@ -467,50 +306,32 @@ b
 \begin_layout Standard
 Si usted desea la primera letra de una cadena se pone 0, o cualquier expresión
  con el valor 0, dentro de los corchetes:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> letra = fruta[0]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print letra
 \end_layout
 
 \begin_layout Verbatim
+
 b
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- La expresión en corchetes se denomina 
+
+\end_layout
+
+\begin_layout Standard
+La expresión en corchetes se denomina 
 \series bold
 índice
 \series default
@@ -605,88 +426,50 @@ len
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> fruta = "banano"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> len(fruta)
 \end_layout
 
 \begin_layout Verbatim
+
 6
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
  Para acceder a la última letra de una cadena usted podría caer en algo
  como esto:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 longitud = len(fruta)
 \end_layout
 
 \begin_layout Verbatim
+
 ultima = fruta[longitud]       # ERROR!
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Y no funcionará.
+
+\end_layout
+
+\begin_layout Standard
+Y no funcionará.
  Causa un error en tiempo de ejecución, 
 \family typewriter
 IndexError: string index out of range
@@ -723,43 +506,27 @@ error en tiempo de ejecución
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 longitud = len(fruta)
 \end_layout
 
 \begin_layout Verbatim
+
 ultima = fruta[longitud-1]
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Alternativamente, podemos usar índices negativos, que cuentan hacia atrás
+
+\end_layout
+
+\begin_layout Standard
+Alternativamente, podemos usar índices negativos, que cuentan hacia atrás
  desde el fin de la cadena.
  La expresión 
 \family typewriter
@@ -858,93 +625,42 @@ recorrido
 while
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-2
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 indice = 0
 \end_layout
 
 \begin_layout Verbatim
+
 while indice < len(fruta):
 \end_layout
 
 \begin_layout Verbatim
+
   letra = fruta[indice]
 \end_layout
 
 \begin_layout Verbatim
+
   print letra
 \end_layout
 
 \begin_layout Verbatim
+
   indice = indice + 1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Este ciclo recorre la cadena y despliega cada letra en una línea independiente.
+
+\end_layout
+
+\begin_layout Standard
+Este ciclo recorre la cadena y despliega cada letra en una línea independiente.
  La condición del ciclo es 
 \family typewriter
 indice < len(fruta)
@@ -972,43 +688,27 @@ for
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 for caracter in fruta:
 \end_layout
 
 \begin_layout Verbatim
-%   print caracter
-\end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
+   print caracter
 \end_layout
 
 \end_inset
 
- Cada vez que el ciclo itera, el próximo carácter en la cadena se asigna
+
+\end_layout
+
+\begin_layout Standard
+Cada vez que el ciclo itera, el próximo carácter en la cadena se asigna
  a la variable 
 \family typewriter
 caracter
@@ -1140,29 +840,17 @@ status collapsed
  de Robert McCloskey, los nombres de los patos son Jack, Kack, Lack, Mack,
  Nack, Ouack, Pack, and Quack.
  Este ciclo los despliega en orden:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 prefijos = "JKLMNOPQ"
 \end_layout
 
 \begin_layout Verbatim
+
 sufijo = "ack"
 \end_layout
 
@@ -1171,91 +859,73 @@ sufijo = "ack"
 \end_layout
 
 \begin_layout Verbatim
+
 for letra in prefijos:
 \end_layout
 
 \begin_layout Verbatim
+
   print letra + sufijo
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- La salida de este programa es:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+La salida de este programa es:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 Jack
 \end_layout
 
 \begin_layout Verbatim
+
 Kack
 \end_layout
 
 \begin_layout Verbatim
+
 Lack
 \end_layout
 
 \begin_layout Verbatim
+
 Mack
 \end_layout
 
 \begin_layout Verbatim
+
 Nack
 \end_layout
 
 \begin_layout Verbatim
+
 Oack
 \end_layout
 
 \begin_layout Verbatim
+
 Pack
 \end_layout
 
 \begin_layout Verbatim
+
 Qack
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Por supuesto que hay un error, ya que 
+
+\end_layout
+
+\begin_layout Standard
+Por supuesto que hay un error, ya que 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1315,66 +985,52 @@ segmento
 \series default
 .
  Seleccionar un segmento es similar a seleccionar un carácter:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> s = "Pedro, Pablo, y Maria"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print s[0:5]
 \end_layout
 
 \begin_layout Verbatim
+
 Pedro
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print s[7:12]
 \end_layout
 
 \begin_layout Verbatim
+
 Pablo
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print s[16:21]
 \end_layout
 
 \begin_layout Verbatim
+
 Maria
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- El operador 
+
+\end_layout
+
+\begin_layout Standard
+El operador 
 \family typewriter
 [n:m]
 \family default
@@ -1483,53 +1139,33 @@ Si usted omite el primer índice (antes de los puntos seguidos), el segmento
  comienza en el inicio de la cadena.
  Si se omite el segundo índice, el segmento va hasta el final.
  Entonces:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> fruta  = "banano"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> fruta[:3]
 \end_layout
 
 \begin_layout Verbatim
+
 'ban'
 \end_layout
 
 \begin_layout Verbatim
+
 >>> f[3:]
 \end_layout
 
 \begin_layout Verbatim
+
 'ano'
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1571,155 +1207,65 @@ comparación!de cadenas
 \begin_layout Standard
 El operador de comparación funciona con cadenas.
  Para ver si dos cadenas son iguales:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 if palabra == "banana":
 \end_layout
 
 \begin_layout Verbatim
+
   print  "No hay bananas!"
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
--2
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-pagebreak
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Las otras operaciones de comparación son útiles para poner las palabras
  en orden alfabético:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 if palabra < "banana":
 \end_layout
 
 \begin_layout Verbatim
+
   print "Su palabra," + palabra + ", va antes que banana."
 \end_layout
 
 \begin_layout Verbatim
+
 elif palabra > "banana":
 \end_layout
 
 \begin_layout Verbatim
+
   print "Su palabra," + palabra + ", va después de banana."
 \end_layout
 
 \begin_layout Verbatim
+
 else:
 \end_layout
 
 \begin_layout Verbatim
-  print "No hay bananas!"
-\end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
+  print "No hay banana!"
 \end_layout
 
 \end_inset
 
- Sin embargo, usted debe ser consciente de que Python no maneja las letras
+
+\end_layout
+
+\begin_layout Standard
+Sin embargo, usted debe ser consciente de que Python no maneja las letras
  minúsculas y mayúsculas de la misma forma en que lo hace la gente.
  Todas las letras mayúsculas vienen antes de las minúsculas.
  Si palabra vale 
@@ -1733,40 +1279,13 @@ Zebra
  la salida sería:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 Su palabra, Zebra, va antes que banana.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Este problema se resuelve usualmente convirtiendo las cadenas a un formato
+Este problema se resuelve usualmente convirtiendo las cadenas a un formato
  común, todas en minúsculas por ejemplo, antes de hacer la comparación.
  Un problema más difícil es lograr que el programa reconozca que una zebra
  no es una fruta.
@@ -1817,45 +1336,23 @@ Uno puede caer en la trampa de usar el operador
  al lado izquierdo de una asignación con la intención de modificar un carácter
  en una cadena.
  Por ejemplo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 saludo = "Hola mundo"
 \end_layout
 
 \begin_layout Verbatim
+
 saludo[0] = 'J'            # ERROR!
 \end_layout
 
 \begin_layout Verbatim
+
 print saludo
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1892,50 +1389,32 @@ inmutables
 , lo que quiere decir que no se puede cambiar una cadena existente.
  Lo máximo que se puede hacer es crear otra cadena que cambia un poco a
  la original:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 saludo = "Hola mundo!"
 \end_layout
 
 \begin_layout Verbatim
+
 nuevoSaludo = 'J' + saludo[1:]
 \end_layout
 
 \begin_layout Verbatim
+
 print nuevoSaludo
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- La solución consiste en concatenar la primera nueva letra con un segmento
+
+\end_layout
+
+\begin_layout Standard
+La solución consiste en concatenar la primera nueva letra con un segmento
  de 
 \family typewriter
 saludo
@@ -1950,35 +1429,6 @@ status collapsed
 
 \begin_layout Plain Layout
 concatenación
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-adjustpage{-2}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-pagebreak
 \end_layout
 
 \end_inset
@@ -2049,58 +1499,43 @@ patrón computacional
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def buscar(cad, c):
 \end_layout
 
 \begin_layout Verbatim
+
   indice = 0
 \end_layout
 
 \begin_layout Verbatim
+
   while indice < len(cad):
 \end_layout
 
 \begin_layout Verbatim
+
     if cad[indice] == c:
 \end_layout
 
 \begin_layout Verbatim
+
       return indice
 \end_layout
 
 \begin_layout Verbatim
+
     indice = indice + 1
 \end_layout
 
 \begin_layout Verbatim
+
   return -1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2205,57 +1640,38 @@ El siguiente programa cuenta el número de veces que la letra
 a
 \family default
  aparece en una cadena:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 fruta = "banano"
 \end_layout
 
 \begin_layout Verbatim
+
 cont = 0
 \end_layout
 
 \begin_layout Verbatim
+
 for car in fruta:
 \end_layout
 
 \begin_layout Verbatim
+
   if car == 'a':
 \end_layout
 
 \begin_layout Verbatim
+
     cont = cont + 1
 \end_layout
 
 \begin_layout Verbatim
+
 print cont
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2339,42 +1755,18 @@ string
 \family default
  contiene funciones útiles para manipular cadenas.
  Como de costumbre, tenemos que importarlo antes de usarlo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> import string
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El módulo 
+El módulo 
 \family typewriter
 string
 \family default
@@ -2388,46 +1780,28 @@ find
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> fruta = "banano"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> ind = string.find(fruta, "a")
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print ind
 \end_layout
 
 \begin_layout Verbatim
+
 1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2450,128 +1824,71 @@ De hecho
 string.find
 \family default
  es más general que buscar, también puede buscar subcadenas, no solo caracteres:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> string.find("banano", "na")
 \end_layout
 
 \begin_layout Verbatim
+
 2
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- También tiene un argumento adicional que especifica el índice desde el
- que debe empezar la búsqueda:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+También tiene un argumento adicional que especifica el índice desde el que
+ debe empezar la búsqueda:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> string.find("banana", "na", 3)
 \end_layout
 
 \begin_layout Verbatim
+
 4
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Igualmente, puede tomar dos argumentos adicionales que especifican un rango
+
+\end_layout
+
+\begin_layout Standard
+Igualmente, puede tomar dos argumentos adicionales que especifican un rango
  de índices:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> string.find("bob", "b", 1, 2)
 \end_layout
 
 \begin_layout Verbatim
+
 -1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Aquí la búsqueda falló porque la letra 
+
+\end_layout
+
+\begin_layout Standard
+Aquí la búsqueda falló porque la letra 
 \begin_inset ERT
 status collapsed
 
@@ -2707,50 +2024,28 @@ string.uppercase
 \family default
  contiene todas las letras mayúsculas.
  Intente lo siguiente y vea por sí mismo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> print string.lowercase
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print string.uppercase
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print string.digits
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Podemos usar estas constantes y la función 
+Podemos usar estas constantes y la función 
 \family typewriter
 find
 \family default
@@ -2768,130 +2063,69 @@ find(lowercase, c)
 c
 \family default
  debe ser una letra minúscula:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def esMinuscula(c):
 \end_layout
 
 \begin_layout Verbatim
+
   return string.find(string.lowercase, c) != -1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Otra alternativa la da el operador 
+
+\end_layout
+
+\begin_layout Standard
+Otra alternativa la da el operador 
 \family typewriter
 in
 \family default
  que determina si un carácter aparece en una cadena:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def esMinuscula(c):
 \end_layout
 
 \begin_layout Verbatim
+
   return c in string.lowercase
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
  Y otra alternativa más, con el operador de comparación:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def esMinuscula(c):
 \end_layout
 
 \begin_layout Verbatim
+
   return 'a' <= c <= 'z'
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Si 
+
+\end_layout
+
+\begin_layout Standard
+Si 
 \family typewriter
 c
 \family default
@@ -2974,42 +2208,22 @@ Otra constante definida en el módulo
 string
 \family default
  puede sorprenderlo cuando la imprima:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> print string.whitespace
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Un carácter de los que pertenecen a 
+
+\end_layout
+
+\begin_layout Standard
+Un carácter de los que pertenecen a 
 \series bold
 whitespace
 \series default
@@ -3426,62 +2640,62 @@ verb+cadenas.py+
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
   def invertir(s):
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
 \begin_layout Verbatim
+
       >>> invertir('feliz')
 \end_layout
 
 \begin_layout Verbatim
+
       'zilef'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> invertir('Python')
 \end_layout
 
 \begin_layout Verbatim
+
       'nohtyP'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> invertir("")
 \end_layout
 
 \begin_layout Verbatim
+
       ''
 \end_layout
 
 \begin_layout Verbatim
+
       >>> invertir("P")
 \end_layout
 
 \begin_layout Verbatim
+
       'P'
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
@@ -3490,39 +2704,23 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
+
   if __name__ == '__main__':
 \end_layout
 
 \begin_layout Verbatim
+
     import doctest
 \end_layout
 
 \begin_layout Verbatim
+
     doctest.testmod()
-\end_layout
-
-\begin_layout Verbatim
-  
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Agregue un cuerpo a la función invertir que haga que pase la prueba unitaria.
+ Agregue un cuerpo a la función invertir que haga que pase la prueba unitaria.
 \end_layout
 
 \begin_layout Standard
@@ -3545,364 +2743,295 @@ verb+cadenas.py+
 \end_deeper
 \begin_layout Enumerate
 Reflejar:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
   def reflejar(s):
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
 \begin_layout Verbatim
+
       >>> reflejar("bien")
 \end_layout
 
 \begin_layout Verbatim
+
       'bienneib'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> reflejar("sí")
 \end_layout
 
 \begin_layout Verbatim
+
       'síís'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> reflejar('Python')
 \end_layout
 
 \begin_layout Verbatim
+
       'PythonnohtyP'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> reflejar("")
 \end_layout
 
 \begin_layout Verbatim
+
       ''
 \end_layout
 
 \begin_layout Verbatim
+
       >>> reflejar("a")
 \end_layout
 
 \begin_layout Verbatim
+
       'aa'
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
-\begin_layout Verbatim
-  
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 Eliminar letra:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
   def elimina_letra(letra, cadena):
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina_letra('a', 'manzana')
 \end_layout
 
 \begin_layout Verbatim
+
       'mnzn'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina_letra('a', 'banana')
 \end_layout
 
 \begin_layout Verbatim
+
       'bnn'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina_letra('z', 'banana')
 \end_layout
 
 \begin_layout Verbatim
+
       'banana'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina_letra('i', 'Mississippi')
 \end_layout
 
 \begin_layout Verbatim
+
       'Msssspp'
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
-\begin_layout Verbatim
-  
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 Es palíndromo:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
   def es_palindromo(s):
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
 \begin_layout Verbatim
+
       >>> es_palindromo('abba')
 \end_layout
 
 \begin_layout Verbatim
+
       True
 \end_layout
 
 \begin_layout Verbatim
+
       >>> es_palindromo('abab')
 \end_layout
 
 \begin_layout Verbatim
+
       False
 \end_layout
 
 \begin_layout Verbatim
+
       >>> es_palindromo('tenet')
 \end_layout
 
 \begin_layout Verbatim
+
       True
 \end_layout
 
 \begin_layout Verbatim
+
       >>> es_palindromo('banana')
 \end_layout
 
 \begin_layout Verbatim
+
       False
 \end_layout
 
 \begin_layout Verbatim
+
       >>> es_palindromo('zorra arroz')
 \end_layout
 
 \begin_layout Verbatim
+
       True
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
-\begin_layout Verbatim
-  
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 Cuenta el número de ocurrencias:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
   def cuenta(sub, s):
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
 \begin_layout Verbatim
+
       >>> cuenta('is', 'Mississippi')
 \end_layout
 
 \begin_layout Verbatim
+
       2
 \end_layout
 
 \begin_layout Verbatim
+
       >>> cuenta('an', 'banana')
 \end_layout
 
 \begin_layout Verbatim
+
       2
 \end_layout
 
 \begin_layout Verbatim
+
       >>> cuenta('ana', 'banana')
 \end_layout
 
 \begin_layout Verbatim
+
       2
 \end_layout
 
 \begin_layout Verbatim
+
       >>> cuenta('nana', 'banana')
 \end_layout
 
 \begin_layout Verbatim
+
       1
 \end_layout
 
 \begin_layout Verbatim
+
       >>> cuenta('nanan', 'banana')
 \end_layout
 
 \begin_layout Verbatim
+
       0
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
 \begin_layout Verbatim
-  
-\end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -3910,85 +3039,69 @@ afterverb
 
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
-Eliminar la primera ocurrencia:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+Eliminar la primera ocurrencia: 
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
   def elimina(sub, s):
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina('an', 'banana')
 \end_layout
 
 \begin_layout Verbatim
+
       'bana'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina('cic', 'bicicleta')
 \end_layout
 
 \begin_layout Verbatim
+
       'bileta'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina('iss', 'Mississippi')
 \end_layout
 
 \begin_layout Verbatim
+
       'Missippi'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina('huevo', 'bicicleta')
 \end_layout
 
 \begin_layout Verbatim
+
       'bicicleta'
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
 \begin_layout Verbatim
-  
-\end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -3996,94 +3109,69 @@ afterverb
 
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 Eliminar todas las ocurrencias:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
   def elimina_todo(sub, s):
 \end_layout
 
 \begin_layout Verbatim
+
     """
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina_todo('an', 'banana')
 \end_layout
 
 \begin_layout Verbatim
+
       'ba'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina_todo('cic', 'bicicleta')
 \end_layout
 
 \begin_layout Verbatim
+
       'bileta'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina_todo('iss', 'Mississippi')
 \end_layout
 
 \begin_layout Verbatim
+
       'Mippi'
 \end_layout
 
 \begin_layout Verbatim
+
       >>> elimina_todo('huevos', 'bicicleta')
 \end_layout
 
 \begin_layout Verbatim
+
       'bicicleta'
 \end_layout
 
 \begin_layout Verbatim
+
     """
-\end_layout
-
-\begin_layout Verbatim
-  
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
 
 \end_layout
 

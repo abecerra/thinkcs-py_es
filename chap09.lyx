@@ -217,98 +217,42 @@ tupla
 \series default
 , que se parece a una lista, con la excepción de que es inmutable.
  Sintácticamente, una tupla es una lista de valores separados por comas:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 >>> tupla = 'a', 'b', 'c', 'd', 'e'
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Aunque no es necesario, se pueden encerrar entre paréntesis:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+Aunque no es necesario, se pueden encerrar entre paréntesis:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 >>> tupla = ('a', 'b', 'c', 'd', 'e')
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Para crear una tupla con un único elemento, tenemos que incluir la coma
+
+\end_layout
+
+\begin_layout Standard
+Para crear una tupla con un único elemento, tenemos que incluir la coma
  final:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -325,41 +269,20 @@ beforeverb
 <type 'tuple'>
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Sin la coma, Python creería que 
+
+\end_layout
+
+\begin_layout Standard
+Sin la coma, Python creería que 
 \family typewriter
 ('a')
 \family default
  es una cadena en paréntesis:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -376,38 +299,17 @@ beforeverb
 <type 'string'>
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Las operaciones sobre tuplas son las mismas que vimos con las listas.
+
+\end_layout
+
+\begin_layout Standard
+Las operaciones sobre tuplas son las mismas que vimos con las listas.
  El operador corchete selecciona un elemento de la tupla.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -424,37 +326,16 @@ beforeverb
 'a'
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Y el operador segmento selecciona un rango de elementos:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+Y el operador segmento selecciona un rango de elementos:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -466,20 +347,13 @@ beforeverb
 ('b', 'c')
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Pero si intentamos modificar un elemento de la tupla obtenemos un error:
+
+\end_layout
+
+\begin_layout Standard
+Pero si intentamos modificar un elemento de la tupla obtenemos un error:
 \end_layout
 
 \begin_layout Standard
@@ -493,23 +367,9 @@ error en tiempo de ejecución
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -521,38 +381,17 @@ beforeverb
 TypeError: object doesn't support item assignment
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Aunque no podemos modificar los elementos, sí podemos modificar toda la
+
+\end_layout
+
+\begin_layout Standard
+Aunque no podemos modificar los elementos, sí podemos modificar toda la
  tupla:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -579,20 +418,9 @@ beforeverb
 >>> tupla
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -641,23 +469,9 @@ a
 b
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -674,63 +488,35 @@ beforeverb
 >>> b = temp
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Si tenemos que intercambiar variables muchas veces, el código tiende a
- ser engorroso.
+
+\end_layout
+
+\begin_layout Standard
+Si tenemos que intercambiar variables muchas veces, el código tiende a ser
+ engorroso.
  Python proporciona una forma de 
 \series bold
 asignación de tuplas
 \series default
  que resuelve este problema:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 >>> a, b = b, a
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El lado izquierdo es una tupla de variables; el derecho es una tupla de
+
+\end_layout
+
+\begin_layout Standard
+El lado izquierdo es una tupla de variables; el derecho es una tupla de
  valores.
  Cada valor se asigna a su respectiva variable en el orden en que se presenta.
  Las expresiones en el lado derecho se evalúan antes de cualquier asignación.
@@ -740,23 +526,9 @@ afterverb
 \begin_layout Standard
 Naturalmente, el número de variables a la izquierda y el número de valores
  a la derecha deben coincidir.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -768,20 +540,9 @@ beforeverb
 ValueError: unpack tuple of wrong size
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -834,23 +595,9 @@ función!tupla como valor de retorno
 \begin_layout Standard
 Las funciones pueden tener tuplas como valores de retorno.
  Por ejemplo, podríamos escribir una función que intercambie sus dos parámetros:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -862,57 +609,29 @@ def intercambiar(x, y):
   return y, x
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Así podemos asignar el valor de retorno a una tupla con dos variables:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+Así podemos asignar el valor de retorno a una tupla con dos variables:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 a, b = intercambiar(a, b)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- En este caso, escribir una función 
+
+\end_layout
+
+\begin_layout Standard
+En este caso, escribir una función 
 \family typewriter
 intercambio
 \family default
@@ -922,23 +641,9 @@ intercambio
 intercambio
 \family default
 , que consiste en el siguiente error:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -950,57 +655,29 @@ def intercambio(x, y):      # version incorrecta
   x, y = y, x
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Si llamamos a esta función así:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+Si llamamos a esta función así:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 intercambio(a, b)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- entonces 
+
+\end_layout
+
+\begin_layout Standard
+entonces 
 \family typewriter
 a
 \family default
@@ -1129,23 +806,9 @@ random
 \family default
 , se obtiene el siguiente número de una serie muy larga.
  Para ver un ejemplo ejecute el siguiente ciclo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1171,20 +834,13 @@ for i in range(10):
   print x
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Para generar un número aleatorio entre 0.0 y un límite superior como 
+
+\end_layout
+
+\begin_layout Standard
+Para generar un número aleatorio entre 0.0 y un límite superior como 
 \family typewriter
 sup
 \family default
@@ -1218,23 +874,9 @@ n
  Luego cada vez que itera en un ciclo for, reemplaza uno de los ceros por
  un número aleatorio.
  El valor de retorno es una referencia a la lista construida:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1261,73 +903,17 @@ def listaAleatoria(n):
   return s
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- La probaremos con ocho elementos.
+
+\end_layout
+
+\begin_layout Standard
+La probaremos con ocho elementos.
  Para depurar es una buena idea empezar con pocos datos:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
--2
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1374,20 +960,13 @@ beforeverb
 0.800367163582
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Los números generados por 
+
+\end_layout
+
+\begin_layout Standard
+Los números generados por 
 \family typewriter
 random
 \family default
@@ -1460,23 +1039,9 @@ reference "counter"
 Entonces podemos copiar el programa viejo para adaptarlo posteriormente
  a nuestro problema actual.
  El original es:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1503,20 +1068,13 @@ for c in fruta:
 print cont
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El primer paso es reemplazar 
+
+\end_layout
+
+\begin_layout Standard
+El primer paso es reemplazar 
 \family typewriter
 fruta
 \family default
@@ -1555,20 +1113,9 @@ sup
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1595,20 +1142,13 @@ for num in lista:
 print cont
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El último paso consiste en encapsular este código en una función denominada
+
+\end_layout
+
+\begin_layout Standard
+El último paso consiste en encapsular este código en una función denominada
  
 \family typewriter
 enRegion
@@ -1623,23 +1163,9 @@ inf
 sup
 \family default
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1671,20 +1197,13 @@ def enRegion(lista, inf, sup):
   return cont
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Copiando y modificando un programa existente fuimos capaces de escribir
+
+\end_layout
+
+\begin_layout Standard
+Copiando y modificando un programa existente fuimos capaces de escribir
  esta función rápidamente y ahorrarnos un buen tiempo de depuración.
  Este plan de desarrollo se denomina 
 \series bold
@@ -1716,23 +1235,9 @@ enRegion
 \family default
  es un poco engorroso.
  Con dos no esta tan mal:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1744,37 +1249,12 @@ inf = enRegion(a, 0.0, 0.5)
 sup = enRegion(a, 0.5, 1)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  Pero con cuatro:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1796,20 +1276,13 @@ Region3 = enRegion(a, 0.5, 0.75)
 Region4 = enRegion(a, 0.75, 1.0)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Hay dos problemas.
+
+\end_layout
+
+\begin_layout Standard
+Hay dos problemas.
  Uno es que siempre tenemos que crear nuevos nombres de variables para cada
  resultado.
  El otro es que tenemos que calcular el rango de cada región.
@@ -1839,23 +1312,9 @@ i
 numRegiones-1
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1882,20 +1341,13 @@ for i in range(numRegiones):
   print inf, " hasta ", sup
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Para calcular el extremo inferior de cada región, multiplicamos la variable
+
+\end_layout
+
+\begin_layout Standard
+Para calcular el extremo inferior de cada región, multiplicamos la variable
  de ciclo por el ancho.
  El extremo superior está a un 
 \family typewriter
@@ -1910,22 +1362,6 @@ Con
 numRegiones = 8
 \family default
 , la salida es:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Verbatim
@@ -1969,19 +1405,7 @@ beforeverb
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Usted puede confirmar que cada región tiene el mismo ancho, que no se solapan
+Usted puede confirmar que cada región tiene el mismo ancho, que no se solapan
  y que cubren el rango completo de 0.0 a 1.0.
 \end_layout
 
@@ -2012,23 +1436,9 @@ enRegion
 i
 \family default
 ésimo elemento de la lista:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2070,37 +1480,14 @@ for i in range(numRegiones):
 print Regiones
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Con una lista de 1000 valores, este código produce la siguiente lista de
+
+\end_layout
+
+\begin_layout Standard
+Con una lista de 1000 valores, este código produce la siguiente lista de
  conteo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Verbatim
@@ -2109,19 +1496,7 @@ beforeverb
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Todos estos valores están muy cerca a 125, que es lo que esperamos.
+Todos estos valores están muy cerca a 125, que es lo que esperamos.
  Al menos, están lo suficientemente cerca como para creer que el generador
  de números pseudoaleatorios está funcionando bien.
 \end_layout
@@ -2213,24 +1588,10 @@ numRegiones
 \family default
 .
  Si redondeamos ese número al entero más cercano por debajo, obtenemos lo
- que queremos: un índice de región:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+ que queremos, un índice de región:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2257,20 +1618,13 @@ for i in lista:
   Regiones[ind] = Regiones[ind] + 1
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Usamos la función 
+
+\end_layout
+
+\begin_layout Standard
+Usamos la función 
 \family typewriter
 int
 \family default
@@ -2535,10 +1889,11 @@ Escriba un programa que lea una lista de palabras de un archivos e imprima
 
 \begin_deeper
 \begin_layout Standard
-Este es un ejemplo con palabras en inglés de la salida del programa:
+Este es un ejemplo de la salida del programa con palabras en inglés:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Verbatim
+
 ['deltas', 'desalt', 'lasted', 'salted', 'slated', 'staled'] ['retainers',
  'ternaries'] ['generating', 'greatening'] ['resmelts', 'smelters', 'termless']
 \end_layout

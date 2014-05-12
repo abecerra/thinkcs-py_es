@@ -70,153 +70,38 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX source for textbook ``How to think like a computer scientist''
-\end_layout
-
+LyX source for textbook 
+\begin_inset Quotes eld
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
+How to think like a computer scientist'' 
+\end_layout
 
 \begin_layout Plain Layout
-
-% Copyright (c)  2001  Allen B.
+Copyright (c) 2001 Allen B.
  Downey, Jeffrey Elkner, and Chris Meyers.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
 \end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
-
-% Permission is granted to copy, distribute and/or modify this
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% document under the terms of the GNU Free Documentation License,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Version 1.1  or any later version published by the Free Software
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Foundation; with the Invariant Sections being "Contributor List",
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% with no Front-Cover Texts, and with no Back-Cover Texts.
- A copy of
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% the license is included in the section entitled "GNU Free
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Documentation License".
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% This distribution includes a file named fdl.tex that contains the text
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% of the GNU Free Documentation License.
-  If it is missing, you can obtain
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% it from www.gnu.org or by writing to the Free Software Foundation,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
 \end_layout
 
 \end_inset
@@ -286,46 +171,28 @@ n a la misma variable.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 pedro = 5
 \end_layout
 
 \begin_layout Verbatim
+
 print pedro,
 \end_layout
 
 \begin_layout Verbatim
+
 pedro = 7
 \end_layout
 
 \begin_layout Verbatim
+
 print pedro
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -476,42 +343,23 @@ siempre
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 a = 5
 \end_layout
 
 \begin_layout Verbatim
+
 b = a    # a y b ahora son iguales
 \end_layout
 
 \begin_layout Verbatim
+
 a = 3    # a y b no son iguales ahora
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -637,50 +485,33 @@ while
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def conteo(n):
 \end_layout
 
 \begin_layout Verbatim
+
   while n > 0:
 \end_layout
 
 \begin_layout Verbatim
+
     print n
 \end_layout
 
 \begin_layout Verbatim
+
     n = n-1
 \end_layout
 
 \begin_layout Verbatim
+
   print "Despegue!"
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -868,58 +699,43 @@ n
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def secuencia(n):
 \end_layout
 
 \begin_layout Verbatim
+
   while n != 1:
 \end_layout
 
 \begin_layout Verbatim
+
     print n,
 \end_layout
 
 \begin_layout Verbatim
+
     if n%2 == 0:        # n es par
 \end_layout
 
 \begin_layout Verbatim
+
       n = n/2
 \end_layout
 
 \begin_layout Verbatim
+
     else:               # n es impar
 \end_layout
 
 \begin_layout Verbatim
+
       n = n*3+1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1064,59 +880,6 @@ status collapsed
  refutarlo!.
 \end_layout
 
-\begin_layout Quote
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-em
-\end_layout
-
-\end_inset
-
- Como ejericio, reescriba la función 
-\family typewriter
-nLineas
-\family default
- de la Sección
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "recursion"
-
-\end_inset
-
-, usando iteración en vez de recursión.
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Section
 Tablas
 \end_layout
@@ -1216,61 +979,45 @@ Pentium
 Aunque una tabla logarítmica no es tan útil como en el pasado, todavía sirve
  como un buen ejemplo de iteración.
  El siguiente programa despliega una secuencia de valores en la columna
- izquierda y sus logaritmos en la columna derecha:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+ izquierda y sus logaritmos en la columna derecha: 
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 import math
 \end_layout
 
 \begin_layout Verbatim
+
 x = 1.0
 \end_layout
 
 \begin_layout Verbatim
+
 while x < 10.0:
 \end_layout
 
 \begin_layout Verbatim
+
   print x, '
 \backslash
 t', math.log(x)
 \end_layout
 
 \begin_layout Verbatim
+
   x = x + 1.0
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- La cadena 
+
+\end_layout
+
+\begin_layout Standard
+La cadena 
 \begin_inset ERT
 status collapsed
 
@@ -1314,72 +1061,53 @@ El carácter tabulador mueve el cursor hacia la derecha hasta que alcanza
  del anterior programa:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 1.0     0.0
 \end_layout
 
 \begin_layout Verbatim
+
 2.0     0.69314718056
 \end_layout
 
 \begin_layout Verbatim
+
 3.0     1.09861228867
 \end_layout
 
 \begin_layout Verbatim
+
 4.0     1.38629436112
 \end_layout
 
 \begin_layout Verbatim
+
 5.0     1.60943791243
 \end_layout
 
 \begin_layout Verbatim
+
 6.0     1.79175946923
 \end_layout
 
 \begin_layout Verbatim
+
 7.0     1.94591014906
 \end_layout
 
 \begin_layout Verbatim
+
 8.0     2.07944154168
 \end_layout
 
 \begin_layout Verbatim
+
 9.0     2.19722457734
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Si estos valores parecen extraños, recuerde que la función 
+Si estos valores parecen extraños, recuerde que la función 
 \family typewriter
 log
 \family default
@@ -1406,165 +1134,110 @@ e
 
 \begin_layout Standard
 Cambiando la salida del ciclo a:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
-   print x, '
+
+print x, '
 \backslash
 t',  math.log(x)/math.log(2.0)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- resulta en:
-\end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Verbatim
+
+   resulta en:
+\end_layout
+
+\begin_layout Verbatim
+
 1.0     0.0
 \end_layout
 
 \begin_layout Verbatim
+
 2.0     1.0
 \end_layout
 
 \begin_layout Verbatim
+
 3.0     1.58496250072
 \end_layout
 
 \begin_layout Verbatim
+
 4.0     2.0
 \end_layout
 
 \begin_layout Verbatim
+
 5.0     2.32192809489
 \end_layout
 
 \begin_layout Verbatim
+
 6.0     2.58496250072
 \end_layout
 
 \begin_layout Verbatim
+
 7.0     2.80735492206
 \end_layout
 
 \begin_layout Verbatim
+
 8.0     3.0
 \end_layout
 
 \begin_layout Verbatim
+
 9.0     3.16992500144
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Podemos ver que 1, 2, 4, y 8 son potencias de dos porque sus logaritmos
+Podemos ver que 1, 2, 4, y 8 son potencias de dos porque sus logaritmos
  en base 2 son números enteros.
  Si deseamos calcular el logaritmo de más potencias de dos podemos modificar
  el programa así:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 x = 1.0
 \end_layout
 
 \begin_layout Verbatim
+
 while x < 100.0:
 \end_layout
 
 \begin_layout Verbatim
+
   print x, '
 \backslash
 t', math.log(x)/math.log(2.0)
 \end_layout
 
 \begin_layout Verbatim
+
   x = x * 2.0
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Ahora, en lugar de agregar algo a 
+
+\end_layout
+
+\begin_layout Standard
+Ahora, en lugar de agregar algo a 
 \family typewriter
 x
 \family default
@@ -1600,64 +1273,43 @@ serie geométrica
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 1.0     0.0
 \end_layout
 
 \begin_layout Verbatim
+
 2.0     1.0
 \end_layout
 
 \begin_layout Verbatim
+
 4.0     2.0
 \end_layout
 
 \begin_layout Verbatim
+
 8.0     3.0
 \end_layout
 
 \begin_layout Verbatim
+
 16.0    4.0
 \end_layout
 
 \begin_layout Verbatim
+
 32.0    5.0
 \end_layout
 
 \begin_layout Verbatim
+
 64.0    6.0
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Gracias a los caracteres tabuladores entre las columnas, la posición de
+Gracias a los caracteres tabuladores entre las columnas, la posición de
  la segunda columna no depende del número de dígitos en la primera.
 \end_layout
 
@@ -1758,58 +1410,42 @@ Una tabla de dos dimensiones es una en la que los valores se leen en la
 \begin_layout Standard
 Una buena forma de empezar es escribir un ciclo que imprima los múltiplos
  de 2, en una sola línea:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 i = 1
 \end_layout
 
 \begin_layout Verbatim
+
 while i <= 6:
 \end_layout
 
 \begin_layout Verbatim
+
   print 2*i, '   ',
 \end_layout
 
 \begin_layout Verbatim
+
   i = i + 1
 \end_layout
 
 \begin_layout Verbatim
+
 print
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- La primera línea inicializa una variable llamada 
+
+\end_layout
+
+\begin_layout Standard
+La primera línea inicializa una variable llamada 
 \family typewriter
 i
 \family default
@@ -1852,40 +1488,13 @@ print
 La salida del programa es:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 2      4      6      8      10     12
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Hasta aquí vamos bien.
+Hasta aquí vamos bien.
  El paso siguiente es 
 \series bold
 encapsular
@@ -2003,64 +1612,49 @@ Esta función encapsula el ciclo anterior y lo generaliza para imprimir múltipl
 n
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def imprimaMultiplos(n):
 \end_layout
 
 \begin_layout Verbatim
+
   i = 1
 \end_layout
 
 \begin_layout Verbatim
+
   while i <= 6:
 \end_layout
 
 \begin_layout Verbatim
+
     print n*i, '
 \backslash
 t',
 \end_layout
 
 \begin_layout Verbatim
+
     i = i + 1
 \end_layout
 
 \begin_layout Verbatim
+
   print
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Para encapsular el ciclo, todo lo que agregamos fue la primera línea que
+
+\end_layout
+
+\begin_layout Standard
+Para encapsular el ciclo, todo lo que agregamos fue la primera línea que
  declara el nombre de la función y la lista de parámetros.
  Para generalizar, lo que hicimos fue reemplazar el valor 2 con el parámetro
  
@@ -2076,76 +1670,22 @@ Si llamamos a esta función con el argumento 2, obtenemos la misma salida
  Con el argumento 3, la salida es:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 3      6      9      12     15     18
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Con el argumento 4, la salida es:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
+Con el argumento 4, la salida es:
 \end_layout
 
 \begin_layout Verbatim
+
 4      8      12     16     20     24
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Ahora, usted probablemente imagine cómo imprimir una tabla de multiplicación
+Ahora, usted probablemente imagine cómo imprimir una tabla de multiplicación
  ---llamando a 
 \family typewriter
 imprimaMultiplos
@@ -2155,51 +1695,37 @@ imprimaMultiplos
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 i = 1
 \end_layout
 
 \begin_layout Verbatim
+
 while i <= 6:
 \end_layout
 
 \begin_layout Verbatim
+
   imprimaMultiplos(i)
 \end_layout
 
 \begin_layout Verbatim
+
   i = i + 1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Observe lo similar que es este ciclo al ciclo interno de la función 
+
+\end_layout
+
+\begin_layout Standard
+Observe lo similar que es este ciclo al ciclo interno de la función 
 \family typewriter
 imprimaMultiplos
 \family default
@@ -2215,60 +1741,34 @@ print
 La salida de este programa es una tabla de multiplicación:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 1      2      3      4      5      6
 \end_layout
 
 \begin_layout Verbatim
+
 2      4      6      8      10     12
 \end_layout
 
 \begin_layout Verbatim
+
 3      6      9      12     15     18
 \end_layout
 
 \begin_layout Verbatim
+
 4      8      12     16     20     24
 \end_layout
 
 \begin_layout Verbatim
+
 5      10     15     20     25     30
 \end_layout
 
 \begin_layout Verbatim
+
 6      12     18     24     30     36
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Section
@@ -2285,58 +1785,42 @@ reference "encapsulation"
 \end_inset
 
  y envolvámoslo en una función:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def imprimirTablaMultiplicacion():
 \end_layout
 
 \begin_layout Verbatim
+
   i = 1
 \end_layout
 
 \begin_layout Verbatim
+
   while i <= 6:
 \end_layout
 
 \begin_layout Verbatim
+
     imprimaMultiplos(i)
 \end_layout
 
 \begin_layout Verbatim
+
     i = i + 1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Este proceso es un 
+
+\end_layout
+
+\begin_layout Standard
+Este proceso es un 
 \series bold
 plan de desarrollo
 \series default
@@ -2350,35 +1834,6 @@ las en el intérprete.
 Este plan de desarrollo es particularmente útil si usted no sabe, cuando
  está empezando a programar, cómo dividir el programa en funciones.
  Este enfoque permite diseñar a medida que se escribe código.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%
-\backslash
-adjustpage{-2}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-%
-\backslash
-pagebreak
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -2676,58 +2131,42 @@ Como otro ejemplo de generalización, imagine que le piden un programa que
 imprimaTabla
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def imprimaTabla(tope):
 \end_layout
 
 \begin_layout Verbatim
+
   i = 1
 \end_layout
 
 \begin_layout Verbatim
+
   while i <= tope:
 \end_layout
 
 \begin_layout Verbatim
+
     imprimaMultiplos(i)
 \end_layout
 
 \begin_layout Verbatim
+
     i = i + 1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Reemplazamos el valor 6 con el parámetro 
+
+\end_layout
+
+\begin_layout Standard
+Reemplazamos el valor 6 con el parámetro 
 \family typewriter
 tope
 \family default
@@ -2739,64 +2178,43 @@ imprimaTabla
  con el argumento 7, despliega:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 1      2      3      4      5      6
 \end_layout
 
 \begin_layout Verbatim
+
 2      4      6      8      10     12
 \end_layout
 
 \begin_layout Verbatim
+
 3      6      9      12     15     18
 \end_layout
 
 \begin_layout Verbatim
+
 4      8      12     16     20     24
 \end_layout
 
 \begin_layout Verbatim
+
 5      10     15     20     25     30
 \end_layout
 
 \begin_layout Verbatim
+
 6      12     18     24     30     36
 \end_layout
 
 \begin_layout Verbatim
+
 7      14     21     28     35     42
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Esto está bien, pero quizás deseamos que la tabla sea cuadrada---con el
+Esto está bien, pero quizás deseamos que la tabla sea cuadrada---con el
  mismo número de filas y columnas.
  Para lograrlo, añadimos un parámetro a imprimaMultiplos que especifique
  cuántas columnas debe tener la tabla.
@@ -2810,47 +2228,39 @@ tope
 , demostrando que diferentes funciones pueden tener parámetros con el mismo
  nombre (igual que las variables locales).
  Aquí está el programa completo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def imprimaMultiplos(n, tope):
 \end_layout
 
 \begin_layout Verbatim
+
   i = 1
 \end_layout
 
 \begin_layout Verbatim
+
   while i <= tope:
 \end_layout
 
 \begin_layout Verbatim
+
     print n*i, '
 \backslash
 t',
 \end_layout
 
 \begin_layout Verbatim
+
     i = i + 1
 \end_layout
 
 \begin_layout Verbatim
+
   print
 \end_layout
 
@@ -2859,39 +2269,37 @@ t',
 \end_layout
 
 \begin_layout Verbatim
+
 def imprimaTabla(tope):
 \end_layout
 
 \begin_layout Verbatim
+
   i = 1
 \end_layout
 
 \begin_layout Verbatim
+
   while i <= tope:
 \end_layout
 
 \begin_layout Verbatim
+
     imprimaMultiplos(i, tope)
 \end_layout
 
 \begin_layout Verbatim
+
     i = i + 1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Note que cuando agregamos el nuevo parámetro tuvimos que cambiar la primera
+
+\end_layout
+
+\begin_layout Standard
+Note que cuando agregamos el nuevo parámetro tuvimos que cambiar la primera
  línea de la función (la cabecera), y también el lugar donde la función
  se llama en 
 \family typewriter
@@ -2904,65 +2312,44 @@ imprimaTabla
 Como se esperaba, este programa genera una tabla cuadrada de siete-por-siete:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 1      2      3      4      5      6      7
 \end_layout
 
 \begin_layout Verbatim
+
 2      4      6      8      10     12     14
 \end_layout
 
 \begin_layout Verbatim
+
 3      6      9      12     15     18     21
 \end_layout
 
 \begin_layout Verbatim
+
 4      8      12     16     20     24     28
 \end_layout
 
 \begin_layout Verbatim
+
 5      10     15     20     25     30     35
 \end_layout
 
 \begin_layout Verbatim
+
 6      12     18     24     30     36     42
 \end_layout
 
 \begin_layout Verbatim
+
 7      14     21     28     35     42     49
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- Cuando se generaliza una función adecuadamente, a menudo se obtiene un
- programa con capacidades que no se habían planeado.
+Cuando se generaliza una función adecuadamente, a menudo se obtiene un programa
+ con capacidades que no se habían planeado.
  Por ejemplo, podríamos aprovechar el hecho de que 
 \begin_inset Formula $ab=ba$
 \end_inset
@@ -2977,199 +2364,57 @@ imprimaTabla
  Cambiamos:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Verbatim
+
     imprimaMultiplos(i, tope)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 por
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Verbatim
+
     imprimaMultiplos(i, i)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 y se obtiene:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-pagebreak   %FIX
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
 \begin_layout Verbatim
+
 1
 \end_layout
 
 \begin_layout Verbatim
+
 2      4
 \end_layout
 
 \begin_layout Verbatim
+
 3      6      9
 \end_layout
 
 \begin_layout Verbatim
+
 4      8      12     16
 \end_layout
 
 \begin_layout Verbatim
+
 5      10     15     20     25
 \end_layout
 
 \begin_layout Verbatim
+
 6      12     18     24     30     36
 \end_layout
 
 \begin_layout Verbatim
+
 7      14     21     28     35     42     49
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Quote
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-em
-\end_layout
-
-\end_inset
-
- Como ejercicio, siga la ejecución de esta versión de 
-\family typewriter
-imprimaTabla
-\family default
- y descifre cómo trabaja.
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Section
@@ -3515,6 +2760,31 @@ Ejercicios
 \end_layout
 
 \begin_layout Enumerate
+Siga la ejecución de la última versión de 
+\family typewriter
+imprimaTabla
+\family default
+ y descifre cómo trabaja.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Reescriba la función 
+\family typewriter
+nLineas
+\family default
+ de la Sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "recursion"
+
+\end_inset
+
+, usando iteración en vez de recursión.
+ 
+\end_layout
+
+\begin_layout Enumerate
 Escriba una sola cadena que
 \end_layout
 
@@ -3536,14 +2806,17 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
+
 produzca
 \end_layout
 
 \begin_layout Verbatim
+
         esta
 \end_layout
 
 \begin_layout Verbatim
+
                 salida.
 \end_layout
 
@@ -3619,26 +2892,32 @@ beforeverb
 
 \begin_deeper
 \begin_layout Verbatim
+
   1       1
 \end_layout
 
 \begin_layout Verbatim
+
   2       3
 \end_layout
 
 \begin_layout Verbatim
+
   3       6
 \end_layout
 
 \begin_layout Verbatim
+
   4       10
 \end_layout
 
 \begin_layout Verbatim
+
   5       15
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 

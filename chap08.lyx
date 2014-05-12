@@ -208,23 +208,9 @@ verb+]+
 \end_inset
 
 ):
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -236,61 +222,33 @@ beforeverb
 ["correo", "lapiz", "carro"]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El primer ejemplo es una lista de cuatro enteros, la segunda, una lista
+
+\end_layout
+
+\begin_layout Standard
+El primer ejemplo es una lista de cuatro enteros, la segunda, una lista
  de tres cadenas.
  Los elementos de una lista no tienen que tener el mismo tipo.
  La siguiente lista contiene una cadena, un flotante, un entero y (mirabile
  dictu) otra lista:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 ["hola", 2.0, 5, [10, 20]]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Cuando una lista está contenida por otra se dice que está 
+
+\end_layout
+
+\begin_layout Standard
+Cuando una lista está contenida por otra se dice que está 
 \series bold
 anidada
 \series default
@@ -313,23 +271,9 @@ lista!anidada
 \begin_layout Standard
 Las listas que contienen enteros consecutivos son muy comunes, así que Python
  proporciona una forma de crearlas:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -341,20 +285,13 @@ beforeverb
 [1, 2, 3, 4]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- La función 
+
+\end_layout
+
+\begin_layout Standard
+La función 
 \family typewriter
 range
 \family default
@@ -369,23 +306,9 @@ range
 \family default
 .
  Con un solo argumento crea una lista que empieza en 0:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -397,43 +320,22 @@ beforeverb
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Si hay un tercer argumento, este especifica el espacio entre los valores
+
+\end_layout
+
+\begin_layout Standard
+Si hay un tercer argumento, este especifica el espacio entre los valores
  sucesivos, que se denomina el 
 \series bold
 tamaño del paso
 \series default
 .
  Este ejemplo cuenta de 1 a 10 con un paso de tamaño 2:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -445,20 +347,13 @@ beforeverb
 [1, 3, 5, 7, 9]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Finalmente, existe una lista especial que no contiene elementos.
+
+\end_layout
+
+\begin_layout Standard
+Finalmente, existe una lista especial que no contiene elementos.
  Se denomina lista vacía, y se denota con 
 \family typewriter
 []
@@ -470,23 +365,9 @@ afterverb
 Con todas estas formas de crear listas sería decepcionante si no pudiéramos
  asignar listas a variables o pasarlas como parámetros a funciones.
  De hecho, podemos hacerlo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -513,20 +394,9 @@ beforeverb
 ["mejorar", "castigar", "derrocar"] [17, 123] []
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -565,23 +435,9 @@ La sintaxis para acceder a los elementos de una lista es la misma que usamos
 ).
  La expresión dentro de los corchetes especifica el índice.
  Recuerde que los índices o posiciones empiezan desde 0:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -593,20 +449,13 @@ print numeros[0]
 numeros[1] = 5
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El operador corchete para listas puede aparecer en cualquier lugar de una
+
+\end_layout
+
+\begin_layout Standard
+El operador corchete para listas puede aparecer en cualquier lugar de una
  expresión.
  Cuanto aparece al lado izquierdo de una asignación cambia uno de los elementos
  de la lista de forma que el elemento 1 de 
@@ -618,23 +467,9 @@ numeros
 
 \begin_layout Standard
 Cualquier expresión entera puede usarse como índice:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -656,21 +491,14 @@ beforeverb
 TypeError: sequence index must be integer
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Si usted intenta leer o escribir un elemento que no existe, obtiene un
- error en tiempo de ejecución:
+
+\end_layout
+
+\begin_layout Standard
+Si usted intenta leer o escribir un elemento que no existe, obtiene un error
+ en tiempo de ejecución:
 \end_layout
 
 \begin_layout Standard
@@ -684,23 +512,9 @@ error en tiempo de ejecución
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -712,38 +526,17 @@ beforeverb
 IndexError: list assignment index out of range
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Si el índice tiene un valor negativo, cuenta hacia atrás desde el final
+
+\end_layout
+
+\begin_layout Standard
+Si el índice tiene un valor negativo, cuenta hacia atrás desde el final
  de la lista:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -775,20 +568,13 @@ beforeverb
 IndexError: list index out of range
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
 numeros[-1]
 \family default
@@ -805,23 +591,9 @@ numeros[-3]
 
 \begin_layout Standard
 Usualmente se usan variables de ciclo como índices de listas:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -852,20 +624,13 @@ while i < 4:
   i = i + 1
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Este ciclo 
+
+\end_layout
+
+\begin_layout Standard
+Este ciclo 
 \family typewriter
 while
 \family default
@@ -960,52 +725,9 @@ len
  De ésta forma, si la lista cambia, usted no tendrá que cambiar todos los
  ciclos del programa, ellos funcionarán correctamente para listas de cualquier
  tamaño:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-adjustpage{-2}
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-pagebreak
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1036,20 +758,13 @@ while i < len(combatientes):
   i = i + 1
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- La última vez que el ciclo se ejecuta 
+
+\end_layout
+
+\begin_layout Standard
+La última vez que el ciclo se ejecuta 
 \family typewriter
 i
 \family default
@@ -1078,23 +793,9 @@ len(combatientes)
 Aunque una lista puede contener a otra, la lista anidada se sigue viendo
  como un elemento único.
  La longitud de esta lista es cuatro:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1106,20 +807,9 @@ beforeverb
  [1, 2, 3]]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -1177,23 +867,9 @@ reference "in"
 \end_inset
 
  con cadenas, pero también funciona con listas y otras secuencias:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1218,17 +894,6 @@ True
 \begin_layout Verbatim
 
 False
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1279,23 +944,9 @@ not
 in
 \family default
  para chequear si un elemento no es miembro de una lista:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1305,17 +956,6 @@ beforeverb
 \begin_layout Verbatim
 
 True
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1384,23 +1024,9 @@ reference "for"
 for
 \family default
  es:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1412,37 +1038,16 @@ for VARIABLE in LISTA:
   CUERPO
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Esto es equivalente a:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+Esto es equivalente a:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1469,20 +1074,13 @@ while i < len(LISTA):
   i = i + 1
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El ciclo 
+
+\end_layout
+
+\begin_layout Standard
+El ciclo 
 \family typewriter
 for
 \family default
@@ -1495,24 +1093,10 @@ i
 \family typewriter
 for
 \family default
- en vez de un while:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+ en vez de un while: 
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1524,20 +1108,13 @@ for combatiente in combatientes:
   print combatiente
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Casi se lee como en español: 
+
+\end_layout
+
+\begin_layout Standard
+Casi se lee como en español: 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1555,23 +1132,9 @@ Cualquier expresión que cree una lista puede usarse en un ciclo
 for
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1602,20 +1165,13 @@ for fruta in ["banano", "manzana", "pera"]:
   print "Me gustaria comer " + fruta + "s!"
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El primer ejemplo imprime todos los números pares entre uno y diecinueve.
+
+\end_layout
+
+\begin_layout Standard
+El primer ejemplo imprime todos los números pares entre uno y diecinueve.
  El segundo expresa entusiasmo sobre varias frutas.
 \end_layout
 
@@ -1665,23 +1221,9 @@ concatenación!de listas
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1708,20 +1250,13 @@ beforeverb
 [1, 2, 3, 4, 5, 6]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Similarmente, el operador 
+
+\end_layout
+
+\begin_layout Standard
+Similarmente, el operador 
 \family typewriter
 *
 \family default
@@ -1739,23 +1274,9 @@ repetición!de listas
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1777,20 +1298,13 @@ beforeverb
 [1, 2, 3, 1, 2, 3, 1, 2, 3]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El primer ejemplo repite 
+
+\end_layout
+
+\begin_layout Standard
+El primer ejemplo repite 
 \family typewriter
 [0]
 \family default
@@ -1842,23 +1356,9 @@ reference "slice"
 \end_inset
 
  también funcionan con listas:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1905,20 +1405,9 @@ beforeverb
 ['a', 'b', 'c', 'd', 'e', 'f']
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -1952,23 +1441,9 @@ lista!mutable
 Las listas son mutables y no tienen la restricción de las cadenas, esto
  quiere decir que podemos cambiar los elementos internos usando el operador
  corchete al lado izquierdo de una asignación.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1995,37 +1470,12 @@ beforeverb
 ['mandarina', 'manzana', 'naranja']
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  Con el operador segmento podemos actualizar varios elementos a la vez:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2047,37 +1497,16 @@ beforeverb
 ['a', 'x', 'y', 'd', 'e', 'f']
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- También podemos eliminar varios elementos asignándoles la lista vacía:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+También podemos eliminar varios elementos asignándoles la lista vacía:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2099,38 +1528,17 @@ beforeverb
 ['a', 'd', 'e', 'f']
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Igualmente, podemos agregar elementos a una lista apretándolos dentro de
+
+\end_layout
+
+\begin_layout Standard
+Igualmente, podemos agregar elementos a una lista apretándolos dentro de
  un segmento vacío en la posición que deseamos:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2167,20 +1575,9 @@ beforeverb
 ['a', 'b', 'c', 'd', 'e', 'f']
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -2241,23 +1638,9 @@ del
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2279,20 +1662,13 @@ beforeverb
 ['one', 'three']
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Como es de esperar, 
+
+\end_layout
+
+\begin_layout Standard
+Como es de esperar, 
 \family typewriter
 del
 \family default
@@ -2306,23 +1682,9 @@ También se puede usar un segmento como argumento a
 del
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2344,21 +1706,14 @@ beforeverb
 ['a', 'f']
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Como de costumbre, los segmentos seleccionan todos los elementos hasta
- el segundo índice, sin incluirlo.
+
+\end_layout
+
+\begin_layout Standard
+Como de costumbre, los segmentos seleccionan todos los elementos hasta el
+ segundo índice, sin incluirlo.
 \end_layout
 
 \begin_layout Standard
@@ -2367,23 +1722,9 @@ La función
 append
 \family default
  agrega un elemento (o una lista) al final de una lista existente:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2400,24 +1741,9 @@ beforeverb
 >>> print a
 \end_layout
 
-\begin_layout Verbatim
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -2449,23 +1775,9 @@ valor
 
 \begin_layout Standard
 Si ejecutamos estas asignaciones
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2477,20 +1789,13 @@ a = "banana"
 b = "banana"
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- sabemos que 
+
+\end_layout
+
+\begin_layout Standard
+sabemos que 
 \family typewriter
 a
 \family default
@@ -2658,23 +1963,9 @@ a
 b
 \family default
 , podemos saber si se refieren al mismo objeto.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2696,20 +1987,13 @@ beforeverb
 135044008
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- De hecho, obtenemos el mismo identificador dos veces, lo que nos dice que
+
+\end_layout
+
+\begin_layout Standard
+De hecho, obtenemos el mismo identificador dos veces, lo que nos dice que
  Python sólo creó una cadena, y que 
 \family typewriter
 a
@@ -2724,23 +2008,9 @@ b
 \begin_layout Standard
 Las listas, por otro lado, se comportan de manera diferente.
  Cuando creamos dos listas obtenemos dos objetos:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2770,52 +2040,6 @@ beforeverb
 \begin_layout Verbatim
 
 135041704
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-1
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
 \end_layout
 
 \end_inset
@@ -2928,23 +2152,9 @@ referencia!alias
 \begin_layout Standard
 Como las variables se pueden referir a objetos, si asignamos una variable
  a otra, las dos se referirán al mismo objeto:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2956,20 +2166,13 @@ beforeverb
 >>> b = a
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- En este caso el diagrama de estados luce así:
+
+\end_layout
+
+\begin_layout Standard
+En este caso el diagrama de estados luce así:
 \end_layout
 
 \begin_layout Standard
@@ -3046,23 +2249,9 @@ alias
 \series default
  de a.
  Los cambios que se hagan a través de un alias afectan al otro:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3079,20 +2268,13 @@ beforeverb
 [5, 2, 3]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Aunque este comportamiento puede ser útil, algunas veces puede ser indeseable.
+
+\end_layout
+
+\begin_layout Standard
+Aunque este comportamiento puede ser útil, algunas veces puede ser indeseable.
  En general, es más seguro evitar los alias cuando se está trabajando con
  objetos mutables.
  Para objetos inmutables no hay problema.
@@ -3150,23 +2332,9 @@ copiar
 
 \begin_layout Standard
 La forma más sencilla de clonar una lista es usar el operador segmento:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3188,20 +2356,13 @@ beforeverb
 [1, 2, 3]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Al tomar cualquier segmento de 
+
+\end_layout
+
+\begin_layout Standard
+Al tomar cualquier segmento de 
 \family typewriter
 a
 \family default
@@ -3219,23 +2380,9 @@ b
 a
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3252,47 +2399,13 @@ beforeverb
 [1, 2, 3]
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Quote
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-em
-\end_layout
-
-\end_inset
-
- Como ejercicio, dibuje un diagrama de estados para 
+¿Como sería un diagrama de estados para 
 \family typewriter
 a
 \family default
@@ -3300,18 +2413,7 @@ a
 \family typewriter
 b
 \family default
- antes y después de este cambio.
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
+ antes y después de este cambio? 
 \end_layout
 
 \begin_layout Section
@@ -3359,23 +2461,9 @@ Pasar una lista como argumento es pasar una referencia, no una copia de
 cabeza
 \family default
  toma una lista como parámetro y retorna el primer elemento:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3387,37 +2475,16 @@ def cabeza(lista):
   return lista[0]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Se puede usar así:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+Se puede usar así:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3434,20 +2501,13 @@ beforeverb
 1
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El parámetro 
+
+\end_layout
+
+\begin_layout Standard
+El parámetro 
 \family typewriter
 lista
 \family default
@@ -3531,23 +2591,9 @@ Si una función modifica un parámetro de tipo lista, el que hizo el llamado
 borrarCabeza
 \family default
  borra el primer elemento de una lista:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3559,37 +2605,16 @@ def borrarCabeza(lista):
   del lista[0]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Y se puede usar así::
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+Y se puede usar así::
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3611,42 +2636,21 @@ beforeverb
 [2, 3]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Si una función retorna una lista, retorna una referencia a ella.
+
+\end_layout
+
+\begin_layout Standard
+Si una función retorna una lista, retorna una referencia a ella.
  Por ejemplo, la función 
 \family typewriter
 cola
 \family default
  retorna una lista que contiene todos los elementos, excepto el primero:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3658,41 +2662,20 @@ def cola(lista):
   return lista[1:]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
 cola
 \family default
  se puede usar así:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3714,20 +2697,13 @@ beforeverb
 [2, 3]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Como el valor de retorno se creó con el operador segmento, es una nueva
+
+\end_layout
+
+\begin_layout Standard
+Como el valor de retorno se creó con el operador segmento, es una nueva
  lista.
  La creación de 
 \family typewriter
@@ -3778,43 +2754,22 @@ lista!anidada
 \begin_layout Standard
 Una lista anidada aparece como elemento dentro de otra lista.
  En la siguiente lista, el tercer elemento es una lista anidada:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 >>> lista = ["hola", 2.0, 5, [10, 20]]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Si imprimimos 
+
+\end_layout
+
+\begin_layout Standard
+Si imprimimos 
 \family typewriter
 lista[3]
 \family default
@@ -3824,23 +2779,9 @@ lista[3]
 \family default
 .
  Para tomar un elemento de la lista anidada podemos realizar dos pasos:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3857,37 +2798,12 @@ beforeverb
 10
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  O, los podemos combinar:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3899,20 +2815,13 @@ beforeverb
 20
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Las aplicaciones del operador corchete se evalúan de izquierda a derecha,
+
+\end_layout
+
+\begin_layout Standard
+Las aplicaciones del operador corchete se evalúan de izquierda a derecha,
  así que ésta expresión obtiene el elemento 3 de 
 \family typewriter
 lista
@@ -4013,65 +2922,30 @@ afterfig
 
 \begin_layout Standard
 se puede representar así:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 >>> matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
 matriz
 \family default
  es una lista con tres elementos, cada uno es una fila.
  Podemos seleccionar una fila de la manera usual:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -4083,37 +2957,16 @@ beforeverb
 [4, 5, 6]
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- O podemos extraer un elemento individual de la matriz usando dos índices:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+O podemos extraer un elemento individual de la matriz usando dos índices:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -4125,20 +2978,13 @@ beforeverb
 5
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El primero escoge la fila, y el segundo selecciona la columna.
+
+\end_layout
+
+\begin_layout Standard
+El primero escoge la fila, y el segundo selecciona la columna.
  Aunque esta forma de representar matrices es común, no es la única posibilidad.
  Una pequeña variación consiste en usar una lista de columnas en lugar de
  una lista de filas.
@@ -4218,23 +3064,9 @@ split
  separa una cadena en una lista de palabras.
  Por defecto, cualquier número de espacios en blanco sirven como criterio
  de separación:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -4256,20 +3088,13 @@ beforeverb
 ['La', 'vida', 'es', 'un', 'ratico...']
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Un argumento opcional denominado 
+
+\end_layout
+
+\begin_layout Standard
+Un argumento opcional denominado 
 \series bold
 delimitador
 \series default
@@ -4279,23 +3104,9 @@ delimitador
 an
 \family default
  como delimitador:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -4307,20 +3118,13 @@ beforeverb
 ['La r', 'a que c', 'ta']
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Note que el delimitador no aparece en la lista resultante.
+
+\end_layout
+
+\begin_layout Standard
+Note que el delimitador no aparece en la lista resultante.
 \end_layout
 
 \begin_layout Standard
@@ -4334,23 +3138,9 @@ split
 \family default
 .
  Toma una lista de cadenas y las concatena con un espacio entre cada par:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -4367,20 +3157,13 @@ beforeverb
 'La vida es un ratico'
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Como 
+
+\end_layout
+
+\begin_layout Standard
+Como 
 \family typewriter
 split
 \family default
@@ -4390,23 +3173,9 @@ join
 \family default
  puede recibir un argumento adicional separador que se inserta entre los
  elementos:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -4416,17 +3185,6 @@ beforeverb
 \begin_layout Verbatim
 
 'La_vida_es_un_ratico'
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
