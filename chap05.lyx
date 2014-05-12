@@ -70,153 +70,38 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX source for textbook ``How to think like a computer scientist''
-\end_layout
-
+LyX source for textbook 
+\begin_inset Quotes eld
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
+How to think like a computer scientist'' 
+\end_layout
 
 \begin_layout Plain Layout
-
-% Copyright (c)  2001  Allen B.
+Copyright (c) 2001 Allen B.
  Downey, Jeffrey Elkner, and Chris Meyers.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
 \end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
-
-% Permission is granted to copy, distribute and/or modify this
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% document under the terms of the GNU Free Documentation License,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Version 1.1  or any later version published by the Free Software
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Foundation; with the Invariant Sections being "Contributor List",
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% with no Front-Cover Texts, and with no Back-Cover Texts.
- A copy of
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% the license is included in the section entitled "GNU Free
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Documentation License".
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% This distribution includes a file named fdl.tex that contains the text
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% of the GNU Free Documentation License.
-  If it is missing, you can obtain
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% it from www.gnu.org or by writing to the Free Software Foundation,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
 \end_layout
 
 \end_inset
@@ -260,23 +145,9 @@ Algunas de las funciones primitivas que hemos usado, como las matemáticas,
  entregan resultados.
  El llamar a estas funciones genera un valor nuevo, que usualmente asignamos
  a una variable o usamos como parte de una expresión.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -288,20 +159,13 @@ e = math.exp(1.0)
 altura = radio * math.sin(angulo)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Pero hasta ahora ninguna de las funciones que hemos escrito ha retornado
+
+\end_layout
+
+\begin_layout Standard
+Pero hasta ahora ninguna de las funciones que hemos escrito ha retornado
  un valor.
 \end_layout
 
@@ -343,23 +207,9 @@ gía
 area
 \family default
 , que retorna el área de un círculo dado su radio:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -385,20 +235,13 @@ def area(radio):
   return temp
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Ya nos habíamos topado con la sentencia 
+
+\end_layout
+
+\begin_layout Standard
+Ya nos habíamos topado con la sentencia 
 \family typewriter
 return
 \family default
@@ -425,20 +268,9 @@ Retorne inmediatamente de esta función y use la siguiente expresión como
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -450,20 +282,13 @@ def area(radio):
   return math.pi * radio**2
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Por otro lado, las 
+ 
+\end_layout
+
+\begin_layout Standard
+Por otro lado, las 
 \series bold
 variables temporales
 \series default
@@ -503,20 +328,9 @@ Algunas veces es muy útil tener múltiples sentencias return, ubicadas en
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -543,20 +357,13 @@ def valorAbsoluto(x):
     return x
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Ya que estas sentencias 
+
+\end_layout
+
+\begin_layout Standard
+Ya que estas sentencias 
 \family typewriter
 return
 \family default
@@ -602,20 +409,9 @@ return
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -640,17 +436,6 @@ def valorAbsoluto(x):
 \begin_layout Verbatim
 
     return x
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -684,23 +469,9 @@ None
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -710,17 +481,6 @@ beforeverb
 \begin_layout Verbatim
 
 None
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -839,20 +599,9 @@ Ya podemos escribir un borrador de la función:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -862,17 +611,6 @@ def distancia(x1, y1, x2, y2):
 \begin_layout Verbatim
 
   return 0.0
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -888,20 +626,9 @@ Para probar la nueva función la llamamos con valores simples:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -911,17 +638,6 @@ beforeverb
 \begin_layout Verbatim
 
 0.0
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -961,20 +677,9 @@ dy
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1006,17 +711,6 @@ def distancia(x1, y1, x2, y2):
   return 0.0
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  Si la función trabaja bien, las salidas deben ser 3 y 4.
@@ -1038,20 +732,9 @@ dy
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1083,17 +766,6 @@ def distancia(x1, y1, x2, y2):
   return 0.0
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  Note que hemos eliminado las sentencias 
@@ -1122,20 +794,9 @@ sqrt
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1165,17 +826,6 @@ def distancia(x1, y1, x2, y2):
 \begin_layout Verbatim
 
   return resultado
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1289,58 +939,28 @@ distancia
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 radio = distancia(xc, yc, xp, yp)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El segundo paso es encontrar el área de un círculo con dicho radio y retornarla
-:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
+El segundo paso es encontrar el área de un círculo con dicho radio y retornarla:
 \end_layout
 
-\end_inset
-
- 
-\end_layout
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1352,37 +972,15 @@ resultado = area(radio)
 return resultado
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  Envolviendo todo en una función obtenemos:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1404,20 +1002,9 @@ def area2(xc, yc, xp, yp):
   return resultado
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Llamamos a esta función 
+Llamamos a esta función 
 \family typewriter
 area2
 \family default
@@ -1444,20 +1031,9 @@ area
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1469,20 +1045,9 @@ def area2(xc, yc, xp, yp):
   return area(distancia(xc, yc, xp, yp))
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -1526,20 +1091,9 @@ Las funciones que pueden retornar un valor booleano son convenientes para
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1564,17 +1118,6 @@ def esDivisible(x, y):
 \begin_layout Verbatim
 
     return False      # es falso
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1617,20 +1160,9 @@ if
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1642,37 +1174,15 @@ def esDivisible(x, y):
   return x % y == 0
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  Esta sesión muestra la nueva función en acción:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1694,37 +1204,19 @@ False
 True
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Las funciones booleanas se usan a menudo en las sentencias condicionales:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
+Las funciones booleanas se usan a menudo en las sentencias condicionales:
 \end_layout
 
-\end_inset
-
- 
-\end_layout
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1746,52 +1238,19 @@ else:
   print "x no es divisible por y"
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  Puede parecer tentador escribir algo como:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 if esDivisible(x, y) == True:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1910,44 +1369,6 @@ Demostrar esta afirmación no es un ejercicio trivial y fue logrado por Alan
  Esto se conoce como la Tesis de Turing.
  Si usted toma un curso de Teoría de la Computación tendrá la oportunidad
  de ver la demostración.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-2
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -2090,7 +1511,7 @@ función!factorial
 \end_layout
 
 \begin_layout Standard
-Si usted puede escribir una definición recursiva de algo, usualmente podrá
+Si usted puede escribir una definición recursiva para algo, usualmente podrá
  escribir un programa para evaluarlo.
  El primer paso es decidir cuales son los parámetros para esta función.
  Con un poco de esfuerzo usted concluiría que 
@@ -2101,57 +1522,28 @@ factorial
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 def factorial(n):
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Si el argumento es 0, todo lo que hacemos es retornar 1:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
+Si el argumento es 0, todo lo que hacemos es retornar 1:
 \end_layout
 
-\end_inset
-
- 
-\end_layout
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2168,20 +1560,13 @@ def factorial(n):
     return 1
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Sino, y ésta es la parte interesante, tenemos que hacer una llamada recursiva
+ 
+\end_layout
+
+\begin_layout Standard
+Sino, y ésta es la parte interesante, tenemos que hacer una llamada recursiva
  para encontrar el factorial de 
 \begin_inset Formula $n-1$
 \end_inset
@@ -2191,23 +1576,9 @@ afterverb
 \end_inset
 
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2244,20 +1615,13 @@ def factorial(n):
     return da
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El flujo de ejecución de este programa es similar al flujo de 
+
+\end_layout
+
+\begin_layout Standard
+El flujo de ejecución de este programa es similar al flujo de 
 \family typewriter
 conteo
 \family default
@@ -2629,44 +1993,6 @@ esDivisible
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
--1
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Lo mismo vale para los programas recursivos.
  Cuando usted llega a una llamada recursiva, en lugar de seguir el flujo
  de ejecución, debería asumir que el llamado recursivo funciona (retorna
@@ -2720,20 +2046,9 @@ En el ejemplo anterior usábamos variables temporales para desplegar los
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2758,17 +2073,6 @@ def factorial(n):
 \begin_layout Verbatim
 
     return n * factorial(n-1)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2823,20 +2127,9 @@ Traducida a Python, luce así:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2863,17 +2156,6 @@ def fibonacci (n):
     return fibonacci(n-1) + fibonacci(n-2)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
  Si usted intenta seguir el flujo de ejecución de fibonacci, incluso para
@@ -2885,44 +2167,6 @@ afterverb
  Pero, si seguimos el salto de fe, si asumimos que los dos llamados recursivos
  funcionan correctamente, es claro que el resultado correcto es la suma
  de éstos dos.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
--1
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -2971,20 +2215,9 @@ factorial
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2994,17 +2227,6 @@ beforeverb
 \begin_layout Verbatim
 
 RuntimeError: Maximum recursion depth exceeded
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -3126,20 +2348,9 @@ type
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3196,41 +2407,20 @@ def factorial (n):
     return n * factorial(n-1)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Ahora tenemos tres casos base.
+
+\end_layout
+
+\begin_layout Standard
+Ahora tenemos tres casos base.
  El primero atrapa a los valores que no son enteros, el segundo a los enteros
  negativos.
  En ambos casos el programa imprime un mensaje de error y retorna un valor
  especial, -1, para indicar que algo falló:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3262,20 +2452,13 @@ Factorial solo esta definido para positivos.
 -1
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Si pasamos los dos chequeos, tenemos la garantía de que 
+
+\end_layout
+
+\begin_layout Standard
+Si pasamos los dos chequeos, tenemos la garantía de que 
 \begin_inset Formula $n$
 \end_inset
 
@@ -3304,20 +2487,9 @@ Con funciones fructíferas podemos realizar pruebas unitarias.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3349,20 +2521,9 @@ def area(lado):
     return lado**2
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3371,20 +2532,9 @@ Si al bloque le agregamos una línea probando el llamado de la función, seguida
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3431,17 +2581,6 @@ def area(lado):
     return lado**2
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -3456,20 +2595,9 @@ n con la función area, ahora con cuatro casos de prueba:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -3568,17 +2696,6 @@ if __name__ == '__main__':
 \begin_layout Verbatim
 
     doctest.testmod()
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
