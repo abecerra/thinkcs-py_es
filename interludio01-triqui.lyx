@@ -159,7 +159,6 @@ triqui9.py
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset Flex URL
 status open
 
@@ -255,20 +254,9 @@ Con la convención anterior, nuestro triqui empieza humildemente:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -353,17 +341,6 @@ triqui = crear()
 imprimir(triqui)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -374,20 +351,9 @@ Ahora podemos agregar un ciclo para jugar, sencillo, con un solo jugador:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -424,17 +390,6 @@ while True:
     imprimir(triqui)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -456,20 +411,9 @@ Para verificar si un jugador gana la partida, vamos a empezar por las diagonales
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -501,17 +445,6 @@ def ganaDiagonal1(jugador,tablero):
     return True
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -530,20 +463,9 @@ tablero[i][2-i]
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -575,17 +497,6 @@ def ganaDiagonal2(jugador,tablero):
     return True
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -602,20 +513,9 @@ break
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -662,17 +562,6 @@ print "Juegue jugador O"
         break
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -689,20 +578,9 @@ ganaFila
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -739,17 +617,6 @@ def ganaFila(fila,jugador,tablero):
     return True
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -760,20 +627,9 @@ La función anterior debe ser llamada para todas las filas:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -809,17 +665,6 @@ def ganaHorizontal(jugador,tablero):
     return False
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -832,20 +677,9 @@ Las funciones para chequear las columnas son muy parecidas.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -902,17 +736,6 @@ while True:
         break
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -952,20 +775,9 @@ En el triqui podemos observar que el código dentro del ciclo para el jugador
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1017,17 +829,6 @@ def jugar(jugador,tablero):
     return  diag or linea
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1039,20 +840,9 @@ Con este cambio nuestro ciclo de juego es más pequeño, y el programa es
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1092,17 +882,6 @@ while True:
 \begin_layout Verbatim
 
         break
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1161,20 +940,9 @@ Estas validaciones pueden ponerse en un ciclo que le pida al jugador digitar
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1269,21 +1037,6 @@ def jugar(jugador,tablero):
     return  diag or linea
 \end_layout
 
-\begin_layout Verbatim
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1300,20 +1053,9 @@ Ahora agregamos una función para chequear si hay empate entre los jugadores.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1358,17 +1100,6 @@ def empate(tablero):
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1376,20 +1107,12 @@ afterverb
 
 \begin_layout Standard
 Llamamos a empate después de cada jugador: 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
 \end_layout
 
-\end_inset
-
- 
-\end_layout
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1461,17 +1184,6 @@ while True:
         break
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1483,20 +1195,9 @@ Y también agregamos un mensaje de retroalimentación para el jugador cuando
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1582,17 +1283,6 @@ def jugar(jugador,tablero):
     return  diag or linea
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1609,6 +1299,11 @@ gana
 \family default
 , fructífera, que nos permita que jugar sea mas pequeña:
 \end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1640,21 +1335,6 @@ def gana(jugador,tablero):
     return  diag or linea
 \end_layout
 
-\begin_layout Verbatim
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1674,6 +1354,11 @@ gana
  se llama en el ciclo principal.
  Y todo esto se puede poner en la parte principal del programa:
 \end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1772,17 +1457,6 @@ if __name__ == '__main__':
 \begin_layout Verbatim
 
             break
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1897,8 +1571,8 @@ Modifique el triqui para que el computador juegue automáticamente, seleccionand
 Modifique el triqui para que tenga un menú de entrada en el que se pueda
  escoger entre dos modalidades: 1 jugador contra el computador, 2 jugadores
  entre si por turnos y 3, salir del programa.
- Ahora, cada vez que termine una partida el programa debe desplegar el flujo
- de ejecución debe volver al menú.
+ Ahora, cada vez que termine una partida el el flujo de ejecución del programa
+ debe volver al menú.
 \end_layout
 
 \end_body

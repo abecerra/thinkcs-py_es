@@ -291,20 +291,9 @@ Nuestro primer programa importa lo que necesita de kivy:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -393,17 +382,6 @@ if __name__ == '__main__':
     Programa().run()
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -473,20 +451,9 @@ Como el flujo de los programas gráficos no está determinado por el programador
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -537,17 +504,6 @@ class Triqui(GridLayout):
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -583,20 +539,9 @@ boton_presionado
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -667,17 +612,6 @@ class Triqui(GridLayout):
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -696,20 +630,9 @@ PopUp
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -756,25 +679,6 @@ class MostrarMensaje(Popup):
         self.open()
 \end_layout
 
-\begin_layout Verbatim
-
-\end_layout
-
-\begin_layout Verbatim
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -803,20 +707,9 @@ turno
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -927,17 +820,6 @@ class Triqui(GridLayout):
             self.turno = 'O'
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -982,20 +864,9 @@ Button
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1042,17 +913,6 @@ class Boton(Button):
         self.text=' '
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1068,20 +928,9 @@ Triqui
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1113,17 +962,6 @@ beforeverb
             self.tablero[f][c]=i.text
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1138,20 +976,9 @@ validar
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1217,17 +1044,6 @@ from validar import *
         self.tablero = crear()
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1239,20 +1055,9 @@ Ahora estamos en condiciones de poner valores a la matriz cada vez que se
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1324,17 +1129,6 @@ beforeverb
                 # Muy similar para el otro jugador!
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1354,20 +1148,9 @@ Triqui
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1394,15 +1177,8 @@ beforeverb
         self.turno = 'O'
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1416,20 +1192,9 @@ Ahora lo llamamos cada vez que un jugador gana, así el tablero de juego
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1481,17 +1246,6 @@ beforeverb
                     self.reset()
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1503,20 +1257,9 @@ Aprovechando al métod reset, añadimos el chequeo de empates entre los dos
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1548,17 +1291,6 @@ beforeverb
                 self.reset()
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1588,21 +1320,14 @@ Si nadie gana y no hay empate, pasa el turno al otro jugador.
  
 \end_layout
 
+\begin_layout Verbatim
+
+\end_layout
+
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1659,17 +1384,6 @@ beforeverb
             self.turno = self.otro()
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
 
@@ -1680,20 +1394,9 @@ Que depende del método otro:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1723,21 +1426,6 @@ beforeverb
 \begin_layout Verbatim
 
             return 'O'
-\end_layout
-
-\begin_layout Verbatim
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1848,8 +1536,6 @@ Ejercicios
 
 \begin_layout Standard
 
-\family typewriter
-Punto
 \end_layout
 
 \begin_layout Enumerate
