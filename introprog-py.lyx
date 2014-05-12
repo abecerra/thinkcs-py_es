@@ -69,7 +69,7 @@
 \setcounter{tocdepth}{1}
 
 \usepackage{listings}
-\usepackage[usenames,dvipsnames]{color}
+%\usepackage[usenames,dvipsnames]{color}
 \usepackage{textcomp}
 %\definecolor{red}{rgb}{0.6,0,0}  % comments
 %\definecolor{green}{rgb}{0.25,0.5,0.35}  % for strings 
@@ -98,6 +98,7 @@
 \lstset{style=python-idle-code}
 %\lstset{language=Python}
 \end_preamble
+\options usenames,dvipsnames
 \use_default_options false
 \begin_modules
 customHeadersFooters
@@ -127,7 +128,19 @@ javeriana.lyx
 \index_command default
 \paperfontsize 10
 \spacing onehalf
-\use_hyperref false
+\use_hyperref true
+\pdf_title "Introducción a la programación con Python"
+\pdf_author "Andrés Becerra Sandoval"
+\pdf_subject "programación de computadores"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize letterpaper
 \use_geometry false
 \use_package amsmath 1
