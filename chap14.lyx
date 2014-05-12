@@ -70,153 +70,38 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX source for textbook ``How to think like a computer scientist''
-\end_layout
-
+LyX source for textbook 
+\begin_inset Quotes eld
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
+How to think like a computer scientist'' 
+\end_layout
 
 \begin_layout Plain Layout
-
-% Copyright (c)  2001  Allen B.
+Copyright (c) 2001 Allen B.
  Downey, Jeffrey Elkner, and Chris Meyers.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
 \end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
-
-% Permission is granted to copy, distribute and/or modify this
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% document under the terms of the GNU Free Documentation License,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Version 1.1  or any later version published by the Free Software
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Foundation; with the Invariant Sections being "Contributor List",
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% with no Front-Cover Texts, and with no Back-Cover Texts.
- A copy of
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% the license is included in the section entitled "GNU Free
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Documentation License".
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% This distribution includes a file named fdl.tex that contains the text
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% of the GNU Free Documentation License.
-  If it is missing, you can obtain
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% it from www.gnu.org or by writing to the Free Software Foundation,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
 \end_layout
 
 \end_inset
@@ -469,29 +354,17 @@ Hora
 imprimirHora
 \family default
 , que lucía así:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
   pass
 \end_layout
 
@@ -500,91 +373,72 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
 def imprimirHora(h):
 \end_layout
 
 \begin_layout Verbatim
+
   print str(h.hora) + ":" + 
 \end_layout
 
 \begin_layout Verbatim
+
         str(h.minutos) + ":" + 
 \end_layout
 
 \begin_layout Verbatim
+
         str(h.segundos)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Para llamar esta función, le pasamos un objeto 
+
+\end_layout
+
+\begin_layout Standard
+Para llamar esta función, le pasamos un objeto 
 \family typewriter
 Hora
 \family default
  como parámetro:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> horaActual = Hora()
 \end_layout
 
 \begin_layout Verbatim
+
 >>> horaActual.hora = 9
 \end_layout
 
 \begin_layout Verbatim
+
 >>> horaActual.minutos = 14
 \end_layout
 
 \begin_layout Verbatim
+
 >>> horaActual.segundos = 30
 \end_layout
 
 \begin_layout Verbatim
+
 >>> imprimirHora(horaActual)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Para convertir 
+
+\end_layout
+
+\begin_layout Standard
+Para convertir 
 \family typewriter
 imprimirHora
 \family default
@@ -594,54 +448,33 @@ imprimirHora
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
   def imprimirHora(h):
 \end_layout
 
 \begin_layout Verbatim
+
     print str(h.hora) + ":" + 
 \end_layout
 
 \begin_layout Verbatim
+
           str(h.minutos) + ":" + 
 \end_layout
 
 \begin_layout Verbatim
+
           str(h.segundos)
-\end_layout
-
-\begin_layout Verbatim
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -664,42 +497,22 @@ notación punto
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> horaActual.imprimirHora()
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Como de costumbre, el objeto en el que el método se llama aparece antes
+
+\end_layout
+
+\begin_layout Standard
+Como de costumbre, el objeto en el que el método se llama aparece antes
  del punto y el nombre del método va a la derecha.
  El objeto al cual se invoca el método se asigna al primer parámetro, así
  que 
@@ -812,79 +625,32 @@ reference "increment"
 ) en un método.
  Para ahorrar espacio, omitiremos los métodos que ya definimos, pero usted
  debe conservarlos en su programa:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
--1
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
   # Las definiciones anteriores van aquí...
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
 \begin_layout Verbatim
+
   def incrementar(self, segundos):
 \end_layout
 
 \begin_layout Verbatim
+
     self.segundos = self.segundos + segundos
 \end_layout
 
@@ -893,14 +659,17 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
     if self.segundos >= 60:
 \end_layout
 
 \begin_layout Verbatim
+
       self.segundos = self.segundos - 60
 \end_layout
 
 \begin_layout Verbatim
+
       self.minutos = self.minutos + 1
 \end_layout
 
@@ -909,14 +678,17 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
     if self.minutos >= 60:
 \end_layout
 
 \begin_layout Verbatim
+
       self.minutos = self.minutos - 60
 \end_layout
 
 \begin_layout Verbatim
+
       self.hora = self.hora + 1
 \end_layout
 
@@ -925,22 +697,8 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
     return self
-\end_layout
-
-\begin_layout Verbatim
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -954,43 +712,23 @@ Ahora podemos llamar a
 \family typewriter
 incrementar
 \family default
- como método
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+ como método:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 horaActual.incrementar(500)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Nuevamente, el objeto con el cual se invoca el método se asigna al primer
+
+\end_layout
+
+\begin_layout Standard
+Nuevamente, el objeto con el cual se invoca el método se asigna al primer
  parámetro, 
 \family typewriter
 self
@@ -1029,26 +767,17 @@ self
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
   # Las definiciones anteriores van aqui...
 \end_layout
 
@@ -1057,22 +786,27 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
   def despues(self, hora2):
 \end_layout
 
 \begin_layout Verbatim
+
     if self.hora > hora2.hora:
 \end_layout
 
 \begin_layout Verbatim
+
       return True
 \end_layout
 
 \begin_layout Verbatim
+
     if self.hora < hora2.hora:
 \end_layout
 
 \begin_layout Verbatim
+
       return False
 \end_layout
 
@@ -1081,18 +815,22 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
     if self.minutos > hora2.minutos:
 \end_layout
 
 \begin_layout Verbatim
+
       return True
 \end_layout
 
 \begin_layout Verbatim
+
     if self.minutos < hora2.minutos:
 \end_layout
 
 \begin_layout Verbatim
+
       return False
 \end_layout
 
@@ -1101,75 +839,48 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
     if self.segundos > hora2.segundos:
 \end_layout
 
 \begin_layout Verbatim
+
       return True
 \end_layout
 
 \begin_layout Verbatim
+
     return False
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
  Llamamos a este método sobre un objeto y le pasamos el otro como argumento:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 if horaComer.despues(horaActual):
 \end_layout
 
 \begin_layout Verbatim
+
   print "El pan estará listo para comer en un momento."
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Casi se puede leer el llamado en lenguaje natural:
+
+\end_layout
+
+\begin_layout Standard
+Casi se puede leer el llamado en lenguaje natural:
 \begin_inset Quotes eld
 \end_inset
 
-Si la hora para Comer viene despues de la hora Actual, entonces ...
+Si la hora para Comer viene después de la hora Actual, entonces ...
 \begin_inset Quotes erd
 \end_inset
 
@@ -1219,123 +930,94 @@ reference "find"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def buscar(cad, c):
 \end_layout
 
 \begin_layout Verbatim
+
   indice = 0
 \end_layout
 
 \begin_layout Verbatim
+
   while indice < len(cad):
 \end_layout
 
 \begin_layout Verbatim
+
     if cad[indice] == c:
 \end_layout
 
 \begin_layout Verbatim
+
       return indice
 \end_layout
 
 \begin_layout Verbatim
+
     indice = indice + 1
 \end_layout
 
 \begin_layout Verbatim
+
   return -1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
  Esta es la nueva versión, mejorada:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def buscar(cad, c,ini=0):
 \end_layout
 
 \begin_layout Verbatim
+
   indice = ini
 \end_layout
 
 \begin_layout Verbatim
+
   while indice < len(cad):
 \end_layout
 
 \begin_layout Verbatim
+
     if cad[indice] == c:
 \end_layout
 
 \begin_layout Verbatim
+
       return indice
 \end_layout
 
 \begin_layout Verbatim
+
     indice = indice + 1
 \end_layout
 
 \begin_layout Verbatim
+
   return -1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- El tercer parámetro, 
+
+\end_layout
+
+\begin_layout Standard
+El tercer parámetro, 
 \family typewriter
 ini
 \family default
@@ -1350,98 +1032,58 @@ buscar
 \family default
  con dos argumentos, se usa el valor por defecto y la búsqueda se hace desde
  el principio de la cadena:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> buscar("apple", "p")
 \end_layout
 
 \begin_layout Verbatim
+
 1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Si se pasa el tercer parámetro, este 
+
+\end_layout
+
+\begin_layout Standard
+Si se pasa el tercer parámetro, este 
 \series bold
 sobreescribe
 \series default
  el valor por defecto:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> buscar("apple", "p", 2)
 \end_layout
 
 \begin_layout Verbatim
+
 2
 \end_layout
 
 \begin_layout Verbatim
+
 >>> buscar("apple", "p", 3)
 \end_layout
 
 \begin_layout Verbatim
+
 -1
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -1491,58 +1133,42 @@ init
 Hora
 \family default
  se presenta a continuación:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self, hora=0, minutos=0, segundos=0):
 \end_layout
 
 \begin_layout Verbatim
+
     self.hora = hora
 \end_layout
 
 \begin_layout Verbatim
+
     self.minutos = minutos
 \end_layout
 
 \begin_layout Verbatim
+
     self.segundos = segundos
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- No hay conflicto entre el atributo 
+
+\end_layout
+
+\begin_layout Standard
+No hay conflicto entre el atributo 
 \family typewriter
 self.hora
 \family default
@@ -1577,227 +1203,133 @@ Hora
 init
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> horaActual = Hora(9, 14, 30)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> horaActual.imprimirHora()
 \end_layout
 
 \begin_layout Verbatim
+
 >>> 9:14:30
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Como los parámetros son opcionales, se pueden omitir:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+Como los parámetros son opcionales, se pueden omitir:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> horaActual = Hora()
 \end_layout
 
 \begin_layout Verbatim
+
 >>> horaActual.imprimirHora()
 \end_layout
 
 \begin_layout Verbatim
+
 >>> 0:0:0
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- O podemos pasar solo un parámetro:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+O podemos pasar solo un parámetro:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> horaActual = Hora(9)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> horaActual.imprimirHora()
 \end_layout
 
 \begin_layout Verbatim
+
 >>> 9:0:0
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- O, sólo los dos primeros:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+O, sólo los dos primeros:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> horaActual = Hora(9, 14)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> horaActual.imprimirHora()
 \end_layout
 
 \begin_layout Verbatim
+
 >>> 9:14:0
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Finalmente, podemos proporcionar algunos parámetros, nombrándolos explícitament
-e:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+Finalmente, podemos proporcionar algunos parámetros, nombrándolos explícitamente
+:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> horaActual = Hora(segundos = 30, hora = 9)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> horaActual.imprimirHora()
 \end_layout
 
 \begin_layout Verbatim
+
 >>> 9:0:30
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -1844,37 +1376,27 @@ reference "point"
 \end_inset
 
  en un estilo más orientado a objetos:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self, x=0, y=0):
 \end_layout
 
 \begin_layout Verbatim
+
     self.x = x
 \end_layout
 
 \begin_layout Verbatim
+
     self.y = y
 \end_layout
 
@@ -1883,27 +1405,22 @@ class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return '(' + str(self.x) + ', ' + str(self.y) + ')'
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- El método de inicialización toma los valores 
+
+\end_layout
+
+\begin_layout Standard
+El método de inicialización toma los valores 
 \begin_inset Formula $x$
 \end_inset
 
@@ -1934,50 +1451,32 @@ __str__
 str
 \family default
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> p = Punto(3, 4)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> str(p)
 \end_layout
 
 \begin_layout Verbatim
+
 '(3, 4)'
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Imprimir un objeto 
+
+\end_layout
+
+\begin_layout Standard
+Imprimir un objeto 
 \family typewriter
 Punto
 \family default
@@ -1994,50 +1493,32 @@ __str__
 print
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> p = Punto(3, 4)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print p
 \end_layout
 
 \begin_layout Verbatim
+
 (3, 4)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Cuando escribimos una nueva clase, casi siempre empezamos escribiendo 
+
+\end_layout
+
+\begin_layout Standard
+Cuando escribimos una nueva clase, casi siempre empezamos escribiendo 
 \family typewriter
 __init__
 \family default
@@ -2123,29 +1604,17 @@ Por ejemplo, para sobrecargar el operador suma,
 __add__
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   # los métodos definidos previamente van aquí...
 \end_layout
 
@@ -2154,27 +1623,22 @@ class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   def __add__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
     return Punto(self.x + otro.x, self.y + otro.y)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Como de costumbre, el primer parámetro es el objeto con el cual se invoca
+
+\end_layout
+
+\begin_layout Standard
+Como de costumbre, el primer parámetro es el objeto con el cual se invoca
  el método.
  El segundo parámetro se denomina con la palabra 
 \family typewriter
@@ -2218,58 +1682,42 @@ Punto
 __add__
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>>   p1 = Punto(3, 4)
 \end_layout
 
 \begin_layout Verbatim
+
 >>>   p2 = Punto(5, 7)
 \end_layout
 
 \begin_layout Verbatim
+
 >>>   p3 = p1 + p2
 \end_layout
 
 \begin_layout Verbatim
+
 >>>   print p3
 \end_layout
 
 \begin_layout Verbatim
+
 (8, 11)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- La expresión 
+
+\end_layout
+
+\begin_layout Standard
+La expresión 
 \family typewriter
 p1 + p2
 \family default
@@ -2316,46 +1764,27 @@ Punto
 producto escalar
 \series default
  de los dos puntos de acuerdo a las reglas del álgebra lineal:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def __mul__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
   return self.x * otro.x + self.y * otro.y
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Si el operando izquierdo de 
+
+\end_layout
+
+\begin_layout Standard
+Si el operando izquierdo de 
 \family typewriter
 *
 \family default
@@ -2372,46 +1801,27 @@ __rmul__
 multiplicación escalar 
 \series default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def __rmul__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
   return Punto(otro * self.x,  otro * self.y)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- El resultado ahora es un nuevo 
+
+\end_layout
+
+\begin_layout Standard
+El resultado ahora es un nuevo 
 \family typewriter
 Punto
 \family default
@@ -2430,57 +1840,38 @@ __rmul__
 
 \begin_layout Standard
 Este ejemplo ilustra las dos clases de multiplicación:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> p1 = Punto(3, 4)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> p2 = Punto(5, 7)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print p1 * p2
 \end_layout
 
 \begin_layout Verbatim
+
 43
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print 2 * p2
 \end_layout
 
 \begin_layout Verbatim
+
 (10, 14)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2518,38 +1909,18 @@ otro
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> print p2 * 2
 \end_layout
 
 \begin_layout Verbatim
+
 AttributeError: 'int' object has no attribute 'x'
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2617,38 +1988,18 @@ multsuma
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def multsuma (x, y, z):
 \end_layout
 
 \begin_layout Verbatim
+
   return x * y + z
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2673,38 +2024,18 @@ Podemos llamarla sobre números:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> multsuma (3, 2, 1)
 \end_layout
 
 \begin_layout Verbatim
+
 7
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2714,62 +2045,47 @@ afterverb
 Punto
 \family default
 s:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> p1 = Punto(3, 4)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> p2 = Punto(5, 7)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print multsuma (2, p1, p2)
 \end_layout
 
 \begin_layout Verbatim
+
 (11, 15)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print multsuma (p1, p2, 1)
 \end_layout
 
 \begin_layout Verbatim
+
 44
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- En el primer caso, el 
+
+\end_layout
+
+\begin_layout Standard
+En el primer caso, el 
 \family typewriter
 Punto
 \family default
@@ -2800,50 +2116,33 @@ derechoyAlReves
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Verbatim
 def derechoyAlReves(l):
 \end_layout
 
 \begin_layout Verbatim
+
   import copy
 \end_layout
 
 \begin_layout Verbatim
+
   r = copy.copy(l)
 \end_layout
 
 \begin_layout Verbatim
+
   r.reverse()
 \end_layout
 
 \begin_layout Verbatim
+
   print str(l) + str(r)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2866,42 +2165,23 @@ derechoyAlReves
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>>   miLista = [1, 2, 3, 4]
 \end_layout
 
 \begin_layout Verbatim
+
 >>>   derechoyAlReves(miLista)
 \end_layout
 
 \begin_layout Verbatim
+
 [1, 2, 3, 4][4, 3, 2, 1]
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2970,38 +2250,18 @@ Punto
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def reverse(self):
 \end_layout
 
 \begin_layout Verbatim
+
   self.x , self.y = self.y, self.x
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -3018,42 +2278,23 @@ Punto
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>>   p = Punto(3, 4)
 \end_layout
 
 \begin_layout Verbatim
+
 >>>   derechoyAlReves(p)
 \end_layout
 
 \begin_layout Verbatim
+
 (3, 4)(4, 3)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset

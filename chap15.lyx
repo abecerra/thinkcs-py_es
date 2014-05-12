@@ -70,153 +70,38 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX source for textbook ``How to think like a computer scientist''
-\end_layout
-
+LyX source for textbook 
+\begin_inset Quotes eld
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
+How to think like a computer scientist'' 
+\end_layout
 
 \begin_layout Plain Layout
-
-% Copyright (c)  2001  Allen B.
+Copyright (c) 2001 Allen B.
  Downey, Jeffrey Elkner, and Chris Meyers.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
 \end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
-
-% Permission is granted to copy, distribute and/or modify this
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% document under the terms of the GNU Free Documentation License,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Version 1.1  or any later version published by the Free Software
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Foundation; with the Invariant Sections being "Contributor List",
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% with no Front-Cover Texts, and with no Back-Cover Texts.
- A copy of
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% the license is included in the section entitled "GNU Free
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Documentation License".
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% This distribution includes a file named fdl.tex that contains the text
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% of the GNU Free Documentation License.
-  If it is missing, you can obtain
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% it from www.gnu.org or by writing to the Free Software Foundation,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
 \end_layout
 
 \end_inset
@@ -805,49 +690,28 @@ La razón para usar notación matemática en estas correspondencias es que
 Carta
 \family default
  luce así:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Carta:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self, figura=0, valor=0):
 \end_layout
 
 \begin_layout Verbatim
+
     self.figura = figura
 \end_layout
 
 \begin_layout Verbatim
+
     self.valor = valor
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -871,42 +735,22 @@ constructor
 
 \begin_layout Standard
 Para crear un objeto que represente el 3 de tréboles, usamos este comando:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 tresTreboles = Carta(0, 3)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El primer argumento, 
+
+\end_layout
+
+\begin_layout Standard
+El primer argumento, 
 \family typewriter
 0
 \family default
@@ -955,41 +799,32 @@ Carta
 atributos de clase
 \series default
  al principio de la clase:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Carta:
 \end_layout
 
 \begin_layout Verbatim
+
   listaFiguras = ["Treboles", "Diamantes", "Corazones", 
 \end_layout
 
 \begin_layout Verbatim
+
   "Picas"]
 \end_layout
 
 \begin_layout Verbatim
+
   listaValores = ["narf", "As", "2", "3", "4", "5", "6", 
 \end_layout
 
 \begin_layout Verbatim
+
   "7","8", "9", "10", "Jota", "Reina", "Rey"]
 \end_layout
 
@@ -998,6 +833,7 @@ class Carta:
 \end_layout
 
 \begin_layout Verbatim
+
   # se omite el metodo init
 \end_layout
 
@@ -1006,31 +842,27 @@ class Carta:
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return (self.listaFiguras[self.valor] + " de " + 
 \end_layout
 
 \begin_layout Verbatim
+
             self.listaValores[self.figura])
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Un atributo de clase se define afuera de los métodos y puede ser accedido
+
+\end_layout
+
+\begin_layout Standard
+Un atributo de clase se define afuera de los métodos y puede ser accedido
  desde cualquiera de ellos.
 \end_layout
 
@@ -1119,45 +951,23 @@ listaValores
 
 \begin_layout Standard
 Con los métodos que tenemos hasta aquí, podemos crear e imprimir cartas:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> c1 = Carta(1, 11)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print c1
 \end_layout
 
 \begin_layout Verbatim
+
 Jota de Diamantes
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1179,50 +989,33 @@ Carta
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> c2 = Carta(1, 3)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print c2
 \end_layout
 
 \begin_layout Verbatim
+
 3 de Diamantes
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print c2.listaFiguras[1]
 \end_layout
 
 \begin_layout Verbatim
+
 Diamantes
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1272,42 +1065,23 @@ objeto instancia
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> c1.listaFiguras[1] = "Caballero de Rombos rojos"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print c1
 \end_layout
 
 \begin_layout Verbatim
+
 Caballero de Rombos rojos
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1351,38 +1125,18 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> print c2
 \end_layout
 
 \begin_layout Verbatim
+
 3 de Rombos rojos
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1562,76 +1316,64 @@ Con esta decisión
 __cmp__
 \family default
  queda así:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 def __cmp__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
   # chequea las figuras
 \end_layout
 
 \begin_layout Verbatim
+
   if self.figura > otro.figura: return 1
 \end_layout
 
 \begin_layout Verbatim
+
   if self.figura < otro.figura: return -1
 \end_layout
 
 \begin_layout Verbatim
+
   # Si tienen la misma figura...
  
 \end_layout
 
 \begin_layout Verbatim
+
   if self.valor > otro.valor: return 1
 \end_layout
 
 \begin_layout Verbatim
+
   if self.valor < otro.valor: return -1
 \end_layout
 
 \begin_layout Verbatim
+
   # si los valores son iguales...
  hay un empate
 \end_layout
 
 \begin_layout Verbatim
+
   return 0
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Con este orden los Ases valen menos que los Dos.
+
+\end_layout
+
+\begin_layout Standard
+Con este orden los Ases valen menos que los Dos.
 \end_layout
 
 \begin_layout Section
@@ -1750,54 +1492,38 @@ ciclo!anidado
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Mazo:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     self.cartas = []
 \end_layout
 
 \begin_layout Verbatim
+
     for figura in range(4):
 \end_layout
 
 \begin_layout Verbatim
+
       for valor in range(1, 14):
 \end_layout
 
 \begin_layout Verbatim
+
         self.cartas.append(Carta(figura, valor))
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1863,44 +1589,6 @@ método!de lista
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-1
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Imprimiendo el mazo
 \end_layout
@@ -1937,58 +1625,42 @@ Mazo
 Carta
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Mazo:
 \end_layout
 
 \begin_layout Verbatim
+
   ...
 \end_layout
 
 \begin_layout Verbatim
+
   def imprimirMazo(self):
 \end_layout
 
 \begin_layout Verbatim
+
     for carta in self.cartas:
 \end_layout
 
 \begin_layout Verbatim
+
       print carta
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- En este ejemplo y en los que siguen, los puntos suspensivos indican que
+
+\end_layout
+
+\begin_layout Standard
+En este ejemplo y en los que siguen, los puntos suspensivos indican que
  hemos omitido los otros métodos de la clase.
 \end_layout
 
@@ -2028,68 +1700,54 @@ Mazo
 .
  Para añadir un estilo de cascada, cada carta se imprime un espacio mas
  hacia la derecha que la anterior:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Mazo:
 \end_layout
 
 \begin_layout Verbatim
+
   ...
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     s = ""
 \end_layout
 
 \begin_layout Verbatim
+
     for i in range(len(self.cartas)):
 \end_layout
 
 \begin_layout Verbatim
+
       s = s + " "*i + str(self.cartas[i]) + "
 \backslash
 n"
 \end_layout
 
 \begin_layout Verbatim
+
     return s
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Este ejemplo demuestra varios puntos.
+
+\end_layout
+
+\begin_layout Standard
+Este ejemplo demuestra varios puntos.
  Primero, en vez de recorrer los elementos de la lista 
 \family typewriter
 self.cartas
@@ -2191,145 +1849,88 @@ Mazo
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
--2
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-pagebreak
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 >>> mazo = Mazo()
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print mazo
 \end_layout
 
 \begin_layout Verbatim
+
 As de Picas
 \end_layout
 
 \begin_layout Verbatim
+
  2 de Picas
 \end_layout
 
 \begin_layout Verbatim
+
   3 de Picas
 \end_layout
 
 \begin_layout Verbatim
+
    4 de Picas
 \end_layout
 
 \begin_layout Verbatim
+
     5 de Picas
 \end_layout
 
 \begin_layout Verbatim
+
      6 de Picas
 \end_layout
 
 \begin_layout Verbatim
+
       7 de Picas
 \end_layout
 
 \begin_layout Verbatim
+
        8 de Picas
 \end_layout
 
 \begin_layout Verbatim
+
         9 de Picas
 \end_layout
 
 \begin_layout Verbatim
+
          10 de Picas
 \end_layout
 
 \begin_layout Verbatim
+
           J de Picas
 \end_layout
 
 \begin_layout Verbatim
+
            Reina de Picas
 \end_layout
 
 \begin_layout Verbatim
+
             Rey de Picas
 \end_layout
 
 \begin_layout Verbatim
+
              As de Diamantes
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2437,34 +2038,13 @@ b
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 random.randrange(0, len(self.cartas))
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2477,117 +2057,53 @@ afterverb
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-adjustpage
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
--2
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
- 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-%
-\backslash
-pagebreak
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Mazo:
 \end_layout
 
 \begin_layout Verbatim
+
   ...
 \end_layout
 
 \begin_layout Verbatim
+
   def barajar(self):
 \end_layout
 
 \begin_layout Verbatim
+
     import random
 \end_layout
 
 \begin_layout Verbatim
+
     nCartas = len(self.cartas)
 \end_layout
 
 \begin_layout Verbatim
+
     for i in range(nCartas):
 \end_layout
 
 \begin_layout Verbatim
+
       j = random.randrange(i, nCartas)
 \end_layout
 
 \begin_layout Verbatim
+
       self.cartas[i], self.cartas[j] = self.cartas[j], 
 \end_layout
 
 \begin_layout Verbatim
+
                                        self.cartas[i]
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2658,46 +2174,23 @@ reference "tuple assignment"
 \end_inset
 
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 self.cartas[i], self.cartas[j] = self.cartas[j], 
 \end_layout
 
 \begin_layout Verbatim
+
                                  self.cartas[i]
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -2731,62 +2224,48 @@ eliminarCarta
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Mazo:
 \end_layout
 
 \begin_layout Verbatim
+
   ...
 \end_layout
 
 \begin_layout Verbatim
+
   def eliminarCarta(self, carta):
 \end_layout
 
 \begin_layout Verbatim
+
     if carta in self.cartas:
 \end_layout
 
 \begin_layout Verbatim
+
       self.cartas.remove(carta)
 \end_layout
 
 \begin_layout Verbatim
+
       return True
 \end_layout
 
 \begin_layout Verbatim
+
     else: 
 \end_layout
 
 \begin_layout Verbatim
+
       return True
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2848,49 +2327,28 @@ Para entregar cartas necesitamos eliminar y retornar la primera carta del
 pop
 \family default
  de las listas proporciona esta funcionalidad:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Mazo:
 \end_layout
 
 \begin_layout Verbatim
+
   ...
 \end_layout
 
 \begin_layout Verbatim
+
   def entregarCarta(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return self.cards.pop()
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2970,46 +2428,28 @@ estaVacio
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
+
 class Mazo:
 \end_layout
 
 \begin_layout Verbatim
+
   ...
 \end_layout
 
 \begin_layout Verbatim
+
   def estaVacio(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return (len(self.cartas) == 0)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset

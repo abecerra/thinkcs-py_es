@@ -70,10 +70,6 @@
 \begin_body
 
 \begin_layout Standard
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -754,23 +750,9 @@ print
 
 \begin_layout Standard
 Por ejemplo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -804,17 +786,6 @@ while x > 0 and y < 0 :
 \begin_layout Verbatim
 
   print  "condicion: ", (x > 0 and y < 0)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1502,23 +1473,9 @@ Escribir expresiones complejas está bien en tanto queden legibles, sin embargo,
 
 \begin_layout Standard
 Por ejemplo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1530,34 +1487,12 @@ self.manos[i].agregarCarta(
   self.manos[self.encontrarVecino(i)].eliminarCarta())
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
-\end_inset
 
  Esto puede reescribirse como:
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
 
  
 \end_layout
@@ -1575,17 +1510,6 @@ cartaEscogida = self.manos[vecino].eliminarCarta()
 \begin_layout Verbatim
 
 self.manos[i].agregarCarta(cartaEscogida)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1649,35 +1573,13 @@ Otro problema que ocurre con las expresiones grandes es que el orden de
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 y = x / 2 * math.pi;
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1694,38 +1596,13 @@ afterverb
 \begin_layout Standard
 Una buena forma de depurar expresiones es agregar paréntesis para hacer
  explícito el orden de evaluación:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
  y = x / (2 * math.pi);
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1778,35 +1655,13 @@ return
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 return self.manos[i].eliminarParejas()
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1815,20 +1670,9 @@ afterverb
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1838,17 +1682,6 @@ cont = self.manos[i].eliminarParejas()
 \begin_layout Verbatim
 
 return cont
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset

@@ -70,153 +70,38 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX source for textbook ``How to think like a computer scientist''
-\end_layout
-
+LyX source for textbook 
+\begin_inset Quotes eld
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
+How to think like a computer scientist'' 
+\end_layout
 
 \begin_layout Plain Layout
-
-% Copyright (c)  2001  Allen B.
+Copyright (c) 2001 Allen B.
  Downey, Jeffrey Elkner, and Chris Meyers.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
 \end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
-
-% Permission is granted to copy, distribute and/or modify this
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% document under the terms of the GNU Free Documentation License,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Version 1.1  or any later version published by the Free Software
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Foundation; with the Invariant Sections being "Contributor List",
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% with no Front-Cover Texts, and with no Back-Cover Texts.
- A copy of
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% the license is included in the section entitled "GNU Free
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Documentation License".
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% This distribution includes a file named fdl.tex that contains the text
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% of the GNU Free Documentation License.
-  If it is missing, you can obtain
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% it from www.gnu.org or by writing to the Free Software Foundation,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
 \end_layout
 
 \end_inset
@@ -383,23 +268,9 @@ clase
 
 \begin_layout Standard
 Una definición de clase se parece a esto:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -411,20 +282,13 @@ class Punto:
   pass
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Las definiciones de clase pueden aparecer en cualquier lugar de un programa,
+
+\end_layout
+
+\begin_layout Standard
+Las definiciones de clase pueden aparecer en cualquier lugar de un programa,
  pero normalmente están al principio (tras las sentencias 
 \family typewriter
 import
@@ -526,43 +390,22 @@ instanciación
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 limpio = Punto()
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- A la variable 
+
+\end_layout
+
+\begin_layout Standard
+A la variable 
 \family typewriter
 limpio
 \family default
@@ -601,23 +444,9 @@ atributos
 
 \begin_layout Standard
 Podemos añadir nuevos datos a una instancia utilizando la notación de punto:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -629,20 +458,13 @@ beforeverb
 >>> limpio.y = 4.0
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Esta sintaxis es similar a la sintaxis para seleccionar una variable de
+
+\end_layout
+
+\begin_layout Standard
+Esta sintaxis es similar a la sintaxis para seleccionar una variable de
  un módulo, como 
 \family typewriter
 math.pi
@@ -737,20 +559,9 @@ Podemos leer el valor de un atributo utilizando la misma sintaxis:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -777,20 +588,13 @@ beforeverb
 3.0
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- La expresión 
+
+\end_layout
+
+\begin_layout Standard
+La expresión 
 \family typewriter
 limpio.x
 \family default
@@ -832,23 +636,9 @@ x
 \begin_layout Standard
 Se puede usar la notación punto como parte de cualquier expresión.
  Así, las sentencias que siguen son correctas:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -865,20 +655,13 @@ distanciaAlCuadrado = limpio.x * limpio.x +
                       limpio.y * limpio.y
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- La primera línea presenta 
+
+\end_layout
+
+\begin_layout Standard
+La primera línea presenta 
 \family typewriter
 (3.0, 4.0)
 \family default
@@ -891,23 +674,9 @@ Usted puede estar tentado a imprimir el propio valor de
 limpio
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -919,20 +688,13 @@ beforeverb
 <__main__.Point instance at 80f8e70>
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El resultado indica que 
+
+\end_layout
+
+\begin_layout Standard
+El resultado indica que 
 \family typewriter
 limpio
 \family default
@@ -1001,23 +763,9 @@ parámetro
 \begin_layout Standard
 Se puede pasar una instancia como parámetro de la forma habitual.
  Por ejemplo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1029,20 +777,13 @@ def imprimePunto(p):
   print '(' + str(p.x) + ', ' + str(p.y) + ')'
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
 imprimePunto
 \family default
@@ -1216,23 +957,9 @@ Para averiguar si dos referencias se refieren al mismo objeto, se utiliza
 \family default
 .
  Por ejemplo:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1274,20 +1001,13 @@ beforeverb
 False
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Aunque 
+
+\end_layout
+
+\begin_layout Standard
+Aunque 
 \family typewriter
 p1
 \family default
@@ -1305,23 +1025,9 @@ p1
 p2
 \family default
 , las dos variables son alias del mismo objeto:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1338,20 +1044,13 @@ beforeverb
 True
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Este tipo de igualdad se llama 
+
+\end_layout
+
+\begin_layout Standard
+Este tipo de igualdad se llama 
 \series bold
 igualdad superficial
 \series default
@@ -1414,20 +1113,9 @@ mismoPunto
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1437,17 +1125,6 @@ def mismoPunto(p1, p2) :
 \begin_layout Verbatim
 
   return (p1.x == p2.x) and (p1.y == p2.y)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1461,20 +1138,9 @@ mismoPunto
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1514,17 +1180,6 @@ beforeverb
 \begin_layout Verbatim
 
 True
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -1577,28 +1232,9 @@ Tenemos varias posibilidades: podemos señalar el centro del rectángulo (dos
 
 \begin_layout Standard
 De nuevo, definiremos una nueva clase:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Verbatim
-
-# ¡Prohibidos los acentos fuera de las cadenas!
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1610,37 +1246,20 @@ class Rectangulo:
   pass
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
 \begin_layout Plain Layout
 
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
 
- Y la instanciaremos:
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+Y la instanciaremos:
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1657,43 +1276,22 @@ caja.ancho = 100.0
 caja.altura = 200.0
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Este código crea un nuevo objeto 
+
+\end_layout
+
+\begin_layout Standard
+Este código crea un nuevo objeto 
 \family typewriter
 Rectangulo
 \family default
  con dos atributos flotantes.
  ¡Para señalar la esquina superior izquierda podemos incrustar un objeto
  dentro de otro!
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1710,20 +1308,13 @@ caja.esquina.x = 0.0;
 caja.esquina.y = 0.0;
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- El operador punto compone.
+
+\end_layout
+
+\begin_layout Standard
+El operador punto compone.
  La expresión 
 \family typewriter
 caja.esquina.x
@@ -1856,23 +1447,9 @@ Punto
 Rectangulo
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1899,41 +1476,20 @@ def encuentraCentro(caja):
   return p
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Para llamar a esta función, se pasa 
+
+\end_layout
+
+\begin_layout Standard
+Para llamar a esta función, se pasa 
 \family typewriter
 caja
 \family default
  como argumento y se asigna el resultado a una variable:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -1950,20 +1506,9 @@ beforeverb
 (50.0, 100.0)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Section
@@ -2006,23 +1551,9 @@ ancho
 altura
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2034,20 +1565,13 @@ caja.ancho = caja.ancho + 50
 caja.altura = caja.altura + 100
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Podemos encapsular este código en un método y generalizarlo para agrandar
+
+\end_layout
+
+\begin_layout Standard
+Podemos encapsular este código en un método y generalizarlo para agrandar
  el rectángulo en cualquier cantidad:
 \end_layout
 
@@ -2072,23 +1596,9 @@ generalización
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2105,20 +1615,13 @@ def agrandarRect(caja, dancho, daltura) :
   caja.altura = caja.altura + daltura
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Las variables 
+
+\end_layout
+
+\begin_layout Standard
+Las variables 
 \family typewriter
 dancho
 \family default
@@ -2148,23 +1651,9 @@ b
 agrandarRect
 \family default
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2201,20 +1690,13 @@ beforeverb
 >>> agrandarRect(b, 50, 100)
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Mientras 
+
+\end_layout
+
+\begin_layout Standard
+Mientras 
 \family typewriter
 agrandarRect
 \family default
@@ -2304,23 +1786,9 @@ copy
 copy
 \family default
  que puede duplicar cualquier objeto:
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2367,20 +1835,13 @@ False
 True
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
-\end_layout
-
 \end_inset
 
- Una vez que hemos importado el módulo 
+
+\end_layout
+
+\begin_layout Standard
+Una vez que hemos importado el módulo 
 \family typewriter
 copy
 \family default
@@ -2562,35 +2023,13 @@ copia profunda
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
 >>> b2 = copy.deepcopy(b1)
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
@@ -2627,20 +2066,9 @@ Rectangulo
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-beforeverb
-\end_layout
-
-\end_inset
-
- 
-\end_layout
+\begin_inset listings
+inline false
+status open
 
 \begin_layout Verbatim
 
@@ -2670,17 +2098,6 @@ def agrandaRect(caja, dancho, daltura) :
 \begin_layout Verbatim
 
   return nuevaCaja
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-afterverb
 \end_layout
 
 \end_inset
