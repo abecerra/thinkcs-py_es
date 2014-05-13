@@ -7,3 +7,5 @@ Saltos de página manuales:
 
 - triqui1.py
 
+- def buscar(cad, c):
+

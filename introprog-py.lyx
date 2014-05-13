@@ -406,7 +406,7 @@ mainmatter
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap00.lyx"
+filename "solucionProblemas.lyx"
 
 \end_inset
 
@@ -423,7 +423,7 @@ filename "chap00.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap01.lyx"
+filename "elCaminoHaciaElPrograma.lyx"
 
 \end_inset
 
@@ -440,7 +440,7 @@ filename "chap01.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap02.lyx"
+filename "variablesExpresionesSentencias.lyx"
 
 \end_inset
 
@@ -457,7 +457,7 @@ filename "chap02.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap03.lyx"
+filename "funciones.lyx"
 
 \end_inset
 
@@ -471,7 +471,7 @@ filename "chap03.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap04.lyx"
+filename "condicionalesYRecursion.lyx"
 
 \end_inset
 
@@ -485,7 +485,7 @@ filename "chap04.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap05.lyx"
+filename "funcionesFructiferas.lyx"
 
 \end_inset
 
@@ -499,7 +499,7 @@ filename "chap05.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap06.lyx"
+filename "iteracion.lyx"
 
 \end_inset
 
@@ -513,7 +513,7 @@ filename "chap06.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap07.lyx"
+filename "cadenas.lyx"
 
 \end_inset
 
@@ -527,7 +527,7 @@ filename "chap07.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap08.lyx"
+filename "listas.lyx"
 
 \end_inset
 
@@ -541,7 +541,7 @@ filename "chap08.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "interludio01-triqui.lyx"
+filename "interludioTriqui.lyx"
 
 \end_inset
 
@@ -555,7 +555,7 @@ filename "interludio01-triqui.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap09.lyx"
+filename "tuplas.lyx"
 
 \end_inset
 
@@ -569,7 +569,7 @@ filename "chap09.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap10.lyx"
+filename "diccionarios.lyx"
 
 \end_inset
 
@@ -583,7 +583,7 @@ filename "chap10.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap11.lyx"
+filename "archivosYExcepciones.lyx"
 
 \end_inset
 
@@ -597,7 +597,7 @@ filename "chap11.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap12.lyx"
+filename "clasesYObjetos.lyx"
 
 \end_inset
 
@@ -611,7 +611,7 @@ filename "chap12.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap13.lyx"
+filename "clasesYFunciones.lyx"
 
 \end_inset
 
@@ -625,7 +625,7 @@ filename "chap13.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap14.lyx"
+filename "clasesYMetodos.lyx"
 
 \end_inset
 
@@ -639,7 +639,7 @@ filename "chap14.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "app02.lyx"
+filename "interludioFraccion.lyx"
 
 \end_inset
 
@@ -653,7 +653,7 @@ filename "app02.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap15.lyx"
+filename "conjuntosDeObjetos.lyx"
 
 \end_inset
 
@@ -667,7 +667,7 @@ filename "chap15.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "chap16.lyx"
+filename "herencia.lyx"
 
 \end_inset
 
@@ -681,7 +681,7 @@ filename "chap16.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "interludio02-triquiGUI.lyx"
+filename "interludioTriquiGUI.lyx"
 
 \end_inset
 
@@ -696,7 +696,7 @@ filename "interludio02-triquiGUI.lyx"
 \start_of_appendix
 \begin_inset CommandInset include
 LatexCommand input
-filename "app01.lyx"
+filename "depuracion.lyx"
 
 \end_inset
 
@@ -710,7 +710,7 @@ filename "app01.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "app04.lyx"
+filename "lecturasRecomendadas.lyx"
 
 \end_inset
 

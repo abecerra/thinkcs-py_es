@@ -1952,7 +1952,18 @@ http://thinkpython.com/code/metathesis.py
 \end_layout
 
 \begin_layout Standard
-Crédito: el ejercicio está inspirado por un ejemplo en http://puzzlers.org.
+Crédito: el ejercicio está inspirado por un ejemplo de 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://puzzlers.org
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
