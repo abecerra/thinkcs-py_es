@@ -1,0 +1,2663 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+LyX source for textbook 
+\begin_inset Quotes eld
+\end_inset
+
+How to think like a computer scientist'' 
+\end_layout
+
+\begin_layout Plain Layout
+Copyright (c) 2001 Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
+\end_layout
+
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Variables, expresiones y sentencias
+\end_layout
+
+\begin_layout Section
+Valores y tipos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cadena
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un 
+\series bold
+valor
+\series default
+ es una de las cosas fundamentales---como una letra o un número---que una
+ progama manipula.
+ Los valores que hemos visto hasta ahorra son 
+\family typewriter
+2
+\family default
+ (el resultado cuando añadimos 
+\family typewriter
+1 + 1
+\family default
+, y 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+"Hola todo el Mundo!"+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Los valores pertenecen a diferentes 
+\series bold
+tipos
+\series default
+: 
+\family typewriter
+2
+\family default
+ es un entero, y 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+"Hola, Mundo!"+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ es una 
+\series bold
+cadena
+\series default
+, llamada así porque contiene una 
+\begin_inset Quotes eld
+\end_inset
+
+cadena
+\begin_inset Quotes erd
+\end_inset
+
+ de letras.
+ Usted (y el intérprete) pueden identificar cadenas porque están encerradas
+ entre comillas.
+\end_layout
+
+\begin_layout Standard
+La sentencia de impresión también trabaja con enteros.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> print 4
+\end_layout
+
+\begin_layout Verbatim
+
+4
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Si no está seguro del tipo que un valor tiene, el intérprete le puede decir.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> type("Hola, Mundo!")
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'string'>
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type(17)
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'int'>
+\end_layout
+
+\end_inset
+
+
+\lang spanish
+ 
+\end_layout
+
+\begin_layout Standard
+Sin despertar ninguna sorpresa, las cadenas pertenecen al tipo 
+\family typewriter
+string (cadena)
+\family default
+ y los enteros pertenecen al tipo 
+\family typewriter
+int
+\family default
+.
+ Menos obvio, los números con cifras decimales pertenecen a un tipo llamado
+ 
+\family typewriter
+float
+\family default
+, porque éstos se representan en un formato denominado 
+\series bold
+punto flotante
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+cadena
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo!cadena
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+int
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo!int
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+float
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo!float
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> type(3.2)
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'float'>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Qué ocurre con valores como 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+"17"+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ y 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+"3.2"+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+? Parecen números, pero están encerrados entre comillas como las cadenas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> type("17")
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'string'>
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type("3.2")
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'string'>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ellos son cadenas.
+\end_layout
+
+\begin_layout Standard
+Cuando usted digita un número grande, podría estar tentado a usar comas
+ para separar grupos de tres dígitos, como en 
+\family typewriter
+1,000,000
+\family default
+.
+ Esto no es un número entero legal en Python, pero esto si es legal:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> print 1,000,000
+\end_layout
+
+\begin_layout Verbatim
+
+1 0 0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¡Bueno, eso no es lo que esperábamos!.
+ Resulta que 
+\family typewriter
+1,000,000
+\family default
+ es una tupla, algo que encontraremos en el Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tuplechap"
+
+\end_inset
+
+.
+ De momento, recuerde no poner comas en sus números enteros.
+\end_layout
+
+\begin_layout Section
+Variables
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+asignación
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia!asignación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una de las características más poderosas en un lenguaje de programación
+ es la capacidad de manipular 
+\series bold
+variables
+\series default
+.
+ Una variable es un nombre que se refiere a un valor.
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+sentencia de asignación
+\series default
+ crea nuevas variables y les da valores:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> mensaje = "¿Qué Onda?"
+\end_layout
+
+\begin_layout Verbatim
+
+>>> n = 17
+\end_layout
+
+\begin_layout Verbatim
+
+>>> pi = 3.14159
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este ejemplo hace tres asignaciones: la primera asigna la cadena 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+"¿Qué Onda?"+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ a una nueva variable denominada 
+\family typewriter
+mensaje
+\family default
+, la segunda le asigna el entero 
+\family typewriter
+17
+\family default
+ a 
+\family typewriter
+n
+\family default
+ y la tercera le asigna el número de punto flotante 
+\family typewriter
+3.14159
+\family default
+ a 
+\family typewriter
+pi
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diagrama de estados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una manera común de representar variables en el papel es escribir el nombre
+ de la variable con una flecha apuntando a su valor.
+ Esta clase de dibujo se denomina 
+\series bold
+diagrama de estados
+\series default
+ porque muestra el estado de cada una de las variables (piense en los valores
+ como el estado mental de las variables).
+ Este diagrama muestra el resultado de las sentencias de asignación anteriores:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+beforefig
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centerline{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/state2.eps
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+afterfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La sentencia 
+\family typewriter
+print
+\family default
+ también funciona con variables.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> print mensaje
+\end_layout
+
+\begin_layout Verbatim
+
+Que Onda?
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print n
+\end_layout
+
+\begin_layout Verbatim
+
+17
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print pi
+\end_layout
+
+\begin_layout Verbatim
+
+3.14159
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+En cada caso el resultado es el valor de la variable.
+ Las variables también tienen tipos; nuevamente, le podemos preguntar al
+ intérprete cuales son.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> type(mensaje)
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'string'>
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type(n)
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'int'>
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type(pi)
+\end_layout
+
+\begin_layout Verbatim
+
+<type 'float'>
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+El tipo de una variable es el mismo del valor al que se refiere.
+\end_layout
+
+\begin_layout Section
+Nombres de variables y palabras reservadas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+palabra reservada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+palabra!reservada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los programadores, generalmente, escogen nombres significativos para sus
+ variables ---que especifiquen para qué se usa la variable.
+\end_layout
+
+\begin_layout Standard
+Estos nombres pueden ser arbitrariamente largos.
+ Pueden contener letras y números, pero tienen que empezar con una letra.
+ Aunque es legal usar letras mayúsculas, por convención no lo hacemos.
+ Si usted lo hace, recuerde que la capitalización importa, 
+\family typewriter
+Pedro
+\family default
+ y 
+\family typewriter
+pedro
+\family default
+ son variables diferentes.
+\end_layout
+
+\begin_layout Standard
+El carácter subrayado (
+\family typewriter
+_
+\family default
+) puede aparecer en un nombre.
+ A menudo se usa en nombres con múltiples palabras, tales como 
+\family typewriter
+mi_nombre
+\family default
+ ó 
+\family typewriter
+precio_del_café_en_china
+\family default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+carácter subrayado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si usted le da un nombre ilegal a una variable obtendrá un error sintáctico:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> 76trombones = "gran desfile"
+\end_layout
+
+\begin_layout Verbatim
+
+SyntaxError: invalid syntax
+\end_layout
+
+\begin_layout Verbatim
+
+>>> mas$ = 1000000
+\end_layout
+
+\begin_layout Verbatim
+
+SyntaxError: invalid syntax
+\end_layout
+
+\begin_layout Verbatim
+
+>>> class = "introducción a la programación"
+\end_layout
+
+\begin_layout Verbatim
+
+SyntaxError: invalid syntax
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+76trombones
+\family default
+ es ilegal porque no empieza con una letra.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+mas$
+\family default
+ es ilegal porque contiene un carácter ilegal, el símbolo $.
+\end_layout
+
+\begin_layout Standard
+¿Qué sucede con 
+\family typewriter
+class
+\family default
+?
+\end_layout
+
+\begin_layout Standard
+Resulta que 
+\family typewriter
+class
+\family default
+ es una de las 
+\series bold
+palabras reservadas (keywords)
+\series default
+ de Python.
+ Las palabras reservadas definen las reglas del lenguaje y su estructura,
+ y no pueden ser usadas como nombres de variables.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+palabra reservada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Python tiene veintiocho palabras reservadas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+and       continue  else      for       import    not       
+\end_layout
+
+\begin_layout Verbatim
+
+assert    def       except    from      in        or        
+\end_layout
+
+\begin_layout Verbatim
+
+break     del       exec      global    is        pass      
+\end_layout
+
+\begin_layout Verbatim
+
+class     elif      finally   if        lambda    print     
+\end_layout
+
+\begin_layout Verbatim
+
+raise     return    try       while
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Usted puede mantener esta lista a mano.
+ Si el intérprete se queja por alguno de sus nombres de variables, y usted
+ no sabe por qué, búsquelo en esta lista.
+\end_layout
+
+\begin_layout Section
+Sentencias
+\end_layout
+
+\begin_layout Standard
+Una sentencia es una instrucción que el intérprete de Python puede ejecutar.
+ Hemos visto dos clases de sentencias: la asignación y print.
+\end_layout
+
+\begin_layout Standard
+Cuando usted digita una sentencia en la línea de comandos, Python la ejecuta
+ y despliega el resultado, si hay alguno.
+ El resultado de un print es un valor.
+ Las asignaciones no producen un resultado.
+\end_layout
+
+\begin_layout Standard
+Un guión usualmente contiene una secuencia de sentencias.
+ Si hay más de una, los resultados aparecen uno a uno a medida que las sentencia
+s se ejecutan.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, el guión
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+print 1
+\end_layout
+
+\begin_layout Verbatim
+
+x = 2
+\end_layout
+
+\begin_layout Verbatim
+
+print x
+\end_layout
+
+\end_inset
+
+ produce la salida:
+\end_layout
+
+\begin_layout Verbatim
+
+1
+\end_layout
+
+\begin_layout Verbatim
+
+2
+\end_layout
+
+\begin_layout Standard
+Observe nuevamente que la sentencia de asignación no produce salida.
+\end_layout
+
+\begin_layout Section
+Evaluando expresiones
+\end_layout
+
+\begin_layout Standard
+Una expresión es una combinación de valores, variables y operadores.
+ Si usted digita una expresión en la línea de comandos, el intérprete la
+ 
+\series bold
+evalúa
+\series default
+ y despliega su resultado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> 1 + 1
+\end_layout
+
+\begin_layout Verbatim
+
+2
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Un valor, por si mismo, se considera como una expresión, lo mismo ocurre
+ para las variables.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> 17
+\end_layout
+
+\begin_layout Verbatim
+
+17
+\end_layout
+
+\begin_layout Verbatim
+
+>>> x
+\end_layout
+
+\begin_layout Verbatim
+
+2
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Aunque es un poco confuso, evaluar una expresión no es lo mismo que imprimir
+ o desplegar un valor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> mensaje = "Como le va, Doc?"
+\end_layout
+
+\begin_layout Verbatim
+
+>>> mensaje
+\end_layout
+
+\begin_layout Verbatim
+
+"Como le va, Doc?"
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print mensaje
+\end_layout
+
+\begin_layout Verbatim
+
+Como le va, Doc?
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Cuando Python muestra el valor de una expresión que ha evaluado, utiliza
+ el mismo formato que se usaría para entrar un valor.
+ En el caso de las cadenas, esto implica que se incluyen las comillas.
+ Cuando se usa la sentencia print, el efecto es distinto como usted ya lo
+ ha evidenciado.
+\end_layout
+
+\begin_layout Standard
+En un guión, una expresión, por sí misma, es una sentencia legal, pero no
+ realiza nada.
+ El guión:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+17
+\end_layout
+
+\begin_layout Verbatim
+
+3.2
+\end_layout
+
+\begin_layout Verbatim
+
+"Hola, Mundo!"
+\end_layout
+
+\begin_layout Verbatim
+
+1 + 1
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+no produce ninguna salida.
+ ¿Cómo cambiaría el guión de manera que despliegue los valores de las cuatro
+ expresiones?
+\end_layout
+
+\begin_layout Section
+Operadores y operandos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operando
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+expresión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los 
+\series bold
+operadores
+\series default
+ son símbolos especiales que representan cómputos, como la suma y la multiplicac
+ión.
+ Los valores que el operador usa se denominan 
+\series bold
+operandos
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Los siguientes son expresiones válidas en Python, cuyo significado es más
+ o menos claro: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+20+32       hora-1   hora*60+minuto   
+\end_layout
+
+\begin_layout Verbatim
+
+minuto/60   5**2     (5+9)*(15-7)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Standard
+Los símbolos 
+\family typewriter
++
+\family default
+, 
+\family typewriter
+-
+\family default
+, y 
+\family typewriter
+/
+\family default
+, y los paréntesis para agrupar, significan en Python lo mismo que en la
+ matemática.
+ El asterisco (
+\family typewriter
+*
+\family default
+) es el símbolo para la multiplicación, y 
+\family typewriter
+**
+\family default
+ es el símbolo para la exponenciación.
+ Cuando el nombre de una variable aparece en lugar de un operando, se reemplaza
+ por su valor antes de calcular la operación.
+\end_layout
+
+\begin_layout Standard
+La suma, resta, multiplicación y exponenciación realizan lo que usted esperaría,
+ pero la división podría sorprenderlo.
+ La siguiente operación tiene un resultado inesperado:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> minuto = 59
+\end_layout
+
+\begin_layout Verbatim
+
+>>> minuto/60
+\end_layout
+
+\begin_layout Verbatim
+
+0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El valor de 
+\family typewriter
+minuto
+\family default
+ es 59, y 59 dividido por 60 es 0.98333, no 0.
+ La razón para esta discrepancia radica en que Python está realizando 
+\series bold
+división entera
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+división entera
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando los dos operandos son enteros el resultado también debe ser un entero;
+ y, por convención, la división entera siempre redondea 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ hacia abajo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, incluso en casos donde el siguiente entero está muy cerca.
+\end_layout
+
+\begin_layout Standard
+Una solución posible a este problema consiste en calcular un porcentaje,
+ en lugar de una fracción:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> minuto*100/60
+\end_layout
+
+\begin_layout Verbatim
+
+98
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+De nuevo, el resultado se redondea; pero, al menos ahora, el resultado estará
+ mas aproximado.
+ Otra alternativa es usar la división en punto flotante, lo que haremos
+ en el Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "floatchap"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Orden de las operaciones
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+orden de las operaciones
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+reglas de precedencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando hay más de un operador en una expresión, el orden de evaluación depende
+ de las 
+\series bold
+reglas de precedencia
+\series default
+.
+ Python sigue las mismas reglas de precedencia a las que estamos acostumbrados
+ para sus operadores matemáticos.
+ El acrónimo 
+\series bold
+PEMDAS
+\series default
+ es útil para recordar el orden de las operaciones:
+\end_layout
+
+\begin_layout Itemize
+Los 
+\series bold
+P
+\series default
+aréntesis tienen la precedencia más alta y pueden usarse para forzar la
+ evaluación de una expresión de la manera que usted desee.
+ Ya que las expresiones en paréntesis se evalúan primero, 
+\family typewriter
+2 * (3-1)
+\family default
+ es 4, y 
+\family typewriter
+(1+1)**(5-2)
+\family default
+ es 8.
+ Usted también puede usar paréntesis para que una expresión quede más legible,
+ como en 
+\family typewriter
+(minuto * 100) / 60
+\family default
+, aunque esto no cambie el resultado.
+\end_layout
+
+\begin_layout Itemize
+La 
+\series bold
+E
+\series default
+xponenciación tiene la siguiente precedencia más alta, así que 
+\family typewriter
+2**1+1
+\family default
+ es 3 y no 4, y 
+\family typewriter
+3*1**3
+\family default
+ es 3 y no 27.
+\end_layout
+
+\begin_layout Itemize
+La 
+\series bold
+M
+\series default
+ultiplicación y la 
+\series bold
+D
+\series default
+ivisión tienen la misma precedencia, aunque es más alta que la de la 
+\series bold
+A
+\series default
+dición y la 
+\series bold
+S
+\series default
+ubtracción, que también tienen la misma precedencia.
+ Así que 
+\family typewriter
+2*3-1
+\family default
+ da 5 en lugar de 4, y 
+\family typewriter
+2/3-1
+\family default
+ es 
+\family typewriter
+-1
+\family default
+, no 
+\family typewriter
+1
+\family default
+ (recuerde que en división entera, 
+\family typewriter
+2/3=0
+\family default
+).
+\end_layout
+
+\begin_layout Itemize
+Los operadores con la misma precedencia se evalúan de izquierda a derecha.
+ Recordando que 
+\family typewriter
+minuto=59
+\family default
+, en la expresión 
+\family typewriter
+minuto*100/60
+\family default
+; la multiplicación se hace primero, resultando 
+\family typewriter
+5900/60
+\family default
+, lo que a su vez da 
+\family typewriter
+98
+\family default
+.
+ Si las operaciones se hubieran evaluado de derecha a izquierda, el resultado
+ sería 
+\family typewriter
+59/1
+\family default
+, que es 
+\family typewriter
+59
+\family default
+, y no es lo correcto.
+\end_layout
+
+\begin_layout Section
+Operaciones sobre cadenas
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operación sobre cadenas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En general, usted no puede calcular operaciones matemáticas sobre cadenas,
+ incluso si las cadenas lucen como números.
+ Las siguientes operaciones son ilegales (asumiendo que 
+\family typewriter
+mensaje
+\family default
+ tiene el tipo 
+\family typewriter
+cadena
+\family default
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+ mensaje-1   "Hola"/123   mensaje*"Hola"   "15"+2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sin embargo, el operador 
+\family typewriter
++
+\family default
+ funciona con cadenas, aunque no calcula lo que usted esperaría.
+ Para las cadenas, el operador 
+\family typewriter
++
+\family default
+ representa la 
+\series bold
+concatenación
+\series default
+, que significa unir los dos operandos enlazándolos en el orden en que aparecen.
+ Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+concatenación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+fruta = "banano"
+\end_layout
+
+\begin_layout Verbatim
+
+bienCocinada = " pan con nueces"
+\end_layout
+
+\begin_layout Verbatim
+
+print fruta + bienCocinada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La salida de este programa es 
+\family typewriter
+banano pan con nueces
+\family default
+.
+ El espacio antes de la palabra 
+\family typewriter
+pan
+\family default
+ es parte de la cadena y sirve para producir el espacio entre las cadenas
+ concatenadas.
+\end_layout
+
+\begin_layout Standard
+El operador 
+\family typewriter
+*
+\family default
+ también funciona con las cadenas; hace una repetición.
+ Por ejemplo, 'Fun'*3 
+\family typewriter
+es 'FunFunFun'.
+
+\family default
+ Uno de los operandos tiene que ser una cadena, el otro tiene que ser un
+ entero.
+\end_layout
+
+\begin_layout Standard
+Estas interpretaciones de 
+\family typewriter
++
+\family default
+ y 
+\family typewriter
+*
+\family default
+ tienen sentido por la analogía con la suma y la multiplicación.
+ Así como 
+\family typewriter
+4*3
+\family default
+ es equivalente a 
+\family typewriter
+4+4+4
+\family default
+, esperamos que 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb+Fun*3+
+\end_layout
+
+\end_inset
+
+ sea lo mismo que 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+verb/"Fun"+"Fun"+"Fun"/
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, y lo és.
+ Sin embargo, las operaciones de concatenación y repetición sobre cadenas
+ tienen una diferencia significativa con las operaciones de suma y multiplicació
+n.
+ ¿Puede usted pensar en una propiedad que la suma y la multiplicación tengan
+ y que la concatenación y repetición no?
+\end_layout
+
+\begin_layout Section
+Composición
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+composición
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hasta aquí hemos considerado a los elementos de un programa---variables,
+ expresiones y sentencias---aisladamente, sin especificar cómo combinarlos.
+\end_layout
+
+\begin_layout Standard
+Una de las características mas útiles de los lenguajes de programación es
+ su capacidad de tomar pequeños bloques para 
+\series bold
+componer
+\series default
+ con ellos.
+ Por ejemplo, ya que sabemos cómo sumar números y cómo imprimirlos; podemos
+ hacer las dos cosas al mismo tiempo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>>  print 17 + 3
+\end_layout
+
+\begin_layout Verbatim
+
+20
+\end_layout
+
+\end_inset
+
+ De hecho, la suma tiene que calcularse antes que la impresión, así que
+ las acciones no están ocurriendo realmente al mismo tiempo.
+ El punto es que cualquier expresión que tenga números, cadenas y variables
+ puede ser usada en una sentencia de impresión (
+\family typewriter
+print
+\family default
+).
+ Usted ha visto un ejemplo de esto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+print "Número de minutos desde media noche: ", 
+\end_layout
+
+\begin_layout Verbatim
+
+      hora*60+minuto
+\end_layout
+
+\end_inset
+
+ Usted también puede poner expresiones arbitrarias en el lado derecho de
+ una sentencia de asignación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+porcentaje = (minuto * 100) / 60
+\end_layout
+
+\end_inset
+
+ Esto no parece nada impresionante ahora, pero vamos a ver otros ejemplos
+ en los que la composición hace posible expresar cálculos complejos organizada
+ y concisamente.
+\end_layout
+
+\begin_layout Standard
+Advertencia: hay restricciones sobre los lugares en los que se pueden usar
+ las expresiones.
+ Por ejemplo, el lado izquierdo de una asignación tiene que ser un nombre
+ de 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+em
+\end_layout
+
+\end_inset
+
+ variable
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+, no una expresión.
+ Así que esto es ilegal: 
+\family typewriter
+minuto+1 = hora
+\family default
+.
+\end_layout
+
+\begin_layout Section
+Comentarios
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+comentario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A medida que los programas se hacen más grandes y complejos, se vuelven
+ más difíciles de leer.
+ Los lenguajes formales son densos; y, a menudo, es difícil mirar una sección
+ de código y saber qué hace, o por qué lo hace.
+\end_layout
+
+\begin_layout Standard
+Por esta razón, es una muy buena idea añadir notas a sus programas para
+ explicar, en lenguaje natural, lo que hacen.
+ Estas notas se denominan 
+\series bold
+comentarios 
+\series default
+y se marcan con el símbolo 
+\family typewriter
+#
+\family default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+# calcula el porcentaje de la hora que ha pasado
+\end_layout
+
+\begin_layout Verbatim
+
+porcentaje = (minuto * 100) / 60
+\end_layout
+
+\end_inset
+
+ En este caso, el comentario aparece en una línea completa.
+ También pueden ir comentarios al final de una línea:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+# precaucion: division entera
+\end_layout
+
+\begin_layout Verbatim
+
+porcentaje = (minute * 100) / 60
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+todo lo que sigue desde el 
+\family typewriter
+#
+\family default
+ hasta el fin de la línea se ignora---no tiene efecto en el programa.
+ El mensaje es para el programador que escribe el programa o para algún
+ programador que podría usar este código en el futuro.
+ En este caso, le recuerda al lector el sorprendente comportamiento de la
+ división entera en Python.
+\end_layout
+
+\begin_layout Section
+Glosario
+\end_layout
+
+\begin_layout Description
+Valor: un número o una cadena (u otra cosa que se introduzca más adelante)
+ que puede ser almacenado en una variable o calculado en una expresión.
+\end_layout
+
+\begin_layout Description
+Tipo: conjunto de valores.
+ El tipo del valor determina cómo se puede usar en expresiones.
+ Hasta aquí, los tipos que usted ha visto son enteros (tipo 
+\family typewriter
+int
+\family default
+), números de punto flotante (tipo 
+\family typewriter
+float
+\family default
+) y cadenas (tipo 
+\family typewriter
+string
+\family default
+).
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Punto flotante:
+\end_layout
+
+\end_inset
+
+ formato para representar números con parte decimal.
+\end_layout
+
+\begin_layout Description
+Variable: nombre que se refiere a un valor.
+\end_layout
+
+\begin_layout Description
+Sentencia: sección de código que representa un comando o acción.
+ Hasta aquí las sentencias que usted ha visto son la de asignación y la
+ de impresión.
+\end_layout
+
+\begin_layout Description
+Asignación: corresponde a la sentencia que pone un valor en una variable.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Diagrama de estados:
+\end_layout
+
+\end_inset
+
+ es la representación gráfica de un conjunto de variables y los valores
+ a los que se refieren.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Palabra reservada:
+\end_layout
+
+\end_inset
+
+ es una palabra usada por el compilador para analizar sintácticamente un
+ programa; usted no puede usar palabras reservadas como 
+\family typewriter
+if
+\family default
+, 
+\family typewriter
+def
+\family default
+, y 
+\family typewriter
+while
+\family default
+ como nombres de variables.
+\end_layout
+
+\begin_layout Description
+Operador: símbolo especial que representa un simple cálculo como una suma,
+ multiplicación o concatenación de cadenas.
+\end_layout
+
+\begin_layout Description
+Operando: uno de los valores sobre el cual actúa un operador.
+\end_layout
+
+\begin_layout Description
+Expresión: combinación de variables, operadores y valores que representa
+ un único valor de resultado.
+\end_layout
+
+\begin_layout Description
+Evaluar: simplificar una expresión ejecutando varias operaciones a fin de
+ retornar un valor único.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+División entera:
+\end_layout
+
+\end_inset
+
+ operación que divide un entero por otro y retorna un entero.
+ La división entera retorna el número de veces que el denominador cabe en
+ el numerador y descarta el residuo.
+\end_layout
+
+\begin_layout Description
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+Reglas de precedencia:
+\end_layout
+
+\end_inset
+
+ reglas que gobiernan el orden en que las expresiones que tienen múltiples
+ operadores y operandos se evalúan.
+\end_layout
+
+\begin_layout Description
+Concatenar: unir dos operandos en el orden en que aparecen.
+\end_layout
+
+\begin_layout Description
+Composición: es la capacidad de combinar simples expresiones y sentencias
+ dentro de sentencias y expresiones compuestas para representar cálculos
+ complejos concisamente.
+\end_layout
+
+\begin_layout Description
+Comentario: información que se incluye en un programa para otro programador
+ (o lector del código fuente) que no tiene efecto en la ejecución.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+valor
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+punto flotante
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+variable
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+tipo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+palabra reservada
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+sentencia
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+asignación
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+comentario
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+diagrama de estados
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+expresión
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operador
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+operando
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+división entera
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+reglas de precedencia
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+precedencia
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+concatenación
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+composición
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ejercicios
+\end_layout
+
+\begin_layout Enumerate
+Registre qué sucede cuando usa la sentencia print en combinación con una
+ sentencia de asignación, por ejemplo: 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+print n = 7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+¿Que sucede cuando se usa la sentencia print con una expresión?, por ejemplo:
+ 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+print 8+5
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+¿Que sucede cuando se ejecuta esto?
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+print 5.2, "esto", 4 - 2, "aquello", 5/2.0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Tome la siguiente oración: Sólo trabajo y nada de juegos hacen de Juan un
+ niño aburrido.
+ Almacene cada palabra en variables separadas, después muestre la oración
+ en una sola línea usando la sentencia print.
+\end_layout
+
+\begin_layout Enumerate
+Incluya paréntesis a la expresión 6 * 1 - 2 para cambiar su resultado de
+ 4 a -6.
+\end_layout
+
+\begin_layout Enumerate
+Inserte una línea de comentario en un línea previa a una de código funcional,
+ y registre qué es lo que sucede cuando corre de nuevo el programa.
+\end_layout
+
+\begin_layout Enumerate
+La diferencia entre la función input y la función raw_input es que la función
+ input evalúa la cadena introducida y la función raw_input no lo hace.
+ Escriba lo siguiente en el intérprete de Python, registre qué sucede y
+ expliquelo:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Verbatim
+
+>>> x = input()
+\end_layout
+
+\begin_layout Verbatim
+
+3.14
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type(x)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> x = raw_input()
+\end_layout
+
+\begin_layout Verbatim
+
+3.14
+\end_layout
+
+\begin_layout Verbatim
+
+>>> type(x)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Escriba una expresión que calcule la nota definitiva de su curso de programación.
+\end_layout
+
+\end_body
+\end_document
