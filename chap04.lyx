@@ -804,22 +804,18 @@ if
 \end_layout
 
 \begin_layout Verbatim
-
 CABECERA:
 \end_layout
 
 \begin_layout Verbatim
-
   PRIMERA SENTENCIA
 \end_layout
 
 \begin_layout Verbatim
-
   ...
 \end_layout
 
 \begin_layout Verbatim
-
   ULTIMA SENTENCIA
 \end_layout
 
@@ -1540,6 +1536,13 @@ Hemos mencionado que es legal que una función llame a otra, y usted ha visto
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
 inline false
 status open
@@ -1758,22 +1761,18 @@ __main__
 \end_layout
 
 \begin_layout Verbatim
-
 3
 \end_layout
 
 \begin_layout Verbatim
-
 2
 \end_layout
 
 \begin_layout Verbatim
-
 1
 \end_layout
 
 \begin_layout Verbatim
-
 Despegue!
 \end_layout
 
@@ -2204,22 +2203,18 @@ def recurrir():
 \end_layout
 
 \begin_layout Verbatim
-
   File "<stdin>", line 2, in recurrir
 \end_layout
 
 \begin_layout Verbatim
-
   (98 repeticiones omitidas)
 \end_layout
 
 \begin_layout Verbatim
-
   File "<stdin>", line 2, in recurrir
 \end_layout
 
 \begin_layout Verbatim
-
 RuntimeError: Maximum recursion depth exceeded
 \end_layout
 
@@ -2915,7 +2910,6 @@ def tabladeverdad(expresion):
 
 \begin_deeper
 \begin_layout Verbatim
-
  
 \end_layout
 

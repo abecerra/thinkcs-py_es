@@ -1062,47 +1062,38 @@ El carácter tabulador mueve el cursor hacia la derecha hasta que alcanza
 \end_layout
 
 \begin_layout Verbatim
-
 1.0     0.0
 \end_layout
 
 \begin_layout Verbatim
-
 2.0     0.69314718056
 \end_layout
 
 \begin_layout Verbatim
-
 3.0     1.09861228867
 \end_layout
 
 \begin_layout Verbatim
-
 4.0     1.38629436112
 \end_layout
 
 \begin_layout Verbatim
-
 5.0     1.60943791243
 \end_layout
 
 \begin_layout Verbatim
-
 6.0     1.79175946923
 \end_layout
 
 \begin_layout Verbatim
-
 7.0     1.94591014906
 \end_layout
 
 \begin_layout Verbatim
-
 8.0     2.07944154168
 \end_layout
 
 \begin_layout Verbatim
-
 9.0     2.19722457734
 \end_layout
 
@@ -1151,52 +1142,42 @@ t',  math.log(x)/math.log(2.0)
 \end_layout
 
 \begin_layout Verbatim
-
    resulta en:
 \end_layout
 
 \begin_layout Verbatim
-
 1.0     0.0
 \end_layout
 
 \begin_layout Verbatim
-
 2.0     1.0
 \end_layout
 
 \begin_layout Verbatim
-
 3.0     1.58496250072
 \end_layout
 
 \begin_layout Verbatim
-
 4.0     2.0
 \end_layout
 
 \begin_layout Verbatim
-
 5.0     2.32192809489
 \end_layout
 
 \begin_layout Verbatim
-
 6.0     2.58496250072
 \end_layout
 
 \begin_layout Verbatim
-
 7.0     2.80735492206
 \end_layout
 
 \begin_layout Verbatim
-
 8.0     3.0
 \end_layout
 
 \begin_layout Verbatim
-
 9.0     3.16992500144
 \end_layout
 
@@ -1274,37 +1255,30 @@ serie geométrica
 \end_layout
 
 \begin_layout Verbatim
-
 1.0     0.0
 \end_layout
 
 \begin_layout Verbatim
-
 2.0     1.0
 \end_layout
 
 \begin_layout Verbatim
-
 4.0     2.0
 \end_layout
 
 \begin_layout Verbatim
-
 8.0     3.0
 \end_layout
 
 \begin_layout Verbatim
-
 16.0    4.0
 \end_layout
 
 \begin_layout Verbatim
-
 32.0    5.0
 \end_layout
 
 \begin_layout Verbatim
-
 64.0    6.0
 \end_layout
 
@@ -1489,7 +1463,6 @@ La salida del programa es:
 \end_layout
 
 \begin_layout Verbatim
-
 2      4      6      8      10     12
 \end_layout
 
@@ -1671,7 +1644,6 @@ Si llamamos a esta función con el argumento 2, obtenemos la misma salida
 \end_layout
 
 \begin_layout Verbatim
-
 3      6      9      12     15     18
 \end_layout
 
@@ -1680,7 +1652,6 @@ Con el argumento 4, la salida es:
 \end_layout
 
 \begin_layout Verbatim
-
 4      8      12     16     20     24
 \end_layout
 
@@ -1742,32 +1713,26 @@ La salida de este programa es una tabla de multiplicación:
 \end_layout
 
 \begin_layout Verbatim
-
 1      2      3      4      5      6
 \end_layout
 
 \begin_layout Verbatim
-
 2      4      6      8      10     12
 \end_layout
 
 \begin_layout Verbatim
-
 3      6      9      12     15     18
 \end_layout
 
 \begin_layout Verbatim
-
 4      8      12     16     20     24
 \end_layout
 
 \begin_layout Verbatim
-
 5      10     15     20     25     30
 \end_layout
 
 \begin_layout Verbatim
-
 6      12     18     24     30     36
 \end_layout
 
@@ -2125,12 +2090,16 @@ Mas generalización
 \begin_layout Standard
 Como otro ejemplo de generalización, imagine que le piden un programa que
  imprima una tabla de multiplicación de cualquier tamaño; no sólo la tabla
- de seis-por-seis.
- Podría agregar un parámetro a 
+ de seis por seis.
+ Podría agregarse un parámetro a 
 \family typewriter
 imprimaTabla
 \family default
 :
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \begin_inset listings
 inline false
 status open
@@ -2179,37 +2148,30 @@ imprimaTabla
 \end_layout
 
 \begin_layout Verbatim
-
 1      2      3      4      5      6
 \end_layout
 
 \begin_layout Verbatim
-
 2      4      6      8      10     12
 \end_layout
 
 \begin_layout Verbatim
-
 3      6      9      12     15     18
 \end_layout
 
 \begin_layout Verbatim
-
 4      8      12     16     20     24
 \end_layout
 
 \begin_layout Verbatim
-
 5      10     15     20     25     30
 \end_layout
 
 \begin_layout Verbatim
-
 6      12     18     24     30     36
 \end_layout
 
 \begin_layout Verbatim
-
 7      14     21     28     35     42
 \end_layout
 
@@ -2313,37 +2275,30 @@ Como se esperaba, este programa genera una tabla cuadrada de siete-por-siete:
 \end_layout
 
 \begin_layout Verbatim
-
 1      2      3      4      5      6      7
 \end_layout
 
 \begin_layout Verbatim
-
 2      4      6      8      10     12     14
 \end_layout
 
 \begin_layout Verbatim
-
 3      6      9      12     15     18     21
 \end_layout
 
 \begin_layout Verbatim
-
 4      8      12     16     20     24     28
 \end_layout
 
 \begin_layout Verbatim
-
 5      10     15     20     25     30     35
 \end_layout
 
 \begin_layout Verbatim
-
 6      12     18     24     30     36     42
 \end_layout
 
 \begin_layout Verbatim
-
 7      14     21     28     35     42     49
 \end_layout
 
@@ -2365,7 +2320,6 @@ imprimaTabla
 \end_layout
 
 \begin_layout Verbatim
-
     imprimaMultiplos(i, tope)
 \end_layout
 
@@ -2374,7 +2328,6 @@ por
 \end_layout
 
 \begin_layout Verbatim
-
     imprimaMultiplos(i, i)
 \end_layout
 
@@ -2383,37 +2336,30 @@ y se obtiene:
 \end_layout
 
 \begin_layout Verbatim
-
 1
 \end_layout
 
 \begin_layout Verbatim
-
 2      4
 \end_layout
 
 \begin_layout Verbatim
-
 3      6      9
 \end_layout
 
 \begin_layout Verbatim
-
 4      8      12     16
 \end_layout
 
 \begin_layout Verbatim
-
 5      10     15     20     25
 \end_layout
 
 \begin_layout Verbatim
-
 6      12     18     24     30     36
 \end_layout
 
 \begin_layout Verbatim
-
 7      14     21     28     35     42     49
 \end_layout
 
@@ -2806,17 +2752,14 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 produzca
 \end_layout
 
 \begin_layout Verbatim
-
         esta
 \end_layout
 
 \begin_layout Verbatim
-
                 salida.
 \end_layout
 
@@ -2892,32 +2835,26 @@ beforeverb
 
 \begin_deeper
 \begin_layout Verbatim
-
   1       1
 \end_layout
 
 \begin_layout Verbatim
-
   2       3
 \end_layout
 
 \begin_layout Verbatim
-
   3       6
 \end_layout
 
 \begin_layout Verbatim
-
   4       10
 \end_layout
 
 \begin_layout Verbatim
-
   5       15
 \end_layout
 
 \begin_layout Verbatim
-
   
 \end_layout
 
@@ -3007,7 +2944,7 @@ Compare los valores de
 \begin_inset Formula $n$
 \end_inset
 
- que obtuvo para el punto anterior y para el primero.
+ que obtuvo para los puntos 6 y 7.
  Explique si encuentra diferencias.
 \end_layout
 

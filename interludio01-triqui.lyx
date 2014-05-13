@@ -348,6 +348,10 @@ imprimir(triqui)
 
 \begin_layout Standard
 Ahora podemos agregar un ciclo para jugar, sencillo, con un solo jugador:
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -816,12 +820,22 @@ def jugar(jugador,tablero):
 
 \begin_layout Verbatim
 
-    diag = ganaDiagonal1(jugador,tablero) or ganaDiagonal2(jugador,tablero)
+    diag = ganaDiagonal1(jugador,tablero) or 
 \end_layout
 
 \begin_layout Verbatim
 
-    linea = ganaHorizontal(jugador,tablero) or ganaVertical(jugador,tablero)
+           ganaDiagonal2(jugador,tablero)
+\end_layout
+
+\begin_layout Verbatim
+
+    linea = ganaHorizontal(jugador,tablero) or 
+\end_layout
+
+\begin_layout Verbatim
+
+            ganaVertical(jugador,tablero)
 \end_layout
 
 \begin_layout Verbatim
@@ -1024,12 +1038,22 @@ def jugar(jugador,tablero):
 
 \begin_layout Verbatim
 
-    diag = ganaDiagonal1(jugador,tablero) or ganaDiagonal2(jugador,tablero)
+    diag = ganaDiagonal1(jugador,tablero) or 
 \end_layout
 
 \begin_layout Verbatim
 
-    linea = ganaHorizontal(jugador,tablero) or ganaVertical(jugador,tablero)
+           ganaDiagonal2(jugador,tablero)
+\end_layout
+
+\begin_layout Verbatim
+
+    linea = ganaHorizontal(jugador,tablero) or 
+\end_layout
+
+\begin_layout Verbatim
+
+            ganaVertical(jugador,tablero)
 \end_layout
 
 \begin_layout Verbatim
@@ -1270,12 +1294,22 @@ def jugar(jugador,tablero):
 
 \begin_layout Verbatim
 
-    diag = ganaDiagonal1(jugador,tablero) or ganaDiagonal2(jugador,tablero)
+    diag = ganaDiagonal1(jugador,tablero) or 
 \end_layout
 
 \begin_layout Verbatim
 
-    linea = ganaHorizontal(jugador,tablero) or ganaVertical(jugador,tablero)
+           ganaDiagonal2(jugador,tablero)
+\end_layout
+
+\begin_layout Verbatim
+
+    linea = ganaHorizontal(jugador,tablero) or 
+\end_layout
+
+\begin_layout Verbatim
+
+            ganaVertical(jugador,tablero)
 \end_layout
 
 \begin_layout Verbatim
@@ -1322,12 +1356,22 @@ def gana(jugador,tablero):
 
 \begin_layout Verbatim
 
-    diag = ganaDiagonal1(jugador,tablero) or ganaDiagonal2(jugador,tablero)
+    diag = ganaDiagonal1(jugador,tablero) or 
 \end_layout
 
 \begin_layout Verbatim
 
-    linea = ganaHorizontal(jugador,tablero) or ganaVertical(jugador,tablero)
+           ganaDiagonal2(jugador,tablero)
+\end_layout
+
+\begin_layout Verbatim
+
+    linea = ganaHorizontal(jugador,tablero) or 
+\end_layout
+
+\begin_layout Verbatim
+
+            ganaVertical(jugador,tablero)
 \end_layout
 
 \begin_layout Verbatim
@@ -1343,7 +1387,14 @@ def gana(jugador,tablero):
 \begin_layout Standard
 Con este cambio también ganamos algo: la verificación de quien gana el juego
  puede hacerse con una sola función en otro programa, por ejemplo uno con
- una interfaz gráfica de usuario.
+ una interfaz gráfica de usuario, como el del capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "triqui-kivy"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard

@@ -1,0 +1,9 @@
+
+Saltos de página manuales:
+
+- def conteo(n)
+
+- def imprimatabla(tope)
+
+- triqui1.py
+

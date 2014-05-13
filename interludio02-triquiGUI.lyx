@@ -114,8 +114,18 @@ Triqui con interfaz gráfica
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "triqui-kivy"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Triqui
@@ -1534,10 +1544,6 @@ Widget: Elemento de una aplicación gráfica que se coloca en una ventana.
 Ejercicios
 \end_layout
 
-\begin_layout Standard
-
-\end_layout
-
 \begin_layout Enumerate
 Modifique el triqui para que el computador juegue automáticamente, seleccionando
  una casilla vacía al azar.
@@ -1553,8 +1559,8 @@ Agregue un sonido cada vez que se haga una jugada válida y otro sonido de
 Modifique el triqui para que tenga un menú gráfico de entrada en el que
  se pueda escoger entre dos modalidades: 1 jugador contra el computador,
  2 jugadores entre si por turnos y 3, salir del programa.
- Ahora, cada vez que termine una partida el programa debe desplegar el flujo
- de ejecución debe volver al menú.
+ Ahora, cada vez que termine una partida el flujo de ejecución del programa
+ debe volver al menú.
 \end_layout
 
 \end_body

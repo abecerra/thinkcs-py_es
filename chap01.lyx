@@ -458,24 +458,20 @@ scriptsize
 \end_layout
 
 \begin_layout Verbatim
-
 $ python Python 2.7.6 (default, Apr 28 2014, 10:47:40)  
 \end_layout
 
 \begin_layout Verbatim
-
 [GCC 4.8.2] on linux2 Type "help", "copyright", "credits" or "license" for
  more information.
  
 \end_layout
 
 \begin_layout Verbatim
-
 >>> 1+1 
 \end_layout
 
 \begin_layout Verbatim
-
 2 
 \end_layout
 
@@ -561,7 +557,6 @@ unomasuno.py
 \end_layout
 
 \begin_layout Verbatim
-
 print 1 + 1
 \end_layout
 
@@ -577,12 +572,10 @@ Por acuerdo unánime, los archivos que contienen programas de Python tienen
 \end_layout
 
 \begin_layout Verbatim
-
 $ python unomasuno.py
 \end_layout
 
 \begin_layout Verbatim
-
 2
 \end_layout
 
@@ -1534,7 +1527,6 @@ status collapsed
 \end_layout
 
 \begin_layout Verbatim
-
 Hola todo el mundo!
 \end_layout
 
@@ -2175,7 +2167,6 @@ Inicie la terminal de Python.
  los esperados? Explique.
 \end_layout
 
-\begin_deeper
 \begin_layout Enumerate
 Escriba 1 2 y presione la tecla Entrar.
  Python trata de evaluar esta expresión, pero no puede, porque la expresión
@@ -2183,23 +2174,20 @@ Escriba 1 2 y presione la tecla Entrar.
  Así, Python responde con el siguiente mensaje de error:
 \end_layout
 
+\begin_deeper
 \begin_layout Verbatim
-
   File "<stdin>", line 1
 \end_layout
 
 \begin_layout Verbatim
-
     1 2
 \end_layout
 
 \begin_layout Verbatim
-
       ^
 \end_layout
 
 \begin_layout Verbatim
-
 SyntaxError: invalid syntax
 \end_layout
 
