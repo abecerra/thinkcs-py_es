@@ -218,52 +218,6 @@ This distribution includes a file named fdl.lyx that contains the text of
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Title
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-introprog
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Author
-Andrés Becerra Sandoval
-\end_layout
-
-\begin_layout Date
-Mayo 2014
-\end_layout
-
-\end_inset
-
-
 \begin_inset ERT
 status open
 
