@@ -4,7 +4,7 @@
 \begin_header
 \textclass book
 \use_default_options false
-\master puj.lyx
+\master introprog-py.lyx
 \maintain_unincluded_children false
 \language spanish
 \language_package none
@@ -98,7 +98,7 @@ thispagestyle{empty}
 
 \series bold
 \size huge
-Introducción a la programación con Python
+Introducción a la programación con Python (2ed)
 \end_layout
 
 \begin_layout Standard
@@ -267,15 +267,15 @@ parindent
 \begin_layout Standard
 
 \size scriptsize
-Rector: Jorge Humberto Peláez, S.J.
+Rector: Luis Felipe Gómez Restrepo, S.J.
 \begin_inset Newline newline
 \end_inset
 
- Vicerrector Académico: Antonio de Roux
+ Vicerrectora Académica: Ana Milena Yoshioka Vargas
 \begin_inset Newline newline
 \end_inset
 
- Vicerrector del Medio Universitario: Gabriel Jaime Pérez, S.J.
+ Vicerrector del Medio Universitario: Luis Fernando Granados Ospina, S.J..
 \begin_inset Newline newline
 \end_inset
 
@@ -289,11 +289,7 @@ Facultad de Ingeniería
 \begin_inset Newline newline
 \end_inset
 
- Decano Académico: Jorge Francisco Estela 
-\begin_inset Newline newline
-\end_inset
-
- Decana del Medio Universitario: Claudia Lucía Mora 
+ Decano Académico: Jaime Alberto Aguilar Zambrano Ph.D 
 \begin_inset Newline newline
 \end_inset
 
