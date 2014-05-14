@@ -31,7 +31,7 @@
 \setlength{\marginparsep}{0in}
 \setlength{\marginparwidth}{0in}
 \setlength{\marginparpush}{0in}
-\setlength{\hoffset}{-5pt}
+%\setlength{\hoffset}{-5pt}
 
 
 \newcommand{\introprog}{Introducción a la programación con Python}
