@@ -70,153 +70,38 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX source for textbook ``How to think like a computer scientist''
-\end_layout
-
+LyX source for textbook 
+\begin_inset Quotes eld
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
+How to think like a computer scientist'' 
+\end_layout
 
 \begin_layout Plain Layout
-
-% Copyderecho (c)  2001  Allen B.
+Copyright (c) 2001 Allen B.
  Downey, Jeffrey Elkner, and Chris Meyers.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Plain Layout
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
 \end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
-
-% Permission is granted to copy, distribute and/or modify this
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% document under the terms of the GNU Free Documentation License,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Version 1.1  or any later version published by the Free Software
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Foundation; with the Invariant Sections being "Contributor List",
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% with no Front-Cover Texts, and with no Back-Cover Texts.
- A copy of
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% the license is included in the section entitled "GNU Free
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Documentation License".
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% This distribution includes a file named fdl.tex that contains the text
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% of the GNU Free Documentation License.
-  If it is missing, you can obtain
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% it from www.gnu.org or by writing to the Free Software Foundation,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
 \end_layout
 
 \end_inset

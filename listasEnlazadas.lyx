@@ -70,226 +70,38 @@
 \begin_body
 
 \begin_layout Standard
-\begin_inset ERT
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-
-% LaTeX source for textbook ``How to think like a computer scientist''
-\end_layout
-
+LyX source for textbook 
+\begin_inset Quotes eld
 \end_inset
 
-
-\begin_inset ERT
-status collapsed
+How to think like a computer scientist'' 
+\end_layout
 
 \begin_layout Plain Layout
-
-% Copyright (C) 1999  Allen B.
- Downey
+Copyright (c) 2001 Allen B.
+ Downey, Jeffrey Elkner, and Chris Meyers.
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
-
-% This LaTeX source is free software; you can redistribute it and/or
+Permission is granted to copy, distribute and/or modify this document under
+ the terms of the GNU Free Documentation License, Version 1.1 or any later
+ version published by the Free Software Foundation; with the Invariant Sections
+ being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
+ Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentati
+on License".
 \end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
 
 \begin_layout Plain Layout
-
-% modify it under the terms of the GNU General Public License as
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% published by the Free Software Foundation (version 2).
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% This LaTeX source is distributed in the hope that it will be useful,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% but WITHOUT ANY WARRANTY; without even the implied warranty of
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% General Public License for more derestos.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Compiling this LaTeX source has the effect of generating
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% a device-independent representation of a textbook, which
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% can be converted to other formats and printed.
-  All intermediate
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% representations (including DVI and Postscript), and all printed
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% copies of the textbook are also covered by the GNU General
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Public License.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% This distribution includes a file named COPYING that contains the text
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% of the GNU General Public License.
-  If it is missing, you can obtain
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% it from www.gnu.org or by writing to the Free Software Foundation,
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of
+ the GNU Free Documentation License.
+ If it is missing, you can obtain it from www.gnu.org or by writing to the
+ Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
 \end_layout
 
 \end_inset
