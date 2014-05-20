@@ -81,7 +81,7 @@
   % Color settings to match IDLE style
   keywordstyle=\color{Orange},       % core keywords,
   morekeywords={assert},
-  morekeywords=[2]{None,True,False,len,abs,id,type,input,raw_input,raise,open,range,str,int,float,self,super},
+  morekeywords=[2]{print,None,True,False,len,abs,id,type,input,raw_input,raise,open,range,str,int,float,self,super},
   keywordstyle={[2]\color{purple}}, % built-ins
   %identifierstyle=\color{blue}, (in IDLE only for defining functions and classes is blue)
   stringstyle=\color{green},

@@ -1184,7 +1184,6 @@ print "Segunda Linea."
 \end_layout
 
 \begin_layout Verbatim
-
 Primera Linea.
 \end_layout
 
@@ -1193,7 +1192,6 @@ Primera Linea.
 \end_layout
 
 \begin_layout Verbatim
-
 Segunda Linea.
 \end_layout
 
@@ -2176,42 +2174,34 @@ error de nombre (NameError)
 \end_layout
 
 \begin_layout Verbatim
-
 Traceback (innermost last):
 \end_layout
 
 \begin_layout Verbatim
-
   File "test.py", line 13, in __main__
 \end_layout
 
 \begin_layout Verbatim
-
     concatenarDoble(cantar1, cantar2)
 \end_layout
 
 \begin_layout Verbatim
-
   File "test.py", line 5, in concatenarDoble
 \end_layout
 
 \begin_layout Verbatim
-
     imprimaDoble(cat)
 \end_layout
 
 \begin_layout Verbatim
-
   File "test.py", line 9, in imprimaDoble
 \end_layout
 
 \begin_layout Verbatim
-
     print cat
 \end_layout
 
 \begin_layout Verbatim
-
 NameError: cat
 \end_layout
 
@@ -2736,7 +2726,7 @@ Escriba una función que imprima la distancia que hay entre dos puntos en
 
 \begin_layout Enumerate
 Tome la solución del último ejercicio del capítulo anterior y conviértala
- en una función que calcule la nota definitiva de su curso de programación.
+ en una función que imprima la nota definitiva de su curso de programación.
 \end_layout
 
 \begin_layout Standard

@@ -263,7 +263,6 @@ letra
 \end_layout
 
 \begin_layout Verbatim
-
 a
 \end_layout
 
@@ -1280,7 +1279,6 @@ Zebra
 \end_layout
 
 \begin_layout Verbatim
-
 Su palabra, Zebra, va antes que banana.
 \end_layout
 
@@ -2720,7 +2718,7 @@ status open
 
 \end_inset
 
- Agregue un cuerpo a la función invertir que haga que pase la prueba unitaria.
+ Agregue un cuerpo a la función invertir que haga que pase las pruebas unitarias.
 \end_layout
 
 \begin_layout Standard
