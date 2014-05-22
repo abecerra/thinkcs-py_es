@@ -1073,7 +1073,7 @@ Empates
 \begin_layout Standard
 Ahora agregamos una función para chequear si hay empate entre los jugadores.
  Esto sucede si el tablero está lleno, o sea que no hay ninguna casilla
- vacía (con el caracter ' '):
+ vacía (con el carácter ' '):
 \end_layout
 
 \begin_layout Standard
@@ -1516,7 +1516,7 @@ if __name__ == '__main__':
 \end_layout
 
 \begin_layout Standard
-Asi terminamos con triqui9.py, un programa con 12 funciones y un ciclo de
+Así terminamos con triqui9.py, un programa con 12 funciones y un ciclo de
  juego que tiene en total 124 líneas de código, ¡pero empezó como una simple
  impresión de una matriz vacía!
 \end_layout
@@ -1538,11 +1538,11 @@ triqui2.py: permite que dos jugadores jueguen por siempre
 \end_layout
 
 \begin_layout Description
-triqui3.py: revisa si algun jugador gana en las diagonales 
+triqui3.py: revisa si algún jugador gana en las diagonales 
 \end_layout
 
 \begin_layout Description
-triqui4.py: revisa si algun jugador gana en filas o columnas 
+triqui4.py: revisa si algún jugador gana en filas o columnas 
 \end_layout
 
 \begin_layout Description

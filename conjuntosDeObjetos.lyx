@@ -2392,8 +2392,8 @@ status collapsed
 
 \end_inset
 
- carta de la lista, así que realmente estamos entreganado cartas por la
- parte inferior, y esto no causa ningún inconveniente.
+ carta de la lista, así que realmente estamos entregando cartas por la parte
+ inferior, y esto no causa ningún inconveniente.
 \end_layout
 
 \begin_layout Standard
@@ -2566,7 +2566,7 @@ __init__
 \end_layout
 
 \begin_layout Enumerate
-Agregue cuatro métodos a la clase para averiguar la cantidad de cada nucleotido
+Agregue cuatro métodos a la clase para averiguar la cantidad de cada nucleótido
  en la secuencia, cuantas A, G, C, T.
 \end_layout
 

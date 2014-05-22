@@ -955,7 +955,7 @@ continue
 \family default
  termina la iteración actual del ciclo, pero sigue haciendo las que le faltan.
  El flujo de ejecución pasa al principio del ciclo, comprueba la condición
- y continúa normalmemente.
+ y continúa normalmente.
 \end_layout
 
 \begin_layout Standard
@@ -987,7 +987,7 @@ Así, si
 texto
 \family default
  es una cadena vacía, el ciclo termina.
- Si el primer caracter de 
+ Si el primer carácter de 
 \family typewriter
 texto
 \family default

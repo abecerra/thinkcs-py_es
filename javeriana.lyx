@@ -474,7 +474,7 @@ thispagestyle{empty}
 
 \begin_layout Standard
 Se concede permiso para copiar, distribuir, y/o modificar este documento
- bajo los terminos de la GNU Free Documentation License, Versión 1.1 o cualquier
+ bajo los términos de la GNU Free Documentation License, Versión 1.1 o cualquier
  versión posterior publicada por la Free Software Foundation; manteniendo
  sin variaciones las secciones 
 \begin_inset Quotes eld
@@ -541,7 +541,7 @@ La forma original de este libro es código fuente LaTeX
 \begin_inset space \space{}
 \end_inset
 
-y compilarlo tiene el efecto de generar un libro de texto en una repesentacion
+y compilarlo tiene el efecto de generar un libro de texto en una representación
  independiente del dispositivo que puede ser convertida a otros formatos
  e imprimirse.
 \end_layout
@@ -599,7 +599,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Este libro ha sido preparado utilizando LaTeX
+Este libro ha sido preparado utilizando LyX, LaTeX
 \begin_inset space \space{}
 \end_inset
 

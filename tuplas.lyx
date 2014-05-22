@@ -1787,7 +1787,7 @@ asignación!de tupla
 status collapsed
 
 \begin_layout Plain Layout
-determinístic
+determinístico
 \end_layout
 
 \end_inset
@@ -1837,7 +1837,7 @@ Para cada función, agregue chequeo de tipos y pruebas unitarias.
 \begin_layout Enumerate
 Escriba una función mas_frecuentes que tome una cadena e imprima las letras
  en orden descendente por frecuencia.
- Ejecutela con textos de diferentes lenguajes y observe como varían las
+ Ejecútela con textos de diferentes lenguajes y observe como varían las
  frecuencias de letras.
  Compare sus resultados con las tablas en:
 \end_layout

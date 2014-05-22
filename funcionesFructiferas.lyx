@@ -195,7 +195,7 @@ funciones
 , ya que los lenguajes de programación usados para enseñar (como Pascal)
  hacían la distinción.
  Muchos lenguajes de programación vigentes (incluido Python y C) no diferencian
- sintacticamente entre procedimientos y funciones, por eso usamos esta terminolo
+ sintácticamente entre procedimientos y funciones, por eso usamos esta terminolo
 gía
 \end_layout
 
@@ -2705,7 +2705,7 @@ if __name__ == '__main__':
 
 \begin_layout Standard
 Si se ejecuta el guión se ejecutarán todas las pruebas unitarias de todas
- las funciones, esto nos permite atrapar errores rapidamente y corregirlos.
+ las funciones, esto nos permite atrapar errores rápidamente y corregirlos.
  En Unix/Linux, al ejecutar 
 \begin_inset ERT
 status collapsed
@@ -2789,30 +2789,8 @@ return
 \end_layout
 
 \begin_layout Description
-texttt
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
-None
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-: valor especial en Python retornado por las funciones que no tienen una
- sentencia return, o que tienen una sentencia return sin un argumento.
+None: valor especial en Python retornado por las funciones que no tienen
+ una sentencia return, o que tienen una sentencia return sin un argumento.
 \end_layout
 
 \begin_layout Description

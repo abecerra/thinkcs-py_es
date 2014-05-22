@@ -918,7 +918,7 @@ En general, cada vez que creamos un nuevo objeto de tipo
 \family typewriter
 Fraccion
 \family default
- deberiamos simplificarlo dividiendo el numerador y el denominador por su
+ deberíamos simplificarlo dividiendo el numerador y el denominador por su
  MDC.
  Si la fracción no se puede simplificar, el MDC es 1.
 \end_layout
@@ -1534,15 +1534,15 @@ Fraccion
 \end_layout
 
 \begin_layout Enumerate
-Agruege la operación resta
+Agregue la operación resta
 \end_layout
 
 \begin_layout Enumerate
-Agruege la operación división
+Agregue la operación división
 \end_layout
 
 \begin_layout Enumerate
-Agruege la operación exponenciación.
+Agregue la operación exponenciación.
  
 \end_layout
 

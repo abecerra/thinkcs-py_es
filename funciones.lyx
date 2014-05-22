@@ -1897,7 +1897,7 @@ concatenarDoble
 cat
 \family default
  se destruye.
- Si intentaramos imprimirla obtendríamos un error:
+ Si intentáramos imprimirla obtendríamos un error:
 \end_layout
 
 \begin_layout Standard
@@ -2705,7 +2705,7 @@ verb+limpiaPantalla+
 
  esté antes que la definición de función.
  Ejecute el programa y registre qué mensaje de error obtiene.
- ¿Puede establecer una regla sobre las definciones de funciones y las llamadas
+ ¿Puede establecer una regla sobre las definiciones de funciones y las llamadas
  a función que describa la posición relativa entre ellas en el programa?
 \end_layout
 

@@ -156,7 +156,7 @@ Un
 valor
 \series default
  es una de las cosas fundamentales---como una letra o un número---que una
- progama manipula.
+ programa manipula.
  Los valores que hemos visto hasta ahorra son 
 \family typewriter
 2
@@ -293,7 +293,6 @@ Si no está seguro del tipo que un valor tiene, el intérprete le puede decir.
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset listings
 inline false
 status open
@@ -320,8 +319,6 @@ status open
 
 \end_inset
 
-
-\lang spanish
  
 \end_layout
 
@@ -1185,12 +1182,10 @@ print x
 \end_layout
 
 \begin_layout Verbatim
-
 1
 \end_layout
 
 \begin_layout Verbatim
-
 2
 \end_layout
 
@@ -1953,7 +1948,7 @@ status collapsed
 
 \end_inset
 
-, y lo és.
+, y lo es.
  Sin embargo, las operaciones de concatenación y repetición sobre cadenas
  tienen una diferencia significativa con las operaciones de suma y multiplicació
 n.
@@ -2610,7 +2605,7 @@ Inserte una línea de comentario en un línea previa a una de código funcional,
 La diferencia entre la función input y la función raw_input es que la función
  input evalúa la cadena introducida y la función raw_input no lo hace.
  Escriba lo siguiente en el intérprete de Python, registre qué sucede y
- expliquelo:
+ explique:
 \end_layout
 
 \begin_deeper

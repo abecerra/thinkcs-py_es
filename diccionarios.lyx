@@ -2209,19 +2209,19 @@ long int
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función booleana que averigue si una lista tiene algún elemento
+Escriba una función booleana que averigüe si una lista tiene algún elemento
  duplicado usando un diccionario.
 \end_layout
 
 \begin_layout Enumerate
 Una cadena de ARN puede representarse como una lista en la que los elementos
  pueden ser los caracteres A,C,G y U.
- Escriba una función booleana que averigue si una lista de caracteres es
+ Escriba una función booleana que averigüe si una lista de caracteres es
  una cadena de ARN válida.
 \end_layout
 
 \begin_layout Enumerate
-Generalize la función anterior de forma que reciba una biosecuencia (ADN,
+Generalice la función anterior de forma que reciba una biosecuencia (ADN,
  ARN ó Proteína) y un alfabeto de referencia para averiguar si está bien
  formada.
  Para ADN el alfabeto es A,C,T y G, para las proteínas es:
@@ -2234,12 +2234,12 @@ A,R,N,D,C,E,Q,G,H,I,L,K,M,F,P,S,T,W,Y,V,U,O
 
 \end_deeper
 \begin_layout Enumerate
-Escriba una función que reciba una cadena de ADN y cuente cuantos nucleotidos
+Escriba una función que reciba una cadena de ADN y cuente cuantos nucleótidos
  de cada tipo tiene (cuantas veces tiene A,C,G y T) usando un diccionario.
 \end_layout
 
 \begin_layout Enumerate
-Generalize la función anterior de forma que reciba una biosecuencia (ADN,
+Generalice la función anterior de forma que reciba una biosecuencia (ADN,
  ARN ó Proteína) y un alfabeto.
  Debe contar cuantos elementos tiene de cada tipo usando un diccionario.
 \end_layout
@@ -2263,7 +2263,7 @@ Escriba una función que reciba dos matrices dispersas, implementadas con
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función booleana que reciba una matriz dispersa y averigue si
+Escriba una función booleana que reciba una matriz dispersa y averigüe si
  es la matriz identidad.
  
 \end_layout

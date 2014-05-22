@@ -1598,8 +1598,8 @@ operación sobre listas
 \end_layout
 
 \begin_layout Standard
-Usar segmentos para insertar y borrar elemenos de una lista es extraño y
- propenso a errores.
+Usar segmentos para insertar y borrar elementos de una lista es extraño
+ y propenso a errores.
  Hay mecanismos alternativos más legibles como 
 \family typewriter
 del

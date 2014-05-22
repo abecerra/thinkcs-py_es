@@ -1621,7 +1621,7 @@ n-1
 \end_layout
 
 \begin_layout Standard
-Analizemos lo que sucede si llamamos a esta función así:
+Analicemos lo que sucede si llamamos a esta función así:
 \begin_inset listings
 inline false
 status open
@@ -2783,7 +2783,7 @@ Ejercicios
 \end_layout
 
 \begin_layout Enumerate
-Evalue la expresión 
+Evalúe la expresión 
 \begin_inset ERT
 status collapsed
 
@@ -2952,7 +2952,7 @@ verb+tabladeverdad("p or q")+
 \end_layout
 
 \begin_layout Standard
-¿Cuales de estas expresiones tienen el mismo valor de verdad (son logicamente
+¿Cuales de estas expresiones tienen el mismo valor de verdad (son lógicamente
  equivalentes)?
 \end_layout
 

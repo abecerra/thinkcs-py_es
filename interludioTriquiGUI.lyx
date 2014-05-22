@@ -422,7 +422,7 @@ El método build de programa retorna un objeto Triqui, que es nuestra ventana.
 \family typewriter
 init
 \family default
- de Triqui llama al médodo 
+ de Triqui llama al método 
 \family typewriter
 init
 \family default
@@ -1262,7 +1262,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Aprovechando al métod reset, añadimos el chequeo de empates entre los dos
+Aprovechando al método reset, añadimos el chequeo de empates entre los dos
  jugadores:
 \end_layout
 
