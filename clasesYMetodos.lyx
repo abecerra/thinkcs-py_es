@@ -2614,7 +2614,11 @@ Agregue un método
 \family typewriter
 __sub__(self, otro)
 \family default
- que sobrecargue el operador resta, y pruébelo.
+ que sobrecargue el operador resta de la clase 
+\family typewriter
+Punto
+\family default
+, y pruébelo.
 \end_layout
 
 \end_body

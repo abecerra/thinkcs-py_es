@@ -1161,7 +1161,7 @@ Es mucho más probable que deseemos retornar cierto si
 
 \begin_layout Standard
 Tenemos que enseñarle a las fracciones cómo compararse entre sí.
- Como vimos en la sección 
+ Como veremos en la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "comparecard"
