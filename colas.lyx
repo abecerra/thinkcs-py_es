@@ -506,22 +506,18 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 class Cola:
 \end_layout
 
 \begin_layout Verbatim
-
   def __init__(self):
 \end_layout
 
 \begin_layout Verbatim
-
     self.numElementos = 0
 \end_layout
 
 \begin_layout Verbatim
-
     self.primero = None
 \end_layout
 
@@ -530,12 +526,10 @@ class Cola:
 \end_layout
 
 \begin_layout Verbatim
-
   def estaVacia(self):
 \end_layout
 
 \begin_layout Verbatim
-
     return (self.numElementos == 0)
 \end_layout
 
@@ -544,67 +538,54 @@ class Cola:
 \end_layout
 
 \begin_layout Verbatim
-
   def meter(self, carga):
 \end_layout
 
 \begin_layout Verbatim
-
     nodo = Nodo(carga)
 \end_layout
 
 \begin_layout Verbatim
-
     nodo.siguiente = None
 \end_layout
 
 \begin_layout Verbatim
-
     if self.primero == None:
 \end_layout
 
 \begin_layout Verbatim
-
       # si esta vacia este nodo sera el primero
 \end_layout
 
 \begin_layout Verbatim
-
       self.primero = nodo
 \end_layout
 
 \begin_layout Verbatim
-
     else:
 \end_layout
 
 \begin_layout Verbatim
-
       # encontrar el ultimo nodo
 \end_layout
 
 \begin_layout Verbatim
-
       ultimo = self.primero
 \end_layout
 
 \begin_layout Verbatim
-
       while ultimo.siguiente: ultimo = ultimo.siguiente
 \end_layout
 
 \begin_layout Verbatim
-
       # pegar el nuevo
 \end_layout
 
 \begin_layout Verbatim
-
       ultimo.siguiente = nodo
 \end_layout
 
 \begin_layout Verbatim
-
     self.numElementos = self.numElementos + 1
 \end_layout
 
@@ -613,27 +594,22 @@ class Cola:
 \end_layout
 
 \begin_layout Verbatim
-
   def sacar(self):
 \end_layout
 
 \begin_layout Verbatim
-
     carga = self.primero.carga
 \end_layout
 
 \begin_layout Verbatim
-
     self.primero = self.primero.siguiente
 \end_layout
 
 \begin_layout Verbatim
-
     self.numElementos = self.numElementos - 1
 \end_layout
 
 \begin_layout Verbatim
-
     return carga
 \end_layout
 
@@ -936,27 +912,22 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 class ColaMejorada:
 \end_layout
 
 \begin_layout Verbatim
-
   def __init__(self):
 \end_layout
 
 \begin_layout Verbatim
-
     self.numElementos = 0
 \end_layout
 
 \begin_layout Verbatim
-
     self.primero   = None
 \end_layout
 
 \begin_layout Verbatim
-
     self.ultimo   = None
 \end_layout
 
@@ -965,12 +936,10 @@ class ColaMejorada:
 \end_layout
 
 \begin_layout Verbatim
-
   def estaVacia(self):
 \end_layout
 
 \begin_layout Verbatim
-
     return (self.numElementos == 0)
 \end_layout
 
@@ -1020,77 +989,62 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 class ColaMejorada:
 \end_layout
 
 \begin_layout Verbatim
-
   ...
 \end_layout
 
 \begin_layout Verbatim
-
   def meter(self, carga):
 \end_layout
 
 \begin_layout Verbatim
-
     nodo = nodo(carga)
 \end_layout
 
 \begin_layout Verbatim
-
     nodo.siguiente = None
 \end_layout
 
 \begin_layout Verbatim
-
     if self.numElementos == 0:
 \end_layout
 
 \begin_layout Verbatim
-
       # si está vacía, el nuevo nodo es primero y ultimo
 \end_layout
 
 \begin_layout Verbatim
-
       self.primero = self.ultimo = nodo
 \end_layout
 
 \begin_layout Verbatim
-
     else:
 \end_layout
 
 \begin_layout Verbatim
-
       # encontrar el ultimo nodo
 \end_layout
 
 \begin_layout Verbatim
-
       ultimo = self.ultimo
 \end_layout
 
 \begin_layout Verbatim
-
       # pegar el nuevo nodo
 \end_layout
 
 \begin_layout Verbatim
-
       ultimo.siguiente = nodo
 \end_layout
 
 \begin_layout Verbatim
-
       self.ultimo = nodo
 \end_layout
 
 \begin_layout Verbatim
-
     self.numElementos = self.numElementos + 1
 \end_layout
 
@@ -1149,47 +1103,38 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 class ColaMejorada:
 \end_layout
 
 \begin_layout Verbatim
-
   ...
 \end_layout
 
 \begin_layout Verbatim
-
   def sacar(self):
 \end_layout
 
 \begin_layout Verbatim
-
     carga     = self.primero.carga
 \end_layout
 
 \begin_layout Verbatim
-
     self.primero = self.primero.siguiente
 \end_layout
 
 \begin_layout Verbatim
-
     self.numElementos = self.numElementos - 1
 \end_layout
 
 \begin_layout Verbatim
-
     if self.numElementos == 0:
 \end_layout
 
 \begin_layout Verbatim
-
       self.ultimo = None
 \end_layout
 
 \begin_layout Verbatim
-
     return carga
 \end_layout
 
@@ -1440,17 +1385,14 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 class ColaPrioridad:
 \end_layout
 
 \begin_layout Verbatim
-
   def __init__(self):
 \end_layout
 
 \begin_layout Verbatim
-
     self.items = []
 \end_layout
 
@@ -1459,12 +1401,10 @@ class ColaPrioridad:
 \end_layout
 
 \begin_layout Verbatim
-
   def estaVacia(self):
 \end_layout
 
 \begin_layout Verbatim
-
     return self.items == []
 \end_layout
 
@@ -1473,12 +1413,10 @@ class ColaPrioridad:
 \end_layout
 
 \begin_layout Verbatim
-
   def meter(self, item):
 \end_layout
 
 \begin_layout Verbatim
-
     self.items.append(item)
 \end_layout
 
@@ -1528,52 +1466,42 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 class ColaPrioridad:
 \end_layout
 
 \begin_layout Verbatim
-
   ...
 \end_layout
 
 \begin_layout Verbatim
-
   def sacar(self):
 \end_layout
 
 \begin_layout Verbatim
-
     maxi = 0
 \end_layout
 
 \begin_layout Verbatim
-
     for i in range(1,len(self.items)):
 \end_layout
 
 \begin_layout Verbatim
-
       if self.items[i] > self.items[maxi]:
 \end_layout
 
 \begin_layout Verbatim
-
         maxi = i
 \end_layout
 
 \begin_layout Verbatim
-
     item = self.items[maxi]
 \end_layout
 
 \begin_layout Verbatim
-
     self.items[maxi:maxi+1] = []
 \end_layout
 
 \begin_layout Verbatim
-
     return item
 \end_layout
 
@@ -1694,52 +1622,42 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> q = ColaPrioridad()
 \end_layout
 
 \begin_layout Verbatim
-
 >>> q.meter(11)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> q.meter(12)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> q.meter(14)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> q.meter(13)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> while not q.estaVacia(): print q.sacar()
 \end_layout
 
 \begin_layout Verbatim
-
 14
 \end_layout
 
 \begin_layout Verbatim
-
 13
 \end_layout
 
 \begin_layout Verbatim
-
 12
 \end_layout
 
 \begin_layout Verbatim
-
 11
 \end_layout
 
@@ -1777,7 +1695,7 @@ sacar
 \family typewriter
 >
 \family default
- para comparar ítems, estaría llamando el método 
+ para comparar items, estaría llamando el método 
 \family typewriter
 __cmp__
 \family default
@@ -1882,22 +1800,18 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 class golfista:
 \end_layout
 
 \begin_layout Verbatim
-
   def __init__(self, nombre, puntaje):
 \end_layout
 
 \begin_layout Verbatim
-
     self.nombre = nombre
 \end_layout
 
 \begin_layout Verbatim
-
     self.puntaje= puntaje
 \end_layout
 
@@ -1906,12 +1820,10 @@ class golfista:
 \end_layout
 
 \begin_layout Verbatim
-
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
-
     return "%-16s: %d" % (self.nombre, self.puntaje)
 \end_layout
 
@@ -2017,37 +1929,30 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 class golfista:
 \end_layout
 
 \begin_layout Verbatim
-
   ...
 \end_layout
 
 \begin_layout Verbatim
-
   def __cmp__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
-
     # el menor tiene mayor prioridad
 \end_layout
 
 \begin_layout Verbatim
-
     if self.puntaje < otro.puntaje: return  1   
 \end_layout
 
 \begin_layout Verbatim
-
     if self.puntaje > otro.puntaje: return -1
 \end_layout
 
 \begin_layout Verbatim
-
     return 0
 \end_layout
 
@@ -2089,62 +1994,50 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> tiger = golfista("Tiger Woods",    61)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> phil  = golfista("Phil Mickelson", 72)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> hal   = golfista("Hal Sutton",     69)
 \end_layout
 
 \begin_layout Verbatim
-
 >>>
 \end_layout
 
 \begin_layout Verbatim
-
 >>> pq = ColaPrioridad()
 \end_layout
 
 \begin_layout Verbatim
-
 >>> pq.meter(tiger)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> pq.meter(phil)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> pq.meter(hal)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> while not pq.estaVacia(): print pq.sacar()
 \end_layout
 
 \begin_layout Verbatim
-
 Tiger Woods    : 61
 \end_layout
 
 \begin_layout Verbatim
-
 Hal Sutton     : 69
 \end_layout
 
 \begin_layout Verbatim
-
 Phil Mickelson : 72
 \end_layout
 
