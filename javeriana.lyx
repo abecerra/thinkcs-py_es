@@ -98,7 +98,21 @@ thispagestyle{empty}
 
 \series bold
 \size huge
-Introducción a la programación con Python (2ed)
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\size huge
+
+\backslash
+introprog
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -304,7 +318,20 @@ Directora del departamento de Ingeniería electrónica y computación: Gloria
 \begin_layout Standard
 
 \size scriptsize
-Titulo: Introducción a la programación con Python 
+Titulo: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+introprog 
+\end_layout
+
+\end_inset
+
+
 \begin_inset Newline newline
 \end_inset
 
@@ -547,12 +574,8 @@ y compilarlo tiene el efecto de generar un libro de texto en una representación
 \end_layout
 
 \begin_layout Standard
-El código fuente LaTeX
-\begin_inset space \space{}
-\end_inset
-
-para este libro y mas información sobre este proyecto se encuentra en los
- sitios web:
+El código fuente LyX, LaTeX, xfig para este libro y mas información sobre
+ este proyecto se encuentra en los sitios web:
 \end_layout
 
 \begin_layout Standard
@@ -656,8 +679,21 @@ Downey, Allen
 \begin_inset Newline newline
 \end_inset
 
-Introducción a la programación con Python / Allen Downey, Jeffrey Elkner,
- Chris Meyers; traducido y adaptado por Andrés Becerra Sandoval.
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+introprog
+\end_layout
+
+\end_inset
+
+ / Allen Downey, Jeffrey Elkner, Chris Meyers; traducido y adaptado por
+ Andrés Becerra Sandoval.
  – Santiago de Cali: Pontificia Universidad Javeriana, Sello Editorial Javeriano
 , 2014.
  

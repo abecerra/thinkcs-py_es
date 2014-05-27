@@ -2552,7 +2552,7 @@ print n = 7
 \end_layout
 
 \begin_layout Enumerate
-¿Que sucede cuando se usa la sentencia print con una expresión?, por ejemplo:
+¿Qué sucede cuando se usa la sentencia print con una expresión?, por ejemplo:
  
 \begin_inset listings
 inline false
@@ -2569,7 +2569,7 @@ print 8+5
 \end_layout
 
 \begin_layout Enumerate
-¿Que sucede cuando se ejecuta esto?
+¿Qué sucede cuando se ejecuta esto?
 \begin_inset listings
 inline false
 status open

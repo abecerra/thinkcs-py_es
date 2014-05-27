@@ -34,7 +34,7 @@
 %\setlength{\hoffset}{-5pt}
 
 
-\newcommand{\introprog}{Introducción a la programación con Python}
+\newcommand{\introprog}{Introducción a la programación con Python 2ed}
 %\addto\captionsspanish{\renewcommand{\indexname}{Índice analítico}}
 
 %\normalsize

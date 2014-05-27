@@ -221,7 +221,7 @@ reference "cap:inter1:triqui"
 \family typewriter
 triqui9.py
 \family default
- y para transformarlo en 
+ para transformarlo en 
 \family typewriter
 validar.py
 \family default
