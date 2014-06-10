@@ -1873,7 +1873,11 @@ El operador
 *
 \family default
  también funciona con las cadenas; hace una repetición.
- Por ejemplo, 'Fun'*3 
+ Por ejemplo, 
+\family typewriter
+'Fun'*3
+\family default
+ 
 \family typewriter
 es 'FunFunFun'.
 
@@ -1908,7 +1912,7 @@ status open
 
 
 \backslash
-verb+Fun*3+
+verb+"Fun"*3+
 \end_layout
 
 \end_inset

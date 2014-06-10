@@ -1292,11 +1292,19 @@ print "Segunda Linea."
 
  Esta función contiene tres sentencias, y todas están sangradas por dos
  espacios.
- Como la próxima sentencia (print 
+ Como la próxima sentencia (
+\family typewriter
+print 
 \begin_inset Quotes eld
 \end_inset
 
-Primera Linea) no está sangrada, Python la interpreta afuera de la función.
+Primera Linea
+\begin_inset Quotes erd
+\end_inset
+
+
+\family default
+) no está sangrada, Python la interpreta afuera de la función.
 \end_layout
 
 \begin_layout Standard
