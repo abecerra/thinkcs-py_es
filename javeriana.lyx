@@ -103,8 +103,6 @@ status open
 
 \begin_layout Plain Layout
 
-\series bold
-\size huge
 
 \backslash
 introprog
@@ -564,7 +562,7 @@ www.gnu.org
 \end_layout
 
 \begin_layout Standard
-La forma original de este libro es código fuente LaTeX
+La forma original de este libro es código fuente LyX
 \begin_inset space \space{}
 \end_inset
 
@@ -607,7 +605,6 @@ https://github.com/abecerra/thinkcs-py_es
 \end_layout
 
 \begin_layout Standard
-  
 \begin_inset Flex URL
 status open
 
