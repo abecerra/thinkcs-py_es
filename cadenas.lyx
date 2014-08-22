@@ -217,7 +217,11 @@ operador!corchete
 
 \begin_layout Standard
 El operador corchete selecciona un carácter de una cadena.
-\begin_inset ERT
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout

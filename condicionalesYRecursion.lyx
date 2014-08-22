@@ -2932,22 +2932,40 @@ verb+tabladeverdad("p or q")+
 \end_layout
 
 \begin_layout Enumerate
-"not(p or q)" 
+
+\family typewriter
+"not(p or q)"
+\family default
+ 
 \end_layout
 
 \begin_layout Enumerate
-"p and q" 
+
+\family typewriter
+"p and q"
+\family default
+ 
 \end_layout
 
 \begin_layout Enumerate
-"not(p and q)" 
+
+\family typewriter
+"not(p and q)"
+\family default
+ 
 \end_layout
 
 \begin_layout Enumerate
-"not(p) or not(q)" 
+
+\family typewriter
+"not(p) or not(q)"
+\family default
+ 
 \end_layout
 
 \begin_layout Enumerate
+
+\family typewriter
 "not(p) and not(q)" 
 \end_layout
 

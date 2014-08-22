@@ -723,6 +723,8 @@ while True:
 \begin_layout Verbatim
 
     if ganaDiagonal1("X",triqui) or ganaDiagonal2("X",triqui) or 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -821,6 +823,8 @@ def jugar(jugador,tablero):
 \begin_layout Verbatim
 
     diag = ganaDiagonal1(jugador,tablero) or 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -831,6 +835,8 @@ def jugar(jugador,tablero):
 \begin_layout Verbatim
 
     linea = ganaHorizontal(jugador,tablero) or 
+\backslash
+ 
 \end_layout
 
 \begin_layout Verbatim
@@ -1039,6 +1045,8 @@ def jugar(jugador,tablero):
 \begin_layout Verbatim
 
     diag = ganaDiagonal1(jugador,tablero) or 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1049,6 +1057,8 @@ def jugar(jugador,tablero):
 \begin_layout Verbatim
 
     linea = ganaHorizontal(jugador,tablero) or 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1295,6 +1305,8 @@ def jugar(jugador,tablero):
 \begin_layout Verbatim
 
     diag = ganaDiagonal1(jugador,tablero) or 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1305,6 +1317,8 @@ def jugar(jugador,tablero):
 \begin_layout Verbatim
 
     linea = ganaHorizontal(jugador,tablero) or 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1357,6 +1371,8 @@ def gana(jugador,tablero):
 \begin_layout Verbatim
 
     diag = ganaDiagonal1(jugador,tablero) or 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1367,6 +1383,8 @@ def gana(jugador,tablero):
 \begin_layout Verbatim
 
     linea = ganaHorizontal(jugador,tablero) or 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1622,7 +1640,7 @@ Modifique el triqui para que el computador juegue automáticamente, seleccionand
 Modifique el triqui para que tenga un menú de entrada en el que se pueda
  escoger entre dos modalidades: 1 jugador contra el computador, 2 jugadores
  entre si por turnos y 3, salir del programa.
- Ahora, cada vez que termine una partida el el flujo de ejecución del programa
+ Ahora, cada vez que termine una partida el flujo de ejecución del programa
  debe volver al menú.
 \end_layout
 

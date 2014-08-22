@@ -1746,6 +1746,18 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+Observe que se llama con la notación punto, a diferencia de 
+\family typewriter
+len
+\family default
+ y 
+\family typewriter
+del
+\family default
+.
+\end_layout
+
 \begin_layout Section
 Objetos y valores
 \end_layout
@@ -2454,8 +2466,8 @@ parámetro!lista
 \end_layout
 
 \begin_layout Standard
-Pasar una lista como argumento es pasar una referencia, no una copia de
- ella.
+Pasar una lista como argumento es pasar un alias (o una referencia), no
+ una copia de ella.
  Por ejemplo, la función 
 \family typewriter
 cabeza

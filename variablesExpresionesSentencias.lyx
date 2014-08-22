@@ -1877,9 +1877,9 @@ El operador
 \family typewriter
 'Fun'*3
 \family default
- 
+ es 
 \family typewriter
-es 'FunFunFun'.
+'FunFunFun'.
 
 \family default
  Uno de los operandos tiene que ser una cadena, el otro tiene que ser un
@@ -2028,16 +2028,22 @@ status open
 
 \begin_layout Verbatim
 
-print "Número de minutos desde media noche: ", 
+print "Número de minutos desde media noche: ",  
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
 
-      hora*60+minuto
+  hora*60+minuto
 \end_layout
 
 \end_inset
 
+ El caracter 
+\backslash
+ permite continuar en la siguiente línea.
+ Lo usaremos cuando las expresiones sean muy largas.
  Usted también puede poner expresiones arbitrarias en el lado derecho de
  una sentencia de asignación:
 \end_layout
@@ -2172,12 +2178,7 @@ status open
 
 \begin_layout Verbatim
 
-# precaucion: division entera
-\end_layout
-
-\begin_layout Verbatim
-
-porcentaje = (minute * 100) / 60
+porcentaje = (minute * 100) / 60 # div entera
 \end_layout
 
 \end_inset

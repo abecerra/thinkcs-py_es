@@ -596,7 +596,7 @@ status open
 
 \begin_layout Verbatim
 
->>> float(minute)/60.0
+>>> float(minuto)/60.0
 \end_layout
 
 \begin_layout Verbatim
@@ -1292,19 +1292,23 @@ print "Segunda Linea."
 
  Esta función contiene tres sentencias, y todas están sangradas por dos
  espacios.
- Como la próxima sentencia (
+ Como la próxima sentencia, 
 \family typewriter
-print 
-\begin_inset Quotes eld
-\end_inset
 
-Primera Linea
-\begin_inset Quotes erd
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+print "Primera Linea"
+\end_layout
+
 \end_inset
 
 
 \family default
-) no está sangrada, Python la interpreta afuera de la función.
+, no está sangrada, Python la interpreta afuera de la función.
 \end_layout
 
 \begin_layout Standard
