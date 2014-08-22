@@ -860,12 +860,12 @@ Lista de números aleatorios
 \end_layout
 
 \begin_layout Standard
-Vamos a generar función que cree una lista de números aleatorios 
+Vamos a escribir una función llamada 
 \family typewriter
 listaAleatoria
 \family default
-, recibirá un parámetro entero que especifique el número de elementos a
- generar.
+ que cree una lista de números aleatorios.
+ Recibirá un parámetro entero que especifique el número de elementos a generar.
  Primero, genera una lista de 
 \family typewriter
 n
@@ -1365,34 +1365,42 @@ numRegiones = 8
 \end_layout
 
 \begin_layout Verbatim
+
 0.0 hasta 0.125
 \end_layout
 
 \begin_layout Verbatim
+
 0.125 hasta 0.25
 \end_layout
 
 \begin_layout Verbatim
+
 0.25 hasta 0.375
 \end_layout
 
 \begin_layout Verbatim
+
 0.375 hasta 0.5
 \end_layout
 
 \begin_layout Verbatim
+
 0.5 hasta 0.625
 \end_layout
 
 \begin_layout Verbatim
+
 0.625 hasta 0.75
 \end_layout
 
 \begin_layout Verbatim
+
 0.75 hasta 0.875
 \end_layout
 
 \begin_layout Verbatim
+
 0.875 hasta 1.0
 \end_layout
 
@@ -1483,6 +1491,7 @@ Con una lista de 1000 valores, este código produce la siguiente lista de
 \end_layout
 
 \begin_layout Verbatim
+
 [138, 124, 128, 118, 130, 117, 114, 131]
 \end_layout
 
@@ -1874,7 +1883,7 @@ http://thinkpython.com/code/most_frequent.py
 
 \end_deeper
 \begin_layout Enumerate
-Escriba un programa que lea una lista de palabras de un archivos e imprima
+Escriba un programa que lea una lista de palabras de un archivo e imprima
  todos los conjuntos de palabras que son anagramas.
 \end_layout
 
@@ -1884,18 +1893,22 @@ Este es un ejemplo de la salida del programa con palabras en inglés:
 \end_layout
 
 \begin_layout Verbatim
+
 ['deltas', 'desalt', 'lasted', 'salted', 'slated', 'staled'] 
 \end_layout
 
 \begin_layout Verbatim
+
 ['retainers', 'ternaries'] 
 \end_layout
 
 \begin_layout Verbatim
+
 ['generating', 'greatening']
 \end_layout
 
 \begin_layout Verbatim
+
 ['resmelts', 'smelters', 'termless']
 \end_layout
 

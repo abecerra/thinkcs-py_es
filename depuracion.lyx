@@ -1479,7 +1479,9 @@ status open
 
 \begin_layout Verbatim
 
-self.manos[i].agregarCarta(
+self.manos[i].agregarCarta( 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim

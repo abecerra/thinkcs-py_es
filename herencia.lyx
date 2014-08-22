@@ -1054,9 +1054,9 @@ Cuando ningún jugador pueda descartar más se empieza a jugar por turnos.
 En nuestra simulación del juego, el computador juega todas las manos.
  Desafortunadamente, algunos matices del juego real se pierden en la simulación
  por computador.
- En un juego, el jugador con la Solterona intenta deshacerse de ella de
- diferentes formas, ya sea desplegándola de una manera prominente, o ocultándola
- de alguna manera.
+ En un juego real, el jugador con la Solterona (la reina de Picas) intenta
+ deshacerse de ella de diferentes formas, ya sea desplegándola de una manera
+ prominente, o ocultándola de alguna manera.
  El programa simplemente escogerá una carta de algún vecino aleatoriamente.
 \end_layout
 
@@ -1154,6 +1154,8 @@ class ManoSolterona(Mano):
 \begin_layout Verbatim
 
         print "Mano %s: %s se empareja con %s" % 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim

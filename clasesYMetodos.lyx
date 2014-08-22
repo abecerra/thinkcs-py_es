@@ -1939,11 +1939,7 @@ AttributeError: 'int' object has no attribute 'x'
 \end_layout
 
 \begin_layout Standard
-Para un ejemplo completo de sobrecarga de operadores vea el Apéndice
-\begin_inset space ~
-\end_inset
-
-
+Para un ejemplo completo de sobrecarga de operadores vea el capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "overloading"
@@ -2307,7 +2303,7 @@ status open
 \end_inset
 
  El mejor tipo de polimorfismo es el que no se pretendía lograr, aquel en
- el que se descubre que una función escrita puede aplicarse a un tipo, para
+ el que se descubre que una función escrita puede aplicarse a un tipo para
  el cual no se había planeado hacerlo.
 \end_layout
 

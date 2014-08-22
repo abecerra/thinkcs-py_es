@@ -446,7 +446,9 @@ class Fraccion:
 
 \begin_layout Verbatim
 
-    return Fraccion(self.numerador*otro.numerador,
+    return Fraccion(self.numerador*otro.numerador, 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -524,7 +526,9 @@ class Fraccion:
 
 \begin_layout Verbatim
 
-    return Fraccion(self.numerador   * otro.numerador,
+    return Fraccion(self.numerador   * otro.numerador, 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -760,17 +764,21 @@ class Fraccion:
 
 \begin_layout Verbatim
 
-    return Fraccion(self.numerador   * otro.denominador +
+    return Fraccion(self.numerador   * otro.denominador + 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
 
-                    self.denominador * otro.numerador,
+                    self.denominador * otro.numerador,    
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
 
-                    self.denominador * otro.denominador)
+                    self.denominador * otro.denominador) 
 \end_layout
 
 \begin_layout Verbatim
@@ -1241,7 +1249,9 @@ class Fraccion:
 
 \begin_layout Verbatim
 
-    dif = (self.numerador  * otro.denominador -
+    dif = (self.numerador  * otro.denominador - 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim

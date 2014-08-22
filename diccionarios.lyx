@@ -990,11 +990,11 @@ reference "nested lists"
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-%
+
 \backslash
 beforefig
 \end_layout

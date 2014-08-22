@@ -596,6 +596,8 @@ class Triqui(GridLayout):
 \begin_layout Verbatim
 
                 self.add_widget(Button(font_size=100, 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -677,6 +679,8 @@ class MostrarMensaje(Popup):
 \begin_layout Verbatim
 
         self.add_widget(Button(text=mensaje, 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -697,6 +701,33 @@ class MostrarMensaje(Popup):
 \begin_layout Standard
 El cuadro de diálogo tiene un título y un botón que, al ser presionado,
  cierra todo el cuadro.
+ La acción del botón se registra asignando al parámetro 
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+on_press
+\end_layout
+
+\end_inset
+
+ una función anónima (
+\begin_inset listings
+inline true
+status open
+
+\begin_layout Plain Layout
+
+lambda x: self.dismiss()
+\end_layout
+
+\end_inset
+
+).
+ Esta función recibe un parámetro x que no necesitamos.
+ El método dismiss de la clase Popup cierra el cuadro de diálogo.
 \end_layout
 
 \begin_layout Section
@@ -764,6 +795,8 @@ class Triqui(GridLayout):
 \begin_layout Verbatim
 
                 self.add_widget(Button(font_size=100, 
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -792,7 +825,14 @@ class Triqui(GridLayout):
 
 \begin_layout Verbatim
 
-            MostrarMensaje('Error!', "Ya se ha jugado en esa casilla!")
+            MostrarMensaje('Error!', "Ya se ha jugado 
+\backslash
+
+\end_layout
+
+\begin_layout Verbatim
+
+                            en esa casilla!")
 \end_layout
 
 \begin_layout Verbatim
@@ -978,6 +1018,11 @@ status open
 \end_layout
 
 \begin_layout Standard
+En Kivy, children contiene todos los widgets que se han agregado a una ventana,
+ en nuestro caso los 9 botones.
+\end_layout
+
+\begin_layout Standard
 Así podremos reutilizar el módulo 
 \family typewriter
 validar
@@ -1037,6 +1082,8 @@ from validar import *
 \begin_layout Verbatim
 
                 self.add_widget(Boton(on_press=self.boton_presionado,
+\backslash
+
 \end_layout
 
 \begin_layout Verbatim
@@ -1086,7 +1133,14 @@ status open
 
 \begin_layout Verbatim
 
-            MostrarMensaje('Error!', "Ya se ha jugado en esa casilla!")
+            MostrarMensaje('Error!', 
+\backslash
+
+\end_layout
+
+\begin_layout Verbatim
+
+                  "Ya se ha jugado en esa casilla!")
 \end_layout
 
 \begin_layout Verbatim
