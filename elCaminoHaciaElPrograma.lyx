@@ -442,48 +442,39 @@ A Python se lo considera un lenguaje interpretado, porque sus programas
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
-
-\backslash
-scriptsize
+\family typewriter
+$python
 \end_layout
 
-\end_inset
+\begin_layout Standard
 
-
+\family typewriter
+Python 3.4.2 (default, Oct 14 2014, 09:29:48)  [GCC 4.8.3] on linux 
 \end_layout
 
-\begin_layout Verbatim
-$ python Python 2.7.6 (default, Apr 28 2014, 10:47:40)  
-\end_layout
+\begin_layout Standard
 
-\begin_layout Verbatim
-[GCC 4.8.2] on linux2 Type "help", "copyright", "credits" or "license" for
- more information.
+\family typewriter
+Type "help", "copyright", "credits" or "license" for more information.
+ 
+\family default
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
 \begin_layout Verbatim
+
 >>> 1+1 
 \end_layout
 
 \begin_layout Verbatim
+
 2 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-normalsize
 \end_layout
 
 \end_inset
@@ -556,8 +547,19 @@ unomasuno.py
  que contenga esta línea:
 \end_layout
 
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
 \begin_layout Verbatim
+
 print(1 + 1)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -572,10 +574,12 @@ Por acuerdo unánime, los archivos que contienen programas de Python tienen
 \end_layout
 
 \begin_layout Verbatim
+
 $ python unomasuno.py
 \end_layout
 
 \begin_layout Verbatim
+
 2
 \end_layout
 
@@ -1487,7 +1491,7 @@ print("Hola todo el mundo!")
 \end_layout
 
 \begin_layout Standard
-Este es un ejemplo de una sentencia 
+Este es un ejemplo de llamado a la función 
 \begin_inset ERT
 status collapsed
 
@@ -1527,6 +1531,7 @@ status collapsed
 \end_layout
 
 \begin_layout Verbatim
+
 Hola todo el mundo!
 \end_layout
 
@@ -1540,17 +1545,17 @@ Las comillas señalan el comienzo y el final del valor; no aparecen en el
 status collapsed
 
 \begin_layout Plain Layout
-sentencia print
+función print
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-print!sentencia
+print!función
 \end_layout
 
 \end_inset
@@ -1845,13 +1850,13 @@ status collapsed
 
 \begin_layout Plain Layout
 
-Sentencia print:
+Función print:
 \end_layout
 
 \end_inset
 
- una instrucción que causa que el intérprete de Python muestre un valor
- en el monitor.
+ una función que causa que el intérprete de Python muestre un valor en la
+ pantalla.
 \end_layout
 
 \begin_deeper
@@ -2100,17 +2105,17 @@ guión
 status collapsed
 
 \begin_layout Plain Layout
-sentencia print
+función print
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-print!sentencia
+print!función
 \end_layout
 
 \end_inset
@@ -2176,18 +2181,22 @@ Escriba 1 2 y presione la tecla Entrar.
 
 \begin_deeper
 \begin_layout Verbatim
+
   File "<stdin>", line 1
 \end_layout
 
 \begin_layout Verbatim
+
     1 2
 \end_layout
 
 \begin_layout Verbatim
+
       ^
 \end_layout
 
 \begin_layout Verbatim
+
 SyntaxError: invalid syntax
 \end_layout
 

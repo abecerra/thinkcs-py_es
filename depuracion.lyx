@@ -594,8 +594,7 @@ detenido.
 \end_layout
 
 \begin_layout Itemize
-Si hay un ciclo sospechoso de ser la causa del problema, añada una sentencia
- 
+Si hay un ciclo sospechoso de ser la causa del problema, añada un 
 \family typewriter
 print
 \family default
@@ -740,7 +739,7 @@ ciclo!condición
 \end_layout
 
 \begin_layout Standard
-Si usted cree que tiene un ciclo infinito añada una sentencia 
+Si usted cree que tiene un ciclo infinito añada un 
 \family typewriter
 print
 \family default
@@ -854,8 +853,7 @@ Si sospecha que una función o método está causando una recursión infinita,
 \end_layout
 
 \begin_layout Standard
-Si hay un caso base, pero el programa no parece alcanzarlo, añada una sentencia
- 
+Si hay un caso base, pero el programa no parece alcanzarlo, añada un 
 \family typewriter
 print
 \family default
@@ -895,7 +893,7 @@ ejecución!flujo de
 
 \begin_layout Standard
 Si no está seguro de cómo se mueve el flujo de ejecución a través de su
- programa, añada sentencias 
+ programa, añada 
 \family typewriter
 print
 \family default
@@ -1173,12 +1171,12 @@ AttributeError
 \begin_layout Description
 IndexError: el índice que está usando para acceder a una lista, cadena o
  tupla es más grande que su longitud menos uno.
- Inmediatamente, antes de la línea del error, agregue una sentencia 
+ Inmediatamente, antes de la línea del error, agregue un 
 \family typewriter
 print
 \family default
- para desplegar el valor del índice y la longitud del arreglo.
- ¿Tiene éste el tamaño correcto? ¿Tiene el índice el valor correcto?
+ para desplegar el valor del índice y la longitud de la secuencia.
+ ¿Tiene ésta el tamaño correcto? ¿Tiene el índice el valor correcto?
 \end_layout
 
 \begin_deeper
@@ -1197,9 +1195,9 @@ IndexError
 
 \end_deeper
 \begin_layout Subsection
-Agregué tantas sentencias 
+Agregué tantos 
 \family typewriter
-print
+prints
 \family default
  que estoy inundado de texto de salida
 \end_layout
@@ -1209,17 +1207,17 @@ print
 status collapsed
 
 \begin_layout Plain Layout
-sentencia print
+función print
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-sentencia!print
+función!print
 \end_layout
 
 \end_inset
@@ -1228,7 +1226,7 @@ sentencia!print
 \end_layout
 
 \begin_layout Standard
-Uno de los problemas de usar sentencias 
+Uno de los problemas de 
 \family typewriter
 print
 \family default
@@ -1237,7 +1235,7 @@ print
 \end_layout
 
 \begin_layout Standard
-Para simplificar la salida se pueden eliminar o comentar sentencias 
+Para simplificar la salida se pueden eliminar o comentar los 
 \family typewriter
 print
 \family default
@@ -1359,11 +1357,11 @@ El primer paso consiste en hacer una conexión entre el código fuente del
 \begin_layout Standard
 A veces deseará desacelerar el programa hasta una velocidad humana, y con
  algunos programas depuradores esto es posible.
- Pero el tiempo que toma insertar unas sentencias 
+ Pero el tiempo que toma insertar unos 
 \family typewriter
 print
 \family default
- bien situadas a menudo es mucho más corto comparado con la configuración
+ bien situados a menudo es mucho más corto comparado con la configuración
  del depurador, la inserción y eliminación de puntos de quiebre (breakpoints
  en inglés) y 
 \begin_inset Quotes eld
@@ -1766,7 +1764,7 @@ Antes de acudir a alguien más, asegúrese de agotar todas las técnicas descrit
  aquí.
  Su programa debe ser tan sencillo como sea posible y usted debería encontrar
  la entrada más pequeña que causa el error.
- Debería tener sentencias 
+ Debería tener varios 
 \family typewriter
 print
 \family default

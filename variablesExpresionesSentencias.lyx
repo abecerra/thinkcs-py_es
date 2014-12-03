@@ -265,7 +265,7 @@ cadena
 \end_layout
 
 \begin_layout Standard
-La sentencia de impresión también trabaja con enteros.
+La función de impresión también trabaja con enteros.
 \end_layout
 
 \begin_layout Standard
@@ -816,7 +816,7 @@ afterfig
 \end_layout
 
 \begin_layout Standard
-La sentencia 
+La función 
 \family typewriter
 print
 \family default
@@ -1136,13 +1136,17 @@ Sentencias
 
 \begin_layout Standard
 Una sentencia es una instrucción que el intérprete de Python puede ejecutar.
- Hemos visto dos clases de sentencias: la asignación y print.
+ Hemos visto una clase de sentencias: la asignación.
+ Invocar una función predefinida, como 
+\family typewriter
+print
+\family default
+, también es una sentencia.
 \end_layout
 
 \begin_layout Standard
 Cuando usted digita una sentencia en la línea de comandos, Python la ejecuta
  y despliega el resultado, si hay alguno.
- El resultado de un print es un valor.
  Las asignaciones no producen un resultado.
 \end_layout
 
@@ -1182,10 +1186,12 @@ print(x)
 \end_layout
 
 \begin_layout Verbatim
+
 1
 \end_layout
 
 \begin_layout Verbatim
+
 2
 \end_layout
 
@@ -1306,7 +1312,7 @@ Como le va, Doc?
 Cuando Python muestra el valor de una expresión que ha evaluado, utiliza
  el mismo formato que se usaría para entrar un valor.
  En el caso de las cadenas, esto implica que se incluyen las comillas.
- Cuando se usa la sentencia print, el efecto es distinto como usted ya lo
+ Cuando se usa la función print, el efecto es distinto como usted ya lo
  ha evidenciado.
 \end_layout
 
@@ -2540,7 +2546,7 @@ Ejercicios
 \end_layout
 
 \begin_layout Enumerate
-¿Qué sucede cuando se usa la sentencia print con una expresión?, por ejemplo:
+¿Qué sucede cuando se usa la función print con una expresión?, por ejemplo:
  
 \begin_inset listings
 inline false
@@ -2576,7 +2582,7 @@ print(5.2, "esto", 4 - 2, "aquello", 5/2.0)
 Tome la siguiente oración: Sólo trabajo y nada de juegos hacen de Juan un
  niño aburrido.
  Almacene cada palabra en variables separadas, después muestre la oración
- en una sola línea usando la sentencia print.
+ en una sola línea usando la función print.
 \end_layout
 
 \begin_layout Enumerate
