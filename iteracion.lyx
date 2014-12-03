@@ -182,7 +182,7 @@ pedro = 5
 
 \begin_layout Verbatim
 
-print pedro,
+print(pedro),
 \end_layout
 
 \begin_layout Verbatim
@@ -192,7 +192,7 @@ pedro = 7
 
 \begin_layout Verbatim
 
-print pedro
+print(pedro)
 \end_layout
 
 \end_inset
@@ -501,7 +501,7 @@ def conteo(n):
 
 \begin_layout Verbatim
 
-    print n
+    print(n)
 \end_layout
 
 \begin_layout Verbatim
@@ -511,7 +511,7 @@ def conteo(n):
 
 \begin_layout Verbatim
 
-  print "Despegue!"
+  print("Despegue!")
 \end_layout
 
 \end_inset
@@ -715,7 +715,7 @@ def secuencia(n):
 
 \begin_layout Verbatim
 
-    print n,
+    print(n),
 \end_layout
 
 \begin_layout Verbatim
@@ -1001,9 +1001,9 @@ while x < 10.0:
 
 \begin_layout Verbatim
 
-  print x, '
+  print(x, '
 \backslash
-t', math.log(x)
+t', math.log(x))
 \end_layout
 
 \begin_layout Verbatim
@@ -1131,9 +1131,9 @@ status open
 
 \begin_layout Verbatim
 
-print x, '
+print(x, '
 \backslash
-t',  math.log(x)/math.log(2.0)
+t',  math.log(x)/math.log(2.0))
 \end_layout
 
 \end_inset
@@ -1202,9 +1202,9 @@ while x < 100.0:
 
 \begin_layout Verbatim
 
-  print x, '
+  print(x, '
 \backslash
-t', math.log(x)/math.log(2.0)
+t', math.log(x)/math.log(2.0))
 \end_layout
 
 \begin_layout Verbatim
@@ -1400,7 +1400,7 @@ while i <= 6:
 
 \begin_layout Verbatim
 
-  print 2*i, '   ',
+  print(2*i, '   '),
 \end_layout
 
 \begin_layout Verbatim
@@ -1606,9 +1606,9 @@ def imprimaMultiplos(n):
 
 \begin_layout Verbatim
 
-    print n*i, '
+    print(n*i, '
 \backslash
-t',
+t'),
 \end_layout
 
 \begin_layout Verbatim
@@ -2096,10 +2096,6 @@ Como otro ejemplo de generalización, imagine que le piden un programa que
 imprimaTabla
 \family default
 :
-\begin_inset Newpage pagebreak
-\end_inset
-
-
 \begin_inset listings
 inline false
 status open
@@ -2211,9 +2207,9 @@ def imprimaMultiplos(n, tope):
 
 \begin_layout Verbatim
 
-    print n*i, '
+    print(n*i, '
 \backslash
-t',
+t'),
 \end_layout
 
 \begin_layout Verbatim

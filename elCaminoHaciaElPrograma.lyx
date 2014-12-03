@@ -557,7 +557,7 @@ unomasuno.py
 \end_layout
 
 \begin_layout Verbatim
-print 1 + 1
+print(1 + 1)
 \end_layout
 
 \begin_layout Standard
@@ -1478,7 +1478,7 @@ status open
 
 \begin_layout Verbatim
 
-print "Hola todo el mundo!"
+print("Hola todo el mundo!")
 \end_layout
 
 \end_inset
@@ -2210,13 +2210,13 @@ Escriba una entrada que produzca un mensaje de error cuando se introduzca
 \begin_layout Enumerate
 Escriba 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-verb+print 'hola'+
+verb+print('hola')+
 \end_layout
 
 \end_inset
@@ -2227,13 +2227,13 @@ verb+print 'hola'+
  de la salida mostrada.
  Ahora escriba 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-verb+print '"hola"'+
+verb+print('"hola"')+
 \end_layout
 
 \end_inset
@@ -2244,13 +2244,13 @@ verb+print '"hola"'+
 \begin_layout Enumerate
 Escriba 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-verb+print queso+
+verb+print(queso)+
 \end_layout
 
 \end_inset
@@ -2262,7 +2262,7 @@ verb+print queso+
 \begin_layout Enumerate
 Escriba 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2292,13 +2292,13 @@ Ahora cree un guión de Python con el nombre prueba1.py que contenga lo siguient
 \begin_layout Enumerate
 Ahora cambie el contenido del guión a: 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
 
 \backslash
-verb+print 'Esta es una prueba...'+
+verb+print('Esta es una prueba...')+
 \end_layout
 
 \end_inset

@@ -508,17 +508,14 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 class Pila :
 \end_layout
 
 \begin_layout Verbatim
-
   def __init__(self) :
 \end_layout
 
 \begin_layout Verbatim
-
     self.items = []
 \end_layout
 
@@ -527,12 +524,10 @@ class Pila :
 \end_layout
 
 \begin_layout Verbatim
-
   def meter(self, item) :
 \end_layout
 
 \begin_layout Verbatim
-
     self.items.append(item)
 \end_layout
 
@@ -541,12 +536,10 @@ class Pila :
 \end_layout
 
 \begin_layout Verbatim
-
   def sacar(self) :
 \end_layout
 
 \begin_layout Verbatim
-
     return self.items.pop()
 \end_layout
 
@@ -555,12 +548,10 @@ class Pila :
 \end_layout
 
 \begin_layout Verbatim
-
   def estaVacia(self) :
 \end_layout
 
 \begin_layout Verbatim
-
     return (self.items == [])
 \end_layout
 
@@ -727,22 +718,18 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> s = Pila()
 \end_layout
 
 \begin_layout Verbatim
-
 >>> s.meter(54)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> s.meter(45)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> s.meter("+")
 \end_layout
 
@@ -787,13 +774,11 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 while not s.estaVacia() :
 \end_layout
 
 \begin_layout Verbatim
-
-  print s.sacar(),
+  print(s.sacar()),
 \end_layout
 
 \begin_layout Standard
@@ -1141,17 +1126,14 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> import string
 \end_layout
 
 \begin_layout Verbatim
-
 >>> string.split("Ha llegado la hora"," ")
 \end_layout
 
 \begin_layout Verbatim
-
 ['Ha', 'llegado', 'la', 'hora']
 \end_layout
 
@@ -1254,17 +1236,14 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> import re
 \end_layout
 
 \begin_layout Verbatim
-
 >>> re.split("([^0-9])", "123+456*/")
 \end_layout
 
 \begin_layout Verbatim
-
 ['123', '+', '456', '*', '', '/', '']
 \end_layout
 
@@ -1397,82 +1376,66 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def evalPostfija(expr):
 \end_layout
 
 \begin_layout Verbatim
-
   import re
 \end_layout
 
 \begin_layout Verbatim
-
   listaLexemas = re.split("([^0-9])", expr)
 \end_layout
 
 \begin_layout Verbatim
-
   Pila = Pila()
 \end_layout
 
 \begin_layout Verbatim
-
   Por lexema in listaLexemas:
 \end_layout
 
 \begin_layout Verbatim
-
     if  lexema == '' or lexema == ' ':
 \end_layout
 
 \begin_layout Verbatim
-
       continue
 \end_layout
 
 \begin_layout Verbatim
-
     if  lexema == '+':
 \end_layout
 
 \begin_layout Verbatim
-
       suma = Pila.sacar() + Pila.sacar()
 \end_layout
 
 \begin_layout Verbatim
-
       Pila.meter(suma)
 \end_layout
 
 \begin_layout Verbatim
-
     elif lexema == '*':
 \end_layout
 
 \begin_layout Verbatim
-
       producto = Pila.sacar() * Pila.sacar()
 \end_layout
 
 \begin_layout Verbatim
-
       Pila.meter(producto)
 \end_layout
 
 \begin_layout Verbatim
-
     else:
 \end_layout
 
 \begin_layout Verbatim
-
       Pila.meter(int(lexema))
 \end_layout
 
 \begin_layout Verbatim
-
   return Pila.sacar()
 \end_layout
 
@@ -1520,12 +1483,10 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
->>> print evalPostfija ("56 47 + 2 *")
+>>> print(evalPostfija ("56 47 + 2 *"))
 \end_layout
 
 \begin_layout Verbatim
-
 206
 \end_layout
 

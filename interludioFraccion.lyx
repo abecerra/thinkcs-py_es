@@ -316,7 +316,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print "La fraccion es", s
+>>> print("La fraccion es", s)
 \end_layout
 
 \begin_layout Verbatim
@@ -469,7 +469,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print Fraccion(5,6) * Fraccion(3,4)
+>>> print(Fraccion(5,6) * Fraccion(3,4))
 \end_layout
 
 \begin_layout Verbatim
@@ -553,7 +553,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print Fraccion(5,6) * 4
+>>> print(Fraccion(5,6) * 4)
 \end_layout
 
 \begin_layout Verbatim
@@ -563,7 +563,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print 4 * Fraccion(5,6)
+>>> print(4 * Fraccion(5,6))
 \end_layout
 
 \begin_layout Verbatim
@@ -654,7 +654,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print 4 * Fraccion(5,6)
+>>> print(4 * Fraccion(5,6))
 \end_layout
 
 \begin_layout Verbatim
@@ -806,7 +806,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print Fraccion(5,6) + Fraccion(5,6)
+>>> print(Fraccion(5,6) + Fraccion(5,6))
 \end_layout
 
 \begin_layout Verbatim
@@ -816,7 +816,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print Fraccion(5,6) + 3
+>>> print(Fraccion(5,6) + 3)
 \end_layout
 
 \begin_layout Verbatim
@@ -826,7 +826,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print 2 + Fraccion(5,6)
+>>> print(2 + Fraccion(5,6))
 \end_layout
 
 \begin_layout Verbatim

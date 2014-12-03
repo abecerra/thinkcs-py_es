@@ -565,7 +565,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print limpio.y
+>>> print(limpio.y)
 \end_layout
 
 \begin_layout Verbatim
@@ -580,7 +580,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print x
+>>> print(x)
 \end_layout
 
 \begin_layout Verbatim
@@ -642,7 +642,7 @@ status open
 
 \begin_layout Verbatim
 
-print '(' + str(limpio.x) + ', ' + str(limpio.y) + ')'
+print('(' + str(limpio.x) + ', ' + str(limpio.y) + ')')
 \end_layout
 
 \begin_layout Verbatim
@@ -680,7 +680,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print limpio
+>>> print(limpio)
 \end_layout
 
 \begin_layout Verbatim
@@ -774,7 +774,7 @@ def imprimePunto(p):
 
 \begin_layout Verbatim
 
-  print '(' + str(p.x) + ', ' + str(p.y) + ')'
+  print('(' + str(p.x) + ', ' + str(p.y) + ')')
 \end_layout
 
 \end_inset

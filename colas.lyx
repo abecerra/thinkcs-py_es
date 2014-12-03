@@ -1642,7 +1642,7 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
->>> while not q.estaVacia(): print q.sacar()
+>>> while not q.estaVacia(): print(q.sacar())
 \end_layout
 
 \begin_layout Verbatim
@@ -2026,7 +2026,7 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
->>> while not pq.estaVacia(): print pq.sacar()
+>>> while not pq.estaVacia(): print(pq.sacar())
 \end_layout
 
 \begin_layout Verbatim

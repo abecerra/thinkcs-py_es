@@ -167,7 +167,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print cociente
+>>> print(cociente)
 \end_layout
 
 \begin_layout Verbatim
@@ -182,7 +182,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print residuo
+>>> print(residuo)
 \end_layout
 
 \begin_layout Verbatim
@@ -720,7 +720,7 @@ if x > 0:
 
 \begin_layout Verbatim
 
-  print "x es positivo"
+  print("x es positivo")
 \end_layout
 
 \end_inset
@@ -938,7 +938,7 @@ if x%2 == 0:
 
 \begin_layout Verbatim
 
-  print x, "es par"
+  print(x, "es par")
 \end_layout
 
 \begin_layout Verbatim
@@ -948,7 +948,7 @@ else:
 
 \begin_layout Verbatim
 
-  print x, "es impar"
+  print(x, "es impar")
 \end_layout
 
 \end_inset
@@ -1024,7 +1024,7 @@ def imprimirParidad(x):
 
 \begin_layout Verbatim
 
-    print x, "es par"
+    print(x, "es par")
 \end_layout
 
 \begin_layout Verbatim
@@ -1034,7 +1034,7 @@ def imprimirParidad(x):
 
 \begin_layout Verbatim
 
-    print x, "es impar"
+    print(x, "es impar")
 \end_layout
 
 \end_inset
@@ -1121,7 +1121,7 @@ if x < y:
 
 \begin_layout Verbatim
 
-  print x, "es menor que", y
+  print(x, "es menor que", y)
 \end_layout
 
 \begin_layout Verbatim
@@ -1131,7 +1131,7 @@ elif x > y:
 
 \begin_layout Verbatim
 
-  print x, "es mayor que", y
+  print(x, "es mayor que", y)
 \end_layout
 
 \begin_layout Verbatim
@@ -1141,7 +1141,7 @@ else:
 
 \begin_layout Verbatim
 
-  print x, "y", y, "son iguales"
+  print(x, "y", y, "son iguales")
 \end_layout
 
 \end_inset
@@ -1213,7 +1213,7 @@ else:
 
 \begin_layout Verbatim
 
-  print "Eleccion incorrecta."
+  print("Eleccion incorrecta.")
 \end_layout
 
 \end_inset
@@ -1251,7 +1251,7 @@ if x == y:
 
 \begin_layout Verbatim
 
-  print x, "y", y, "son iguales"
+  print(x, "y", y, "son iguales")
 \end_layout
 
 \begin_layout Verbatim
@@ -1266,7 +1266,7 @@ else:
 
 \begin_layout Verbatim
 
-    print x, "es menor que", y
+    print(x, "es menor que", y)
 \end_layout
 
 \begin_layout Verbatim
@@ -1276,7 +1276,7 @@ else:
 
 \begin_layout Verbatim
 
-    print x, "es mayor que", y
+    print(x, "es mayor que", y)
 \end_layout
 
 \end_inset
@@ -1317,7 +1317,7 @@ if 0 < x:
 
 \begin_layout Verbatim
 
-    print "x es un digito positivo."
+    print("x es un digito positivo.")
 \end_layout
 
 \end_inset
@@ -1347,7 +1347,7 @@ if 0 < x and x < 10:
 
 \begin_layout Verbatim
 
-  print "x es un digito positivo."
+  print("x es un digito positivo.")
 \end_layout
 
 \end_inset
@@ -1369,7 +1369,7 @@ if 0 < x < 10:
 
 \begin_layout Verbatim
 
-  print "x es un digito positivo"
+  print("x es un digito positivo")
 \end_layout
 
 \end_inset
@@ -1448,8 +1448,8 @@ def imprimirLogaritmo(x):
 
 \begin_layout Verbatim
 
-    print "Numeros positivos solamente.
- Por favor"
+    print("Numeros positivos solamente.
+ Por favor")
 \end_layout
 
 \begin_layout Verbatim
@@ -1468,7 +1468,7 @@ def imprimirLogaritmo(x):
 
 \begin_layout Verbatim
 
-  print "El logaritmo de ",  x ," es ", result
+  print("El logaritmo de ",  x ," es ", result)
 \end_layout
 
 \end_inset
@@ -1559,7 +1559,7 @@ def conteo(n):
 
 \begin_layout Verbatim
 
-    print "Despegue!"
+    print("Despegue!")
 \end_layout
 
 \begin_layout Verbatim
@@ -1569,7 +1569,7 @@ def conteo(n):
 
 \begin_layout Verbatim
 
-    print n
+    print(n)
 \end_layout
 
 \begin_layout Verbatim
@@ -1800,7 +1800,7 @@ def nuevalinea():
 
 \begin_layout Verbatim
 
-  print
+  print()
 \end_layout
 
 \begin_layout Verbatim
@@ -1855,7 +1855,7 @@ def nLineas(n):
 
 \begin_layout Verbatim
 
-    print
+    print()
 \end_layout
 
 \begin_layout Verbatim
@@ -2276,7 +2276,7 @@ Que esta esperando?
 
 \begin_layout Verbatim
 
->>> print entrada
+>>> print(entrada)
 \end_layout
 
 \begin_layout Verbatim
@@ -2333,7 +2333,7 @@ Cual es tu nombre? Arturo, Rey de los Bretones!
 
 \begin_layout Verbatim
 
->>> print nombre
+>>> print(nombre)
 \end_layout
 
 \begin_layout Verbatim
@@ -2803,7 +2803,7 @@ verb+7 % 0+
 \begin_layout Enumerate
 Envuelva el código que viene a continuación en una función llamada 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2830,7 +2830,7 @@ status open
 
 \begin_layout Verbatim
 
-    print x, "es menor que", y
+    print(x, "es menor que", y)
 \end_layout
 
 \begin_layout Verbatim
@@ -2840,7 +2840,7 @@ status open
 
 \begin_layout Verbatim
 
-    print x, "es mayor que", y
+    print(x, "es mayor que", y)
 \end_layout
 
 \begin_layout Verbatim
@@ -2850,7 +2850,7 @@ status open
 
 \begin_layout Verbatim
 
-    print x, "y", y, "son iguales"
+    print(x, "y", y, "son iguales")
 \end_layout
 
 \end_inset
@@ -2871,7 +2871,7 @@ def tabladeverdad(expresion):
 
 \begin_layout Verbatim
 
-    print " p      q      %s"  % expresion
+    print(" p      q      %s"  % expresion)
 \end_layout
 
 \begin_layout Verbatim
@@ -2881,7 +2881,7 @@ def tabladeverdad(expresion):
 
 \begin_layout Verbatim
 
-    print longitud*"="
+    print(longitud*"=")
 \end_layout
 
 \begin_layout Verbatim
@@ -2900,7 +2900,7 @@ def tabladeverdad(expresion):
 
 \begin_layout Verbatim
 
-            print "%-7s %-7s %-7s" % (p, q, eval(expresion))
+            print("%-7s %-7s %-7s" % (p, q, eval(expresion)))
 \end_layout
 
 \end_inset

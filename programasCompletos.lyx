@@ -252,7 +252,7 @@ class Punto:
 
 \begin_layout Verbatim
 
-    print str(derecho) + str(alreves)
+    print(str(derecho) + str(alreves))
 \end_layout
 
 \end_inset
@@ -629,7 +629,7 @@ class Mazo:
 
 \begin_layout Verbatim
 
-      print Carta
+      print(Carta)
 \end_layout
 
 \begin_layout Verbatim
@@ -974,12 +974,12 @@ class ManoJuegoSolterona(mano):
 
 \begin_layout Verbatim
 
-        print "mano %s: %s parejas %s" % 
+        print("mano %s: %s parejas %s" % 
 \end_layout
 
 \begin_layout Verbatim
 
-                 (self.nombre,carta,m)
+                 (self.nombre,carta,m))
 \end_layout
 
 \begin_layout Verbatim
@@ -1056,7 +1056,7 @@ class JuegoSolterona(JuegoCartas):
 
 \begin_layout Verbatim
 
-    print "---------- Cartas se han repartido"
+    print("---------- Cartas se han repartido")
 \end_layout
 
 \begin_layout Verbatim
@@ -1080,7 +1080,7 @@ class JuegoSolterona(JuegoCartas):
 
 \begin_layout Verbatim
 
-    print "----- parejas descartadas, empieza el juego"
+    print("----- parejas descartadas, empieza el juego")
 \end_layout
 
 \begin_layout Verbatim
@@ -1128,7 +1128,7 @@ class JuegoSolterona(JuegoCartas):
 
 \begin_layout Verbatim
 
-    print "---------- Juego Terminado"
+    print("---------- Juego Terminado")
 \end_layout
 
 \begin_layout Verbatim
@@ -1201,12 +1201,12 @@ class JuegoSolterona(JuegoCartas):
 
 \begin_layout Verbatim
 
-    print "mano", self.manos[i].nombre, 
+    print("mano", self.manos[i].nombre, 
 \end_layout
 
 \begin_layout Verbatim
 
-          "escogió", cartaEscogida
+          "escogió", cartaEscogida)
 \end_layout
 
 \begin_layout Verbatim
@@ -1274,7 +1274,7 @@ class JuegoSolterona(JuegoCartas):
 
 \begin_layout Verbatim
 
-      print mano
+      print(mano)
 \end_layout
 
 \end_inset
@@ -1307,7 +1307,7 @@ def imprimirlista(Nodo) :
 
 \begin_layout Verbatim
 
-    print Nodo,
+    print(Nodo),
 \end_layout
 
 \begin_layout Verbatim
@@ -1317,7 +1317,7 @@ def imprimirlista(Nodo) :
 
 \begin_layout Verbatim
 
-  print
+  print()
 \end_layout
 
 \begin_layout Verbatim
@@ -1356,7 +1356,7 @@ def imprimirAlReves(lista) :
 
 \begin_layout Verbatim
 
-  print cabeza,
+  print(cabeza),
 \end_layout
 
 \begin_layout Verbatim
@@ -1370,7 +1370,7 @@ def imprimirAlRevesBien(lista) :
 
 \begin_layout Verbatim
 
-  print "(",
+  print("("),
 \end_layout
 
 \begin_layout Verbatim
@@ -1395,12 +1395,12 @@ def imprimirAlRevesBien(lista) :
 
 \begin_layout Verbatim
 
-    print cabeza,
+    print(cabeza),
 \end_layout
 
 \begin_layout Verbatim
 
-  print ")",
+  print(")"),
 \end_layout
 
 \begin_layout Verbatim
@@ -1506,7 +1506,7 @@ class Nodo :
 
 \begin_layout Verbatim
 
-    print self.carga,
+    print(self.carga),
 \end_layout
 
 \begin_layout Verbatim
@@ -1544,7 +1544,7 @@ class ListaEnlazada :
 
 \begin_layout Verbatim
 
-    print "(",
+    print("("),
 \end_layout
 
 \begin_layout Verbatim
@@ -1559,7 +1559,7 @@ class ListaEnlazada :
 
 \begin_layout Verbatim
 
-    print ")",
+    print(")"),
 \end_layout
 
 \begin_layout Verbatim
@@ -2472,7 +2472,7 @@ def imprimirarbol(arbol):
 
 \begin_layout Verbatim
 
-    print arbol.carga
+    print(arbol.carga)
 \end_layout
 
 \begin_layout Verbatim
@@ -2521,7 +2521,7 @@ def imprimirarbolPostorden(arbol):
 
 \begin_layout Verbatim
 
-    print arbol.carga   
+    print(arbol.carga)   
 \end_layout
 
 \begin_layout Verbatim
@@ -2550,7 +2550,7 @@ def imprimirabolEnOrden(arbol):
 
 \begin_layout Verbatim
 
-  print arbol.carga,imprimirabolEnOrden(arbol.derecho)
+  print(arbol.carga,imprimirabolEnOrden(arbol.derecho))
 \end_layout
 
 \begin_layout Verbatim
@@ -2579,7 +2579,7 @@ def imprimirarbolSangrado(arbol, nivel=0):
 
 \begin_layout Verbatim
 
-  print " "*nivel + str(arbol.carga)
+  print(" "*nivel + str(arbol.carga))
 \end_layout
 
 \begin_layout Verbatim
@@ -2818,7 +2818,7 @@ def animal():
 
 \begin_layout Verbatim
 
-    print
+    print()
 \end_layout
 
 \begin_layout Verbatim
@@ -2893,7 +2893,7 @@ def animal():
 
 \begin_layout Verbatim
 
-      print "¡Soy el mejor!"
+      print("¡Soy el mejor!")
 \end_layout
 
 \begin_layout Verbatim

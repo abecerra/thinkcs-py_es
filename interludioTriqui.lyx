@@ -308,7 +308,7 @@ def imprimir(tablero):
 
 \begin_layout Verbatim
 
-        print "|",
+        print("|"),
 \end_layout
 
 \begin_layout Verbatim
@@ -318,12 +318,12 @@ def imprimir(tablero):
 
 \begin_layout Verbatim
 
-            print tablero[i][j],
+            print(tablero[i][j]),
 \end_layout
 
 \begin_layout Verbatim
 
-        print "|"
+        print("|")
 \end_layout
 
 \begin_layout Verbatim
@@ -371,7 +371,7 @@ while True:
 
 \begin_layout Verbatim
 
-    print "Juegue jugador O"
+    print("Juegue jugador O")
 \end_layout
 
 \begin_layout Verbatim
@@ -528,7 +528,7 @@ status open
 
 \begin_layout Verbatim
 
-print "Juegue jugador O"
+print("Juegue jugador O")
 \end_layout
 
 \begin_layout Verbatim
@@ -558,7 +558,7 @@ print "Juegue jugador O"
 
 \begin_layout Verbatim
 
-        print "Gana el jugador O!!!!"
+        print("Gana el jugador O!!!!")
 \end_layout
 
 \begin_layout Verbatim
@@ -697,7 +697,7 @@ while True:
 
 \begin_layout Verbatim
 
-    print "Juegue jugador X"
+    print("Juegue jugador X")
 \end_layout
 
 \begin_layout Verbatim
@@ -734,7 +734,7 @@ while True:
 
 \begin_layout Verbatim
 
-        print "Gana el jugador X!!!!"
+        print("Gana el jugador X!!!!")
 \end_layout
 
 \begin_layout Verbatim
@@ -797,7 +797,7 @@ def jugar(jugador,tablero):
 
 \begin_layout Verbatim
 
-    print "Juegue jugador ", jugador
+    print("Juegue jugador ", jugador)
 \end_layout
 
 \begin_layout Verbatim
@@ -881,7 +881,7 @@ while True:
 
 \begin_layout Verbatim
 
-        print "Gana el jugador O !!!!"
+        print("Gana el jugador O !!!!")
 \end_layout
 
 \begin_layout Verbatim
@@ -896,7 +896,7 @@ while True:
 
 \begin_layout Verbatim
 
-        print "Gana el jugador X !!!!"
+        print("Gana el jugador X !!!!")
 \end_layout
 
 \begin_layout Verbatim
@@ -1000,7 +1000,7 @@ def jugar(jugador,tablero):
 
 \begin_layout Verbatim
 
-        print "Juegue jugador ", jugador
+        print("Juegue jugador ", jugador)
 \end_layout
 
 \begin_layout Verbatim
@@ -1165,7 +1165,7 @@ while True:
 
 \begin_layout Verbatim
 
-        print "Gana el jugador O !!!!"
+        print("Gana el jugador O !!!!")
 \end_layout
 
 \begin_layout Verbatim
@@ -1180,7 +1180,7 @@ while True:
 
 \begin_layout Verbatim
 
-        print "Empate !!!"
+        print("Empate !!!")
 \end_layout
 
 \begin_layout Verbatim
@@ -1195,7 +1195,7 @@ while True:
 
 \begin_layout Verbatim
 
-        print "Gana el jugador X !!!!"
+        print("Gana el jugador X !!!!")
 \end_layout
 
 \begin_layout Verbatim
@@ -1210,7 +1210,7 @@ while True:
 
 \begin_layout Verbatim
 
-        print "Empate !!!"
+        print("Empate !!!")
 \end_layout
 
 \begin_layout Verbatim
@@ -1250,7 +1250,7 @@ def jugar(jugador,tablero):
 
 \begin_layout Verbatim
 
-        print "Juegue jugador ", jugador
+        print("Juegue jugador ", jugador)
 \end_layout
 
 \begin_layout Verbatim
@@ -1290,7 +1290,7 @@ def jugar(jugador,tablero):
 
 \begin_layout Verbatim
 
-            print "Posición inválida!"
+            print("Posición inválida!")
 \end_layout
 
 \begin_layout Verbatim
@@ -1470,7 +1470,7 @@ if __name__ == '__main__':
 
 \begin_layout Verbatim
 
-            print "Gana el jugador O !!!!"
+            print("Gana el jugador O !!!!")
 \end_layout
 
 \begin_layout Verbatim
@@ -1485,7 +1485,7 @@ if __name__ == '__main__':
 
 \begin_layout Verbatim
 
-            print "Empate !!!"
+            print("Empate !!!")
 \end_layout
 
 \begin_layout Verbatim
@@ -1505,7 +1505,7 @@ if __name__ == '__main__':
 
 \begin_layout Verbatim
 
-            print "Gana el jugador X !!!!"
+            print("Gana el jugador X !!!!")
 \end_layout
 
 \begin_layout Verbatim
@@ -1520,7 +1520,7 @@ if __name__ == '__main__':
 
 \begin_layout Verbatim
 
-            print "Empate !!!"
+            print("Empate !!!")
 \end_layout
 
 \begin_layout Verbatim

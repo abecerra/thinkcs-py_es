@@ -236,7 +236,7 @@ status open
 
 \begin_layout Plain Layout
 
->>> print letra
+>>> print(letra)	
 \end_layout
 
 \end_inset
@@ -320,7 +320,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print letra
+>>> print(letra)
 \end_layout
 
 \begin_layout Verbatim
@@ -649,7 +649,7 @@ while indice < len(fruta):
 
 \begin_layout Verbatim
 
-  print letra
+  print(letra)
 \end_layout
 
 \begin_layout Verbatim
@@ -702,7 +702,7 @@ for caracter in fruta:
 
 \begin_layout Verbatim
 
-   print caracter
+   print(caracter)
 \end_layout
 
 \end_inset
@@ -868,7 +868,7 @@ for letra in prefijos:
 
 \begin_layout Verbatim
 
-  print letra + sufijo
+  print(letra + sufijo)
 \end_layout
 
 \end_inset
@@ -999,7 +999,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print s[0:5]
+>>> print(s[0:5])
 \end_layout
 
 \begin_layout Verbatim
@@ -1009,7 +1009,7 @@ Pedro
 
 \begin_layout Verbatim
 
->>> print s[7:12]
+>>> print(s[7:12])
 \end_layout
 
 \begin_layout Verbatim
@@ -1019,7 +1019,7 @@ Pablo
 
 \begin_layout Verbatim
 
->>> print s[16:21]
+>>> print(s[16:21])
 \end_layout
 
 \begin_layout Verbatim
@@ -1221,7 +1221,7 @@ if palabra == "banana":
 
 \begin_layout Verbatim
 
-  print  "No hay bananas!"
+  print("No hay bananas!")
 \end_layout
 
 \end_inset
@@ -1239,7 +1239,7 @@ if palabra < "banana":
 
 \begin_layout Verbatim
 
-  print "Su palabra," + palabra + ", va antes que banana."
+  print("Su palabra," + palabra + ", va antes que banana.")
 \end_layout
 
 \begin_layout Verbatim
@@ -1249,7 +1249,7 @@ elif palabra > "banana":
 
 \begin_layout Verbatim
 
-  print "Su palabra," + palabra + ", va después de banana."
+  print("Su palabra," + palabra + ", va después de banana.")
 \end_layout
 
 \begin_layout Verbatim
@@ -1259,7 +1259,7 @@ else:
 
 \begin_layout Verbatim
 
-  print "No hay banana!"
+  print("No hay banana!")
 \end_layout
 
 \end_inset
@@ -1354,7 +1354,7 @@ saludo[0] = 'J'            # ERROR!
 
 \begin_layout Verbatim
 
-print saludo
+print(saludo)
 \end_layout
 
 \end_inset
@@ -1407,7 +1407,7 @@ nuevoSaludo = 'J' + saludo[1:]
 
 \begin_layout Verbatim
 
-print nuevoSaludo
+print(nuevoSaludo)
 \end_layout
 
 \end_inset
@@ -1673,7 +1673,7 @@ for car in fruta:
 
 \begin_layout Verbatim
 
-print cont
+print(cont)
 \end_layout
 
 \end_inset
@@ -1798,7 +1798,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print ind
+>>> print(ind)
 \end_layout
 
 \begin_layout Verbatim
@@ -2032,17 +2032,17 @@ status open
 
 \begin_layout Verbatim
 
->>> print string.lowercase
+>>> print(string.lowercase)
 \end_layout
 
 \begin_layout Verbatim
 
->>> print string.uppercase
+>>> print(string.uppercase)
 \end_layout
 
 \begin_layout Verbatim
 
->>> print string.digits
+>>> print(string.digits)
 \end_layout
 
 \end_inset
@@ -2216,7 +2216,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print string.whitespace
+>>> print(string.whitespace)
 \end_layout
 
 \end_inset
@@ -2728,7 +2728,7 @@ status open
 \begin_layout Standard
 Agregue al archivo 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 

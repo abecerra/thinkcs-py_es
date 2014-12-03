@@ -750,7 +750,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print mano
+>>> print(mano)
 \end_layout
 
 \begin_layout Verbatim
@@ -1153,14 +1153,14 @@ class ManoSolterona(Mano):
 
 \begin_layout Verbatim
 
-        print "Mano %s: %s se empareja con %s" % 
+        print("Mano %s: %s se empareja con %s" % 
 \backslash
 
 \end_layout
 
 \begin_layout Verbatim
 
-              (self.name,carta,m)
+              (self.name,carta,m))
 \end_layout
 
 \begin_layout Verbatim
@@ -1243,7 +1243,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print mano
+>>> print(mano)
 \end_layout
 
 \begin_layout Verbatim
@@ -1342,7 +1342,7 @@ Mano frank: 10 de Diamantes se empareja con 10 de Corazones
 
 \begin_layout Verbatim
 
->>> print mano
+>>> print(mano)
 \end_layout
 
 \begin_layout Verbatim
@@ -1520,7 +1520,7 @@ class JuegoSolterona(JuegoDeCartas):
 
 \begin_layout Verbatim
 
-    print "---------- Cartas repartidas!"
+    print("---------- Cartas repartidas!")
 \end_layout
 
 \begin_layout Verbatim
@@ -1544,7 +1544,7 @@ class JuegoSolterona(JuegoDeCartas):
 
 \begin_layout Verbatim
 
-    print "---------- Parejas descartadas, comienza el juego"
+    print("---------- Parejas descartadas, comienza el juego")
 \end_layout
 
 \begin_layout Verbatim
@@ -1592,7 +1592,7 @@ class JuegoSolterona(JuegoDeCartas):
 
 \begin_layout Verbatim
 
-    print "-------- Juego terminado"
+    print("-------- Juego terminado")
 \end_layout
 
 \begin_layout Verbatim
@@ -1633,7 +1633,7 @@ class JuegoSolterona(JuegoDeCartas):
 
 \begin_layout Verbatim
 
-    count = 0
+    cont = 0
 \end_layout
 
 \begin_layout Verbatim
@@ -1648,7 +1648,7 @@ class JuegoSolterona(JuegoDeCartas):
 
 \begin_layout Verbatim
 
-    return count
+    return cont
 \end_layout
 
 \end_inset
@@ -1753,12 +1753,12 @@ class JuegoSolterona(JuegoDeCartas):
 
 \begin_layout Verbatim
 
-    print "Mano", self.manos[i].nombre, 
+    print("Mano", self.manos[i].nombre, 
 \end_layout
 
 \begin_layout Verbatim
 
-          "escogio", cartaEscogida
+          "escogio", cartaEscogida)
 \end_layout
 
 \begin_layout Verbatim

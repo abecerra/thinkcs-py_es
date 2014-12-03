@@ -473,27 +473,22 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 class arbol:
 \end_layout
 
 \begin_layout Verbatim
-
   def __init__(self, carga, izquierdo=None, derecho=None):
 \end_layout
 
 \begin_layout Verbatim
-
     self.carga = carga
 \end_layout
 
 \begin_layout Verbatim
-
     self.izquierdo  = izquierdo
 \end_layout
 
 \begin_layout Verbatim
-
     self.derecho = derecho
 \end_layout
 
@@ -502,12 +497,10 @@ class arbol:
 \end_layout
 
 \begin_layout Verbatim
-
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
-
     return str(self.carga)
 \end_layout
 
@@ -579,12 +572,10 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 izquierdo = arbol(2)
 \end_layout
 
 \begin_layout Verbatim
-
 derecho = arbol(3)
 \end_layout
 
@@ -621,7 +612,6 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 arbol = arbol(1, izquierdo, derecho);
 \end_layout
 
@@ -658,7 +648,6 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> arbol = arbol(1, arbol(2), arbol(3))
 \end_layout
 
@@ -749,32 +738,26 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def total(arbol):
 \end_layout
 
 \begin_layout Verbatim
-
   if arbol == None: 
 \end_layout
 
 \begin_layout Verbatim
-
      return 0
 \end_layout
 
 \begin_layout Verbatim
-
   else:
 \end_layout
 
 \begin_layout Verbatim
-
      return total(arbol.izquierdo) + total(arbol.derecho) 
 \end_layout
 
 \begin_layout Verbatim
-
             + arbol.carga
 \end_layout
 
@@ -987,12 +970,10 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> arbol = arbol('+', arbol(1), 
 \end_layout
 
 \begin_layout Verbatim
-
                        arbol('*', arbol(2), arbol(3)))
 \end_layout
 
@@ -1111,32 +1092,26 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def imprimirarbol(arbol):
 \end_layout
 
 \begin_layout Verbatim
-
   if arbol == None: 
 \end_layout
 
 \begin_layout Verbatim
-
      return
 \end_layout
 
 \begin_layout Verbatim
-
-  print arbol.carga,
+  print(arbol.carga),
 \end_layout
 
 \begin_layout Verbatim
-
   imprimirarbol(arbol.izquierdo)
 \end_layout
 
 \begin_layout Verbatim
-
   imprimirarbol(arbol.derecho)
 \end_layout
 
@@ -1240,22 +1215,18 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> arbol = arbol('+', arbol(1), 
 \end_layout
 
 \begin_layout Verbatim
-
                        arbol('*', arbol(2), arbol(3)))
 \end_layout
 
 \begin_layout Verbatim
-
 >>> imprimirarbol(arbol)
 \end_layout
 
 \begin_layout Verbatim
-
 + 1 * 2 3
 \end_layout
 
@@ -1303,38 +1274,31 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def imprimirarbolPostorden(arbol):
 \end_layout
 
 \begin_layout Verbatim
-
   if arbol == None: 
 \end_layout
 
 \begin_layout Verbatim
-
      return
 \end_layout
 
 \begin_layout Verbatim
-
   else 
 \end_layout
 
 \begin_layout Verbatim
-
      imprimirarbolPostorden(arbol.izquierdo)
 \end_layout
 
 \begin_layout Verbatim
-
      imprimirarbolPostorden(arbol.derecho)
 \end_layout
 
 \begin_layout Verbatim
-
-     print arbol.carga,
+     print(arbol.carga),
 \end_layout
 
 \begin_layout Standard
@@ -1407,32 +1371,26 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def imprimirabolEnOrden(árbol):
 \end_layout
 
 \begin_layout Verbatim
-
   if arbol == None: 
 \end_layout
 
 \begin_layout Verbatim
-
      return
 \end_layout
 
 \begin_layout Verbatim
-
   imprimirabolEnOrden(arbol.izquierdo)
 \end_layout
 
 \begin_layout Verbatim
-
-  print arbol.carga,
+  print(arbol.carga),
 \end_layout
 
 \begin_layout Verbatim
-
   imprimirabolEnOrden(arbol.derecho)
 \end_layout
 
@@ -1536,32 +1494,26 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def imprimirarbolSangrado(arbol, nivel=0):
 \end_layout
 
 \begin_layout Verbatim
-
   if arbol == None: 
 \end_layout
 
 \begin_layout Verbatim
-
      return
 \end_layout
 
 \begin_layout Verbatim
-
   imprimirarbolSangrado(arbol.derecho, nivel+1)
 \end_layout
 
 \begin_layout Verbatim
-
-  print '  '*nivel + str(arbol.carga)
+  print('  '*nivel + str(arbol.carga))
 \end_layout
 
 \begin_layout Verbatim
-
   imprimirarbolSangrado(arbol.izquierdo, nivel+1)
 \end_layout
 
@@ -1610,32 +1562,26 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> imprimirarbolSangrado(arbol)
 \end_layout
 
 \begin_layout Verbatim
-
     3
 \end_layout
 
 \begin_layout Verbatim
-
   *
 \end_layout
 
 \begin_layout Verbatim
-
     2
 \end_layout
 
 \begin_layout Verbatim
-
 +
 \end_layout
 
 \begin_layout Verbatim
-
   1
 \end_layout
 
@@ -1812,7 +1758,6 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 ['(', 3, '+', 7, ')', '*', 9, 'fin']
 \end_layout
 
@@ -1908,32 +1853,26 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def obtenerLexema(listaLexemas, esperado):
 \end_layout
 
 \begin_layout Verbatim
-
   if listaLexemas[0] == esperado:
 \end_layout
 
 \begin_layout Verbatim
-
     del listaLexemas[0]
 \end_layout
 
 \begin_layout Verbatim
-
     return 1
 \end_layout
 
 \begin_layout Verbatim
-
   else:
 \end_layout
 
 \begin_layout Verbatim
-
     return 0
 \end_layout
 
@@ -1997,32 +1936,26 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def obtenerNumero(listaLexemas):
 \end_layout
 
 \begin_layout Verbatim
-
   x = listaLexemas[0]
 \end_layout
 
 \begin_layout Verbatim
-
   if type(x) != type(0): 
 \end_layout
 
 \begin_layout Verbatim
-
      return None
 \end_layout
 
 \begin_layout Verbatim
-
   del listaLexemas[0]
 \end_layout
 
 \begin_layout Verbatim
-
   return arbol (x, None, None)
 \end_layout
 
@@ -2065,32 +1998,26 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> listaLexemas = [9, 11, 'fin']
 \end_layout
 
 \begin_layout Verbatim
-
 >>> x = obtenerNumero(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> imprimirarbolPostorden(x)
 \end_layout
 
 \begin_layout Verbatim
-
 9
 \end_layout
 
 \begin_layout Verbatim
-
->>> print listaLexemas
+>>> print(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
 [11, 'fin']
 \end_layout
 
@@ -2136,37 +2063,30 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def obtenerProducto(listaLexemas):
 \end_layout
 
 \begin_layout Verbatim
-
   a = obtenerNumero(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
   if obtenerLexema(listaLexemas, '*'):
 \end_layout
 
 \begin_layout Verbatim
-
     b = obtenerNumero(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
     return árbol ('*', a, b)
 \end_layout
 
 \begin_layout Verbatim
-
   else:
 \end_layout
 
 \begin_layout Verbatim
-
     return a
 \end_layout
 
@@ -2234,22 +2154,18 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> listaLexemas = [9, '*', 11, 'fin']
 \end_layout
 
 \begin_layout Verbatim
-
 >>> arbol = obtenerProducto(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> imprimirarbolPostorden(árbol)
 \end_layout
 
 \begin_layout Verbatim
-
 9 11 *
 \end_layout
 
@@ -2286,22 +2202,18 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> listaLexemas = [9, '+', 11, 'fin']
 \end_layout
 
 \begin_layout Verbatim
-
 >>> arbol = obtenerProducto(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> imprimirarbolPostorden(arbol)
 \end_layout
 
 \begin_layout Verbatim
-
 9
 \end_layout
 
@@ -2429,37 +2341,30 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def obtenerProducto(listaLexemas):
 \end_layout
 
 \begin_layout Verbatim
-
   a = obtenerNumero(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
   if obtenerLexema(listaLexemas, '*'):
 \end_layout
 
 \begin_layout Verbatim
-
     b = obtenerProducto(listaLexemas)   # esta línea cambió
 \end_layout
 
 \begin_layout Verbatim
-
     return arbol ('*', a, b)
 \end_layout
 
 \begin_layout Verbatim
-
   else:
 \end_layout
 
 \begin_layout Verbatim
-
     return a
 \end_layout
 
@@ -2543,22 +2448,18 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> listaLexemas = [2, '*', 3, '*', 5 , '*', 7, 'fin']
 \end_layout
 
 \begin_layout Verbatim
-
 >>> arbol = obtenerProducto(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> imprimirarbolPostorden(arbol)
 \end_layout
 
 \begin_layout Verbatim
-
 2 3 5 7 * * *
 \end_layout
 
@@ -2643,37 +2544,30 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def obtenerSuma(listaLexemas):
 \end_layout
 
 \begin_layout Verbatim
-
   a = obtenerProducto(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
   if obtenerLexema(listaLexemas, '+'):
 \end_layout
 
 \begin_layout Verbatim
-
     b = obtenerSuma(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
     return arbol ('+', a, b)
 \end_layout
 
 \begin_layout Verbatim
-
   else:
 \end_layout
 
 \begin_layout Verbatim
-
     return a
 \end_layout
 
@@ -2714,22 +2608,18 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> listaLexemas = [9, '*', 11, '+', 5, '*', 7, 'fin']
 \end_layout
 
 \begin_layout Verbatim
-
 >>> arbol = obtenerSuma(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> imprimirarbolPostorden(árbol)
 \end_layout
 
 \begin_layout Verbatim
-
 9 11 * 5 7 * +
 \end_layout
 
@@ -2790,67 +2680,54 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def obtenerNumero(listaLexemas):
 \end_layout
 
 \begin_layout Verbatim
-
   if obtenerLexema(listaLexemas, '('):
 \end_layout
 
 \begin_layout Verbatim
-
     # obtiene la subexpresión
 \end_layout
 
 \begin_layout Verbatim
-
     x = obtenerSuma(listaLexemas)  
 \end_layout
 
 \begin_layout Verbatim
-
     # elimina los paréntesis
 \end_layout
 
 \begin_layout Verbatim
-
     obtenerLexema(listaLexemas, ')') 
 \end_layout
 
 \begin_layout Verbatim
-
     return x
 \end_layout
 
 \begin_layout Verbatim
-
   else:
 \end_layout
 
 \begin_layout Verbatim
-
     x = listaLexemas[0]
 \end_layout
 
 \begin_layout Verbatim
-
     if type(x) != type(0): 
 \end_layout
 
 \begin_layout Verbatim
-
        return None
 \end_layout
 
 \begin_layout Verbatim
-
     listaLexemas[0:1] = []
 \end_layout
 
 \begin_layout Verbatim
-
     return árbol (x, None, None)    
 \end_layout
 
@@ -2891,27 +2768,22 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 >>> listaLexemas = [9, '*', '(', 11, '+', 5, ')','*', 7, 
 \end_layout
 
 \begin_layout Verbatim
-
 'fin']
 \end_layout
 
 \begin_layout Verbatim
-
 >>> arbol = obtenerSuma(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
-
 >>> imprimirarbolPostorden(arbol)
 \end_layout
 
 \begin_layout Verbatim
-
 9 11 5 + 7 * *
 \end_layout
 
@@ -3022,42 +2894,34 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def obtenerNumero(listaLexemas):
 \end_layout
 
 \begin_layout Verbatim
-
   if obtenerLexema(listaLexemas, '('):
 \end_layout
 
 \begin_layout Verbatim
-
     x = obtenerSuma(listaLexemas)       
 \end_layout
 
 \begin_layout Verbatim
-
     if not obtenerLexema(listaLexemas, ')'):
 \end_layout
 
 \begin_layout Verbatim
-
       raise 'ErrorExpresionMalFormada', 'falta paréntesis'
 \end_layout
 
 \begin_layout Verbatim
-
     return x
 \end_layout
 
 \begin_layout Verbatim
-
   else:
 \end_layout
 
 \begin_layout Verbatim
-
     # el resto del código se omite
 \end_layout
 
@@ -3253,32 +3117,26 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Esta pensando en un animal? s
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Es un pájaro? n
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Cual es el nombre del animal? perro
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Que pregunta permite distinguir entre un perro 
 \end_layout
 
 \begin_layout Verbatim
-
 y un pájaro? Puede volar
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Si el animal fuera perro la respuesta sería? n
 \end_layout
 
@@ -3287,42 +3145,34 @@ y un pájaro? Puede volar
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Esta pensando en un animal? s
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Puede volar? n
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Es un perro? n
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Cual es el nombre del animal? gato
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Que pregunta permite distinguir un gato 
 \end_layout
 
 \begin_layout Verbatim
-
 de un perro? Ladra
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Si el animal fuera un gato 
 \end_layout
 
 \begin_layout Verbatim
-
 la respuesta sería? n
 \end_layout
 
@@ -3331,27 +3181,22 @@ la respuesta sería? n
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Esta pensando en un animal? y
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Puede volar? n
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Ladra? s
 \end_layout
 
 \begin_layout Verbatim
-
 ¿Es un perro? s
 \end_layout
 
 \begin_layout Verbatim
-
 ¡Soy el mejor!
 \end_layout
 
@@ -3518,17 +3363,14 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def animal():
 \end_layout
 
 \begin_layout Verbatim
-
   # Un solo nodo
 \end_layout
 
 \begin_layout Verbatim
-
   raiz = arbol("pajaro")
 \end_layout
 
@@ -3537,27 +3379,22 @@ def animal():
 \end_layout
 
 \begin_layout Verbatim
-
   # Hasta que el usuario salga
 \end_layout
 
 \begin_layout Verbatim
-
   while True:
 \end_layout
 
 \begin_layout Verbatim
-
     print
 \end_layout
 
 \begin_layout Verbatim
-
     if not si("Esta pensando en un animal? "): 
 \end_layout
 
 \begin_layout Verbatim
-
        break
 \end_layout
 
@@ -3566,42 +3403,34 @@ def animal():
 \end_layout
 
 \begin_layout Verbatim
-
     # Recorrer el arbol
 \end_layout
 
 \begin_layout Verbatim
-
     arbol = raiz
 \end_layout
 
 \begin_layout Verbatim
-
     while arbol.obtenerizquierdo() != None:
 \end_layout
 
 \begin_layout Verbatim
-
       pregunta = arbol.obtenercarga() + "? "
 \end_layout
 
 \begin_layout Verbatim
-
       if si(pregunta):
 \end_layout
 
 \begin_layout Verbatim
-
         árbol = arbol.obtenerderecho()
 \end_layout
 
 \begin_layout Verbatim
-
       else:
 \end_layout
 
 \begin_layout Verbatim
-
         arbol = arbol.obtenerizquierdo()
 \end_layout
 
@@ -3610,32 +3439,26 @@ def animal():
 \end_layout
 
 \begin_layout Verbatim
-
     # conjetura
 \end_layout
 
 \begin_layout Verbatim
-
     conjetura = arbol.obtenercarga()
 \end_layout
 
 \begin_layout Verbatim
-
     pregunta = "¿Es un" + conjetura + "? "
 \end_layout
 
 \begin_layout Verbatim
-
     if si(pregunta):
 \end_layout
 
 \begin_layout Verbatim
-
-      print "¡Soy el mejor!"
+      print("¡Soy el mejor!")
 \end_layout
 
 \begin_layout Verbatim
-
       continue
 \end_layout
 
@@ -3644,32 +3467,26 @@ def animal():
 \end_layout
 
 \begin_layout Verbatim
-
     # obtener mas informacion
 \end_layout
 
 \begin_layout Verbatim
-
     pregunta  = "¿Cual es el nombre el animal? "
 \end_layout
 
 \begin_layout Verbatim
-
     animal  = raw_input(pregunta)
 \end_layout
 
 \begin_layout Verbatim
-
     pregunta  = "¿Que pregunta permitiria 
 \end_layout
 
 \begin_layout Verbatim
-
                   distinguir un %s de un %s? "
 \end_layout
 
 \begin_layout Verbatim
-
     q = raw_input(pregunta % (animal,conjetura))
 \end_layout
 
@@ -3678,52 +3495,42 @@ def animal():
 \end_layout
 
 \begin_layout Verbatim
-
     # agrega un nuevo nodo arbol
 \end_layout
 
 \begin_layout Verbatim
-
     arbol.asignarcarga(q)
 \end_layout
 
 \begin_layout Verbatim
-
     pregunta = "¿Si el animal fuera %s 
 \end_layout
 
 \begin_layout Verbatim
-
                 la respuesta sería? "
 \end_layout
 
 \begin_layout Verbatim
-
     if si(pregunta % animal):
 \end_layout
 
 \begin_layout Verbatim
-
       arbol.asignarizquierdo(arbol(conjetura))
 \end_layout
 
 \begin_layout Verbatim
-
       árbol.asignarderecho(arbol(animal))
 \end_layout
 
 \begin_layout Verbatim
-
     else:
 \end_layout
 
 \begin_layout Verbatim
-
       arbol.asignarizquierdo(arbol(animal))
 \end_layout
 
 \begin_layout Verbatim
-
       arbol.asignarderecho(arbol(conjetura))
 \end_layout
 
@@ -3835,22 +3642,18 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
-
 def si(preg):
 \end_layout
 
 \begin_layout Verbatim
-
   from string import lower
 \end_layout
 
 \begin_layout Verbatim
-
   r = lower(raw_input(preg))
 \end_layout
 
 \begin_layout Verbatim
-
   return (r[0] == 's')
 \end_layout
 

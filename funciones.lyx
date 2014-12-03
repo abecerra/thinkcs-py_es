@@ -259,7 +259,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print b
+>>> print(b)
 \end_layout
 
 \begin_layout Verbatim
@@ -807,7 +807,7 @@ status open
 
 \begin_layout Verbatim
 
->>> decibel = math.log10 (17.0)
+>>> decibel = math.log10(17.0)
 \end_layout
 
 \begin_layout Verbatim
@@ -1134,7 +1134,7 @@ def nuevaLinea():
 
 \begin_layout Verbatim
 
-  print
+  print()
 \end_layout
 
 \end_inset
@@ -1165,7 +1165,7 @@ status open
 
 \begin_layout Verbatim
 
-print "Primera Linea."
+print("Primera Linea.")
 \end_layout
 
 \begin_layout Verbatim
@@ -1175,7 +1175,7 @@ nuevaLinea()
 
 \begin_layout Verbatim
 
-print "Segunda Linea."
+print("Segunda Linea.")
 \end_layout
 
 \end_inset
@@ -1208,7 +1208,7 @@ status open
 
 \begin_layout Verbatim
 
-print "Primera Linea."
+print("Primera Linea.")
 \end_layout
 
 \begin_layout Verbatim
@@ -1228,7 +1228,7 @@ nuevaLinea()
 
 \begin_layout Verbatim
 
-print "Segunda Linea."
+print("Segunda Linea.")
 \end_layout
 
 \end_inset
@@ -1275,7 +1275,7 @@ def tresLineas():
 
 \begin_layout Verbatim
 
-print "Primera Linea."
+print("Primera Linea.")
 \end_layout
 
 \begin_layout Verbatim
@@ -1285,7 +1285,7 @@ tresLineas()
 
 \begin_layout Verbatim
 
-print "Segunda Linea."
+print("Segunda Linea.")
 \end_layout
 
 \end_inset
@@ -1301,7 +1301,7 @@ status open
 
 \begin_layout Plain Layout
 
-print "Primera Linea"
+print("Primera Linea")
 \end_layout
 
 \end_inset
@@ -1377,7 +1377,7 @@ def nuevaLinea():
 
 \begin_layout Verbatim
 
-  print
+  print()
 \end_layout
 
 \begin_layout Verbatim
@@ -1410,7 +1410,7 @@ def tresLineas():
 
 \begin_layout Verbatim
 
-print "Primera Linea."
+print("Primera Linea.")
 \end_layout
 
 \begin_layout Verbatim
@@ -1420,7 +1420,7 @@ tresLineas()
 
 \begin_layout Verbatim
 
-print "Segunda Linea."
+print("Segunda Linea.")
 \end_layout
 
 \end_inset
@@ -1618,7 +1618,7 @@ def imprimaDoble(pedro):
 
 \begin_layout Verbatim
 
-  print pedro, pedro
+  print(pedro, pedro)
 \end_layout
 
 \end_inset
@@ -1919,7 +1919,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print cat
+>>> print(cat)
 \end_layout
 
 \begin_layout Verbatim
@@ -2210,7 +2210,7 @@ Traceback (innermost last):
 \end_layout
 
 \begin_layout Verbatim
-    print cat
+    print(cat)
 \end_layout
 
 \begin_layout Verbatim
@@ -2242,7 +2242,7 @@ trazado inverso
 \end_layout
 
 \begin_layout Standard
-Note la similaridad entre el trazado inverso y el diagrama de pila.
+Note la semejanza entre el trazado inverso y el diagrama de pila.
  Esto no es una coincidencia.
 \end_layout
 
@@ -2645,7 +2645,7 @@ Ejercicios
 Con un editor de texto cree un guión de Python que se llame pruebame3.py.
  Escriba en este archivo una función que se llame 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2658,7 +2658,7 @@ verb+nueveLineas+
 
  que use la función 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2672,7 +2672,7 @@ verb+tresLineas+
  para mostrar nueve líneas en blanco.
  Enseguida agregue una función que se llame 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2686,7 +2686,7 @@ verb+limpiaPantalla+
  que muestre veinticinco líneas en blanco.
  La última instrucción en su programa debe ser una llamada a 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2704,7 +2704,7 @@ verb+limpiaPantalla+
 Mueva la última instrucción del archivo pruebame3.py al inicio del programa,
  de forma tal que la llamada a la función 
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 

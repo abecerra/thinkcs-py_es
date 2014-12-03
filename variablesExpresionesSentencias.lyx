@@ -275,7 +275,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print 4
+>>> print(4)
 \end_layout
 
 \begin_layout Verbatim
@@ -562,7 +562,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print 1,000,000
+>>> print(1,000,000)
 \end_layout
 
 \begin_layout Verbatim
@@ -830,7 +830,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print mensaje
+>>> print(mensaje)
 \end_layout
 
 \begin_layout Verbatim
@@ -840,7 +840,7 @@ Que Onda?
 
 \begin_layout Verbatim
 
->>> print n
+>>> print(n)
 \end_layout
 
 \begin_layout Verbatim
@@ -850,7 +850,7 @@ Que Onda?
 
 \begin_layout Verbatim
 
->>> print pi
+>>> print(pi)
 \end_layout
 
 \begin_layout Verbatim
@@ -1163,7 +1163,7 @@ status open
 
 \begin_layout Verbatim
 
-print 1
+print(1)
 \end_layout
 
 \begin_layout Verbatim
@@ -1173,7 +1173,7 @@ x = 2
 
 \begin_layout Verbatim
 
-print x
+print(x)
 \end_layout
 
 \end_inset
@@ -1289,7 +1289,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print mensaje
+>>> print(mensaje)
 \end_layout
 
 \begin_layout Verbatim
@@ -1845,7 +1845,7 @@ bienCocinada = " pan con nueces"
 
 \begin_layout Verbatim
 
-print fruta + bienCocinada
+print(fruta + bienCocinada)
 \end_layout
 
 \end_inset
@@ -2000,7 +2000,7 @@ status open
 
 \begin_layout Verbatim
 
->>>  print 17 + 3
+>>>  print(17 + 3)
 \end_layout
 
 \begin_layout Verbatim
@@ -2028,14 +2028,14 @@ status open
 
 \begin_layout Verbatim
 
-print "Número de minutos desde media noche: ",  
+print("Número de minutos desde media noche: ",  
 \backslash
 
 \end_layout
 
 \begin_layout Verbatim
 
-  hora*60+minuto
+  hora*60+minuto)
 \end_layout
 
 \end_inset
@@ -2540,23 +2540,6 @@ Ejercicios
 \end_layout
 
 \begin_layout Enumerate
-Registre qué sucede cuando usa la sentencia print en combinación con una
- sentencia de asignación, por ejemplo: 
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-print n = 7
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
 ¿Qué sucede cuando se usa la sentencia print con una expresión?, por ejemplo:
  
 \begin_inset listings
@@ -2565,7 +2548,7 @@ status open
 
 \begin_layout Plain Layout
 
-print 8+5
+print(8+5)
 \end_layout
 
 \end_inset
@@ -2581,7 +2564,7 @@ status open
 
 \begin_layout Plain Layout
 
-print 5.2, "esto", 4 - 2, "aquello", 5/2.0
+print(5.2, "esto", 4 - 2, "aquello", 5/2.0)
 \end_layout
 
 \end_inset

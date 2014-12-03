@@ -831,7 +831,7 @@ for i in range(10):
 
 \begin_layout Verbatim
 
-  print x
+  print(x)
 \end_layout
 
 \end_inset
@@ -1065,7 +1065,7 @@ for c in fruta:
 
 \begin_layout Verbatim
 
-print cont
+print(cont)
 \end_layout
 
 \end_inset
@@ -1139,7 +1139,7 @@ for num in lista:
 
 \begin_layout Verbatim
 
-print cont
+print(cont)
 \end_layout
 
 \end_inset
@@ -1338,7 +1338,7 @@ for i in range(numRegiones):
 
 \begin_layout Verbatim
 
-  print inf, " hasta ", sup
+  print(inf, " hasta ", sup)
 \end_layout
 
 \end_inset
@@ -1365,42 +1365,34 @@ numRegiones = 8
 \end_layout
 
 \begin_layout Verbatim
-
 0.0 hasta 0.125
 \end_layout
 
 \begin_layout Verbatim
-
 0.125 hasta 0.25
 \end_layout
 
 \begin_layout Verbatim
-
 0.25 hasta 0.375
 \end_layout
 
 \begin_layout Verbatim
-
 0.375 hasta 0.5
 \end_layout
 
 \begin_layout Verbatim
-
 0.5 hasta 0.625
 \end_layout
 
 \begin_layout Verbatim
-
 0.625 hasta 0.75
 \end_layout
 
 \begin_layout Verbatim
-
 0.75 hasta 0.875
 \end_layout
 
 \begin_layout Verbatim
-
 0.875 hasta 1.0
 \end_layout
 
@@ -1477,7 +1469,7 @@ for i in range(numRegiones):
 
 \begin_layout Verbatim
 
-print Regiones
+print(Regiones)
 \end_layout
 
 \end_inset
@@ -1491,7 +1483,6 @@ Con una lista de 1000 valores, este código produce la siguiente lista de
 \end_layout
 
 \begin_layout Verbatim
-
 [138, 124, 128, 118, 130, 117, 114, 131]
 \end_layout
 
@@ -1893,22 +1884,18 @@ Este es un ejemplo de la salida del programa con palabras en inglés:
 \end_layout
 
 \begin_layout Verbatim
-
 ['deltas', 'desalt', 'lasted', 'salted', 'slated', 'staled'] 
 \end_layout
 
 \begin_layout Verbatim
-
 ['retainers', 'ternaries'] 
 \end_layout
 
 \begin_layout Verbatim
-
 ['generating', 'greatening']
 \end_layout
 
 \begin_layout Verbatim
-
 ['resmelts', 'smelters', 'termless']
 \end_layout
 

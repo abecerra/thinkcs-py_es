@@ -962,7 +962,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print c1
+>>> print(c1)
 \end_layout
 
 \begin_layout Verbatim
@@ -1000,7 +1000,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print c2
+>>> print(c2)
 \end_layout
 
 \begin_layout Verbatim
@@ -1010,7 +1010,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print c2.listaFiguras[1]
+>>> print(c2.listaFiguras[1])
 \end_layout
 
 \begin_layout Verbatim
@@ -1076,7 +1076,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print c1
+>>> print(c1)
 \end_layout
 
 \begin_layout Verbatim
@@ -1131,7 +1131,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print c2
+>>> print(c2)
 \end_layout
 
 \begin_layout Verbatim
@@ -1651,7 +1651,7 @@ class Mazo:
 
 \begin_layout Verbatim
 
-      print carta
+      print(carta)
 \end_layout
 
 \end_inset
@@ -1860,7 +1860,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print mazo
+>>> print(mazo)
 \end_layout
 
 \begin_layout Verbatim

@@ -475,7 +475,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print valorAbsoluto(0)
+>>> print(valorAbsoluto(0))
 \end_layout
 
 \begin_layout Verbatim
@@ -698,12 +698,12 @@ def distancia(x1, y1, x2, y2):
 
 \begin_layout Verbatim
 
-  print "dx es", dx
+  print("dx es", dx)
 \end_layout
 
 \begin_layout Verbatim
 
-  print "dy es", dy
+  print("dy es", dy)
 \end_layout
 
 \begin_layout Verbatim
@@ -758,7 +758,7 @@ def distancia(x1, y1, x2, y2):
 
 \begin_layout Verbatim
 
-  print "discuadrado es: ", discuadrado
+  print("discuadrado es: ", discuadrado)
 \end_layout
 
 \begin_layout Verbatim
@@ -1225,7 +1225,7 @@ if esDivisible(x, y):
 
 \begin_layout Verbatim
 
-  print "x es divisible por y"
+  print("x es divisible por y")
 \end_layout
 
 \begin_layout Verbatim
@@ -1235,7 +1235,7 @@ else:
 
 \begin_layout Verbatim
 
-  print "x no es divisible por y"
+  print("x no es divisible por y")
 \end_layout
 
 \end_inset
@@ -2364,7 +2364,7 @@ def factorial (n):
 
 \begin_layout Verbatim
 
-    print "Factorial solo esta definido para enteros."
+    print("Factorial solo esta definido para enteros.")
 \end_layout
 
 \begin_layout Verbatim
@@ -2379,7 +2379,7 @@ def factorial (n):
 
 \begin_layout Verbatim
 
-    print "Factorial solo esta definido para positivos"
+    print("Factorial solo esta definido para positivos")
 \end_layout
 
 \begin_layout Verbatim

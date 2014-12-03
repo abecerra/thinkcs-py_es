@@ -243,7 +243,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print ing_a_esp
+>>> print(ing_a_esp)
 \end_layout
 
 \begin_layout Verbatim
@@ -299,7 +299,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print ing_a_esp
+>>> print(ing_a_esp)
 \end_layout
 
 \begin_layout Verbatim
@@ -323,7 +323,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print ing_a_esp['two']
+>>> print(ing_a_esp['two'])
 \end_layout
 
 \begin_layout Verbatim
@@ -399,7 +399,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print inventario
+>>> print(inventario)
 \end_layout
 
 \begin_layout Verbatim
@@ -426,7 +426,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print inventario
+>>> print(inventario)
 \end_layout
 
 \begin_layout Verbatim
@@ -453,7 +453,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print inventario
+>>> print(inventario)
 \end_layout
 
 \begin_layout Verbatim
@@ -1997,7 +1997,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print itemsLetras
+>>> print(itemsLetras)
 \end_layout
 
 \begin_layout Verbatim

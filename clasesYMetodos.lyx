@@ -379,7 +379,7 @@ def imprimirHora(h):
 
 \begin_layout Verbatim
 
-  print str(h.hora) + ":" + 
+  print(str(h.hora) + ":" + 
 \end_layout
 
 \begin_layout Verbatim
@@ -389,7 +389,7 @@ def imprimirHora(h):
 
 \begin_layout Verbatim
 
-        str(h.segundos)
+        str(h.segundos))
 \end_layout
 
 \end_inset
@@ -464,7 +464,7 @@ class Hora:
 
 \begin_layout Verbatim
 
-    print str(h.hora) + ":" + 
+    print( str(h.hora) + ":" + 
 \end_layout
 
 \begin_layout Verbatim
@@ -474,7 +474,7 @@ class Hora:
 
 \begin_layout Verbatim
 
-          str(h.segundos)
+          str(h.segundos))
 \end_layout
 
 \end_inset
@@ -867,7 +867,7 @@ if horaComer.despues(horaActual):
 
 \begin_layout Verbatim
 
-  print "El pan estará listo para comer en un momento."
+  print("El pan estará listo para comer en un momento.")
 \end_layout
 
 \end_inset
@@ -1511,7 +1511,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print p
+>>> print(p)
 \end_layout
 
 \begin_layout Verbatim
@@ -1710,7 +1710,7 @@ status open
 
 \begin_layout Verbatim
 
->>>   print p3
+>>>   print(p3)
 \end_layout
 
 \begin_layout Verbatim
@@ -1863,7 +1863,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print p1 * p2
+>>> print(p1 * p2)
 \end_layout
 
 \begin_layout Verbatim
@@ -1873,7 +1873,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print 2 * p2
+>>> print(2 * p2)
 \end_layout
 
 \begin_layout Verbatim
@@ -1922,7 +1922,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print p2 * 2
+>>> print(p2 * 2)
 \end_layout
 
 \begin_layout Verbatim
@@ -2064,7 +2064,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print multsuma (2, p1, p2)
+>>> print(multsuma (2, p1, p2))
 \end_layout
 
 \begin_layout Verbatim
@@ -2074,7 +2074,7 @@ status open
 
 \begin_layout Verbatim
 
->>> print multsuma (p1, p2, 1)
+>>> print(multsuma (p1, p2, 1))
 \end_layout
 
 \begin_layout Verbatim
@@ -2145,7 +2145,7 @@ def derechoyAlReves(l):
 
 \begin_layout Verbatim
 
-  print str(l) + str(r)
+  print(str(l) + str(r))
 \end_layout
 
 \end_inset
@@ -2174,12 +2174,12 @@ status open
 
 \begin_layout Verbatim
 
->>>   miLista = [1, 2, 3, 4]
+>>> miLista = [1, 2, 3, 4]
 \end_layout
 
 \begin_layout Verbatim
 
->>>   derechoyAlReves(miLista)
+>>> derechoyAlReves(miLista)
 \end_layout
 
 \begin_layout Verbatim

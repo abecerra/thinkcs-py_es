@@ -419,7 +419,7 @@ invalid token
 \begin_layout Enumerate
 Un paréntesis sin cerrar---
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -775,17 +775,17 @@ while x > 0 and y < 0 :
 
 \begin_layout Verbatim
 
-  print  "x: ", x
+  print( "x: ", x )
 \end_layout
 
 \begin_layout Verbatim
 
-  print  "y: ", y
+  print( "y: ", y )
 \end_layout
 
 \begin_layout Verbatim
 
-  print  "condicion: ", (x > 0 and y < 0)
+  print( "condicion: ", (x > 0 and y < 0))
 \end_layout
 
 \end_inset

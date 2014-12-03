@@ -433,7 +433,6 @@ hola, mundo
 \end_layout
 
 \begin_layout Verbatim
-
    #include <iostream.h>
 \end_layout
 
@@ -442,22 +441,18 @@ hola, mundo
 \end_layout
 
 \begin_layout Verbatim
-
    void main()
 \end_layout
 
 \begin_layout Verbatim
-
    {
 \end_layout
 
 \begin_layout Verbatim
-
      cout << "Hola, mundo." << endl;
 \end_layout
 
 \begin_layout Verbatim
-
    }
 \end_layout
 
@@ -466,8 +461,7 @@ en la versión Python es:
 \end_layout
 
 \begin_layout Verbatim
-
-    print "Hola, Mundo!"
+    print("Hola, Mundo!")
 \end_layout
 
 \begin_layout Standard
