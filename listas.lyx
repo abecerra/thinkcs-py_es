@@ -277,7 +277,7 @@ status open
 
 \begin_layout Verbatim
 
->>> range(1,5)
+>>> list(range(1,5))
 \end_layout
 
 \begin_layout Verbatim
@@ -295,8 +295,12 @@ La función
 \family typewriter
 range
 \family default
- toma dos argumentos y retorna una lista que contiene todos los enteros
+ toma dos argumentos y retorna una colección que contiene todos los enteros
  desde el primero hasta el segundo, ¡incluyendo el primero y no el último!
+ Esta colección se puede convertir a lista con la función 
+ \family typewriter 
+ list
+ \family default.
 \end_layout
 
 \begin_layout Standard
@@ -312,7 +316,7 @@ status open
 
 \begin_layout Verbatim
 
->>> range(10)
+>>> list(range(10))
 \end_layout
 
 \begin_layout Verbatim
@@ -339,7 +343,7 @@ status open
 
 \begin_layout Verbatim
 
->>> range(1, 10, 2)
+>>> list(range(1, 10, 2))
 \end_layout
 
 \begin_layout Verbatim
