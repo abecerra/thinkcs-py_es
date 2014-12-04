@@ -12,19 +12,19 @@ def crear():
 def imprimir(tablero):
     """ Imprime el tablero de juego"""
     for i in range(3):
-        print "|",
+        print("|", end=' ')
         for j in range(3):
-            print tablero[i][j],
-        print "|"
+            print(tablero[i][j], end=' ')
+        print("|")
 
 
 triqui = crear()
 
 # Solo juega un jugador por siempre 
 while True:
-    print "Juegue jugador O"
-    f = input("fila? ")
-    c = input("columna? ")
+    print("Juegue jugador O")
+    f = eval(input("fila? "))
+    c = eval(input("columna? "))
     triqui[f][c] = "O"
     imprimir(triqui)
 

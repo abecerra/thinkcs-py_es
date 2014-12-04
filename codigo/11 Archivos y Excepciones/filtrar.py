@@ -21,7 +21,7 @@ def filtraArchivo(archViejo, archNuevo):
     f1.close()
     f2.close()
   except:
-    print "No se pudo abrir los archivos ", archViejo, archNuevo
+    print("No se pudo abrir los archivos ", archViejo, archNuevo)
   
 
 

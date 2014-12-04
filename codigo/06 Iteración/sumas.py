@@ -3,7 +3,7 @@
 def suma1(k):
     j = 1
     while k!=j:
-        print j
+        print(j)
         j = j+1
 
 #bien
@@ -55,8 +55,8 @@ def factorial(k):
 #print suma4(3)
 #print suma5(4)
 for j in range(1,10):
-    print j,":\t",factorial(j)
+    print(j,":\t",factorial(j))
     
 for j in range(1,10):
-    print j,":\t",factorial(j)
+    print(j,":\t",factorial(j))
 

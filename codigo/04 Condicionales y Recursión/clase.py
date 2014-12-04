@@ -6,9 +6,9 @@ def cuadrado1(x):
             - x : número
     """
     if type(x) == type(0):
-        print x ** 2
+        print(x ** 2)
     else:
-        print "ERROR: se espera un entero"
+        print("ERROR: se espera un entero")
 
 
 def cuadrado2(x):
@@ -17,9 +17,9 @@ def cuadrado2(x):
             - x : número
     """
     if type(x) == type(0) or type(x)==type(1.0):
-        print x ** 2
+        print(x ** 2)
     else:
-        print "ERROR: se espera un número"
+        print("ERROR: se espera un número")
 
 # cuadrado(8)
 # cuadrado("2")
@@ -31,9 +31,9 @@ def areaRectangulo1(base,altura):
             - altura: número
     """
     if (type(base) == type(0) or type(base)==type(1.0)) and(type(altura) == type(0) or type(altura)==type(1.0)):
-        print base * altura
+        print(base * altura)
     else:
-        print "ERROR: la base y la altura deben ser numeros"
+        print("ERROR: la base y la altura deben ser numeros")
 
 def areaRectangulo2(base,altura):
     """ calcula el area de un rectangulo
@@ -43,9 +43,9 @@ def areaRectangulo2(base,altura):
     """
     if type(base) == type(0) or type(base)==type(1.0):
         if type(altura) == type(0) or type(altura)==type(1.0):
-            print base * altura
+            print(base * altura)
     else:
-        print "ERROR: la base y la altura deben ser numeros"
+        print("ERROR: la base y la altura deben ser numeros")
 
 
 #areaRectangulo2(4, 5.2)
@@ -66,16 +66,16 @@ def areaRectangulo2(base,altura):
 ##        print "ERROR: la base y la altura deben ser numeros"
 
 def porsiempre():
-    print "*********"
+    print("*********")
     porsiempre()
 
 def poruntiempo(t):
     if t>0:
-        print "**********"
+        print("**********")
         poruntiempo(t-1)
 
 def poruntiempo1(t):
     if t>0:
-        print t
+        print(t)
         poruntiempo1(t-1)
 

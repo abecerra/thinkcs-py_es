@@ -17,15 +17,15 @@ class Punto:
 p = Punto(3, 4)
 a = str(p)
 
-print a
-print p
+print(a)
+print(p)
 
 p1 = Punto(3, 4)
 p2 = Punto(5, 7)
 p3 = p1 + p2
-print p3
+print(p3)
 
 v = p1 * p2
-print v
+print(v)
 
-print 2*p1
+print(2*p1)

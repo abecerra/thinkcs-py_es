@@ -9,5 +9,5 @@ def sumarImparesHasta(n):
   return suma
 
 for i in range(11):
-  print i, sumarImparesHasta(i)
+  print(i, sumarImparesHasta(i))
   

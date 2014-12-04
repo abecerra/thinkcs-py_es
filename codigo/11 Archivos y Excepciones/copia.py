@@ -11,7 +11,7 @@ def copiaArchivo(archViejo, archNuevo):
     f2.close()
     return
   except:
-    print "no se pudieron abrir los archivos ", archViejo,archNuevo
+    print("no se pudieron abrir los archivos ", archViejo,archNuevo)
 
 
 copiaArchivo("frases.txt", "citas.txt")

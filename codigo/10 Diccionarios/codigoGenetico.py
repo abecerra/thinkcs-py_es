@@ -18,7 +18,7 @@ def prepararDiccionario():
   # y si el sistema operativo no puede abrirlo se aborta el
   # programa
   except:
-    print "No se pudo abrir el archivo codigogenetico.txt"
+    print("No se pudo abrir el archivo codigogenetico.txt")
 
   # Separa el texto en lineas
   lineas = texto.splitlines()
@@ -30,7 +30,7 @@ def prepararDiccionario():
   # A cada linea le hacemos split
   #print "haciendo split"
   for l in lineas:
-    par = string.split(l)
+    par = str.split(l)
     # par es una lista de dos elementos
     #print par
     # asociamos el triplete a el aminoacido en el diccionario

@@ -2,27 +2,27 @@
 
 
 for i in [1,2,3,4,5]:
-  print i
+  print(i)
 
 # range ahorra trabajo
-print "range(6)=", range(6)
+print("range(6)=", list(range(6)))
 
 
 for i in range(6):
-  print i
+  print(i)
 
-print "range(10,20):"
+print("range(10,20):")
 
 for i in range(10,20):
-  print i
+  print(i)
   
 
-print "range(10,21):"
+print("range(10,21):")
 
 for i in range(10,21):
-  print i
+  print(i)
 
 
 #con cadenas:
 for c in "abcdefghijklmnopqrstuvwxyz":
-  print c.upper(),
+  print(c.upper(), end=' ')

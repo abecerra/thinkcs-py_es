@@ -22,10 +22,10 @@ def crear():
 def imprimir(tablero):
     """ Imprime el tablero de juego"""
     for i in range(3):
-        print "|",
+        print("|", end=' ')
         for j in range(3):
-            print tablero[i][j],
-        print "|"
+            print(tablero[i][j], end=' ')
+        print("|")
         
 triqui = crear()
 imprimir(triqui)

@@ -1,17 +1,17 @@
 # -*- coding: utf-8 -*-
 
 def porsiempre():
-    print "*********"
+    print("*********")
     porsiempre()
 
 def poruntiempo(t):
     if t>0:
-        print "**********"
+        print("**********")
         poruntiempo(t-1)
 
 def poruntiempo1(t):
     if t>0:
-        print t
+        print(t)
         poruntiempo1(t-1)
 
 # Ejecutar en el intérprete 

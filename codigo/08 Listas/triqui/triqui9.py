@@ -18,10 +18,10 @@ def crear():
 def imprimir(tablero):
     """ Imprime el tablero de juego"""
     for i in range(3):
-        print "|",
+        print("|", end=' ')
         for j in range(3):
-            print tablero[i][j],"|",
-        print ""
+            print(tablero[i][j],"|", end=' ')
+        print("")
 
 def ganaDiagonal1(jugador,tablero):
     """Chequea si el jugador gana en la diagonal 1 \ """
@@ -90,14 +90,14 @@ def jugar(jugador,tablero):
         Imprime el tablero después de la jugada
     """
     while True:     
-        print "Juegue jugador ", jugador
-        f = input("fila? ")
-        c = input("columna? ")
+        print("Juegue jugador ", jugador)
+        f = eval(input("fila? "))
+        c = eval(input("columna? "))
         if type(f)==type(c)==type(1) and valido(f) and valido(c) and tablero[f][c]==' ':
             tablero[f][c] = jugador
             break
         else:
-            print "Posición inválida!"
+            print("Posición inválida!")
 
     imprimir(tablero)
 
@@ -110,15 +110,15 @@ if __name__ == '__main__':
     while True:
         jugar("O",triqui)
         if gana("O",triqui):
-            print "Gana el jugador O !!!!"
+            print("Gana el jugador O !!!!")
             break
         if empate(triqui):
-            print "Empate !!!"
+            print("Empate !!!")
             break
         jugar("X",triqui)
         if gana("X",triqui):
-            print "Gana el jugador X !!!!"
+            print("Gana el jugador X !!!!")
             break
         if empate(triqui):
-            print "Empate !!!"
+            print("Empate !!!")
             break

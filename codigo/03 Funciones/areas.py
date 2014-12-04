@@ -10,7 +10,7 @@ def areaRectangulo(base,altura):
         - base: número
         - altura: número
     """
-    print base * altura
+    print(base * altura)
 
 
 def areaCuadrado1(lado):
@@ -18,14 +18,14 @@ def areaCuadrado1(lado):
     Parámetros:
         - lado: número
     """
-    print lado * lado
+    print(lado * lado)
 
 def areaCuadrado2(lado):
     """ Calcula el area de un cuadrado
     Parámetros:
         - lado: número
     """
-    print lado ** 2
+    print(lado ** 2)
 
 
 # Composición

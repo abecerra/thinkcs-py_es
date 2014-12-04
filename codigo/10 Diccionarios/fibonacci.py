@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 # Diccionario para los números de fibonacci
-anteriores = {0:1L, 1:1L }
+anteriores = {0:1, 1:1 }
 
 def fibonacci(n):
-    if anteriores.has_key(n):
+    if n in anteriores:
         return anteriores[n]
     else:
         nuevo = fibonacci(n-1)+fibonacci(n-2)
@@ -14,7 +14,7 @@ def fibonacci(n):
 
 
 for j in range(30):
-    print "fibonacci(",j,")=\t", fibonacci(j)
+    print("fibonacci(",j,")=\t", fibonacci(j))
 
 
 

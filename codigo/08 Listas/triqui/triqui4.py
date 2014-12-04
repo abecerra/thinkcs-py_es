@@ -13,10 +13,10 @@ def crear():
 def imprimir(tablero):
     """ Imprime el tablero de juego"""
     for i in range(3):
-        print "|",
+        print("|", end=' ')
         for j in range(3):
-            print tablero[i][j],
-        print "|"
+            print(tablero[i][j], end=' ')
+        print("|")
 
 
 def ganaDiagonal1(jugador,tablero):
@@ -67,19 +67,19 @@ def ganaVertical(jugador,tablero):
 triqui = crear()
 
 while True:
-    print "Juegue jugador O"
-    f = input("fila? ")
-    c = input("columna? ")
+    print("Juegue jugador O")
+    f = eval(input("fila? "))
+    c = eval(input("columna? "))
     triqui[f][c] = "O"
     imprimir(triqui)
     if ganaDiagonal1("O",triqui) or ganaDiagonal2("O",triqui) or ganaHorizontal("O",triqui) or ganaVertical("O",triqui):
-        print "Gana el jugador O!!!!"
+        print("Gana el jugador O!!!!")
         break
-    print "Juegue jugador X"
-    f = input("fila? ")
-    c = input("columna? ")
+    print("Juegue jugador X")
+    f = eval(input("fila? "))
+    c = eval(input("columna? "))
     triqui[f][c] = "X"
     imprimir(triqui)
     if ganaDiagonal1("X",triqui) or ganaDiagonal2("X",triqui) or ganaHorizontal("X",triqui) or ganaVertical("X",triqui):
-        print "Gana el jugador X!!!!"
+        print("Gana el jugador X!!!!")
         break

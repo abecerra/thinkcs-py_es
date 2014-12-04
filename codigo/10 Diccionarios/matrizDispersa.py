@@ -25,10 +25,10 @@ matriz = { (0,3):1, (2,1):2, (4,3):3 }
 
 
 # el acceso a m es:
-print "print m[0][3]= ", m[0][3]
+print("print m[0][3]= ", m[0][3])
 
 # el acceso a matriz es:
-print "print matriz.get( (0,3), 0)=", matriz.get( (0,3), 0)
+print("print matriz.get( (0,3), 0)=", matriz.get( (0,3), 0))
 
 
 

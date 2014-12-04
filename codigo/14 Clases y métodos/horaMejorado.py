@@ -2,7 +2,7 @@
 class Hora:
     # Un método (función dentro de una clase)
     def imprimirHora(t):
-        print t.hora, ":", t.minutos,":",t.segundos
+        print(t.hora, ":", t.minutos,":",t.segundos)
     # Otro método
     def incrementar(self, segundos):
         self.segundos = self.segundos + segundos
@@ -46,5 +46,5 @@ horaActual.incrementar(80)
 horaActual.imprimirHora()
 
 if horaComer.despues(horaActual):
-  print "El pan estará listo para comer en un momento."
+  print("El pan estará listo para comer en un momento.")
 

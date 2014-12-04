@@ -30,15 +30,15 @@ class Arbol:
 
 def total(arbol):
   if arbol.izquierdo == None or arbol.derecho== None:
-	return arbol.carga
+    return arbol.carga
   else:
-      return total(arbol.izquierdo) + total(arbol.derecho)  + arbol.carga
+    return total(arbol.izquierdo) + total(arbol.derecho)  + arbol.carga
    
 def imprimirarbol(arbol):
   if arbol == None:
       return 
   else:
-      print arbol.carga
+      print(arbol.carga)
       imprimirarbol(arbol.izquierdo)
       imprimirarbol(arbol.derecho)
 
@@ -48,19 +48,19 @@ def imprimirarbolPostorden(arbol):
   else:
       imprimirarbolPostorden(arbol.izquierdo)
       imprimirarbolPostorden(arbol.derecho)
-      print arbol.carga   
+      print(arbol.carga)   
 
 def imprimirabolEnOrden(arbol):
   if arbol == None:
       return
   imprimirabolEnOrden(arbol.izquierdo)
-  print arbol.carga,imprimirabolEnOrden(arbol.derecho)
+  print(arbol.carga,imprimirabolEnOrden(arbol.derecho))
 
 def imprimirarbolSangrado(arbol, nivel=0):
   if arbol == None:
       return
   imprimirarbolSangrado(arbol.derecho, nivel+1)
-  print " "*nivel + str(arbol.carga)
+  print(" "*nivel + str(arbol.carga))
   imprimirarbolSangrado(arbol.izquierdo, nivel+1)
 
 
@@ -96,13 +96,13 @@ def obtenerNumero(listaLexemas):
   else:
       x = listaLexemas[0]
       if type(x) != type(0):
-	  return None
+        return None
   listaLexemas[0:1] = []
   return arbol (x, None, None)  ## error de sintaxis  (`arbol)
 
 def si(preg):
   from string import lower
-  r = lower(raw_input(preg))
+  r = lower(input(preg))
   return (r[0] == 's')
 
 
@@ -111,37 +111,37 @@ def animal():
   raiz = Arbol("pajaro")
       # Hasta que el usuario salga
   while True:
-      print
+      print()
       if not si("Esta pensando en un animal? "):
-	  break
+        break
       # Recorrer el arbol
       arbol = raiz
       while arbol.obtenerizquierdo() != None:
-	  pregunta = arbol.obtenercarga() + "? "
-	  if si(pregunta):
-	      arbol = arbol.obtenerderecho()
-	  else:
-	      arbol = arbol.obtenerizquierdo()
+        pregunta = arbol.obtenercarga() + "? "
+        if si(pregunta):
+          arbol = arbol.obtenerderecho()
+        else:
+          arbol = arbol.obtenerizquierdo()
       # conjetura
       conjetura = arbol.obtenercarga()
       pregunta = "¿Es un" + conjetura + "? "
       if si(pregunta):
-	  print "¡Soy el mejor!"
-	  continue
+        print("¡Soy el mejor!")
+        continue
       # obtener mas informacion
       pregunta = "¿Cual es el nombre el animal? "
-      animal = raw_input(pregunta)
+      animal = input(pregunta)
       pregunta = "¿Que pregunta permitiria distinguir un %s de un %s? "
-      q = raw_input(pregunta % (animal,conjetura))
+      q = input(pregunta % (animal,conjetura))
       # agrega un nuevo nodo arbol
       arbol.asignarcarga(q)
       pregunta = "¿Si el animal fuera %s la respuesta ser´ıa? "
       if si(pregunta % animal):
-	  arbol.asignarizquierdo(Arbol(conjetura))
-	  arbol.asignarderecho(Arbol(animal))
+        arbol.asignarizquierdo(Arbol(conjetura))
+        arbol.asignarderecho(Arbol(animal))
       else:
-	  arbol.asignarizquierdo(Arbol(animal))
-	  arbol.asignarderecho(Arbol(conjetura))
+        arbol.asignarizquierdo(Arbol(animal))
+        arbol.asignarderecho(Arbol(conjetura))
 
 #Hace Falta un else:
 d=Arbol(1)

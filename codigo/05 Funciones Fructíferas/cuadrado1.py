@@ -15,7 +15,7 @@ def cuadrado1(x):
     if type(x) == type(0):
         return x ** 2
     else:
-        print "ERROR: se espera un entero"
+        print("ERROR: se espera un entero")
         return 0
 
 
@@ -34,7 +34,7 @@ def cuadrado2(x):
     if type(x) == type(0) or type(x)==type(1.0):
         return x ** 2
     else:
-        print "ERROR: se espera un número"
+        print("ERROR: se espera un número")
         return 0
 
 # Esto es para ejecutar las pruebas de

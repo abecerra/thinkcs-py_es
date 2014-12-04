@@ -7,9 +7,9 @@ class Nodo:
       return str(self.carga)
   def imprimirAlReves(self) :
       if self.siguiente != None :
-	  resto = self.siguiente
-	  resto.imprimirAlReves()
-	  print self.carga,
+        resto = self.siguiente
+        resto.imprimirAlReves()
+        print(self.carga, end=' ')
 
 
 class Cola:
@@ -24,16 +24,16 @@ class Cola:
       nodo = Nodo(carga) 
       nodo.siguiente = None
       if self.primero == None:
-	  # si esta vacia este nodo sera el primero
-	  self.primero = nodo
+        # si esta vacia este nodo sera el primero
+        self.primero = nodo
       else:
-	  # encontrar el ultimo nodo
-	  ultimo = self.primero
-	  while ultimo.siguiente:
-	      ultimo = ultimo.siguiente
-	      # pegar el nuevo
-	  ultimo.siguiente = nodo
-      self.numElementos = self.numElementos + 1
+        # encontrar el ultimo nodo
+        ultimo = self.primero
+        while ultimo.siguiente:
+          ultimo = ultimo.siguiente
+        # pegar el nuevo
+        ultimo.siguiente = nodo
+        self.numElementos = self.numElementos + 1
 
   def sacar(self):
       carga = self.primero.carga
@@ -86,7 +86,7 @@ class ColaPrioridad:
     maxi = 0
     for i in range(1,len(self.items)) :
       if self.items[i] > self.items[maxi] :
-	maxi = i
+        maxi = i
     item = self.items[maxi]
     self.items[maxi:maxi+1] = []
     return item
@@ -95,7 +95,7 @@ class ColaPrioridad:
     maxi = 0
     for i in range(0,len(self.items)): 
       if self.items[i] > self.items[maxi]:
-	maxi = i
+        maxi = i
       item = self.items[maxi]
       self.items[maxi:maxi+1] = []
       return item
@@ -120,19 +120,19 @@ c.meter(1)
 c.meter(2)
 c.sacar()
 if c.estaVacia():
-    print "si>"
+    print("si>")
 else:
-    print "no>"
+    print("no>")
 
 a = ColaMejorada()
 a.meter(1)
 a.meter(2)
-print a.sacar()
-print a.sacar()
+print(a.sacar())
+print(a.sacar())
 if a.estaVacia():
-    print "si<"
+    print("si<")
 else:
-    print "no<"
+    print("no<")
 
 q = ColaPrioridad()
 q.meter(11)
@@ -141,7 +141,7 @@ q.meter(14)
 q.meter(13)
 
 while not q.estaVacia():
-    print q.eliminar()
+    print(q.eliminar())
 
 tiger = golfista("Tiger Woods", 61)
 phil = golfista("Phil Mickelson", 72)
@@ -152,4 +152,4 @@ pq.meter(tiger)
 pq.meter(phil)
 pq.meter(hal)
 while not pq.estaVacia():
-    print pq.eliminar()
+    print(pq.eliminar())

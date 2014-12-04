@@ -87,7 +87,7 @@ def histograma(lista):
         inf = i * ancho
         sup = inf + ancho
         Regiones[i] = enRegion(lista,inf,sup)
-        print Regiones[i]
+        print(Regiones[i])
 
 lista = listaAleatoria(1000)
 histograma(lista)

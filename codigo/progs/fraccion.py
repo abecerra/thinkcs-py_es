@@ -38,8 +38,8 @@ def MDC (m,n):
 
 a = Fraccion(4,8)
 b = Fraccion(2,3)
-print a+b
-print a*b
-print 5*a
-print b*5
-print b+2
+print(a+b)
+print(a*b)
+print(5*a)
+print(b*5)
+print(b+2)

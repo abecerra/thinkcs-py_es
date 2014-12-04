@@ -15,7 +15,7 @@ def areaRectangulo(base,altura):
         if type(altura) == type(1) or type(altura) == type(1.0):
             return base * altura
     else:
-        print "ERROR: la base y la altura deben ser números"
+        print("ERROR: la base y la altura deben ser números")
         return 0
 
 
@@ -32,7 +32,7 @@ def areaCuadrado(lado):
     if type(lado) == type(1) or type(lado)==type(1.0):
         return areaRectangulo(lado,lado)
     else:
-        print "ERROR: el lado debe ser un número"
+        print("ERROR: el lado debe ser un número")
         return 0
 
 

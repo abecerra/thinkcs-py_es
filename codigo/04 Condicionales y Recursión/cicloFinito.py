@@ -9,7 +9,7 @@ def RectanguloDeAsteriscos(n):
     if type(n) == type(1) and n>0:
         ciclo(n)
     else:
-        print "Error: el valor de n debe ser entero y positivo"
+        print("Error: el valor de n debe ser entero y positivo")
     
 def ciclo(n):
     """ Se llama a si misma n veces
@@ -17,15 +17,15 @@ def ciclo(n):
         - n : número entero positivo
     """
     if n==0:
-        print
+        print()
     else:
-        print "***********************"
+        print("***********************")
         ciclo(n-1)
         
 
 
 ciclo(3)
-print "Ahora, con 4"
+print("Ahora, con 4")
 ciclo(4)
-print "Ahora, con 5"
+print("Ahora, con 5")
 ciclo(5)

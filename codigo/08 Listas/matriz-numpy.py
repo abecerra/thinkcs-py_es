@@ -11,13 +11,13 @@ def crearmatriz(n):
 
 def imprimir(matriz,n):
     for i in range(n):
-        print "|",
+        print("|", end=' ')
         for j in range(n):
-            print matriz[i,j]," ", 
-        print "|"
+            print(matriz[i,j]," ", end=' ') 
+        print("|")
         
 T = crearmatriz(5)
-print T
+print(T)
 imprimir(T,5)
 
 

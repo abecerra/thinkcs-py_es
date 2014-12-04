@@ -48,6 +48,6 @@ def fibonacci(n):
 
 j = 0
 while j <= 15:
-    print j, "  ",fibonacci(j)
+    print(j, "  ",fibonacci(j))
     j = j+1
     

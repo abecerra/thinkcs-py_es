@@ -33,8 +33,8 @@ def crearHora(segs):
 
 # Pruebas:
 h = Hora(10, 20, 0) # 10:20:0
-print h 
+print(h) 
 h.incrementar(65)
-print h  # 10:21:5
+print(h)  # 10:21:5
 i = crearHora(4600)
-print i  # 1:16:40
+print(i)  # 1:16:40

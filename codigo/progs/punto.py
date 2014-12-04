@@ -26,15 +26,15 @@ class Punto:
     from copy import copy
     alreves = copy(derecho)
     alreves.invertir()
-    print str(derecho) + str(alreves)
+    print(str(derecho) + str(alreves))
 
 # Pruebas:
 p = Punto(2,4)
 q = Punto(3,5)
-print p+q  #(5,9)
-print p-q  #(-1,-1)
-print p*q  #(6,20)
-print 5*p  #5*(2,4)=(10,20)  __rmul__
+print(p+q)  #(5,9)
+print(p-q)  #(-1,-1)
+print(p*q)  #(6,20)
+print(5*p)  #5*(2,4)=(10,20)  __rmul__
 p.invertir()
-print p    #(4,2)
+print(p)    #(4,2)
 q.DerechoYAlReves()  #(3,5)(5,3)

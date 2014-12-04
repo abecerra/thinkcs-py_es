@@ -1,6 +1,6 @@
 
-print "Primeros pasos en Python"
+print("Primeros pasos en Python")
 
-print "***********************"
+print("***********************")
 
 import this

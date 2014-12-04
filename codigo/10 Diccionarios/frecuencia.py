@@ -14,7 +14,7 @@ def frecuencia(proteina):
       
   return d
 
-print frecuencia("MAMAPRTEINSTRING")
+print(frecuencia("MAMAPRTEINSTRING"))
 
 # recordar que d.get(key,DefaultValue) es algo como esto:
 # if d.has_key():

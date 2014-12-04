@@ -5,11 +5,11 @@ try:
     texto = f.read()
     # Lo cierra
     f.close()
-    print texto 
+    print(texto) 
     # y si el sistema operativo no puede abrirlo se aborta el
     # programa
 except:
-    print "No se pudo abrir el archivo frases.txt"
+    print("No se pudo abrir el archivo frases.txt")
 
   
     

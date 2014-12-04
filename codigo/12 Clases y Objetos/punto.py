@@ -5,12 +5,12 @@ limpio = Punto()
 limpio.x = 3.0
 limpio.y = 4.0
 
-print '(' + str(limpio.x) + ', ' + str(limpio.y) + ')'
+print('(' + str(limpio.x) + ', ' + str(limpio.y) + ')')
 distanciaAlCuadrado = limpio.x * limpio.x + limpio.y * limpio.y
-print distanciaAlCuadrado
+print(distanciaAlCuadrado)
 
 def imprimePunto(p):
-  print '(' + str(p.x) + ', ' + str(p.y) + ')'
+  print('(' + str(p.x) + ', ' + str(p.y) + ')')
 
 
 imprimePunto(limpio)
@@ -22,17 +22,17 @@ p2 = Punto()
 p2.x = 3
 p2.y = 4
 # Que sucede?
-print p1 == p2 
+print(p1 == p2) 
 
 p2 = p1
 # Y ahora?
-print p1 == p2
+print(p1 == p2)
 
 # Igualdad profunda
 def mismoPunto(p1, p2) :
   return (p1.x == p2.x) and (p1.y == p2.y)
 
-print mismoPunto(p1, p2)
+print(mismoPunto(p1, p2))
 
 
 class Rectangulo:	
@@ -70,7 +70,7 @@ b.esquina = Punto()
 b.esquina.x = 0.0;
 b.esquina.y = 0.0;
 agrandarRect(b, 50, 100)
-print b.ancho, " ", b.altura
+print(b.ancho, " ", b.altura)
 
 
 

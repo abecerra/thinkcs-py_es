@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 def imprimirlista(Nodo) :
   while Nodo :
-    print Nodo,
+    print(Nodo, end=' ')
     Nodo = Nodo.siguiente
-  print
+  print()
 
 def imprimirAlReves(lista) :
   if lista == None : 
@@ -11,16 +11,16 @@ def imprimirAlReves(lista) :
   cabeza = lista
   resto = lista.siguiente
   imprimirAlReves(resto)
-  print cabeza,
+  print(cabeza, end=' ')
 
 def imprimirAlRevesBien(lista) :
-  print "(",
+  print("(", end=' ')
   if lista != None :
     cabeza = lista
     resto = lista.siguiente
     imprimirAlReves(resto)
-    print cabeza,
-  print ")",
+    print(cabeza, end=' ')
+  print(")", end=' ')
 
 def eliminarSegundo(lista) :
   if lista == None : return
@@ -42,7 +42,7 @@ class Nodo :
     if self.siguiente != None :
       resto = self.siguiente
       resto.imprimirAlReves()
-    print self.carga,
+    print(self.carga, end=' ')
 
 class ListaEnlazada :
   def __init__(self) :
@@ -50,10 +50,10 @@ class ListaEnlazada :
     self.cabeza   = None
 
   def imprimirAlReves(self) :
-    print "(",
+    print("(", end=' ')
     if self.cabeza != None :
       self.cabeza.imprimirAlReves()
-    print ")",
+    print(")", end=' ')
 
   def agregarAlPrincipio(self, carga) :
     nodo = Nodo(carga)

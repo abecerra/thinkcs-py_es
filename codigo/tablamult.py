@@ -3,9 +3,9 @@
 def imprimaMultiplos(n):
   i = 1
   while i <= 6:
-    print n*i, '\t',
+    print(n*i, '\t', end=' ')
     i = i + 1
-  print
+  print()
 
 
 i = 1

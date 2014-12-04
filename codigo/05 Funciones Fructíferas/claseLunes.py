@@ -7,7 +7,7 @@ def cuadrado1(x):
         return x ** 2
 
 def cuadrado2(x):
-    print x ** 2
+    print(x ** 2)
 
 #cuadrado1(10)
 #cuadrado2(10)

@@ -9,15 +9,15 @@ m =  [ [0,0,0],
        [0,0,0] ]
 
 
-print m[0][0] 
+print(m[0][0]) 
 
 def imprimir(matriz):
     """ Imprime el tablero de juego"""
     for i in range(len(matriz)):
-        print "|",
+        print("|", end=' ')
         for j in range(len(matriz)):
-            print matriz[i][j],
-        print "|"
+            print(matriz[i][j], end=' ')
+        print("|")
         
 imprimir(m)
 
@@ -32,7 +32,7 @@ def crear(n):
 
 
 nueva = crear(6)
-print "Matriz nueva de 6x6"
+print("Matriz nueva de 6x6")
 imprimir(nueva)
 
 
@@ -44,5 +44,5 @@ def identidad(n):
         m[i][i] = 1
     return m
 
-print "Matriz identidad de 4x4"
+print("Matriz identidad de 4x4")
 imprimir(identidad(4))

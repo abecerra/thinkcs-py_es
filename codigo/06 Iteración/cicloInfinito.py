@@ -4,6 +4,6 @@
 
 def infinito1():
   while True:
-    print "Ciclo infinito"
+    print("Ciclo infinito")
 
 

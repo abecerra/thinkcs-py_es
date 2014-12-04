@@ -36,6 +36,6 @@ p.meter(4)
 p.meter(9)
 p.meter(16)
 while not p.estaVacia():
-  print p.sacar()
+  print(p.sacar())
   
-print evalPostfija("5 4 + 2 *")
+print(evalPostfija("5 4 + 2 *"))

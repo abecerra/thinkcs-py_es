@@ -25,7 +25,7 @@ def traduccion(ARNm):
 
     # Como proteina es una lista de caracteres
     # la convertimos a cadena
-    return string.join(proteina,'')
+    return str.join("",proteina)
       
 
-print traduccion("AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA")
+print(traduccion("AUGGCCAUGGCGCCCAGAACUGAGAUCAAUAGUACCCGUAUUAACGGGUGA"))

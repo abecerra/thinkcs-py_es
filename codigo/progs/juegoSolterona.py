@@ -35,7 +35,7 @@ class Mazo:
 
   def imprimirMazo(self):
     for Carta in self.Cartas:
-      print Carta
+      print(Carta)
 
   def __str__(self):
     s = ""
@@ -104,7 +104,7 @@ class ManoJuegoSolterona(mano):
       if m in self.Cartas:
         self.Cartas.remove(carta)
         self.Cartas.remove(m)
-        print "mano %s: %s parejas %s" % (self.nombre,carta,m)
+        print("mano %s: %s parejas %s" % (self.nombre,carta,m))
         cont = cont+1
     return cont
 
@@ -120,12 +120,12 @@ class JuegoSolterona(JuegoCartas):
 
     # reparte las Cartas
     self.Mazo.repartir(self.manos)
-    print "---------- Cartas se han repartido"
+    print("---------- Cartas se han repartido")
     self.imprimirmanos()
 
     # eliminar parejas iniciales
     parejas = self.eliminarParejas()
-    print "---------- parejas descartadas, empieza el juego"
+    print("---------- parejas descartadas, empieza el juego")
     self.imprimirmanos()
 
     # jugar hasta que se eliminan 50 cartas
@@ -135,7 +135,7 @@ class JuegoSolterona(JuegoCartas):
       parejas = parejas + self.jugarUnturno(turno)
       turno = (turno + 1) % nummanos
 
-    print "---------- Juego Terminado"
+    print("---------- Juego Terminado")
     self.imprimirmanos ()
 
   def eliminarParejas(self):
@@ -150,7 +150,7 @@ class JuegoSolterona(JuegoCartas):
     vecino = self.encontrarvecino(i)
     cartaEscogida = self.manos[vecino].entregarCarta()
     self.manos[i].agregarCarta(cartaEscogida)
-    print "mano", self.manos[i].nombre, "escogió", cartaEscogida
+    print("mano", self.manos[i].nombre, "escogió", cartaEscogida)
     count = self.manos[i].eliminarParejas()
     self.manos[i].barajar()
     return count
@@ -164,7 +164,7 @@ class JuegoSolterona(JuegoCartas):
 
   def imprimirmanos(self) :
     for mano in self.manos :
-        print mano
+        print(mano)
 
 j = JuegoSolterona()
 j.jugar(["juan","catalina"])

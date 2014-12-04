@@ -58,9 +58,9 @@ def seno(x):
 from math import sin
 
 def comparacion():
-    print sin(0.3), seno(0.3)
-    print sin(0.4), seno(0.4)
-    print sin(0.5), seno(0.5)
+    print(sin(0.3), seno(0.3))
+    print(sin(0.4), seno(0.4))
+    print(sin(0.5), seno(0.5))
 
 comparacion()
     

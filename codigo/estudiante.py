@@ -4,7 +4,7 @@ class estudiante:
     pass
 
 def imprimeEstudiante(e):
-    print e.nombre, "\t", e.codigo
+    print(e.nombre, "\t", e.codigo)
 
 j = estudiante()
 j.nombre = "Jaime Mejia"

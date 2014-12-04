@@ -23,7 +23,7 @@ def sumarHoras(t1, t2):
   return sum
 
 def imprimirHora(t):
-    print t.hora, ":", t.minutos,":",t.segundos
+    print(t.hora, ":", t.minutos,":",t.segundos)
     
 horaActual = Hora()
 horaActual.hora = 9

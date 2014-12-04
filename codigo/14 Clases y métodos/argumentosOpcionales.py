@@ -7,6 +7,6 @@ def buscar(cad, c,ini=0):
   return -1
 
 
-print buscar("apple", "p")
-print buscar("apple", "p", 2)
-print buscar("apple", "p", 3)
+print(buscar("apple", "p"))
+print(buscar("apple", "p", 2))
+print(buscar("apple", "p", 3))

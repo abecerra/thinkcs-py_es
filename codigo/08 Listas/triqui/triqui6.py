@@ -13,10 +13,10 @@ def crear():
 def imprimir(tablero):
     """ Imprime el tablero de juego"""
     for i in range(3):
-        print "|",
+        print("|", end=' ')
         for j in range(3):
-            print tablero[i][j],
-        print "|"
+            print(tablero[i][j], end=' ')
+        print("|")
 
 
 def ganaDiagonal1(jugador,tablero):
@@ -74,9 +74,9 @@ def jugar(jugador,tablero):
         retorna True si el jugador gana la partida
     """
     while True:     
-        print "Juegue jugador ", jugador
-        f = input("fila? ")
-        c = input("columna? ")
+        print("Juegue jugador ", jugador)
+        f = eval(input("fila? "))
+        c = eval(input("columna? "))
         if type(f)==type(c)==type(1) and valido(f) and valido(c) and tablero[f][c]==' ':
             tablero[f][c] = jugador
             break      
@@ -90,8 +90,8 @@ triqui = crear()
 
 while True:
     if jugar("O",triqui):
-        print "Gana el jugador O !!!!"
+        print("Gana el jugador O !!!!")
         break
     if jugar("X",triqui):
-        print "Gana el jugador X !!!!"
+        print("Gana el jugador X !!!!")
         break
