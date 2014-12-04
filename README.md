@@ -8,7 +8,7 @@ by Andrés Becerra Sandoval  <andres.becerra at gmail.com>
 Título: Introducción a la Programación con Python
 
 Aunque el libro traduce la primera edición del original,
-todo se ha corregido para que sea compatible con python-2.7,
+todo se ha corregido para que sea compatible con python-3.4,
 por ejemplo se usan booleanos en vez de enteros en los 
 condicionales y ciclos. Además, se ha añadido un capítulo 
 de solución de problemas, y dos capítulos de casos de 
