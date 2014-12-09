@@ -1186,12 +1186,10 @@ print(x)
 \end_layout
 
 \begin_layout Verbatim
-
 1
 \end_layout
 
 \begin_layout Verbatim
-
 2
 \end_layout
 
@@ -2006,7 +2004,7 @@ status open
 
 \begin_layout Verbatim
 
->>>  print(17 + 3)
+>>> print(17 + 3)
 \end_layout
 
 \begin_layout Verbatim
