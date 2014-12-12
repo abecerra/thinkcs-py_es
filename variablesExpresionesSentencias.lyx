@@ -304,7 +304,7 @@ status open
 
 \begin_layout Verbatim
 
-<type 'string'>
+<class 'str'>
 \end_layout
 
 \begin_layout Verbatim
@@ -314,7 +314,7 @@ status open
 
 \begin_layout Verbatim
 
-<type 'int'>
+<class 'int'>
 \end_layout
 
 \end_inset
@@ -429,7 +429,7 @@ status open
 
 \begin_layout Verbatim
 
-<type 'float'>
+<class 'float'>
 \end_layout
 
 \end_inset
@@ -523,7 +523,7 @@ status open
 
 \begin_layout Verbatim
 
-<type 'string'>
+<class 'str'>
 \end_layout
 
 \begin_layout Verbatim
@@ -533,7 +533,7 @@ status open
 
 \begin_layout Verbatim
 
-<type 'string'>
+<class 'str'>
 \end_layout
 
 \end_inset
@@ -881,7 +881,7 @@ status open
 
 \begin_layout Verbatim
 
-<type 'string'>
+<class 'str'>
 \end_layout
 
 \begin_layout Verbatim
@@ -891,7 +891,7 @@ status open
 
 \begin_layout Verbatim
 
-<type 'int'>
+<class 'int'>
 \end_layout
 
 \begin_layout Verbatim
@@ -901,7 +901,7 @@ status open
 
 \begin_layout Verbatim
 
-<type 'float'>
+<class 'float'>
 \end_layout
 
 \end_inset
