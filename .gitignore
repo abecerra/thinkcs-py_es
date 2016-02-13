@@ -1,0 +1,7 @@
+# LaTeX auxiliary
+*.aux
+*.idx
+*.log
+*.pdf
+*.synctex.gz
+*.toc
