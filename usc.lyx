@@ -1,0 +1,751 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\use_default_options false
+\master introprog-py.lyx
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size huge
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+introprog
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size larger
+Andrés Becerra Sandoval
+\series default
+\size huge
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size small
+Traducción y Adaptación del libro 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+How to think like a computer scientist, learning with Python
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Newline newline
+\end_inset
+
+ escrito por: 
+\begin_inset Newline newline
+\end_inset
+
+ Allen Downey
+\begin_inset Newline newline
+\end_inset
+
+ Jeffrey Elkner
+\begin_inset Newline newline
+\end_inset
+
+ Chris Meyers
+\begin_inset Newline newline
+\end_inset
+
+ 
+\size default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename illustrations/logo/usclogo.png
+	scale 30
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size larger
+Facultad de Ingeniería
+\size default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset Graphics
+	filename illustrations/logo/LogoHorizontalNegro.eps
+	scale 20
+	scaleBeforeRotation
+	rotateAngle 270
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+parindent
+\end_layout
+
+\end_inset
+
+0pt 
+\size tiny
+
+\begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+Rector: Carlos Andrés Perez.
+\begin_inset Newline newline
+\end_inset
+
+ Vicerrector Académico: 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+Facultad de Ingeniería
+\begin_inset Newline newline
+\end_inset
+
+ Decano Académico: Jorge Antonio Silva Ph.D 
+\begin_inset Newline newline
+\end_inset
+
+Directorr del departamento de Tecnologías de la información y la comunicación:
+ Diego Duque
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+Titulo: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+introprog 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ Titulo original: How to think like a computer scientist, learning with
+ Python Autores: Allen Downey, Jeffrey Elkner, Chris Meyers 
+\begin_inset Newline newline
+\end_inset
+
+ Traducción y adaptación: Andrés Becerra Sandoval 
+\begin_inset Newline newline
+\end_inset
+
+ Colección: Libro
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+ISBN: 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+Coordinador Editorial: 
+\begin_inset Newline newline
+\end_inset
+
+ Email: @usc.edu.co
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+© Derechos Reservados
+\begin_inset Newline newline
+\end_inset
+
+ © Editorial USC
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+Correspondencia, suscripciones y solicitudes de canje:
+\begin_inset Newline newline
+\end_inset
+
+ Calle 
+\begin_inset Newline newline
+\end_inset
+
+ Santiago de Cali, Valle del Cauca
+\begin_inset Newline newline
+\end_inset
+
+ Universidad Santiago de Cali
+\begin_inset Newline newline
+\end_inset
+
+ Facultad de Ingeniería
+\begin_inset Newline newline
+\end_inset
+
+ Teléfonos: (57-2) 3 Exts.
+ - 518 Fax 3
+\begin_inset Newline newline
+\end_inset
+
+ Email: andres.becerra00@usc.edu.co 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+Formato 17 x 25 cms
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Diseño e Impresión: 
+\backslash
+
+\backslash
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+Diseño de Carátula: , basada en una imagen de Ken Manheimer 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+ http://myriadicity.net
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size scriptsize
+Impresión: 2017
+\size default
+ 
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset VSpace 0.25in
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se concede permiso para copiar, distribuir, y/o modificar este documento
+ bajo los términos de la GNU Free Documentation License, Versión 1.1 o cualquier
+ versión posterior publicada por la Free Software Foundation; manteniendo
+ sin variaciones las secciones 
+\begin_inset Quotes eld
+\end_inset
+
+Prólogo,
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Prefacio,
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes eld
+\end_inset
+
+Lista de contribuidores,
+\begin_inset Quotes erd
+\end_inset
+
+ sin texto de cubierta, y sin texto de contracubierta.
+ Una copia de la licencia está incluida en el apéndice titulado 
+\begin_inset Quotes eld
+\end_inset
+
+GNU Free Documentation License
+\begin_inset Quotes erd
+\end_inset
+
+ y una traducción de ésta al español en el apéndice titulado 
+\begin_inset Quotes eld
+\end_inset
+
+Licencia de Documentación Libre de GNU
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La GNU Free Documentation License también está disponible a través de 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+www.gnu.org
+\end_layout
+
+\end_inset
+
+ o escribiendo a la Free Software Foundation, Inc., 59 Temple Place, Suite
+ 330, Boston, MA 02111-1307, USA.
+\end_layout
+
+\begin_layout Standard
+La forma original de este libro es código fuente \SpecialChar LyX
+
+\begin_inset space \space{}
+\end_inset
+
+y compilarlo tiene el efecto de generar un libro de texto en una representación
+ independiente del dispositivo que puede ser convertida a otros formatos
+ e imprimirse.
+\end_layout
+
+\begin_layout Standard
+El código fuente \SpecialChar LyX
+, \SpecialChar LaTeX
+, xfig para este libro y mas información sobre este proyecto
+ se encuentra en los sitios web:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/abecerra/thinkcs-py_es
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+   http://www.thinkpython.com
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este libro ha sido preparado utilizando \SpecialChar LyX
+, \SpecialChar LaTeX
+
+\begin_inset space \space{}
+\end_inset
+
+y las figuras se han realizado con xfig.
+ Todos estos son programas de código abierto, gratuito.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.25in
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Downey, Allen 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+introprog
+\end_layout
+
+\end_inset
+
+ / Allen Downey, Jeffrey Elkner, Chris Meyers; traducido y adaptado por
+ Andrés Becerra Sandoval.
+ – Santiago de Cali: Pontificia Universidad Javeriana, Sello Editorial Javeriano
+, 2014.
+ 
+\begin_inset Newline newline
+\end_inset
+
+345 p.
+ ; 26 cm.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Incluye referencias bibliográficas e índice.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ISBN 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+1.
+ Programación (computadores electrónicos) – Metodología 2.
+ Python (lenguaje de programación para computadores) I.
+ Meyer, Chris II.
+ Universidad Santiago de Cali III.
+ How to think like a computer scientist: learning with python IV.
+ Tít.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+SCDD 005.1 
+\begin_inset space \hfill{}
+\end_inset
+
+ USC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
