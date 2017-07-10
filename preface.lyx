@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -74,7 +76,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -120,11 +123,10 @@ Por Jeff Elkner
 \begin_layout Standard
 Este libro debe su existencia a la colaboración hecha posible por Internet
  y el movimiento de software libre.
- Sus tres autores---un profesor de colegio, un profesor de secundaria y
- un programador profesional---tienen todavía que verse cara a cara, pero
- han podido trabajar juntos y han sido ayudados por maravillosas personas,
- quienes han donado su tiempo y energía para ayudar a hacer ver mejor este
- libro.
+ Sus tres autores—un profesor de colegio, un profesor de secundaria y un
+ programador profesional—tienen todavía que verse cara a cara, pero han
+ podido trabajar juntos y han sido ayudados por maravillosas personas, quienes
+ han donado su tiempo y energía para ayudar a hacer ver mejor este libro.
 \end_layout
 
 \begin_layout Standard
@@ -160,7 +162,7 @@ e difícil de aprender y de enseñar.
  múltiples maneras de hacer las cosas, y estaba perdiendo muchos estudiantes,
  innecesariamente, como resultado.
  Convencido de que tenía que haber una mejor opción para nuestras clases
- de primer año, fui en busca de un alternativa a C++.
+ de primer año, fui en busca de una alternativa a C++.
 \end_layout
 
 \begin_layout Standard
@@ -171,7 +173,7 @@ Necesitaba un lenguaje que pudiera correr en las máquinas en nuestro laboratori
  lo pudieran usar en casa sin pagar por una licencia.
  Quería un lenguaje usado por programadores profesionales, y que tuviera
  una comunidad activa alrededor de él.
- Tenía que soportar la programación procedural y orientada a objetos.
+ Tenía que soportar la programación procedimental y orientada a objetos.
  Y más importante, tenía que ser fácil de aprender y de enseñar.
  Cuando investigué las opciones con estas metas en mente, Python saltó como
  el mejor candidato para la tarea.
@@ -594,8 +596,8 @@ def
 \begin_layout Standard
 Usar Python ha mejorado la eficacia de nuestro programa de informática para
  todos los estudiantes.
- Veo un nivel general de éxito alto y un nivel bajo de la frustración, que
- ya había experimentado durante los dos años que enseñé C++.
+ Veo un nivel general de éxito más alto y un nivel más bajo de frustración,
+ de lo que ya había experimentado durante los dos años que enseñé C++.
  Avanzo más rápido y con mejores resultados.
  Más estudiantes terminan el curso con la habilidad de crear programas significa
 tivos; esto genera una actitud positiva hacia la experiencia de la programación.

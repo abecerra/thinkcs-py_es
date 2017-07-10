@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
 \maintain_unincluded_children false
@@ -9,19 +11,19 @@
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -74,7 +76,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -324,7 +327,7 @@ intérpretes
 compiladores
 \series default
 .
- Una intérprete lee un programa de alto nivel y lo ejecuta, lo que significa
+ Un intérprete lee un programa de alto nivel y lo ejecuta, lo que significa
  que lleva a cabo lo que indica el programa.
  Traduce el programa poco a poco, leyendo y ejecutando cada comando.
 \end_layout
@@ -442,39 +445,30 @@ A Python se lo considera un lenguaje interpretado, porque sus programas
 \end_layout
 
 \begin_layout Standard
-
-\family typewriter
-$python
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-Python 3.4.2 (default, Oct 14 2014, 09:29:48)  [GCC 4.8.3] on linux 
-\end_layout
-
-\begin_layout Standard
-
-\family typewriter
-Type "help", "copyright", "credits" or "license" for more information.
- 
-\family default
- 
-\end_layout
-
-\begin_layout Standard
 \begin_inset listings
+lstparams "basicstyle={\footnotesize}"
 inline false
 status open
 
-\begin_layout Verbatim
-
->>> 1+1 
+\begin_layout Plain Layout
+$python
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+Python 3.6.1 (default, Apr 29 2017, 15:32:44) [GCC 5.4.0] on linux 
+\end_layout
 
-2 
+\begin_layout Plain Layout
+Type "help", "copyright", "credits" or "license" for more information.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+>>>1+1
+\end_layout
+
+\begin_layout Plain Layout
+2
 \end_layout
 
 \end_inset
@@ -553,7 +547,6 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 print(1 + 1)
 \end_layout
 
@@ -573,14 +566,26 @@ Por acuerdo unánime, los archivos que contienen programas de Python tienen
  al intérprete.
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
+\begin_layout Verbatim
 $ python unomasuno.py
 \end_layout
 
 \begin_layout Verbatim
-
 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Verbatim
+
 \end_layout
 
 \begin_layout Standard
@@ -1301,8 +1306,8 @@ se cayó
 
 \begin_layout Standard
 Aunque existen muchas cosas en común entre los lenguajes naturales y los
- formales---por ejemplo las unidades, la estructura, la sintáctica y la
- semántica--- también existen muchas diferencias.
+ formales—por ejemplo las unidades, la estructura, la sintáctica y la semántica—
+ también existen muchas diferencias.
 \end_layout
 
 \begin_layout Standard
@@ -1371,7 +1376,7 @@ Estirar la pata
 \end_layout
 
 \begin_layout Standard
-Los que aprenden a hablar un lenguaje natural---es decir todo el mundo---muchas
+Los que aprenden a hablar un lenguaje natural—es decir todo el mundo—muchas
  veces tienen dificultad en adaptarse a los lenguajes formales.
  A veces la diferencia entre los lenguajes formales y los naturales es comparabl
 e a la diferencia entre la prosa y la poesía:
@@ -1481,7 +1486,6 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 print("Hola todo el mundo!")
 \end_layout
 
@@ -1530,9 +1534,18 @@ status collapsed
  En este caso, el resultado es mostrar en pantalla las palabras:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
 
+\begin_layout Verbatim
 Hola todo el mundo!
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1857,6 +1870,10 @@ Función print:
 
  una función que causa que el intérprete de Python muestre un valor en la
  pantalla.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2177,27 +2194,38 @@ Escriba 1 2 y presione la tecla Entrar.
  Python trata de evaluar esta expresión, pero no puede, porque la expresión
  es sintácticamente incorrecta.
  Así, Python responde con el siguiente mensaje de error:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Verbatim
+ 
+\begin_inset listings
+inline false
+status open
 
-  File "<stdin>", line 1
+\begin_layout Verbatim
+File "<stdin>", line 1
 \end_layout
 
 \begin_layout Verbatim
-
     1 2
 \end_layout
 
 \begin_layout Verbatim
-
       ^
 \end_layout
 
 \begin_layout Verbatim
-
 SyntaxError: invalid syntax
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2290,6 +2318,10 @@ verb+'Esta es una prueba...'+
 Ahora cree un guión de Python con el nombre prueba1.py que contenga lo siguiente
  (asegúrese de guardar el archivo antes de intentar ejecutarlo): 'Esta es
  una prueba...'
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2313,6 +2345,10 @@ verb+print('Esta es una prueba...')+
 \end_inset
 
  y ejecutelo de nuevo.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper

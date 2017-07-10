@@ -1,27 +1,33 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
+\begin_preamble
+\newcommand{\beforefig}{\vspace{1.3\parskip}}
+\newcommand{\afterfig}{\vspace{-0.2\parskip}}
+\end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language spanish
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -74,7 +80,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -162,7 +169,7 @@ status open
 
 \begin_layout Verbatim
 
->>> cociente = 7 / 3
+>>> cociente = 7 // 3
 \end_layout
 
 \begin_layout Verbatim
@@ -201,7 +208,7 @@ Así que 7 dividido por 3 da 2 con residuo 1.
 
 \begin_layout Standard
 El operador residuo resulta ser sorprendentemente útil.
- Por ejemplo, usted puede chequear si un número es divisible por otro ---si
+ Por ejemplo, usted puede chequear si un número es divisible por otro —si
  
 \family typewriter
 x%y
@@ -1613,7 +1620,7 @@ n
 \family typewriter
 conteo
 \family default
----ella misma---pasando a 
+—ella misma—pasando a 
 \family typewriter
 n-1
 \family default
@@ -1666,6 +1673,10 @@ n=2
 n
 \family default
  no es 0, despliega el valor 2, y se llama a si misma ...
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1683,6 +1694,10 @@ n=1
 n
 \family default
  no es 0, despliega el valor 1, y se llama a sí misma ...
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2379,8 +2394,8 @@ velocidad = input(prompt)
 velocidad
 \family default
 .
- Desafortunadamente, si el usuario digita un carácter que no sea un dígito,
- el programa se aborta:
+ Desafortunadamente, si el usuario digita una entrada que no representa
+ un dígito, velocidad almacenará una cadena de texto.
 \end_layout
 
 \begin_layout Standard
@@ -2390,14 +2405,14 @@ status open
 
 \begin_layout Verbatim
 
->>> velocidad = input (prompt)
+>>> prompt = "¿Cual es la velocidad una golondrina sin carga?
+\backslash
+n"
 \end_layout
 
 \begin_layout Verbatim
 
-prompt = "¿Cual es la velocidad una golondrina sin carga?
-\backslash
-n"
+>>> velocidad = input (prompt)
 \end_layout
 
 \begin_layout Verbatim
@@ -2407,7 +2422,6 @@ n"
 
 \begin_layout Verbatim
 
-SyntaxError: invalid syntax
 \end_layout
 
 \end_inset
@@ -2420,8 +2434,8 @@ Para evitar este error, es una buena idea usar
 \family typewriter
 raw_input
 \family default
- para obtener una cadena y las funciones de conversión para transformarla
- en otros tipos.
+ para obtener una cadena y las funciones de conversión (int, float) para
+ transformarla en otros tipos.
 \end_layout
 
 \begin_layout Section
@@ -2621,6 +2635,10 @@ Prompt (indicador de entrada):
 \end_inset
 
  una pista visual que le indica al usuario que digite alguna información.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2903,6 +2921,10 @@ def tabladeverdad(expresion):
             print("%-7s %-7s %-7s" % (p, q, eval(expresion)))
 \end_layout
 
+\end_inset
+
+
+\begin_inset Separator latexpar
 \end_inset
 
 
