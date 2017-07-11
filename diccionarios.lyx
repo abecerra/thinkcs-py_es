@@ -709,13 +709,10 @@ La sintaxis nos proporciona información muy útil acerca del tipo de datos.
 \end_layout
 
 \begin_layout Standard
-Si un método acepta un argumento, usa la misma sintaxis que una llamada
- a una función.
- Por ejemplo, el método 
+Para averiguar si una clave aparece en el diccionario, se puede usar 
 \family typewriter
-has_key
+in
 \family default
- acepta una clave y devuelve verdadero (1) si la clave aparece en el diccionario
 :
 \begin_inset listings
 inline false
@@ -723,7 +720,7 @@ status open
 
 \begin_layout Verbatim
 
->>> ing_a_esp.has_key('one')
+>>> 'one' in ing_a_esp
 \end_layout
 
 \begin_layout Verbatim
@@ -733,34 +730,12 @@ True
 
 \begin_layout Verbatim
 
->>> ing_a_esp.has_key('deux')
+>>> 'deux' in ing_a_esp
 \end_layout
 
 \begin_layout Verbatim
 
 False
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Si se invoca un método sin especificar un objeto, se genera un error.
- En este caso, el mensaje de error no es de mucha ayuda:
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Verbatim
-
->>> has_key('one')
-\end_layout
-
-\begin_layout Verbatim
-
-NameError: has_key
 \end_layout
 
 \end_inset
@@ -2004,7 +1979,7 @@ status open
 
 \begin_layout Verbatim
 
->>> itemsLetras.sort()
+>>> list(itemsLetras).sort()
 \end_layout
 
 \begin_layout Verbatim

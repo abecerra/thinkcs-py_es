@@ -444,36 +444,25 @@ A Python se lo considera un lenguaje interpretado, porque sus programas
  muestra el resultado.
 \end_layout
 
-\begin_layout Standard
-\begin_inset listings
-lstparams "basicstyle={\footnotesize}"
-inline false
-status open
-
-\begin_layout Plain Layout
+\begin_layout Verbatim
 $python
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Verbatim
 Python 3.6.1 (default, Apr 29 2017, 15:32:44) [GCC 5.4.0] on linux 
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Verbatim
 Type "help", "copyright", "credits" or "license" for more information.
  
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Verbatim
 >>>1+1
 \end_layout
 
-\begin_layout Plain Layout
+\begin_layout Verbatim
 2
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard

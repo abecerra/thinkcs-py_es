@@ -242,10 +242,8 @@ thispagestyle{empty}
 
 
 \begin_inset Graphics
-	filename illustrations/logo/LogoHorizontalNegro.eps
-	scale 20
-	scaleBeforeRotation
-	rotateAngle 270
+	filename illustrations/logo/usclogo.png
+	scale 30
 
 \end_inset
 
@@ -404,8 +402,8 @@ Correspondencia, suscripciones y solicitudes de canje:
 \begin_inset Newline newline
 \end_inset
 
- Teléfonos: (57-2) 3 Exts.
- - 518 Fax 3
+ Teléfonos: (57-2) Exts.
+ - Fax 
 \begin_inset Newline newline
 \end_inset
 
@@ -684,8 +682,7 @@ introprog
 
  / Allen Downey, Jeffrey Elkner, Chris Meyers; traducido y adaptado por
  Andrés Becerra Sandoval.
- – Santiago de Cali: Pontificia Universidad Javeriana, Sello Editorial Javeriano
-, 2014.
+ – Santiago de Cali: Universidad Santiago de Cali, Editorial USC, 2017.
  
 \begin_inset Newline newline
 \end_inset
