@@ -226,10 +226,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 [10, 20, 30, 40]
 \end_layout
 
 \begin_layout Verbatim
+
 ["correo", "lapiz", "carro"]
 \end_layout
 
@@ -249,6 +251,7 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 ["hola", 2.0, 5, [10, 20]]
 \end_layout
 
@@ -286,10 +289,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> list(range(1,5))
 \end_layout
 
 \begin_layout Verbatim
+
 [1, 2, 3, 4]
 \end_layout
 
@@ -322,10 +327,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> list(range(10))
 \end_layout
 
 \begin_layout Verbatim
+
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 \end_layout
 
@@ -347,10 +354,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> list(range(1, 10, 2))
 \end_layout
 
 \begin_layout Verbatim
+
 [1, 3, 5, 7, 9]
 \end_layout
 
@@ -377,22 +386,27 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> vocabulario = ["mejorar", "castigar", "derrocar"]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> numeros = [17, 123]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> vacia = []
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(vocabulario, numeros, vacia)
 \end_layout
 
 \begin_layout Verbatim
+
 ["mejorar", "castigar", "derrocar"] [17, 123] []
 \end_layout
 
@@ -442,10 +456,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 print(numeros[0])
 \end_layout
 
 \begin_layout Verbatim
+
 numeros[1] = 5
 \end_layout
 
@@ -472,18 +488,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> numeros[3-2]
 \end_layout
 
 \begin_layout Verbatim
+
 5
 \end_layout
 
 \begin_layout Verbatim
+
 >>> numeros[1.0]
 \end_layout
 
 \begin_layout Verbatim
+
 TypeError: sequence index must be integer
 \end_layout
 
@@ -513,10 +533,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> numeros[2] = 5
 \end_layout
 
 \begin_layout Verbatim
+
 IndexError: list assignment index out of range
 \end_layout
 
@@ -533,26 +555,32 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> numeros[-1]
 \end_layout
 
 \begin_layout Verbatim
+
 5
 \end_layout
 
 \begin_layout Verbatim
+
 >>> numeros[-2]
 \end_layout
 
 \begin_layout Verbatim
+
 17
 \end_layout
 
 \begin_layout Verbatim
+
 >>> numeros[-3]
 \end_layout
 
 \begin_layout Verbatim
+
 IndexError: list index out of range
 \end_layout
 
@@ -584,6 +612,7 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 combatientes = ["guerra", "hambruna", "peste", "muerte"]
 \end_layout
 
@@ -592,18 +621,22 @@ combatientes = ["guerra", "hambruna", "peste", "muerte"]
 \end_layout
 
 \begin_layout Verbatim
+
 i = 0
 \end_layout
 
 \begin_layout Verbatim
+
 while i < 4:
 \end_layout
 
 \begin_layout Verbatim
+
   print(combatientes[i])
 \end_layout
 
 \begin_layout Verbatim
+
   i = i + 1
 \end_layout
 
@@ -713,6 +746,7 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 combatientes = ["guerra", "hambruna", "peste", "muerte"]
 \end_layout
 
@@ -721,18 +755,22 @@ combatientes = ["guerra", "hambruna", "peste", "muerte"]
 \end_layout
 
 \begin_layout Verbatim
+
 i = 0
 \end_layout
 
 \begin_layout Verbatim
+
 while i < len(combatientes):
 \end_layout
 
 \begin_layout Verbatim
+
   print(combatientes[i])
 \end_layout
 
 \begin_layout Verbatim
+
   i = i + 1
 \end_layout
 
@@ -776,10 +814,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 ['basura!', 1, ['Brie', 'Roquefort', 'Pol le Veq'], 
 \end_layout
 
 \begin_layout Verbatim
+
  [1, 2, 3]]
 \end_layout
 
@@ -848,22 +888,27 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> combatientes = ["guerra", "hambruna", "peste", "muerte"]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> 'peste' in combatientes
 \end_layout
 
 \begin_layout Verbatim
+
 True
 \end_layout
 
 \begin_layout Verbatim
+
 >>> 'corrupcion' in combatientes
 \end_layout
 
 \begin_layout Verbatim
+
 False
 \end_layout
 
@@ -920,10 +965,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> 'corrupcion' not in combatientes
 \end_layout
 
 \begin_layout Verbatim
+
 True
 \end_layout
 
@@ -998,10 +1045,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 for VARIABLE in LISTA:
 \end_layout
 
 \begin_layout Verbatim
+
   CUERPO
 \end_layout
 
@@ -1017,22 +1066,27 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 i = 0
 \end_layout
 
 \begin_layout Verbatim
+
 while i < len(LISTA):
 \end_layout
 
 \begin_layout Verbatim
+
   VARIABLE = LISTA[i]
 \end_layout
 
 \begin_layout Verbatim
+
   CUERPO
 \end_layout
 
 \begin_layout Verbatim
+
   i = i + 1
 \end_layout
 
@@ -1061,10 +1115,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 for combatiente in combatientes:
 \end_layout
 
 \begin_layout Verbatim
+
   print(combatiente)
 \end_layout
 
@@ -1097,14 +1153,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 for numero in range(20):
 \end_layout
 
 \begin_layout Verbatim
+
   if numero % 2 == 0:
 \end_layout
 
 \begin_layout Verbatim
+
     print(numero)
 \end_layout
 
@@ -1113,10 +1172,12 @@ for numero in range(20):
 \end_layout
 
 \begin_layout Verbatim
+
 for fruta in ["banano", "manzana", "pera"]:
 \end_layout
 
 \begin_layout Verbatim
+
   print("Me gustaria comer " + fruta + "s!")
 \end_layout
 
@@ -1181,22 +1242,27 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> a = [1, 2, 3]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> b = [4, 5, 6]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> c = a + b
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(c)
 \end_layout
 
 \begin_layout Verbatim
+
 [1, 2, 3, 4, 5, 6]
 \end_layout
 
@@ -1229,18 +1295,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> [0] * 4
 \end_layout
 
 \begin_layout Verbatim
+
 [0, 0, 0, 0]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> [1, 2, 3] * 3
 \end_layout
 
 \begin_layout Verbatim
+
 [1, 2, 3, 1, 2, 3, 1, 2, 3]
 \end_layout
 
@@ -1307,38 +1377,47 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> lista[1:3]
 \end_layout
 
 \begin_layout Verbatim
+
 ['b', 'c']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> lista[:4]
 \end_layout
 
 \begin_layout Verbatim
+
 ['a', 'b', 'c', 'd']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> lista[3:]
 \end_layout
 
 \begin_layout Verbatim
+
 ['d', 'e', 'f']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> lista[:]
 \end_layout
 
 \begin_layout Verbatim
+
 ['a', 'b', 'c', 'd', 'e', 'f']
 \end_layout
 
@@ -1383,22 +1462,27 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> fruta = ["banano", "manzana", "pera"]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> fruta[0] = "mandarina"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> fruta[-1] = "naranja"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(fruta)
 \end_layout
 
 \begin_layout Verbatim
+
 ['mandarina', 'manzana', 'naranja']
 \end_layout
 
@@ -1410,18 +1494,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> lista[1:3] = ['x', 'y']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(lista)
 \end_layout
 
 \begin_layout Verbatim
+
 ['a', 'x', 'y', 'd', 'e', 'f']
 \end_layout
 
@@ -1437,18 +1525,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> lista[1:3] = []
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(lista)
 \end_layout
 
 \begin_layout Verbatim
+
 ['a', 'd', 'e', 'f']
 \end_layout
 
@@ -1465,30 +1557,37 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> lista = ['a', 'd', 'f']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> lista[1:1] = ['b', 'c']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(lista)
 \end_layout
 
 \begin_layout Verbatim
+
 ['a', 'b', 'c', 'd', 'f']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> lista[4:4] = ['e']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(lista)
 \end_layout
 
 \begin_layout Verbatim
+
 ['a', 'b', 'c', 'd', 'e', 'f']
 \end_layout
 
@@ -1560,18 +1659,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> a = ['one', 'two', 'three']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> del a[1]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> a
 \end_layout
 
 \begin_layout Verbatim
+
 ['one', 'three']
 \end_layout
 
@@ -1600,18 +1703,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> del lista[1:5]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(lista)
 \end_layout
 
 \begin_layout Verbatim
+
 ['a', 'f']
 \end_layout
 
@@ -1636,14 +1743,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> a = ['uno', 'dos']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> a.append('tres')
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(a)
 \end_layout
 
@@ -1698,10 +1808,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 a = "banana"
 \end_layout
 
 \begin_layout Verbatim
+
 b = "banana"
 \end_layout
 
@@ -1884,18 +1996,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> id(a)
 \end_layout
 
 \begin_layout Verbatim
+
 135044008
 \end_layout
 
 \begin_layout Verbatim
+
 >>> id(b)
 \end_layout
 
 \begin_layout Verbatim
+
 135044008
 \end_layout
 
@@ -1925,26 +2041,32 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> a = [1, 2, 3]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> b = [1, 2, 3]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> id(a)
 \end_layout
 
 \begin_layout Verbatim
+
 135045528
 \end_layout
 
 \begin_layout Verbatim
+
 >>> id(b)
 \end_layout
 
 \begin_layout Verbatim
+
 135041704
 \end_layout
 
@@ -2063,10 +2185,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> a = [1, 2, 3]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> b = a
 \end_layout
 
@@ -2158,14 +2282,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> b[0] = 5
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(a)
 \end_layout
 
 \begin_layout Verbatim
+
 [5, 2, 3]
 \end_layout
 
@@ -2238,18 +2365,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> a = [1, 2, 3]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> b = a[:]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(b)
 \end_layout
 
 \begin_layout Verbatim
+
 [1, 2, 3]
 \end_layout
 
@@ -2282,14 +2413,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> b[0] = 5
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(a)
 \end_layout
 
 \begin_layout Verbatim
+
 [1, 2, 3]
 \end_layout
 
@@ -2360,10 +2494,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 def cabeza(lista):
 \end_layout
 
 \begin_layout Verbatim
+
   return lista[0]
 \end_layout
 
@@ -2379,14 +2515,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> numeros = [1, 2, 3]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> cabeza(numeros)
 \end_layout
 
 \begin_layout Verbatim
+
 1
 \end_layout
 
@@ -2485,10 +2624,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 def borrarCabeza(lista):
 \end_layout
 
 \begin_layout Verbatim
+
   del lista[0]
 \end_layout
 
@@ -2504,18 +2645,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> numeros = [1, 2, 3]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> borrarCabeza(numeros)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(numeros)
 \end_layout
 
 \begin_layout Verbatim
+
 [2, 3]
 \end_layout
 
@@ -2536,10 +2681,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 def cola(lista):
 \end_layout
 
 \begin_layout Verbatim
+
   return lista[1:]
 \end_layout
 
@@ -2559,18 +2706,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> numeros = [1, 2, 3]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> resto = cola(numeros)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(resto)
 \end_layout
 
 \begin_layout Verbatim
+
 [2, 3]
 \end_layout
 
@@ -2636,6 +2787,7 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> lista = ["hola", 2.0, 5, [10, 20]]
 \end_layout
 
@@ -2660,14 +2812,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> elt = lista[3]
 \end_layout
 
 \begin_layout Verbatim
+
 >>> elt[0]
 \end_layout
 
 \begin_layout Verbatim
+
 10
 \end_layout
 
@@ -2679,10 +2834,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> lista[3][1]
 \end_layout
 
 \begin_layout Verbatim
+
 20
 \end_layout
 
@@ -2798,6 +2955,7 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 \end_layout
 
@@ -2818,10 +2976,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> matriz[1]
 \end_layout
 
 \begin_layout Verbatim
+
 [4, 5, 6]
 \end_layout
 
@@ -2837,10 +2997,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> matriz[1][1]
 \end_layout
 
 \begin_layout Verbatim
+
 5
 \end_layout
 
@@ -2956,10 +3118,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> str.split( "La rana que canta", "an")
 \end_layout
 
 \begin_layout Verbatim
+
 ['La r', 'a que c', 'ta']
 \end_layout
 
@@ -2989,14 +3153,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> m = ['La', 'vida', 'es', 'un', 'ratico']
 \end_layout
 
 \begin_layout Verbatim
+
 >>> " ".join(m)
 \end_layout
 
 \begin_layout Verbatim
+
 'La vida es un ratico'
 \end_layout
 
@@ -3012,10 +3179,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> "_".join(m)
 \end_layout
 
 \begin_layout Verbatim
+
 'La_vida_es_un_ratico'
 \end_layout
 
@@ -3382,7 +3551,7 @@ status open
 
 \begin_layout Plain Layout
 
-http://cic.javerianacali.edu.co/abecerra/files/palabras.txt
+https://github.com/abecerra/thinkcs-py_es/releases/download/v2.0rc1/palabras.txt
 \end_layout
 
 \end_inset

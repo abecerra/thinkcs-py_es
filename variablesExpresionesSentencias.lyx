@@ -281,10 +281,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> print(4)
 \end_layout
 
 \begin_layout Verbatim
+
 4
 \end_layout
 
@@ -303,19 +305,23 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> type("Hola, Mundo!")
 \end_layout
 
 \begin_layout Verbatim
-<class 'str'>
+
+str
 \end_layout
 
 \begin_layout Verbatim
+
 >>> type(17)
 \end_layout
 
 \begin_layout Verbatim
-<class 'int'>
+
+int
 \end_layout
 
 \end_inset
@@ -326,11 +332,17 @@ status open
 \begin_layout Standard
 Sin despertar ninguna sorpresa, las cadenas pertenecen al tipo 
 \family typewriter
-string (cadena)
+\series bold
+str
+\series default
+ing (cadena)
 \family default
  y los enteros pertenecen al tipo 
 \family typewriter
+\series bold
 int
+\series default
+eger
 \family default
 .
  Menos obvio, los números con cifras decimales pertenecen a un tipo llamado
@@ -424,11 +436,13 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> type(3.2)
 \end_layout
 
 \begin_layout Verbatim
-<class 'float'>
+
+float
 \end_layout
 
 \end_inset
@@ -516,19 +530,23 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> type("17")
 \end_layout
 
 \begin_layout Verbatim
-<class 'str'>
+
+str
 \end_layout
 
 \begin_layout Verbatim
+
 >>> type("3.2")
 \end_layout
 
 \begin_layout Verbatim
-<class 'str'>
+
+str
 \end_layout
 
 \end_inset
@@ -556,10 +574,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> print(1,000,000)
 \end_layout
 
 \begin_layout Verbatim
+
 1 0 0
 \end_layout
 
@@ -646,14 +666,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> mensaje = "¿Qué Onda?"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> n = 17
 \end_layout
 
 \begin_layout Verbatim
+
 >>> pi = 3.14159
 \end_layout
 
@@ -819,26 +842,32 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> print(mensaje)
 \end_layout
 
 \begin_layout Verbatim
+
 Que Onda?
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(n)
 \end_layout
 
 \begin_layout Verbatim
+
 17
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(pi)
 \end_layout
 
 \begin_layout Verbatim
+
 3.14159
 \end_layout
 
@@ -859,27 +888,33 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> type(mensaje)
 \end_layout
 
 \begin_layout Verbatim
-<class 'str'>
+
+str
 \end_layout
 
 \begin_layout Verbatim
+
 >>> type(n)
 \end_layout
 
 \begin_layout Verbatim
-<class 'int'>
+
+int
 \end_layout
 
 \begin_layout Verbatim
+
 >>> type(pi)
 \end_layout
 
 \begin_layout Verbatim
-<class 'float'>
+
+float
 \end_layout
 
 \end_inset
@@ -978,26 +1013,32 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> 76trombones = "gran desfile"
 \end_layout
 
 \begin_layout Verbatim
+
 SyntaxError: invalid syntax
 \end_layout
 
 \begin_layout Verbatim
+
 >>> mas$ = 1000000
 \end_layout
 
 \begin_layout Verbatim
+
 SyntaxError: invalid syntax
 \end_layout
 
 \begin_layout Verbatim
+
 >>> class = "introducción a la programación"
 \end_layout
 
 \begin_layout Verbatim
+
 SyntaxError: invalid syntax
 \end_layout
 
@@ -1067,22 +1108,27 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 and       continue  else      for       import    not       
 \end_layout
 
 \begin_layout Verbatim
+
 assert    def       except    from      in        or        
 \end_layout
 
 \begin_layout Verbatim
+
 break     del       exec      global    is        pass      
 \end_layout
 
 \begin_layout Verbatim
+
 class     elif      finally   if        lambda    print     
 \end_layout
 
 \begin_layout Verbatim
+
 raise     return    try       while
 \end_layout
 
@@ -1133,14 +1179,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 print(1)
 \end_layout
 
 \begin_layout Verbatim
+
 x = 2
 \end_layout
 
 \begin_layout Verbatim
+
 print(x)
 \end_layout
 
@@ -1150,12 +1199,10 @@ print(x)
 \end_layout
 
 \begin_layout Verbatim
-
 1
 \end_layout
 
 \begin_layout Verbatim
-
 2
 \end_layout
 
@@ -1183,10 +1230,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> 1 + 1
 \end_layout
 
 \begin_layout Verbatim
+
 2
 \end_layout
 
@@ -1206,18 +1255,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> 17
 \end_layout
 
 \begin_layout Verbatim
+
 17
 \end_layout
 
 \begin_layout Verbatim
+
 >>> x
 \end_layout
 
 \begin_layout Verbatim
+
 2
 \end_layout
 
@@ -1237,22 +1290,27 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> mensaje = "Como le va, Doc?"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> mensaje
 \end_layout
 
 \begin_layout Verbatim
+
 "Como le va, Doc?"
 \end_layout
 
 \begin_layout Verbatim
+
 >>> print(mensaje)
 \end_layout
 
 \begin_layout Verbatim
+
 Como le va, Doc?
 \end_layout
 
@@ -1281,18 +1339,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 17
 \end_layout
 
 \begin_layout Verbatim
+
 3.2
 \end_layout
 
 \begin_layout Verbatim
+
 "Hola, Mundo!"
 \end_layout
 
 \begin_layout Verbatim
+
 1 + 1
 \end_layout
 
@@ -1369,10 +1431,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 20+32       hora-1   hora*60+minuto   
 \end_layout
 
 \begin_layout Verbatim
+
 minuto/60   5**2     (5+9)*(15-7)
 \end_layout
 
@@ -1425,14 +1489,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> minuto = 59
 \end_layout
 
 \begin_layout Verbatim
+
 >>> minuto//60
 \end_layout
 
 \begin_layout Verbatim
+
 0
 \end_layout
 
@@ -1702,6 +1769,7 @@ inline false
 status open
 
 \begin_layout Verbatim
+
  mensaje-1   "Hola"/123   mensaje*"Hola"   "15"+2
 \end_layout
 
@@ -1747,14 +1815,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 fruta = "banano"
 \end_layout
 
 \begin_layout Verbatim
+
 bienCocinada = " pan con nueces"
 \end_layout
 
 \begin_layout Verbatim
+
 print(fruta + bienCocinada)
 \end_layout
 
@@ -1909,10 +1980,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> print(17 + 3)
 \end_layout
 
 \begin_layout Verbatim
+
 20
 \end_layout
 
@@ -1935,12 +2008,14 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 print("Número de minutos desde media noche: ",  
 \backslash
 
 \end_layout
 
 \begin_layout Verbatim
+
   hora*60+minuto)
 \end_layout
 
@@ -1960,6 +2035,7 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 porcentaje = (minuto * 100) / 60
 \end_layout
 
@@ -2061,10 +2137,12 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 # calcula el porcentaje de la hora que ha pasado
 \end_layout
 
 \begin_layout Verbatim
+
 porcentaje = (minuto * 100) / 60
 \end_layout
 
@@ -2080,10 +2158,8 @@ inline false
 status open
 
 \begin_layout Verbatim
-porcentaje = (minute * 100) /
-/
-\lang spanish
- 60 # div entera
+
+porcentaje = (minute * 100) // 60 # div entera
 \end_layout
 
 \end_inset
@@ -2456,6 +2532,7 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 print(8+5)
 \end_layout
 
@@ -2471,6 +2548,7 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 print(5.2, "esto", 4 - 2, "aquello", 5/2.0)
 \end_layout
 
@@ -2514,26 +2592,32 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 >>> x = input()
 \end_layout
 
 \begin_layout Verbatim
+
 3.14
 \end_layout
 
 \begin_layout Verbatim
+
 >>> type(x)
 \end_layout
 
 \begin_layout Verbatim
+
 >>> x = raw_input()
 \end_layout
 
 \begin_layout Verbatim
+
 3.14
 \end_layout
 
 \begin_layout Verbatim
+
 >>> type(x)
 \end_layout
 

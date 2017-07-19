@@ -185,7 +185,7 @@ status open
 
 \begin_layout Verbatim
 
-<type 'string'>
+str
 \end_layout
 
 \end_inset
@@ -272,7 +272,7 @@ status open
 
 \begin_layout Verbatim
 
-<type 'string'>
+<class 'string'>
 \end_layout
 
 \end_inset
@@ -398,7 +398,7 @@ status open
 
 \begin_layout Verbatim
 
-ValueError: invalid literal for int(): Hola
+ValueError: invalid literal for int() with base 10: Hola
 \end_layout
 
 \end_inset

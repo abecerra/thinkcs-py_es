@@ -1764,28 +1764,7 @@ módulo string
 \end_layout
 
 \begin_layout Standard
-El módulo 
-\family typewriter
-string
-\family default
- contiene funciones útiles para manipular cadenas.
- Como de costumbre, tenemos que importarlo antes de usarlo:
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Verbatim
-
->>> import string
-\end_layout
-
-\end_inset
-
-El módulo 
-\family typewriter
-string
-\family default
- incluye una función denominada 
+Las cadenas tienen un método denominado 
 \family typewriter
 find
 \family default
@@ -1806,7 +1785,7 @@ status open
 
 \begin_layout Verbatim
 
->>> ind = string.find(fruta, "a")
+>>> ind = fruta.find("a")
 \end_layout
 
 \begin_layout Verbatim
@@ -1836,7 +1815,7 @@ find
 \begin_layout Standard
 De hecho 
 \family typewriter
-string.find
+find
 \family default
  es más general que buscar, también puede buscar subcadenas, no solo caracteres:
 \begin_inset listings
@@ -1845,7 +1824,7 @@ status open
 
 \begin_layout Verbatim
 
->>> string.find("banano", "na")
+>>> "banano".find("na")
 \end_layout
 
 \begin_layout Verbatim
@@ -1867,7 +1846,7 @@ status open
 
 \begin_layout Verbatim
 
->>> string.find("banana", "na", 3)
+>>> "banana".find("na",3) 
 \end_layout
 
 \begin_layout Verbatim
@@ -1889,7 +1868,7 @@ status open
 
 \begin_layout Verbatim
 
->>> string.find("bob", "b", 1, 2)
+>>> "bob".find("b",1,2) 
 \end_layout
 
 \begin_layout Verbatim
