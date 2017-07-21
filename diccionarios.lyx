@@ -572,13 +572,7 @@ invocar métodos
 \end_layout
 
 \begin_layout Standard
-Un 
-\series bold
-método
-\series default
- es similar a una función, acepta parámetros y devuelve un valor, pero la
- sintaxis es diferente.
- Por ejemplo, el método 
+El método 
 \family typewriter
 keys
 \family default
@@ -633,23 +627,7 @@ keys
 ing_a_esp
 \family default
 .
- Los paréntesis indican que este método no admite parámetros.
-\end_layout
-
-\begin_layout Standard
-La llamada a un método se denomina 
-\series bold
-invocación
-\series default
-; en este caso, diríamos que estamos invocando 
-\family typewriter
-keys
-\family default
- sobre el objeto 
-\family typewriter
-ing_a_esp
-\family default
-.
+ Los paréntesis vacíos indican que este método no admite parámetros.
 \end_layout
 
 \begin_layout Standard

@@ -128,7 +128,7 @@ name "triqui-kivy"
 
 \begin_layout Standard
 \begin_inset Index idx
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Triqui
@@ -154,7 +154,7 @@ reference "cap:inter1:triqui"
  desarrollamos un juego de triqui completo para integrar varios conceptos
  de programación.
  Ahora, para integrar varios conceptos de programación con objetos haremos
- casi lo mismo, construiremos un triqui con interfaz gráfica de usuario
+ casi lo mismo, construiremos un triqui con interfaz gráfica de usuario.
 \end_layout
 
 \begin_layout Standard
@@ -188,7 +188,7 @@ status open
 
 \begin_layout Plain Layout
 
-http://cic.javerianacali.edu.co/~abecerra/files/triqui-kivy.zip
+https://github.com/abecerra/thinkcs-py_es/releases/download/v2.0rc1/triqui-kivy.zip
 \end_layout
 
 \end_inset
@@ -320,7 +320,7 @@ import kivy
 
 \begin_layout Verbatim
 
-kivy.require('1.8.0')
+kivy.require('1.9.1')
 \end_layout
 
 \begin_layout Verbatim
@@ -1525,7 +1525,8 @@ status open
 
 \begin_layout Plain Layout
 
-http://cic.javerianacali.edu.co/~abecerra/files/KivyTriquiABe-1.1.0-debug.apk
+https://github.com/abecerra/thinkcs-py_es/releases/download/v2.0rc1/KivyTriquiABe-
+1.1.0-debug.apk
 \end_layout
 
 \end_inset

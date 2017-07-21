@@ -1734,14 +1734,101 @@ a
 's.
 \end_layout
 
+\begin_layout Section
+Algunos métodos de las cadenas
+\end_layout
+
 \begin_layout Standard
-Las cadenas tienen un método denominado 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+cadenas!métodos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+método!invocación
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+métodos!cadenas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+métodos sobre cadenas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+invocar métodos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un 
+\series bold
+método
+\series default
+ es similar a una función, acepta parámetros y devuelve un valor, pero la
+ sintaxis es diferente.
+ Por ejemplo, las cadenas tienen un método denominado 
 \family typewriter
 find
 \family default
  que hace lo mismo que buscar.
- Para llamarla tenemos que especificar la cadena, o la variable que contiene
- la cadena, usando la notación punto.
+ Para llamarlo tenemos que especificar la cadena, o la variable que contiene
+ la cadena, usando la notación punto, en la que el método se escribe después
+ del punto.
+ La llamada a un método también se denomina 
+\series bold
+invocación
+\series default
+; en este caso, diríamos que estamos invocando 
+\family typewriter
+find
+\family default
+ sobre la cadena 
+\family typewriter
+fruta
+\family default
+.
 \end_layout
 
 \begin_layout Standard

@@ -1007,12 +1007,12 @@ def jugar(jugador,tablero):
 
 \begin_layout Verbatim
 
-        f = input("fila? ")
+        f = int(input("fila? "))
 \end_layout
 
 \begin_layout Verbatim
 
-        c = input("columna? ")
+        c = int(input("columna? "))
 \end_layout
 
 \begin_layout Verbatim
