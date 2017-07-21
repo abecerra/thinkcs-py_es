@@ -280,6 +280,7 @@ letra
 \end_layout
 
 \begin_layout Verbatim
+
 a
 \end_layout
 
@@ -1296,6 +1297,7 @@ Zebra
 \end_layout
 
 \begin_layout Verbatim
+
 Su palabra, Zebra, va antes que banana.
 \end_layout
 
@@ -1732,45 +1734,14 @@ a
 's.
 \end_layout
 
-\begin_layout Section
-El módulo 
-\family typewriter
-string
-\family default
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-módulo
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-módulo string
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 Las cadenas tienen un método denominado 
 \family typewriter
 find
 \family default
  que hace lo mismo que buscar.
- Para llamarla tenemos que especificar el nombre del módulo y de la función,
- usando la notación punto.
+ Para llamarla tenemos que especificar la cadena, o la variable que contiene
+ la cadena, usando la notación punto.
 \end_layout
 
 \begin_layout Standard
@@ -1800,20 +1771,11 @@ status open
 
 \end_inset
 
- Uno de los beneficios de los módulos es que ayudan a evitar colisiones
- entre los nombres de las funciones primitivas y los nombres de las funciones
- creadas por el programador.
- Si hubiéramos nombrado a nuestra función buscar con la palabra inglesa
- 
-\family typewriter
-find
-\family default
-, podríamos usar la notación punto para especificar que queremos llamar
- a la función find del módulo string, y no a la nuestra.
+
 \end_layout
 
 \begin_layout Standard
-De hecho 
+El método 
 \family typewriter
 find
 \family default
@@ -1933,7 +1895,34 @@ status collapsed
 \end_layout
 
 \begin_layout Section
-Clasificación de caracteres 
+El módulo 
+\family typewriter
+string y
+\family default
+ clasificación de caracteres
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo string
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2024,12 +2013,17 @@ status open
 
 \begin_layout Verbatim
 
->>> print(string.lowercase)
+>>> import string
 \end_layout
 
 \begin_layout Verbatim
 
->>> print(string.uppercase)
+>>> print(string.ascii_lowercase)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print(string.ascii_uppercase)
 \end_layout
 
 \begin_layout Verbatim
@@ -2039,14 +2033,14 @@ status open
 
 \end_inset
 
-Podemos usar estas constantes y la función 
+Podemos usar estas constantes y el método 
 \family typewriter
 find
 \family default
  para clasificar los caracteres.
  Por ejemplo, si 
 \family typewriter
-find(lowercase, c)
+c.find(lowercase)
 \family default
  retorna un valor distinto de 
 \family typewriter
@@ -2063,12 +2057,21 @@ status open
 
 \begin_layout Verbatim
 
+import string
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
 def esMinuscula(c):
 \end_layout
 
 \begin_layout Verbatim
 
-  return string.find(string.lowercase, c) != -1
+  return string.ascii_lowercase.find(c) != -1
 \end_layout
 
 \end_inset
@@ -2093,7 +2096,7 @@ def esMinuscula(c):
 
 \begin_layout Verbatim
 
-  return c in string.lowercase
+  return c in string.ascii_lowercase
 \end_layout
 
 \end_inset
