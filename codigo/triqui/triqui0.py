@@ -12,7 +12,7 @@
 # Como todo programa empieza con algo mínimo
 
 def crear():
-    """ Crea una matriz 3x3 vacia"""
+    """ Crea una matrix 3x3 vacia"""
     m =  [ [' ',' ',' '],
            [' ',' ',' '],
            [' ',' ',' '] ]
@@ -22,10 +22,10 @@ def crear():
 def imprimir(tablero):
     """ Imprime el tablero de juego"""
     for i in range(3):
-        print("|", end=' ')
+        print('|',end='')
         for j in range(3):
-            print(tablero[i][j], end=' ')
-        print("|")
+            print(tablero[i][j],end='') 
+        print('|')
         
 triqui = crear()
 imprimir(triqui)
