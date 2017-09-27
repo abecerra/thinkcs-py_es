@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -74,7 +76,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -110,7 +113,7 @@ This distribution includes a file named fdl.lyx that contains the text of
 \end_layout
 
 \begin_layout Chapter
-Solución de problemas
+Preludio: Solución de problemas
 \end_layout
 
 \begin_layout Standard
@@ -148,13 +151,17 @@ Todos nos hemos topado con acertijos como el siguiente.
  Disponga los dígitos del 1 al 9 en el recuadro siguiente, de manera que
  la suma de cada fila, cada columna y las dos diagonales dé el mismo resultado:
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -286,13 +293,17 @@ status collapsed
 \begin_layout Standard
 Los acertijos pueden tener varias soluciones, por ejemplo, la siguiente
  es una solución propuesta al acertijo anterior:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -479,13 +490,17 @@ Vamos a ir contestando las preguntas desde una solución particular, y desde
  un proceso de solución particular, el de los autores.
  Su solución y su proceso de solución son igualmente valiosos, el nuestro
  solo es otra alternativa; es más, puede que hayamos descubierto la misma:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -750,6 +765,10 @@ Sospechábamos que el 5 debía estar en la casilla central, ya que es el número
 \begin_layout Itemize
 Observamos un patrón interesante de la primera solución propuesta: las diagonale
 s sumaban igual, 15:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -757,7 +776,7 @@ s sumaban igual, 15:
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -892,6 +911,10 @@ emparedado
 \end_inset
 
 , por ejemplo, poner la pareja 6,4:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -899,7 +922,7 @@ emparedado
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -1021,6 +1044,10 @@ Ahora, podemos probar colocando éstas parejas en filas, columnas y diagonales.
 
 \begin_layout Itemize
 Un primer ensayo:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1028,7 +1055,7 @@ Un primer ensayo:
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -1304,8 +1331,8 @@ refutarla
 El proceso de búsqueda de soluciones es como una conversación que se inicia,
  aunque en este caso el interlocutor no es una persona, sino el problema
  que tenemos a mano.
- Con una primera alternativa de solución---no importa lo sencilla e incompleta--
-- podemos formularnos una pregunta interesante: ¿resuelve esta alternativa
+ Con una primera alternativa de solución—no importa lo sencilla e incompleta–-
+ podemos formularnos una pregunta interesante: ¿resuelve esta alternativa
  el problema?
 \end_layout
 
@@ -1336,6 +1363,10 @@ Una respuesta más constructiva a la pregunta anterior puede ser: mi alternativa
  solución.
  Un ejemplo de este tipo de respuesta lo da nuestro ensayo de colocar la
  pareja (6,4) emparedando al 5 en el problema del cuadrado mágico:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1343,7 +1374,7 @@ Una respuesta más constructiva a la pregunta anterior puede ser: mi alternativa
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="3">
-<features rotate="0" tabularvalignment="middle">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -1537,7 +1568,7 @@ El proceso de solución de problemas que hemos presentado es muy sencillo.
 \begin_layout Itemize
 Contar con un método de solución de problemas.
  Si no hay método, podemos solucionar problemas, claro está, pero cada vez
- que lo hagamos será por golpes de suerte o inspiración --que no siempre
+ que lo hagamos será por golpes de suerte o inspiración –que no siempre
  nos acompaña, desafortunadamente.
 \end_layout
 
@@ -1576,6 +1607,10 @@ Partiendo de la igualdad
 \end_inset
 
 , encuentre cuál es el problema en el siguiente razonamiento:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1802,7 +1837,7 @@ Usted puede estar quejándose en este momento, ¿para qué hay que complicar
 
 \begin_layout Itemize
 Una descripción impersonal como ésta puede ser leída y ejecutada por cualquier
- persona ---o computador, como veremos mas adelante---.
+ persona —o computador, como veremos mas adelante—.
 \end_layout
 
 \begin_layout Itemize
@@ -1964,6 +1999,10 @@ Solución a un problema computacional:
 
 \begin_layout Description
 Restricción: una condición que tiene que cumplirse en un problema dado.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
