@@ -261,31 +261,11 @@ Todos nos hemos topado con acertijos como el siguiente.
 
 \begin_layout Standard
 Este acertijo se denomina construcción de un 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-{
-\end_layout
-
-\end_inset
-
- 
 \series bold
-cuadrado mágico
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-.
- Un acertijo, normalmente, es un enigma o adivinanza que se propone como
+cuadrado mágico.
+ 
+\series default
+Un acertijo, normalmente, es un enigma o adivinanza que se propone como
  pasatiempo.
  Otros ejemplos de acertijo son un crucigrama, una sopa de letras y un sudoku.
 \end_layout
@@ -605,148 +585,36 @@ Esta solución es correcta, porque la suma por filas, columnas y de las dos
  por filas, columnas y diagonales detalladamente.
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-begin{itemize}
+\begin_layout Itemize
+En la fila 1: 4+9+2=15% 
 \end_layout
 
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% 
+\begin_layout Itemize
+En la fila 2: 3+5+7=15
 \end_layout
 
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-item En la fila 1: 4+9+2=15
+\begin_layout Itemize
+En la fila 3: 8+1+6=15
 \end_layout
 
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-item En la fila 2: 3+5+7=15
+\begin_layout Itemize
+En la columna 1: 4+3+8=15
 \end_layout
 
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-item En la fila 3: 8+1+6=15
+\begin_layout Itemize
+En la columna 2: 9+5+1=15
 \end_layout
 
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-item En la columna 1: 4+3+8=15
+\begin_layout Itemize
+En la columna 3: 2+7+6=15
 \end_layout
 
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-item En la columna 2: 9+5+1=15
+\begin_layout Itemize
+En la diagonal 1: 4+5+6=15
 \end_layout
 
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-item En la columna 3: 2+7+6=15
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-item En la diagonal 1: 4+5+6=15
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-item En la diagonal 2: 8+5+2=15
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-% 
-\backslash
-end{itemize}
-\end_layout
-
-\end_inset
-
-
+\begin_layout Itemize
+En la diagonal 2: 8+5+2=15
 \end_layout
 
 \begin_layout Standard
