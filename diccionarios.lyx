@@ -1,27 +1,38 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
+\begin_preamble
+\newcommand{\beforefig}{\vspace{1.3\parskip}}
+\newcommand{\afterfig}{\vspace{-0.2\parskip}}
+
+\newcommand{\beforeverb}{\vspace{0.6\parskip}}
+\newcommand{\afterverb}{\vspace{0.6\parskip}}
+
+\newcommand{\adjustpage}[1]{\enlargethispage{#1\baselineskip}}
+\end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language spanish
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -74,7 +85,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -560,13 +572,7 @@ invocar métodos
 \end_layout
 
 \begin_layout Standard
-Un 
-\series bold
-método
-\series default
- es similar a una función, acepta parámetros y devuelve un valor, pero la
- sintaxis es diferente.
- Por ejemplo, el método 
+El método 
 \family typewriter
 keys
 \family default
@@ -621,23 +627,7 @@ keys
 ing_a_esp
 \family default
 .
- Los paréntesis indican que este método no admite parámetros.
-\end_layout
-
-\begin_layout Standard
-La llamada a un método se denomina 
-\series bold
-invocación
-\series default
-; en este caso, diríamos que estamos invocando 
-\family typewriter
-keys
-\family default
- sobre el objeto 
-\family typewriter
-ing_a_esp
-\family default
-.
+ Los paréntesis vacíos indican que este método no admite parámetros.
 \end_layout
 
 \begin_layout Standard
@@ -697,13 +687,10 @@ La sintaxis nos proporciona información muy útil acerca del tipo de datos.
 \end_layout
 
 \begin_layout Standard
-Si un método acepta un argumento, usa la misma sintaxis que una llamada
- a una función.
- Por ejemplo, el método 
+Para averiguar si una clave aparece en el diccionario, se puede usar 
 \family typewriter
-has_key
+in
 \family default
- acepta una clave y devuelve verdadero (1) si la clave aparece en el diccionario
 :
 \begin_inset listings
 inline false
@@ -711,7 +698,7 @@ status open
 
 \begin_layout Verbatim
 
->>> ing_a_esp.has_key('one')
+>>> 'one' in ing_a_esp
 \end_layout
 
 \begin_layout Verbatim
@@ -721,34 +708,12 @@ True
 
 \begin_layout Verbatim
 
->>> ing_a_esp.has_key('deux')
+>>> 'deux' in ing_a_esp
 \end_layout
 
 \begin_layout Verbatim
 
 False
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Si se invoca un método sin especificar un objeto, se genera un error.
- En este caso, el mensaje de error no es de mucha ayuda:
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Verbatim
-
->>> has_key('one')
-\end_layout
-
-\begin_layout Verbatim
-
-NameError: has_key
 \end_layout
 
 \end_inset
@@ -1992,7 +1957,7 @@ status open
 
 \begin_layout Verbatim
 
->>> itemsLetras.sort()
+>>> list(itemsLetras).sort()
 \end_layout
 
 \begin_layout Verbatim
@@ -2121,6 +2086,10 @@ Pista: almacenamiento temporal de un valor precalculado, para evitar cálculos
 \begin_layout Description
 Desbordamiento: resultado numérico que es demasiado grande para representarse
  en formato numérico.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2225,6 +2194,10 @@ Generalice la función anterior de forma que reciba una biosecuencia (ADN,
  ARN ó Proteína) y un alfabeto de referencia para averiguar si está bien
  formada.
  Para ADN el alfabeto es A,C,T y G, para las proteínas es:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper

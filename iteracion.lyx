@@ -1,27 +1,38 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
+\begin_preamble
+\newcommand{\beforefig}{\vspace{1.3\parskip}}
+\newcommand{\afterfig}{\vspace{-0.2\parskip}}
+
+\newcommand{\beforeverb}{\vspace{0.6\parskip}}
+\newcommand{\afterverb}{\vspace{0.6\parskip}}
+
+\newcommand{\adjustpage}[1]{\enlargethispage{#1\baselineskip}}
+\end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language spanish
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -74,7 +85,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -176,42 +188,46 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 pedro = 5
 \end_layout
 
 \begin_layout Verbatim
-
-print(pedro),
+print(pedro)
 \end_layout
 
 \begin_layout Verbatim
-
 pedro = 7
 \end_layout
 
 \begin_layout Verbatim
-
 print(pedro)
 \end_layout
 
 \end_inset
 
- La salida de este programa es 
+ La salida de este programa es:
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
-5 7
+5 
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+7
 \family default
-, porque la primera vez que 
+ 
+\end_layout
+
+\begin_layout Standard
+porque la primera vez que 
 \family typewriter
 pedro
 \family default
  se imprime, tiene el valor 5, y la segunda vez tiene el valor 7.
- La coma al final del primer 
-\family typewriter
-print
-\family default
- suprime la nueva línea que tradicionalmente introduce Python después de
- los datos, por esta razón las dos salidas aparecen en la misma línea.
 \end_layout
 
 \begin_layout Standard
@@ -348,17 +364,14 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 a = 5
 \end_layout
 
 \begin_layout Verbatim
-
 b = a    # a y b ahora son iguales
 \end_layout
 
 \begin_layout Verbatim
-
 a = 3    # a y b no son iguales ahora
 \end_layout
 
@@ -490,27 +503,22 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 def conteo(n):
 \end_layout
 
 \begin_layout Verbatim
-
   while n > 0:
 \end_layout
 
 \begin_layout Verbatim
-
     print(n)
 \end_layout
 
 \begin_layout Verbatim
-
     n = n-1
 \end_layout
 
 \begin_layout Verbatim
-
   print("Despegue!")
 \end_layout
 
@@ -704,37 +712,30 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 def secuencia(n):
 \end_layout
 
 \begin_layout Verbatim
-
   while n != 1:
 \end_layout
 
 \begin_layout Verbatim
-
     print(n),
 \end_layout
 
 \begin_layout Verbatim
-
     if n%2 == 0:        # n es par
 \end_layout
 
 \begin_layout Verbatim
-
       n = n/2
 \end_layout
 
 \begin_layout Verbatim
-
     else:               # n es impar
 \end_layout
 
 \begin_layout Verbatim
-
       n = n*3+1
 \end_layout
 
@@ -985,29 +986,24 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 import math
 \end_layout
 
 \begin_layout Verbatim
-
 x = 1.0
 \end_layout
 
 \begin_layout Verbatim
-
 while x < 10.0:
 \end_layout
 
 \begin_layout Verbatim
-
   print(x, '
 \backslash
 t', math.log(x))
 \end_layout
 
 \begin_layout Verbatim
-
   x = x + 1.0
 \end_layout
 
@@ -1130,7 +1126,6 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 print(x, '
 \backslash
 t',  math.log(x)/math.log(2.0))
@@ -1191,24 +1186,20 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 x = 1.0
 \end_layout
 
 \begin_layout Verbatim
-
 while x < 100.0:
 \end_layout
 
 \begin_layout Verbatim
-
   print(x, '
 \backslash
 t', math.log(x)/math.log(2.0))
 \end_layout
 
 \begin_layout Verbatim
-
   x = x * 2.0
 \end_layout
 
@@ -1389,28 +1380,27 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 i = 1
 \end_layout
 
 \begin_layout Verbatim
-
 while i <= 6:
 \end_layout
 
 \begin_layout Verbatim
-
-  print(2*i, '   '),
+  print(2*i, '   ',end=' ')
 \end_layout
 
 \begin_layout Verbatim
-
   i = i + 1
 \end_layout
 
 \begin_layout Verbatim
 
-print
+\end_layout
+
+\begin_layout Verbatim
+print()
 \end_layout
 
 \end_inset
@@ -1446,11 +1436,16 @@ i
 \end_layout
 
 \begin_layout Standard
-De nuevo, la coma en la sentencia 
+El uso de 
+\family typewriter
+end=' '
+\family default
+ en la función 
 \family typewriter
 print
 \family default
- suprime la nueva línea.
+ cambia el último caracter que se imprime, que por defecto es el de fin
+ de línea.
  Después de que el ciclo termina la segunda sentencia 
 \family typewriter
 print
@@ -1590,35 +1585,33 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 def imprimaMultiplos(n):
 \end_layout
 
 \begin_layout Verbatim
-
   i = 1
 \end_layout
 
 \begin_layout Verbatim
-
   while i <= 6:
 \end_layout
 
 \begin_layout Verbatim
-
-    print(n*i, '
+    print(n*i, 
+end=
+\lang spanish
+'
 \backslash
-t'),
+t')
 \end_layout
 
 \begin_layout Verbatim
-
     i = i + 1
 \end_layout
 
 \begin_layout Verbatim
-
   print
+()
 \end_layout
 
 \end_inset
@@ -1639,7 +1632,7 @@ n
 
 \begin_layout Standard
 Si llamamos a esta función con el argumento 2, obtenemos la misma salida
- anterior.
+ de la sección anterior.
  Con el argumento 3, la salida es:
 \end_layout
 
@@ -1657,7 +1650,7 @@ Con el argumento 4, la salida es:
 
 \begin_layout Standard
 Ahora, usted probablemente imagine cómo imprimir una tabla de multiplicación
- ---llamando a 
+ —llamando a 
 \family typewriter
 imprimaMultiplos
 \family default
@@ -1671,22 +1664,18 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 i = 1
 \end_layout
 
 \begin_layout Verbatim
-
 while i <= 6:
 \end_layout
 
 \begin_layout Verbatim
-
   imprimaMultiplos(i)
 \end_layout
 
 \begin_layout Verbatim
-
   i = i + 1
 \end_layout
 
@@ -1755,27 +1744,22 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 def imprimirTablaMultiplicacion():
 \end_layout
 
 \begin_layout Verbatim
-
   i = 1
 \end_layout
 
 \begin_layout Verbatim
-
   while i <= 6:
 \end_layout
 
 \begin_layout Verbatim
-
     imprimaMultiplos(i)
 \end_layout
 
 \begin_layout Verbatim
-
     i = i + 1
 \end_layout
 
@@ -2101,27 +2085,22 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 def imprimaTabla(tope):
 \end_layout
 
 \begin_layout Verbatim
-
   i = 1
 \end_layout
 
 \begin_layout Verbatim
-
   while i <= tope:
 \end_layout
 
 \begin_layout Verbatim
-
     imprimaMultiplos(i)
 \end_layout
 
 \begin_layout Verbatim
-
     i = i + 1
 \end_layout
 
@@ -2172,8 +2151,8 @@ imprimaTabla
 \end_layout
 
 \begin_layout Standard
-Esto está bien, pero quizás deseamos que la tabla sea cuadrada---con el
- mismo número de filas y columnas.
+Esto está bien, pero quizás deseamos que la tabla sea cuadrada—con el mismo
+ número de filas y columnas.
  Para lograrlo, añadimos un parámetro a imprimaMultiplos que especifique
  cuántas columnas debe tener la tabla.
 \end_layout
@@ -2191,35 +2170,33 @@ inline false
 status open
 
 \begin_layout Verbatim
-
 def imprimaMultiplos(n, tope):
 \end_layout
 
 \begin_layout Verbatim
-
   i = 1
 \end_layout
 
 \begin_layout Verbatim
-
   while i <= tope:
 \end_layout
 
 \begin_layout Verbatim
-
-    print(n*i, '
+    print(n*i, 
+end=
+\lang spanish
+'
 \backslash
-t'),
+t')
 \end_layout
 
 \begin_layout Verbatim
-
     i = i + 1
 \end_layout
 
 \begin_layout Verbatim
-
   print
+()
 \end_layout
 
 \begin_layout Verbatim
@@ -2227,27 +2204,22 @@ t'),
 \end_layout
 
 \begin_layout Verbatim
-
 def imprimaTabla(tope):
 \end_layout
 
 \begin_layout Verbatim
-
   i = 1
 \end_layout
 
 \begin_layout Verbatim
-
   while i <= tope:
 \end_layout
 
 \begin_layout Verbatim
-
     imprimaMultiplos(i, tope)
 \end_layout
 
 \begin_layout Verbatim
-
     i = i + 1
 \end_layout
 
@@ -2540,6 +2512,10 @@ Plan de desarrollo:
  En este capítulo demostramos un estilo de desarrollo basado en escribir
  código que realiza cómputos simples y específicos, para luego encapsularlo
  y generalizarlo.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2728,6 +2704,10 @@ reference "recursion"
 
 \begin_layout Enumerate
 Escriba una sola cadena que
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2827,6 +2807,10 @@ beforeverb
 \end_inset
 
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2874,6 +2858,10 @@ afterverb
 \begin_layout Enumerate
 Muchos cálculos de funciones matemáticas se realizan con series infinitas,
  por ejemplo:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper

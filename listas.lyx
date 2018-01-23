@@ -1,27 +1,39 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
+\begin_preamble
+
+\newcommand{\beforefig}{\vspace{1.3\parskip}}
+\newcommand{\afterfig}{\vspace{-0.2\parskip}}
+
+\newcommand{\beforeverb}{\vspace{0.6\parskip}}
+\newcommand{\afterverb}{\vspace{0.6\parskip}}
+
+\newcommand{\adjustpage}[1]{\enlargethispage{#1\baselineskip}}
+\end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language spanish
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -74,7 +86,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -167,8 +180,8 @@ elementos
  Las listas son similares a las cadenas, que son conjuntos ordenados de
  caracteres, pero son mas generales, ya que pueden tener elementos de cualquier
  tipo de dato.
- Las listas y las cadenas---y otras conjuntos ordenados que veremos--- se
- denominan 
+ Las listas y las cadenas—y otras conjuntos ordenados que veremos— se denominan
+ 
 \series bold
 secuencias
 \series default
@@ -297,10 +310,9 @@ range
 \family default
  toma dos argumentos y retorna una colección que contiene todos los enteros
  desde el primero hasta el segundo, ¡incluyendo el primero y no el último!
- Esta colección se puede convertir a lista con la función 
- \family typewriter 
- list
- \family default.
+ Esta colección se puede convertir a lista con la función  
+\family typewriter
+ list 
 \end_layout
 
 \begin_layout Standard
@@ -432,7 +444,7 @@ acceso
 
 \begin_layout Standard
 La sintaxis para acceder a los elementos de una lista es la misma que usamos
- en las cadenas---el operador corchete (
+ en las cadenas—el operador corchete (
 \family typewriter
 []
 \family default
@@ -1952,7 +1964,7 @@ cosas
 \begin_inset Quotes erd
 \end_inset
 
- tienen nombres---se denominan 
+ tienen nombres—se denominan 
 \series bold
 objetos
 \series default
@@ -3068,11 +3080,7 @@ función join
 \end_layout
 
 \begin_layout Standard
-Dos de las funciones más usadas del módulo 
-\family typewriter
-string
-\family default
- implican listas de cadenas.
+Dos de las funciones más usadas de las cadenas implican listas de cadenas.
  
 \family typewriter
 split
@@ -3080,33 +3088,18 @@ split
  separa una cadena en una lista de palabras.
  Por defecto, cualquier número de espacios en blanco sirven como criterio
  de separación:
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Verbatim
-
->>> import string
 \end_layout
 
 \begin_layout Verbatim
-
 >>> cancion = "La vida es un ratico..."
 \end_layout
 
 \begin_layout Verbatim
-
->>> string.split(cancion)
+>>> str.split(cancion)
 \end_layout
 
 \begin_layout Verbatim
-
 ['La', 'vida', 'es', 'un', 'ratico...']
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3126,7 +3119,7 @@ status open
 
 \begin_layout Verbatim
 
->>> string.split( "La rana que canta", "an")
+>>> str.split( "La rana que canta", "an")
 \end_layout
 
 \begin_layout Verbatim
@@ -3153,7 +3146,8 @@ join
 split
 \family default
 .
- Toma una lista de cadenas y las concatena con un espacio entre cada par:
+ Toma una lista de cadenas y las concatena usando como separador a la cadena
+ que la llama con notación punto:
 \begin_inset listings
 inline false
 status open
@@ -3165,7 +3159,7 @@ status open
 
 \begin_layout Verbatim
 
->>> string.join(m)
+>>> " ".join(m)
 \end_layout
 
 \begin_layout Verbatim
@@ -3179,23 +3173,14 @@ status open
 \end_layout
 
 \begin_layout Standard
-Como 
-\family typewriter
-split
-\family default
-, 
-\family typewriter
-join
-\family default
- puede recibir un argumento adicional separador que se inserta entre los
- elementos:
+Si usamos una cadena diferente de espacio, obtenemos otro resultado:
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Verbatim
 
->>> string.join(m, '_')
+>>> "_".join(m)
 \end_layout
 
 \begin_layout Verbatim
@@ -3276,6 +3261,10 @@ Clonar: crear un objeto con el mismo valor que un objeto preexistente.
 \begin_layout Description
 Delimitador: carácter o cadena que se usa para indicar el lugar donde una
  cadena debe ser separada.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3415,6 +3404,10 @@ len
 
 \begin_layout Enumerate
 Describa la relación entre las expresiones:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3429,7 +3422,7 @@ cadena
 
 
 \family typewriter
-string.join(string.split(cadena))
+' '.join(str.split(cadena))
 \end_layout
 
 \begin_layout Standard
@@ -3460,6 +3453,10 @@ verb+esta_ordenada+
  Usted puede asumir como precondición que los elementos son comparables
  con los operadores relacionales.
  Por ejemplo:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3540,6 +3537,10 @@ Escriba dos versiones de una función que lea el archivo palabras.txt y construy
  Una versión usará el método append y la otra la construcción t=t+[x].
  ¿Cual es mas lenta? ¿Por qué? Pista: use el módulo time para medir lo que
  tarda la ejecución de las versiones.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3550,7 +3551,8 @@ status open
 
 \begin_layout Plain Layout
 
-http://cic.javerianacali.edu.co/abecerra/files/palabras.txt
+https://github.com/abecerra/thinkcs-py_es/releases/download/thinkcs-py_es_e2-rc1/
+palabras.txt
 \end_layout
 
 \end_inset
@@ -3580,6 +3582,10 @@ Si hay un grupo de 23 personas, ¿cual es la probabilidad de que dos tengan
  Este valor puede estimarse generando muestras aleatorias de 23 cumpleaños
  y contando las coincidencias.
  Pista: consulte la función randint del módulo random.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3611,6 +3617,10 @@ par inverso
  si cada una es la inversa de la otra.
  Escriba un programa que encuentre todos los pares inversos del español
  (palabras.txt).
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -3634,6 +3644,10 @@ http://thinkpython.com/code/reverse_pair.py
 Dos palabras se entretejen si tomando las letras de las dos, alternándose,
  se puede formar una nueva palabra.
  Por ejemplo: 'pie' y 'en' se entretejen en 'peine'.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper

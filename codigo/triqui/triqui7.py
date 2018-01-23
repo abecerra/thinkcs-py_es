@@ -2,22 +2,19 @@
 # Triqui
 
 def crear():
-    """ Crea una matriz 3x3 vacia"""
+    """ Crea una matrix 3x3 vacia"""
     m =  [ [' ',' ',' '],
            [' ',' ',' '],
            [' ',' ',' '] ]
     return m
 
-
-
 def imprimir(tablero):
     """ Imprime el tablero de juego"""
     for i in range(3):
-        print("|", end=' ')
+        print('|',end='')
         for j in range(3):
-            print(tablero[i][j], end=' ')
-        print("|")
-
+            print(tablero[i][j],end='') 
+        print('|')
 
 def ganaDiagonal1(jugador,tablero):
     """Chequea si el jugador gana en la diagonal 1"""
@@ -71,8 +68,8 @@ def jugar(jugador,tablero):
     """
     while True:     
         print("Juegue jugador ", jugador)
-        f = eval(input("fila? "))
-        c = eval(input("columna? "))
+        f = int(input("fila? "))
+        c = int(input("columna? "))
         if type(f)==type(c)==type(1) and valido(f) and valido(c) and tablero[f][c]==' ':
             tablero[f][c] = jugador
             break      

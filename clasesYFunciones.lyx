@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -74,7 +76,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -399,11 +402,7 @@ sumarHoras
 \family typewriter
 imprimirHora
 \family default
- aún, adelántese a la Sección
-\begin_inset space ~
-\end_inset
-
-
+ aún, adelántese a la Sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "printTime"
@@ -901,8 +900,8 @@ desarrollo con prototipos
 
 \begin_layout Standard
 Aunque este enfoque puede ser efectivo, puede conducirnos a código innecesariame
-nte complicado ---ya que considera muchos casos especiales---y poco confiable---
-ya que es difícil asegurar que hemos descubierto todos los errores.
+nte complicado —ya que considera muchos casos especiales—y poco confiable—ya
+ que es difícil asegurar que hemos descubierto todos los errores.
 \end_layout
 
 \begin_layout Standard
@@ -969,8 +968,8 @@ incrementar
 \end_layout
 
 \begin_layout Standard
-Esta observación sugiere otro enfoque al problema---podemos convertir un
- objeto 
+Esta observación sugiere otro enfoque al problema—podemos convertir un objeto
+ 
 \family typewriter
 Hora
 \family default
@@ -1358,6 +1357,10 @@ Desarrollo planeado:
 \begin_layout Description
 Algoritmo: conjunto de instrucciones para resolver una clase de problemas
  por medio de un proceso mecánico, no inteligente.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1515,10 +1518,6 @@ t1
 t2
 \family default
  cronológicamente y falso en caso contrario.
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \end_body

@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \begin_preamble
 % LyX source for the spanish traslation of the textbook ``How to think like a computer scientist''
@@ -104,16 +106,16 @@ customHeadersFooters
 \language_package default
 \inputencoding utf8
 \fontencoding global
-\font_roman palatino
-\font_sans kurier
-\font_typewriter cmtt
-\font_math default
+\font_roman "palatino" "default"
+\font_sans "kurier" "default"
+\font_typewriter "cmtt" "default"
+\font_math "default" "auto"
 \font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format pdf2
 \output_sync 1
@@ -182,7 +184,8 @@ customHeadersFooters
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -236,7 +239,7 @@ frontmatter
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "javeriana.lyx"
+filename "usc.lyx"
 
 \end_inset
 

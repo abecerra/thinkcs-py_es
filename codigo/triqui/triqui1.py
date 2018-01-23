@@ -1,7 +1,7 @@
 # Juego de "Triqui"
 
 def crear():
-    """ Crea una matriz 3x3 vacia"""
+    """ Crea una matrix 3x3 vacia"""
     m =  [ [' ',' ',' '],
            [' ',' ',' '],
            [' ',' ',' '] ]
@@ -12,19 +12,18 @@ def crear():
 def imprimir(tablero):
     """ Imprime el tablero de juego"""
     for i in range(3):
-        print("|", end=' ')
+        print('|',end='')
         for j in range(3):
-            print(tablero[i][j], end=' ')
-        print("|")
-
+            print(tablero[i][j],end='') 
+        print('|')
 
 triqui = crear()
 
 # Solo juega un jugador por siempre 
 while True:
     print("Juegue jugador O")
-    f = eval(input("fila? "))
-    c = eval(input("columna? "))
+    f = int(input("fila? "))
+    c = int(input("columna? "))
     triqui[f][c] = "O"
     imprimir(triqui)
 

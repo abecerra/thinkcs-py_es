@@ -1,27 +1,33 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
+\begin_preamble
+\newcommand{\beforefig}{\vspace{1.3\parskip}}
+\newcommand{\afterfig}{\vspace{-0.2\parskip}}
+\end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language spanish
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -74,7 +80,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -155,8 +162,8 @@ Un
 \series bold
 valor
 \series default
- es una de las cosas fundamentales---como una letra o un número---que una
- programa manipula.
+ es una de las cosas fundamentales—como una letra o un número—que un programa
+ manipula.
  Los valores que hemos visto hasta ahorra son 
 \family typewriter
 2
@@ -304,7 +311,7 @@ status open
 
 \begin_layout Verbatim
 
-<class 'str'>
+str
 \end_layout
 
 \begin_layout Verbatim
@@ -314,7 +321,7 @@ status open
 
 \begin_layout Verbatim
 
-<class 'int'>
+int
 \end_layout
 
 \end_inset
@@ -325,11 +332,17 @@ status open
 \begin_layout Standard
 Sin despertar ninguna sorpresa, las cadenas pertenecen al tipo 
 \family typewriter
-string (cadena)
+\series bold
+str
+\series default
+ing (cadena)
 \family default
  y los enteros pertenecen al tipo 
 \family typewriter
+\series bold
 int
+\series default
+eger
 \family default
 .
  Menos obvio, los números con cifras decimales pertenecen a un tipo llamado
@@ -429,7 +442,7 @@ status open
 
 \begin_layout Verbatim
 
-<class 'float'>
+float
 \end_layout
 
 \end_inset
@@ -523,7 +536,7 @@ status open
 
 \begin_layout Verbatim
 
-<class 'str'>
+str
 \end_layout
 
 \begin_layout Verbatim
@@ -533,7 +546,7 @@ status open
 
 \begin_layout Verbatim
 
-<class 'str'>
+str
 \end_layout
 
 \end_inset
@@ -881,7 +894,7 @@ status open
 
 \begin_layout Verbatim
 
-<class 'str'>
+str
 \end_layout
 
 \begin_layout Verbatim
@@ -891,7 +904,7 @@ status open
 
 \begin_layout Verbatim
 
-<class 'int'>
+int
 \end_layout
 
 \begin_layout Verbatim
@@ -901,7 +914,7 @@ status open
 
 \begin_layout Verbatim
 
-<class 'float'>
+float
 \end_layout
 
 \end_inset
@@ -942,7 +955,7 @@ palabra!reservada
 
 \begin_layout Standard
 Los programadores, generalmente, escogen nombres significativos para sus
- variables ---que especifiquen para qué se usa la variable.
+ variables —que especifiquen para qué se usa la variable.
 \end_layout
 
 \begin_layout Standard
@@ -1040,17 +1053,17 @@ SyntaxError: invalid syntax
 76trombones
 \family default
  es ilegal porque no empieza con una letra.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 
 \family typewriter
 mas$
 \family default
  es ilegal porque contiene un carácter ilegal, el símbolo $.
-\end_layout
+\begin_inset Newline newline
+\end_inset
 
-\begin_layout Standard
 ¿Qué sucede con 
 \family typewriter
 class
@@ -1466,7 +1479,7 @@ Los símbolos
 
 \begin_layout Standard
 La suma, resta, multiplicación y exponenciación realizan lo que usted esperaría,
- pero la división podría sorprenderlo.
+ pero la división usando el operador // podría sorprenderlo.
  La siguiente operación tiene un resultado inesperado:
 \end_layout
 
@@ -1482,7 +1495,7 @@ status open
 
 \begin_layout Verbatim
 
->>> minuto/60
+>>> minuto//60
 \end_layout
 
 \begin_layout Verbatim
@@ -1562,42 +1575,16 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Una solución posible a este problema consiste en calcular un porcentaje,
- en lugar de una fracción:
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Verbatim
-
->>> minuto*100/60
-\end_layout
-
-\begin_layout Verbatim
-
-98
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-De nuevo, el resultado se redondea; pero, al menos ahora, el resultado estará
- mas aproximado.
- Otra alternativa es usar la división en punto flotante, lo que haremos
- en el Capítulo 
+Recuerde que si divide con / obtendrá un numero flotante (los cuales veremos
+ con mayor detalle en el capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "floatchap"
 
 \end_inset
 
-.
+) y si lo hace con // obtendrá un número entero.
+ 
 \end_layout
 
 \begin_layout Section
@@ -1707,7 +1694,7 @@ ubtracción, que también tienen la misma precedencia.
 \family default
  da 5 en lugar de 4, y 
 \family typewriter
-2/3-1
+2//3-1
 \family default
  es 
 \family typewriter
@@ -1719,7 +1706,7 @@ ubtracción, que también tienen la misma precedencia.
 \family default
  (recuerde que en división entera, 
 \family typewriter
-2/3=0
+2//3=0
 \family default
 ).
 \end_layout
@@ -1740,19 +1727,9 @@ minuto*100/60
 \family default
 , lo que a su vez da 
 \family typewriter
-98
+98.33333333333333
 \family default
 .
- Si las operaciones se hubieran evaluado de derecha a izquierda, el resultado
- sería 
-\family typewriter
-59/1
-\family default
-, que es 
-\family typewriter
-59
-\family default
-, y no es lo correcto.
 \end_layout
 
 \begin_layout Section
@@ -1982,8 +1959,8 @@ composición
 \end_layout
 
 \begin_layout Standard
-Hasta aquí hemos considerado a los elementos de un programa---variables,
- expresiones y sentencias---aisladamente, sin especificar cómo combinarlos.
+Hasta aquí hemos considerado a los elementos de un programa—variables, expresion
+es y sentencias—aisladamente, sin especificar cómo combinarlos.
 \end_layout
 
 \begin_layout Standard
@@ -2182,7 +2159,7 @@ status open
 
 \begin_layout Verbatim
 
-porcentaje = (minute * 100) / 60 # div entera
+porcentaje = (minute * 100) // 60 # div entera
 \end_layout
 
 \end_inset
@@ -2195,7 +2172,7 @@ todo lo que sigue desde el
 \family typewriter
 #
 \family default
- hasta el fin de la línea se ignora---no tiene efecto en el programa.
+ hasta el fin de la línea se ignora—no tiene efecto en el programa.
  El mensaje es para el programador que escribe el programa o para algún
  programador que podría usar este código en el futuro.
  En este caso, le recuerda al lector el sorprendente comportamiento de la
@@ -2362,6 +2339,10 @@ Composición: es la capacidad de combinar simples expresiones y sentencias
 \begin_layout Description
 Comentario: información que se incluye en un programa para otro programador
  (o lector del código fuente) que no tiene efecto en la ejecución.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2598,6 +2579,10 @@ La diferencia entre la función input y la función raw_input es que la función
  input evalúa la cadena introducida y la función raw_input no lo hace.
  Escriba lo siguiente en el intérprete de Python, registre qué sucede y
  explique:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper

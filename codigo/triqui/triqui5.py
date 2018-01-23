@@ -2,23 +2,20 @@
 # Triqui
 
 def crear():
-    """ Crea una matriz 3x3 vacia"""
+    """ Crea una matrix 3x3 vacia"""
     m =  [ [' ',' ',' '],
            [' ',' ',' '],
            [' ',' ',' '] ]
     return m
 
-
-
 def imprimir(tablero):
     """ Imprime el tablero de juego"""
     for i in range(3):
-        print("|", end=' ')
+        print('|',end='')
         for j in range(3):
-            print(tablero[i][j], end=' ')
-        print("|")
-
-
+            print(tablero[i][j],end='') 
+        print('|')
+        
 def ganaDiagonal1(jugador,tablero):
     """Chequea si el jugador gana en la diagonal 1"""
     for i in range(3):
@@ -64,9 +61,9 @@ def ganaVertical(jugador,tablero):
 
 # Evitamos código duplicado creando una función:
 def jugar(jugador,tablero):
-    print("Juegue jugador ", jugador)
-    f = eval(input("fila? "))
-    c = eval(input("columna? "))
+    print ("Juegue jugador ", jugador)
+    f = int(input("fila? "))
+    c = int(input("columna? "))
     tablero[f][c] = jugador
     imprimir(triqui)
     diag = ganaDiagonal1(jugador,tablero) or ganaDiagonal2(jugador,tablero)
