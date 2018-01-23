@@ -1,27 +1,38 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
+\begin_preamble
+\newcommand{\beforefig}{\vspace{1.3\parskip}}
+\newcommand{\afterfig}{\vspace{-0.2\parskip}}
+
+\newcommand{\beforeverb}{\vspace{0.6\parskip}}
+\newcommand{\afterverb}{\vspace{0.6\parskip}}
+
+\newcommand{\adjustpage}[1]{\enlargethispage{#1\baselineskip}}
+\end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language spanish
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -74,7 +85,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -196,7 +208,7 @@ funciones
  hacían la distinción.
  Muchos lenguajes de programación vigentes (incluido Python y C) no diferencian
  sintácticamente entre procedimientos y funciones, por eso usamos esta terminolo
-gía
+gía.
 \end_layout
 
 \end_inset
@@ -652,7 +664,7 @@ status open
 En este punto hemos confirmado que la función está bien sintácticamente,
  y que podemos empezar a agregar líneas de código.
  Después de cada cambio, probamos la función otra vez.
- Si hay un error, sabemos dónde debe estar ---en la última línea que agregamos.
+ Si hay un error, sabemos dónde debe estar —en la última línea que agregamos.
 \end_layout
 
 \begin_layout Standard
@@ -866,7 +878,7 @@ Use variables temporales para almacenar valores intermedios de manera que
 \begin_layout Enumerate
 Ya que el programa esté corriendo, usted puede remover parte del andamiaje
  o consolidar múltiples sentencias en expresiones compuestas, pero sólo
- si ésto no dificulta la lectura del programa.
+ si esto no dificulta la lectura del programa.
 \end_layout
 
 \begin_layout Section
@@ -1696,6 +1708,10 @@ Como 2 no es 0, tomamos la segunda rama y calculamos el factorial de
 n-1
 \family default
 ...
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1705,6 +1721,10 @@ Como 1 no es 0, tomamos la segunda rama y calculamos el factorial de
 n-1
 \family default
 ...
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1988,8 +2008,8 @@ reference "boolean"
 esDivisible
 \family default
  que determina si un número es divisible por otro.
- Una vez que nos hemos convencido de que esta función es correcta ---probándola
- y examinando el código---podemos usarla sin mirar el código nuevamente.
+ Una vez que nos hemos convencido de que esta función es correcta —probándola
+ y examinando el código—podemos usarla sin mirar el código nuevamente.
 \end_layout
 
 \begin_layout Standard
@@ -2232,7 +2252,7 @@ RuntimeError: Maximum recursion depth exceeded
 \end_inset
 
  Parece recursión infinita.
- ¿Cómo puede darse? Hay un caso base ---cuando 
+ ¿Cómo puede darse? Hay un caso base —cuando 
 \family typewriter
 n == 0
 \family default
@@ -2816,6 +2836,10 @@ Andamiaje: código que se usa durante el desarrollo de programas, pero no
 \begin_layout Description
 Guarda: una condición que chequea y controla circunstancias que pueden causar
  errores.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper

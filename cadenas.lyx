@@ -1,27 +1,39 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
+\begin_preamble
+
+\newcommand{\beforefig}{\vspace{1.3\parskip}}
+\newcommand{\afterfig}{\vspace{-0.2\parskip}}
+
+\newcommand{\beforeverb}{\vspace{0.6\parskip}}
+\newcommand{\afterverb}{\vspace{0.6\parskip}}
+
+\newcommand{\adjustpage}[1]{\enlargethispage{#1\baselineskip}}
+\end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language spanish
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -74,7 +86,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -165,7 +178,7 @@ string
 \family default
 .
  Las cadenas son cualitativamente diferentes de los otros dos tipos porque
- están compuestas de piezas más pequeñas---los caracteres.
+ están compuestas de piezas más pequeñas—los caracteres.
 \end_layout
 
 \begin_layout Standard
@@ -267,6 +280,7 @@ letra
 \end_layout
 
 \begin_layout Verbatim
+
 a
 \end_layout
 
@@ -683,7 +697,7 @@ len(fruta)-1
 
 \begin_layout Standard
 Usar un índice para recorrer un conjunto de valores es tan común que Python
- tiene una sintaxis alternativa más simple---el ciclo 
+ tiene una sintaxis alternativa más simple—el ciclo 
 \family typewriter
 for
 \family default
@@ -1283,6 +1297,7 @@ Zebra
 \end_layout
 
 \begin_layout Verbatim
+
 Su palabra, Zebra, va antes que banana.
 \end_layout
 
@@ -1712,7 +1727,7 @@ excremento,
 \family typewriter
 cont
 \family default
- contiene el resultado---el número total de 
+ contiene el resultado—el número total de 
 \family typewriter
 a
 \family default
@@ -1720,65 +1735,100 @@ a
 \end_layout
 
 \begin_layout Section
-El módulo 
-\family typewriter
-string
-\family default
- 
+Algunos métodos de las cadenas
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-módulo
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Index idx
-status collapsed
-
-\begin_layout Plain Layout
-módulo string
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-El módulo 
-\family typewriter
-string
-\family default
- contiene funciones útiles para manipular cadenas.
- Como de costumbre, tenemos que importarlo antes de usarlo:
-\begin_inset listings
-inline false
 status open
 
-\begin_layout Verbatim
-
->>> import string
+\begin_layout Plain Layout
+cadenas!métodos
 \end_layout
 
 \end_inset
 
-El módulo 
-\family typewriter
-string
-\family default
- incluye una función denominada 
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+método
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+método!invocación
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+métodos!cadenas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+métodos sobre cadenas
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+invocar métodos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un 
+\series bold
+método
+\series default
+ es similar a una función, acepta parámetros y devuelve un valor, pero la
+ sintaxis es diferente.
+ Por ejemplo, las cadenas tienen un método denominado 
 \family typewriter
 find
 \family default
  que hace lo mismo que buscar.
- Para llamarla tenemos que especificar el nombre del módulo y de la función,
- usando la notación punto.
+ Para llamarlo tenemos que especificar la cadena, o la variable que contiene
+ la cadena, usando la notación punto, en la que el método se escribe después
+ del punto.
+ La llamada a un método también se denomina 
+\series bold
+invocación
+\series default
+; en este caso, diríamos que estamos invocando 
+\family typewriter
+find
+\family default
+ sobre la cadena 
+\family typewriter
+fruta
+\family default
+.
 \end_layout
 
 \begin_layout Standard
@@ -1793,7 +1843,7 @@ status open
 
 \begin_layout Verbatim
 
->>> ind = string.find(fruta, "a")
+>>> ind = fruta.find("a")
 \end_layout
 
 \begin_layout Verbatim
@@ -1808,22 +1858,13 @@ status open
 
 \end_inset
 
- Uno de los beneficios de los módulos es que ayudan a evitar colisiones
- entre los nombres de las funciones primitivas y los nombres de las funciones
- creadas por el programador.
- Si hubiéramos nombrado a nuestra función buscar con la palabra inglesa
- 
-\family typewriter
-find
-\family default
-, podríamos usar la notación punto para especificar que queremos llamar
- a la función find del módulo string, y no a la nuestra.
+
 \end_layout
 
 \begin_layout Standard
-De hecho 
+El método 
 \family typewriter
-string.find
+find
 \family default
  es más general que buscar, también puede buscar subcadenas, no solo caracteres:
 \begin_inset listings
@@ -1832,7 +1873,7 @@ status open
 
 \begin_layout Verbatim
 
->>> string.find("banano", "na")
+>>> "banano".find("na")
 \end_layout
 
 \begin_layout Verbatim
@@ -1854,7 +1895,7 @@ status open
 
 \begin_layout Verbatim
 
->>> string.find("banana", "na", 3)
+>>> "banana".find("na",3) 
 \end_layout
 
 \begin_layout Verbatim
@@ -1876,7 +1917,7 @@ status open
 
 \begin_layout Verbatim
 
->>> string.find("bob", "b", 1, 2)
+>>> "bob".find("b",1,2) 
 \end_layout
 
 \begin_layout Verbatim
@@ -1941,7 +1982,34 @@ status collapsed
 \end_layout
 
 \begin_layout Section
-Clasificación de caracteres 
+El módulo 
+\family typewriter
+string y
+\family default
+ clasificación de caracteres
+\end_layout
+
+\begin_layout Standard
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Index idx
+status collapsed
+
+\begin_layout Plain Layout
+módulo string
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2032,12 +2100,17 @@ status open
 
 \begin_layout Verbatim
 
->>> print(string.lowercase)
+>>> import string
 \end_layout
 
 \begin_layout Verbatim
 
->>> print(string.uppercase)
+>>> print(string.ascii_lowercase)
+\end_layout
+
+\begin_layout Verbatim
+
+>>> print(string.ascii_uppercase)
 \end_layout
 
 \begin_layout Verbatim
@@ -2047,14 +2120,14 @@ status open
 
 \end_inset
 
-Podemos usar estas constantes y la función 
+Podemos usar estas constantes y el método 
 \family typewriter
 find
 \family default
  para clasificar los caracteres.
  Por ejemplo, si 
 \family typewriter
-find(lowercase, c)
+c.find(lowercase)
 \family default
  retorna un valor distinto de 
 \family typewriter
@@ -2071,12 +2144,21 @@ status open
 
 \begin_layout Verbatim
 
+import string
+\end_layout
+
+\begin_layout Verbatim
+
+\end_layout
+
+\begin_layout Verbatim
+
 def esMinuscula(c):
 \end_layout
 
 \begin_layout Verbatim
 
-  return string.find(string.lowercase, c) != -1
+  return string.ascii_lowercase.find(c) != -1
 \end_layout
 
 \end_inset
@@ -2101,7 +2183,7 @@ def esMinuscula(c):
 
 \begin_layout Verbatim
 
-  return c in string.lowercase
+  return c in string.ascii_lowercase
 \end_layout
 
 \end_inset
@@ -2459,6 +2541,10 @@ Espacio en blanco:
 string.whitespace
 \family default
  contiene todos los caracteres que representan espacios en blanco.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -2638,6 +2724,10 @@ verb+cadenas.py+
 \end_inset
 
  y escriba lo siguiente en él:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper

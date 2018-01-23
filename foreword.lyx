@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
 \maintain_unincluded_children false
@@ -9,16 +11,16 @@
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -74,7 +76,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -121,7 +124,7 @@ Por David Beazley
 Como educador, investigador y autor de libros, estoy encantado de ver la
  terminación de este texto.
  Python es un lenguaje de programación divertido y extremadamente fácil
- de usar, que ha ganado renombre constantemente en los años recientes.
+ de usar que ha ganado renombre constantemente en los años recientes.
  Desarrollado hace diez años por Guido van Rossum, la sintaxis simple de
  Python y su 
 \begin_inset Quotes eld
@@ -142,7 +145,7 @@ sabor
 \end_layout
 
 \begin_layout Standard
-A pesar de ésta atracción presente en muchas comunidades diversas, usted
+A pesar de ésta atracción que ejerce en muchas comunidades diversas, usted
  puede todavía preguntarse 
 \begin_inset Quotes eld
 \end_inset
@@ -159,11 +162,11 @@ A pesar de ésta atracción presente en muchas comunidades diversas, usted
 \begin_inset Quotes erd
 \end_inset
 
- Responder éstas preguntas no es una tarea fácil--- especialmente cuando
- la opinión popular está del lado masoquista de usar alternativas como C++
+ Responder éstas preguntas no es una tarea fácil— especialmente cuando la
+ opinión popular está del lado masoquista de usar alternativas como C++
  y Java.
- Sin embargo, pienso que la respuesta mas directa es que la programación
- en Python es simplemente mas divertida y mas productiva.
+ Sin embargo, pienso que la respuesta más directa es que la programación
+ en Python es simplemente más divertida y más productiva.
 \end_layout
 
 \begin_layout Standard
@@ -202,7 +205,7 @@ Una de las razones del por qué me gusta Python es que proporciona un equilibrio
 r conceptos importantes de la informática.
  Puesto que Python soporta completamente procedimientos y clases, los estudiante
 s pueden ser introducidos gradualmente a temas como la abstracción procedimental
-, las estructuras de datos y la programación orientada a objetos---lo que
+, las estructuras de datos y la programación orientada a objetos—lo que
  se puede aplicar después a cursos posteriores en Java o C++.
  Python proporciona, incluso, varias características de los lenguajes de
  programación funcionales y puede usarse para introducir conceptos que se
@@ -234,8 +237,8 @@ avanzar mas rápido con mejores resultados.
  un montón de material difícil durante nueve semanas.
  Aunque es totalmente posible para mi infligir mucho dolor y sufrimiento
  usando un lenguaje como C++, he encontrado a menudo que este enfoque es
- improductivo---especialmente cuando el curso se trata de un asunto sin
- relación directa con la 
+ improductivo—especialmente cuando el curso se trata de un asunto sin relación
+ directa con la 
 \begin_inset Quotes eld
 \end_inset
 

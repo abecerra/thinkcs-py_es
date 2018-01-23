@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
 \maintain_unincluded_children false
@@ -9,19 +11,19 @@
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
-\output_sync 0
+\output_sync 1
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -74,7 +76,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1729,6 +1732,10 @@ Correspondencia de patrones:
 
  plan de desarrollo de programas que implica identificar un patrón computacional
  familiar y copiar la solución de un problema similar.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1840,6 +1847,10 @@ Escriba una función mas_frecuentes que tome una cadena e imprima las letras
  Ejecútela con textos de diferentes lenguajes y observe como varían las
  frecuencias de letras.
  Compare sus resultados con las tablas en:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1876,6 +1887,10 @@ http://thinkpython.com/code/most_frequent.py
 \begin_layout Enumerate
 Escriba un programa que lea una lista de palabras de un archivo e imprima
  todos los conjuntos de palabras que son anagramas.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1933,6 +1948,10 @@ Dos palabras forma un 'par de metatesis' si se puede transformar una en
  Escriba un programa que encuentre todos los pares de metatesis en el diccionari
 o.
  Pista: no pruebe todos los pares.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1973,6 +1992,10 @@ http://puzzlers.org
  que sin la 'e', es 'spit', que sin la 's' es 'pit', que sin la 'p' es 'it'
  que sin la 't' es 'i'.
  Las letras se pueden remover de cualquier posición, pero no se pueden reordenar.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper

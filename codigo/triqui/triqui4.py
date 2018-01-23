@@ -2,22 +2,19 @@
 # Triqui
 
 def crear():
-    """ Crea una matriz 3x3 vacia"""
+    """ Crea una matrix 3x3 vacia"""
     m =  [ [' ',' ',' '],
            [' ',' ',' '],
            [' ',' ',' '] ]
     return m
 
-
-
 def imprimir(tablero):
     """ Imprime el tablero de juego"""
     for i in range(3):
-        print("|", end=' ')
+        print('|',end='')
         for j in range(3):
-            print(tablero[i][j], end=' ')
-        print("|")
-
+            print(tablero[i][j],end='') 
+        print('|')
 
 def ganaDiagonal1(jugador,tablero):
     """Chequea si el jugador gana en la diagonal 1"""
@@ -68,16 +65,16 @@ triqui = crear()
 
 while True:
     print("Juegue jugador O")
-    f = eval(input("fila? "))
-    c = eval(input("columna? "))
+    f = int(input("fila? "))
+    c = int(input("columna? "))
     triqui[f][c] = "O"
     imprimir(triqui)
     if ganaDiagonal1("O",triqui) or ganaDiagonal2("O",triqui) or ganaHorizontal("O",triqui) or ganaVertical("O",triqui):
         print("Gana el jugador O!!!!")
         break
     print("Juegue jugador X")
-    f = eval(input("fila? "))
-    c = eval(input("columna? "))
+    f = int(input("fila? "))
+    c = int(input("columna? "))
     triqui[f][c] = "X"
     imprimir(triqui)
     if ganaDiagonal1("X",triqui) or ganaDiagonal2("X",triqui) or ganaHorizontal("X",triqui) or ganaVertical("X",triqui):
