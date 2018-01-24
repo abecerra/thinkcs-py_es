@@ -3,7 +3,7 @@
 
 \section{Clase punto}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 class Punto:
   def __init__(self, x=0, y=0):
     self.x = x
@@ -32,11 +32,11 @@ class Punto:
     alreves = copy(derecho)
     alreves.invertir()
     print(str(derecho) + str(alreves))
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Clase hora}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 class Hora:
   def __init__(self, hora=0, minutos=0, segundos=0):
     self.hora = hora
@@ -69,11 +69,11 @@ def crearHora(segs):
   segs = segs - H.minutos * 60
   H.segundos = segs
   return H
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Cartas, mazos y juegos}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 import random
 
 class Carta:
@@ -246,13 +246,13 @@ class JuegoSolterona(JuegoCartas):
   def imprimirmanos(self) :
     for mano in self.manos :
       print(mano)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Listas enlazadas}
 \begin{verbatim}
 
 \end{verbatim}
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def imprimirlista(Nodo) :
   while Nodo :
     print(Nodo),
@@ -314,11 +314,11 @@ class ListaEnlazada :
     nodo.siguiente = self.cabeza
     self.cabeza = nodo
     self.numElementos = self.numElementos + 1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Clase pila}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 class Pila:              
   def __init__(self):
     self.items = []
@@ -348,14 +348,14 @@ def evalPostfija(expr) :
     else :
       pila.meter(int(lexema))
   return pila.sacar()
-\end{lstlisting}
-\inputencoding{utf8}\begin{verbatim}
+\end{verbatim}
+\begin{verbatim}
 
 \end{verbatim}
 
 \section{Colas PEPS y de colas de prioridad}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 class Cola:
   def __init__(self):
     self.numElementos = 0
@@ -459,11 +459,11 @@ class golfista:
     if self.puntaje < otro.puntaje: return 1
       if self.puntaje > otro.puntaje: return -1
         return 0
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Árboles}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 class Arbol:
   def __init__(self, carga, izquierdo=None, derecho=None):
     self.carga = carga
@@ -526,11 +526,11 @@ def imprimirarbolSangrado(arbol, nivel=0):
   imprimirarbolSangrado(arbol.derecho, nivel+1)
   print(" "*nivel + str(arbol.carga))
   imprimirarbolSangrado(arbol.izquierdo, nivel+1)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Árboles de expresiones}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def obtenerLexema(listaLexemas, esperado):
   if listaLexemas[0] == esperado:
       del listaLexemas[0]
@@ -567,11 +567,11 @@ def obtenerNumero(listaLexemas):
       return None
     listaLexemas[0:1] = []
    return Arbol (x, None, None)  
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Adivinar el animal}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def animal():
   # Un solo nodo
   raiz = Arbol("pajaro")
@@ -615,12 +615,12 @@ def si(preg):
   from string import lower
   r = lower(raw_input(preg))
   return (r[0] == 's')
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Clase \texttt{Fraccion}}
 
-\texttt{}\inputencoding{latin9}
-\begin{lstlisting}[language=Python,showstringspaces=false,tabsize=4]
+\texttt{}
+\begin{verbatim}[language=Python,showstringspaces=false,tabsize=4]
 class Fraccion:
   def __init__(self,numerador,denominador=1):
     self.numerador = numerador
@@ -662,5 +662,5 @@ def MDC (m,n):
 	  return n
       else:
 	  return MDC(n,m%n)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+

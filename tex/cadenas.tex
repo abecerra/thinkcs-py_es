@@ -23,12 +23,12 @@ ambigüedad es provechosa.
 
 El operador corchete selecciona un carácter de una cadena.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> fruta = "banano"
 >>> letra = fruta[1]
 >>> print(letra)	
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La expresión \texttt{fruta{[}1{]}} selecciona el carácter número 1
 de \texttt{fruta}. La variable \texttt{letra} se refiere al resultado.
 Cuando desplegamos \texttt{letra}, obtenemos una pequeña sorpresa:
@@ -42,13 +42,13 @@ de \texttt{``banano''} es \texttt{b}. La letra 1 es a, y la letra
 2 es n.
 
 Si usted desea la primera letra de una cadena se pone 0, o cualquier
-expresión con el valor 0, dentro de los corchetes:\inputencoding{latin9}
-\begin{lstlisting}
+expresión con el valor 0, dentro de los corchetes:
+\begin{verbatim}
 >>> letra = fruta[0]
 >>> print(letra)
 b
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La expresión en corchetes se denomina \textbf{índice}. Un índice especifica
 un miembro de un conjunto ordenado, en este caso el conjunto de caracteres
 de la cadena. El índice {\em indica} cual elemento desea usted,
@@ -62,18 +62,18 @@ por eso se llama así. Puede ser cualquier expresión entera.
 
 La función \texttt{len} retorna el número de caracteres en una cadena:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> fruta = "banano"
 >>> len(fruta)
 6
-\end{lstlisting}
-\inputencoding{utf8} Para acceder a la última letra de una cadena usted podría caer en
-algo como esto:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+ Para acceder a la última letra de una cadena usted podría caer en
+algo como esto:
+\begin{verbatim}
 longitud = len(fruta)
 ultima = fruta[longitud]       # ERROR!
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Y no funcionará. Causa un error en tiempo de ejecución, \texttt{IndexError: string
 index out of range}. La razón yace en que no hay una letra 6 en ``banano''.
 Como empezamos a contar desde cero, las seis letras se numeran de
@@ -82,11 +82,11 @@ Como empezamos a contar desde cero, las seis letras se numeran de
 
 \index{error en tiempo de ejecución}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 longitud = len(fruta)
 ultima = fruta[longitud-1]
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Alternativamente, podemos usar índices negativos, que cuentan hacia
 atrás desde el fin de la cadena. La expresión \texttt{fruta{[}-1{]}}
 retorna la última letra \texttt{fruta{[}-2{]}} retorna la penúltima,
@@ -104,15 +104,15 @@ Muchos cálculos implican procesar una cadena carácter por carácter.
 A menudo empiezan al inicio, seleccionan cada carácter en cada paso,
 le hacen algo y continúan hasta el final. Este patrón de procesamiento
 se denomina \textbf{recorrido}. Hay una forma de realizarlo con la
-sentencia \texttt{while}:\inputencoding{latin9}
-\begin{lstlisting}
+sentencia \texttt{while}:
+\begin{verbatim}
 indice = 0
 while indice < len(fruta):
   letra = fruta[indice]
   print(letra)
   indice = indice + 1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Este ciclo recorre la cadena y despliega cada letra en una línea independiente.
 La condición del ciclo es \texttt{indice < len(fruta)}, así que cuando
 \texttt{indice} se hace igual a la longitud de la cadena, la condición
@@ -124,11 +124,11 @@ Usar un índice para recorrer un conjunto de valores es tan común que
 Python tiene una sintaxis alternativa más simple—el ciclo \texttt{for}
 :
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 for caracter in fruta:
    print(caracter)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Cada vez que el ciclo itera, el próximo carácter en la cadena se asigna
 a la variable \texttt{caracter}. El ciclo continúa hasta que no quedan
 más caracteres.
@@ -141,17 +141,17 @@ El siguiente ejemplo muestra cómo usar la concatenación y un ciclo
 se refiere a una lista en la que los elementos aparecen en orden alfabético.
 Por ejemplo, en el libro {\em Make Way for Ducklings} de Robert
 McCloskey, los nombres de los patos son Jack, Kack, Lack, Mack, Nack,
-Ouack, Pack, and Quack. Este ciclo los despliega en orden:\inputencoding{latin9}
-\begin{lstlisting}
+Ouack, Pack, and Quack. Este ciclo los despliega en orden:
+\begin{verbatim}
 prefijos = "JKLMNOPQ"
 sufijo = "ack"
 
 for letra in prefijos:
   print(letra + sufijo)
-\end{lstlisting}
-\inputencoding{utf8}
-La salida de este programa es:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+
+La salida de este programa es:
+\begin{verbatim}
 Jack
 Kack
 Lack
@@ -160,8 +160,8 @@ Nack
 Oack
 Pack
 Qack
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Por supuesto que hay un error, ya que ``Ouack'' y ``Quack'' no
 están bien deletreados.
 
@@ -170,8 +170,8 @@ están bien deletreados.
 \label{slice} \index{segmento} \index{cadena!segmento}
 
 Una porción de una cadena de caracteres se denomina \textbf{segmento}.
-Seleccionar un segmento es similar a seleccionar un carácter:\inputencoding{latin9}
-\begin{lstlisting}
+Seleccionar un segmento es similar a seleccionar un carácter:
+\begin{verbatim}
 >>> s = "Pedro, Pablo, y Maria"
 >>> print(s[0:5])
 Pedro
@@ -179,8 +179,8 @@ Pedro
 Pablo
 >>> print(s[16:21])
 Maria
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El operador \texttt{{[}n:m{]}} retorna la parte de la cadena que va
 desde el carácter n hasta el m, incluyendo el primero y excluyendo
 el último. Este comportamiento es contraintuitivo, tiene más sentido
@@ -192,37 +192,37 @@ como en el siguiente diagrama:
 
 Si usted omite el primer índice (antes de los puntos seguidos), el
 segmento comienza en el inicio de la cadena. Si se omite el segundo
-índice, el segmento va hasta el final. Entonces:\inputencoding{latin9}
-\begin{lstlisting}
+índice, el segmento va hasta el final. Entonces:
+\begin{verbatim}
 >>> fruta  = "banano"
 >>> fruta[:3]
 'ban'
 >>> f[3:]
 'ano'
-\end{lstlisting}
-\inputencoding{utf8} ¿Que cree que significa \texttt{s{[}:{]}}?
+\end{verbatim}
+ ¿Que cree que significa \texttt{s{[}:{]}}?
 
 \section{Comparación de cadenas}
 
 \index{comparación de cadenas} \index{comparación!de cadenas}
 
 El operador de comparación funciona con cadenas. Para ver si dos cadenas
-son iguales:\inputencoding{latin9}
-\begin{lstlisting}
+son iguales:
+\begin{verbatim}
 if palabra == "banana":
   print("No hay bananas!")
-\end{lstlisting}
-\inputencoding{utf8}Las otras operaciones de comparación son útiles para poner las palabras
-en orden alfabético:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+Las otras operaciones de comparación son útiles para poner las palabras
+en orden alfabético:
+\begin{verbatim}
 if palabra < "banana":
   print("Su palabra," + palabra + ", va antes que banana.")
 elif palabra > "banana":
-  print("Su palabra," + palabra + ", va despu�s de banana.")
+  print("Su palabra," + palabra + ", va después de banana.")
 else:
   print("No hay banana!")
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Sin embargo, usted debe ser consciente de que Python no maneja las
 letras minúsculas y mayúsculas de la misma forma en que lo hace la
 gente. Todas las letras mayúsculas vienen antes de las minúsculas.
@@ -241,13 +241,13 @@ que una zebra no es una fruta.
 
 Uno puede caer en la trampa de usar el operador \texttt{{[}{]}} al
 lado izquierdo de una asignación con la intención de modificar un
-carácter en una cadena. Por ejemplo:\inputencoding{latin9}
-\begin{lstlisting}
+carácter en una cadena. Por ejemplo:
+\begin{verbatim}
 saludo = "Hola mundo"
 saludo[0] = 'J'            # ERROR!
 print(saludo)
-\end{lstlisting}
-\inputencoding{utf8} En lugar de desplegar \texttt{Jola mundo!}, se produce un error en
+\end{verbatim}
+ En lugar de desplegar \texttt{Jola mundo!}, se produce un error en
 tiempo de ejecución \texttt{TypeError: object doesn't support item
 assignment}.
 
@@ -255,13 +255,13 @@ assignment}.
 
 Las cadenas son \textbf{inmutables}, lo que quiere decir que no se
 puede cambiar una cadena existente. Lo máximo que se puede hacer es
-crear otra cadena que cambia un poco a la original:\inputencoding{latin9}
-\begin{lstlisting}
+crear otra cadena que cambia un poco a la original:
+\begin{verbatim}
 saludo = "Hola mundo!"
 nuevoSaludo = 'J' + saludo[1:]
 print(nuevoSaludo)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La solución consiste en concatenar la primera nueva letra con un segmento
 de \texttt{saludo}. Esto no tiene efecto sobre la primera cadena,
 usted puede chequearlo.
@@ -275,7 +275,7 @@ usted puede chequearlo.
 
 ¿Qué hace la siguiente función?
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def buscar(cad, c):
   indice = 0
   while indice < len(cad):
@@ -283,8 +283,8 @@ def buscar(cad, c):
       return indice
     indice = indice + 1
   return -1
-\end{lstlisting}
-\inputencoding{utf8} De cierta manera \texttt{buscar} es el opuesto del operador \texttt{{[}{]}}.
+\end{verbatim}
+ De cierta manera \texttt{buscar} es el opuesto del operador \texttt{{[}{]}}.
 En vez de tomar un índice y extraer el carácter correspondiente, toma
 un carácter y encuentra el índice donde éste se encuentra. Si no se
 encuentra el carácter en la cadena, la función retorna \texttt{-1}.
@@ -305,16 +305,16 @@ de buscar.
 \label{counter} \index{contador} \index{patrón}
 
 El siguiente programa cuenta el número de veces que la letra \texttt{a}
-aparece en una cadena:\inputencoding{latin9}
-\begin{lstlisting}
+aparece en una cadena:
+\begin{verbatim}
 fruta = "banano"
 cont = 0
 for car in fruta:
   if car == 'a':
     cont = cont + 1
 print(cont)
-\end{lstlisting}
-\inputencoding{utf8} Este programa demuestra otro patrón computacional denominado \textbf{contador}.
+\end{verbatim}
+ Este programa demuestra otro patrón computacional denominado \textbf{contador}.
 La variable \texttt{cont} se inicializa a 0 y se incrementa cada vez
 que se encuentre una \texttt{a}. ( \textbf{incrementar} es añadir
 uno; es el opuesto de \textbf{decrementar}, y no tienen nada que ver
@@ -335,34 +335,34 @@ se escribe después del punto. La llamada a un método también se denomina
 \textbf{invocación}; en este caso, diríamos que estamos invocando
 \texttt{find} sobre la cadena \texttt{fruta}.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> fruta = "banano"
 >>> ind = fruta.find("a")
 >>> print(ind)
 1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El método \texttt{find} es más general que buscar, también puede buscar
-subcadenas, no solo caracteres:\inputencoding{latin9}
-\begin{lstlisting}
+subcadenas, no solo caracteres:
+\begin{verbatim}
 >>> "banano".find("na")
 2
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 También tiene un argumento adicional que especifica el índice desde
-el que debe empezar la búsqueda:\inputencoding{latin9}
-\begin{lstlisting}
+el que debe empezar la búsqueda:
+\begin{verbatim}
 >>> "banana".find("na",3) 
 4
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Igualmente, puede tomar dos argumentos adicionales que especifican
-un rango de índices:\inputencoding{latin9}
-\begin{lstlisting}
+un rango de índices:
+\begin{verbatim}
 >>> "bob".find("b",1,2) 
 -1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Aquí la búsqueda falló porque la letra {\em b} no está en en el
 rango de índices de \texttt{1} a \texttt{2} (recuerde que no se incluye
 el último índice, el \texttt{2}).
@@ -381,45 +381,45 @@ varias constantes que sirven para lograr estos objetivos.
 La cadena \texttt{string.lowercase} contiene todas las letras que
 el sistema considera como minúsculas. Igualmente, \texttt{string.uppercase}
 contiene todas las letras mayúsculas. Intente lo siguiente y vea por
-sí mismo:\inputencoding{latin9}
-\begin{lstlisting}
+sí mismo:
+\begin{verbatim}
 >>> import string
 >>> print(string.ascii_lowercase)
 >>> print(string.ascii_uppercase)
 >>> print(string.digits)
-\end{lstlisting}
-\inputencoding{utf8}Podemos usar estas constantes y el método \texttt{find} para clasificar
+\end{verbatim}
+Podemos usar estas constantes y el método \texttt{find} para clasificar
 los caracteres. Por ejemplo, si \texttt{c.find(lowercase)} retorna
 un valor distinto de \texttt{-1}, entonces \texttt{c} debe ser una
-letra minúscula:\inputencoding{latin9}
-\begin{lstlisting}
+letra minúscula:
+\begin{verbatim}
 import string
 
 def esMinuscula(c):
   return string.ascii_lowercase.find(c) != -1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Otra alternativa la da el operador \texttt{in} que determina si un
-carácter aparece en una cadena:\inputencoding{latin9}
-\begin{lstlisting}
+carácter aparece en una cadena:
+\begin{verbatim}
 def esMinuscula(c):
   return c in string.ascii_lowercase
-\end{lstlisting}
-\inputencoding{utf8} Y otra alternativa más, con el operador de comparación:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+ Y otra alternativa más, con el operador de comparación:
+\begin{verbatim}
 def esMinuscula(c):
   return 'a' <= c <= 'z'
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Si \texttt{c} está entre {\em a} y {\em z}, debe ser una letra
 minúscula.
 
 Otra constante definida en el módulo \texttt{string} puede sorprenderlo
-cuando la imprima:\inputencoding{latin9}
-\begin{lstlisting}
+cuando la imprima:
+\begin{verbatim}
 >>> print(string.whitespace)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Un carácter de los que pertenecen a \textbf{whitespace} mueve el cursor
 sin imprimir nada. Crean un espacio en blanco que se puede evidenciar
 entre caracteres. La constante \texttt{string.whitespace} contiene
@@ -484,7 +484,7 @@ alguna de ellas sobre las otras?
 \item Cree un archivo llamado \verb+cadenas.py+ y escriba lo siguiente
 en él:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
   def invertir(s):
     """
       >>> invertir('feliz')
@@ -500,20 +500,20 @@ en él:
   if __name__ == '__main__':
     import doctest
     doctest.testmod()
-\end{lstlisting}
-\inputencoding{utf8} Agregue un cuerpo a la función invertir que haga que pase las pruebas
+\end{verbatim}
+ Agregue un cuerpo a la función invertir que haga que pase las pruebas
 unitarias.
 
 Agregue al archivo \verb+cadenas.py+ cuerpos a cada una de las siguientes
 funciones, una a la vez.
-\item Reflejar:\inputencoding{latin9}
-\begin{lstlisting}
+\item Reflejar:
+\begin{verbatim}
   def reflejar(s):
     """
       >>> reflejar("bien")
       'bienneib'
-      >>> reflejar("s�")
-      's��s'
+      >>> reflejar("si")
+      'siis'
       >>> reflejar('Python')
       'PythonnohtyP'
       >>> reflejar("")
@@ -521,9 +521,9 @@ funciones, una a la vez.
       >>> reflejar("a")
       'aa'
     """
-\end{lstlisting}
-\inputencoding{utf8}\item Eliminar letra:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+\item Eliminar letra:
+\begin{verbatim}
   def elimina_letra(letra, cadena):
     """
       >>> elimina_letra('a', 'manzana')
@@ -535,9 +535,9 @@ funciones, una a la vez.
       >>> elimina_letra('i', 'Mississippi')
       'Msssspp'
     """
-\end{lstlisting}
-\inputencoding{utf8}\item Es palíndromo:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+\item Es palíndromo:
+\begin{verbatim}
   def es_palindromo(s):
     """
       >>> es_palindromo('abba')
@@ -551,9 +551,9 @@ funciones, una a la vez.
       >>> es_palindromo('zorra arroz')
       True
     """
-\end{lstlisting}
-\inputencoding{utf8}\item Cuenta el número de ocurrencias:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+\item Cuenta el número de ocurrencias:
+\begin{verbatim}
   def cuenta(sub, s):
     """
       >>> cuenta('is', 'Mississippi')
@@ -567,9 +567,9 @@ funciones, una a la vez.
       >>> cuenta('nanan', 'banana')
       0
     """
-\end{lstlisting}
-\inputencoding{utf8}\item Eliminar la primera ocurrencia: \inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+\item Eliminar la primera ocurrencia: 
+\begin{verbatim}
   def elimina(sub, s):
     """
       >>> elimina('an', 'banana')
@@ -581,9 +581,9 @@ funciones, una a la vez.
       >>> elimina('huevo', 'bicicleta')
       'bicicleta'
     """
-\end{lstlisting}
-\inputencoding{utf8}\item Eliminar todas las ocurrencias:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+\item Eliminar todas las ocurrencias:
+\begin{verbatim}
   def elimina_todo(sub, s):
     """
       >>> elimina_todo('an', 'banana')
@@ -595,6 +595,6 @@ funciones, una a la vez.
       >>> elimina_todo('huevos', 'bicicleta')
       'bicicleta'
     """
-\end{lstlisting}
-\inputencoding{utf8}\end{enumerate}
+\end{verbatim}
+\end{enumerate}
 

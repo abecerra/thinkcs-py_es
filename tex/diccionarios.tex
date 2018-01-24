@@ -14,48 +14,48 @@ modo de ejemplo, crearemos un diccionario que traduzca palabras inglesas
 al español. En este diccionario, los índices son cadenas \texttt{(strings)}.
 
 Una forma de crear un diccionario es empezar con el diccionario vacío
-y añadir elementos. El diccionario vacío se expresa como \texttt{\{\}}:\inputencoding{latin9}
-\begin{lstlisting}
+y añadir elementos. El diccionario vacío se expresa como \texttt{\{\}}:
+\begin{verbatim}
 >>> ing_a_esp = {}
 >>> ing_a_esp['one'] = 'uno'
 >>> ing_a_esp['two'] = 'dos'
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La primera asignación crea un diccionario llamado \texttt{ing\_a\_esp};
 las otras asignaciones añaden nuevos elementos al diccionario. Podemos
-desplegar el valor actual del diccionario del modo habitual:\inputencoding{latin9}
-\begin{lstlisting}
+desplegar el valor actual del diccionario del modo habitual:
+\begin{verbatim}
 >>> print(ing_a_esp)
 {'one': 'uno', 'two': 'dos'}
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Los elementos de un diccionario aparecen en una lista separada por
 comas. Cada entrada contiene un índice y un valor separado por dos
 puntos (:). En un diccionario, los índices se llaman \textbf{claves},
 por eso los elementos se llaman \textbf{pares clave-valor}.
 
 Otra forma de crear un diccionario es dando una lista de pares clave-valor
-con la misma sintaxis que la salida del ejemplo anterior:\inputencoding{latin9}
-\begin{lstlisting}
+con la misma sintaxis que la salida del ejemplo anterior:
+\begin{verbatim}
 >>> ing_a_esp={'one': 'uno', 'two': 'dos', 'three': 'tres'}
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Si volvemos a imprimir el valor de \texttt{ing\_a\_esp}, nos llevamos
-una sorpresa:\inputencoding{latin9}
-\begin{lstlisting}
+una sorpresa:
+\begin{verbatim}
 >>> print(ing_a_esp)
 {'one': 'uno', 'three': 'tres', 'two': 'dos'}
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 ¡Los pares clave-valor no están en orden! Afortunadamente, no necesitamos
 preocuparnos por el orden, ya que los elementos de un diccionario
 nunca se indexan con índices enteros. En lugar de eso, usamos las
-claves para buscar los valores correspondientes:\inputencoding{latin9}
-\begin{lstlisting}
+claves para buscar los valores correspondientes:
+\begin{verbatim}
 >>> print(ing_a_esp['two'])
 'dos'
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La clave \texttt{'two'} nos da el valor \texttt{'dos'} aunque aparezca
 en el tercer par clave-valor.
 
@@ -65,37 +65,37 @@ en el tercer par clave-valor.
 
 La sentencia \texttt{del} elimina un par clave-valor de un diccionario.
 Por ejemplo, el diccionario siguiente contiene los nombres de varias
-frutas y el número de esas frutas en un almacén:\inputencoding{latin9}
-\begin{lstlisting}
+frutas y el número de esas frutas en un almacén:
+\begin{verbatim}
 >>> inventario = {'manzanas': 430, 'bananas': 312, 
        'naranjas': 525,   'peras': 217}
 >>> print(inventario)
 {'naranjas': 525, 'manzanas': 430, 'peras': 217, 
  'bananas': 312}
-\end{lstlisting}
-\inputencoding{utf8} Si alguien compra todas las peras, podemos eliminar la entrada del
-diccionario:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+ Si alguien compra todas las peras, podemos eliminar la entrada del
+diccionario:
+\begin{verbatim}
 >>> del inventario['peras']
 >>> print(inventario)
 {'naranjas': 525, 'manzanas': 430, 'bananas': 312}
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 O si esperamos recibir más peras pronto, podemos simplemente cambiar
-el inventario asociado con las peras:\inputencoding{latin9}
-\begin{lstlisting}
+el inventario asociado con las peras:
+\begin{verbatim}
 >>> inventario['peras'] = 0
 >>> print(inventario)
 {'naranjas': 525, 'manzanas': 430, 'peras': 0, 
  'bananas': 312}
-\end{lstlisting}
-\inputencoding{utf8} La función \texttt{len} también funciona con diccionarios; devuelve
-el número de pares clave-valor:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+ La función \texttt{len} también funciona con diccionarios; devuelve
+el número de pares clave-valor:
+\begin{verbatim}
 >>> len(inventario)
 4
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Métodos del diccionario}
 
 \index{diccionario!métodos} \index{método} \index{método!invocación}
@@ -109,42 +109,42 @@ método \texttt{ing\_a\_esp.keys()}.
 
 \index{notación de punto}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> ing_a_esp.keys()
 ['one', 'three', 'two']
-\end{lstlisting}
-\inputencoding{utf8} Esta forma de notación punto especifica el nombre de la función,
+\end{verbatim}
+ Esta forma de notación punto especifica el nombre de la función,
 \texttt{keys}, y el nombre del objeto al que se va a aplicar la función,
 \texttt{ing\_a\_esp}. Los paréntesis vacíos indican que este método
 no admite parámetros.
 
 El método \texttt{values} es similar; devuelve una lista de los valores
-del diccionario:\inputencoding{latin9}
-\begin{lstlisting}
+del diccionario:
+\begin{verbatim}
 >>> ing_a_esp.values()
 ['uno', 'tres', 'dos']
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El método \texttt{items} devuelve ambos, una lista de tuplas con los
-pares clave-valor del diccionario:\inputencoding{latin9}
-\begin{lstlisting}
+pares clave-valor del diccionario:
+\begin{verbatim}
 >>> ing_a_esp.items()
 [('one','uno'), ('three', 'tres'), ('two', 'dos')]
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La sintaxis nos proporciona información muy útil acerca del tipo de
 datos. Los corchetes indican que es una lista. Los paréntesis indican
 que los elementos de la lista son tuplas.
 
 Para averiguar si una clave aparece en el diccionario, se puede usar
-\texttt{in}:\inputencoding{latin9}
-\begin{lstlisting}
+\texttt{in}:
+\begin{verbatim}
 >>> 'one' in ing_a_esp
 True
 >>> 'deux' in ing_a_esp
 False
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \index{error en tiempo de ejecución}
 
 \section{Copiado y alias}
@@ -157,30 +157,30 @@ en una afectan a la otra.
 
 Si quiere modificar un diccionario y mantener una copia del original,
 se puede usar el método \texttt{copy}. Por ejemplo, \texttt{opuestos}
-es un diccionario que contiene pares de opuestos:\inputencoding{latin9}
-\begin{lstlisting}
+es un diccionario que contiene pares de opuestos:
+\begin{verbatim}
 >>> opuestos = {'arriba': 'abajo', 'derecho': 'torcido', 
   'verdadero': 'falso'}
 >>> alias = opuestos
 >>> copia = opuestos.copy()
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \texttt{alias} y \texttt{opuestos} se refieren al mismo objeto; \texttt{copia}
 se refiere a una copia nueva del mismo diccionario. Si modificamos
-\texttt{alias}, \texttt{opuestos} también resulta cambiado:\inputencoding{latin9}
-\begin{lstlisting}
+\texttt{alias}, \texttt{opuestos} también resulta cambiado:
+\begin{verbatim}
 >>> alias['derecho'] = 'sentado'
 >>> opuestos['derecho']
 'sentado'
-\end{lstlisting}
-\inputencoding{utf8}
-Si modificamos \texttt{copia}, \texttt{opuestos} no varía:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+
+Si modificamos \texttt{copia}, \texttt{opuestos} no varía:
+\begin{verbatim}
 >>> copia['derecho'] = 'privilegio'
 >>> opuestos['derecho']
 'sentado'
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Matrices dispersas}
 
 \index{matriz!dispersa} \index{lista anidada} \index{lista!anidada}
@@ -193,32 +193,32 @@ una matriz como ésta:
 \beforefig\centerline{\includegraphics{illustrations/sparse}}
 %\afterfig
 
-La representación de la lista contiene un montón de ceros:\inputencoding{latin9}
-\begin{lstlisting}
+La representación de la lista contiene un montón de ceros:
+\begin{verbatim}
 >>> matriz = [ [0,0,0,1,0],
            [0,0,0,0,0],
            [0,2,0,0,0],
            [0,0,0,0,0],
            [0,0,0,3,0] ]
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Una posible alternativa consiste en usar un diccionario. Como claves,
 podemos usar tuplas que contengan los números de fila y columna. Ésta
-es la representación de la misma matriz por medio de un diccionario:\inputencoding{latin9}
-\begin{lstlisting}
+es la representación de la misma matriz por medio de un diccionario:
+\begin{verbatim}
 >>> matriz = {(0,3): 1, (2, 1): 2, (4, 3): 3}
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Sólo hay tres pares clave-valor, uno para cada elemento de la matriz
 diferente de cero. Cada clave es una tupla, y cada valor es un entero.
 
 Para acceder a un elemento de la matriz, podemos usar el operador
-\texttt{{[}{]}}:\inputencoding{latin9}
-\begin{lstlisting}
+\texttt{{[}{]}}:
+\begin{verbatim}
 >>> matriz[0,3]
 1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Observe que la sintaxis para la representación por medio del diccionario
 no es la misma de la representación por medio de la lista anidada.
 En lugar de dos índices enteros, usamos un índice compuesto que es
@@ -227,26 +227,26 @@ una tupla de enteros.
 Hay un problema. Si apuntamos a un elemento que es cero, se produce
 un error porque en el diccionario no hay una entrada con esa clave:
 
-\index{error en tiempo de ejecución}\inputencoding{latin9}
-\begin{lstlisting}
+\index{error en tiempo de ejecución}
+\begin{verbatim}
 >>> matriz[1,3]
 KeyError: (1, 3)
-\end{lstlisting}
-\inputencoding{utf8}
-El método \texttt{get} soluciona este problema:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+
+El método \texttt{get} soluciona este problema:
+\begin{verbatim}
 >>> matriz.get((0,3), 0)
 1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El primer argumento es la clave; el segundo argumento es el valor
 que debe devolver \texttt{get} en caso de que la clave no esté en
-el diccionario:\inputencoding{latin9}
-\begin{lstlisting}
+el diccionario:
+\begin{verbatim}
 >>> matriz.get((1,3), 0)
 0
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \texttt{get} mejora sensiblemente la semántica del acceso a una matriz
 dispersa. ¡Lástima que la sintaxis no sea tan clara!
 
@@ -283,8 +283,8 @@ mucho a medida que crece el argumento.
 Una buena solución es llevar un registro de los valores que ya se
 han calculado almacenándolos en un diccionario. A un valor que ya
 ha sido calculado y almacenado para un uso posterior se le llama \textbf{pista}.
-Aquí hay una implementación de \texttt{fibonacci} con pistas:\inputencoding{latin9}
-\begin{lstlisting}
+Aquí hay una implementación de \texttt{fibonacci} con pistas:
+\begin{verbatim}
 anteriores = {0:1, 1:1}
 
 def fibonacci(n):
@@ -294,8 +294,8 @@ def fibonacci(n):
     nuevoValor = fibonacci(n-1) + fibonacci(n-2)
     anteriores[n] = nuevoValor
     return nuevoValor
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El diccionario llamado \texttt{anteriores} mantiene un registro de
 los valores de Fibonacci que ya conocemos. El programa comienza con
 sólo dos pares: 0 corresponde a 1 y 1 corresponde a 1.
@@ -312,11 +312,11 @@ calcular \texttt{fibonacci(50)}, nos encontramos con otro problema:
 
 \index{error en tiempo de ejecución} \index{desbordamiento}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> fibonacci(50)
 OverflowError: integer addition
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La respuesta, como se verá en un momento, es 20.365.011.074. El problema
 es que este número es demasiado grande para caber en un entero de
 Python. Se \textbf{desborda}. Afortunadamente, hay una solución fácil
@@ -330,31 +330,31 @@ Python proporciona un tipo llamado \texttt{long int} que puede manejar
 enteros de cualquier tamaño. Hay dos formas de crear un valor \texttt{long
 int}. Una es escribir un entero con una {\em L} mayúscula al final:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> type(1L)
 <type 'long int'>
-\end{lstlisting}
-\inputencoding{utf8} La otra es usar la función \texttt{long} para convertir un valor
+\end{verbatim}
+ La otra es usar la función \texttt{long} para convertir un valor
 en \texttt{long int}. \texttt{long} acepta cualquier tipo numérico
-e incluso cadenas de dígitos:\inputencoding{latin9}
-\begin{lstlisting}
+e incluso cadenas de dígitos:
+\begin{verbatim}
 >>> long(1)
 1L
 >>> long(3.9)
 3L
 >>> long('57')
 57L
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Todas las operaciones matemáticas funcionan sobre los datos de tipo
 \texttt{long int}, así que no tenemos que hacer mucho para adaptar
-\texttt{fibonacci}:\inputencoding{latin9}
-\begin{lstlisting}
+\texttt{fibonacci}:
+\begin{verbatim}
 >>> anteriores = {0:1L, 1:1L}
 >>> fibonacci(50)
 20365011074L
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Simplemente cambiando el contenido inicial de \texttt{anteriores}
 cambiamos el comportamiento de \texttt{fibonacci}. Los primeros dos
 números de la secuencia son de tipo \texttt{long int}, así que todos
@@ -376,29 +376,29 @@ Como las diferentes letras aparecen con frecuencias distintas, podemos
 comprimir un archivo usando códigos cortos para las letras más habituales
 y códigos más largos para las que aparecen con menor frecuencia.
 
-Los diccionarios facilitan una forma elegante de generar un histograma:\inputencoding{latin9}
-\begin{lstlisting}
+Los diccionarios facilitan una forma elegante de generar un histograma:
+\begin{verbatim}
 >>> cuentaLetras = {}
 >>> for letra in "Mississippi":
       cuentaLetras[letra] = cuentaLetras.get(letra, 0)+1
 
 >>> cuentaLetras
 {'M': 1, 's': 4, 'p': 2, 'i': 4}
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Inicialmente, tenemos un diccionario vacío. Para cada letra de la
 cadena, buscamos el recuento actual (posiblemente cero) y la incrementamos.
 Al final, el diccionario contiene pares de letras y sus frecuencias.
 
 Puede ser más atractivo mostrar el histograma en orden alfabético.
-Podemos hacerlo con los métodos \texttt{items} y \texttt{sort}:\inputencoding{latin9}
-\begin{lstlisting}
+Podemos hacerlo con los métodos \texttt{items} y \texttt{sort}:
+\begin{verbatim}
 >>> itemsLetras = cuentaLetras.items()
 >>> list(itemsLetras).sort()
 >>> print(itemsLetras)
 [('M', 1), ('i', 4), ('p', 2), ('s', 4)]
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Usted ya ha visto el método \texttt{items} aplicable a los diccionarios;
 \texttt{sort} es un método aplicable a listas. Hay varios más, como
 \texttt{append}, \texttt{extend} y \texttt{reverse}. Consulte la documentación

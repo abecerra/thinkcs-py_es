@@ -31,12 +31,12 @@ Una alternativa es que el usuario defina un nuevo tipo de dato compuesto,
 también llamado una \textbf{clase}. Esta aproximación exige un poco
 más de esfuerzo, pero tiene algunas ventajas que pronto se harán evidentes.
 
-Una definición de clase se parece a esto:\inputencoding{latin9}
-\begin{lstlisting}
+Una definición de clase se parece a esto:
+\begin{verbatim}
 class Punto:
   pass
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Las definiciones de clase pueden aparecer en cualquier lugar de un
 programa, pero normalmente están al principio (tras las sentencias
 \texttt{import}). Las reglas sintácticas de la definición de clases
@@ -52,11 +52,11 @@ del tipo u \textbf{objetos}. La creación de una nueva instancia se
 llama \textbf{instanciación}. Para instanciar un objeto \texttt{Punto}
 ejecutamos una función que se llama \texttt{Punto}:
 
-\index{instancia!objeto} \index{instancia de un objeto} \index{instanciación}\inputencoding{latin9}
-\begin{lstlisting}
+\index{instancia!objeto} \index{instancia de un objeto} \index{instanciación}
+\begin{verbatim}
 limpio = Punto()
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 A la variable \texttt{limpio} se le asigna una referencia a un nuevo
 objeto \texttt{Punto}. A una función como \texttt{Punto} que crea
 un objeto nuevo se le llama \textbf{constructor}.
@@ -66,12 +66,12 @@ un objeto nuevo se le llama \textbf{constructor}.
 \index{atributos}
 
 Podemos añadir nuevos datos a una instancia utilizando la notación
-de punto:\inputencoding{latin9}
-\begin{lstlisting}
+de punto:
+\begin{verbatim}
 >>> limpio.x = 3.0
 >>> limpio.y = 4.0
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Esta sintaxis es similar a la sintaxis para seleccionar una variable
 de un módulo, como \texttt{math.pi} o \texttt{string.uppercase}. En
 este caso, sin embargo, estamos seleccionando un dato de una instancia.
@@ -87,14 +87,14 @@ dos atributos. Cada atributo apunta a un número en punto flotante.
 
 Podemos leer el valor de un atributo utilizando la misma sintaxis:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> print(limpio.y)
 4.0
 >>> x = limpio.x
 >>> print(x)
 3.0
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La expresión \texttt{limpio.x} significa, ``ve al objeto al que apunta
 \texttt{limpio} y toma el valor de \texttt{x}''. En este caso, asignamos
 ese valor a una variable llamada \texttt{x}. No hay conflicto entre
@@ -103,22 +103,22 @@ notación punto es identificar de forma inequívoca a qué variable se
 refiere el programador.
 
 Se puede usar la notación punto como parte de cualquier expresión.
-Así, las sentencias que siguen son correctas:\inputencoding{latin9}
-\begin{lstlisting}
+Así, las sentencias que siguen son correctas:
+\begin{verbatim}
 print('(' + str(limpio.x) + ', ' + str(limpio.y) + ')')
 distanciaAlCuadrado = limpio.x * limpio.x + 
                       limpio.y * limpio.y
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La primera línea presenta \texttt{(3.0, 4.0)}; la segunda línea calcula
 el valor 25.0.
 
-Usted puede estar tentado a imprimir el propio valor de \texttt{limpio}:\inputencoding{latin9}
-\begin{lstlisting}
+Usted puede estar tentado a imprimir el propio valor de \texttt{limpio}:
+\begin{verbatim}
 >>> print(limpio)
 <__main__.Point instance at 80f8e70>
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El resultado indica que \texttt{limpio} es una instancia de la clase
 \texttt{Punto} que se definió en \texttt{\_\_main\_\_}. \texttt{80f8e70}
 es el identificador único de este objeto, escrito en hexadecimal.
@@ -132,12 +132,12 @@ Probablemente ésta no es la manera más clara de mostrar un objeto
 \index{instancia} \index{parámetro}
 
 Se puede pasar una instancia como parámetro de la forma habitual.
-Por ejemplo:\inputencoding{latin9}
-\begin{lstlisting}
+Por ejemplo:
+\begin{verbatim}
 def imprimePunto(p):
   print('(' + str(p.x) + ', ' + str(p.y) + ')')
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \texttt{imprimePunto} acepta un punto como argumento y lo muestra
 en el formato estándar de la matemática. Si llamas a \texttt{imprimePunto(limpio)},
 el resultado es \texttt{(3.0, 4.0)}.
@@ -166,8 +166,8 @@ si dos \texttt{Puntos} son el mismo, ¿significa que contienen los
 mismos datos (coordenadas) o que son de verdad el mismo objeto?
 
 Para averiguar si dos referencias se refieren al mismo objeto, se
-utiliza el operador \texttt{==}. Por ejemplo:\inputencoding{latin9}
-\begin{lstlisting}
+utiliza el operador \texttt{==}. Por ejemplo:
+\begin{verbatim}
 >>> p1 = Punto()
 >>> p1.x = 3
 >>> p1.y = 4
@@ -176,17 +176,17 @@ utiliza el operador \texttt{==}. Por ejemplo:\inputencoding{latin9}
 >>> p2.y = 4
 >>> p1 == p2
 False
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Aunque \texttt{p1} y \texttt{p2} contienen las mismas coordenadas,
 no son el mismo objeto. Si asignamos \texttt{p1} a \texttt{p2}, las
-dos variables son alias del mismo objeto:\inputencoding{latin9}
-\begin{lstlisting}
+dos variables son alias del mismo objeto:
+\begin{verbatim}
 >>> p2 = p1
 >>> p1 == p2
 True
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Este tipo de igualdad se llama \textbf{igualdad superficial}, porque
 sólo compara las referencias, pero no el contenido de los objetos.
 
@@ -196,15 +196,15 @@ sólo compara las referencias, pero no el contenido de los objetos.
 Para comparar los contenidos de los objetos (\textbf{igualdad profunda})
 podemos escribir una función llamada \texttt{mismoPunto}:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def mismoPunto(p1, p2) :
   return (p1.x == p2.x) and (p1.y == p2.y)
-\end{lstlisting}
-\inputencoding{utf8} Si ahora creamos dos objetos diferentes que contienen los mismos
+\end{verbatim}
+ Si ahora creamos dos objetos diferentes que contienen los mismos
 datos podremos usar \texttt{mismoPunto} para averiguar si representan
 el mismo punto:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> p1 = Punto()
 >>> p1.x = 3
 >>> p1.y = 4
@@ -213,8 +213,8 @@ el mismo punto:
 >>> p2.y = 4
 >>> mismoPunto(p1, p2)
 True
-\end{lstlisting}
-\inputencoding{utf8} Por supuesto, si las dos variables apuntan al mismo objeto \texttt{mismoPunto}
+\end{verbatim}
+ Por supuesto, si las dos variables apuntan al mismo objeto \texttt{mismoPunto}
 devuelve verdadero.
 
 \section{Rectángulos}
@@ -232,28 +232,28 @@ una de las esquinas y el tamaño; o podemos señalar dos esquinas opuestas.
 Un modo convencional es señalar la esquina superior izquierda del
 rectángulo y el tamaño.
 
-De nuevo, definiremos una nueva clase:\inputencoding{latin9}
-\begin{lstlisting}
+De nuevo, definiremos una nueva clase:
+\begin{verbatim}
 class Rectangulo:	
   pass
-\end{lstlisting}
-\inputencoding{utf8}
-Y la instanciaremos:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+
+Y la instanciaremos:
+\begin{verbatim}
 caja = Rectangulo()
 caja.ancho = 100.0
 caja.altura = 200.0
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Este código crea un nuevo objeto \texttt{Rectangulo} con dos atributos
 flotantes. ¡Para señalar la esquina superior izquierda podemos incrustar
-un objeto dentro de otro!\inputencoding{latin9}
-\begin{lstlisting}
+un objeto dentro de otro!
+\begin{verbatim}
 caja.esquina = Punto()
 caja.esquina.x = 0.0;
 caja.esquina.y = 0.0;
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El operador punto compone. La expresión \texttt{caja.esquina.x} significa
 ``ve al objeto al que se refiere \texttt{caja} y selecciona el atributo
 llamado \texttt{esquina}; entonces ve a ese objeto y selecciona el
@@ -270,23 +270,23 @@ La figura muestra el estado de este objeto:
 
 Las funciones pueden devolver instancias. Por ejemplo, \texttt{encuentraCentro}
 acepta un \texttt{Rectangulo} como argumento y devuelve un \texttt{Punto}
-que contiene las coordenadas del centro del \texttt{Rectangulo}:\inputencoding{latin9}
-\begin{lstlisting}
+que contiene las coordenadas del centro del \texttt{Rectangulo}:
+\begin{verbatim}
 def encuentraCentro(caja):
   p = Punto()
   p.x = caja.esquina.x + caja.ancho/2.0
   p.y = caja.esquina.y + caja.altura/2.0
   return p
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Para llamar a esta función, se pasa \texttt{caja} como argumento y
-se asigna el resultado a una variable:\inputencoding{latin9}
-\begin{lstlisting}
+se asigna el resultado a una variable:
+\begin{verbatim}
 >>> centro = encuentraCentro(caja)
 >>> imprimePunto(centro)
 (50.0, 100.0)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Los objetos son mutables}
 
 \index{objeto!mutable} \index{objeto mutable}
@@ -294,29 +294,29 @@ se asigna el resultado a una variable:\inputencoding{latin9}
 Podemos cambiar el estado de un objeto efectuando una asignación sobre
 uno de sus atributos. Por ejemplo, para cambiar el tamaño de un rectángulo
 sin cambiar su posición, podemos cambiar los valores de \texttt{ancho}
-y \texttt{altura}:\inputencoding{latin9}
-\begin{lstlisting}
+y \texttt{altura}:
+\begin{verbatim}
 caja.ancho = caja.ancho + 50
 caja.altura = caja.altura + 100
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Podemos encapsular este código en un método y generalizarlo para agrandar
 el rectángulo en cualquier cantidad:
 
-\index{encapsulamiento} \index{generalización}\inputencoding{latin9}
-\begin{lstlisting}
+\index{encapsulamiento} \index{generalización}
+\begin{verbatim}
 def agrandarRect(caja, dancho, daltura) :
   caja.ancho = caja.ancho + dancho
   caja.altura = caja.altura + daltura
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Las variables \texttt{dancho} y \texttt{daltura} indican cuánto debe
 agrandarse el rectángulo en cada dirección. Invocar este método tiene
 el efecto de modificar el \texttt{Rectangulo} que se pasa como argumento.
 
 Por ejemplo, podemos crear un nuevo \texttt{Rectangulo} llamado \texttt{b}
-y pasárselo a la función \texttt{agrandarRect}:\inputencoding{latin9}
-\begin{lstlisting}
+y pasárselo a la función \texttt{agrandarRect}:
+\begin{verbatim}
 >>> b = Rectangulo()
 >>> b.ancho = 100.0
 >>> b.altura = 200.0
@@ -324,8 +324,8 @@ y pasárselo a la función \texttt{agrandarRect}:\inputencoding{latin9}
 >>> b.esquina.x = 0.0;
 >>> b.esquina.y = 0.0;
 >>> agrandarRect(b, 50, 100)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Mientras \texttt{agrandarRect} se está ejecutando, el parámetro \texttt{caja}
 es un alias de \texttt{b}. Cualquier cambio que se haga a \texttt{caja}
 afectará también a \texttt{b}.
@@ -341,8 +341,8 @@ pueden apuntar a un objeto dado.
 
 Copiar un objeto es, muchas veces, una alternativa a la creación de
 un alias. El módulo \texttt{copy} contiene una función llamada \texttt{copy}
-que puede duplicar cualquier objeto:\inputencoding{latin9}
-\begin{lstlisting}
+que puede duplicar cualquier objeto:
+\begin{verbatim}
 >>> import copy
 >>> p1 = Punto()
 >>> p1.x = 3
@@ -352,8 +352,8 @@ que puede duplicar cualquier objeto:\inputencoding{latin9}
 False
 >>> mismoPunto(p1, p2)
 True
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Una vez que hemos importado el módulo \texttt{copy}, podemos usar
 el método \texttt{copy} para hacer un nuevo \texttt{Punto}. \texttt{p1}
 y \texttt{p2} no son el mismo punto, pero contienen los mismos datos.
@@ -384,25 +384,25 @@ Afortunadamente, el módulo \texttt{copy} contiene un método llamado
 objetos incrustados en él. No lo sorprenderá saber que esta operación
 se llama \textbf{copia profunda} (deep copy).
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> b2 = copy.deepcopy(b1)
-\end{lstlisting}
-\inputencoding{utf8} Ahora \texttt{b1} y \texttt{b2} son objetos totalmente independientes.
+\end{verbatim}
+ Ahora \texttt{b1} y \texttt{b2} son objetos totalmente independientes.
 
 Podemos usar \texttt{deepcopy} para reescribir \texttt{agrandaRect}
 de modo que en lugar de modificar un \texttt{Rectangulo} existente,
 cree un nuevo \texttt{Rectangulo} que tiene la misma localización
 que el viejo pero nuevas dimensiones:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def agrandaRect(caja, dancho, daltura) :
   import copy
   nuevaCaja = copy.deepcopy(caja)
   nuevaCaja.ancho = nuevaCaja.ancho + dancho
   nuevaCaja.altura = nuevaCaja.altura + daltura
   return nuevaCaja
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+ 
 
 \section{Glosario}
 \begin{description}

@@ -28,13 +28,13 @@ Todo esto sirve también para los archivos. Para abrir un archivo,
 se especifica su nombre y se indica si se desea leer o escribir.
 
 La apertura de un archivo crea un objeto archivo. En este ejemplo,
-la variable \texttt{f} apunta al nuevo objeto archivo.\inputencoding{latin9}
-\begin{lstlisting}
+la variable \texttt{f} apunta al nuevo objeto archivo.
+\begin{verbatim}
 >>> f = open("test.dat","w")
 >>> print(f)
 <open file 'test.dat', mode 'w' at fe820>
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La función open toma dos argumentos: el primero, es el nombre del
 archivo y el segundo, el modo. El modo {\verb+"w"+} significa que
 lo estamos abriendo para escribir.
@@ -46,66 +46,66 @@ Al imprimir el objeto archivo, vemos el nombre del archivo, el modo
 y la localización del objeto.
 
 Para escribir datos en el archivo invocamos al método \texttt{write}
-sobre el objeto archivo:\inputencoding{latin9}
-\begin{lstlisting}
+sobre el objeto archivo:
+\begin{verbatim}
 >>> f.write("Ya es hora")
 >>> f.write("de cerrar el archivo")
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El cierre del archivo le dice al sistema que hemos terminado de escribir
-y deja el archivo listo para leer:\inputencoding{latin9}
-\begin{lstlisting}
+y deja el archivo listo para leer:
+\begin{verbatim}
 >>> f.close()
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Ya podemos abrir el archivo de nuevo, esta vez para lectura, y poner
 su contenido en una cadena. Esta vez el argumento de modo es {\verb+"r"+},
-para lectura:\inputencoding{latin9}
-\begin{lstlisting}
+para lectura:
+\begin{verbatim}
 >>> f = open("test.dat","r")
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Si intentamos abrir un archivo que no existe, recibimos un mensaje
 de error:
 
-\index{error en tiempo de ejecución}\inputencoding{latin9}
-\begin{lstlisting}
+\index{error en tiempo de ejecución}
+\begin{verbatim}
 >>> f = open("test.cat","r")
 IOError: [Errno 2] No such file or directory: 'test.cat'
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Como era de esperar, el método \texttt{read} lee datos del archivo.
-Sin argumentos, lee el archivo completo:\inputencoding{latin9}
-\begin{lstlisting}
+Sin argumentos, lee el archivo completo:
+\begin{verbatim}
 >>> texto = f.read()
 >>> print(texto)
 Ya es horade cerrar el archivo
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 No hay un espacio entre ``hora'' y ``de'' porque no escribimos
 un espacio entre las cadenas. \texttt{read} también puede aceptar
-un argumento que le indica cuántos caracteres leer:\inputencoding{latin9}
-\begin{lstlisting}
+un argumento que le indica cuántos caracteres leer:
+\begin{verbatim}
 >>> f = open("test.dat","r")
 >>> print(f.read(7))
 Ya es h
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Si no quedan suficientes caracteres en el archivo, \texttt{read} devuelve
 los que haya. Cuando llegamos al final del archivo, \texttt{read}
-devuelve una cadena vacía:\inputencoding{latin9}
-\begin{lstlisting}
+devuelve una cadena vacía:
+\begin{verbatim}
 >>> print(f.read(1000006))
 orade cerrar el archivo
 >>> print(f.read())
 
 >>>
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La siguiente función copia un archivo, leyendo y escribiendo los caracteres
 de cincuenta en cincuenta. El primer argumento es el nombre del archivo
-original; el segundo es el nombre del archivo nuevo:\inputencoding{latin9}
-\begin{lstlisting}
+original; el segundo es el nombre del archivo nuevo:
+\begin{verbatim}
 def copiaArchivo(archViejo, archNuevo):
   f1 = open(archViejo, "r")
   f2 = open(archNuevo, "w")
@@ -117,8 +117,8 @@ def copiaArchivo(archViejo, archNuevo):
   f1.close()
   f2.close()
   return
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La sentencia \texttt{break} es nueva. Su ejecución interrumpe el ciclo;
 el flujo de la ejecución pasa a la primera sentencia después del while.
 
@@ -139,47 +139,47 @@ Como Python está diseñado específicamente para procesar archivos de
 texto, proporciona métodos que facilitan esta tarea.
 
 Para hacer una demostración, crearemos un archivo de texto con tres
-líneas de texto separadas por saltos de línea:\inputencoding{latin9}
-\begin{lstlisting}
+líneas de texto separadas por saltos de línea:
+\begin{verbatim}
 >>> f = open("test.dat","w")
 >>> f.write("l�nea uno\nl�nea dos\nl�nea tres\n")
 >>> f.close()
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El método \texttt{readline} lee todos los caracteres hasta, e incluyendo,
-el siguiente salto de línea:\inputencoding{latin9}
-\begin{lstlisting}
+el siguiente salto de línea:
+\begin{verbatim}
 >>> f = open("test.dat","r")
 >>> print(f.readline())
 l�nea uno
 
 >>>
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \texttt{readlines} devuelve todas las líneas que queden como una lista
-de cadenas:\inputencoding{latin9}
-\begin{lstlisting}
+de cadenas:
+\begin{verbatim}
 >>> print(f.readlines())
 ['l�nea dos\012', 'l�nea tres\012']
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 En este caso, la salida está en forma de lista, lo que significa que
 las cadenas aparecen con comillas y el carácter de salto de línea
 aparece como la secuencia de escape \texttt{012}.
 
 Al final del archivo, \texttt{readline} devuelve una cadena vacía
-y \texttt{readlines} devuelve una lista vacía:\inputencoding{latin9}
-\begin{lstlisting}
+y \texttt{readlines} devuelve una lista vacía:
+\begin{verbatim}
 >>> print(f.readline())
 
 >>> print(f.readlines())
 []
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Lo que sigue es un ejemplo de un programa de proceso de líneas. \texttt{filtraArchivo}
 hace una copia de \texttt{archViejo}, omitiendo las líneas que comienzan
-por \texttt{\#}:\inputencoding{latin9}
-\begin{lstlisting}
+por \texttt{\#}:
+\begin{verbatim}
 def filtraArchivo(archViejo, archNuevo):
   f1 = open(archViejo, "r")
   f2 = open(archNuevo, "w")
@@ -193,8 +193,8 @@ def filtraArchivo(archViejo, archNuevo):
   f1.close()
   f2.close()
   return
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La sentencia \texttt{continue} termina la iteración actual del ciclo,
 pero sigue haciendo las que le faltan. El flujo de ejecución pasa
 al principio del ciclo, comprueba la condición y continúa normalmente.
@@ -212,12 +212,12 @@ fallan copiamos \texttt{texto} en el archivo nuevo.
 
 El argumento de \texttt{write} debe ser una cadena, así que si queremos
 poner otros valores en un archivo, tenemos que convertirlos previamente
-en cadenas. La forma más fácil de hacerlo es con la función \texttt{str}:\inputencoding{latin9}
-\begin{lstlisting}
+en cadenas. La forma más fácil de hacerlo es con la función \texttt{str}:
+\begin{verbatim}
 >>> x = 52
 >>> f.write (str(x))
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Una alternativa es usar el \textbf{operador de formato} \texttt{\%}.
 Cuando aplica a enteros, \texttt{\%} es el operador de módulo. Pero
 cuando el primer operando es una cadena, \texttt{\%} es el operador
@@ -230,74 +230,74 @@ de formato.
 
 A modo de ejemplo simple, la \textbf{secuencia de formato} {\verb+"%d"+}
 significa que la primera expresión de la tupla debería formatearse
-como un entero. Aquí la letra {\em d} quiere decir ``decimal'':\inputencoding{latin9}
-\begin{lstlisting}
+como un entero. Aquí la letra {\em d} quiere decir ``decimal'':
+\begin{verbatim}
 >>> motos = 52
 >>> "%d" % motos
 '52'
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El resultado es la cadena \texttt{'52'}, que no debe confundirse con
 el valor entero \texttt{52}.
 
 Una secuencia de formato puede aparecer en cualquier lugar de la cadena
-de formato, de modo que podemos incrustar un valor en una frase:\inputencoding{latin9}
-\begin{lstlisting}
+de formato, de modo que podemos incrustar un valor en una frase:
+\begin{verbatim}
 >>> motos = 52
 >>> "En julio vendimos %d motos." % motos
 'En julio vendimos 52 motos.'
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La secuencia de formato {\verb+"%f"+} formatea el siguiente elemento
 de la tupla como un número en punto flotante, y {\verb+"%s"+} formatea
-el siguiente elemento como una cadena:\inputencoding{latin9}
-\begin{lstlisting}
+el siguiente elemento como una cadena:
+\begin{verbatim}
 >>> "En %d dias ganamos %f millones de %s." % (4,1.2,'pesos')
 'En 4 dias ganamos 1.200000 millones de pesos.'
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Por defecto, el formato de punto flotante imprime seis decimales.
 
 El número de expresiones en la tupla tiene que coincidir con el número
 de secuencias de formato de la cadena. Igualmente, los tipos de las
 expresiones deben coincidir con las secuencias de formato:
 
-\index{error en tiempo de ejecución}\inputencoding{latin9}
-\begin{lstlisting}
+\index{error en tiempo de ejecución}
+\begin{verbatim}
 >>> "%d %d %d" % (1,2)
 TypeError: not enough arguments for format string
 >>> "%d" % 'dolares'
 TypeError: illegal argument type for built-in operation
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 En el primer ejemplo no hay suficientes expresiones; en el segundo,
 la expresión es de un tipo incorrecto.
 
 Para tener más control sobre el formato de los números, podemos detallar
-el número de dígitos como parte de la secuencia de formato:\inputencoding{latin9}
-\begin{lstlisting}
+el número de dígitos como parte de la secuencia de formato:
+\begin{verbatim}
 >>> "%6d" % 62
 '    62'
 >>> "%12f" % 6.1
 '    6.100000'
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El número tras el signo de porcentaje es el número mínimo de espacios
 que ocupará el número. Si el valor necesita menos dígitos, se añaden
 espacios en blanco delante del número. Si el número de espacios es
-negativo, se añaden los espacios tras el número:\inputencoding{latin9}
-\begin{lstlisting}
+negativo, se añaden los espacios tras el número:
+\begin{verbatim}
 >>> "%-6d" % 62
 '62    '
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 También podemos especificar el número de decimales para los números
-en coma flotante:\inputencoding{latin9}
-\begin{lstlisting}
+en coma flotante:
+\begin{verbatim}
 >>> "%12.2f" % 6.1
 '        6.10'
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 En este ejemplo, el resultado ocupa doce espacios e incluye dos dígitos
 tras la coma. Este formato es útil para imprimir cantidades de dinero
 con las comas alineadas.
@@ -307,25 +307,25 @@ con las comas alineadas.
 Imagine, por ejemplo, un diccionario que contiene los nombres de los
 estudiantes como clave y las tarifas horarias como valores. He aquí
 una función que imprime el contenido del diccionario como de un informe
-formateado:\inputencoding{latin9}
-\begin{lstlisting}
+formateado:
+\begin{verbatim}
 def informe (tarifas) :
   estudiantes = tarifas.keys()
   estudiantes.sort()
   for estudiante in estudiantes :
     print("%-20s %12.02f"%(estudiante, tarifas[estudiante]))
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Para probar la función, crearemos un pequeño diccionario e imprimiremos
-el contenido:\inputencoding{latin9}
-\begin{lstlisting}
+el contenido:
+\begin{verbatim}
 >>> tarifas = {'maria': 6.23, 'jose': 5.45, 'jesus': 4.25}
 >>> informe (tarifas)
 jose                         5.45
 jesus                        4.25
 maria                        6.23
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Controlando el ancho de cada valor nos aseguramos de que las columnas
 van a quedar alineadas, siempre que los nombre tengan menos de veintiún
 caracteres y las tarifas sean menos de mil millones la hora.
@@ -341,13 +341,13 @@ leerlo, Python lo busca en el directorio en uso.
 
 Si usted quiere abrir un archivo de cualquier otro sitio, tiene que
 especificar la \textbf{ruta} del archivo, que es el nombre del directorio
-(o carpeta) donde se encuentra este:\inputencoding{latin9}
-\begin{lstlisting}
+(o carpeta) donde se encuentra este:
+\begin{verbatim}
 >>>   f = open("/usr/share/dict/words","r")
 >>>   print(f.readline())
 Aarhus
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Este ejemplo abre un archivo denominado \texttt{words}, que se encuentra
 en un directorio llamado \texttt{dict}, que está en \texttt{share},
 en en \texttt{usr}, que está en el directorio de nivel superior del
@@ -367,41 +367,41 @@ universidad danesa.
 \index{encurtido}
 
 Para poner valores en un archivo, se deben convertir a cadenas. Usted
-ya ha visto cómo hacerlo con \texttt{str}:\inputencoding{latin9}
-\begin{lstlisting}
+ya ha visto cómo hacerlo con \texttt{str}:
+\begin{verbatim}
 >>> f.write (str(12.3))
 >>> f.write (str([1,2,3]))
-\end{lstlisting}
-\inputencoding{utf8} El problema es que cuando se vuelve a leer el valor, se obtiene una
+\end{verbatim}
+ El problema es que cuando se vuelve a leer el valor, se obtiene una
 cadena. Se ha perdido la información del tipo de dato original. En
 realidad, no se puede distinguir dónde termina un valor y dónde comienza
 el siguiente:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>>   f.readline()
 '12.3[1, 2, 3]'
-\end{lstlisting}
-\inputencoding{utf8} La solución es el \textbf{encurtido}, llamado así porque ``encurte''
+\end{verbatim}
+ La solución es el \textbf{encurtido}, llamado así porque ``encurte''
 estructuras de datos. El módulo \texttt{pickle} contiene las órdenes
 necesarias. Para usarlo, se importa \texttt{pickle} y luego se abre
-el archivo de la forma habitual:\inputencoding{latin9}
-\begin{lstlisting}
+el archivo de la forma habitual:
+\begin{verbatim}
 >>> import pickle
 >>> f = open("test.pck","w")
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Para almacenar una estructura de datos, se usa el método \texttt{dump}
-y luego se cierra el archivo de la forma habitual:\inputencoding{latin9}
-\begin{lstlisting}
+y luego se cierra el archivo de la forma habitual:
+\begin{verbatim}
 >>> pickle.dump(12.3, f)
 >>> pickle.dump([1,2,3], f)
 >>> f.close()
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Ahora podemos abrir el archivo para leer y cargar las estructuras
 de datos que volcamos ahí:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> f = open("test.pck","r")
 >>> x = pickle.load(f)
 >>> x
@@ -413,8 +413,8 @@ de datos que volcamos ahí:
 [1, 2, 3]
 >>> type(y)
 <type 'list'>
-\end{lstlisting}
-\inputencoding{utf8} Cada vez que invocamos \texttt{load} obtenemos un valor del archivo
+\end{verbatim}
+ Cada vez que invocamos \texttt{load} obtenemos un valor del archivo
 completo con su tipo original.
 
 \section{Excepciones}
@@ -426,26 +426,26 @@ completo con su tipo original.
 Siempre que ocurre un error en tiempo de ejecución, se crea una \textbf{excepción}.
 Normalmente el programa se para y Python presenta un mensaje de error.
 
-Por ejemplo, la división por cero crea una excepción:\inputencoding{latin9}
-\begin{lstlisting}
+Por ejemplo, la división por cero crea una excepción:
+\begin{verbatim}
 >>> print(55/0)
 ZeroDivisionError: integer division or modulo
-\end{lstlisting}
-\inputencoding{utf8}
-Un elemento no existente en una lista hace lo mismo:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+
+Un elemento no existente en una lista hace lo mismo:
+\begin{verbatim}
 >>> a = []
 >>> print(a[5])
 IndexError: list index out of range
-\end{lstlisting}
-\inputencoding{utf8}
-O el acceso a una clave que no está en el diccionario:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+
+O el acceso a una clave que no está en el diccionario:
+\begin{verbatim}
 >>> b = {}
 >>> print(b['qu�'])
 KeyError: qu�
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 En cada caso, el mensaje de error tiene dos partes: el tipo de error
 antes de los dos puntos y detalles sobre el error después de los dos
 puntos. Normalmente, Python también imprime una traza de dónde se
@@ -459,15 +459,15 @@ la excepción usando las sentencias \texttt{try} y \texttt{except}.
 
 Por ejemplo, podemos preguntar al usuario por el nombre de un archivo
 y luego intentar abrirlo. Si el archivo no existe, no queremos que
-el programa se aborte; queremos manejar la excepción.\inputencoding{latin9}
-\begin{lstlisting}
+el programa se aborte; queremos manejar la excepción.
+\begin{verbatim}
 nombreArch = raw_input('Introduce un nombre de archivo: ')
 try:
   f = open (nombreArch, "r")
 except:
   print('No hay ning�n archivo que se llame', nombreArch)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La sentencia \texttt{try} ejecuta las sentencias del primer bloque.
 Si no se produce ninguna excepción, pasa por alto la sentencia \texttt{except}.
 Si ocurre cualquier excepción, ejecuta las sentencias de la rama \texttt{except}
@@ -475,8 +475,8 @@ y después continúa.
 
 Podemos encapsular esta capacidad en una función: \texttt{existe},
 que acepta un nombre de archivo y devuelve verdadero si el archivo
-existe y falso si no:\inputencoding{latin9}
-\begin{lstlisting}
+existe y falso si no:
+\begin{verbatim}
 def existe(nombreArch):
   try:
     f = open(nombreArch)
@@ -484,37 +484,37 @@ def existe(nombreArch):
     return True
   except:
     return False
-\end{lstlisting}
-\inputencoding{utf8}Se pueden usar múltiples bloques \texttt{except} para manejar diferentes
+\end{verbatim}
+Se pueden usar múltiples bloques \texttt{except} para manejar diferentes
 tipos de excepciones. El {\em Manual de Referencia de Python} contiene
 los detalles.
 
 Si su programa detecta una condición de error, se puede lanzar (\textbf{raise}
 en inglés) una excepción. Aquí hay un ejemplo que acepta una entrada
 del usuario y comprueba si es 17. Suponiendo que 17 no es una entrada
-válida por cualquier razón, lanzamos una excepción.\inputencoding{latin9}
-\begin{lstlisting}
+válida por cualquier razón, lanzamos una excepción.
+\begin{verbatim}
 # -*- coding: utf-8 -*-
 def tomaNumero () :                 
   x = input ('Elige un n�mero: ')   
   if x == 17 :
     raise 'ErrorNumeroMalo', '17 es un mal n�mero'
   return x
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La sentencia \texttt{raise} acepta dos argumentos: el tipo de excepción
 e información específica acerca del error. \texttt{ErrorNumeroMalo}
 es un nuevo tipo de excepción que hemos inventado para esta aplicación.
 
 Si la función llamada \texttt{tomaNumero} maneja el error, el programa
 puede continuar; en caso contrario, Python imprime el mensaje de error
-y sale:\inputencoding{latin9}
-\begin{lstlisting}
+y sale:
+\begin{verbatim}
 >>> tomaNumero ()
 Elige un n�mero: 17
 ErrorNumeroMalo: 17 es un mal n�mero
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El mensaje de error incluye el tipo de excepción y la información
 adicional proporcionada.
 

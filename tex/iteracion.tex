@@ -12,13 +12,13 @@ una asignación a la misma variable. Una nueva asignación hace que
 la variable existente se refiera a un nuevo valor (y deje de referirse
 al viejo valor).
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 pedro = 5
 print(pedro)
 pedro = 7
 print(pedro)
-\end{lstlisting}
-\inputencoding{utf8} La salida de este programa es:
+\end{verbatim}
+ La salida de este programa es:
 
 \texttt{5 }
 
@@ -47,12 +47,12 @@ es cierta. Si $a=b$ ahora, entonces $a$ siempre será igual a $b$.
 En Python, una sentencia de asignación puede lograr que dos variables
 sean iguales pero sólo por un tiempo determinado:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 a = 5
 b = a    # a y b ahora son iguales
 a = 3    # a y b no son iguales ahora
-\end{lstlisting}
-\inputencoding{utf8} La tercera línea cambia el valor de \texttt{a} pero no cambia el
+\end{verbatim}
+ La tercera línea cambia el valor de \texttt{a} pero no cambia el
 valor de \texttt{b}, así que ya no serán iguales. En algunos lenguajes
 de programación se usa un signo diferente para la asignación como
 \texttt{<-} o \texttt{:=} para evitar la confusión.
@@ -79,14 +79,14 @@ varios elementos para facilitarla. El primero que veremos es la sentencia
 Aquí presentamos a la función \texttt{conteo} usando una sentencia
 \texttt{while}:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def conteo(n):
   while n > 0:
     print(n)
     n = n-1
   print("Despegue!")
-\end{lstlisting}
-\inputencoding{utf8} Como eliminamos el llamado recursivo, esta función deja de ser recursiva.
+\end{verbatim}
+ Como eliminamos el llamado recursivo, esta función deja de ser recursiva.
 
 La sentencia \texttt{while} se puede leer como en el lenguaje natural.
 Quiere decir, ``Mientras \texttt{n} sea mayor que 0, continúe desplegando
@@ -126,7 +126,7 @@ que va haciéndose más pequeño cada vez que el while itera (da la vuelta),
 así que eventualmente llegaremos a 0. En otros casos esto no es tan
 fácil de asegurar:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def secuencia(n):
   while n != 1:
     print(n),
@@ -134,8 +134,8 @@ def secuencia(n):
       n = n/2
     else:               # n es impar
       n = n*3+1
-\end{lstlisting}
-\inputencoding{utf8} La condición para este ciclo es \texttt{n != 1}, así que se repetirá
+\end{verbatim}
+ La condición para este ciclo es \texttt{n != 1}, así que se repetirá
 hasta que \texttt{n} sea \texttt{1}, lo que hará que la condición
 sea falsa.
 
@@ -189,15 +189,15 @@ Pentium de la compañía Intel.
 Aunque una tabla logarítmica no es tan útil como en el pasado, todavía
 sirve como un buen ejemplo de iteración. El siguiente programa despliega
 una secuencia de valores en la columna izquierda y sus logaritmos
-en la columna derecha: \inputencoding{latin9}
-\begin{lstlisting}
+en la columna derecha: 
+\begin{verbatim}
 import math
 x = 1.0
 while x < 10.0:
   print(x, '\t', math.log(x))
   x = x + 1.0
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La cadena \verb+'\t'+ representa un carácter \textbf{tab} (tabulador).
 
 A medida que los caracteres y las cadenas se despliegan en la pantalla
@@ -229,11 +229,11 @@ en base 2. Para este fin podemos usar la siguiente fórmula:
 \log_{2}x=\frac{log_{e}x}{log_{e}2}
 \end{equation}
 
-Cambiando la salida del ciclo a:\inputencoding{latin9}
-\begin{lstlisting}
+Cambiando la salida del ciclo a:
+\begin{verbatim}
 print(x, '\t',  math.log(x)/math.log(2.0))
-\end{lstlisting}
-\inputencoding{utf8}\begin{verbatim}
+\end{verbatim}
+\begin{verbatim}
    resulta en:
 1.0     0.0
 2.0     1.0
@@ -247,14 +247,14 @@ print(x, '\t',  math.log(x)/math.log(2.0))
 \end{verbatim}
 Podemos ver que 1, 2, 4, y 8 son potencias de dos porque sus logaritmos
 en base 2 son números enteros. Si deseamos calcular el logaritmo de
-más potencias de dos podemos modificar el programa así:\inputencoding{latin9}
-\begin{lstlisting}
+más potencias de dos podemos modificar el programa así:
+\begin{verbatim}
 x = 1.0
 while x < 100.0:
   print(x, '\t', math.log(x)/math.log(2.0))
   x = x * 2.0
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Ahora, en lugar de agregar algo a \texttt{x} en cada iteración del
 ciclo, produciendo una serie aritmética, multiplicamos a \texttt{x}
 por algo constante, produciendo una serie geométrica. El resultado
@@ -300,16 +300,16 @@ es un ejemplo familiar. Digamos que usted desea imprimir una tabla
 de multiplicación para los valores del 1 al 6.
 
 Una buena forma de empezar es escribir un ciclo que imprima los múltiplos
-de 2, en una sola línea:\inputencoding{latin9}
-\begin{lstlisting}
+de 2, en una sola línea:
+\begin{verbatim}
 i = 1
 while i <= 6:
   print(2*i, '   ',end=' ')
   i = i + 1
 
 print()
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La primera línea inicializa una variable llamada \texttt{i}, que actúa
 como un contador o \textbf{variable de ciclo}. A medida que se ejecuta
 el ciclo, el valor de \texttt{i} se incrementa de 1 a 6. Cuando \texttt{i}
@@ -346,16 +346,16 @@ múltiplos de 2, y convertirlo en algo más general, tal como imprimir
 los múltiplos de cualquier entero.
 
 Esta función encapsula el ciclo anterior y lo generaliza para imprimir
-múltiplos de un parámetro \texttt{n}:\inputencoding{latin9}
-\begin{lstlisting}
+múltiplos de un parámetro \texttt{n}:
+\begin{verbatim}
 def imprimaMultiplos(n):
   i = 1
   while i <= 6:
     print(n*i, end='\t')
     i = i + 1
   print()
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Para encapsular el ciclo, todo lo que agregamos fue la primera línea
 que declara el nombre de la función y la lista de parámetros. Para
 generalizar, lo que hicimos fue reemplazar el valor 2 con el parámetro
@@ -374,13 +374,13 @@ Ahora, usted probablemente imagine cómo imprimir una tabla de multiplicación
 —llamando a \texttt{imprimaMultiplos} repetidamente con diferentes
 argumentos. De hecho, podemos usar otro ciclo:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 i = 1
 while i <= 6:
   imprimaMultiplos(i)
   i = i + 1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Observe lo similar que es este ciclo al ciclo interno de la función
 \texttt{imprimaMultiplos}. Todo lo que hicimos fue reemplazar la sentencia
 \texttt{print} con un llamado de función.
@@ -398,15 +398,15 @@ La salida de este programa es una tabla de multiplicación:
 \section{Más encapsulamiento}
 
 Para demostrar el encapsulamiento otra vez, tomemos el código de la
-sección \ref{encapsulation} y envolvámoslo en una función:\inputencoding{latin9}
-\begin{lstlisting}
+sección \ref{encapsulation} y envolvámoslo en una función:
+\begin{verbatim}
 def imprimirTablaMultiplicacion():
   i = 1
   while i <= 6:
     imprimaMultiplos(i)
     i = i + 1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Este proceso es un \textbf{plan de desarrollo} común. Desarrollamos
 código escribiendo líneas afuera de cualquier función o digitándolas
 en el intérprete. Cuando funcionan, las ponemos dentro de una función.
@@ -461,15 +461,15 @@ lectura del programa.
 
 Como otro ejemplo de generalización, imagine que le piden un programa
 que imprima una tabla de multiplicación de cualquier tamaño; no sólo
-la tabla de seis por seis. Podría agregarse un parámetro a \texttt{imprimaTabla}:\inputencoding{latin9}
-\begin{lstlisting}
+la tabla de seis por seis. Podría agregarse un parámetro a \texttt{imprimaTabla}:
+\begin{verbatim}
 def imprimaTabla(tope):
   i = 1
   while i <= tope:
     imprimaMultiplos(i)
     i = i + 1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Reemplazamos el valor 6 con el parámetro \texttt{tope}. Si llamamos
 a \texttt{imprimaTabla} con el argumento 7, despliega:
 \begin{verbatim}
@@ -488,8 +488,8 @@ tabla.
 
 Sólo por confundir, vamos a nombrarlo \texttt{tope}, demostrando que
 diferentes funciones pueden tener parámetros con el mismo nombre (igual
-que las variables locales). Aquí está el programa completo:\inputencoding{latin9}
-\begin{lstlisting}
+que las variables locales). Aquí está el programa completo:
+\begin{verbatim}
 def imprimaMultiplos(n, tope):
   i = 1
   while i <= tope:
@@ -502,8 +502,8 @@ def imprimaTabla(tope):
   while i <= tope:
     imprimaMultiplos(i, tope)
     i = i + 1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Note que cuando agregamos el nuevo parámetro tuvimos que cambiar la
 primera línea de la función (la cabecera), y también el lugar donde
 la función se llama en \texttt{imprimaTabla}.

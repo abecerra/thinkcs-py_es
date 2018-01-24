@@ -46,7 +46,7 @@ convención que sigue. Si el elemento de la matriz es:
 
 Con la convención anterior, nuestro triqui empieza humildemente:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui0.py
 def crear():
     m =  [ [' ',' ',' '],
@@ -64,11 +64,11 @@ def imprimir(tablero):
         
 triqui = crear()
 imprimir(triqui)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Ahora podemos agregar un ciclo para jugar, sencillo, con un solo jugador:\pagebreak{}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui1.py
 while True:
     print("Juegue jugador O")
@@ -76,8 +76,8 @@ while True:
     c = input("columna? ")
     triqui[f][c] = "O"
     imprimir(triqui)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Agregar al segundo jugador es casi idéntico al fragmento anterior
 y está en el archivo triqui2.py.
 
@@ -87,34 +87,34 @@ Para verificar si un jugador gana la partida, vamos a empezar por
 las diagonales, implementando un ciclo para la verificar si alguien
 gana en la diagonal principal:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui3.py
 def ganaDiagonal1(jugador,tablero):
     for i in range(3):
         if tablero[i][i]!=jugador:
             return False
     return True
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La idea es que si encuentra algo diferente del símbolo del jugador
 ('X' ó 'O'), retorna False. Sino, retorna True. La otra diagonal requiere
 mas trabajo, usamos el hecho de que \texttt{tablero{[}i{]}{[}2-i{]}}
 va dando los elementos de la segunda diagonal para i de 0 a 2. ¡Verifiquelo!
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui3.py
 def ganaDiagonal2(jugador,tablero):
     for i in range(3):
         if tablero[i][2-i]!=jugador:
             return False
     return True
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Falta llamar las funciones en el ciclo del juego, y si alguien gana,
 terminamos el juego con la sentencia \texttt{break}. Por ejemplo,
 para el primer jugador:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui3.py
 print("Juegue jugador O")
     f = input("fila? ")
@@ -124,14 +124,14 @@ print("Juegue jugador O")
     if ganaDiagonal1("O",triqui) or ganaDiagonal2("O",triqui):
         print("Gana el jugador O!!!!")
         break
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Agregar las funciones para verificar si alguien gana por alguna fila
 es sencillo. Seguimos la misma estructura de las diagonales, creando
 una función \texttt{ganaFila}, que verifica si el jugador gana en
 una de las filas del tablero.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui4.py
 def ganaFila(fila,jugador,tablero):
     """Chequea si el jugador gana en la fila dada"""
@@ -139,11 +139,11 @@ def ganaFila(fila,jugador,tablero):
         if tablero[fila][i]!=jugador:
             return False
     return True
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La función anterior debe ser llamada para todas las filas:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui4.py
 
 def ganaHorizontal(jugador,tablero):
@@ -151,12 +151,12 @@ def ganaHorizontal(jugador,tablero):
         if ganaFila(i,jugador,tablero):
             return True
     return False
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Las funciones para chequear las columnas son muy parecidas. Para llamarlas
 modificamos el ciclo del juego. Por ejemplo, para el jugador 'X':
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui4.py
 while True:
     print("Juegue jugador X")
@@ -168,8 +168,8 @@ while True:
        ganaHorizontal("X",triqui) or ganaVertical("X",triqui):
         print("Gana el jugador X!!!!")
         break
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Reestructurando el código}
 
 \index{reestructuración}
@@ -185,7 +185,7 @@ En el triqui podemos observar que el código dentro del ciclo para
 el jugador 'O' y el 'X' es muy parecido. Así que lo podemos poner
 en una función que tenga como parámetro el símbolo del jugador:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui5.py
 def jugar(jugador,tablero):
     print("Juegue jugador ", jugador)
@@ -198,12 +198,12 @@ def jugar(jugador,tablero):
     linea = ganaHorizontal(jugador,tablero) or \ 
             ganaVertical(jugador,tablero)
     return  diag or linea
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Con este cambio nuestro ciclo de juego es más pequeño, y el programa
 es más fácil de mantener:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui5.py
 while True:
     if jugar("O",triqui):
@@ -212,8 +212,8 @@ while True:
     if jugar("X",triqui):
         print("Gana el jugador X !!!!")
         break
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Validaciones}
 
 \index{validación}
@@ -233,7 +233,7 @@ una jugada nueva pueda hacerse allí.
 Estas validaciones pueden ponerse en un ciclo que le pida al jugador
 digitar los valores para f y c varias veces, hasta que sean correctos:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui6.py
 
 def valido(n):
@@ -255,15 +255,15 @@ def jugar(jugador,tablero):
     linea = ganaHorizontal(jugador,tablero) or \
             ganaVertical(jugador,tablero)
     return  diag or linea
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Empates}
 
 Ahora agregamos una función para chequear si hay empate entre los
 jugadores. Esto sucede si el tablero está lleno, o sea que no hay
 ninguna casilla vacía (con el carácter ' '):
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui7.py
 
 def empate(tablero):
@@ -272,11 +272,11 @@ def empate(tablero):
             if tablero[i][j]==' ':
                 return False
     return True
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Llamamos a empate después de cada jugador: 
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui8.py
 while True:
     if jugar("O",triqui):
@@ -291,12 +291,12 @@ while True:
     if empate(triqui):
         print("Empate !!!")
         break
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Y también agregamos un mensaje de retroalimentación para el jugador
 cuando no ha escogido una casilla válida:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui8.py
 def jugar(jugador,tablero):
     while True:     
@@ -316,14 +316,14 @@ def jugar(jugador,tablero):
     linea = ganaHorizontal(jugador,tablero) or \
             ganaVertical(jugador,tablero)
     return  diag or linea
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Reestructurando más}
 
 Podemos crear una función \texttt{gana}, fructífera, que nos permita
 que jugar sea mas pequeña:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui9.py
 def gana(jugador,tablero):
     """ Analiza si el jugador gana la partida """
@@ -332,8 +332,8 @@ def gana(jugador,tablero):
     linea = ganaHorizontal(jugador,tablero) or \
             ganaVertical(jugador,tablero)
     return  diag or linea
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Con este cambio también ganamos algo: la verificación de quien gana
 el juego puede hacerse con una sola función en otro programa, por
 ejemplo uno con una interfaz gráfica de usuario, como el del capítulo
@@ -342,7 +342,7 @@ ejemplo uno con una interfaz gráfica de usuario, como el del capítulo
 Ahora, \texttt{gana} se llama en el ciclo principal. Y todo esto se
 puede poner en la parte principal del programa:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # triqui9.py
 if __name__ == '__main__':
     triqui = crear()
@@ -363,8 +363,8 @@ if __name__ == '__main__':
         if empate(triqui):
             print("Empate !!!")
             break
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Así terminamos con triqui9.py, un programa con 12 funciones y un ciclo
 de juego que tiene en total 124 líneas de código, ¡pero empezó como
 una simple impresión de una matriz vacía!

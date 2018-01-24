@@ -18,84 +18,84 @@ son \textbf{mutables}.
 
 Hay otro tipo de dato en Python denominado \textbf{tupla}, que se
 parece a una lista, con la excepción de que es inmutable. Sintácticamente,
-una tupla es una lista de valores separados por comas:\inputencoding{latin9}
-\begin{lstlisting}
+una tupla es una lista de valores separados por comas:
+\begin{verbatim}
 >>> tupla = 'a', 'b', 'c', 'd', 'e'
-\end{lstlisting}
-\inputencoding{utf8}
-Aunque no es necesario, se pueden encerrar entre paréntesis:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+
+Aunque no es necesario, se pueden encerrar entre paréntesis:
+\begin{verbatim}
 >>> tupla = ('a', 'b', 'c', 'd', 'e')
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Para crear una tupla con un único elemento, tenemos que incluir la
-coma final:\inputencoding{latin9}
-\begin{lstlisting}
+coma final:
+\begin{verbatim}
 >>> t1 = ('a',)
 >>> type(t1)
 <type 'tuple'>
-\end{lstlisting}
-\inputencoding{utf8}
-Sin la coma, Python creería que \texttt{('a')} es una cadena en paréntesis:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+
+Sin la coma, Python creería que \texttt{('a')} es una cadena en paréntesis:
+\begin{verbatim}
 >>> t2 = ('a')
 >>> type(t2)
 <type 'string'>
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Las operaciones sobre tuplas son las mismas que vimos con las listas.
-El operador corchete selecciona un elemento de la tupla.\inputencoding{latin9}
-\begin{lstlisting}
+El operador corchete selecciona un elemento de la tupla.
+\begin{verbatim}
 >>> tupla = ('a', 'b', 'c', 'd', 'e')
 >>> tupla[0]
 'a'
-\end{lstlisting}
-\inputencoding{utf8}
-Y el operador segmento selecciona un rango de elementos:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+
+Y el operador segmento selecciona un rango de elementos:
+\begin{verbatim}
 >>> tupla[1:3]
 ('b', 'c')
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Pero si intentamos modificar un elemento de la tupla obtenemos un
 error:
 
-\index{error en tiempo de ejecución}\inputencoding{latin9}
-\begin{lstlisting}
+\index{error en tiempo de ejecución}
+\begin{verbatim}
 >>> tupla[0] = 'A'
 TypeError: object doesn't support item assignment
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Aunque no podemos modificar los elementos, sí podemos modificar toda
-la tupla:\inputencoding{latin9}
-\begin{lstlisting}
+la tupla:
+\begin{verbatim}
 >>> tupla = ('A',) + tupla[1:]
 >>> tupla
 ('A', 'b', 'c', 'd', 'e')
 >>> tupla = (1,2,3)
 >>> tupla
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Asignación de tuplas}
 
 \label{tuple assignment} \index{asignación de tuplas} \index{Asignación!de tuplas}
 
 De vez en cuando necesitamos intercambiar los valores de dos variables.
 Con el operador de asignación normal tenemos que usar una variable
-temporal. Por ejemplo, para intercambiar \texttt{a} y \texttt{b}:\inputencoding{latin9}
-\begin{lstlisting}
+temporal. Por ejemplo, para intercambiar \texttt{a} y \texttt{b}:
+\begin{verbatim}
 >>> temp = a
 >>> a = b
 >>> b = temp
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Si tenemos que intercambiar variables muchas veces, el código tiende
 a ser engorroso. Python proporciona una forma de \textbf{asignación
-de tuplas} que resuelve este problema:\inputencoding{latin9}
-\begin{lstlisting}
+de tuplas} que resuelve este problema:
+\begin{verbatim}
 >>> a, b = b, a
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El lado izquierdo es una tupla de variables; el derecho es una tupla
 de valores. Cada valor se asigna a su respectiva variable en el orden
 en que se presenta. Las expresiones en el lado derecho se evalúan
@@ -103,42 +103,42 @@ antes de cualquier asignación. Esto hace a la asignación de tuplas
 una herramienta bastante versátil.
 
 Naturalmente, el número de variables a la izquierda y el número de
-valores a la derecha deben coincidir.\inputencoding{latin9}
-\begin{lstlisting}
+valores a la derecha deben coincidir.
+\begin{verbatim}
 >>> a, b, c, d = 1, 2, 3
 ValueError: unpack tuple of wrong size
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Tuplas como valores de retorno}
 
 \index{tupla} \index{valor!tupla} \index{valor de retorno!tupla}
 \index{función!tupla como valor de retorno}
 
 Las funciones pueden tener tuplas como valores de retorno. Por ejemplo,
-podríamos escribir una función que intercambie sus dos parámetros:\inputencoding{latin9}
-\begin{lstlisting}
+podríamos escribir una función que intercambie sus dos parámetros:
+\begin{verbatim}
 def intercambiar(x, y):
   return y, x
-\end{lstlisting}
-\inputencoding{utf8}
-Así podemos asignar el valor de retorno a una tupla con dos variables:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+
+Así podemos asignar el valor de retorno a una tupla con dos variables:
+\begin{verbatim}
 a, b = intercambiar(a, b)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 En este caso, escribir una función \texttt{intercambio} no es muy
 provechoso. De hecho, hay un peligro al tratar de encapsular \texttt{intercambio},
-que consiste en el siguiente error:\inputencoding{latin9}
-\begin{lstlisting}
+que consiste en el siguiente error:
+\begin{verbatim}
 def intercambio(x, y):      # version incorrecta
   x, y = y, x
-\end{lstlisting}
-\inputencoding{utf8}
-Si llamamos a esta función así:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+
+Si llamamos a esta función así:
+\begin{verbatim}
 intercambio(a, b)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 entonces \texttt{a} y \texttt{x} son dos alias para el mismo valor.
 Cambiar \texttt{x} dentro de \texttt{intercambio} hace que \texttt{x}
 se refiera a un valor diferente, pero no tiene efecto en la \texttt{a}
@@ -171,15 +171,15 @@ desde el punto de vista matemático, sirven para nuestros propósitos.
 El módulo \texttt{random} contiene una función llamada \texttt{random}
 que retorna un número flotante entre 0.0 y 1.0. Cada vez que se llama
 a \texttt{random}, se obtiene el siguiente número de una serie muy
-larga. Para ver un ejemplo ejecute el siguiente ciclo:\inputencoding{latin9}
-\begin{lstlisting}
+larga. Para ver un ejemplo ejecute el siguiente ciclo:
+\begin{verbatim}
 import random
 
 for i in range(10):
   x = random.random()
   print(x)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Para generar un número aleatorio entre 0.0 y un límite superior como
 \texttt{sup}, multiplique \texttt{x} por \texttt{sup}.
 
@@ -190,18 +190,18 @@ una lista de números aleatorios. Recibirá un parámetro entero que
 especifique el número de elementos a generar. Primero, genera una
 lista de \texttt{n} ceros. Luego cada vez que itera en un ciclo for,
 reemplaza uno de los ceros por un número aleatorio. El valor de retorno
-es una referencia a la lista construida:\inputencoding{latin9}
-\begin{lstlisting}
+es una referencia a la lista construida:
+\begin{verbatim}
 def listaAleatoria(n):
   s = [0] * n
   for i in range(n):
     s[i] = random.random()
   return s
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La probaremos con ocho elementos. Para depurar es una buena idea empezar
-con pocos datos:\inputencoding{latin9}
-\begin{lstlisting}
+con pocos datos:
+\begin{verbatim}
 >>> listaAleatoria(8)
 0.15156642489
 0.498048560109
@@ -211,8 +211,8 @@ con pocos datos:\inputencoding{latin9}
 0.328578797631
 0.759199803101
 0.800367163582
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Los números generados por \texttt{random} deben distribuirse uniformemente,
 lo que significa que cada valor es igualmente probable.
 
@@ -238,41 +238,41 @@ En la Sección~\ref{counter}, escribimos un programa que recorría
 una cadena y contaba el números de veces que aparecía una letra determinada.
 
 Entonces podemos copiar el programa viejo para adaptarlo posteriormente
-a nuestro problema actual. El original es:\inputencoding{latin9}
-\begin{lstlisting}
+a nuestro problema actual. El original es:
+\begin{verbatim}
 cont = 0
 for c in fruta:
   if c == 'a':
     cont = cont + 1
 print(cont)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El primer paso es reemplazar \texttt{fruta} con \texttt{lista} y \texttt{c}
 por \texttt{num}. Esto no cambia el programa, sólo lo hace más legible.
 
 El segundo paso es cambiar la prueba. No queremos buscar letras. Queremos
 ver si \texttt{num} está entre dos valores dados \texttt{inf} y \texttt{sup}.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 cont = 0
 for num in lista:
   if inf < num < sup:
     cont = cont + 1
 print(cont)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El último paso consiste en encapsular este código en una función denominada
 \texttt{enRegion}. Los parámetros son la lista y los valores \texttt{inf}
-y \texttt{sup}.\inputencoding{latin9}
-\begin{lstlisting}
+y \texttt{sup}.
+\begin{verbatim}
 def enRegion(lista, inf, sup):
   cont = 0
   for num in lista:
     if inf < num < sup:
       cont = cont + 1
   return cont
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Copiando y modificando un programa existente fuimos capaces de escribir
 esta función rápidamente y ahorrarnos un buen tiempo de depuración.
 Este plan de desarrollo se denomina \textbf{concordancia de patrones}.
@@ -284,19 +284,19 @@ reutilice la solución.
 \label{muchasregiones}
 
 Como el número de regiones aumenta, \texttt{enRegion} es un poco engorroso.
-Con dos no esta tan mal:\inputencoding{latin9}
-\begin{lstlisting}
+Con dos no esta tan mal:
+\begin{verbatim}
 inf = enRegion(a, 0.0, 0.5)
 sup = enRegion(a, 0.5, 1)
-\end{lstlisting}
-\inputencoding{utf8} Pero con cuatro:\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+ Pero con cuatro:
+\begin{verbatim}
 Region1 = enRegion(a, 0.0, 0.25)
 Region2 = enRegion(a, 0.25, 0.5)
 Region3 = enRegion(a, 0.5, 0.75)
 Region4 = enRegion(a, 0.75, 1.0)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Hay dos problemas. Uno es que siempre tenemos que crear nuevos nombres
 de variables para cada resultado. El otro es que tenemos que calcular
 el rango de cada región.
@@ -306,15 +306,15 @@ está dado por la variable \texttt{numRegiones}, entonces, el ancho
 de cada región está dado por la expresión \texttt{1.0/numRegiones}.
 
 Usaremos un ciclo para calcular el rango de cada región. La variable
-de ciclo \texttt{i} cuenta de 1 a \texttt{numRegiones-1}:\inputencoding{latin9}
-\begin{lstlisting}
+de ciclo \texttt{i} cuenta de 1 a \texttt{numRegiones-1}:
+\begin{verbatim}
 ancho = 1.0 / numRegiones
 for i in range(numRegiones):
   inf = i * ancho
   sup = inf + ancho
   print(inf, " hasta ", sup)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Para calcular el extremo inferior de cada región, multiplicamos la
 variable de ciclo por el ancho. El extremo superior está a un \texttt{ancho}
 de región de distancia.
@@ -339,8 +339,8 @@ debe estar pensando ``¡una lista!''
 
 Tenemos que crear la lista de regiones fuera del ciclo, porque esto
 sólo debe ocurrir una vez. Dentro del ciclo, llamaremos a \texttt{enRegion}
-repetidamente y actualizaremos el \texttt{i}ésimo elemento de la lista:\inputencoding{latin9}
-\begin{lstlisting}
+repetidamente y actualizaremos el \texttt{i}ésimo elemento de la lista:
+\begin{verbatim}
 numRegiones = 8
 Regiones = [0] * numRegiones
 ancho = 1.0 / numRegiones
@@ -349,8 +349,8 @@ for i in range(numRegiones):
   sup = inf + ancho
   Regiones[i] = enRegion(lista, inf, sup)
 print(Regiones)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Con una lista de 1000 valores, este código produce la siguiente lista
 de conteo:
 \begin{verbatim}
@@ -384,15 +384,15 @@ es lo mismo que multiplicar por \texttt{numRegiones}. Si multiplicamos
 un número en el rango 0.0 a 1.0 por \texttt{numRegiones}, obtenemos
 un número en el rango de 0.0 a \texttt{numRegiones}. Si redondeamos
 ese número al entero más cercano por debajo, obtenemos lo que queremos,
-un índice de región:\inputencoding{latin9}
-\begin{lstlisting}
+un índice de región:
+\begin{verbatim}
 numRegiones = 8
 Regiones = [0] * numRegiones
 for i in lista:
   ind = int(i * numRegiones)
   Regiones[ind] = Regiones[ind] + 1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Usamos la función \texttt{int} para pasar de número de punto flotante
 a entero.
 
