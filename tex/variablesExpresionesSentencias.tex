@@ -1,4 +1,3 @@
-
 \chapter{Variables, expresiones y sentencias}
 
 \section{Valores y tipos}
@@ -17,22 +16,22 @@ pueden identificar cadenas porque están encerradas entre comillas.
 
 La función de impresión también trabaja con enteros.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> print(4)
 4
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+
 
 Si no está seguro del tipo que un valor tiene, el intérprete le puede
 decir.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> type("Hola, Mundo!")
 str
 >>> type(17)
 int
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+
 
 Sin despertar ninguna sorpresa, las cadenas pertenecen al tipo \texttt{\textbf{str}}\texttt{ing
 (cadena)} y los enteros pertenecen al tipo \texttt{\textbf{int}}\texttt{eger}.
@@ -43,32 +42,32 @@ denominado \textbf{punto flotante}.
 \index{tipo} \index{cadena} \index{tipo!cadena} \index{int} \index{tipo!int}
 \index{float} \index{tipo!float}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> type(3.2)
 float
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 ¿Qué ocurre con valores como {\verb+"17"+} y {\verb+"3.2"+}?
 Parecen números, pero están encerrados entre comillas como las cadenas.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> type("17")
 str
 >>> type("3.2")
 str
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Ellos son cadenas.
 
 Cuando usted digita un número grande, podría estar tentado a usar
 comas para separar grupos de tres dígitos, como en \texttt{1,000,000}.
 Esto no es un número entero legal en Python, pero esto si es legal:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> print(1,000,000)
 1 0 0
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 ¡Bueno, eso no es lo que esperábamos!. Resulta que \texttt{1,000,000}
 es una tupla, algo que encontraremos en el Capítulo \ref{tuplechap}.
 De momento, recuerde no poner comas en sus números enteros.
@@ -84,12 +83,12 @@ nombre que se refiere a un valor.
 La \textbf{sentencia de asignación} crea nuevas variables y les da
 valores:
 
-\inputencoding{latin9}\begin{lstlisting}
->>> mensaje = "�Qu� Onda?"
+\begin{verbatim}
+>>> mensaje = "¿Qué Onda?"
 >>> n = 17
 >>> pi = 3.14159
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Este ejemplo hace tres asignaciones: la primera asigna la cadena {\verb+"¿Qué Onda?"+}
 a una nueva variable denominada \texttt{mensaje}, la segunda le asigna
 el entero \texttt{17} a \texttt{n} y la tercera le asigna el número
@@ -109,29 +108,29 @@ de las sentencias de asignación anteriores:
 
 La función \texttt{print} también funciona con variables.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> print(mensaje)
 Que Onda?
 >>> print(n)
 17
 >>> print(pi)
 3.14159
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+
 
 En cada caso el resultado es el valor de la variable. Las variables
 también tienen tipos; nuevamente, le podemos preguntar al intérprete
 cuales son.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> type(mensaje)
 str
 >>> type(n)
 int
 >>> type(pi)
 float
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+
 
 El tipo de una variable es el mismo del valor al que se refiere.
 
@@ -156,15 +155,15 @@ menudo se usa en nombres con múltiples palabras, tales como \texttt{mi\_nombre}
 
 Si usted le da un nombre ilegal a una variable obtendrá un error sintáctico:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> 76trombones = "gran desfile"
 SyntaxError: invalid syntax
 >>> mas$ = 1000000
 SyntaxError: invalid syntax
->>> class = "introducci�n a la programaci�n"
+>>> class = "introducción a la programación"
 SyntaxError: invalid syntax
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \texttt{76trombones} es ilegal porque no empieza con una letra.\\
 \texttt{mas\$} es ilegal porque contiene un carácter ilegal, el símbolo
 \$.\\
@@ -179,14 +178,14 @@ de variables.
 
 Python tiene veintiocho palabras reservadas:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 and       continue  else      for       import    not       
 assert    def       except    from      in        or        
 break     del       exec      global    is        pass      
 class     elif      finally   if        lambda    print     
 raise     return    try       while
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+
 
 Usted puede mantener esta lista a mano. Si el intérprete se queja
 por alguno de sus nombres de variables, y usted no sabe por qué, búsquelo
@@ -208,12 +207,12 @@ se ejecutan.
 
 Por ejemplo, el guión
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 print(1)
 x = 2
 print(x)
-\end{lstlisting}
-\inputencoding{utf8} produce la salida:
+\end{verbatim}
+produce la salida:
 \begin{verbatim}
 1
 2
@@ -226,34 +225,34 @@ Una expresión es una combinación de valores, variables y operadores.
 Si usted digita una expresión en la línea de comandos, el intérprete
 la \textbf{evalúa} y despliega su resultado:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> 1 + 1
 2
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+
 
 Un valor, por si mismo, se considera como una expresión, lo mismo
 ocurre para las variables.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> 17
 17
 >>> x
 2
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+
 
 Aunque es un poco confuso, evaluar una expresión no es lo mismo que
 imprimir o desplegar un valor.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> mensaje = "Como le va, Doc?"
 >>> mensaje
 "Como le va, Doc?"
 >>> print(mensaje)
 Como le va, Doc?
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+
 
 Cuando Python muestra el valor de una expresión que ha evaluado, utiliza
 el mismo formato que se usaría para entrar un valor. En el caso de
@@ -263,13 +262,13 @@ usa la función print, el efecto es distinto como usted ya lo ha evidenciado.
 En un guión, una expresión, por sí misma, es una sentencia legal,
 pero no realiza nada. El guión:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 17
 3.2
 "Hola, Mundo!"
 1 + 1
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+
 
 no produce ninguna salida. ¿Cómo cambiaría el guión de manera que
 despliegue los valores de las cuatro expresiones?
@@ -285,11 +284,11 @@ se denominan \textbf{operandos}.
 Los siguientes son expresiones válidas en Python, cuyo significado
 es más o menos claro: 
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 20+32       hora-1   hora*60+minuto   
 minuto/60   5**2     (5+9)*(15-7)
-\end{lstlisting}
-\inputencoding{utf8}\begin{verbatim}
+\end{verbatim}
+\begin{verbatim}
 
 \end{verbatim}
 Los símbolos \texttt{+}, \texttt{-}, y \texttt{/}, y los paréntesis
@@ -303,12 +302,12 @@ La suma, resta, multiplicación y exponenciación realizan lo que usted
 esperaría, pero la división usando el operador // podría sorprenderlo.
 La siguiente operación tiene un resultado inesperado:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> minuto = 59
 >>> minuto//60
 0
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El valor de \texttt{minuto} es 59, y 59 dividido por 60 es 0.98333,
 no 0. La razón para esta discrepancia radica en que Python está realizando
 \textbf{división entera}.
@@ -363,10 +362,10 @@ cadenas, incluso si las cadenas lucen como números. Las siguientes
 operaciones son ilegales (asumiendo que \texttt{mensaje} tiene el
 tipo \texttt{cadena}):
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
  mensaje-1   "Hola"/123   mensaje*"Hola"   "15"+2
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Sin embargo, el operador \texttt{+} funciona con cadenas, aunque no
 calcula lo que usted esperaría. Para las cadenas, el operador \texttt{+}
 representa la \textbf{concatenación}, que significa unir los dos operandos
@@ -374,12 +373,12 @@ enlazándolos en el orden en que aparecen. Por ejemplo:
 
 \index{concatenación}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 fruta = "banano"
 bienCocinada = " pan con nueces"
 print(fruta + bienCocinada)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 La salida de este programa es \texttt{banano pan con nueces}. El espacio
 antes de la palabra \texttt{pan} es parte de la cadena y sirve para
 producir el espacio entre las cadenas concatenadas.
@@ -410,29 +409,29 @@ es su capacidad de tomar pequeños bloques para \textbf{componer} con
 ellos. Por ejemplo, ya que sabemos cómo sumar números y cómo imprimirlos;
 podemos hacer las dos cosas al mismo tiempo:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> print(17 + 3)
 20
-\end{lstlisting}
-\inputencoding{utf8} De hecho, la suma tiene que calcularse antes que la impresión, así
+\end{verbatim}
+De hecho, la suma tiene que calcularse antes que la impresión, así
 que las acciones no están ocurriendo realmente al mismo tiempo. El
 punto es que cualquier expresión que tenga números, cadenas y variables
 puede ser usada en una sentencia de impresión (\texttt{print}). Usted
 ha visto un ejemplo de esto:
 
-\inputencoding{latin9}\begin{lstlisting}
-print("N�mero de minutos desde media noche: ",  \
+\begin{verbatim}
+print("Número de minutos desde media noche: ",  \
   hora*60+minuto)
-\end{lstlisting}
-\inputencoding{utf8} El caracter \textbackslash{} permite continuar en la siguiente línea.
+\end{verbatim}
+El caracter \textbackslash{} permite continuar en la siguiente línea.
 Lo usaremos cuando las expresiones sean muy largas. Usted también
 puede poner expresiones arbitrarias en el lado derecho de una sentencia
 de asignación:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 porcentaje = (minuto * 100) / 60
-\end{lstlisting}
-\inputencoding{utf8} Esto no parece nada impresionante ahora, pero vamos a ver otros ejemplos
+\end{verbatim}
+Esto no parece nada impresionante ahora, pero vamos a ver otros ejemplos
 en los que la composición hace posible expresar cálculos complejos
 organizada y concisamente.
 
@@ -454,17 +453,17 @@ Por esta razón, es una muy buena idea añadir notas a sus programas
 para explicar, en lenguaje natural, lo que hacen. Estas notas se denominan
 \textbf{comentarios }y se marcan con el símbolo \texttt{\#}:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 # calcula el porcentaje de la hora que ha pasado
 porcentaje = (minuto * 100) / 60
-\end{lstlisting}
-\inputencoding{utf8} En este caso, el comentario aparece en una línea completa. También
+\end{verbatim}
+En este caso, el comentario aparece en una línea completa. También
 pueden ir comentarios al final de una línea:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 porcentaje = (minute * 100) // 60 # div entera
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 todo lo que sigue desde el \texttt{\#} hasta el fin de la línea se
 ignora—no tiene efecto en el programa. El mensaje es para el programador
 que escribe el programa o para algún programador que podría usar este
@@ -523,15 +522,15 @@ ejecución.
 \section{Ejercicios}
 \begin{enumerate}
 \item ¿Qué sucede cuando se usa la función print con una expresión?, por
-ejemplo: \inputencoding{latin9}
-\begin{lstlisting}
+ejemplo: 
+\begin{verbatim}
 print(8+5)
-\end{lstlisting}
-\inputencoding{utf8}\item ¿Qué sucede cuando se ejecuta esto?\inputencoding{latin9}
-\begin{lstlisting}
+\end{verbatim}
+\item ¿Qué sucede cuando se ejecuta esto?
+\begin{verbatim}
 print(5.2, "esto", 4 - 2, "aquello", 5/2.0)
-\end{lstlisting}
-\inputencoding{utf8}\item Tome la siguiente oración: Sólo trabajo y nada de juegos hacen de
+\end{verbatim}
+\item Tome la siguiente oración: Sólo trabajo y nada de juegos hacen de
 Juan un niño aburrido. Almacene cada palabra en variables separadas,
 después muestre la oración en una sola línea usando la función print.
 \item Incluya paréntesis a la expresión 6 {*} 1 - 2 para cambiar su resultado
@@ -544,15 +543,16 @@ la función input evalúa la cadena introducida y la función raw\_input
 no lo hace. Escriba lo siguiente en el intérprete de Python, registre
 qué sucede y explique:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> x = input()
 3.14
 >>> type(x)
 >>> x = raw_input()
 3.14
 >>> type(x)
-\end{lstlisting}
-\inputencoding{utf8}\item Escriba una expresión que calcule la nota definitiva de su curso de
+\end{verbatim}
+\item Escriba una expresión que calcule la nota definitiva de su curso de
 programación.
 \end{enumerate}
 
+\end{document}
