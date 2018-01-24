@@ -142,7 +142,7 @@ Para hacer una demostraciÃ³n, crearemos un archivo de texto con tres
 lÃ­neas de texto separadas por saltos de lÃ­nea:
 \begin{verbatim}
 >>> f = open("test.dat","w")
->>> f.write("línea uno\nlínea dos\nlínea tres\n")
+>>> f.write("lÃ­nea uno\nlÃ­nea dos\nlÃ­nea tres\n")
 >>> f.close()
 \end{verbatim}
 
@@ -151,7 +151,7 @@ el siguiente salto de lÃ­nea:
 \begin{verbatim}
 >>> f = open("test.dat","r")
 >>> print(f.readline())
-línea uno
+lÃ­nea uno
 
 >>>
 \end{verbatim}
@@ -160,7 +160,7 @@ línea uno
 de cadenas:
 \begin{verbatim}
 >>> print(f.readlines())
-['línea dos\012', 'línea tres\012']
+['lÃ­nea dos\012', 'lÃ­nea tres\012']
 \end{verbatim}
 
 En este caso, la salida estÃ¡ en forma de lista, lo que significa que
@@ -442,8 +442,8 @@ IndexError: list index out of range
 O el acceso a una clave que no estÃ¡ en el diccionario:
 \begin{verbatim}
 >>> b = {}
->>> print(b['qué'])
-KeyError: qué
+>>> print(b['quÃ©'])
+KeyError: quÃ©
 \end{verbatim}
 
 En cada caso, el mensaje de error tiene dos partes: el tipo de error
@@ -465,7 +465,7 @@ nombreArch = raw_input('Introduce un nombre de archivo: ')
 try:
   f = open (nombreArch, "r")
 except:
-  print('No hay ningún archivo que se llame', nombreArch)
+  print('No hay ningÃºn archivo que se llame', nombreArch)
 \end{verbatim}
 
 La sentencia \texttt{try} ejecuta las sentencias del primer bloque.
@@ -496,9 +496,9 @@ vÃ¡lida por cualquier razÃ³n, lanzamos una excepciÃ³n.
 \begin{verbatim}
 # -*- coding: utf-8 -*-
 def tomaNumero () :                 
-  x = input ('Elige un número: ')   
+  x = input ('Elige un nÃºmero: ')   
   if x == 17 :
-    raise 'ErrorNumeroMalo', '17 es un mal número'
+    raise 'ErrorNumeroMalo', '17 es un mal nÃºmero'
   return x
 \end{verbatim}
 
@@ -511,8 +511,8 @@ puede continuar; en caso contrario, Python imprime el mensaje de error
 y sale:
 \begin{verbatim}
 >>> tomaNumero ()
-Elige un número: 17
-ErrorNumeroMalo: 17 es un mal número
+Elige un nÃºmero: 17
+ErrorNumeroMalo: 17 es un mal nÃºmero
 \end{verbatim}
 
 El mensaje de error incluye el tipo de excepciÃ³n y la informaciÃ³n
