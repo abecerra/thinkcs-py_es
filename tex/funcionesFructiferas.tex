@@ -10,12 +10,12 @@
 Algunas de las funciones primitivas que hemos usado, como las matemáticas,
 entregan resultados. El llamar a estas funciones genera un valor nuevo,
 que usualmente asignamos a una variable o usamos como parte de una
-expresión.\inputencoding{latin9}
-\begin{lstlisting}
+expresión.
+\begin{verbatim}
 e = math.exp(1.0)
 altura = radio * math.sin(angulo)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Pero hasta ahora ninguna de las funciones que hemos escrito ha retornado
 un valor.
 
@@ -27,15 +27,15 @@ que los lenguajes de programación usados para enseñar (como Pascal)
 hacían la distinción. Muchos lenguajes de programación vigentes (incluido
 Python y C) no diferencian sintácticamente entre procedimientos y
 funciones, por eso usamos esta terminología.}. El primer ejemplo es \texttt{area}, que retorna el área de un círculo
-dado su radio:\inputencoding{latin9}
-\begin{lstlisting}
+dado su radio:
+\begin{verbatim}
 import math
 
 def area(radio):
   temp = math.pi * radio**2
   return temp
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Ya nos habíamos topado con la sentencia \texttt{return} antes, pero,
 en una función fructífera, la sentencia \texttt{return} incluye un
 \textbf{valor de retorno}. Esta sentencia significa: ``Retorne inmediatamente
@@ -43,11 +43,11 @@ de esta función y use la siguiente expresión como un valor de retorno.''
 La expresión proporcionada puede ser arbitrariamente compleja, así
 que podríamos escribir esta función más concisamente:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def area(radio):
   return math.pi * radio**2
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+ 
 
 Por otro lado, las \textbf{variables temporales}, como \texttt{temp},
 a menudo permiten depurar los programas más fácilmente.
@@ -57,14 +57,14 @@ a menudo permiten depurar los programas más fácilmente.
 Algunas veces es muy útil tener múltiples sentencias return, ubicadas
 en ramas distintas de un condicional:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def valorAbsoluto(x):
   if x < 0:
     return -x
   else:
     return x
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Ya que estas sentencias \texttt{return} están en un condicional alternativo,
 sólo una será ejecutada. Tan pronto como esto suceda, la función termina
 sin ejecutar las sentencias que siguen.
@@ -79,24 +79,24 @@ En una función fructífera es una buena idea garantizar que toda ruta
 posible de ejecución del programa llegue a una sentencia \texttt{return}.
 Por ejemplo:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def valorAbsoluto(x):
   if x < 0:
     return -x
   elif x > 0:
     return x
-\end{lstlisting}
-\inputencoding{utf8} Este programa no es correcto porque si \texttt{x} llega a ser 0,
+\end{verbatim}
+ Este programa no es correcto porque si \texttt{x} llega a ser 0,
 ninguna condición es cierta y la función puede terminar sin alcanzar
 una sentencia \texttt{return}. En este caso el valor de retorno que
 Python entrega es un valor especial denominado \texttt{None}:
 
-\index{None}\inputencoding{latin9}
-\begin{lstlisting}
+\index{None}
+\begin{verbatim}
 >>> print(valorAbsoluto(0))
 None
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Desarrollo de programas}
 
 \label{program development} \index{andamiaje}
@@ -132,21 +132,21 @@ es un valor de punto flotante.
 
 Ya podemos escribir un borrador de la función:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def distancia(x1, y1, x2, y2):
   return 0.0
-\end{lstlisting}
-\inputencoding{utf8} Obviamente, esta versión de la función no calcula distancias; siempre
+\end{verbatim}
+ Obviamente, esta versión de la función no calcula distancias; siempre
 retorna cero. Pero es correcta sintácticamente y puede correr, lo
 que implica que la podemos probar antes de que la hagamos más compleja.
 
 Para probar la nueva función la llamamos con valores simples:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> distancia(1, 2, 4, 6)
 0.0
-\end{lstlisting}
-\inputencoding{utf8} Escogemos estos valores de forma que la distancia horizontal sea
+\end{verbatim}
+ Escogemos estos valores de forma que la distancia horizontal sea
 3 y la vertical 4; de esta forma el resultado es 5 (la hipotenusa
 de un triángulo con medidas 3-4-5). Cuando probamos una función es
 fundamental conocer algunas respuestas correctas.
@@ -160,30 +160,30 @@ Un primer paso lógico en este cómputo es encontrar las diferencias
 $x_{2}-x_{1}$ y $y_{2}-y_{1}$. Almacenaremos estos valores en variables
 temporales llamadas \texttt{dx} y \texttt{dy} y los imprimiremos.
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def distancia(x1, y1, x2, y2):
   dx = x2 - x1
   dy = y2 - y1
   print("dx es", dx)
   print("dy es", dy)
   return 0.0
-\end{lstlisting}
-\inputencoding{utf8} Si la función trabaja bien, las salidas deben ser 3 y 4. Si es así,
+\end{verbatim}
+ Si la función trabaja bien, las salidas deben ser 3 y 4. Si es así,
 sabemos que la función está obteniendo los parámetros correctos y
 calculando el primer paso correctamente. Si no ocurre ésto, entonces
 hay unas pocas líneas para chequear.
 
 Ahora calculamos la suma de los cuadrados de \texttt{dx} y \texttt{dy}:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def distancia(x1, y1, x2, y2):
   dx = x2 - x1
   dy = y2 - y1
   discuadrado = dx**2 + dy**2
   print("discuadrado es: ", discuadrado)
   return 0.0
-\end{lstlisting}
-\inputencoding{utf8} Note que hemos eliminado las sentencias \texttt{print} que teníamos
+\end{verbatim}
+ Note que hemos eliminado las sentencias \texttt{print} que teníamos
 en el paso anterior. Este código se denomina \textbf{andamiaje} porque
 es útil para construir el programa pero no hace parte del producto
 final.
@@ -194,15 +194,15 @@ De nuevo, corremos el programa y chequeamos la salida (que debe ser
 Finalmente, si importamos el módulo math, podemos usar la función
 \texttt{sqrt} para calcular y retornar el resultado:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def distancia(x1, y1, x2, y2):
   dx = x2 - x1
   dy = y2 - y1
   discuadrado = dx**2 + dy**2
   resultado = math.sqrt(discuadrado)
   return resultado
-\end{lstlisting}
-\inputencoding{utf8} Si esto funciona bien, usted ha terminado. Si no, se podría imprimir
+\end{verbatim}
+ Si esto funciona bien, usted ha terminado. Si no, se podría imprimir
 el valor de \texttt{resultado} antes de la sentencia return.
 
 Recapitulando, para empezar, usted debería agregar solamente una línea
@@ -241,26 +241,26 @@ El primer paso es encontrar el radio del círculo, que es la distancia
 entre los dos puntos. Afortunadamente, hay una función, \texttt{distancia},
 que hace eso:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 radio = distancia(xc, yc, xp, yp)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El segundo paso es encontrar el área de un círculo con dicho radio
 y retornarla:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 resultado = area(radio)
 return resultado
-\end{lstlisting}
-\inputencoding{utf8} Envolviendo todo en una función obtenemos:
+\end{verbatim}
+ Envolviendo todo en una función obtenemos:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def area2(xc, yc, xp, yp):
   radio = distancia(xc, yc, xp, yp)
   resultado = area(radio)
   return resultado
-\end{lstlisting}
-\inputencoding{utf8}Llamamos a esta función \texttt{area2} para distinguirla de la función
+\end{verbatim}
+Llamamos a esta función \texttt{area2} para distinguirla de la función
 \texttt{area} definida previamente. Solo puede haber una función con
 un nombre dado dentro de un módulo.
 
@@ -268,11 +268,11 @@ Las variables temporales \texttt{radio} y \texttt{area} son útiles
 para desarrollar y depurar, pero una vez que el programa está funcionando
 podemos hacer la función más concisa componiendo las llamadas a funciones:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def area2(xc, yc, xp, yp):
   return area(distancia(xc, yc, xp, yp))
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 \section{Funciones booleanas}
 
 \label{boolean} \index{función booleana} \index{función booleana}
@@ -280,14 +280,14 @@ def area2(xc, yc, xp, yp):
 Las funciones que pueden retornar un valor booleano son convenientes
 para ocultar chequeos complicados adentro de funciones. Por ejemplo:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def esDivisible(x, y):
   if x % y == 0:
     return True       #  es cierto
   else:
     return False      # es falso
-\end{lstlisting}
-\inputencoding{utf8} El nombre de esta función es \texttt{esDivisible}. Es muy usual nombrar
+\end{verbatim}
+ El nombre de esta función es \texttt{esDivisible}. Es muy usual nombrar
 las funciones booleanas con palabras o frases que suenan como preguntas
 de sí o no (que tienen como respuesta un sí o un no). \texttt{esDivisible}
 retorna \texttt{True} ó \texttt{False} para indicar si x es divisible
@@ -297,33 +297,33 @@ Podemos hacerla más concisa tomando ventaja del hecho de que una condición
 dentro de una sentencia \texttt{if} es una expresión booleana. Podemos
 retornarla directamente, evitando completamente el \texttt{if}:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def esDivisible(x, y):
   return x % y == 0
-\end{lstlisting}
-\inputencoding{utf8} Esta sesión muestra la nueva función en acción:
+\end{verbatim}
+ Esta sesión muestra la nueva función en acción:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>>   esDivisible(6, 4)
 False
 >>>   esDivisible(6, 3)
 True
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Las funciones booleanas se usan a menudo en las sentencias condicionales:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 if esDivisible(x, y):
   print("x es divisible por y")
 else:
   print("x no es divisible por y")
-\end{lstlisting}
-\inputencoding{utf8} Puede parecer tentador escribir algo como:
+\end{verbatim}
+ Puede parecer tentador escribir algo como:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 if esDivisible(x, y) == True:
-\end{lstlisting}
-\inputencoding{utf8} Pero la comparación extra es innecesaria.
+\end{verbatim}
+ Pero la comparación extra es innecesaria.
 
 \section{Más recursión}
 
@@ -385,23 +385,23 @@ podrá escribir un programa para evaluarlo. El primer paso es decidir
 cuales son los parámetros para esta función. Con un poco de esfuerzo
 usted concluiría que \texttt{factorial} recibe un único parámetro:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def factorial(n):
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Si el argumento es 0, todo lo que hacemos es retornar 1:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def factorial(n):
   if n == 0:
     return 1
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+ 
 
 Sino, y ésta es la parte interesante, tenemos que hacer una llamada
 recursiva para encontrar el factorial de $n-1$ y, entonces, multiplicarlo
-por $n$:\inputencoding{latin9}
-\begin{lstlisting}
+por $n$:
+\begin{verbatim}
 def factorial(n):
   if n == 0:
     return 1
@@ -409,8 +409,8 @@ def factorial(n):
     recur = factorial(n-1)
     da = n * recur
     return da
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El flujo de ejecución de este programa es similar al flujo de \texttt{conteo}
 en la Sección~\ref{recursion}. Si llamamos a \texttt{factorial}
 con el valor 3:
@@ -495,14 +495,14 @@ En el ejemplo anterior usábamos variables temporales para desplegar
 los pasos y depurar el código más fácilmente, pero podríamos ahorrar
 unas cuantas líneas:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def factorial(n):
   if n == 0:
     return 1
   else:
     return n * factorial(n-1)
-\end{lstlisting}
-\inputencoding{utf8} Desde ahora, vamos a usar esta forma más compacta, pero le recomendamos
+\end{verbatim}
+ Desde ahora, vamos a usar esta forma más compacta, pero le recomendamos
 que use la forma más explícita mientras desarrolla las funciones.
 Cuando estén terminadas y funcionando, con un poco de inspiración
 se pueden compactar.
@@ -522,14 +522,14 @@ la siguiente definición:
 \end{eqnarray*}
 Traducida a Python, luce así:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def fibonacci (n):
   if n == 0 or n == 1:
     return 1
   else:
     return fibonacci(n-1) + fibonacci(n-2)
-\end{lstlisting}
-\inputencoding{utf8} Si usted intenta seguir el flujo de ejecución de fibonacci, incluso
+\end{verbatim}
+ Si usted intenta seguir el flujo de ejecución de fibonacci, incluso
 para valores pequeños de $n$, le va a doler la cabeza. Pero, si seguimos
 el salto de fe, si asumimos que los dos llamados recursivos funcionan
 correctamente, es claro que el resultado correcto es la suma de éstos
@@ -542,11 +542,11 @@ dos.
 ¿Qué pasa si llamamos a \texttt{factorial} y le pasamos a 1.5 como
 argumento?
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> factorial (1.5)
 RuntimeError: Maximum recursion depth exceeded
-\end{lstlisting}
-\inputencoding{utf8} Parece recursión infinita. ¿Cómo puede darse? Hay un caso base —cuando
+\end{verbatim}
+ Parece recursión infinita. ¿Cómo puede darse? Hay un caso base —cuando
 \texttt{n == 0}. El problema reside en que los valores de \texttt{n}
 se {\em saltan} al caso base .
 
@@ -568,7 +568,7 @@ Podemos usar la función \texttt{type} para comparar el tipo del parámetro
 al tipo de un valor entero conocido (como 1). Mientras estamos en
 eso también aseguraremos que el parámetro sea positivo:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def factorial (n):
   if type(n) != type(1):
     print("Factorial solo esta definido para enteros.")
@@ -580,21 +580,21 @@ def factorial (n):
     return 1
   else:
     return n * factorial(n-1)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Ahora tenemos tres casos base. El primero atrapa a los valores que
 no son enteros, el segundo a los enteros negativos. En ambos casos
 el programa imprime un mensaje de error y retorna un valor especial,
--1, para indicar que algo falló:\inputencoding{latin9}
-\begin{lstlisting}
+-1, para indicar que algo falló:
+\begin{verbatim}
 >>> factorial ("pedro")
 Factorial solo esta definido para enteros.
 -1
 >>> factorial (-2)
 Factorial solo esta definido para positivos.
 -1
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Si pasamos los dos chequeos, tenemos la garantía de que $n$ es un
 número entero positivo, y podemos probar que la recursión termina.
 
@@ -609,42 +609,42 @@ Con funciones fructíferas podemos realizar pruebas unitarias. Por
 ejemplo, la función área de un cuadrado puede adornarse con un bloque
 de comentarios con triple comillas, que explica su propósito:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def area(lado):
     """ Calcula el area de un cuadrado
-        Par�metros:
-            radio: n�mero
+        Parámetros:
+            radio: número
     """
     return lado**2
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+ 
 
 Si al bloque le agregamos una línea probando el llamado de la función,
 seguida del valor de retorno que debe entregar:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def area(lado):
     """ Calcula el area de un cuadrado
-        Par�metros:
-            radio: n�mero
+        Parámetros:
+            radio: número
         Pruebas:
         >>> area(1)
         1        
     """
     return lado**2
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Logramos obtener una función que se puede probar en un caso particular.
 El módulo doctest de Python permite ejecutar automáticamente los casos
 de prueba que tengamos en las funciones agregando al final del guión
 su importación y el llamado de la función testmod(), como se ilustra
 a continuación con la función area, ahora con cuatro casos de prueba:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def area(lado):
     """ Calcula el area de un cuadrado
-        Par�metros:
-            radio: n�mero
+        Parámetros:
+            radio: número
         Pruebas:
         >>> area(1)
         1
@@ -661,8 +661,8 @@ def area(lado):
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Si se ejecuta el guión se ejecutarán todas las pruebas unitarias de
 todas las funciones, esto nos permite atrapar errores rápidamente
 y corregirlos. En Unix/Linux, al ejecutar \verb+python -m doctest -v guión.py+
