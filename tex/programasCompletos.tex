@@ -231,7 +231,7 @@ class JuegoSolterona(JuegoCartas):
     cartaEscogida = self.manos[vecino].entregarCarta()
     self.manos[i].agregarCarta(cartaEscogida)
     print("mano", self.manos[i].nombre, 
-          "escogió", cartaEscogida)
+          "escogiÃ³", cartaEscogida)
     count = self.manos[i].eliminarParejas()
     self.manos[i].barajar()
     return count
@@ -556,9 +556,9 @@ def obtenerProducto(listaLexemas):
 
 def obtenerNumero(listaLexemas):
   if obtenerLexema(listaLexemas, "("):
-    # obtiene la subexpresión
+    # obtiene la subexpresiÃ³n
     x = obtenerSuma(listaLexemas) 
-    # elimina los paréntesis
+    # elimina los parÃ©ntesis
     obtenerLexema(listaLexemas, ")") 
     return x
   else:
@@ -590,20 +590,20 @@ def animal():
 	  arbol = arbol.obtenerizquierdo()
     # conjetura
     conjetura = arbol.obtenercarga()
-    pregunta = "¿Es un" + conjetura + "? "
+    pregunta = "Â¿Es un" + conjetura + "? "
     if si(pregunta):
-      print("¡Soy el mejor!")
+      print("Â¡Soy el mejor!")
       continue
     # obtener mas informacion
-    pregunta = "¿Cual es el nombre el animal? "
+    pregunta = "Â¿Cual es el nombre el animal? "
     animal = raw_input(pregunta)
-    pregunta = "¿Que pregunta permitiria distinguir 
+    pregunta = "Â¿Que pregunta permitiria distinguir 
 		un %s de un %s? "
     q = raw_input(pregunta % (animal,conjetura))
     # agrega un nuevo nodo arbol
     arbol.asignarcarga(q)
-    pregunta = "¿Si el animal fuera %s 
-		la respuesta sería? "
+    pregunta = "Â¿Si el animal fuera %s 
+		la respuesta serÃ­a? "
     if si(pregunta % animal):
       arbol.asignarizquierdo(Arbol(conjetura))
       arbol.asignarderecho(Arbol(animal))
