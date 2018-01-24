@@ -1,0 +1,170 @@
+%\usepackage{fontspec}
+%	\setmainfont{Myriad Pro}
+\usepackage{palatino}
+
+\usepackage{polyglossia}           % Change this depending on your language
+	\setdefaultlanguage{spanish}
+	\setotherlanguage{english}
+
+\usepackage{cancel}                % To cross out over text.
+
+%\usepackage{datetime}
+%	\newdateformat{serialdate}{\THEYEAR\twodigit{\THEMONTH}\twodigit{\THEDAY}}
+%	
+%\newtimeformat{serialtime}{\twodigit{\THEHOUR}\twodigit{\THEMINUTE}\twodigit{\THESECOND}}
+
+%\usepackage{showframe}            % Show margins (deactivate xcolor package)
+\usepackage[
+	usenames,
+	dvipsnames,
+	svgnames,
+	table]{xcolor}                 % Incluimos el uso de colores.
+
+\usepackage{setspace}              % Nos permite controlar el interlineado.
+\usepackage{multirow}              % Para poder juntar celdas en las tablas.
+%\usepackage{lipsum}
+
+%\usepackage{background}
+%\backgroundsetup{
+%	scale=1,
+%	angle=0,
+%	opacity=1,  %% adjust
+%	contents={
+%		\ifnum \value{page} > 1	
+%			\includegraphics[width=\paperwidth,height=\paperheight]{./img/ARCHIVO1.png}
+%		\else
+%			\includegraphics[width=\paperwidth,height=\paperheight]{./img/ARCHIVO2.png}
+%		\fi
+%	}
+%}
+
+\usepackage{graphicx}
+
+%\label{PAGE_LAYOUT}
+%% https://en.wikibooks.org/wiki/LaTeX/Page_Layout#Page_dimensions
+%\setlength\oddsidemargin{-0.04cm}
+%\setlength\evensidemargin{-0.04cm}
+%\setlength\topmargin{0cm}
+%\setlength\headheight{0.5cm}
+%\setlength\headsep{0.5cm}
+%\setlength\footskip{1cm}
+%\setlength\textwidth{16cm}                      % ancho para apunte
+%\setlength\textheight{23cm}                     % largo para apunte
+%\usepackage{geometry}
+%\geometry{
+%	a4paper,
+%	total={210mm,297mm},
+%	left=30mm,
+%	right=30mm,
+%	top=40mm,
+%	bottom=30mm,
+%}
+
+\label{HYPERREF}
+\usepackage{hyperref}              % Incluimos la posibilidad de agregar 
+%hipervínculos.
+	\hypersetup{                   % Opciones del paquete de hipervínculos.
+%	    bookmarks=true,            % show bookmarks bar?
+	    unicode=true,              % non-Latin characters in Acrobat’s bookmarks
+	    pdftoolbar=true,           % show Acrobat’s toolbar?
+	    pdfmenubar=true,           % show Acrobat’s menu?
+	    pdffitwindow=false,        % window fit to page when opened
+	    pdfstartview={FitH},       % fits the width of the page to the window
+	    pdftitle={\Title},         % 
+	    %title
+	    pdfauthor={Allen Downey, Jeffrey Elkner, Chris Meyers | Andrés Becerra 
+	    Sandoval | \AutorNombreCompleto},  % author
+	    pdfsubject={\PDFSubject},  % subject 
+	    %of the document
+%	    pdfcreator={\LaTeX},       % creator of the document
+%	    pdfproducer={},            % producer of the document
+	    pdfkeywords={} {},         % list of keywords
+	    pdfnewwindow=true,         % links in new window
+	    colorlinks=true,           % false: boxed links; true: colored links
+	    linkcolor=red,             % color of internal links (change box color 
+%with
+	                               % linkbordercolor)
+	    citecolor=green,           % color of links to bibliography
+	    filecolor=magenta,         % color of file links
+	    urlcolor=cyan              % color of external links
+}
+
+\label{MY_COMMANDS}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Nueva línea horizontal.
+
+\label{MY_COLORS}
+\definecolor{gray15p}{rgb}{0.85,0.85,0.85}
+\definecolor{gray05p}{rgb}{0.95,0.95,0.95}
+
+\label{LISTINGS}
+\usepackage{listings}                        % Permite mostrar código de forma 
+%mas linda
+	\lstset{
+		backgroundcolor=\color{gray05p},     % choose the background color;
+		basicstyle=\ttfamily,                % the size of the fonts that are 
+%used for the code
+		breakatwhitespace=false,             % sets if automatic breaks should 
+%only happen at
+		                                     % whitespace
+		breaklines=true,                     % sets automatic line breaking
+		captionpos=b,                        % sets the caption-position to 
+%bottom
+		commentstyle=\color{green},          % comment style
+		deletekeywords={},                   % if you want to delete keywords 
+%from the given
+		                                     % language
+		escapeinside={\%*}{*)},              % if you want to add LaTeX within 
+%your code
+		extendedchars=true,                  % lets you use non-ASCII 
+%characters; for 8-bits
+		                                     % encodings only, does not work 
+%with UTF-8
+		frame=single,                        % adds a frame around the code
+		frameround=tttt,
+		keepspaces=true,                     % keeps spaces in text, useful for 
+%keeping
+		                                     % indentation of code (possibly 
+%needs 
+		                                     % columns=flexible)
+		keywordstyle=\color{blue}\textbf,    % keyword style
+		language=Python,                     % the language of the code
+		morecomment=[l]{\#}                  % Agrega el "comentario" 
+		classoffset=1,
+		morekeywords={},                     % if you want to add more keywords 
+%to the set
+		keywordstyle=\color{red}\textbf,
+		classoffset=0,
+		numbers=left,                        % where to put the line-numbers; 
+%possible values
+		                                     % are (none, left, right)
+		numbersep=5pt,                       % how far the line-numbers are 
+%from the code
+		numberstyle=\tiny\color{gray},       % the style that is used for the 
+%line-numbers
+		rulecolor=\color{black},             % if not set, the frame-color may 
+%be changed on
+		                                     % line-breaks within not-black 
+%text (e.g. comments
+		                                     % (green here))
+		showspaces=false,                    % show spaces everywhere adding 
+%particular
+		                                     % underscores; it overrides 
+%'showstringspaces'
+		showstringspaces=false,              % underline spaces within strings 
+%only
+		showtabs=false,                      % show tabs within strings adding 
+%particular
+		                                     % underscores
+		stepnumber=1,                        % the step between two 
+%line-numbers. If it's 1, 
+		                                     % each line will be numbered
+		stringstyle=\color{magenta},         % string literal style
+		tabsize=2,                           % sets default tabsize to 2 spaces
+		title=\lstname,                      % show the filename of files 
+%included with
+		                                     % \lstinputlisting; also try 
+%caption instead 
+		                                     % of title
+	}
+	
+\usepackage[final]{pdfpages} % Include PDF directly into your document.

@@ -1,3 +1,5 @@
+% !TEX TS-program = xelatex
+
 %% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
 %% Do not edit unless you really know what you are doing.
 \documentclass[10pt,spanish,letter]{book}
@@ -32,12 +34,29 @@
 % Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 %
 
-\usepackage[spanish]{babel}
+%\usepackage[spanish]{babel} % Not needed, loaded language in lecv.tex
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{ucs}
 \usepackage{hyperref}
 %\pssilent
+
+\label{MY_VARS}
+\def\AutorPrefijo{Prof.}
+\def\AutorNombre{Leandro E.}
+\def\AutorApellido{Colombo Viña}
+\def\AutorNombreCompleto{\AutorPrefijo\ \AutorNombre\ \AutorApellido}
+\def\AutorURL{http://leo.bitson.com.ar/}
+\def\AutorNombreLink{\href{\AutorURL}{\AutorNombreCompleto}}
+\def\AutorCargo{Profesor en Disciplinas Industriales - Técnico Superior en Informática Aplicada}
+\def\Title{Aprenda a pensar como un programador con Python 3}
+\def\PDFSubject{Adaptación de la traducción de la 2da edición}
+\def\Fecha{24 de enero de 2018}
+\def\Lugar{Ciudad Autónoma de Buenos Aires}
+
+\label{MY_PACKAGES}
+\input{lecv}
+\input{mintedopt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %         INCLUDE ONLY 

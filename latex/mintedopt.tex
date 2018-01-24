@@ -1,0 +1,133 @@
+%                                    This will higlight source code like Code::Blocks IDE.
+%                                    Install this theme copying codeblocks.py to
+%                                    "/usr/local/lib/python2.7/dist-packages/pygments/styles/"
+
+\usepackage{upquote}               % Show "realistic" quotes in verbatim.
+                                   % To use single straight quote in minted with pygmentize 1.6
+\usepackage{minted}                % Usamos minted para el resaltado de sintaxis de los códigos.
+\usemintedstyle{codeblocks}        % Elegimos el perfil de "codeblocks".
+
+\label{PYTHON_CODE}
+% Con newminted{python} definimos un nuevo ambiente:
+%	\begin{pythoncode}
+%#!/usr/bin/env python
+%# coding: utf-8
+%	
+%print("Hello World!")
+%	\end{pythoncode}
+
+\newminted{python}{
+	linenos=true,
+	numbersep=5pt,                 % Setea la separación de los números de línea en 5pt. 
+	frame=single,
+	framesep=2mm,                  % Setea la separación del frame a 2mm.
+%	gobble=2,                      % Borra los 2 espacios adicionales agregados.
+%	mathescape,                    % Permite insertar secuencias de escape matemáticas de LaTeX.
+	rulecolor=\color{gray15p},     % color de la línea del recuadro.
+	framerule=0.4mm,               % ancho de línea de recuadro
+	bgcolor=gray05p,               % color de fondo del recuadro.
+	fontsize=\small,
+}
+
+\label{PYTHON_FILE}
+% Con \newmintedfile[pythonfile]{python} definimos un nuevo comando:
+%\pythonfile{./src/test.py}
+
+\newmintedfile[pythonfile]{python}{
+	linenos=true,
+	numbersep=5pt,                 % Setea la separación de los números de línea en 5pt. 
+	frame=single,
+	framesep=2mm,                  % Setea la separación del frame a 2mm.
+%	gobble=2,                      % Borra los 2 espacios adicionales agregados.
+%	mathescape,                    % Permite insertar secuencias de escape matemáticas de LaTeX.
+	rulecolor=\color{gray15p},     % color de la línea del recuadro.
+	framerule=0.4mm,               % ancho de línea de recuadro
+	bgcolor=gray05p,               % color de fondo del recuadro.
+	fontsize=\small,
+}
+
+\label{C_CODE}
+% Con \newminted{c} definimos un nuevo ambiente:
+%	\begin{ccode}
+%#include <stdio.h>
+%
+%int main (int argc, char** argv)
+%{
+%    printf("Hola Mundo!\n");
+%
+%    return 0;
+%}
+%	\end{ccode}
+	
+\newminted{c}{
+	linenos=true,
+	numbersep=5pt,                 % Setea la separación de los números de línea en 5pt. 
+	frame=single,
+	framesep=2mm,                  % Setea la separación del frame a 2mm.
+%	gobble=2,                      % Borra los 2 espacios adicionales agregados.
+%	mathescape,                    % Permite insertar secuencias de escape matemáticas de LaTeX.
+	rulecolor=\color{gray15p},     % color de la línea del recuadro.
+	framerule=0.4mm,               % ancho de línea de recuadro
+	bgcolor=gray05p,               % color de fondo del recuadro.
+	fontsize=\small,
+}
+
+\label{C_FILE}
+%Con \newmintedfile[cfile]{c} definimos un nuevo comando:
+%\cfile{./src/test.c}
+
+\newmintedfile[cfile]{c}{
+	linenos=true,
+	numbersep=5pt,                 % Setea la separación de los números de línea en 5pt. 
+	frame=single,
+	framesep=2mm,                  % Setea la separación del frame a 2mm.
+%	gobble=2,                      % Borra los 2 espacios adicionales agregados.
+%	mathescape,                    % Permite insertar secuencias de escape matemáticas de LaTeX.
+	rulecolor=\color{gray15p},     % color de la línea del recuadro.
+	framerule=0.4mm,               % ancho de línea de recuadro
+	bgcolor=gray05p,               % color de fondo del recuadro.
+	fontsize=\small,
+}
+
+\label{PYTHON_CONSOLE}
+% Con newminted{pycon} definimos un nuevo ambiente:
+%	\begin{pyconcode}
+%>>> print("Hello World!")
+%Hello World!
+%>>>
+%	\end{pyconcode}
+
+\newminted{pycon}{
+	linenos=true,
+	numbersep=5pt,                 % Setea la separación de los números de línea en 5pt. 
+	frame=single,
+	framesep=2mm,                  % Setea la separación del frame a 2mm.
+%	gobble=2,                      % Borra los 2 espacios adicionales agregados.
+%	mathescape,                    % Permite insertar secuencias de escape matemáticas de LaTeX.
+	rulecolor=\color{gray15p},     % color de la línea del recuadro.
+	framerule=0.4mm,               % ancho de línea de recuadro
+	bgcolor=gray05p,               % color de fondo del recuadro.
+	fontsize=\small,
+}
+
+\label{PYTHON_CONSOLE_FILE}
+% Con \newmintedfile[pyconfile]{python} definimos un nuevo comando:
+%\pyconfile{./src/test.py}
+
+\newmintedfile[pyconfile]{pycon}{
+	linenos=true,
+	numbersep=5pt,                 % Setea la separación de los números de línea en 5pt. 
+	frame=single,
+	framesep=2mm,                  % Setea la separación del frame a 2mm.
+%	gobble=2,                      % Borra los 2 espacios adicionales agregados.
+%	mathescape,                    % Permite insertar secuencias de escape matemáticas de LaTeX.
+	rulecolor=\color{gray15p},     % color de la línea del recuadro.
+	framerule=0.4mm,               % ancho de línea de recuadro
+	bgcolor=gray05p,               % color de fondo del recuadro.
+	fontsize=\small,
+}
+
+\renewcommand\listingscaption{Code}
+\addto\captionsspanish{
+	\renewcommand{\listingscaption}{Código}
+}
