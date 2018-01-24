@@ -1,0 +1,486 @@
+
+\chapter{Conjuntos de objetos}
+
+\section{Composición}
+
+\index{composición} \index{estructura anidada}
+
+En este momento usted ya ha visto varios ejemplos de composición.
+Uno de los primeros fue una invocación de un método como parte de
+una expresión. Otro ejemplo es la estructura anidada de sentencias;
+por ejemplo, se puede colocar una sentencia \texttt{if} dentro de
+un ciclo \texttt{while}, dentro de otra sentencia \texttt{if}.
+
+Después de observar esto y haber aprendido sobre listas y objetos
+no debería sorprenderse al saber que se pueden crear listas de objetos.
+También pueden crearse objetos que contengan listas (como atributos),
+listas que contengan listas, objetos que contengan objetos, y así
+sucesivamente.
+
+En este capítulo y el siguiente, mostraremos algunos ejemplos de estas
+combinaciones, usando objetos \texttt{Carta}.
+
+\section{Objeto \texttt{Carta} }
+
+\index{Carta} \index{clase!Carta}
+
+Si usted no tiene familiaridad con juegos de cartas este es un buen
+momento para conseguir una baraja, de lo contrario este capítulo no
+tendrá mucho sentido. Hay cincuenta y dos cartas en una baraja, cada
+una pertenece a una de las cuatro figuras y uno de los trece valores.
+Las figuras son Picas, Corazones, Diamantes y Tréboles. Los valores
+son As, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K. Dependiendo del juego,
+el valor del As puede ser más alto que el de un rey o más bajo que
+2.
+
+\index{valor} \index{figura}
+
+Si deseamos definir un nuevo objeto para representar una carta del
+naipe, parece obvio que los atributos deberían ser \texttt{valor}
+y \texttt{figura}. No es tan obvio que tipo de dato asignar a estos
+atributos. Una posibilidad consiste en usar cadenas de texto con palabras
+como \texttt{Picas} para las figuras y \texttt{Reina} para los valores.
+Un problema de esta implementación es que no sería tan fácil comparar
+cartas para ver cuál tiene un valor mayor o una figura mayor.
+
+\index{codificar} \index{encriptar} \index{correspondencia}
+
+Una alternativa consiste en usar enteros para \textbf{codificar} los
+valores y las figuras. Por ``codificar'', no estamos haciendo alusión
+a encriptar o traducir a un código secreto. Lo que un científico de
+la computación considera ``codificar'' es ``definir una correspondencia
+entre una secuencia de números y los objetos que deseamos representar''.
+Por ejemplo:
+
+\beforefig %
+\begin{tabular}{lcl}
+Picas  & $\mapsto$  & 3 \tabularnewline
+Corazones  & $\mapsto$  & 2 \tabularnewline
+Diamantes  & $\mapsto$  & 1 \tabularnewline
+Tréboles  & $\mapsto$  & 0 \tabularnewline
+\end{tabular}\afterfig
+
+Una característica notable de esta correspondencia es que las figuras
+aparecen en orden decreciente de valor así como los enteros van disminuyendo.
+De esta forma, podemos comparar figuras mediante los enteros que las
+representan. Una correspondencia para los valores es bastante sencilla;
+cada número se relaciona con el entero correspondiente, y para las
+cartas que se representan con letras tenemos lo siguiente:
+
+\beforefig %
+\begin{tabular}{lcl}
+A  & $\mapsto$  & 1 \tabularnewline
+J  & $\mapsto$  & 11 \tabularnewline
+Q  & $\mapsto$  & 12 \tabularnewline
+K  & $\mapsto$  & 13 \tabularnewline
+\end{tabular}\afterfig
+
+La razón para usar notación matemática en estas correspondencias es
+que ellas no hacen parte del programa en Python. Son parte del diseño,
+pero nunca aparecen explícitamente en el código fuente. La definición
+de la clase \texttt{Carta} luce así:\inputencoding{latin9}
+\begin{lstlisting}
+class Carta:
+  def __init__(self, figura=0, valor=0):
+    self.figura = figura
+    self.valor = valor
+\end{lstlisting}
+\inputencoding{utf8} Como de costumbre, proporcionamos un método de inicialización que
+toma un parámetro opcional para cada atributo.
+
+\index{constructor}
+
+Para crear un objeto que represente el 3 de tréboles, usamos este
+comando:\inputencoding{latin9}
+\begin{lstlisting}
+tresTreboles = Carta(0, 3)
+\end{lstlisting}
+\inputencoding{utf8}
+El primer argumento, \texttt{0}, representa la figura (tréboles).
+
+\section{Atributos de clase y el método \texttt{\_\_str\_\_}}
+
+\index{atributo de clase} \index{atributo!de clase}
+
+Para imprimir objetos \texttt{Carta} en una forma que la gente pueda
+leer fácilmente, queremos establecer una correspondencia entre códigos
+enteros y palabras. Una forma natural de hacerlo es con listas de
+cadenas de texto. Asignamos estas listas a \textbf{atributos de clase}
+al principio de la clase:\inputencoding{latin9}
+\begin{lstlisting}
+class Carta:
+  listaFiguras = ["Treboles", "Diamantes", "Corazones", 
+  "Picas"]
+  listaValores = ["narf", "As", "2", "3", "4", "5", "6", 
+  "7","8", "9", "10", "Jota", "Reina", "Rey"]
+
+  # se omite el metodo init
+
+  def __str__(self):
+    return self.listaFiguras[self.valor] + " de " + 
+            self.listaValores[self.figura]
+\end{lstlisting}
+\inputencoding{utf8}
+Un atributo de clase se define afuera de los métodos y puede ser accedido
+desde cualquiera de ellos.
+
+Dentro de \texttt{\_\_str\_\_}, podemos usar a \texttt{listaFiguras}
+y \texttt{listaValores} para establecer una correspondencia entre
+los valores numéricos de \texttt{figura}, \texttt{valor} y los nombres
+de las cartas. La expresión \verb+self.listaFiguras[self.figura]+
+significa ``use el atributo \texttt{figura} del objeto \texttt{self}
+como índice dentro del atributo de clase \texttt{listaFiguras}, esto
+seleccionará la cadena de texto apropiada''.
+
+La razón para el \texttt{``narf''} en el primer elemento de \texttt{listaValores}
+consiste en ocupar el elemento cero de la lista que no va a ser usado
+en el programa. Los valores válidos son de 1 a 13. Este elemento desperdiciado
+no es necesario, podríamos haber empezado a contar desde 0, pero es
+menos confuso codificar 2 como 2, 3 como 3 ... y 13 como 13.
+
+Con los métodos que tenemos hasta aquí, podemos crear e imprimir cartas:\inputencoding{latin9}
+\begin{lstlisting}
+>>> c1 = Carta(1, 11)
+>>> print(c1)
+Jota de Diamantes
+\end{lstlisting}
+\inputencoding{utf8} Los atributos de clase como \texttt{listaFiguras} se comparten por
+todos los objetos \texttt{Carta}. La ventaja de esto es que podemos
+usar cualquier objeto \texttt{Carta} para acceder a ellos:
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> c2 = Carta(1, 3)
+>>> print(c2)
+3 de Diamantes
+>>> print(c2.listaFiguras[1])
+Diamantes
+\end{lstlisting}
+\inputencoding{utf8} La desventaja es que si modificamos un atributo de clase, afecta
+a todas las otras instancias de la clase. Por ejemplo, si decidimos
+que ``Jota de Diamantes'' debería llamarse ``Caballero de Rombos
+rojos,'' podríamos ejecutar:
+
+\index{instancia!objeto} \index{objeto instancia}
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> c1.listaFiguras[1] = "Caballero de Rombos rojos"
+>>> print(c1)
+Caballero de Rombos rojos
+\end{lstlisting}
+\inputencoding{utf8} El problema es que {\em todos} los Diamantes ahora son Rombos
+rojos:
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> print(c2)
+3 de Rombos rojos
+\end{lstlisting}
+\inputencoding{utf8} Usualmente no es una buena idea modificar los atributos de clase.
+
+\section{Comparando cartas}
+
+\label{comparecard} \index{operador!condicional} \index{operador condicional}
+
+Para los tipos primitivos contamos con los operadores (\texttt{<},
+\texttt{>}, \texttt{==}, etc.) que determinan cuándo un valor es mayor,
+menor, mayor o igual, menor o igual, o igual al otro. Para los tipos
+definidos por el programador podemos sobrecargar el comportamiento
+de los operadores predefinidos proporcionando un método llamado \texttt{\_\_cmp\_\_}.
+Por convención, \texttt{\_\_cmp\_\_} toma dos parámetros, \texttt{self}
+y \texttt{otro}, y retorna 1 si el primer objeto es más grande, -1
+si el segundo es más grande y 0 si son iguales entre si.
+
+\index{sobrecargar} \index{sobrecarga de operadores} \index{orden}
+\index{orden total} \index{orden parcial}
+
+Algunos tipos tienen un orden total, lo que quiere decir que cualquier
+pareja de elementos se puede comparar para decidir cuál de ellos es
+mayor. Por ejemplo, los números enteros y los de punto flotante tienen
+un orden total. Algunos conjuntos no tienen relación de orden, lo
+que quiere decir que no hay una manera sensata de determinar que un
+elemento es mayor que otro. Por ejemplo, las frutas no tienen una
+relación de orden, y esta es la razón por la que no se pueden comparar
+manzanas con naranjas.
+
+El conjunto de cartas tiene un orden parcial, lo que quiere decir
+que algunas veces se pueden comparar elementos, y otras veces no.
+Por ejemplo, el 3 de Picas es mayor que el 2 de picas, y el 3 de Diamantes
+es mayor que el 3 de Picas. Pero, ¿que es más alto, el 3 de Picas
+o el 2 de Diamantes? Uno tiene un valor más alto, pero el otro tiene
+una figura más alta.
+
+\index{comparable}
+
+Para lograr comparar las cartas, hay que tomar una decisión sobre
+la importancia del valor y de la figura. Para ser honestos, esta decisión
+es arbitraria. Así que tomaremos la opción de determinar qué figura
+es más importante, basándonos en que un mazo de cartas nuevo viene
+con las Picas (en orden), luego los Diamantes, y así sucesivamente.
+
+Con esta decisión \texttt{\_\_cmp\_\_} queda así:\inputencoding{latin9}
+\begin{lstlisting}
+def __cmp__(self, otro):
+  # chequea las figuras
+  if self.figura > otro.figura: return 1
+  if self.figura < otro.figura: return -1
+  # Si tienen la misma figura... 
+  if self.valor > otro.valor: return 1
+  if self.valor < otro.valor: return -1
+  # si los valores son iguales... hay un empate
+  return 0
+\end{lstlisting}
+\inputencoding{utf8}
+Con este orden los Ases valen menos que los Dos.
+
+\section{Mazos}
+
+\index{lista!de objetos} \index{objeto!lista de} \index{mazo}
+
+Ahora que tenemos objetos para representar \texttt{Carta}s, el siguiente
+paso lógico consiste en definir una clase para representar un \texttt{Mazo}.
+Por supuesto, un mazo (o baraja) está compuesto por cartas, así que
+cada instancia de \texttt{Mazo} contendrá como atributo una lista
+de cartas.
+
+\index{método de inicialización} \index{método!de inicialización}
+
+La siguiente es la definición de la clase \texttt{Mazo}. El método
+de inicialización crea el atributo \texttt{cartas} y genera el conjunto
+usual de cincuenta y dos cartas:
+
+\index{composición} \index{ciclo!anidado}
+
+\inputencoding{latin9}\begin{lstlisting}
+class Mazo:
+  def __init__(self):
+    self.cartas = []
+    for figura in range(4):
+      for valor in range(1, 14):
+        self.cartas.append(Carta(figura, valor))
+\end{lstlisting}
+\inputencoding{utf8} La forma más sencilla de llenar el mazo consiste en usar un ciclo
+anidado. El ciclo exterior enumera las figuras de 0 a 3. El ciclo
+interno enumera los valores de 1 a 13. Como el ciclo exterior itera
+cuatro veces y el interno itera trece veces, el número total de iteraciones
+es cincuenta y dos ($4\times13$). Cada iteración crea una nueva instancia
+de \texttt{Carta} y la pega a la lista \texttt{cartas}.
+
+El método \texttt{append} acepta secuencias mutables como las listas
+y no acepta tuplas.
+
+\index{método append} \index{método de lista} \index{método!de lista}
+
+\section{Imprimiendo el mazo}
+
+\label{printdeck} \index{imprimir!objeto mazo}
+
+Como de costumbre, cuando definimos un nuevo tipo de objeto, deseamos
+tener un método que imprima su contenido. Para imprimir un \texttt{Mazo},
+recorremos la lista e imprimimos cada objeto \texttt{Carta}:\inputencoding{latin9}
+\begin{lstlisting}
+class Mazo:
+  ...
+  def imprimirMazo(self):
+    for carta in self.cartas:
+      print(carta)
+\end{lstlisting}
+\inputencoding{utf8}
+En este ejemplo y en los que siguen, los puntos suspensivos indican
+que hemos omitido los otros métodos de la clase.
+
+Otra alternativa a \texttt{imprimirMazo} puede ser escribir un método
+\texttt{\_\_str\_\_} para la clase \texttt{Mazo}. La ventaja de \texttt{\_\_str\_\_}
+radica en su mayor flexibilidad. Además de imprimir el contenido del
+objeto, genera una representación de él en una cadena de texto que
+puede manipularse en otros lugares del programa, incluso antes de
+imprimirse.
+
+A continuación hay una versión de \texttt{\_\_str\_\_} que retorna
+una representación de un \texttt{Mazo}. Para añadir un estilo de cascada,
+cada carta se imprime un espacio mas hacia la derecha que la anterior:\inputencoding{latin9}
+\begin{lstlisting}
+class Mazo:
+  ...
+  def __str__(self):
+    s = ""
+    for i in range(len(self.cartas)):
+      s = s + " "*i + str(self.cartas[i]) + "\n"
+    return s
+\end{lstlisting}
+\inputencoding{utf8}
+Este ejemplo demuestra varios puntos. Primero, en vez de recorrer
+los elementos de la lista \texttt{self.cartas}, estamos usando a \texttt{i}
+como variable de ciclo que lleva la posición de cada elemento en la
+lista de cartas.
+
+Segundo, estamos usando el operador multiplicación aplicado a un número
+y una cadena, de forma que la expresión \verb+" "*i+ produce un número
+de espacios igual al valor actual de \texttt{i}.
+
+Tercero, en vez de usar el comando \texttt{print} para realizar la
+impresión, utilizamos la función \texttt{str}. Pasar un objeto como
+argumento a \texttt{str} es equivalente a invocar el método \texttt{\_\_str\_\_}
+sobre el objeto.
+
+\index{acumulador}
+
+Finalmente, estamos usando a la variable \texttt{s} como \textbf{acumulador}.
+Inicialmente \texttt{s} es la cadena vacía. En cada iteración del
+ciclo se genera una nueva cadena y se concatena con el valor viejo
+de \texttt{s} para obtener el nuevo valor. Cuando el ciclo finaliza,
+\texttt{s} contiene la representación completa del \texttt{Mazo},
+que se despliega (parcialmente) así:
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> mazo = Mazo()
+>>> print(mazo)
+As de Picas
+ 2 de Picas
+  3 de Picas
+   4 de Picas
+    5 de Picas
+     6 de Picas
+      7 de Picas
+       8 de Picas
+        9 de Picas
+         10 de Picas
+          J de Picas
+           Reina de Picas
+            Rey de Picas
+             As de Diamantes
+\end{lstlisting}
+\inputencoding{utf8} Aunque el resultado se despliega en 52 líneas, es una sola cadena
+que contiene caracteres nueva linea \verb+(\n)+.
+
+\section{Barajando el mazo}
+
+\index{barajar}
+
+Si un mazo se baraja completamente, cualquier carta tiene la misma
+probabilidad de aparecer en cualquier posición, y cualquier posición
+tiene la misma probabilidad de contener a cualquier carta.
+
+\index{random} \index{randrange}
+
+Para barajar el mazo, usamos la función \texttt{randrange} que pertenece
+al módulo del sistema \texttt{random}. \texttt{randrange} recibe dos
+parámetros enteros \texttt{a} y \texttt{b}, y se encarga de escoger
+al azar un valor perteneciente al rango \texttt{a <= x < b}. Como
+el límite superior es estrictamente menor que \texttt{b}, podemos
+usar el número de elementos de una lista como el segundo parámetro
+y siempre obtendremos un índice válido como resultado. Por ejemplo,
+esta expresión escoge al azar el índice de una carta en un mazo:
+
+\inputencoding{latin9}\begin{lstlisting}
+random.randrange(0, len(self.cartas))
+\end{lstlisting}
+\inputencoding{utf8} Una manera sencilla de barajar el mazo consiste en recorrer todas
+las cartas intercambiando cada una con otra carta escogida al azar.
+Es posible que la carta se intercambie consigo misma, pero esto no
+causa ningún problema. De hecho, si prohibiéramos esto, el orden de
+las cartas no sería tan aleatorio:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Mazo:
+  ...
+  def barajar(self):
+    import random
+    nCartas = len(self.cartas)
+    for i in range(nCartas):
+      j = random.randrange(i, nCartas)
+      self.cartas[i], self.cartas[j] = self.cartas[j], \
+                                       self.cartas[i]
+\end{lstlisting}
+\inputencoding{utf8} En vez de asumir que hay 52 cartas en el mazo, obtenemos el número
+de ellas a través de la función len y lo almacenamos en la variable
+\texttt{nCartas}.
+
+\index{intercambiar} \index{asignación de tuplas} \index{asignación!de tuplas}
+
+Para cada carta en el mazo, escogemos, aleatoriamente, una carta de
+las que no han sido barajadas todavía. Intercambiamos la carta actual
+(con índice \texttt{i}) con la seleccionada (con índice \texttt{j}).
+Para intercambiar las cartas usamos asignación de tuplas, como en
+la sección ~\ref{tuple assignment}:\inputencoding{latin9}
+\begin{lstlisting}
+self.cartas[i], self.cartas[j] = self.cartas[j], \
+                                 self.cartas[i]
+\end{lstlisting}
+\inputencoding{utf8}
+\section{Eliminando y entregando cartas}
+
+\index{eliminando cartas}
+
+Otro método que sería útil para la clase \texttt{Mazo} es \texttt{eliminarCarta},
+que toma una carta como parámetro, la remueve y retorna True si la
+encontró en el mazo o False si no estaba:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Mazo:
+  ...
+  def eliminarCarta(self, carta):
+    if carta in self.cartas:
+      self.cartas.remove(carta)
+      return True
+    else: 
+      return True
+\end{lstlisting}
+\inputencoding{utf8} El operador \texttt{in} retorna True si el primer operando se encuentra
+dentro del segundo, que debe ser una secuencia. Si el primer operando
+es un objeto, Python usa el método \texttt{\_\_cmp\_\_} para determinar
+la igualdad de elementos en la lista. Como la función \texttt{\_\_cmp\_\_}
+en la clase \texttt{Carta} detecta igualdad profunda, el método \texttt{eliminarCarta}
+detecta igualdad profunda.
+
+\index{operador in} \index{operador!in}
+
+Para entregar cartas necesitamos eliminar y retornar la primera carta
+del mazo. El método \texttt{pop} de las listas proporciona esta funcionalidad:\inputencoding{latin9}
+\begin{lstlisting}
+class Mazo:
+  ...
+  def entregarCarta(self):
+    return self.cards.pop()
+\end{lstlisting}
+\inputencoding{utf8} En realidad, \texttt{pop} elimina la {\em última} carta de la
+lista, así que realmente estamos entregando cartas por la parte inferior,
+y esto no causa ningún inconveniente.
+
+\index{función booleana} \index{función!booleana}
+
+Una operación más que podemos requerir es la función booleana \texttt{estaVacio},
+que retorna True si el mazo está vacío:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Mazo:
+  ...
+  def estaVacio(self):
+    return (len(self.cartas) == 0)
+\end{lstlisting}
+\inputencoding{utf8}
+\section{Glosario}
+\begin{description}
+\item [{Codificar:}] representar un conjunto de valores usando otro conjunto
+de valores estableciendo una correspondencia entre ellos.
+\item [{Atributo de clase:}] variable de una clase que está fuera de todos
+los métodos. Puede ser accedida desde todos los métodos y se comparte
+por todas las instancias de la clase.
+\item [{Acumulador:}] variable que se usa para acumular una serie de valores
+en un ciclo. Por ejemplo, concatenar varios valores en una cadena
+o sumarlos.
+
+\index{codificar} \index{atributo de clase} \index{atributo!de clase}
+\index{acumulador}
+\end{description}
+
+\section{Ejercicios}
+\begin{enumerate}
+\item Modifique \texttt{\_\_cmp\_\_} para que los Ases tengan mayor puntaje
+que los reyes.
+\item Reescriba el intercambio que se hace en \texttt{barajar} sin usar
+asignación de tuplas.
+\item Escriba una clase \texttt{secuenciaADN} que permita representar una
+secuencia de ADN con un método \texttt{\_\_init\_\_} adecuado.
+\item Agregue cuatro métodos a la clase para averiguar la cantidad de cada
+nucleótido en la secuencia, cuantas A, G, C, T.
+\end{enumerate}
+

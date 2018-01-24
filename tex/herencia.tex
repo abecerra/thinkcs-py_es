@@ -1,0 +1,559 @@
+
+\chapter{Herencia}
+
+\section{Definición}
+
+\index{herencia} \index{programación orientada a objetos} \index{clase madre}
+\index{clase hija} \index{subclase}
+
+La característica más asociada con la programación orientada a objetos
+quizás sea la \textbf{herencia}. Ésta es la capacidad de definir una
+nueva clase que constituye la versión modificada de una clase preexistente.
+
+La principal ventaja de la herencia consiste en que se pueden agregar
+nuevos métodos a una clase sin modificarla. El nombre ``herencia''
+se usa porque la nueva clase hereda todos los métodos de la clase
+existente. Extendiendo esta metáfora, la clase preexistente se denomina
+la clase \textbf{madre}. La nueva clase puede llamarse clase \textbf{hija}
+o, ``subclase.''
+
+\index{diseño orientado a objetos}
+
+La herencia es muy poderosa. Algunos programas complicados se pueden
+escribir de una manera más sencilla y compacta a través del uso de
+la herencia. Además, facilita la reutilización de código, ya que se
+puede especializar el comportamiento de una clase madre sin modificarla.
+En algunos casos, las relaciones entre las clases reflejan la estructura
+de las entidades del mundo real que se presentan en un problema, y
+esto hace que los programas sean más comprensibles.
+
+Por otra parte, la herencia puede dificultar la lectura de los programas.
+Cuando un método se llama, puede que no sea muy claro donde está definido.
+El código relevante puede estar disperso entre varios módulos. Además,
+muchas soluciones que se pueden escribir con el uso de herencia, también
+se pueden escribir sin ella, y de una manera elegante (algunas veces
+más elegante). Si la estructura natural de las entidades que intervienen
+en un problema no se presta a pensar en términos de herencia, este
+estilo de programación puede causar más perjuicios que beneficios.
+
+En este capítulo demostraremos el uso de la herencia como parte de
+un programa que implementa el juego de cartas la solterona. Una de
+las metas es escribir una base de código que pueda reutilizarse para
+implementar otros juegos de cartas.
+
+\section{Una mano de cartas}
+
+Para casi todos los juegos de cartas vamos a requerir representar
+una mano de cartas. Hay una clara semejanza entre un mazo y una mano
+de cartas, ambos son conjuntos de cartas y requieren operaciones como
+agregar o eliminar cartas. También, podríamos barajar mazos y manos
+de cartas.
+
+Por otro lado, una mano se diferencia de un mazo; dependiendo del
+juego que estemos considerando podríamos ejecutar algunas operaciones
+sobre las manos que no tienen sentido en un mazo. Por ejemplo, en
+el póker, podríamos clasificar manos como un par, una terna, 2 pares,
+escalera, o podríamos comparar un par de manos. En el bridge, podríamos
+calcular el puntaje para una mano con el objetivo de hacer una apuesta.
+
+Esta situación sugiere el uso de la herencia. Si una \texttt{Mano}
+es una subclase de \texttt{Mazo}, tendrá todos los métodos definidos
+en ésta y se podrán agregar nuevos métodos.
+
+\index{clase madre} \index{clase!madre}
+
+En la definición de una clase hija, el nombre de la clase madre se
+encierra entre paréntesis:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Mano(Mazo):
+  pass
+\end{lstlisting}
+\inputencoding{utf8} Esta sentencia indica que la nueva clase \texttt{Mano} hereda de
+la clase \texttt{Mazo}.
+
+El constructor de \texttt{Mano} inicializa los atributos \texttt{nombre}
+y \texttt{cartas}. La cadena \texttt{nombre} identifica cada mano,
+probablemente con el nombre del jugador que la sostiene. Por defecto,
+el parámetro nombre es una cadena vacía. \texttt{cartas} es la lista
+de cartas en la mano, inicializada a una lista vacía:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Mano(Mazo):
+  def __init__(self, nombre=""):
+    self.cartas = []
+    self.nombre = nombre
+\end{lstlisting}
+\inputencoding{utf8} Para la gran mayoría de juegos de cartas es necesario agregar y remover
+cartas del mazo. Como \texttt{Mano} hereda \texttt{eliminarCarta}
+de \texttt{Mazo}, ya tenemos la mitad del trabajo hecho, solo tenemos
+que escribir \texttt{agregarCarta}:\inputencoding{latin9}
+\begin{lstlisting}
+class Mano(Mazo):
+  ...
+  def agregarCarta(self,carta) :
+    self.cartas.append(carta)
+\end{lstlisting}
+\inputencoding{utf8}
+Recuerde que la elipsis (...) indica que estamos omitiendo los otros
+métodos. El método \texttt{append} de las listas permite agregar la
+nueva carta.
+
+\section{Repartiendo cartas}
+
+\index{repartiendo cartas}
+
+Ahora que tenemos una clase \texttt{Mano} deseamos transferir cartas
+del \texttt{Mazo} a las manos. No es fácil decidir que el método que
+implemente esta transferencia se incluya en la clase \texttt{Mano}
+o en la clase \texttt{Mazo}, pero como opera sobre un solo mazo y
+(probablemente) sobre varias manos, es más natural incluirlo en \texttt{Mazo}.
+
+El método \texttt{repartir} debería ser muy general, ya que diferentes
+juegos tienen diversas reglas. Podríamos transferir todo el mazo de
+una vez, o repartir carta a carta alternando por cada mano, como se
+acostumbra en los casinos.
+
+El método \texttt{repartir} toma dos parámetros, una lista (o tupla)
+de manos y el número total de cartas que se deben entregar. Si no
+hay suficientes cartas en el mazo para repartir, entrega todas las
+cartas y se detiene:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Mazo:
+  ...
+  def repartir(self, manos, nCartas=999):
+    nManos = len(manos)
+    for i in range(nCartas):
+      if self.estaVacia(): 
+            break    # se detiene si no hay cartas
+      # toma la carta en el tope
+      carta = self.eliminarCarta() 
+      # siguiente turno!
+      mano = manos[i % nManos] 
+      # agrega la carta a la mano
+      mano.agregarCarta(carta) 
+\end{lstlisting}
+\inputencoding{utf8} El segundo parámetro, \texttt{nCartas}, es opcional; y por defecto
+es un número entero grande que garantice que todas las cartas del
+mazo se repartan.
+
+\index{variable de ciclo} \index{variable!de ciclo}
+
+La variable de ciclo \texttt{i} va de 0 a \texttt{nCartas-1}. En cada
+iteración remueve una carta al tope del mazo usando el método \texttt{pop},
+que elimina y retorna el último elemento de la lista.
+
+\index{operador residuo} \index{operador!residuo}
+
+El operador residuo (\texttt{\%}) nos permite repartir cartas de manera
+circular (una carta a una mano distinta en cada iteración). Cuando
+\texttt{i} es igual al número de manos en la lista, la expresión \texttt{i
+\% nManos} \textit{da la vuelta} retornando la primera posición de
+la lista (la posición 0).
+
+\section{Imprimiendo una mano}
+
+\index{imprimiendo!manos de cartas}
+
+Para imprimir el contenido de una mano podemos aprovechar los métodos
+\texttt{\_\_str\_\_} e \texttt{imprimirMazo} heredados de \texttt{Mazo}.
+Por ejemplo:
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> mazo = Mazo()
+>>> mazo.barajar()
+>>> mano = Mano("Rafael")
+>>> mazo.repartir([mano], 5)
+>>> print(mano)
+La Mano Rafael contiene
+2 de Picas
+ 3 de Picas
+  4 de Picas
+   As de Corazones
+    9 de tr�boles
+\end{lstlisting}
+\inputencoding{utf8} No es una gran mano, pero se puede mejorar.
+
+Aunque es conveniente heredar los métodos existentes, hay un dato
+adicional que un objeto \texttt{Mano} puede incluir cuando se imprime,
+para lograr esto implementamos \texttt{\_\_str\_\_} sobrecargando
+el que está definido en la clase \texttt{Mazo}:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Mano(Mazo)
+  ...
+  def __str__(self):
+    s = "Mano " + self.nombre
+    if self.estaVacia():
+      s = s + " esta vacia\n"
+    else:
+      s = s + " contiene\n"
+    return s + Mazo.__str__(self)
+\end{lstlisting}
+\inputencoding{utf8} Inicialmente, \texttt{s} es una cadena que identifica la mano. Si
+está vacía, se añade la cadena \texttt{esta vacia}. Si esto no es
+así se añade la cadena \texttt{contiene} y la representación textual
+de la clase \texttt{Mazo}, que se obtiene aplicando el método \texttt{\_\_str\_\_}
+a \texttt{self}.
+
+Parece extraño aplicar el método \texttt{\_\_str\_\_} de la clase
+\texttt{Mazo} a \texttt{self} que se refiere a la \texttt{Mano} actual.
+Para disipar cualquier duda, recuerde que \texttt{Mano} es una clase
+de \texttt{Mazo}. Los objetos \texttt{Mano} pueden hacer todo lo que
+los objetos \texttt{Mazo} hacen, así que esto es legal.
+
+\index{subclase} \index{clase padre} \index{clase!padre}
+
+En general, siempre se puede usar una instancia de una subclase en
+vez de una instancia de la clase padre.
+
+\section{La clase \texttt{JuegoDeCartas}}
+
+La clase \texttt{JuegoDeCartas} se encarga de algunas operaciones
+básicas comunes a todos los juegos, tales como crear el mazo y barajarlo:
+
+\inputencoding{latin9}\begin{lstlisting}
+class JuegoDeCartas:
+  def __init__(self):
+    self.mazo = Mazo()
+    self.mazo.barajar()
+\end{lstlisting}
+\inputencoding{utf8} En este ejemplo vemos que la inicialización realiza algo más importante
+que asignar valores iniciales a los atributos.
+
+Para implementar un juego específico podemos heredar de \texttt{JuegoDeCartas}
+y agregar las características del juego particular que estemos desarrollando.
+
+A manera de ejemplo, escribiremos una simulación del juego La Solterona.
+
+El objetivo de La Solterona es deshacerse de todas las cartas. Cada
+jugador hace esto emparejando cartas por figura y valor. Por ejemplo
+el 4 de Treboles se empareja con el 4 de Picas, por que son cartas
+negras. La J de Corazones se empareja con la J de Diamantes, porque
+son cartas rojas.
+
+Para empezar, la reina de Treboles se elimina del mazo, de forma que
+la reina de Picas no tenga pareja. Las otras 51 cartas se reparten
+equitativamente entre los jugadores. Después de repartir cada jugador
+busca parejas en su mano y las descarta.
+
+Cuando ningún jugador pueda descartar más se empieza a jugar por turnos.
+Cada jugador escoge una carta de su vecino a la izquierda (sin mirarla).
+Si la carta escogida se empareja con alguna carta en la mano del jugador,
+el par se elimina. Si esto no es así, la carta debe agregarse a la
+mano del jugador que escoge. Poco a poco, se realizarán todos los
+emparejamientos posibles, dejando únicamente a la reina de Picas en
+la mano del perdedor.
+
+En nuestra simulación del juego, el computador juega todas las manos.
+Desafortunadamente, algunos matices del juego real se pierden en la
+simulación por computador. En un juego real, el jugador con la Solterona
+(la reina de Picas) intenta deshacerse de ella de diferentes formas,
+ya sea desplegándola de una manera prominente, o ocultándola de alguna
+manera. El programa simplemente escogerá una carta de algún vecino
+aleatoriamente.
+
+\section{La clase \texttt{ManoSolterona}}
+
+\index{clase!ManoSolterona}
+
+Una mano para jugar a la Solterona requiere algunas capacidades que
+no están presentes en la clase \texttt{Mano}. Vamos a definir una
+nueva clase \texttt{ManoSolterona}, que hereda de \texttt{Mano} y
+provee un método adicional llamado \texttt{quitarPareja}:
+
+\inputencoding{latin9}\begin{lstlisting}
+class ManoSolterona(Mano):
+  def quitarPareja(self):
+    conteo = 0
+    cartasOriginales = self.cartas[:]
+    for carta in cartasOriginales:
+      m = Carta(3 - carta.figura, carta.valor)
+      if pareja in self.cartas:
+        self.cartas.remove(carta)
+        self.cartas.remove(m)
+        print("Mano %s: %s se empareja con %s" % \
+              (self.name,carta,m))
+        cont = cont + 1
+    return cont
+\end{lstlisting}
+\inputencoding{utf8} Empezamos haciendo una copia de la lista de cartas, de forma que
+podamos recorrerla y simultáneamente eliminar cartas. Como \texttt{self.cartas}
+se modifica en el ciclo, no vamos a utilizarlo para controlar el recorrido.
+¡Python puede confundirse totalmente si empieza a recorrer una lista
+que está cambiando!
+
+\index{recorrido}
+
+Para cada carta en la mano, averiguamos si se empareja con una carta
+escogida de la mano de otra persona. Para esto, tienen que tener el
+mismo valor y la otra figura del mismo color. La expresión \texttt{3
+- carta.figura} convierte un trébol (figura 0) en una Pica (figura
+3) y a un Diamante (figura 1) en un Corazón (figura 2). Usted puede
+comprobar que las operaciones inversas también funcionan. Si hay una
+carta que se empareje, las dos se eliminan.
+
+El siguiente ejemplo demuestra cómo usar \texttt{quitarPareja}:
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> juego = JuegoDeCartas()
+>>> mano = ManoSolterona("frank")
+>>> juego.mazo.repartir([mano], 13)
+>>> print(mano)
+Mano frank contiene
+As de Picas
+ 2 de Diamantes
+  7 de Picas
+   8 de Treboles
+    6 de Corazones
+     8 de Picas
+      7 de Treboles
+       Reina de Treboles
+        7 de Diamantes
+         5 de Treboles
+          Jota de Diamantes
+           10 de Diamantes
+            10 de Corazones
+
+>>> mano.quitarPareja()
+Mano frank: 7 de Picas se empareja con 7 de Treboles
+Mano frank: 8 de Picas se empareja con 8 de Treboles
+Mano frank: 10 de Diamantes se empareja con 10 de Corazones
+>>> print(mano)
+Mano frank contiene
+Ace de Picas
+ 2 de Diamantes
+  6 de Corazones
+   Reina de Treboles
+    7 de Diamantes
+     5 de Treboles
+      Jota de Diamantes
+\end{lstlisting}
+\inputencoding{utf8} Tenga en cuenta que no hay método \texttt{\_\_init\_\_} en la clase
+\texttt{ManoSolterna}. Lo heredamos de \texttt{Mano}.
+
+\section{La clase \texttt{JuegoSolterona}}
+
+\index{clase!JuegoSolterona}
+
+Ahora podemos dedicarnos a desarrollar el juego. \texttt{JuegoSolterona}
+es una subclase de \texttt{JuegoDeCartas} con un nuevo método llamado
+\texttt{jugar} que recibe una lista de jugadores como parámetro.
+
+Como \texttt{\_\_init\_\_} se hereda de \texttt{JuegoDeCartas}, tendremos
+la garantía de que un objeto de tipo \texttt{JuegoSolterona} contendrá
+un mazo barajado:
+
+\inputencoding{latin9}\begin{lstlisting}
+class JuegoSolterona(JuegoDeCartas):
+  def jugar(self, nombres):
+    # elimina la Reina de Treboles
+    self.mazo.eliminarCarta(Carta(0,12))
+
+    # prepara una mano para cada jugador
+    self.manos = []
+    for nombre in nombres :
+      self.manos.append(ManoJuegoSolterona(nombre))
+
+    # reparte las  cartas
+    self.mazo.repartir(self.cartas)
+    print("---------- Cartas repartidas!")
+    self.imprimirManos()
+
+    # quitar parejas iniciales
+    parejas = self.eliminarParejas()
+    print("---------- Parejas descartadas, comienza el juego")
+    self.imprimirManos()
+
+    # jugar hasta que las 50 cartas sean descartadas
+    turno = 0
+    numManos = len(self.manos)
+    while parejas < 25:
+      parejas = parejas+self.jugarUnTurno(turno)
+      turno = (turno + 1) % numManos
+
+    print("-------- Juego terminado")
+    self.printManos()
+\end{lstlisting}
+\inputencoding{utf8} Algunos de las etapas del juego se han separado en métodos. \texttt{eliminarParejas}
+recorre la lista de manos invocando \texttt{eliminarPareja} en cada
+una de ellas:\inputencoding{latin9}
+\begin{lstlisting}
+class JuegoSolterona(JuegoDeCartas):
+  ...
+  def eliminarParejas(self):
+    cont = 0
+    for mano in self.manos:
+      cont = cont + mano.eliminarParejas()
+    return cont
+\end{lstlisting}
+\inputencoding{utf8}
+\texttt{cont} es un acumulador que lleva cuenta del número de parejas
+que se encontraron en cada mano.
+
+\index{acumulador}
+
+Cuando el número total de parejas encontradas llega a ser veinticinco,
+se han quitado cincuenta cartas de las manos, y esto implica que la
+única carta que resta es la reina de Picas y que el juego ha terminado.
+
+La variable \texttt{turno} lleva la pista de cual es el jugador que
+tiene el turno para jugar. Empieza en 0 y se incrementa de uno en
+uno; cuando alcanza el valor \texttt{numManos}, el operador residuo
+lo reinicia en 0.
+
+El método \texttt{jugarUnTurno} toma un parámetro que indica el jugador
+que tiene el turno. El valor de retorno es el número de parejas encontradas
+durante este turno:
+
+\inputencoding{latin9}\begin{lstlisting}
+class JuegoSolterona(JuegoDeCartas):
+  ...
+  def jugarUnTurno(self, i):
+    if self.manos[i].estaVacia():
+      return 0
+    vecino = self.encontrarVecino(i)
+    cartaEscogida = self.manos[vecino].eliminarCarta()
+    self.manos[i].agregarCarta(cartaEscogida)
+    print("Mano", self.manos[i].nombre, 
+          "escogio", cartaEscogida)
+    cont = self.manos[i].eliminarParejas()
+    self.manos[i].barajar()
+    return cont
+\end{lstlisting}
+\inputencoding{utf8} Si la mano de un jugador está vacía, este jugador está fuera del
+juego, así que no hace ninguna acción y retorna 0.
+
+Si esto no es así, un turno consiste en encontrar el primer jugador
+en la izquierda que tenga cartas, tomar una de él, y buscar por parejas.
+Antes de retornar, las cartas en la mano se barajan para que la elección
+del siguiente jugador sea al azar.
+
+El método \texttt{encontrarVecino} comienza con el jugador a la izquierda
+y continua buscando de manera circular hasta que encuentra un jugador
+que tenga cartas:\inputencoding{latin9}
+\begin{lstlisting}
+class JuegoSolterona(JuegoDeCartas):
+  ...
+  def encontrarVecino(self, i):
+    numManos = len(self.manos)
+    for siguiente in range(1,numManos):
+      vecino = (i + siguiente) % numManos
+      if not self.manos[vecino].estaVacia():
+        return vecino
+\end{lstlisting}
+\inputencoding{utf8}
+Si \texttt{encontrarVecino} diera toda la vuelta sin encontrar cartas,
+retornaría \texttt{None} y causaría un error en algún otro lugar del
+programa. Afortunadamente, usted puede comprobar que esto nunca va
+a pasar (siempre y cuando el fin del juego se detecte correctamente).
+
+Hemos omitido el método \texttt{imprimaManos}. Usted puede escribirlo.
+
+La siguiente salida es de un juego en el que solo las primeras 15
+cartas mas altas (con valor 10 y superior) se repartieron a tres jugadores.
+Con este pequeño mazo, el juego termina después de siete parejas encontradas,
+en vez de veinticinco.\inputencoding{latin9}
+\begin{lstlisting}
+>>> import cartas
+>>> juego = cartas.JuegoSolterona()
+>>> juego.jugar(["Allen","Jeff","Chris"])
+---------- Las cartas se han repartido
+Mano Allen contiene
+Rey de Corazones
+ Jota de Treboles
+  Reina de Picas
+   Rey de Picas
+    10 de Diamantes
+
+Mano Jeff contiene
+Reina de Corazones
+ Jota de Picas
+  Jota de Corazones
+   Rey de Diamantes
+    Reina de Diamantes
+
+Mano Chris contiene
+Jota de Diamantes
+ Rey de Treboles
+  10 de Picas
+   10 de Corazones
+    10 de Treboles
+
+Mano Jeff: Reina de Corazones se empareja con Reina de 
+Diamantes
+Mano Chris: 10 de Picas se empareja con 10 de Treboles
+----------  Parejas eliminadas, comienza el juego
+Mano Allen contiene
+Rey de Corazones
+ Jota de Treboles
+  Reina de Picas
+   Rey de Picas
+    10 de Diamantes
+
+Mano Jeff contiene
+Jota de Picas
+ Jota de Corazones
+  Rey de Diamantes
+
+Mano Chris contiene
+Jota de Diamantes
+ Rey de Treboles
+  10 de Corazones
+
+Mano Allen escogio Rey de Diamantes
+Mano Allen: Rey de Corazones se empareja con Rey de 
+Diamantes
+Mano Jeff escogio 10 de Corazones
+Mano Chris escogio Jota de Treboles
+Mano Allen escogio Jota de Corazones
+Mano Jeff escogio Jota de Diamantes
+Mano Chris escogio Reina de Picas
+Mano Allen escogio Jota de Diamantes
+Mano Allen: Jota de Corazones se empareja con Jota de 
+Diamantes
+Mano Jeff escogio Rey de Treboles
+Mano Chris escogio Rey de Picas
+Mano Allen escogio 10 de Corazones
+Mano Allen: 10 de Diamantes se empareja con 10 de Corazones
+Mano Jeff escogio Reina de Picas
+Mano Chris escogio Jota de Picas
+Mano Chris: Jota de Treboles se empareja con Jota de Picas
+Mano Jeff escogio Rey de Picas
+Mano Jeff: Rey de Treboles se empareja con Rey de Picas
+---------- Game is Over
+Mano Allen esta vacia
+
+Mano Jeff contiene
+Reina de Picas
+
+Mano Chris esta vacia
+\end{lstlisting}
+\inputencoding{utf8}\begin{verbatim}
+
+\end{verbatim}
+Así que Jeff pierde.
+
+\section{Glosario}
+\begin{description}
+\item [{Herencia:}] es la capacidad de definir una clase, modificando una
+clase definida previamente.
+\item [{Clase madre:}] esta es la clase de la que una clase hereda.
+\item [{Clase hija:}] nueva clase creada por medio de herencia, también
+recibe el nombre de ``subclase.''
+
+\index{herencia} \index{clase madre} \index{clase madre} \index{subclase}
+\end{description}
+
+\section{Ejercicios}
+\begin{enumerate}
+\item Escriba \texttt{imprimaManos} que recorre la lista \texttt{self.manos}
+e imprime cada mano.
+\item Con base en la clase \texttt{secuenciaADN}, escriba una clase más
+general que se denomine \texttt{biosecuencia} que maneje el alfabeto
+de la biosecuencia como un atributo.
+\item Agregue un método para chequear que la secuencia está bien formada,
+esto es, cada elemento pertenece al alfabeto.
+\end{enumerate}
+

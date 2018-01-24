@@ -1,0 +1,238 @@
+
+\chapter{Prefacio}
+
+Por Jeff Elkner
+
+Este libro debe su existencia a la colaboración hecha posible por
+Internet y el movimiento de software libre. Sus tres autores—un profesor
+de colegio, un profesor de secundaria y un programador profesional—tienen
+todavía que verse cara a cara, pero han podido trabajar juntos y han
+sido ayudados por maravillosas personas, quienes han donado su tiempo
+y energía para ayudar a hacer ver mejor este libro.
+
+Nosotros pensamos que este libro es un testamento a los beneficios
+y futuras posibilidades de esta clase de colaboración, el marco que
+se ha puesto en marcha por Richard Stallman y el movimiento de software
+libre.
+
+\section*{Cómo y porqué vine a utilizar Python}
+
+En 1999, el examen del College Board's Advanced Placement (AP) de
+Informática se hizo en C++ por primera vez. Como en muchas escuelas
+de Estados Unidos, la decisión para cambiar el lenguaje tenía un impacto
+directo en el plan de estudios de informática en la escuela secundaria
+de Yorktown en Arlington, Virginia, donde yo enseño. Hasta este punto,
+Pascal era el lenguaje de instrucción en nuestros cursos del primer
+año y del AP. Conservando la práctica usual de dar a los estudiantes
+dos años de exposición al mismo lenguaje, tomamos la decisión de cambiar
+a C++ en el curso del primer año durante el periodo escolar 1997-98
+de modo que siguiéramos el cambio del College Board's para el curso
+del AP el año siguiente.
+
+Dos años después, estoy convencido de que C++ no era una buena opción
+para introducir la informática a los estudiantes. Aunque es un lenguaje
+de programación de gran alcance, también es extremadamente difícil
+de aprender y de enseñar. Me encontré constantemente peleando con
+la sintaxis difícil de C++ y sus múltiples maneras de hacer las cosas,
+y estaba perdiendo muchos estudiantes, innecesariamente, como resultado.
+Convencido de que tenía que haber una mejor opción para nuestras clases
+de primer año, fui en busca de una alternativa a C++.
+
+Necesitaba un lenguaje que pudiera correr en las máquinas en nuestro
+laboratorio Linux, también en las plataformas de Windows y Macintosh,
+que muchos de los estudiantes tienen en casa. Quería que fuese un
+lenguaje de código abierto, para que los estudiantes lo pudieran usar
+en casa sin pagar por una licencia. Quería un lenguaje usado por programadores
+profesionales, y que tuviera una comunidad activa alrededor de él.
+Tenía que soportar la programación procedimental y orientada a objetos.
+Y más importante, tenía que ser fácil de aprender y de enseñar. Cuando
+investigué las opciones con estas metas en mente, Python saltó como
+el mejor candidato para la tarea.
+
+Pedí a uno de los estudiantes más talentosos de Yorktown, Matt Ahrens,
+que le diera a Python una oportunidad. En dos meses él no sólo aprendió
+el lenguaje, sino que escribió una aplicación llamada pyTicket que
+permitió a nuestro personal atender peticiones de soporte tecnológico
+vía web. Sabia que Matt no podría terminar una aplicación de esa escala
+en tan poco tiempo con C++, y esta observación, combinada con el gravamen
+positivo de Matt sobre Python, sugirió que este lenguaje era la solución
+que buscaba.
+
+\section*{Encontrando un libro de texto}
+
+Al decidir utilizar Python en mis dos clases de informática introductoria
+para el año siguiente, el problema más acuciante era la carencia de
+un libro.
+
+El contenido libre vino al rescate. A principios del año, Richard
+Stallman me presentó a Allen Downey. Los dos habíamos escrito a Richard
+expresando interés en desarrollar un contenido gratis y educativo.
+Allen ya había escrito un libro de texto para el primer año de informática,
+{\em Como pensar como un científico de la computación}. Cuando
+leí este libro, inmediatamente quise usarlo en mi clase. Era el texto
+más claro y mas provechoso de introducción a la informática que había
+visto. Acentúa los procesos del pensamiento implicados en la programación
+más bien que las características de un lenguaje particular. Leerlo
+me hizo sentir un mejor profesor inmediatamente. {\em Como pensar
+como un científico de la computación con Java} no solo es un libro
+excelente, sino que también había sido publicado bajo la licencia
+publica GNU, lo que significa que podría ser utilizado libremente
+y ser modificado para resolver otras necesidades. Una vez que decidí
+utilizar Python, se me ocurrió que podía traducir la versión original
+del libro de Allen (en Java) al nuevo lenguaje (Python). Aunque no
+podía escribir un libro de texto solo, tener el libro de Allen me
+facilitó la tarea, y al mismo tiempo demostró que el modelo cooperativo
+usado en el desarrollo de software también podía funcionar para el
+contenido educativo.
+
+Trabajar en este libro, por los dos últimos años, ha sido una recompensa
+para mis estudiantes y para mí; y mis estudiantes tuvieron una gran
+participación en el proceso. Puesto que podía realizar cambios inmediatos,
+siempre que alguien encontrara un error de deletreo o un paso difícil,
+yo les animaba a que buscaran errores en el libro, dándoles un punto
+cada vez que hicieran una sugerencia que resultara en un cambio en
+el texto. Eso tenía la ventaja doble de animarles a que leyeran el
+texto más cuidadosamente y de conseguir la corrección del texto por
+sus lectores críticos más importantes, los estudiantes usándolo para
+aprender informática.
+
+Para la segunda parte del libro, enfocada en la programación orientada
+a objetos, sabía que alguien con más experiencia en programación que
+yo era necesario para hacer el trabajo correctamente. El libro estuvo
+incompleto la mayoría del año hasta que la comunidad de software abierto
+me proporcionó de nuevo los medios necesarios para su terminación.
+
+Recibí un correo electrónico de Chris Meyers, expresando su interés
+en el libro. Chris es un programador profesional que empezó enseñando
+un curso de programación el año anterior, usando Python en el Lane
+Community College en Eugene, Oregon. La perspectiva de enseñar el
+curso llevó a Chris al libro, y él comenzó a ayudarme inmediatamente.
+Antes del fin de año escolar él había creado un proyecto complementario
+en nuestro Sitio Web \url{http://www.ibiblio.org/obp}, titulado {\em
+Python for Fun} y estaba trabajando con algunos de mis estudiantes
+más avanzados como profesor principal, guiándolos mas allá de donde
+yo podía llevarlos.
+
+\section*{Introduciendo la programación con Python}
+
+El proceso de uso y traducción de {\em Como pensar como un científico
+de la computación}, por los últimos dos años, ha confirmado la conveniencia
+de Python para enseñar a estudiantes principiantes. Python simplifica
+bastante los ejemplos de programación y hace que las ideas importantes
+sean más fáciles de enseñar.
+
+El primer ejemplo del texto ilustra este punto. Es el tradicional
+``hola, mundo'', programa que en la versión C++ del libro se ve
+así:
+\begin{verbatim}
+   #include <iostream.h>
+
+   void main()
+   {
+     cout << "Hola, mundo." << endl;
+   }
+\end{verbatim}
+en la versión Python es:
+\begin{verbatim}
+    print("Hola, Mundo!")
+\end{verbatim}
+Aunque este es un ejemplo trivial, las ventajas de Python salen a
+la luz. El curso de Informática I, en Yorktown, no tiene prerrequisitos,
+es por eso que muchos de los estudiantes, que ven este ejemplo, están
+mirando a su primer programa. Algunos de ellos están un poco nerviosos,
+porque han oído que la programación de computadores es difícil de
+aprender. La versión C++ siempre me ha forzado a escoger entre dos
+opciones que no me satisfacen: explicar el \texttt{\#include}, \texttt{void
+main()}, y las sentencias \{, y \} y arriesgar a confundir o intimidar
+a algunos de los estudiantes al principio, o decirles, ``No te preocupes
+por todo eso ahora; lo retomaré más tarde,'' y tomar el mismo riesgo.
+Los objetivos educativos en este momento del curso son introducir
+a los estudiantes la idea de sentencia y permitirles escribir su primer
+programa. Python tiene exactamente lo que necesito para lograr esto,
+y nada más.
+
+Comparar el texto explicativo de este programa en cada versión del
+libro ilustra más de lo que esto significa para los estudiantes principiantes.
+Hay trece párrafos de explicación de ``Hola, mundo!'' en la versión
+C++; en la versión Python, solo hay dos. Aún mas importante, los 11
+párrafos que faltan no hablan de ``grandes ideas'' en la programación
+de computadores, sino de minucias de la sintaxis de C++. Encontré
+la misma situación al repasar todo el libro. Párrafos enteros desaparecían
+en la versión Python del texto, porque su sencilla sintaxis los hacía
+innecesarios.
+
+Usar un lenguaje de muy alto nivel, como Python, le permite a un profesor
+posponer los detalles de bajo nivel de la máquina hasta que los estudiantes
+tengan el bagaje que necesitan para entenderlos. Permite ``poner
+cosas primero'' pedagógicamente. Unos de los mejores ejemplos de
+esto es la manera en la que Python maneja las variables. En C++ una
+variable es un nombre para un lugar que almacena una cosa. Las variables
+tienen que ser declaradas con tipos, al menos parcialmente, porque
+el tamaño del lugar al cual se refieren tiene que ser predeterminado.
+Así, la idea de una variable se liga con el hardware de la máquina.
+El concepto poderoso y fundamental de variable ya es difícil para
+los estudiantes principiantes (de informática y álgebra). Bytes y
+direcciones de memoria no ayudan para nada. En Python una variable
+es un nombre que se refiere a una cosa. Este es un concepto más intuitivo
+para los estudiantes principiantes y está más cerca del significado
+de ``variable'' que aprendieron en los cursos de matemática del
+colegio. Yo me demoré menos tiempo ayudándolos con el concepto de
+variable y en su uso este año, que en el pasado.
+
+Otro ejemplo de cómo Python ayuda en la enseñanza y aprendizaje de
+la programación es su sintaxis para las funciones. Mis estudiantes
+siempre han tenido una gran dificultad comprendiendo las funciones.
+El problema principal se centra alrededor de la diferencia entre una
+definición de función y un llamado de función, y la distinción relacionada
+entre un parámetro y un argumento. Python viene al rescate con una
+bella sintaxis. Una definición de función empieza con la palabra clave
+\texttt{def}, y simplemente digo a mis estudiantes: ``cuando definas
+una función, empieza con \texttt{def}, seguido del nombre de la función
+que estás definiendo, cuando llames una función, simplemente llama
+(digita) su nombre.'' Los parámetros van con las definiciones y los
+argumentos van con los llamados. No hay tipos de retorno, tipos para
+los parámetros, o pasos de parámetro por referencia y valor, y ahora
+yo puedo enseñar funciones en la mitad de tiempo que antes, con una
+mejor comprensión.
+
+Usar Python ha mejorado la eficacia de nuestro programa de informática
+para todos los estudiantes. Veo un nivel general de éxito más alto
+y un nivel más bajo de frustración, de lo que ya había experimentado
+durante los dos años que enseñé C++. Avanzo más rápido y con mejores
+resultados. Más estudiantes terminan el curso con la habilidad de
+crear programas significativos; esto genera una actitud positiva hacia
+la experiencia de la programación.
+
+\section*{Construyendo una comunidad}
+
+He recibido correos electrónicos de todas partes del mundo, de personas
+que están usando este libro para aprender o enseñar programación.
+Una comunidad de usuarios ha comenzado a emerger, y muchas personas
+han contribuido al proyecto mandando materiales a través del sitio
+Web complementario: \\
+ \\
+\url{ http://www.thinkpython.com }\\
+ \\
+
+Con la publicación del libro, en forma impresa, espero que continúe
+y se acelere el crecimiento de esta comunidad de usuarios.
+
+La emergencia de esta comunidad y la posibilidad que sugiere para
+otras experiencias de colaboración similar entre educadores han sido
+las partes más excitantes de trabajar en este proyecto, para mí. Trabajando
+juntos, nosotros podemos aumentar la calidad del material disponible
+para nuestro uso y ahorrar tiempo valioso.
+
+Yo les invito a formar parte de nuestra comunidad y espero escuchar
+de ustedes. Por favor escriba a los autores a \texttt{\url{feedback@thinkpython.com}}.
+
+\vspace{0.25in}
+ 
+\begin{flushleft}
+Jeffrey Elkner\\
+ Escuela Secundaria Yortown\\
+ Arlington, Virginia.\\
+ 
+\par\end{flushleft}
+
+

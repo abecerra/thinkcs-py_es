@@ -1,0 +1,224 @@
+%% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[10pt,letterpaper,spanish,usenames,dvipsnames]{book}
+\renewcommand{\rmdefault}{ppl}
+\renewcommand{\sfdefault}{kurier}
+\renewcommand{\ttdefault}{cmtt}
+\renewcommand{\familydefault}{\rmdefault}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{1}
+\synctex=-1
+\usepackage{color}
+\usepackage{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+\usepackage{calc}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{makeidx}
+\makeindex
+\usepackage{graphicx}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=true,bookmarksopen=true,bookmarksopenlevel=0,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true]
+ {hyperref}
+\hypersetup{pdftitle={Introducción a la programación con Python},
+ pdfauthor={Andrés Becerra Sandoval},
+ pdfsubject={programación de computadores},
+ urlcolor=blue,linkcolor=black}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+\providecommand{\LyX}{\texorpdfstring%
+  {L\kern-.1667em\lower.25em\hbox{Y}\kern-.125emX\@}
+  {LyX}}
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% LyX source for the spanish traslation of the textbook ``How to think like a computer scientist''
+% Copyright (c)  2001,2002  Allen B. Downey.
+% Traslation to spanish completed by
+% Andrés Becerra Sandoval
+% abecerra@cic.javerianacali.edu.co
+
+
+% Permission is granted to copy, distribute and/or modify this
+% document under the terms of the GNU Free Documentation License,
+% Version 1.1  or any later version published by the Free Software
+% Foundation; with the Invariant Sections being "Contributor List",
+% with no Front-Cover Texts, and with no Back-Cover Texts. A copy of
+% the license is included in the section entitled "GNU Free
+% Documentation License".
+
+% This distribution includes a file named fdl.tex that contains the text
+% of the GNU Free Documentation License.  If it is missing, you can obtain
+% it from www.gnu.org or by writing to the Free Software Foundation,
+% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+%
+
+
+\usepackage[text={5in,7in},centering,twoside,letterpaper]{geometry}
+
+\setlength{\marginparsep}{0in}
+\setlength{\marginparwidth}{0in}
+\setlength{\marginparpush}{0in}
+%\setlength{\hoffset}{-5pt}
+
+
+\newcommand{\introprog}{Introducción a la programación con Python 2ed}
+%\addto\captionsspanish{\renewcommand{\indexname}{Índice analítico}}
+
+%\normalsize
+
+\title{\introprog}
+\author{Andrés Becerra Sandoval}
+\date{Mayo 2014}
+
+
+\newcommand{\beforefig}{\vspace{1.3\parskip}}
+\newcommand{\afterfig}{\vspace{-0.2\parskip}}
+
+\newcommand{\beforeverb}{\vspace{0.6\parskip}}
+\newcommand{\afterverb}{\vspace{0.6\parskip}}
+
+\newcommand{\adjustpage}[1]{\enlargethispage{#1\baselineskip}}
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+\newcommand{\blankpage}{\pagestyle{empty}\vspace*{1in}\newpage}
+
+
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
+
+
+% The following lines add a little extra space to the column
+% in which the Section numbers appear in the table of contents
+
+\makeatletter
+\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{3.0em}}
+\makeatother
+\setcounter{tocdepth}{1}
+
+\usepackage{listings}
+%\usepackage[usenames,dvipsnames]{color}
+\usepackage{textcomp}
+
+\definecolor{purple}{RGB}{153,0,153} 
+\definecolor{green}{RGB}{0,153,0} 
+
+\lstdefinestyle{python-idle-code}{
+  language=Python,                   
+  basicstyle=\normalsize\ttfamily,  
+  % Color settings to match IDLE style
+  keywordstyle=\color{Orange},       % core keywords,
+  morekeywords={assert},
+  morekeywords=[2]{print,None,True,False,len,abs,id,type,input,raw_input,raise,open,range,str,int,float,self,super},
+  keywordstyle={[2]\color{purple}}, % built-ins
+  %identifierstyle=\color{blue}, (in IDLE only for defining functions and classes is blue)
+  stringstyle=\color{green},
+  commentstyle=\color{red},
+  morecomment=[s][\color{green}]{"""}{"""},
+  upquote=true,                      % requires textcomp
+  showspaces=false,
+  showstringspaces=false  
+}
+
+\lstset{style=python-idle-code}
+
+\makeatother
+
+\usepackage{listings}
+\renewcommand{\lstlistingname}{\inputencoding{latin9}Listado de c�digo}
+
+\begin{document}
+\frontmatter
+
+\input{usc.tex}
+
+\normalsize
+
+\tableofcontents{}
+
+\cleardoublepage{}
+
+\input{foreword.tex} \cleardoublepage{}
+
+\input{preface.tex}
+
+\cleardoublepage{}
+
+\input{contrib.tex}\cleardoublepage{}
+
+\input{traduccion.tex}\cleardoublepage{}
+
+\mainmatter
+
+\cleardoublepage{}
+
+\input{solucionProblemas.tex} 
+
+\cleardoublepage{}
+
+\input{elCaminoHaciaElPrograma.tex} 
+
+\cleardoublepage{}
+
+\input{variablesExpresionesSentencias.tex}
+
+\cleardoublepage{}
+
+\input{funciones.tex}\cleardoublepage{}
+
+\input{condicionalesYRecursion.tex}\cleardoublepage{}
+
+\input{funcionesFructiferas.tex}\cleardoublepage{}
+
+\input{iteracion.tex}\cleardoublepage{}
+
+\input{cadenas.tex}\cleardoublepage{}
+
+\input{listas.tex}\cleardoublepage{}
+
+\input{interludioTriqui.tex}\cleardoublepage{}
+
+\input{tuplas.tex}\cleardoublepage{}
+
+\input{diccionarios.tex}\cleardoublepage{}
+
+\input{archivosYExcepciones.tex}\cleardoublepage{}
+
+\input{clasesYObjetos.tex}\cleardoublepage{}
+
+\input{clasesYFunciones.tex}\cleardoublepage{}
+
+\input{clasesYMetodos.tex}\cleardoublepage{}
+
+\input{interludioFraccion.tex}\cleardoublepage{}
+
+\input{conjuntosDeObjetos.tex}\cleardoublepage{}
+
+\input{herencia.tex}\cleardoublepage{}
+
+\input{interludioTriquiGUI.tex}\cleardoublepage{}
+
+
+\appendix
+\input{depuracion.tex}\cleardoublepage{}
+
+\input{lecturasRecomendadas.tex}\cleardoublepage{}
+
+\input{fdl.tex}\cleardoublepage{}
+
+\input{gfdles.tex}\cleardoublepage{}
+
+\printindex{}
+\end{document}
