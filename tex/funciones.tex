@@ -9,11 +9,11 @@
 
 Usted ya ha visto un ejemplo de una \textbf{llamada a función}:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> type("32")
 str
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 El nombre de la función es \texttt{type}, y despliega el tipo de un
 valor o variable. El valor o variable, que se denomina el \textbf{argumento}
 de la función, tiene que encerrarse entre paréntesis. Es usual decir
@@ -25,24 +25,24 @@ El resultado se denomina el \textbf{valor de retorno}.
 En lugar de imprimir el valor de retorno, podemos asignarlo a una
 variable:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> b = type("32")
 >>> print(b)
 <class 'string'>
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+ 
 
 Otro ejemplo es la función \texttt{id} que toma un valor o una variable
 y retorna un entero que actúa como un identificador único:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> id(3)
 134882108
 >>> b = 3
 >>> id(b)
 134882108
-\end{lstlisting}
-\inputencoding{utf8} Cada valor tiene un \texttt{id} que es un número único relacionado
+\end{verbatim}
+ Cada valor tiene un \texttt{id} que es un número único relacionado
 con el lugar en la memoria en el que está almacenado. El \texttt{id}
 de una variable es el \texttt{id} del valor al que la variable se
 refiere.
@@ -55,39 +55,39 @@ Python proporciona una colección de funciones que convierten valores
 de un tipo a otro. La función \texttt{int} toma cualquier valor y
 lo convierte a un entero, si es posible, de lo contrario se queja:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> int("32")
 32
 >>> int("Hola")
 ValueError: invalid literal for int() with base 10: Hola
-\end{lstlisting}
-\inputencoding{utf8} \texttt{int} también puede convertir valores de punto flotante a
+\end{verbatim}
+ \texttt{int} también puede convertir valores de punto flotante a
 enteros, pero hay que tener en cuenta que va a eliminar la parte decimal:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> int(3.99999)
 3
 >>> int(-2.3)
 -2
-\end{lstlisting}
-\inputencoding{utf8} La función \texttt{float} convierte enteros y cadenas a números de
+\end{verbatim}
+ La función \texttt{float} convierte enteros y cadenas a números de
 punto flotante:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> float(32)
 32.0
 >>> float("3.14159")
 3.14159
-\end{lstlisting}
-\inputencoding{utf8} Finalmente, la función \texttt{str} convierte al tipo cadena (\texttt{string}):
+\end{verbatim}
+ Finalmente, la función \texttt{str} convierte al tipo cadena (\texttt{string}):
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> str(32)
 '32'
 >>> str(3.14149)
 '3.14149'
-\end{lstlisting}
-\inputencoding{utf8} Puede parecer extraño el hecho de que Python distinga el valor entero
+\end{verbatim}
+ Puede parecer extraño el hecho de que Python distinga el valor entero
 \texttt{1} del valor en punto flotante \texttt{1.0}. Pueden representar
 el mismo número pero tienen diferentes tipos. La razón para esto es
 que su representación interna en la memoria del computador es distinta.
@@ -102,12 +102,12 @@ que se denominan \textbf{coerción de tipos}. Para los operadores matemáticos,
 si algún operando es un número \texttt{flotante}, el otro se convierte
 automáticamente a \texttt{flotante}:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> minuto = 59
 >>> minuto / 60.0
 0.983333333333
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Así que haciendo el denominador flotante, forzamos a Python a realizar
 división en punto flotante.
 
@@ -139,21 +139,21 @@ de funciones relacionadas.
 
 Antes de que podamos usar funciones de un módulo, tenemos que importarlas:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> import math
-\end{lstlisting}
-\inputencoding{utf8} Para llamar a una de las funciones, tenemos que especificar el nombre
+\end{verbatim}
+ Para llamar a una de las funciones, tenemos que especificar el nombre
 del módulo y el nombre de la función, separados por un punto. Este
 formato se denomina \textbf{notación punto}.
 
 \index{notación punto}
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> decibel = math.log10(17.0)
 >>> angulo = 1.5
 >>> altura = math.sin(angulo)
-\end{lstlisting}
-\inputencoding{utf8} La primera sentencia le asigna a \texttt{decibel} el logaritmo de
+\end{verbatim}
+ La primera sentencia le asigna a \texttt{decibel} el logaritmo de
 17, en base \texttt{10}. También hay una función llamada \texttt{log}
 que usa la base logarítmica \texttt{e}.
 
@@ -164,20 +164,20 @@ de grados a radianes hay que dividir por 360 y multiplicar por \texttt{2{*}pi}.
 Por ejemplo, para encontrar el seno de 45 grados, primero calculamos
 el ángulo en radianes y luego tomamos el seno:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> grados = 45
 >>> angulo = grados * 2 * math.pi / 360.0
 >>> math.sin(angulo)
-\end{lstlisting}
-\inputencoding{utf8} La constante \texttt{pi} también hace parte del módulo matemático.
+\end{verbatim}
+ La constante \texttt{pi} también hace parte del módulo matemático.
 Si usted recuerda geometría puede verificar el resultado comparándolo
 con la raíz cuadrada de 2 dividida por 2:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> math.sqrt(2) / 2.0
 0.707106781187
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+ 
 
 \section{Composición}
 
@@ -187,20 +187,20 @@ Así como las funciones matemáticas, las funciones de Python pueden
 componerse, de forma que una expresión sea parte de otra. Por ejemplo,
 usted puede usar cualquier expresión como argumento a una función:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> x = math.cos(angulo + math.pi/2)
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Esta sentencia toma el valor de \texttt{pi}, lo divide por 2, y suma
 este resultado al valor de \texttt{angulo}. Después, la suma se le
 pasa como argumento a la función coseno (\texttt{cos}).
 
 También se puede tomar el resultado de una función y pasarlo como
-argumento a otra:\inputencoding{latin9}
-\begin{lstlisting}
+argumento a otra:
+\begin{verbatim}
 >>> x = math.exp(math.log(10.0))
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Esta sentencia halla el logaritmo en base \texttt{e} de 10 y luego
 eleva \texttt{e} a dicho resultado. El resultado se asigna a \texttt{x}.
 
@@ -222,11 +222,11 @@ de los detalles de sus definiciones.
 
 La sintaxis para una definición de función es:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def NOMBRE( LISTA DE PARAMETROS ):
   SENTENCIAS
-\end{lstlisting}
-\inputencoding{utf8} Usted puede inventar los nombres que desee para sus funciones con
+\end{verbatim}
+ Usted puede inventar los nombres que desee para sus funciones con
 tal de que no use una palabra reservada. La lista de parámetros especifica
 que información, si es que la hay, se debe proporcionar a fin de usar
 la nueva función.
@@ -238,11 +238,11 @@ La práctica estándar de Python es usar 4 espacios.
 Las primeras funciones que vamos a escribir no tienen parámetros,
 así que la sintaxis luce así:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def nuevaLinea():
   print()
-\end{lstlisting}
-\inputencoding{utf8} Esta función se llama \texttt{nuevaLinea}. Los paréntesis vacíos
+\end{verbatim}
+ Esta función se llama \texttt{nuevaLinea}. Los paréntesis vacíos
 indican que no tiene parámetros. Contiene solamente una sentencia,
 que produce como salida una línea vacía. Eso es lo que ocurre cuando
 se usa el comando \texttt{print} sin argumentos.
@@ -250,12 +250,12 @@ se usa el comando \texttt{print} sin argumentos.
 La sintaxis para llamar la nueva función es la misma que para las
 funciones predefinidas en Python:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 print("Primera Linea.")
 nuevaLinea()
 print("Segunda Linea.")
-\end{lstlisting}
-\inputencoding{utf8} La salida para este programa es:
+\end{verbatim}
+ La salida para este programa es:
 \begin{verbatim}
 Primera Linea.
 
@@ -264,19 +264,19 @@ Segunda Linea.
 Note el espacio extra entre las dos líneas. ¿Qué pasa si deseamos
 más espacio entre las líneas? Podemos llamar la misma función repetidamente:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 print("Primera Linea.")
 nuevaLinea()
 nuevaLinea()
 nuevaLinea()
 print("Segunda Linea.")
-\end{lstlisting}
-\inputencoding{utf8} 
+\end{verbatim}
+ 
 
 O podemos escribir una nueva función llamada \texttt{tresLineas} que
 imprima tres líneas:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def tresLineas():
   nuevaLinea()
   nuevaLinea()
@@ -285,9 +285,9 @@ def tresLineas():
 print("Primera Linea.")
 tresLineas()
 print("Segunda Linea.")
-\end{lstlisting}
-\inputencoding{utf8} Esta función contiene tres sentencias, y todas están sangradas por
-dos espacios. Como la próxima sentencia, \texttt{}\inputencoding{latin9}\lstinline!print("Primera Linea")!\inputencoding{utf8},
+\end{verbatim}
+ Esta función contiene tres sentencias, y todas están sangradas por
+dos espacios. Como la próxima sentencia, \texttt{print("Primera Linea")},
 no está sangrada, Python la interpreta afuera de la función.
 
 Hay que enfatizar dos hechos sobre este programa:
@@ -316,7 +316,7 @@ tres veces.
 Uniendo los fragmentos de la sección 3.6, el programa completo luce
 así:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def nuevaLinea():
   print()
 
@@ -328,8 +328,8 @@ def tresLineas():
 print("Primera Linea.")
 tresLineas()
 print("Segunda Linea.")
-\end{lstlisting}
-\inputencoding{utf8} Este programa contiene dos definiciones de funciones: \texttt{nuevaLinea}
+\end{verbatim}
+ Este programa contiene dos definiciones de funciones: \texttt{nuevaLinea}
 y \texttt{tresLineas}. Las definiciones de funciones se ejecutan como
 las otras sentencias, pero su efecto es crear nuevas funciones. Las
 sentencias, dentro de la función, no se ejecutan hasta que la función
@@ -394,11 +394,11 @@ una función, los valores que se pasan se asignan a variables llamadas
 Aquí hay un ejemplo de una función definida por el programador que
 toma un parámetro:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def imprimaDoble(pedro):
   print(pedro, pedro)
-\end{lstlisting}
-\inputencoding{utf8} Esta función toma un argumento y lo asigna a un parámetro llamado
+\end{verbatim}
+ Esta función toma un argumento y lo asigna a un parámetro llamado
 \texttt{pedro}. El valor del parámetro (en este momento no tenemos
 idea de lo que será) se imprime dos veces, y después, se imprime una
 línea vacía. El nombre \texttt{pedro} se escogió para sugerir que
@@ -408,39 +408,39 @@ en general, usted desea escoger algo mas ilustrativo que \texttt{pedro}.
 La función \texttt{imprimaDoble} funciona para cualquier tipo que
 pueda imprimirse:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> imprimaDoble('Spam')
 Spam Spam
 >>> imprimaDoble(5)
 5 5
 >>> imprimaDoble(3.14159)
 3.14159 3.14159
-\end{lstlisting}
-\inputencoding{utf8} En el primer llamado de función el argumento es una cadena. En el
+\end{verbatim}
+ En el primer llamado de función el argumento es una cadena. En el
 segundo es un entero. En el tercero es un flotante (\texttt{float}).
 
 Las mismas reglas de composición que se aplican a las funciones primitivas,
 se aplican a las definidas por el programador, así que podemos usar
 cualquier clase de expresión como un argumento para \texttt{imprimaDoble}:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> imprimaDoble('Spam'*4)
 SpamSpamSpamSpam SpamSpamSpamSpam
 >>> imprimaDoble(math.cos(math.pi))
 -1.0 -1.0
-\end{lstlisting}
-\inputencoding{utf8} Como de costumbre, la expresión se evalúa antes de que la función
+\end{verbatim}
+ Como de costumbre, la expresión se evalúa antes de que la función
 se ejecute así que \texttt{imprimaDoble} retorna \texttt{SpamSpamSpamSpam
 SpamSpamSpamSpam} en lugar de \texttt{'Spam'{*}4 'Spam'{*}4}.
 
 También podemos usar una variable como argumento:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> m = 'Oh, mundo cruel.'
 >>> imprimaDoble(m)
 Oh, mundo cruel. Oh, mundo cruel.
-\end{lstlisting}
-\inputencoding{utf8} Observe algo muy importante, el nombre de la variable que pasamos
+\end{verbatim}
+ Observe algo muy importante, el nombre de la variable que pasamos
 como argumento (\texttt{m}) no tiene nada que ver con el nombre del
 parámetro (\texttt{pedro}). No importa como se nombraba el valor originalmente
 (en el lugar donde se hace el llamado); en la función \texttt{imprimaDoble},
@@ -453,30 +453,30 @@ la seguimos llamando de la misma manera \texttt{pedro}.
 Cuando usted crea una \textbf{variable local} en una función, solamente
 existe dentro de ella, y no se puede usar por fuera. Por ejemplo:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 def concatenarDoble(parte1, parte2):
   cat = parte1 + parte2
   imprimaDoble(cat)
-\end{lstlisting}
-\inputencoding{utf8} Esta función toma dos argumentos, los concatena, y luego imprime
+\end{verbatim}
+ Esta función toma dos argumentos, los concatena, y luego imprime
 el resultado dos veces. Podemos llamar a la función con dos cadenas:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> cantar1 = "Pie Jesu domine, "
 >>> cantar2 = "Dona eis requiem."
 >>> concatenarDoble(cantar1, cantar2)
 Pie Jesu domine, Dona eis requiem. Pie Jesu domine, Dona 
 eis requiem.
-\end{lstlisting}
-\inputencoding{utf8}
+\end{verbatim}
+
 Cuando \texttt{concatenarDoble} termina, la variable \texttt{cat}
 se destruye. Si intentáramos imprimirla obtendríamos un error:
 
-\inputencoding{latin9}\begin{lstlisting}
+\begin{verbatim}
 >>> print(cat)
 NameError: cat
-\end{lstlisting}
-\inputencoding{utf8} Los parámetros también son locales. Por ejemplo, afuera de la función
+\end{verbatim}
+ Los parámetros también son locales. Por ejemplo, afuera de la función
 \texttt{imprimaDoble}, no existe algo como \texttt{pedro}. Si usted
 intenta usarlo Python se quejará.
 
