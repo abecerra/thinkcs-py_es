@@ -40,7 +40,7 @@ Empezaremos con los métodos básicos de inicialización y el \texttt{\_\_str\_\
 para que podamos crear y desplegar objetos:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class Nodo:
   def __init__(self, carga=None, siguiente=None):
     self.carga = carga
@@ -48,7 +48,7 @@ class Nodo:
 
   def __str__(self):
     return str(self.carga)
-\end{verbatim}
+\end{pythoncode}
 \afterverb Los parámetros para el método de inicialización son opcionales.
 Por defecto la carga y el enlace \texttt{siguiente}, reciben el valor
 \texttt{None}.
@@ -60,20 +60,20 @@ podemos almacenar cualquier tipo de valor en la lista.
 Para probar la implementación, podemos crear un \texttt{Nodo} e imprimirlo:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> nodo = Nodo("test")
 >>> print(nodo)
 test
-\end{verbatim}
+\end{pyconcode}
 \afterverb Para hacerlo más interesante, vamos a pensar en una lista
 con varios nodos:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> nodo1 = Nodo(1)
 >>> nodo2 = Nodo(2)
 >>> nodo3 = Nodo(3)
-\end{verbatim}
+\end{pyconcode}
 \afterverb Este código crea tres nodos, pero todavía no tenemos una
 lista porque estos no estan \textbf{enlazados}. El diagrama de estados
 luce así:
@@ -85,10 +85,10 @@ Para enlazar los nodos, tenemos que lograr que el primer nodo se refiera
 al segundo, y que el segundo se refiera al tercero:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> nodo1.siguiente = nodo2
 >>> nodo2.siguiente = nodo3
-\end{verbatim}
+\end{pyconcode}
 \afterverb La referencia del tercer nodo es \texttt{None}, lo que
 indica que es el último nodo de la lista. Ahora el diagrama de estados
 luce así:
@@ -116,21 +116,21 @@ un solo nodo como argumento. Empieza con la cabeza de la lista, imprime
 cada nodo hasta llegar al final:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def imprimirLista(nodo):
   while nodo:
     print(nodo),
     nodo = nodo.siguiente
   print
-\end{verbatim}
+\end{pythoncode}
 \afterverb Para llamar este método, pasamos una referencia al primer
 nodo:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> imprimirLista(nodo1)
 1 2 3
-\end{verbatim}
+\end{pyconcode}
 \afterverb Dentro de \texttt{imprimirLista} tenemos una referencia
 al primer nodo de la lista, pero no hay variable que se refiera a
 los otros nodos. Tenemos que usar el valor \texttt{siguiente} de cada
@@ -180,7 +180,7 @@ la definición recursiva de una lista, un caso base natural es la lista
 vacía, representada por \texttt{None}:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def imprimirAlReves(lista):
   if lista == None: 
     return
@@ -188,7 +188,7 @@ def imprimirAlReves(lista):
   resto = lista.siguiente
   imprimirAlReves(resto)
   print(cabeza),
-\end{verbatim}
+\end{pythoncode}
 \afterverb La primera línea resuelve el caso base. Las siguientes
 separan la \texttt{cabeza} y el \texttt{resto}. Las últimas dos líneas
 imprimen la lista. La coma al final de la última línea evita que Python
@@ -197,10 +197,10 @@ introduzca una nueva línea después de cada nodo.
 Ahora llamamos a este método:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> imprimirAlReves(nodo1)
 3 2 1
-\end{verbatim}
+\end{pyconcode}
 \afterverb El efecto es una impresión la lista, al revés.
 
 Una pregunta natural que usted se puede estar formulando es, ¿por
@@ -253,10 +253,10 @@ Más adelante veremos otros ejemplos.
 Una parte de \texttt{imprimirAlReves} puede haber suscitado su curiosidad:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
     cabeza = lista
     resto = lista.siguiente
-\end{verbatim}
+\end{pythoncode}
 \afterverb Después de la primera asignación \texttt{cabeza} y \texttt{lista}
 tienen el mismo tipo y el mismo valor. ¿Por qué creamos una nueva
 variable?
@@ -280,13 +280,13 @@ concisa sin las variables \texttt{cabeza} y \texttt{resto}, pero esto
 también dificulta su lectura:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def imprimirAlReves(lista) :
   if lista == None : 
      return
   imprimirAlReves(lista.siguiente)
   print(lista),
-\end{verbatim}
+\end{pythoncode}
 \afterverb Cuando leamos el código, tenemos que recordar que \texttt{imprimirAlReves}
 trata a su argumento como una colección y \texttt{print} como a un
 solo nodo.
@@ -310,7 +310,7 @@ Como ejemplo, escribamos un método que elimine el segundo nodo en
 la lista y retorne una referencia al nodo eliminado
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def eliminarSegundo(lista):
   if lista == None: 
      return
@@ -321,12 +321,12 @@ def eliminarSegundo(lista):
   # desconectamos el segundo nodo de la lista
   segundo.siguiente = None
   return segundo
-\end{verbatim}
+\end{pythoncode}
 \afterverb Aquí también estamos usando variables temporales para
 aumentar la legibilidad. Aquí hay un ejemplo de uso del método:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> imprimirLista(nodo1)
 1 2 3
 >>> borrado = eliminarSegundo(nodo1)
@@ -334,7 +334,7 @@ aumentar la legibilidad. Aquí hay un ejemplo de uso del método:
 2
 >>> imprimirLista(nodo1)
 1 3
-\end{verbatim}
+\end{pyconcode}
 \afterverb Este diagrama de estado muestra el efecto de la operación:
 
 \beforefig \centerline{\includegraphics{illustrations/link5}}
@@ -360,7 +360,7 @@ que desplegará \texttt{3, 2}, y llamar otro método para imprimir los
 corchetes y el primer nodo. Nombrémosla así:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def imprimirAlRevesBien(lista):
   print("["),
   if lista != None:
@@ -369,7 +369,7 @@ def imprimirAlRevesBien(lista):
     imprimirAlReves(resto)
     print(cabeza),
   print("]"),
-\end{verbatim}
+\end{pythoncode}
 \afterverb Es conveniente chequear que estos métodos funcionen bien
 para casos especiales como la lista vacía o una lista con un solo
 elemento (singleton).
@@ -396,18 +396,18 @@ sirven como mecanismo de control de listas compuestas por instancias
 de la clase \texttt{Nodo}:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class ListaEnlazada :
   def __init__(self) :
     self.numElementos = 0
     self.cabeza   = None
-\end{verbatim}
+\end{pythoncode}
 \afterverb Lo bueno de la clase \texttt{ListaEnlazada} es que proporciona
 un lugar natural para definir las funciones facilitadores como \texttt{imprimirAlRevesBien}
 como métodos:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class ListaEnlazada:
   ...
   def imprimirAlReves(self):
@@ -423,7 +423,7 @@ class Nodo:
       resto = self.siguiente
       resto.imprimirAlReves()
     print(self.carga),
-\end{verbatim}
+\end{pythoncode}
 \afterverb Aunque inicialmente pueda parecer un poco confuso, vamos
 a renombrar a la función \texttt{imprimirAlRevesBien}. Ahora vamos
 a implementar dos métodos con el mismo nombre \texttt{imprimirAlReves}:
@@ -438,7 +438,7 @@ es un método de la clase \texttt{ListaEnlazada} que toma una carga
 como argumento y la pone en un nuevo nodo al principio de la lista:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class ListaEnlazada:
   ...
   def agregarAlPrincipio(self, carga):
@@ -446,7 +446,7 @@ class ListaEnlazada:
     nodo.siguiente = self.cabeza
     self.cabeza = nodo
     self.numElementos = self.numElementos + 1
-\end{verbatim}
+\end{pythoncode}
 \afterverb Como de costumbre, usted debe revisar este código para
 verificar qué sucede con los casos especiales. Por ejemplo, ¿qué pasa
 si se llama cuando la lista está vacía?
