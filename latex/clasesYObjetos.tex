@@ -32,10 +32,10 @@ también llamado una \textbf{clase}. Esta aproximación exige un poco
 más de esfuerzo, pero tiene algunas ventajas que pronto se harán evidentes.
 
 Una definición de clase se parece a esto:
-\begin{verbatim}
+\begin{pythoncode}
 class Punto:
   pass
-\end{verbatim}
+\end{pythoncode}
 
 Las definiciones de clase pueden aparecer en cualquier lugar de un
 programa, pero normalmente están al principio (tras las sentencias
@@ -53,9 +53,9 @@ llama \textbf{instanciación}. Para instanciar un objeto \texttt{Punto}
 ejecutamos una función que se llama \texttt{Punto}:
 
 \index{instancia!objeto} \index{instancia de un objeto} \index{instanciación}
-\begin{verbatim}
+\begin{pythoncode}
 limpio = Punto()
-\end{verbatim}
+\end{pythoncode}
 
 A la variable \texttt{limpio} se le asigna una referencia a un nuevo
 objeto \texttt{Punto}. A una función como \texttt{Punto} que crea
@@ -67,10 +67,10 @@ un objeto nuevo se le llama \textbf{constructor}.
 
 Podemos añadir nuevos datos a una instancia utilizando la notación
 de punto:
-\begin{verbatim}
+\begin{pyconcode}
 >>> limpio.x = 3.0
 >>> limpio.y = 4.0
-\end{verbatim}
+\end{pyconcode}
 
 Esta sintaxis es similar a la sintaxis para seleccionar una variable
 de un módulo, como \texttt{math.pi} o \texttt{string.uppercase}. En
@@ -87,13 +87,13 @@ dos atributos. Cada atributo apunta a un número en punto flotante.
 
 Podemos leer el valor de un atributo utilizando la misma sintaxis:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(limpio.y)
 4.0
 >>> x = limpio.x
 >>> print(x)
 3.0
-\end{verbatim}
+\end{pyconcode}
 
 La expresión \texttt{limpio.x} significa, ``ve al objeto al que apunta
 \texttt{limpio} y toma el valor de \texttt{x}''. En este caso, asignamos
@@ -104,20 +104,20 @@ refiere el programador.
 
 Se puede usar la notación punto como parte de cualquier expresión.
 Así, las sentencias que siguen son correctas:
-\begin{verbatim}
+\begin{pythoncode}
 print('(' + str(limpio.x) + ', ' + str(limpio.y) + ')')
 distanciaAlCuadrado = limpio.x * limpio.x + 
                       limpio.y * limpio.y
-\end{verbatim}
+\end{pythoncode}
 
 La primera línea presenta \texttt{(3.0, 4.0)}; la segunda línea calcula
 el valor 25.0.
 
 Usted puede estar tentado a imprimir el propio valor de \texttt{limpio}:
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(limpio)
 <__main__.Point instance at 80f8e70>
-\end{verbatim}
+\end{pyconcode}
 
 El resultado indica que \texttt{limpio} es una instancia de la clase
 \texttt{Punto} que se definió en \texttt{\_\_main\_\_}. \texttt{80f8e70}
@@ -133,10 +133,10 @@ Probablemente ésta no es la manera más clara de mostrar un objeto
 
 Se puede pasar una instancia como parámetro de la forma habitual.
 Por ejemplo:
-\begin{verbatim}
+\begin{pyconcode}
 def imprimePunto(p):
   print('(' + str(p.x) + ', ' + str(p.y) + ')')
-\end{verbatim}
+\end{pyconcode}
 
 \texttt{imprimePunto} acepta un punto como argumento y lo muestra
 en el formato estándar de la matemática. Si llamas a \texttt{imprimePunto(limpio)},
@@ -167,7 +167,7 @@ mismos datos (coordenadas) o que son de verdad el mismo objeto?
 
 Para averiguar si dos referencias se refieren al mismo objeto, se
 utiliza el operador \texttt{==}. Por ejemplo:
-\begin{verbatim}
+\begin{pyconcode}
 >>> p1 = Punto()
 >>> p1.x = 3
 >>> p1.y = 4
@@ -176,16 +176,16 @@ utiliza el operador \texttt{==}. Por ejemplo:
 >>> p2.y = 4
 >>> p1 == p2
 False
-\end{verbatim}
+\end{pyconcode}
 
 Aunque \texttt{p1} y \texttt{p2} contienen las mismas coordenadas,
 no son el mismo objeto. Si asignamos \texttt{p1} a \texttt{p2}, las
 dos variables son alias del mismo objeto:
-\begin{verbatim}
+\begin{pyconcode}
 >>> p2 = p1
 >>> p1 == p2
 True
-\end{verbatim}
+\end{pyconcode}
 
 Este tipo de igualdad se llama \textbf{igualdad superficial}, porque
 sólo compara las referencias, pero no el contenido de los objetos.
@@ -196,15 +196,15 @@ sólo compara las referencias, pero no el contenido de los objetos.
 Para comparar los contenidos de los objetos (\textbf{igualdad profunda})
 podemos escribir una función llamada \texttt{mismoPunto}:
 
-\begin{verbatim}
+\begin{pythoncode}
 def mismoPunto(p1, p2) :
   return (p1.x == p2.x) and (p1.y == p2.y)
-\end{verbatim}
+\end{pythoncode}
  Si ahora creamos dos objetos diferentes que contienen los mismos
 datos podremos usar \texttt{mismoPunto} para averiguar si representan
 el mismo punto:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> p1 = Punto()
 >>> p1.x = 3
 >>> p1.y = 4
@@ -213,7 +213,7 @@ el mismo punto:
 >>> p2.y = 4
 >>> mismoPunto(p1, p2)
 True
-\end{verbatim}
+\end{pyconcode}
  Por supuesto, si las dos variables apuntan al mismo objeto \texttt{mismoPunto}
 devuelve verdadero.
 
@@ -233,26 +233,26 @@ Un modo convencional es señalar la esquina superior izquierda del
 rectángulo y el tamaño.
 
 De nuevo, definiremos una nueva clase:
-\begin{verbatim}
+\begin{pythoncode}
 class Rectangulo:	
   pass
-\end{verbatim}
+\end{pythoncode}
 
 Y la instanciaremos:
-\begin{verbatim}
+\begin{pythoncode}
 caja = Rectangulo()
 caja.ancho = 100.0
 caja.altura = 200.0
-\end{verbatim}
+\end{pythoncode}
 
 Este código crea un nuevo objeto \texttt{Rectangulo} con dos atributos
 flotantes. ¡Para señalar la esquina superior izquierda podemos incrustar
 un objeto dentro de otro!
-\begin{verbatim}
+\begin{pythoncode}
 caja.esquina = Punto()
 caja.esquina.x = 0.0;
 caja.esquina.y = 0.0;
-\end{verbatim}
+\end{pythoncode}
 
 El operador punto compone. La expresión \texttt{caja.esquina.x} significa
 ``ve al objeto al que se refiere \texttt{caja} y selecciona el atributo
@@ -271,21 +271,21 @@ La figura muestra el estado de este objeto:
 Las funciones pueden devolver instancias. Por ejemplo, \texttt{encuentraCentro}
 acepta un \texttt{Rectangulo} como argumento y devuelve un \texttt{Punto}
 que contiene las coordenadas del centro del \texttt{Rectangulo}:
-\begin{verbatim}
+\begin{pythoncode}
 def encuentraCentro(caja):
   p = Punto()
   p.x = caja.esquina.x + caja.ancho/2.0
   p.y = caja.esquina.y + caja.altura/2.0
   return p
-\end{verbatim}
+\end{pythoncode}
 
 Para llamar a esta función, se pasa \texttt{caja} como argumento y
 se asigna el resultado a una variable:
-\begin{verbatim}
+\begin{pyconcode}
 >>> centro = encuentraCentro(caja)
 >>> imprimePunto(centro)
 (50.0, 100.0)
-\end{verbatim}
+\end{pyconcode}
 
 \section{Los objetos son mutables}
 
@@ -295,20 +295,20 @@ Podemos cambiar el estado de un objeto efectuando una asignación sobre
 uno de sus atributos. Por ejemplo, para cambiar el tamaño de un rectángulo
 sin cambiar su posición, podemos cambiar los valores de \texttt{ancho}
 y \texttt{altura}:
-\begin{verbatim}
+\begin{pythoncode}
 caja.ancho = caja.ancho + 50
 caja.altura = caja.altura + 100
-\end{verbatim}
+\end{pythoncode}
 
 Podemos encapsular este código en un método y generalizarlo para agrandar
 el rectángulo en cualquier cantidad:
 
 \index{encapsulamiento} \index{generalización}
-\begin{verbatim}
+\begin{pythoncode}
 def agrandarRect(caja, dancho, daltura) :
   caja.ancho = caja.ancho + dancho
   caja.altura = caja.altura + daltura
-\end{verbatim}
+\end{pythoncode}
 
 Las variables \texttt{dancho} y \texttt{daltura} indican cuánto debe
 agrandarse el rectángulo en cada dirección. Invocar este método tiene
@@ -316,7 +316,7 @@ el efecto de modificar el \texttt{Rectangulo} que se pasa como argumento.
 
 Por ejemplo, podemos crear un nuevo \texttt{Rectangulo} llamado \texttt{b}
 y pasárselo a la función \texttt{agrandarRect}:
-\begin{verbatim}
+\begin{pyconcode}
 >>> b = Rectangulo()
 >>> b.ancho = 100.0
 >>> b.altura = 200.0
@@ -324,7 +324,7 @@ y pasárselo a la función \texttt{agrandarRect}:
 >>> b.esquina.x = 0.0;
 >>> b.esquina.y = 0.0;
 >>> agrandarRect(b, 50, 100)
-\end{verbatim}
+\end{pyconcode}
 
 Mientras \texttt{agrandarRect} se está ejecutando, el parámetro \texttt{caja}
 es un alias de \texttt{b}. Cualquier cambio que se haga a \texttt{caja}
@@ -342,7 +342,7 @@ pueden apuntar a un objeto dado.
 Copiar un objeto es, muchas veces, una alternativa a la creación de
 un alias. El módulo \texttt{copy} contiene una función llamada \texttt{copy}
 que puede duplicar cualquier objeto:
-\begin{verbatim}
+\begin{pyconcode}
 >>> import copy
 >>> p1 = Punto()
 >>> p1.x = 3
@@ -352,7 +352,7 @@ que puede duplicar cualquier objeto:
 False
 >>> mismoPunto(p1, p2)
 True
-\end{verbatim}
+\end{pyconcode}
 
 Una vez que hemos importado el módulo \texttt{copy}, podemos usar
 el método \texttt{copy} para hacer un nuevo \texttt{Punto}. \texttt{p1}
@@ -384,9 +384,9 @@ Afortunadamente, el módulo \texttt{copy} contiene un método llamado
 objetos incrustados en él. No lo sorprenderá saber que esta operación
 se llama \textbf{copia profunda} (deep copy).
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> b2 = copy.deepcopy(b1)
-\end{verbatim}
+\end{pyconcode}
  Ahora \texttt{b1} y \texttt{b2} son objetos totalmente independientes.
 
 Podemos usar \texttt{deepcopy} para reescribir \texttt{agrandaRect}
@@ -394,14 +394,14 @@ de modo que en lugar de modificar un \texttt{Rectangulo} existente,
 cree un nuevo \texttt{Rectangulo} que tiene la misma localización
 que el viejo pero nuevas dimensiones:
 
-\begin{verbatim}
+\begin{pythoncode}
 def agrandaRect(caja, dancho, daltura) :
   import copy
   nuevaCaja = copy.deepcopy(caja)
   nuevaCaja.ancho = nuevaCaja.ancho + dancho
   nuevaCaja.altura = nuevaCaja.altura + daltura
   return nuevaCaja
-\end{verbatim}
+\end{pythoncode}
  
 
 \section{Glosario}
