@@ -1,0 +1,484 @@
+
+\chapter{Preludio: Solución de problemas}
+
+\index{solución de problemas}
+
+\section{Solución de acertijos}
+
+\index{acertijo}
+
+Todos nos hemos topado con acertijos como el siguiente. Disponga los
+dígitos del 1 al 9 en el recuadro siguiente, de manera que la suma
+de cada fila, cada columna y las dos diagonales dé el mismo resultado:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+ &  & \tabularnewline
+\hline 
+ &  & \tabularnewline
+\hline 
+ &  & \tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+Este acertijo se denomina construcción de un \textbf{cuadrado mágico.
+}Un acertijo, normalmente, es un enigma o adivinanza que se propone
+como pasatiempo. Otros ejemplos de acertijo son un crucigrama, una
+sopa de letras y un sudoku.
+
+Los acertijos pueden tener varias soluciones, por ejemplo, la siguiente
+es una solución propuesta al acertijo anterior:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+1  & 2  & 3\tabularnewline
+\hline 
+4  & 5  & 6\tabularnewline
+\hline 
+7  & 8  & 9 \tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+Usted puede notar que esta solución candidata no es correcta. Si tomamos
+la suma por filas, obtenemos valores distintos:
+\begin{itemize}
+\item En la fila 1: 1+2+3=6 
+\item En la fila 2: 4+5+6=15 
+\item En la fila 3: 7+8+9=24
+\end{itemize}
+Si tomamos las columnas, tampoco obtenemos el mismo resultado en cada
+suma:
+\begin{itemize}
+\item En la columna 1: 1+4+7=12 
+\item En la columna 2: 2+5+8=15 
+\item En la columna 3: 3+6+9=18
+\end{itemize}
+A pesar de que las diagonales sí suman lo mismo:
+\begin{itemize}
+\item En la diagonal 1: 1+5+9=15 
+\item En la diagonal 2: 7+5+3=15
+\end{itemize}
+Tómese un par de minutos para resolver este acertijo, es decir, para
+construir un cuadrado mágico y regrese a la lectura cuando obtenga
+la solución.
+
+Ahora, responda para sí mismo las siguientes preguntas:
+\begin{itemize}
+\item ¿Cuál es la solución que encontró? 
+\item ¿Es correcta su solución? 
+\item ¿Cómo le demuestra a alguien que su solución es correcta? 
+\item ¿Cuál fue el proceso de solución que llevo a cabo en su mente? 
+\item ¿Cómo le explicaría a alguien el proceso de solución que llevó a cabo? 
+\item ¿Puede poner por escrito el proceso de solución que llevó a cabo? 
+\end{itemize}
+El reflexionar seriamente sobre estas preguntas es muy importante,
+tenga la seguridad de que esta actividad será muy importante para
+continuar con la lectura.
+
+Vamos a ir contestando las preguntas desde una solución particular,
+y desde un proceso de solución particular, el de los autores. Su solución
+y su proceso de solución son igualmente valiosos, el nuestro solo
+es otra alternativa; es más, puede que hayamos descubierto la misma:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+4  & 9  & 2\tabularnewline
+\hline 
+3  & 5  & 7\tabularnewline
+\hline 
+8  & 1  & 6 \tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+Esta solución es correcta, porque la suma por filas, columnas y de
+las dos diagonales da el mismo valor, 15. Ahora, para demostrarle
+a alguien este hecho podemos revisar las sumas por filas, columnas
+y diagonales detalladamente.
+\begin{itemize}
+\item En la fila 1: 4+9+2=15\% 
+\item En la fila 2: 3+5+7=15
+\item En la fila 3: 8+1+6=15
+\item En la columna 1: 4+3+8=15
+\item En la columna 2: 9+5+1=15
+\item En la columna 3: 2+7+6=15
+\item En la diagonal 1: 4+5+6=15
+\item En la diagonal 2: 8+5+2=15
+\end{itemize}
+El proceso de solución que llevamos a cabo fue el siguiente:
+\begin{itemize}
+\item Sospechábamos que el 5 debía estar en la casilla central, ya que es
+el número medio de los 9: 1 2 3 4 \textbf{5} 6 7 8 9.
+\item Observamos un patrón interesante de la primera solución propuesta:
+las diagonales sumaban igual, 15:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+\textbf{1}  & 2  & \textbf{3}\tabularnewline
+\hline 
+4  & \textbf{5}  & 6\tabularnewline
+\hline 
+\textbf{7}  & 8  & \textbf{9} \tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+\item La observación anterior, 1+5+9=7+5+3, también permite deducir otro
+hecho interesante. Como el 5 está en las dos sumas, podemos deducir
+que 1+9=7+3, y esto es 10.
+\item Una posible estrategia consiste en colocar parejas de números que
+sumen 10, dejando al 5 ``emparedado'', por ejemplo, poner la pareja
+6,4:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+ & \textbf{6}  & \tabularnewline
+\hline 
+ & \textbf{5}  & \tabularnewline
+\hline 
+ & \textbf{4}  & \tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+\item Para agilizar ésta estrategia es conveniente enumerar todas las parejas
+de números entre 1 y 9 que suman 10, excluyendo al 5: (1,9),(2,8),(3,7),(4,6)
+\item Ahora, podemos probar colocando éstas parejas en filas, columnas y
+diagonales.
+\item Un primer ensayo:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+7  & \textbf{6}  & 2\tabularnewline
+\hline 
+ & \textbf{5}  & \tabularnewline
+\hline 
+8  & \textbf{4}  & 3 \tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+Aquí encontramos que es imposible armar el cuadrado, pues no hay como
+situar el 9 ni el 1. Esto sugiere que la pareja (6,4) no va en la
+columna central, debemos cambiarla.
+\item Después de varios ensayos, moviendo la pareja (6,4), y reacomodando
+los otros números logramos llegar a la solución correcta.
+\end{itemize}
+
+\section{El método de solución}
+
+\label{sec:metodosolucion} \index{método de solución de problemas}
+
+Mas allá de la construcción de cuadrados mágicos, lo que el ejemplo
+anterior pretende ilustrar es la importancia que tiene el usar un
+método ordenado de solución de problemas, acertijos en este caso.
+
+Observe que la solución anterior fue conseguida a través de varios
+pasos sencillos, aunque el encadenamiento de todos éstos hasta producir
+un resultado correcto pueda parecer algo complejo.
+
+Lea cualquier historia de Sherlock Holmes y obtendrá la misma impresión.
+Cada caso, tomado por el famoso detective, presenta un enigma difícil,
+que al final es resuelto por un encadenamiento de averiguaciones,
+deducciones, conjeturas y pruebas sencillas. Aunque la solución completa
+de cada caso demanda un proceso complejo de razonamiento, cada paso
+intermedio es sencillo y está guiado por preguntas sencillas y puntuales.
+
+Las aventuras de Sherlock Holmes quizás constituyen una de las mejores
+referencias bibliográficas en el proceso de solución de problemas.
+Son como los capítulos de C.S.I\footnote{\url{http://www.cbs.com/primetime/csi/}},
+puestos por escrito. Para Holmes, y quizás para Grissom, existen varios
+principios que se deben seguir:
+\begin{itemize}
+\item Obtener las soluciones y quedarse satisfecho con ellas. El peor inconveniente
+para consolidar un método de solución de problemas poderoso consiste
+en que cuando nos topemos con una solución completa de un solo golpe
+nos quedemos sin reflexionar cómo llegamos a ella. Así, nunca aprenderemos
+estrategias valiosas para resolver el siguiente problema. Holmes decía
+que nunca adivinaba, primero recolectaba la mayor información posible
+sobre los problemas que tenía a mano, de forma que estos datos le
+``sugirieran'' alguna solución.
+\item Todo empieza por la observación, un proceso minucioso de recolección
+de datos sobre el problema a mano. Ningún dato puede ignorarse de
+entrada, hasta que uno tenga una comprensión profunda sobre el problema.
+\item Hay que prepararse adecuadamente en una variedad de dominios. Para
+Holmes esto iba desde tiro con pistola, esgrima, boxeo, análisis de
+huellas, entre otros. Para cada problema que intentemos resolver habrá
+un dominio en el cual debemos aprender lo más que podamos, esto facilitará
+enormemente el proceso de solución.
+\item Prestar atención a los detalles ``inusuales''. Por ejemplo, en nuestro
+cuadrado mágico fue algo inusual que las diagonales de la primera
+alternativa de solución, la más ingenua posible, sumaran lo mismo.
+\item Para deducir más hechos, a partir de los datos recolectados y los
+detalles inusuales, hay que usar todas las armas del razonamiento:
+el poder de la deducción (derivar nuevos hechos a partir de los datos),
+la inducción (generalizar a partir de casos), la refutación (el proceso
+de probar la falsedad de alguna conjetura), el pensamiento analógico
+(encontrando relaciones,metáforas, analogías) y, por último, pero
+no menos importante, el uso del sentido común.
+\item Después del análisis de datos, uno siempre debe proponer una alternativa
+de solución, así sea simple e ingenua, y proceder intentando probarla
+y \textbf{refutarla} al mismo tiempo. Vale la pena recalcar esto:
+no importa que tan ingenua, sencilla e incompleta es una alternativa
+de solución, con tal de que nos permita seguir indagando. Esto es
+como la primera frase que se le dice a una chica (o chico, dado el
+caso) que uno quiere conocer; no importa qué frase sea, no importa
+que tan trivial sea, con tal de que permita iniciar una conversación.
+\item El proceso de búsqueda de soluciones es como una conversación que
+se inicia, aunque en este caso el interlocutor no es una persona,
+sino el problema que tenemos a mano. Con una primera alternativa de
+solución—no importa lo sencilla e incompleta–- podemos formularnos
+una pregunta interesante: ¿resuelve esta alternativa el problema?
+\item Lo importante de responder la pregunta anterior no es la obtención
+de un \textbf{No} como respuesta; pues esto es lo que sucede la mayoría
+de las veces. Lo importante viene cuando nos formulamos esta segunda
+pregunta ¿Con lo que sabemos del problema hasta ahora \textbf{por
+qué mi alternativa no es capaz de resolverlo?}
+\item La respuesta a la pregunta anterior puede ser: todavía no sé lo suficiente
+sobre el problema para entender por qué mi alternativa de solución
+no lo resuelve; esto es una señal de alerta para recolectar más datos
+y estudiar mas el dominio del problema.
+\item Una respuesta más constructiva a la pregunta anterior puede ser: mi
+alternativa de solución no resuelve el problema porque no considera
+algunos hechos importantes, y no considera algunas restricciones que
+debe cumplir una solución. Un ejemplo de este tipo de respuesta lo
+da nuestro ensayo de colocar la pareja (6,4) emparedando al 5 en el
+problema del cuadrado mágico:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+7  & \textbf{6}  & 2\tabularnewline
+\hline 
+ & \textbf{5}  & \tabularnewline
+\hline 
+8  & \textbf{4}  & 3 \tabularnewline
+\hline 
+\end{tabular}
+\par\end{center}
+
+Cuando notamos que la pareja (6,4) no puede colocarse en la columna
+central del cuadrado, intentamos otra alternativa de solución, colocando
+estos números en filas o en las esquinas. Lo importante de este tipo
+de respuesta es que nos va a permitir avanzar a {\em otra} alternativa
+de solución, casi siempre más compleja y más cercana a la solución.
+\item No poner obstáculos a la creatividad. Es muy difícil lograr esto porque
+la mente humana siempre busca límites para respetar; así, hay que
+realizar un esfuerzo consciente para eliminar todo límite o restricción
+que nuestra mente va creando. Una estrategia interesante es el uso
+y fortalecimiento del pensamiento lateral.
+\item Perseverar. El motivo más común de fracaso en la solución de acertijos
+y problemas es el abandono. No existe una receta mágica para resolver
+problemas, lo único que uno puede hacer es seguir un método y perseverar,
+perseverar sin importar cuantas alternativas de solución incorrectas
+se hayan generado. Esta es la clave para el éxito. Holmes decía que
+eran muchísimos más los casos que no había podido resolver, quizás
+Grissom reconocería lo mismo. Lo importante entonces es perseverar
+ante cada nuevo caso, esta es la única actitud razonable para enfrentar
+y resolver problemas.
+\end{itemize}
+
+\section{Reflexión sobre este método de solución}
+
+El proceso de solución de problemas que hemos presentado es muy sencillo.
+Los grandes profesionales que tienen mucho éxito en su campo (científicos,
+humanistas, ingenieros, médicos, empresarios, etc.) tienen métodos
+de solución de problemas mucho más avanzados que el que hemos presentado
+aquí. Con esto pretendemos ilustrar un punto: lo importante no es
+el método propuesto, porque muy probablemente no le servirá para resolver
+todos los problemas o acertijos que enfrente; lo importante es:
+\begin{itemize}
+\item Contar con un método de solución de problemas. Si no hay método, podemos
+solucionar problemas, claro está, pero cada vez que lo hagamos será
+por golpes de suerte o inspiración –que no siempre nos acompaña, desafortunadamente.
+\item Desarrollar, a medida que transcurra el tiempo y adquiera más conocimientos
+sobre su profesión y la vida, un método propio de solución de problemas.
+Este desarrollo personal puede tomar como base el método expuesto
+aquí, o algún otro que encuentre en la literatura o a través de la
+interacción con otras personas.
+\end{itemize}
+
+\section{Acertijos propuestos}
+
+Para que empiece inmediatamente a construir su método personal de
+solución de problemas, tome cada uno de los siguientes acertijos,
+siga el proceso de solución recomendado y documéntelo a manera de
+entrenamiento. Si usted descubre estrategias generales que no han
+sido consideradas aquí, compártalas con sus compañeros, profesores
+y, mejor aún, con los autores del libro.
+\begin{enumerate}
+\item Considere un tablero de ajedrez de 4x4 y 4 damas del mismo color.
+Su misión es colocar las 4 damas en el tablero sin que éstas se ataquen
+entre sí. Recuerde que una dama ataca a otra ficha si se encuentran
+en la misma fila, columna o diagonal.
+\item Partiendo de la igualdad $a=b$, encuentre cuál es el problema en
+el siguiente razonamiento:
+
+\begin{eqnarray*}
+a & = & b\\
+a^{2} & = & ba\\
+a^{2}-b^{2} & = & ba-b^{2}\\
+(a-b)(a+b) & = & b(a-b)\\
+a+b & = & b\\
+a & = & 2b\\
+\frac{a}{b} & = & 2\\
+1 & = & 2
+\end{eqnarray*}
+
+Tenga en cuenta que en el último paso se volvió a usar el hecho de
+que $a=b$, en la forma $\frac{a}{b}=1$.
+\item Encuentre el menor número entero positivo que pueda descomponerse
+como la suma de los cubos de dos números enteros positivos de dos
+maneras distintas. Esto es, encontrar el mínimo $A$ tal que $A=b^{3}+c^{3}$
+y $A=d^{3}+e^{3}$, con $A,b,c,d$ y $e$ números positivos, mayores
+a cero, y distintos entre si.
+\end{enumerate}
+
+\section{Mas allá de los acertijos: problemas computacionales}
+
+\index{problema computacional}
+
+Un problema computacional es parecido a un acertijo; se presenta una
+situación problemática y uno debe diseñar alguna solución. En los
+problemas computacionales la solución consiste en una \textbf{descripción
+general de procesos}; esto es, un problema computacional tiene como
+solución la descripción de un conjunto de pasos que se podrían llevar
+a cabo de manera general para lograr un objetivo.
+
+Un ejemplo que ilustra esto es la multiplicación. Todos sabemos multiplicar
+números de dos cifras, por ejemplo:
+
+%\newpage
+\[
+\begin{array}{cccc}
+\  & \  & 3 & 4\\
+\  & \times & 2 & 1\\
+\hline \  & \  & 3 & 4\\
++ & 6 & 8 & \ \\
+\hline \  & 7 & 1 & 4
+\end{array}
+\]
+
+Pero el problema computacional asociado a la multiplicación de números
+de dos cifras consiste en hallar la descripción general de todos los
+procesos posibles de multiplicación de parejas de números de dos cifras.
+Este problema ha sido resuelto, desde hace varios milenios, por diferentes
+civilizaciones humanas, siguiendo métodos alternativos. Un método
+de solución moderno podría describirse así:
+
+Tome los dos números de dos cifras, P y Q. Suponga que las cifras
+de P son $p_{1}$ y $p_{2}$, esto es, $P=p_{1}p_{2}$. Igualmente,
+suponga que $Q=q_{1}q_{2}$. La descripción \textbf{general} de todas
+las multiplicaciones de dos cifras puede hacerse así:
+
+\[
+\begin{array}{cccc}
+\  & \  & p_{1} & p_{2}\\
+\  & \times & q_{1} & q_{2}\\
+\hline \  & \  & q_{2}p_{1} & q_{2}p_{2}\\
++ & q_{1}p_{1} & q_{1}p_{2} & \ \\
+\hline \  & q_{1}p_{1} & q_{2}p_{1}+q_{1}p_{2} & q_{2}p_{2}
+\end{array}
+\]
+\begin{itemize}
+\item Tome la cifra $q_{2}$ y multiplíquela por las cifras de $P$ (con
+ayuda de una tabla de multiplicación). Ubique los resultados debajo
+de cada cifra de $P$ correspondiente.
+\item Tome la cifra $q_{1}$ y multiplíquela por las cifras de $P$ (con
+ayuda de una tabla de multiplicación). Ubique los resultados debajo
+de las cifras que se generaron en el paso anterior, aunque desplazadas
+una columna hacia la izquierda.
+\item Si en alguno de los pasos anteriores el resultado llega a 10 o se
+pasa de 10, ubique las unidades únicamente y lleve un acarreo, en
+decenas o centenas) para la columna de la izquierda.
+\item Sume los dos resultados parciales, obteniendo el resultado final.
+\end{itemize}
+Usted puede estar quejándose en este momento, ¿para qué hay que complicar
+tanto nuestro viejo y conocido proceso de multiplicación? Bueno, hay
+varias razones para esto:
+\begin{itemize}
+\item Una descripción impersonal como ésta puede ser leída y ejecutada por
+cualquier persona —o computador, como veremos mas adelante—.
+\item Sólo creando descripciones generales de procesos se pueden analizar
+para demostrar que funcionan correctamente.
+\item Queríamos sorprenderlo, tomando algo tan conocido como la suma y dándole
+una presentación que, quizás, nunca había visto. Este cambio de perspectiva
+es una invitación a que abra su mente a pensar en descripciones generales
+de procesos. 
+\end{itemize}
+Precisando un poco, un problema computacional es la descripción general
+de una situación en la que se presentan unos datos de entrada y una
+salida deseada que se quiere calcular. Por ejemplo, en el problema
+computacional de la multiplicación de números de dos cifras, los datos
+de entrada son los números a multiplicar; la salida es el producto
+de los dos números. Existen más problemas computacionales como el
+de ordenar un conjunto de números y el problema de encontrar una palabra
+en un párrafo de texto. Como ejercicio defina para estos problemas
+cuales son los datos de entrada y la salida deseada.
+
+La solución de un problema computacional es una descripción general
+del conjunto de pasos que se deben llevar a cabo con las entradas
+del problema para producir los datos de salida deseados. Solucionar
+problemas computacionales no es muy diferente de solucionar acertijos,
+las dos actividades producen la misma clase de retos intelectuales,
+y el método de solución de la sección \ref{sec:metodosolucion} es
+aplicable en los dos casos. Lo único que hay que tener en cuenta es
+que la solución de un problema es una \textbf{descripción general
+o programa, como veremos más adelante}, que se refiere a las entradas
+y salidas de una manera más técnica de lo que estamos acostumbrados.
+Un ejemplo de esto lo constituyen los nombres $p_{1},p_{2},q_{1}$
+y $q_{2}$ que usamos en la descripción general de la multiplicación
+de números de dos cifras.
+
+Aunque la solución de problemas es una actividad compleja, es muy
+interesante, estimulante e intelectualmente gratificante; incluso
+cuando no llegamos a solucionar los problemas completamente. En el
+libro vamos a enfocarnos en la solución de problemas computacionales
+por medio de programas, y, aunque solo vamos a explorar este tipo
+de problemas, usted verá que las estrategias de solución, los conceptos
+que aprenderá y la actitud de científico de la computación que adquirirá
+serán valiosas herramientas para resolver todo tipo de problemas de
+la vida real.
+
+\section{Glosario}
+\begin{description}
+\item [{Acertijo:}] enigma o adivinanza que se propone como pasatiempo.
+\item [{Solución de problemas:}] el proceso de formular un problema,
+hallar la solución y expresar la solución.
+\item [{Método de solución de problemas:}] un conjunto de pasos, estrategias
+y técnicas organizados que permiten solucionar problemas de una manera
+ordenada.
+\item [{Problema:}] una situación o circunstancia en la que se dificulta
+lograr un fin.
+\item [{Problema computacional:}] una situación general con una especificación
+de los datos de entrada y los datos de salida deseados.
+\item [{Solución a un problema:}] conjunto de pasos y estrategias que
+permiten lograr un fin determinado en una situación problemática,
+cumpliendo ciertas restricciones.
+\item [{Solución a un problema computacional:}] descripción general de
+los pasos que toman cualquier entrada en un problema computacional
+y la transforman en una salida deseada.
+\item [{Restricción:}] una condición que tiene que cumplirse en un problema
+dado.
+
+\index{acertijo} \index{solución de problemas} \index{método de solución de problemas}
+\index{método!de solución de problemas} \index{problema} \index{solución a un problema}
+\index{problema!solución} \index{restricción} 
+\end{description}
+
+\section{Ejercicios}
+
+Intente resolver los siguientes problemas computacionales, proponiendo
+soluciones \textbf{generales e impersonales}:
+\begin{enumerate}
+\item Describa cómo ordenar tres números a, b y c. 
+\item Describa cómo encontrar el menor elemento en un conjunto de números. 
+\item Describa cómo encontrar una palabra dentro de un texto más largo. 
+\end{enumerate}
+

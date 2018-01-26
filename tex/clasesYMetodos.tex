@@ -1,0 +1,596 @@
+
+\chapter{Clases y métodos}
+
+\section{Características de orientación a objetos}
+
+\index{lenguaje de programación orientado a objetos} \index{programación orientada a objetos}
+
+Python es un \textbf{lenguaje de programación orientado a objetos},
+lo que quiere decir que proporciona características que soportan la
+\textbf{programación orientada a objetos}.
+
+No es fácil definir la programación orientada a objetos, pero ya hemos
+notado algunos de sus elementos clave:
+\begin{itemize}
+\item Los programas se construyen a partir de definiciones de objetos y
+definiciones de funciones; la mayoría de los cómputos se hacen con
+base en objetos.
+\item Cada definición de objetos corresponde a algún concepto o cosa del
+mundo real, y las funciones que operan sobre esos objetos corresponden
+a las maneras en que los conceptos o cosas reales interactúan.
+\end{itemize}
+Por ejemplo, la clase \texttt{Hora}, definida en el Capítulo~\ref{time},
+corresponde a la forma en que la gente registra las horas del día
+y las funciones que definimos corresponden a la clase de cosas que
+la gente hace con horas. Similarmente, las clases \texttt{Punto} y
+\texttt{Rectangulo} corresponden a los conocidos conceptos geométricos
+
+Hasta aquí, no hemos aprovechado las características que Python proporciona
+para soportar la programación orientada a objetos. De hecho, estas
+características no son necesarias. La mayoría sólo proporciona una
+sintaxis alternativa para cosas que ya hemos logrado; pero, en muchos
+casos, esta forma alternativa es más concisa y comunica de una manera
+mas precisa la estructura de los programas.
+
+Por ejemplo, en el programa \texttt{Hora} no hay una conexión obvia
+entre la definición de clase y las definiciones de funciones. Después
+de examinarlo un poco, es evidente que todas las funciones toman como
+parámetro al menos un objeto \texttt{Hora}.
+
+Esta observación es la motivación para los \textbf{métodos}. Ya hemos
+visto algunos métodos como \texttt{keys} y \texttt{values}, que llamamos
+sobre diccionarios. Cada método se asocia con una clase y está pensado
+para invocarse sobre instancias de dicha clase.
+
+\index{método} \index{función} \index{instancia!objeto} \index{objeto instancia}
+
+Los métodos son como las funciones, pero con dos diferencias:
+\begin{itemize}
+\item Los métodos se definen adentro de una definición de clase, a fin de
+marcar explícitamente la relación entre la clase y éstos.
+\item La sintaxis para llamar o invocar un método es distinta que para las
+funciones.
+\end{itemize}
+En las siguientes secciones tomaremos las funciones de los capítulos
+anteriores y las transformaremos en métodos. Esta transformación es
+totalmente mecánica; se puede llevar a cabo siguiendo una secuencia
+de pasos. Si usted se siente cómodo al transformar de una forma a
+la otra, será capaz de escoger lo mejor de cada lado para resolver
+los problemas que tenga a la mano.
+
+\section{\texttt{imprimirHora}}
+
+\label{printTime} \index{imprimir!objetos}
+
+En el capítulo~\ref{time}, definimos una clase denominada \texttt{Hora}
+y usted escribió una función denominada \texttt{imprimirHora}, que
+lucía así:\inputencoding{latin9}
+\begin{lstlisting}
+class Hora:
+  pass
+
+def imprimirHora(h):
+  print(str(h.hora) + ":" + 
+        str(h.minutos) + ":" + 
+        str(h.segundos))
+\end{lstlisting}
+\inputencoding{utf8}
+Para llamar esta función, le pasamos un objeto \texttt{Hora} como
+parámetro:\inputencoding{latin9}
+\begin{lstlisting}
+>>> horaActual = Hora()
+>>> horaActual.hora = 9
+>>> horaActual.minutos = 14
+>>> horaActual.segundos = 30
+>>> imprimirHora(horaActual)
+\end{lstlisting}
+\inputencoding{utf8}
+Para convertir \texttt{imprimirHora} en un método todo lo que tenemos
+que hacer es ponerla adentro de la definición de clase. Note como
+ha cambiado la indentación.
+
+\inputencoding{latin9}\begin{lstlisting}
+class Hora:
+  def imprimirHora(h):
+    print( str(h.hora) + ":" + 
+          str(h.minutos) + ":" + 
+          str(h.segundos))
+\end{lstlisting}
+\inputencoding{utf8} Ahora podemos llamar a \texttt{imprimirHora} usando la notación punto.
+
+\index{notación punto}\inputencoding{latin9}
+\begin{lstlisting}
+>>> horaActual.imprimirHora()
+\end{lstlisting}
+\inputencoding{utf8}
+Como de costumbre, el objeto en el que el método se llama aparece
+antes del punto y el nombre del método va a la derecha. El objeto
+al cual se invoca el método se asigna al primer parámetro, así que
+\texttt{horaActual} se asigna al parámetro \texttt{h}.
+
+Por convención, el primer parámetro de un método se denomina \texttt{self}
+(en inglés, eso es algo como ``sí mismo''). La razón para hacerlo
+es un poco tortuosa, pero se basa en una metáfora muy útil.
+
+La sintaxis para una llamada de función, \texttt{imprimirHora(horaActual)},
+sugiere que la función es el agente activo. Dice algo como ``Hey,
+\texttt{imprimirHora}! Aquí hay un objeto para que imprimas''.
+
+En la programación orientada a objetos, los objetos son los agentes
+activos. Una invocación como \texttt{horaActual.imprimirHora()} dice
+algo como ``Hey, objeto \texttt{horaActual}! Por favor, imprímase
+a sí mismo!''.
+
+Este cambio de perspectiva parece ser sólo ``cortesía'', pero puede
+ser útil. En los ejemplos que hemos visto no lo es. Pero, el transferir
+la responsabilidad desde las funciones hacia los objetos hace posible
+escribir funciones más versátiles y facilita la reutilización y el
+mantenimiento de código.
+
+\section{Otro ejemplo}
+
+Convirtamos \texttt{incrementar} (de la Sección~\ref{increment})
+en un método. Para ahorrar espacio, omitiremos los métodos que ya
+definimos, pero usted debe conservarlos en su programa:\inputencoding{latin9}
+\begin{lstlisting}
+class Hora:
+  # Las definiciones anteriores van aqu�...
+  
+  def incrementar(self, segundos):
+    self.segundos = self.segundos + segundos
+
+    if self.segundos >= 60:
+      self.segundos = self.segundos - 60
+      self.minutos = self.minutos + 1
+
+    if self.minutos >= 60:
+      self.minutos = self.minutos - 60
+      self.hora = self.hora + 1
+
+    return self
+\end{lstlisting}
+\inputencoding{utf8} La transformación es totalmente mecánica —ponemos la definición del
+método adentro de la clase y cambiamos el nombre del primer parámetro.
+
+Ahora podemos llamar a \texttt{incrementar} como método:\inputencoding{latin9}
+\begin{lstlisting}
+horaActual.incrementar(500)
+\end{lstlisting}
+\inputencoding{utf8}
+Nuevamente, el objeto con el cual se invoca el método se asigna al
+primer parámetro, \texttt{self}. El segundo parámetro, \texttt{segundos}
+recibe el valor \texttt{500}.
+
+\section{Un ejemplo más complejo}
+
+El método \texttt{despues} es un poco más complejo ya que opera sobre
+dos objetos \texttt{Hora}, no sólo uno. Solamente podemos convertir
+uno de los parámetros a \texttt{self}; el otro continúa igual:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Hora:
+  # Las definiciones anteriores van aqui...
+
+  def despues(self, hora2):
+    if self.hora > hora2.hora:
+      return True
+    if self.hora < hora2.hora:
+      return False
+
+    if self.minutos > hora2.minutos:
+      return True
+    if self.minutos < hora2.minutos:
+      return False
+
+    if self.segundos > hora2.segundos:
+      return True
+    return False
+\end{lstlisting}
+\inputencoding{utf8} Llamamos a este método sobre un objeto y le pasamos el otro como
+argumento:\inputencoding{latin9}
+\begin{lstlisting}
+if horaComer.despues(horaActual):
+  print("El pan estar� listo para comer en un momento.")
+\end{lstlisting}
+\inputencoding{utf8}
+Casi se puede leer el llamado en lenguaje natural:``Si la hora para
+Comer viene después de la hora Actual, entonces ...''.
+
+\section{Argumentos opcionales}
+
+Hemos visto varias funciones primitivas que toman un número variable
+de argumentos. Por ejemplo, \texttt{string.find} puede tomar dos,
+tres o cuatro.
+
+Es posible escribir funciones con listas de argumentos opcionales.
+Por ejemplo, podemos mejorar nuestra versión de \texttt{buscar} para
+que sea tan sofisticada como \texttt{string.find}.
+
+Esta es la versión original que introdujimos en la Sección~\ref{find}:
+
+\pagebreak{}
+
+\inputencoding{latin9}\begin{lstlisting}
+def buscar(cad, c):
+  indice = 0
+  while indice < len(cad):
+    if cad[indice] == c:
+      return indice
+    indice = indice + 1
+  return -1
+\end{lstlisting}
+\inputencoding{utf8} Esta es la nueva versión, mejorada:\inputencoding{latin9}
+\begin{lstlisting}
+def buscar(cad, c,ini=0):
+  indice = ini
+  while indice < len(cad):
+    if cad[indice] == c:
+      return indice
+    indice = indice + 1
+  return -1
+\end{lstlisting}
+\inputencoding{utf8}
+El tercer parámetro, \texttt{ini}, es opcional, ya que tiene un valor
+por defecto, \texttt{0}. Si llamamos a \texttt{buscar} con dos argumentos,
+se usa el valor por defecto y la búsqueda se hace desde el principio
+de la cadena:\inputencoding{latin9}
+\begin{lstlisting}
+>>> buscar("apple", "p")
+1
+\end{lstlisting}
+\inputencoding{utf8}
+Si se pasa el tercer parámetro, este \textbf{sobreescribe} el valor
+por defecto:\inputencoding{latin9}
+\begin{lstlisting}
+>>> buscar("apple", "p", 2)
+2
+>>> buscar("apple", "p", 3)
+-1
+\end{lstlisting}
+\inputencoding{utf8}
+\section{El método de inicialización}
+
+\index{método de inicialización} \index{método!de inicialización}
+
+El \textbf{de inicialización} es un método especial que se llama cuando
+se crea un objeto. El nombre de este método es \texttt{\_\_init\_\_}
+(dos caracteres de subrayado, seguidos por \texttt{init}, y luego
+dos caracteres de subrayado más). Un método de inicialización para
+la clase \texttt{Hora} se presenta a continuación:\inputencoding{latin9}
+\begin{lstlisting}
+class Hora:
+  def __init__(self, hora=0, minutos=0, segundos=0):
+    self.hora = hora
+    self.minutos = minutos
+    self.segundos = segundos
+\end{lstlisting}
+\inputencoding{utf8}
+No hay conflicto entre el atributo \texttt{self.hora} y el parámetro
+\texttt{hora}. La notación punto especifica a qué variable nos estamos
+refiriendo.
+
+\index{notación punto}
+
+Cuando llamamos al método constructor de \texttt{Hora}, los argumentos
+se pasan a \texttt{init}:\inputencoding{latin9}
+\begin{lstlisting}
+>>> horaActual = Hora(9, 14, 30)
+>>> horaActual.imprimirHora()
+>>> 9:14:30
+\end{lstlisting}
+\inputencoding{utf8}
+Como los parámetros son opcionales, se pueden omitir:\inputencoding{latin9}
+\begin{lstlisting}
+>>> horaActual = Hora()
+>>> horaActual.imprimirHora()
+>>> 0:0:0
+\end{lstlisting}
+\inputencoding{utf8}
+O podemos pasar solo un parámetro:\inputencoding{latin9}
+\begin{lstlisting}
+>>> horaActual = Hora(9)
+>>> horaActual.imprimirHora()
+>>> 9:0:0
+\end{lstlisting}
+\inputencoding{utf8}
+O, sólo los dos primeros:\inputencoding{latin9}
+\begin{lstlisting}
+>>> horaActual = Hora(9, 14)
+>>> horaActual.imprimirHora()
+>>> 9:14:0
+\end{lstlisting}
+\inputencoding{utf8}
+Finalmente, podemos proporcionar algunos parámetros, nombrándolos
+explícitamente:\inputencoding{latin9}
+\begin{lstlisting}
+>>> horaActual = Hora(segundos = 30, hora = 9)
+>>> horaActual.imprimirHora()
+>>> 9:0:30
+\end{lstlisting}
+\inputencoding{utf8}
+\section{Reconsiderando la clase Punto}
+
+\index{clase Punto} \index{clase!Punto}
+
+Reescribamos la clase \texttt{Punto} de la Sección~\ref{point} en
+un estilo más orientado a objetos:\inputencoding{latin9}
+\begin{lstlisting}
+class Punto:
+  def __init__(self, x=0, y=0):
+    self.x = x
+    self.y = y
+
+  def __str__(self):
+    return '(' + str(self.x) + ', ' + str(self.y) + ')'
+\end{lstlisting}
+\inputencoding{utf8}
+El método de inicialización toma los valores $x$ y $y$ como parámetros
+opcionales, el valor por defecto que tienen es 0.
+
+El método \texttt{\_\_str\_\_}, retorna una representación de un objeto
+\texttt{Punto} en forma de cadena de texto. Si una clase proporciona
+un método denominado \texttt{\_\_str\_\_}, éste sobreescribe el comportamiento
+por defecto de la función primitiva \texttt{str}.\inputencoding{latin9}
+\begin{lstlisting}
+>>> p = Punto(3, 4)
+>>> str(p)
+'(3, 4)'
+\end{lstlisting}
+\inputencoding{utf8}
+Imprimir un objeto \texttt{Punto} implícitamente invoca a \texttt{\_\_str\_\_}
+o sobre éste, así que definir a \texttt{\_\_str\_\_} también cambia
+el comportamiento de la sentencia \texttt{print}:\inputencoding{latin9}
+\begin{lstlisting}
+>>> p = Punto(3, 4)
+>>> print(p)
+(3, 4)
+\end{lstlisting}
+\inputencoding{utf8}
+Cuando escribimos una nueva clase, casi siempre empezamos escribiendo
+\texttt{\_\_init\_\_}, ya que facilita la instanciación de objetos,
+y \texttt{\_\_str\_\_}, que casi siempre es esencial para la depuración.
+
+\section{Sobrecarga de operadores}
+
+\label{operator overloading} \index{operadores sobrecarga de} \index{operadores!sobrecarga}
+\index{producto punto} \index{multiplicación escalar}
+
+Algunos lenguajes hacen posible cambiar la definición de los operadores
+primitivos cuando se aplican sobre tipos definidos por el programador.
+Esta característica se denomina \textbf{sobrecarga de operadores}.
+Es especialmente útil para definir tipos de datos matemáticos.
+
+Por ejemplo, para sobrecargar el operador suma, \texttt{+}, proporcionamos
+un método denominado \texttt{\_\_add\_\_}:\inputencoding{latin9}
+\begin{lstlisting}
+class Punto:
+  # los m�todos definidos previamente van aqu�...
+
+  def __add__(self, otro):
+    return Punto(self.x + otro.x, self.y + otro.y)
+\end{lstlisting}
+\inputencoding{utf8}
+Como de costumbre, el primer parámetro es el objeto con el cual se
+invoca el método. El segundo parámetro se denomina con la palabra
+\texttt{otro} para marcar la distinción entre éste y \texttt{self}.
+Para sumar dos \texttt{Punto}s, creamos y retornamos un nuevo \texttt{Punto}
+que contiene la suma de las coordenadas en el eje $x$ y la suma de
+las coordenadas en el eje $y$.
+
+Ahora, cuando aplicamos el operador \texttt{+} a dos objetos \texttt{Punto},
+Python hace el llamado del método \texttt{\_\_add\_\_}:\inputencoding{latin9}
+\begin{lstlisting}
+>>>   p1 = Punto(3, 4)
+>>>   p2 = Punto(5, 7)
+>>>   p3 = p1 + p2
+>>>   print(p3)
+(8, 11)
+\end{lstlisting}
+\inputencoding{utf8}
+La expresión \texttt{p1 + p2} es equivalente a \texttt{p1.\_\_add\_\_(p2)},
+pero luce mucho mas elegante.
+
+Hay varias formas de sobrecargar el comportamiento del operador multiplicación:
+definiendo un método \texttt{\_\_mul\_\_}, o \texttt{\_\_rmul\_\_},
+o ambos.
+
+Si el operando izquierdo de \texttt{{*}} es un \texttt{Punto}, Python
+invoca a \texttt{\_\_mul\_\_}, asumiendo que el otro operando también
+es un \texttt{Punto}. Calcula el \textbf{producto escalar} de los
+dos puntos de acuerdo a las reglas del álgebra lineal:\inputencoding{latin9}
+\begin{lstlisting}
+def __mul__(self, otro):
+  return self.x * otro.x + self.y * otro.y
+\end{lstlisting}
+\inputencoding{utf8}
+Si el operando izquierdo de \texttt{{*}} es un tipo primitivo y el
+operando derecho es un \texttt{Punto}, Python llama a \texttt{\_\_rmul\_\_},
+que ejecuta la \textbf{multiplicación escalar }:\inputencoding{latin9}
+\begin{lstlisting}
+def __rmul__(self, otro):
+  return Punto(otro * self.x,  otro * self.y)
+\end{lstlisting}
+\inputencoding{utf8}
+El resultado ahora es un nuevo \texttt{Punto} cuyas coordenadas son
+múltiplos de las originales. Si \texttt{otro} pertenece a un tipo
+que no se puede multiplicar por un número de punto flotante, la función
+\texttt{\_\_rmul\_\_} producirá un error.
+
+Este ejemplo ilustra las dos clases de multiplicación:\inputencoding{latin9}
+\begin{lstlisting}
+>>> p1 = Punto(3, 4)
+>>> p2 = Punto(5, 7)
+>>> print(p1 * p2)
+43
+>>> print(2 * p2)
+(10, 14)
+\end{lstlisting}
+\inputencoding{utf8} ¿Que pasa si tratamos de evaluar \texttt{p2 {*} 2}? Ya que el primer
+parámetro es un \texttt{Punto}, Python llama a \texttt{\_\_mul\_\_}
+con \texttt{2} como segundo argumento. Dentro de \texttt{\_\_mul\_\_},
+el programa intenta acceder al valor \texttt{x} de \texttt{otro},
+lo que falla porque un número entero no tiene atributos:
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> print(p2 * 2)
+AttributeError: 'int' object has no attribute 'x'
+\end{lstlisting}
+\inputencoding{utf8} Desafortunadamente, el mensaje de error es un poco opaco. Este ejemplo
+demuestra una de las dificultades de la programación orientada a objetos.
+Algunas veces es difícil saber qué código está ejecutándose.
+
+Para un ejemplo completo de sobrecarga de operadores vea el capítulo
+\ref{overloading}.
+
+\section{Polimorfismo}
+
+\index{polimorfismo}
+
+La mayoría de los métodos que hemos escrito sólo funcionan para un
+tipo de dato específico. Cuando se crea un nuevo tipo de objeto, se
+escriben métodos que operan sobre ese tipo.
+
+Pero hay ciertas operaciones que se podrían aplicar a muchos tipos,
+un ejemplo de éstas son las operaciones aritméticas de las secciones
+anteriores. Si muchos tipos soportan el mismo conjunto de operaciones,
+usted puede escribir funciones que trabajen con cualquiera de estos
+tipos.
+
+Por ejemplo la operación \texttt{multsuma} (que se usa en el álgebra
+lineal) toma tres parámetros, multiplica los primeros dos y luego
+suma a esto el tercero. En Python se puede escribir así:
+
+\inputencoding{latin9}\begin{lstlisting}
+def multsuma (x, y, z):
+  return x * y + z
+\end{lstlisting}
+\inputencoding{utf8} Este método funcionará para cualesquier valores de \texttt{x} e \texttt{y}
+que puedan multiplicarse, y para cualquier valor de \texttt{z} que
+pueda sumarse al producto.
+
+Podemos llamarla sobre números:
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> multsuma (3, 2, 1)
+7
+\end{lstlisting}
+\inputencoding{utf8} O sobre \texttt{Punto}s:\inputencoding{latin9}
+\begin{lstlisting}
+>>> p1 = Punto(3, 4)
+>>> p2 = Punto(5, 7)
+>>> print(multsuma (2, p1, p2))
+(11, 15)
+>>> print(multsuma (p1, p2, 1))
+44
+\end{lstlisting}
+\inputencoding{utf8}
+En el primer caso, el \texttt{Punto} se multiplica por un escalar
+y luego se suma a otro \texttt{Punto}. En el segundo caso, el producto
+punto produce un valor numérico, así que el tercer parámetro también
+tiene que ser un número.
+
+Una función como ésta, que puede tomar parámetros con tipos distintos
+se denomina \textbf{polimórfica}.
+
+Otro ejemplo es la función \texttt{derechoyAlReves}, que imprime una
+lista dos veces, al derecho y al revés:
+
+\inputencoding{latin9}\begin{lstlisting}
+def derechoyAlReves(l):
+  import copy
+  r = copy.copy(l)
+  r.reverse()
+  print(str(l) + str(r))
+\end{lstlisting}
+\inputencoding{utf8} Como el método \texttt{reverse} es una función modificadora, tenemos
+que tomar la precaución de hacer una copia de la lista antes de llamarlo.
+De esta forma la lista que llega como parámetro no se modifica.
+
+Aquí hay un ejemplo que aplica \texttt{derechoyAlReves} a una lista:
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> miLista = [1, 2, 3, 4]
+>>> derechoyAlReves(miLista)
+[1, 2, 3, 4][4, 3, 2, 1]
+\end{lstlisting}
+\inputencoding{utf8} Por supuesto que funciona para listas, esto no es sorprendente. Lo
+que sería sorprendente es que pudiéramos aplicarla a un \texttt{Punto}.
+
+Para determinar si una función puede aplicarse a un nuevo tipo de
+dato usamos la regla fundamental del polimorfismo:
+\begin{quote}
+\textbf{Si todas las operaciones adentro de la función pueden aplicarse
+al otro tipo, la función puede aplicarse al tipo.} 
+\end{quote}
+Las operaciones que usa el método son \texttt{copy}, \texttt{reverse},
+y \texttt{print}.
+
+\texttt{copy} funciona para cualquier objeto, y como ya hemos escrito
+un método \texttt{\_\_str\_\_} para los \texttt{Punto}s, lo único
+que nos falta es el método \texttt{reverse} dentro de la clase \texttt{Punto}:
+
+\inputencoding{latin9}\begin{lstlisting}
+def reverse(self):
+  self.x , self.y = self.y, self.x
+\end{lstlisting}
+\inputencoding{utf8} Entonces podemos aplicar \texttt{derechoyAlReves} a objetos \texttt{Punto}:
+
+\inputencoding{latin9}\begin{lstlisting}
+>>>   p = Punto(3, 4)
+>>>   derechoyAlReves(p)
+(3, 4)(4, 3)
+\end{lstlisting}
+\inputencoding{utf8} El mejor tipo de polimorfismo es el que no se pretendía lograr, aquel
+en el que se descubre que una función escrita puede aplicarse a un
+tipo para el cual no se había planeado hacerlo.
+
+\section{Glosario}
+\begin{description}
+\item [{Lenguaje orientado a objetos:}] lenguaje que tiene características,
+como las clases definidas por el usuario y la herencia, que facilitan
+la programación orientada a objetos.
+\item [{Programación orientada a objetos:}] estilo de programación en
+el que los datos y las operaciones que los manipulan se organizan
+en clases y métodos.
+\item [{Método:}] función que se define adentro de una clase y se llama
+sobre instancias de ésta.
+\item [{Sobreescribir:}] reemplazar un valor preexistente. Por ejemplo,
+se puede reemplazar un parámetro por defecto con un argumento particular
+y un método ya definido, proporcionando un nuevo método con el mismo
+nombre.
+\item [{Método de inicialización:}] método especial que se llama automáticamente
+cuando se crea un nuevo objeto. Inicializa los atributos del objeto.
+\item [{Sobrecarga de operadores:}] extender el significado de los operadores
+primitivos (\texttt{+}, \texttt{-}, \texttt{{*}}, \texttt{>}, \texttt{<},
+etc.) de forma que acepten tipos definidos por el usuario.
+\item [{Producto punto:}] operación del álgebra lineal que multiplica
+dos \texttt{Punto}s y produce un valor numérico.
+\item [{Multiplicación escalar:}] operación del álgebra lineal que multiplica
+cada una de las coordenadas de un \texttt{Punto} por un valor numérico.
+\item [{Polimórfica:}] función que puede operar sobre varios tipos de datos.
+Si todas las operaciones que se llaman dentro de la función se le
+pueden aplicar al tipo de dato, entonces la función puede aplicársela
+al tipo.
+
+\index{lenguaje de programación orientado a objetos} \index{método}
+\index{método de inicialización} \index{sobreescribir} \index{sobrecarga}
+\index{sobrecarga de operadores} \index{producto punto} \index{multiplicación escalar}
+\index{polimórfica}
+\end{description}
+
+\section{Ejercicios}
+\begin{enumerate}
+\item Convierta \texttt{convertirASegundos} (de la Sección~\ref{convert})
+a un método de la clase \texttt{Hora}.
+\item Añada un cuarto parámetro \texttt{fin} a la función \texttt{buscar}
+que especifique hasta donde continuar la búsqueda.
+
+Advertencia: Este ejercicio tiene una cascarita. El valor por defecto
+de \texttt{fin} debería ser \texttt{len(cad)}, pero esto no funciona.
+Los valores por defecto se evalúan en el momento de definición de
+las funciones, no cuando se llaman. Cuando se define \texttt{buscar},
+\texttt{cad} no existe todavía, así que no se puede obtener su longitud.
+\item Agregue un método \texttt{\_\_sub\_\_(self, otro)} que sobrecargue
+el operador resta de la clase \texttt{Punto}, y pruébelo.
+\end{enumerate}
+

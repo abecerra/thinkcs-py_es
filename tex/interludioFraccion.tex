@@ -1,0 +1,332 @@
+
+\chapter{Interludio 2: Creando un nuevo tipo de datos }
+
+\label{overloading} \index{tipo de dato!definido por el usuario}
+
+Los lenguajes de programación orientados a objetos permiten a los
+programadores crear nuevos tipos de datos que se comportan de manera
+muy similar a los tipos primitivos. Exploraremos esta característica
+construyendo una clase \texttt{Fraccionario} que se comporte como
+los tipos de datos numéricos primitivos (enteros y flotantes).
+
+Los números fraccionario o racionales son valores que se pueden expresar
+como una división entre dos números enteros, como $\frac{1}{3}$.
+El número superior es el numerador y el inferior es es el denominador.
+
+\index{racional} \index{fracción} \index{numerador} \index{denominador}
+
+La clase \texttt{Fraccion} empieza con un método constructor que recibe
+como parámetros al numerador y al denominador:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Fraccion:
+  def __init__(self, numerador, denominador=1):
+    self.numerador = numerador
+    self.denominador = denominador
+\end{lstlisting}
+\inputencoding{utf8}El denominador es opcional. Una Fracción con un solo parámetro representa
+a un número entero. Si el numerador es $n$, construimos la fracción
+$n/1$.
+
+El siguiente paso consiste en escribir un método \texttt{\_\_str\_\_}
+que despliegue las fracciones de una manera natural. Como estamos
+acostumbrados a la notación ``numerador/denominador'', lo más natural
+es:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Fraccion:
+  ...
+  def __str__(self):
+    return "%d/%d" % (self.numerador, self.denominador)
+\end{lstlisting}
+\inputencoding{utf8} Para realizar pruebas, ponemos este código en un archivo \texttt{Fraccion.py}
+y lo importamos en el intérprete de Python. Ahora creamos un objeto
+fracción y lo imprimimos.
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> from Fraccion import Fraccion
+>>> s = Fraccion(5,6)
+>>> print("La fraccion es", s)
+La fraccion es 5/6
+\end{lstlisting}
+\inputencoding{utf8} El método \texttt{print}, automáticamente invoca al método \texttt{\_\_str\_\_}
+de manera implícita.
+
+\section{Multiplicación de fracciones}
+
+\index{multiplicación!de fracciones} \index{fracciones!multiplicación}
+
+Nos gustaría aplicar los mismos operadores de suma, resta, multiplicación
+y división a las fracciones. Para lograr esto podemos sobrecargar
+los operadores matemáticos en la clase \texttt{Fraccion}.
+
+\index{sobrecarga} \index{operadores!sobrecarga de} \index{operador matemático}
+
+La multiplicación es la operación más sencilla entre fraccionarios.
+El resultado de multiplicar dos fracciones a y v es una nueva fracción
+en la que el numerador es el producto de los dos numeradores (de a
+y b) y el denominador es el producto de los dos denominadores (de
+a y b).
+
+Python define que el método \texttt{\_\_mul\_\_} se puede definir
+en una clase para sobrecargar el operador \texttt{{*}}:\inputencoding{latin9}
+\begin{lstlisting}
+class Fraccion:
+  ...
+  def __mul__(self, otro):
+    return Fraccion(self.numerador*otro.numerador, \
+                    self.denominador*otro.denominador)
+\end{lstlisting}
+\inputencoding{utf8}
+Podemos probar este método calculando un producto sencillo:\inputencoding{latin9}
+\begin{lstlisting}
+>>> print(Fraccion(5,6) * Fraccion(3,4))
+15/24
+\end{lstlisting}
+\inputencoding{utf8}
+Funciona, pero se puede mejorar. Podemos manejar el caso en el que
+se multiplique una fracción por un número entero. Por medio de la
+función \texttt{type} se puede probar si \texttt{otro} es un entero
+y convertirlo a una fracción antes de realizar el producto:\inputencoding{latin9}
+\begin{lstlisting}
+class Fraccion:
+  ...
+  def __mul__(self, otro):
+    if type(otro) == type(5):
+      otro = Fraccion(otro)
+    return Fraccion(self.numerador   * otro.numerador, \
+                    self.denominador * otro.denominador)
+\end{lstlisting}
+\inputencoding{utf8}
+Ahora, la multiplicación entre enteros y fracciones funciona, pero
+sólo si la fracción es el operando a la izquierda :
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> print(Fraccion(5,6) * 4)
+20/6
+>>> print(4 * Fraccion(5,6))
+TypeError: __mul__ nor __rmul__ defined for these operands
+\end{lstlisting}
+\inputencoding{utf8} Para evaluar un operador binario como la multiplicación, Python chequea
+el operando izquierdo primero, para ver si su clase define el método
+\texttt{\_\_mul\_\_}, y que tenga soporte para el tipo del segundo
+operando. En este caso el operador primitivo para multiplicar enteros
+no soporta las fracciones.
+
+Después, Python chequea si el operando a la derecha provee un método
+\texttt{\_\_rmul\_\_} que soporte el tipo del operando de la izquierda.
+En este caso, como no hay definición de \texttt{\_\_rmul\_\_} en la
+clase \texttt{Fraccion}, se genera un error de tipo.
+
+Hay una forma sencilla de definir \texttt{\_\_rmul\_\_}:\inputencoding{latin9}
+\begin{lstlisting}
+class Fraccion:
+  ...
+  __rmul__ = __mul__
+\end{lstlisting}
+\inputencoding{utf8} Esta asignación dice que \texttt{\_\_rmul\_\_} contiene el mismo
+código que \texttt{\_\_mul\_\_}. Si ahora evaluamos \texttt{4 {*}
+Fraccion(5,6)}, Python llama a \texttt{\_\_rmul\_\_} y le pasa al
+4 como parámetro:
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> print(4 * Fraccion(5,6))
+20/6
+\end{lstlisting}
+\inputencoding{utf8} Como \texttt{\_\_rmul\_\_} tiene el mismo código que \texttt{\_\_mul\_\_},
+y el método \texttt{\_\_mul\_\_} puede recibir un parámetro entero,
+nuestra multiplicación de fracciones funciona bien.
+
+\section{Suma de fracciones}
+
+\index{suma!de fracciones} \index{fracciones!suma}
+
+La suma es más complicada que la multiplicación. La suma $a/b+c/d$
+da como resultado $\frac{(ad+cb)}{bd}$.
+
+Basándonos en la multiplicación, podemos escribir los métodos \texttt{\_\_add\_\_}
+y \texttt{\_\_radd\_\_}:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Fraccion:
+  ...
+  def __add__(self, otro):
+    if type(otro) == type(5):
+      otro = Fraccion(otro)
+    return Fraccion(self.numerador   * otro.denominador + \
+                    self.denominador * otro.numerador,    \
+                    self.denominador * otro.denominador) 
+
+  __radd__ = __add__
+\end{lstlisting}
+\inputencoding{utf8} Podemos probar estos métodos con objetos \texttt{Fraccion} y con
+números enteros.
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> print(Fraccion(5,6) + Fraccion(5,6))
+60/36
+>>> print(Fraccion(5,6) + 3)
+23/6
+>>> print(2 + Fraccion(5,6))
+17/6
+\end{lstlisting}
+\inputencoding{utf8} Los primeros ejemplos llaman al método \texttt{\_\_add\_\_}; el último
+ejemplo llama al método \texttt{\_\_radd\_\_}.
+
+\section{El algoritmo de Euclides}
+
+\index{máximo divisor común} \index{Euclides} \index{pseudocódigo}
+\index{simplificar}
+
+En el ejemplo anterior, calculamos $5/6+5/6$ y obtuvimos $60/36$.
+Es correcto, pero no es la manera más sencilla de presentar la respuesta.
+Para \textbf{simplificar} la fracción tenemos que dividir el numerador
+y el denominador por su \textbf{máximo divisor común (MDC)}, que para
+este caso es 12. Entonces, un resultado mas sencillo es $5/3$.
+
+En general, cada vez que creamos un nuevo objeto de tipo \texttt{Fraccion}
+deberíamos simplificarlo dividiendo el numerador y el denominador
+por su MDC. Si la fracción no se puede simplificar, el MDC es 1.
+
+Euclides de Alejandría (aprox. 325–265 A.C) presentó un algoritmo
+para encontrar el MDC de dos números enteros $m$ y $n$:
+\begin{quote}
+Si $n$ divide a $m$ exactamente, entonces $n$ es el MDC. Sino,
+el MDC de $m$ y $n$ es el MDC de $n$ y el residuo de la división
+$m/n$. 
+\end{quote}
+Esta definición recursiva se puede implementar en una función:
+
+\inputencoding{latin9}\begin{lstlisting}
+def MDC (m, n):
+  if m % n == 0:
+    return n
+  else:
+    return MDC(n, m%n)
+\end{lstlisting}
+\inputencoding{utf8} En la primera línea el operador residuo nos permite chequear si n
+divide a n exactamente. En la última línea, lo usamos para calcular
+el residuo de la división.
+
+Como todas las operaciones que hemos escrito crean nuevas fracciones
+como resultado, podemos simplificar todos los valores de retorno modificando
+el método constructor.
+
+\inputencoding{latin9}\begin{lstlisting}
+class Fraccion:
+  def __init__(self, numerador, denominador=1):
+    g = MDC (numerador, denominador)
+    self.numerador   =   numerador / g
+    self.denominador = denominador / g
+\end{lstlisting}
+\inputencoding{utf8} Ahora, cada vez que creamos una nueva \texttt{Fraccion}, ¡se simplifica!.
+
+\inputencoding{latin9}\begin{lstlisting}
+>>> Fraccion(100,-36)
+-25/9
+\end{lstlisting}
+\inputencoding{utf8} Una característica adicional que nos provee \texttt{MDC} es que si
+la fracción es negativa, el signo menos siempre se mueve hacia el
+numerador.
+
+\section{Comparando fracciones}
+
+\index{comparación!de fracciones} \index{fracciones!comparación de}
+
+Si vamos a comparar dos objetos \texttt{Fraccion}, digamos \texttt{a}
+y \texttt{b}, evaluando la expresión \texttt{a == b}. Como la implementación
+de \texttt{==} chequea igualdad superficial de objetos por defecto,
+sólo retornará cierto si \texttt{a} y \texttt{b} \textit{son} el mismo
+objeto.
+
+Es mucho más probable que deseemos retornar cierto si $a$ y $b$
+tienen el mismo valor —esto es, chequear igualdad profunda.
+
+Tenemos que enseñarle a las fracciones cómo compararse entre sí. Como
+veremos en la sección \ref{comparecard}, podemos sobrecargar todos
+los operadores de comparación por medio de la implementación de un
+método \texttt{\_\_cmp\_\_}.
+
+Por convención, el método \texttt{\_\_cmp\_\_} retorna un número negativo
+si \texttt{self} es menos que \texttt{otro}, cero si son iguales,
+y un número positivo si \texttt{self} es mayor que \texttt{otro}.
+
+La forma más sencilla de comparar fracciones consiste en hacer una
+multiplicación cruzada. Si $a/b>c/d$, entonces $ad>bc$. Con esto
+en mente, implementamos \texttt{\_\_cmp\_\_}:
+
+\inputencoding{latin9}\begin{lstlisting}
+class Fraccion:
+  ...
+  def __cmp__(self, otro):
+    dif = (self.numerador  * otro.denominador - \
+            otro.numerador * self.denominador)
+    return dif
+\end{lstlisting}
+\inputencoding{utf8} Si \texttt{self} es mayor que \texttt{otro}, entonces \texttt{dif}
+será positivo. Si \texttt{otro} es mayor, \texttt{dif} será negativo.
+Si son iguales, \texttt{dif} es cero.
+
+\section{Extendiendo las fracciones}
+
+Todavía no hemos terminado. Tenemos que implementar la resta sobrecargando
+el método \texttt{\_\_sub\_\_} y la división con el método \texttt{\_\_div\_\_}.
+
+Podemos restar por medio de la suma si antes negamos (cambiamos de
+signo) al segundo operando. También podemos dividir por medio de la
+multiplicación si antes invertimos el segundo operando.
+
+Siguiendo este razonamiento, una forma de realizar las operaciones
+resta y división consiste en definir primero la negación por medio
+de la sobrecarga de \texttt{\_\_neg\_\_} y la inversión sobre sobrecargando
+a \texttt{\_\_invert\_\_}.
+
+Un paso adicional sería implementar \texttt{\_\_rsub\_\_} y \texttt{\_\_rdiv\_\_}.
+Desafortunadamente no podemos usar el mismo truco que aplicamos para
+la suma y la multiplicación, porque la resta y la división no son
+conmutativas. En estas operaciones el orden de los operandos altera
+el resultado, así que no podemos asignar a \texttt{\_\_rsub\_\_} y
+a \texttt{\_\_rdiv\_\_} los método \texttt{\_\_sub\_\_} y \texttt{\_\_div\_\_},
+respectivamente.
+
+Para realizar la \textbf{negación unaria}, sobrecargamos a \texttt{\_\_neg\_\_}.
+
+\index{operador unario} \index{negación}
+
+Podemos calcular potencias sobrecargando a \texttt{\_\_pow\_\_}, pero
+la implementación tiene un caso difícil: si el exponente no es un
+entero, puede que no sea posible representar el resultado como una
+\texttt{Fraccion}. Por ejemplo, la siguiente expresión \texttt{Fraccion(2)
+{*}{*} Fraccion(1,2)} es la raíz cuadrada de 2, que es un número irracional
+(no puede representarse por ninguna fracción). Así que no es fácil
+escribir una función general para \texttt{\_\_pow\_\_}.
+
+\index{irracional}
+
+Hay otra extensión a la clase \texttt{Fraccion} que usted puede imaginar.
+Hasta aquí, hemos asumido que el numerador y el denominador son enteros.
+También podemos permitir que sean de tipo long.
+
+\section{Glosario}
+\begin{description}
+\item [{Máximo divisor común (MDC):}] el entero positivo más grande
+que divide exactamente a dos números (por ejemplo, el numerador y
+el denominador en una fracción).
+\item [{Simplificar:}] cambiar una fracción en otra equivalente que tenga
+un MDC de 1.
+\item [{negación unaria:}] la operación que calcula un inverso aditivo,
+usualmente representada con un signo menos. Es ``unaria'' en contraposición
+con el menos binario que representa a la resta.
+
+\index{máximo divisor común} \index{simplificar} \index{negación unaria}
+\end{description}
+
+\section{Ejercicios}
+\begin{enumerate}
+\item Complemente la implementación de la clase \texttt{Fraccion} para que
+soporte denominadores y numeradores de tipo long (enteros grandes). 
+\item Agregue la operación resta
+\item Agregue la operación división
+\item Agregue la operación exponenciación. 
+\end{enumerate}
+

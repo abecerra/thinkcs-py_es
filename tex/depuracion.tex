@@ -1,0 +1,478 @@
+
+\chapter{Depuración }
+
+\index{depuración}
+
+Hay diferentes tipos de error que pueden suceder en un programa y
+es muy útil distinguirlos a fin de rastrearlos más rápidamente:
+\begin{itemize}
+\item Los errores sintácticos se producen cuando Python traduce el código
+fuente en código objeto. Usualmente indican que hay algún problema
+en la sintaxis del programa. Por ejemplo, omitir los puntos seguidos
+al final de una sentencia \texttt{def} produce un mensaje de error
+un poco redundante \texttt{SyntaxError: invalid syntax}.
+\item Los errores en tiempo de ejecución se producen por el sistema de ejecución,
+si algo va mal mientras el programa corre o se ejecuta. La mayoría
+de errores en tiempo de ejecución incluyen información sobre la localización
+del error y las funciones que se estaban ejecutando. Ejemplo: una
+recursión infinita eventualmente causa un error en tiempo de ejecución
+de ``maximum recursion depth exceeded.''
+\item Los errores semánticos se dan en programas que compilan y se ejecutan
+normalmente, pero no hacen lo que se pretendía. Ejemplo: una expresión
+podría evaluarse en un orden inesperado, produciendo un resultado
+incorrecto.
+\end{itemize}
+\index{error en tiempo de compilación} \index{error sintáctico}
+\index{error en tiempo de ejecución} \index{error semántico} \index{error!en tiempo de compilación}
+\index{error!sintaxis} \index{error!tiempo de ejecución} \index{error!semántica}
+\index{excepción}
+
+El primer paso en la depuración consiste en determinar la clase de
+error con la que se está tratando. Aunque las siguientes secciones
+se organizan por tipo de error, algunas técnicas se aplican en más
+de una situación.
+
+\section{Errores sintácticos}
+
+\index{mensajes de error} \index{compilador}
+
+Los errores sintácticos se corrigen fácilmente una vez que usted ha
+determinado a qué apuntan. Desafortunadamente, en algunas ocasiones
+los mensajes de error no son de mucha ayuda. Los mensajes de error
+más comunes son \texttt{SyntaxError: invalid syntax} y \texttt{SyntaxError: invalid
+token}, que no son muy informativos.
+
+Por otro lado, el mensaje sí dice dónde ocurre el problema en el programa.
+Más precisamente, dice dónde fue que Python encontró un problema,
+que no necesariamente es el lugar dónde está el error. Algunas veces
+el error está antes de la localización que da el mensaje de error,
+a menudo en la línea anterior.
+
+\index{desarrollo incremental de programas}
+
+Si usted está construyendo los programas incrementalmente, debería
+tener una buena idea de dónde se localiza el error. Estará en la última
+línea que se agregó.
+
+Si usted está copiando código desde un libro, comience por comparar
+su código y el del libro muy cuidadosamente. Chequee cada carácter.
+Al mismo tiempo, recuerde que el libro puede tener errores, así que
+si encuentra algo que parece un error sintáctico, entonces debe serlo.
+
+Aquí hay algunas formas de evitar los errores sintácticos más comunes:
+
+\index{syntax}
+\begin{enumerate}
+\item Asegúrese de no usar una palabra reservada de Python como nombre de
+variable
+\item Chequee que haya colocado dos puntos seguidos al final de la cabecera
+de cada sentencia compuesta, incluyendo los ciclos \texttt{for}, \texttt{while},
+los condicionales \texttt{if}, las definiciones de función \texttt{def}
+y las \texttt{clases}.
+\item Chequee que la indentación o sangrado sea consistente. Se puede indentar
+con espacios o tabuladores, pero es mejor no mezclarlos. Cada nivel
+debe sangrarse la misma cantidad de espacios o tabuladores.
+\item Asegúrese de que las cadenas en los programas estén encerradas entre
+comillas.
+\item Si usted tiene cadenas multilínea creadas con tres comillas consecutivas,
+verifique su terminación. Una cadena no terminada puede causar un
+error denominado \texttt{invalid token} al final de su programa, o
+puede tratar la siguiente parte del programa como si fuera una cadena,
+hasta toparse con la siguiente cadena. En el segundo caso, ¡puede
+que Python no produzca ningún mensaje de error!
+\item Un paréntesis sin cerrar—\verb+(+, \verb+{+, o \verb+[+—hace que
+Python continúe con la siguiente línea como si fuera parte de la sentencia
+actual. Generalmente, esto causa un error inmediato en la siguiente
+línea.
+\item Busque por la confusión clásica entre \texttt{=} y \texttt{==}, adentro
+y afuera de los condicionales.
+\end{enumerate}
+Si nada de esto funciona, avance a la siguiente sección...
+
+\subsection{No puedo ejecutar mi programa sin importar lo que haga}
+
+Si el compilador dice que hay un error y usted no lo ha visto, eso
+puede darse porque usted y el compilador no están observando el mismo
+código. Chequee su ambiente de programación para asegurarse de que
+el programa que está editando es el que Python está tratando de ejecutar.
+Si no está seguro, intente introducir deliberadamente un error sintáctico
+obvio al principio del programa. Ahora ejecútelo o impórtelo de nuevo.
+Si el compilador no encuentra el nuevo error, probablemente hay algún
+problema de configuración de su ambiente de programación.
+
+Si esto pasa, una posible salida es empezar de nuevo con un programa
+como ``Hola todo el mundo!,'' y asegurarse de que pueda ejecutarlo
+correctamente. Después, añadir gradualmente a éste los trozos de su
+programa.
+
+\section{Errores en tiempo de ejecución}
+
+Cuando su programa está bien sintácticamente Python puede importarlo
+y empezar a ejecutarlo. ¿Qué podría ir mal ahora?
+
+\subsection{Mi programa no hace absolutamente nada}
+
+Este problema es el más común cuando su archivo comprende funciones
+y clases pero no hace ningún llamado para empezar la ejecución. Esto
+puede ser intencional si usted sólo planea importar este módulo para
+proporcionar funciones y clases.
+
+Si no es intencional, asegúrese de que está llamando a una función
+para empezar la ejecución, o ejecute alguna desde el indicador de
+entrada (prompt). Revise la sección posterior sobre el ``Flujo de
+Ejecución''.
+
+\subsection{Mi programa se detiene}
+
+\index{ciclo infinito} \index{recursión infinita} \index{detención}
+
+Si un programa se detiene y parece que no está haciendo nada, decimos
+que está ``detenido.'' Esto a veces sucede porque está atrapado
+en un ciclo infinito o en una recursión infinita.
+\begin{itemize}
+\item Si hay un ciclo sospechoso de ser la causa del problema, añada un
+\texttt{print} inmediatamente antes del ciclo que diga ``entrando
+al ciclo'' y otra inmediatamente después, que diga ``saliendo del
+ciclo.''
+
+Ejecute el programa. Si obtiene el primer mensaje y no obtiene el
+segundo, ha encontrado su ciclo infinito. revise la sección posterior
+``Ciclo Infinito''.
+\item La mayoría de las veces, una recursión infinita causará que el programa
+se ejecute por un momento y luego produzca un error ``RuntimeError:
+Maximum recursion depth exceeded''. Si esto ocurre revise la sección
+posterior ``Recursión Infinita''.
+
+Si no está obteniendo este error, pero sospecha que hay un problema
+con una función recursiva o método, también puede usar las técnicas
+de la sección ``Recursión Infinita''.
+\item Si ninguno de estos pasos funciona, revise otros ciclos y otras funciones
+recursivas, o métodos.
+\item Si eso no funciona entonces es posible que usted no comprenda el flujo
+de ejecución que hay en su programa. Vaya a la sección posterior ``Flujo
+de ejecución''.
+\end{itemize}
+
+\subsubsection{Ciclo infinito}
+
+\index{ciclo infinito} \index{ciclo!infinito} \index{condición}
+\index{ciclo!condición}
+
+Si usted cree que tiene un ciclo infinito añada un \texttt{print}
+al final de éste que imprima los valores de las variables de ciclo
+(las que aparecen en la condición) y el valor de la condición.
+
+Por ejemplo:\inputencoding{latin9}
+\begin{lstlisting}
+while x > 0 and y < 0 :
+  # hace algo con x
+  # hace algo con y
+
+  print( "x: ", x )
+  print( "y: ", y )
+  print( "condicion: ", (x > 0 and y < 0))
+\end{lstlisting}
+\inputencoding{utf8} Ahora, cuando ejecute el programa, usted verá tres líneas de salida
+para cada iteración del ciclo. En la última iteración la condición
+debe ser \texttt{falsa}. Si el ciclo sigue, usted podrá ver los valores
+de \texttt{x} y \texttt{y}, y puede deducir por qué no se están actualizando
+correctamente.
+
+\subsubsection{Recursión infinita}
+
+\index{recursión Infinita} \index{recursión Infinita}
+
+La mayoría de las veces una recursión infinita causará que el programa
+se ejecute durante un momento y luego producirá un error: \texttt{Maximum
+recursion depth exceeded}.
+
+Si sospecha que una función o método está causando una recursión infinita,
+empiece por chequear la existencia de un caso base. En otras palabras,
+debe haber una condición que haga que el programa o método retorne
+sin hacer un llamado recursivo. Si no lo hay, es necesario reconsiderar
+el algoritmo e identificar un caso base.
+
+Si hay un caso base, pero el programa no parece alcanzarlo, añada
+un \texttt{print} al principio de la función o método que imprima
+los parámetros. Ahora, cuando ejecute el programa usted verá unas
+pocas líneas de salida cada vez que la función o método es llamada,
+y podrá ver los parámetros. Si no están cambiando de valor acercándose
+al caso base, usted podrá deducir por qué ocurre esto.
+
+\subsubsection{Flujo de ejecución}
+
+\index{Flujo de Ejecución} \index{ejecución!flujo de}
+
+Si no está seguro de cómo se mueve el flujo de ejecución a través
+de su programa, añada \texttt{print} al comienzo de cada función con
+un mensaje como ``entrando a la función \texttt{foo},'' donde \texttt{foo}
+es el nombre de la función.
+
+Ahora, cuando ejecute el programa, se imprimirá una traza de cada
+función a medida que van siendo llamadas.
+
+\subsection{Cuando ejecuto el programa obtengo una excepción}
+
+\index{excepción} \index{error en tiempo de ejecución}
+
+Si algo va mal durante la ejecución, Python imprime un mensaje que
+incluye el nombre de la excepción, la línea del programa donde ocurrió,
+y un trazado inverso.
+
+\index{trazado inverso}
+
+El trazado inverso identifica la función que estaba ejecutándose,
+la función que la llamó, la función que llamó a {\em esta} última,
+y así sucesivamente. En otras palabras, traza el camino de llamados
+que lo llevaron al punto actual de ejecución. También incluye el número
+de línea en su archivo, donde cada uno de estos llamados tuvo lugar.
+
+El primer paso consiste en examinar en el programa el lugar donde
+ocurrió el error y ver si se puede deducir qué pasó. Aquí están algunos
+de los errores en tiempo de ejecución más comunes:
+\begin{description}
+\item [{NameError:}] usted está tratando de usar una variable que no existe
+en el ambiente actual. Recuerde que las variables locales son locales.
+No es posible referirse a ellas afuera de la función donde se definieron.
+
+\index{NameError} \index{TypeError}
+\item [{TypeError:}] hay varias causas:
+
+\begin{itemize}
+\item Usted está tratando de usar un valor impropiamente. Por ejemplo: indexar
+una cadena, lista o tupla con un valor que no es entero.
+
+\index{índice}
+\item No hay correspondencia entre los elementos en una cadena de formato
+y los elementos pasados para hacer la conversión. Esto puede pasar
+porque el número de elementos no coincide o porque se está pidiendo
+una conversión invalida.
+
+\index{operador de formato} \index{operador!formato}
+\item Usted está pasando el número incorrecto de argumentos a una función
+o método. Para los métodos, mire la definición de métodos y chequee
+que el primer parámetro sea \texttt{self}. Luego mire el llamado,
+asegúrese de que se hace el llamado sobre un objeto del tipo correcto
+y de pasar los otros parámetros correctamente.
+\end{itemize}
+\item [{KeyError:}] usted está tratando de acceder a un elemento de un
+diccionario usando una llave que éste no contiene.
+
+\index{KeyError} \index{diccionario}
+\item [{AttributeError:}] está tratando de acceder a un atributo o método
+que no existe.
+
+\index{AttributeError}
+\item [{IndexError:}] el índice que está usando para acceder a una lista,
+cadena o tupla es más grande que su longitud menos uno. Inmediatamente,
+antes de la línea del error, agregue un \texttt{print} para desplegar
+el valor del índice y la longitud de la secuencia. ¿Tiene ésta el
+tamaño correcto? ¿Tiene el índice el valor correcto?
+
+\index{IndexError}
+\end{description}
+
+\subsection{Agregué tantos \texttt{prints} que estoy inundado de texto de salida}
+
+\index{función print} \index{función!print}
+
+Uno de los problemas de \texttt{print} para depurar es que uno puede
+terminar inundado de salida. Hay dos formas de proceder: simplificar
+la salida o simplificar el programa.
+
+Para simplificar la salida se pueden eliminar o comentar los \texttt{print}
+que no son de ayuda, o se pueden combinar, o se puede dar formato
+a la salida, de forma que quede más fácil de entender.
+
+Para simplificar el programa hay varias cosas que se pueden hacer.
+Primero, disminuya la escala del problema que el programa intenta
+resolver. Por ejemplo, si usted está ordenando un arreglo, utilice
+uno {\em pequeño} como entrada. Si el programa toma entrada del
+usuario, pásele la entrada más simple que causa el problema.
+
+Segundo, limpie el programa. Borre el código muerto y reorganízelo
+para hacerlo lo más legible que sea posible. Por ejemplo, si usted
+sospecha que el problema está en una sección de código profundamente
+anidada, intente reescribir esa parte con una estructura más sencilla.
+Si sospecha de una función grande, trate de partirla en funciones
+mas pequeñas y pruébelas separadamente.
+
+Este proceso de encontrar el caso mínimo de prueba que activa el problema
+a menudo permite encontrar el error. Si usted encuentra que el programa
+funciona en una situación, pero no en otras, esto le da una pista
+de lo que está sucediendo.
+
+Similarmente, reescribir un trozo de código puede ayudar a encontrar
+errores muy sutiles. Si usted hace un cambio que no debería alterar
+el comportamiento del programa, y sí lo hace, esto es una señal de
+alerta.
+
+\section{Errores semánticos}
+
+\index{error semántico} \index{error!semántico}
+
+Estos son los mas difíciles de depurar porque ni el compilador ni
+el sistema de ejecución dan información sobre lo que está fallando.
+Sólo usted sabe lo que el programa debe hacer y sólo usted sabe por
+qué no lo está haciendo bien.
+
+El primer paso consiste en hacer una conexión entre el código fuente
+del programa y el comportamiento que está dándose. Ahora, usted necesita
+una hipótesis sobre lo que el programa está haciendo realmente. Una
+de las cosas que complica el asunto es que la ejecución de programas
+en un computador moderno es muy rápida.
+
+A veces deseará desacelerar el programa hasta una velocidad humana,
+y con algunos programas depuradores esto es posible. Pero el tiempo
+que toma insertar unos \texttt{print} bien situados a menudo es mucho
+más corto comparado con la configuración del depurador, la inserción
+y eliminación de puntos de quiebre (breakpoints en inglés) y ``saltar''
+por el programa al punto donde el error se da.
+
+\subsection{Mi programa no funciona}
+
+Usted debe hacerse estas preguntas:
+\begin{itemize}
+\item ¿Hay algo que el programa debería hacer, pero no hace? Encuentre la
+sección de código que tiene dicha funcionalidad y asegúrese de que
+se ejecuta en los momentos adecuados.
+\item ¿Está pasando algo que no debería? Encuentre código en su programa
+que tenga una funcionalidad y vea si ésta se ejecuta cuando no debería.
+\item ¿Hay una sección de código que produce un efecto que no esperaba usted?
+Asegúrese de que entiende dicha sección de código, especialmente si
+tiene llamados a funciones o métodos en otros módulos. Lea la documentación
+para las funciones que usted llama. Intente escribir casos de prueba
+más sencillos y chequee los resultados.
+\end{itemize}
+Para programar, usted necesita un modelo mental de cómo trabajan los
+programas. Si usted escribe un programa que no hace lo que se espera,
+muy frecuentemente el problema no está en el programa, sino en su
+modelo mental.
+
+\index{modelo!mental} \index{modelo mental}
+
+La mejor forma de corregir su modelo mental es descomponer el programa
+en sus componentes (usualmente funciones y métodos) para luego probarlos
+independientemente. Una vez encuentre la discrepancia entre su modelo
+y la realidad, el problema puede resolverse.
+
+Por supuesto, usted debería construir y probar componentes a medida
+que desarrolla el programa. Si encuentra un problema, debería haber
+una pequeña cantidad de código nuevo que puede estar incorrecto.
+
+\subsection{He obtenido una expresión grande y peluda que no hace lo que espero}
+
+\index{expresión!grande y peluda}
+
+Escribir expresiones complejas está bien en tanto queden legibles,
+sin embargo, puede ser difícil depurarlas. Es una buena idea separar
+una expresión compleja en una serie de asignaciones a variables temporales.
+
+Por ejemplo:\inputencoding{latin9}
+\begin{lstlisting}
+self.manos[i].agregarCarta( \
+  self.manos[self.encontrarVecino(i)].eliminarCarta())
+ Esto puede reescribirse como:
+ 
+vecino = self.encontrarVecino (i)
+cartaEscogida = self.manos[vecino].eliminarCarta()
+self.manos[i].agregarCarta(cartaEscogida)
+\end{lstlisting}
+\inputencoding{utf8} La versión explícita es más fácil de leer porque los nombres de variables
+proporcionan una documentación adicional y porque se pueden chequear
+los tipos de los valores intermedios desplegándolos.
+
+\index{variable temporal} \index{variable!temporal} \index{orden de evaluación}
+\index{precedencia}
+
+Otro problema que ocurre con las expresiones grandes es que el orden
+de evaluación puede no ser el que usted espera. Por ejemplo, si usted
+está traduciendo la expresión $\frac{x}{2\pi}$ a Python, podría escribir:
+
+\inputencoding{latin9}\begin{lstlisting}
+y = x / 2 * math.pi;
+\end{lstlisting}
+\inputencoding{utf8} Esto es incorrecto, porque la multiplicación y la división tienen
+la misma precedencia y se evalúan de izquierda a derecha. Así que
+ese código calcula $x\pi/2$.
+
+Una buena forma de depurar expresiones es agregar paréntesis para
+hacer explícito el orden de evaluación:\inputencoding{latin9}
+\begin{lstlisting}
+ y = x / (2 * math.pi);
+\end{lstlisting}
+\inputencoding{utf8} Cuando no esté seguro del orden de evaluación, use paréntesis. No
+sólo corregirá el programa si había un error, sino que también lo
+hará mas legible para otras personas que no se sepan las reglas de
+precedencia.
+
+\subsection{Tengo una función o método que no retorna lo que debería}
+
+\index{sentencia return} \index{sentencia!return}
+
+Si usted tiene una sentencia \texttt{return} con una expresión compleja
+no hay posibilidad de imprimir el valor del \texttt{return} antes
+de retornar. Aquí también se puede usar una variable temporal. Por
+ejemplo, en vez de:
+
+\inputencoding{latin9}\begin{lstlisting}
+return self.manos[i].eliminarParejas()
+\end{lstlisting}
+\inputencoding{utf8} se podría escribir:
+
+\inputencoding{latin9}\begin{lstlisting}
+cont = self.manos[i].eliminarParejas()
+return cont
+\end{lstlisting}
+\inputencoding{utf8} Ahora usted tiene la oportunidad de desplegar el valor de \texttt{count}
+antes de retornar.
+
+\subsection{Estoy REALMENTE atascado y necesito ayuda}
+
+Primero, intente alejarse del computador por unos minutos. Los computadores
+emiten ondas que afectan al cerebro causando estos efectos:
+\begin{itemize}
+\item Frustración e ira.
+\item Creencias supersticiosas (``el computador me odia'') y pensamiento
+mágico (``el programa sólo funciona cuando me pongo la gorra al revés'').
+\item Programación aleatoria (el intento de programar escribiendo cualquier
+programa posible y escogiendo posteriormente el que funcione correctamente).
+\end{itemize}
+Si usted está sufriendo de alguno de estos síntomas, tómese un paseo.
+Cuando ya esté calmado, piense en el programa. ¿Qué está haciendo?
+¿Cuáles son las causas posibles de éste comportamiento? ¿Cuándo fue
+la última vez que funcionaba bien, y qué hizo usted después de eso?
+
+Algunas veces, sólo toma un poco de tiempo encontrar un error. A menudo
+encontramos errores cuando estamos lejos del computador y dejamos
+que la mente divague. Algunos de los mejores lugares para encontrar
+errores son los trenes, duchas y la cama, justo antes de dormir.
+
+\subsection{No, realmente necesito ayuda}
+
+Esto sucede. Hasta los mejores programadores se atascan alguna vez.
+A veces se ha trabajado tanto tiempo en un programa que ya no se puede
+ver el error. Un par de ojos frescos es lo que se necesita.
+
+Antes de acudir a alguien más, asegúrese de agotar todas las técnicas
+descritas aquí. Su programa debe ser tan sencillo como sea posible
+y usted debería encontrar la entrada más pequeña que causa el error.
+Debería tener varios \texttt{print} en lugares apropiados (y la salida
+que despliegan debe ser comprensible). Usted debe entender el problema
+lo suficientemente bien como para describirlo concisamente.
+
+Cuando acuda a alguien, asegúrese de darle la información necesaria:
+\begin{itemize}
+\item Si hay un mensaje de error, ¿cuál es, y a qué parte del programa se
+refiere?
+\item ¿Cuál fue el último cambio antes de que se presentara el error? ¿Cuáles
+fueron las últimas líneas de código que escribió usted o cuál es el
+nuevo caso de prueba que falla?
+\item ¿Qué ha intentado hasta ahora, y qué ha aprendido sobre el programa?
+\end{itemize}
+Cuando encuentre el error, tómese un segundo para pensar sobre lo
+que podría haber realizado para encontrarlo más rápido. La próxima
+vez que le ocurra algo similar, será capaz de encontrar el error rápidamente.
+
+Recuerde, el objetivo no sólo es hacer que el programa funcione. El
+objetivo es aprender cómo hacer que los programas funcionen.
