@@ -23,18 +23,18 @@ ambigüedad es provechosa.
 
 El operador corchete selecciona un carácter de una cadena.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> fruta = "banano"
 >>> letra = fruta[1]
 >>> print(letra)	
-\end{verbatim}
+\end{pyconcode}
 
 La expresión \texttt{fruta{[}1{]}} selecciona el carácter número 1
 de \texttt{fruta}. La variable \texttt{letra} se refiere al resultado.
 Cuando desplegamos \texttt{letra}, obtenemos una pequeña sorpresa:
-\begin{verbatim}
+\begin{pythoncode}
 a
-\end{verbatim}
+\end{pythoncode}
 La primera letra de ``banano'' no es \texttt{a}. ¡A menos que usted
 sea un científico de la computación! Por razones perversas, los científicos
 de la computación empiezan a contar desde cero. La letra número 0
@@ -43,11 +43,11 @@ de \texttt{``banano''} es \texttt{b}. La letra 1 es a, y la letra
 
 Si usted desea la primera letra de una cadena se pone 0, o cualquier
 expresión con el valor 0, dentro de los corchetes:
-\begin{verbatim}
+\begin{pyconcode}
 >>> letra = fruta[0]
 >>> print(letra)
 b
-\end{verbatim}
+\end{pyconcode}
 
 La expresión en corchetes se denomina \textbf{índice}. Un índice especifica
 un miembro de un conjunto ordenado, en este caso el conjunto de caracteres
@@ -62,17 +62,17 @@ por eso se llama así. Puede ser cualquier expresión entera.
 
 La función \texttt{len} retorna el número de caracteres en una cadena:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> fruta = "banano"
 >>> len(fruta)
 6
-\end{verbatim}
+\end{pyconcode}
  Para acceder a la última letra de una cadena usted podría caer en
 algo como esto:
-\begin{verbatim}
+\begin{pythoncode}
 longitud = len(fruta)
 ultima = fruta[longitud]       # ERROR!
-\end{verbatim}
+\end{pythoncode}
 
 Y no funcionará. Causa un error en tiempo de ejecución, \texttt{IndexError: string
 index out of range}. La razón yace en que no hay una letra 6 en ``banano''.
@@ -82,10 +82,10 @@ Como empezamos a contar desde cero, las seis letras se numeran de
 
 \index{error en tiempo de ejecución}
 
-\begin{verbatim}
+\begin{pythoncode}
 longitud = len(fruta)
 ultima = fruta[longitud-1]
-\end{verbatim}
+\end{pythoncode}
 
 Alternativamente, podemos usar índices negativos, que cuentan hacia
 atrás desde el fin de la cadena. La expresión \texttt{fruta{[}-1{]}}
@@ -105,13 +105,13 @@ A menudo empiezan al inicio, seleccionan cada carácter en cada paso,
 le hacen algo y continúan hasta el final. Este patrón de procesamiento
 se denomina \textbf{recorrido}. Hay una forma de realizarlo con la
 sentencia \texttt{while}:
-\begin{verbatim}
+\begin{pythoncode}
 indice = 0
 while indice < len(fruta):
   letra = fruta[indice]
   print(letra)
   indice = indice + 1
-\end{verbatim}
+\end{pythoncode}
 
 Este ciclo recorre la cadena y despliega cada letra en una línea independiente.
 La condición del ciclo es \texttt{indice < len(fruta)}, así que cuando
@@ -124,10 +124,10 @@ Usar un índice para recorrer un conjunto de valores es tan común que
 Python tiene una sintaxis alternativa más simple—el ciclo \texttt{for}
 :
 
-\begin{verbatim}
+\begin{pythoncode}
 for caracter in fruta:
    print(caracter)
-\end{verbatim}
+\end{pythoncode}
 
 Cada vez que el ciclo itera, el próximo carácter en la cadena se asigna
 a la variable \texttt{caracter}. El ciclo continúa hasta que no quedan
@@ -142,16 +142,16 @@ se refiere a una lista en la que los elementos aparecen en orden alfabético.
 Por ejemplo, en el libro {\em Make Way for Ducklings} de Robert
 McCloskey, los nombres de los patos son Jack, Kack, Lack, Mack, Nack,
 Ouack, Pack, and Quack. Este ciclo los despliega en orden:
-\begin{verbatim}
+\begin{pythoncode}
 prefijos = "JKLMNOPQ"
 sufijo = "ack"
 
 for letra in prefijos:
   print(letra + sufijo)
-\end{verbatim}
+\end{pythoncode}
 
 La salida de este programa es:
-\begin{verbatim}
+\begin{pythoncode}
 Jack
 Kack
 Lack
@@ -160,7 +160,7 @@ Nack
 Oack
 Pack
 Qack
-\end{verbatim}
+\end{pythoncode}
 
 Por supuesto que hay un error, ya que ``Ouack'' y ``Quack'' no
 están bien deletreados.
@@ -171,7 +171,7 @@ están bien deletreados.
 
 Una porción de una cadena de caracteres se denomina \textbf{segmento}.
 Seleccionar un segmento es similar a seleccionar un carácter:
-\begin{verbatim}
+\begin{pyconcode}
 >>> s = "Pedro, Pablo, y Maria"
 >>> print(s[0:5])
 Pedro
@@ -179,7 +179,7 @@ Pedro
 Pablo
 >>> print(s[16:21])
 Maria
-\end{verbatim}
+\end{pyconcode}
 
 El operador \texttt{{[}n:m{]}} retorna la parte de la cadena que va
 desde el carácter n hasta el m, incluyendo el primero y excluyendo
@@ -193,13 +193,13 @@ como en el siguiente diagrama:
 Si usted omite el primer índice (antes de los puntos seguidos), el
 segmento comienza en el inicio de la cadena. Si se omite el segundo
 índice, el segmento va hasta el final. Entonces:
-\begin{verbatim}
+\begin{pyconcode}
 >>> fruta  = "banano"
 >>> fruta[:3]
 'ban'
 >>> f[3:]
 'ano'
-\end{verbatim}
+\end{pyconcode}
  ¿Que cree que significa \texttt{s{[}:{]}}?
 
 \section{Comparación de cadenas}
@@ -208,28 +208,28 @@ segmento comienza en el inicio de la cadena. Si se omite el segundo
 
 El operador de comparación funciona con cadenas. Para ver si dos cadenas
 son iguales:
-\begin{verbatim}
+\begin{pythoncode}
 if palabra == "banana":
   print("No hay bananas!")
-\end{verbatim}
+\end{pythoncode}
 Las otras operaciones de comparación son útiles para poner las palabras
 en orden alfabético:
-\begin{verbatim}
+\begin{pythoncode}
 if palabra < "banana":
   print("Su palabra," + palabra + ", va antes que banana.")
 elif palabra > "banana":
   print("Su palabra," + palabra + ", va después de banana.")
 else:
   print("No hay banana!")
-\end{verbatim}
+\end{pythoncode}
 
 Sin embargo, usted debe ser consciente de que Python no maneja las
 letras minúsculas y mayúsculas de la misma forma en que lo hace la
 gente. Todas las letras mayúsculas vienen antes de las minúsculas.
 Si palabra vale ``Zebra'' la salida sería:
-\begin{verbatim}
+\begin{pythoncode}
 Su palabra, Zebra, va antes que banana.
-\end{verbatim}
+\end{pythoncode}
 Este problema se resuelve usualmente convirtiendo las cadenas a un
 formato común, todas en minúsculas por ejemplo, antes de hacer la
 comparación. Un problema más difícil es lograr que el programa reconozca
@@ -242,11 +242,11 @@ que una zebra no es una fruta.
 Uno puede caer en la trampa de usar el operador \texttt{{[}{]}} al
 lado izquierdo de una asignación con la intención de modificar un
 carácter en una cadena. Por ejemplo:
-\begin{verbatim}
+\begin{pythoncode}
 saludo = "Hola mundo"
 saludo[0] = 'J'            # ERROR!
 print(saludo)
-\end{verbatim}
+\end{pythoncode}
  En lugar de desplegar \texttt{Jola mundo!}, se produce un error en
 tiempo de ejecución \texttt{TypeError: object doesn't support item
 assignment}.
@@ -256,11 +256,11 @@ assignment}.
 Las cadenas son \textbf{inmutables}, lo que quiere decir que no se
 puede cambiar una cadena existente. Lo máximo que se puede hacer es
 crear otra cadena que cambia un poco a la original:
-\begin{verbatim}
+\begin{pythoncode}
 saludo = "Hola mundo!"
 nuevoSaludo = 'J' + saludo[1:]
 print(nuevoSaludo)
-\end{verbatim}
+\end{pythoncode}
 
 La solución consiste en concatenar la primera nueva letra con un segmento
 de \texttt{saludo}. Esto no tiene efecto sobre la primera cadena,
@@ -275,7 +275,7 @@ usted puede chequearlo.
 
 ¿Qué hace la siguiente función?
 
-\begin{verbatim}
+\begin{pythoncode}
 def buscar(cad, c):
   indice = 0
   while indice < len(cad):
@@ -283,7 +283,7 @@ def buscar(cad, c):
       return indice
     indice = indice + 1
   return -1
-\end{verbatim}
+\end{pythoncode}
  De cierta manera \texttt{buscar} es el opuesto del operador \texttt{{[}{]}}.
 En vez de tomar un índice y extraer el carácter correspondiente, toma
 un carácter y encuentra el índice donde éste se encuentra. Si no se
@@ -306,14 +306,14 @@ de buscar.
 
 El siguiente programa cuenta el número de veces que la letra \texttt{a}
 aparece en una cadena:
-\begin{verbatim}
+\begin{pythoncode}
 fruta = "banano"
 cont = 0
 for car in fruta:
   if car == 'a':
     cont = cont + 1
 print(cont)
-\end{verbatim}
+\end{pythoncode}
  Este programa demuestra otro patrón computacional denominado \textbf{contador}.
 La variable \texttt{cont} se inicializa a 0 y se incrementa cada vez
 que se encuentre una \texttt{a}. ( \textbf{incrementar} es añadir
@@ -335,33 +335,33 @@ se escribe después del punto. La llamada a un método también se denomina
 \textbf{invocación}; en este caso, diríamos que estamos invocando
 \texttt{find} sobre la cadena \texttt{fruta}.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> fruta = "banano"
 >>> ind = fruta.find("a")
 >>> print(ind)
 1
-\end{verbatim}
+\end{pyconcode}
 
 El método \texttt{find} es más general que buscar, también puede buscar
 subcadenas, no solo caracteres:
-\begin{verbatim}
+\begin{pyconcode}
 >>> "banano".find("na")
 2
-\end{verbatim}
+\end{pyconcode}
 
 También tiene un argumento adicional que especifica el índice desde
 el que debe empezar la búsqueda:
-\begin{verbatim}
+\begin{pyconcode}
 >>> "banana".find("na",3) 
 4
-\end{verbatim}
+\end{pyconcode}
 
 Igualmente, puede tomar dos argumentos adicionales que especifican
 un rango de índices:
-\begin{verbatim}
+\begin{pyconcode}
 >>> "bob".find("b",1,2) 
 -1
-\end{verbatim}
+\end{pyconcode}
 
 Aquí la búsqueda falló porque la letra {\em b} no está en en el
 rango de índices de \texttt{1} a \texttt{2} (recuerde que no se incluye
@@ -382,43 +382,43 @@ La cadena \texttt{string.lowercase} contiene todas las letras que
 el sistema considera como minúsculas. Igualmente, \texttt{string.uppercase}
 contiene todas las letras mayúsculas. Intente lo siguiente y vea por
 sí mismo:
-\begin{verbatim}
+\begin{pyconcode}
 >>> import string
 >>> print(string.ascii_lowercase)
 >>> print(string.ascii_uppercase)
 >>> print(string.digits)
-\end{verbatim}
+\end{pyconcode}
 Podemos usar estas constantes y el método \texttt{find} para clasificar
 los caracteres. Por ejemplo, si \texttt{c.find(lowercase)} retorna
 un valor distinto de \texttt{-1}, entonces \texttt{c} debe ser una
 letra minúscula:
-\begin{verbatim}
+\begin{pythoncode}
 import string
 
 def esMinuscula(c):
   return string.ascii_lowercase.find(c) != -1
-\end{verbatim}
+\end{pythoncode}
 
 Otra alternativa la da el operador \texttt{in} que determina si un
 carácter aparece en una cadena:
-\begin{verbatim}
+\begin{pythoncode}
 def esMinuscula(c):
   return c in string.ascii_lowercase
-\end{verbatim}
+\end{pythoncode}
  Y otra alternativa más, con el operador de comparación:
-\begin{verbatim}
+\begin{pythoncode}
 def esMinuscula(c):
   return 'a' <= c <= 'z'
-\end{verbatim}
+\end{pythoncode}
 
 Si \texttt{c} está entre {\em a} y {\em z}, debe ser una letra
 minúscula.
 
 Otra constante definida en el módulo \texttt{string} puede sorprenderlo
 cuando la imprima:
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(string.whitespace)
-\end{verbatim}
+\end{pyconcode}
 
 Un carácter de los que pertenecen a \textbf{whitespace} mueve el cursor
 sin imprimir nada. Crean un espacio en blanco que se puede evidenciar
@@ -484,7 +484,7 @@ alguna de ellas sobre las otras?
 \item Cree un archivo llamado \verb+cadenas.py+ y escriba lo siguiente
 en él:
 
-\begin{verbatim}
+\begin{pythoncode}
   def invertir(s):
     """
       >>> invertir('feliz')
@@ -500,14 +500,14 @@ en él:
   if __name__ == '__main__':
     import doctest
     doctest.testmod()
-\end{verbatim}
+\end{pythoncode}
  Agregue un cuerpo a la función invertir que haga que pase las pruebas
 unitarias.
 
 Agregue al archivo \verb+cadenas.py+ cuerpos a cada una de las siguientes
 funciones, una a la vez.
 \item Reflejar:
-\begin{verbatim}
+\begin{pythoncode}
   def reflejar(s):
     """
       >>> reflejar("bien")
@@ -521,9 +521,9 @@ funciones, una a la vez.
       >>> reflejar("a")
       'aa'
     """
-\end{verbatim}
+\end{pythoncode}
 \item Eliminar letra:
-\begin{verbatim}
+\begin{pythoncode}
   def elimina_letra(letra, cadena):
     """
       >>> elimina_letra('a', 'manzana')
@@ -535,9 +535,9 @@ funciones, una a la vez.
       >>> elimina_letra('i', 'Mississippi')
       'Msssspp'
     """
-\end{verbatim}
+\end{pythoncode}
 \item Es palíndromo:
-\begin{verbatim}
+\begin{pythoncode}
   def es_palindromo(s):
     """
       >>> es_palindromo('abba')
@@ -551,9 +551,9 @@ funciones, una a la vez.
       >>> es_palindromo('zorra arroz')
       True
     """
-\end{verbatim}
+\end{pythoncode}
 \item Cuenta el número de ocurrencias:
-\begin{verbatim}
+\begin{pythoncode}
   def cuenta(sub, s):
     """
       >>> cuenta('is', 'Mississippi')
@@ -567,9 +567,9 @@ funciones, una a la vez.
       >>> cuenta('nanan', 'banana')
       0
     """
-\end{verbatim}
+\end{pythoncode}
 \item Eliminar la primera ocurrencia: 
-\begin{verbatim}
+\begin{pythoncode}
   def elimina(sub, s):
     """
       >>> elimina('an', 'banana')
@@ -581,9 +581,9 @@ funciones, una a la vez.
       >>> elimina('huevo', 'bicicleta')
       'bicicleta'
     """
-\end{verbatim}
+\end{pythoncode}
 \item Eliminar todas las ocurrencias:
-\begin{verbatim}
+\begin{pythoncode}
   def elimina_todo(sub, s):
     """
       >>> elimina_todo('an', 'banana')
@@ -595,6 +595,6 @@ funciones, una a la vez.
       >>> elimina_todo('huevos', 'bicicleta')
       'bicicleta'
     """
-\end{verbatim}
+\end{pythoncode}
 \end{enumerate}
 
