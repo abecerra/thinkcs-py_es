@@ -72,8 +72,8 @@ Ahora podemos agregar un ciclo para jugar, sencillo, con un solo jugador:\pagebr
 # triqui1.py
 while True:
     print("Juegue jugador O")
-    f = input("fila? ")
-    c = input("columna? ")
+    f = int(input("fila? "))
+    c = int(input("columna? "))
     triqui[f][c] = "O"
     imprimir(triqui)
 \end{pythoncode}
@@ -117,8 +117,8 @@ para el primer jugador:
 \begin{pythoncode}
 # triqui3.py
 print("Juegue jugador O")
-    f = input("fila? ")
-    c = input("columna? ")
+    f = int(input("fila? "))
+    c = int(input("columna? "))
     triqui[f][c] = "O"
     imprimir(triqui)
     if ganaDiagonal1("O",triqui) or ganaDiagonal2("O",triqui):
@@ -160,8 +160,8 @@ modificamos el ciclo del juego. Por ejemplo, para el jugador 'X':
 # triqui4.py
 while True:
     print("Juegue jugador X")
-    f = input("fila? ")
-    c = input("columna? ")
+    f = int(input("fila? "))
+    c = int(input("columna? "))
     triqui[f][c] = "X"
     imprimir(triqui)
     if ganaDiagonal1("X",triqui) or ganaDiagonal2("X",triqui) or \
@@ -189,8 +189,8 @@ en una función que tenga como parámetro el símbolo del jugador:
 # triqui5.py
 def jugar(jugador,tablero):
     print("Juegue jugador ", jugador)
-    f = input("fila? ")
-    c = input("columna? ")
+    f = int(input("fila? "))
+    c = int(input("columna? "))
     tablero[f][c] = jugador
     imprimir(triqui)
     diag = ganaDiagonal1(jugador,tablero) or \
@@ -301,8 +301,8 @@ cuando no ha escogido una casilla válida:
 def jugar(jugador,tablero):
     while True:     
         print("Juegue jugador ", jugador)
-        f = input("fila? ")
-        c = input("columna? ")
+        f = int(input("fila? "))
+        c = int(input("columna? "))
         if type(f)==type(c)==type(1) and valido(f) 
            and valido(c) and tablero[f][c]==' ':
             tablero[f][c] = jugador

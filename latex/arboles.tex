@@ -612,7 +612,7 @@ def animal():
     while arbol.obtenerizquierdo() != None:
       pregunta = arbol.obtenercarga() + "? "
       if si(pregunta):
-        árbol = arbol.obtenerderecho()
+        arbol = arbol.obtenerderecho()
       else:
         arbol = arbol.obtenerizquierdo()
 
@@ -625,10 +625,10 @@ def animal():
 
     # obtener mas informacion
     pregunta  = "¿Cual es el nombre el animal? "
-    animal  = raw_input(pregunta)
+    animal  = input(pregunta)
     pregunta  = "¿Que pregunta permitiria 
                   distinguir un %s de un %s? "
-    q = raw_input(pregunta % (animal,conjetura))
+    q = input(pregunta % (animal,conjetura))
 
     # agrega un nuevo nodo arbol
     arbol.asignarcarga(q)
@@ -649,7 +649,7 @@ s} o {\em S}, retorna cierto:
 \begin{pythoncode}
 def si(preg):
   from string import lower
-  r = lower(raw_input(preg))
+  r = lower(input(preg))
   return (r[0] == 's')
 \end{pythoncode}
 \afterverb La condición del ciclo es \texttt{True}, lo que implica

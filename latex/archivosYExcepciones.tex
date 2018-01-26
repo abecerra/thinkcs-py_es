@@ -461,7 +461,7 @@ Por ejemplo, podemos preguntar al usuario por el nombre de un archivo
 y luego intentar abrirlo. Si el archivo no existe, no queremos que
 el programa se aborte; queremos manejar la excepción.
 \begin{pythoncode}
-nombreArch = raw_input('Introduce un nombre de archivo: ')
+nombreArch = input('Introduce un nombre de archivo: ')
 try:
   f = open (nombreArch, "r")
 except:
@@ -495,8 +495,8 @@ del usuario y comprueba si es 17. Suponiendo que 17 no es una entrada
 válida por cualquier razón, lanzamos una excepción.
 \begin{pythoncode}
 # -*- coding: utf-8 -*-
-def tomaNumero () :                 
-  x = input ('Elige un número: ')   
+def tomaNumero() :                 
+  x = int(input('Elige un número: '))
   if x == 17 :
     raise 'ErrorNumeroMalo', '17 es un mal número'
   return x

@@ -464,53 +464,55 @@ Los programas que hemos escrito son un poco toscos ya que no aceptan
 entrada de un usuario. Sólo hacen la misma operación todo el tiempo.
 
 Python proporciona funciones primitivas que obtienen entrada desde
-el teclado. La más sencilla se llama \texttt{raw\_input}. Cuando esta
+el teclado. La más sencilla se llama \texttt{input}. Cuando esta
 función se llama el programa se detiene y espera a que el usuario
 digite algo. Cuando el usuario digita la tecla Enter o Intro, el programa
-retoma la ejecución y \texttt{raw\_input} retorna lo que el usuario
+retoma la ejecución y \texttt{input} retorna lo que el usuario
 digitó como una cadena (\texttt{string}):
 
 \begin{pyconcode}
->>> entrada = raw_input ()
+>>> entrada = input()
 Que esta esperando?
 >>> print(entrada)
 Que esta esperando?
 \end{pyconcode}
- Antes de llamar a \texttt{raw\_input} es una muy buena idea desplegar
+
+Antes de llamar a \texttt{input} es una muy buena idea desplegar
 un mensaje diciéndole al usuario qué digitar. Este mensaje se denomina
 indicador de entrada (\textbf{prompt} en inglés). Podemos dar un argumento
-prompt a \texttt{raw\_input}:
+prompt a \texttt{input}:
 
 \index{prompt}
 
 \begin{pyconcode}
->>> nombre = raw_input ("Cual es tu nombre? ")
+>>> nombre = input("Cual es tu nombre? ")
 Cual es tu nombre? Arturo, Rey de los Bretones!
 >>> print(nombre)
 Arturo, Rey de los Bretones!
 \end{pyconcode}
 
-Si esperamos que la respuesta sea un entero, podemos usar la función
-\texttt{input}:
+En Python 3 la función \texttt{input} devuelve cadenas de texto. Si esperamos 
+que la respuesta sea un entero, podemos usar la función \texttt{int} para intentar
+convertir esa cadena ingresada en un número entero:
 
 \begin{pythoncode}
 prompt = "Cual es la velocidad de una golondrina sin carga?\n"
-velocidad = input(prompt)
+velocidad = int(input(prompt))
 \end{pythoncode}
- Si el usuario digita una cadena de dígitos, éstos se convierten a
+
+Si el usuario digita una cadena de dígitos, éstos se convierten a
 un entero que se asigna a \texttt{velocidad}. Desafortunadamente,
-si el usuario digita una entrada que no representa un dígito, velocidad
-almacenará una cadena de texto.
+si el usuario digita una entrada que no representa un dígito, el 
+programa fallará.
 
 \begin{pyconcode}
 >>> prompt = "Cual es la velocidad una golondrina sin carga?\n"
->>> velocidad = input (prompt)
+>>> velocidad = int(input(prompt))
 Que quiere decir, una golondria Africana o Europea?
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'Que quiere decir, una golondria Africana o Europea?'
 \end{pyconcode}
-
-Para evitar este error, es una buena idea usar \texttt{raw\_input}
-para obtener una cadena y las funciones de conversión (int, float)
-para transformarla en otros tipos.
 
 \section{Glosario}
 \begin{description}
