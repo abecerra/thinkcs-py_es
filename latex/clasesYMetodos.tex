@@ -65,7 +65,7 @@ los problemas que tenga a la mano.
 En el capítulo~\ref{time}, definimos una clase denominada \texttt{Hora}
 y usted escribió una función denominada \texttt{imprimirHora}, que
 lucía así:
-\begin{verbatim}
+\begin{pythoncode}
 class Hora:
   pass
 
@@ -73,35 +73,35 @@ def imprimirHora(h):
   print(str(h.hora) + ":" + 
         str(h.minutos) + ":" + 
         str(h.segundos))
-\end{verbatim}
+\end{pythoncode}
 
 Para llamar esta función, le pasamos un objeto \texttt{Hora} como
 parámetro:
-\begin{verbatim}
+\begin{pyconcode}
 >>> horaActual = Hora()
 >>> horaActual.hora = 9
 >>> horaActual.minutos = 14
 >>> horaActual.segundos = 30
 >>> imprimirHora(horaActual)
-\end{verbatim}
+\end{pyconcode}
 
 Para convertir \texttt{imprimirHora} en un método todo lo que tenemos
 que hacer es ponerla adentro de la definición de clase. Note como
 ha cambiado la indentación.
 
-\begin{verbatim}
+\begin{pythoncode}
 class Hora:
   def imprimirHora(h):
     print( str(h.hora) + ":" + 
           str(h.minutos) + ":" + 
           str(h.segundos))
-\end{verbatim}
+\end{pythoncode}
  Ahora podemos llamar a \texttt{imprimirHora} usando la notación punto.
 
 \index{notación punto}
-\begin{verbatim}
+\begin{pyconcode}
 >>> horaActual.imprimirHora()
-\end{verbatim}
+\end{pyconcode}
 
 Como de costumbre, el objeto en el que el método se llama aparece
 antes del punto y el nombre del método va a la derecha. El objeto
@@ -132,7 +132,7 @@ mantenimiento de código.
 Convirtamos \texttt{incrementar} (de la Sección~\ref{increment})
 en un método. Para ahorrar espacio, omitiremos los métodos que ya
 definimos, pero usted debe conservarlos en su programa:
-\begin{verbatim}
+\begin{pythoncode}
 class Hora:
   # Las definiciones anteriores van aquí...
   
@@ -148,14 +148,14 @@ class Hora:
       self.hora = self.hora + 1
 
     return self
-\end{verbatim}
+\end{pythoncode}
  La transformación es totalmente mecánica —ponemos la definición del
 método adentro de la clase y cambiamos el nombre del primer parámetro.
 
 Ahora podemos llamar a \texttt{incrementar} como método:
-\begin{verbatim}
+\begin{pythoncode}
 horaActual.incrementar(500)
-\end{verbatim}
+\end{pythoncode}
 
 Nuevamente, el objeto con el cual se invoca el método se asigna al
 primer parámetro, \texttt{self}. El segundo parámetro, \texttt{segundos}
@@ -167,7 +167,7 @@ El método \texttt{despues} es un poco más complejo ya que opera sobre
 dos objetos \texttt{Hora}, no sólo uno. Solamente podemos convertir
 uno de los parámetros a \texttt{self}; el otro continúa igual:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Hora:
   # Las definiciones anteriores van aqui...
 
@@ -185,13 +185,13 @@ class Hora:
     if self.segundos > hora2.segundos:
       return True
     return False
-\end{verbatim}
+\end{pythoncode}
  Llamamos a este método sobre un objeto y le pasamos el otro como
 argumento:
-\begin{verbatim}
+\begin{pythoncode}
 if horaComer.despues(horaActual):
   print("El pan estará listo para comer en un momento.")
-\end{verbatim}
+\end{pythoncode}
 
 Casi se puede leer el llamado en lenguaje natural:``Si la hora para
 Comer viene después de la hora Actual, entonces ...''.
@@ -210,7 +210,7 @@ Esta es la versión original que introdujimos en la Sección~\ref{find}:
 
 \pagebreak{}
 
-\begin{verbatim}
+\begin{pythoncode}
 def buscar(cad, c):
   indice = 0
   while indice < len(cad):
@@ -218,9 +218,9 @@ def buscar(cad, c):
       return indice
     indice = indice + 1
   return -1
-\end{verbatim}
+\end{pythoncode}
  Esta es la nueva versión, mejorada:
-\begin{verbatim}
+\begin{pythoncode}
 def buscar(cad, c,ini=0):
   indice = ini
   while indice < len(cad):
@@ -228,25 +228,25 @@ def buscar(cad, c,ini=0):
       return indice
     indice = indice + 1
   return -1
-\end{verbatim}
+\end{pythoncode}
 
 El tercer parámetro, \texttt{ini}, es opcional, ya que tiene un valor
 por defecto, \texttt{0}. Si llamamos a \texttt{buscar} con dos argumentos,
 se usa el valor por defecto y la búsqueda se hace desde el principio
 de la cadena:
-\begin{verbatim}
+\begin{pythoncode}
 >>> buscar("apple", "p")
 1
-\end{verbatim}
+\end{pythoncode}
 
 Si se pasa el tercer parámetro, este \textbf{sobreescribe} el valor
 por defecto:
-\begin{verbatim}
+\begin{pyconcode}
 >>> buscar("apple", "p", 2)
 2
 >>> buscar("apple", "p", 3)
 -1
-\end{verbatim}
+\end{pyconcode}
 
 \section{El método de inicialización}
 
@@ -257,13 +257,13 @@ se crea un objeto. El nombre de este método es \texttt{\_\_init\_\_}
 (dos caracteres de subrayado, seguidos por \texttt{init}, y luego
 dos caracteres de subrayado más). Un método de inicialización para
 la clase \texttt{Hora} se presenta a continuación:
-\begin{verbatim}
+\begin{pythoncode}
 class Hora:
   def __init__(self, hora=0, minutos=0, segundos=0):
     self.hora = hora
     self.minutos = minutos
     self.segundos = segundos
-\end{verbatim}
+\end{pythoncode}
 
 No hay conflicto entre el atributo \texttt{self.hora} y el parámetro
 \texttt{hora}. La notación punto especifica a qué variable nos estamos
@@ -273,40 +273,40 @@ refiriendo.
 
 Cuando llamamos al método constructor de \texttt{Hora}, los argumentos
 se pasan a \texttt{init}:
-\begin{verbatim}
+\begin{pyconcode}
 >>> horaActual = Hora(9, 14, 30)
 >>> horaActual.imprimirHora()
 >>> 9:14:30
-\end{verbatim}
+\end{pyconcode}
 
 Como los parámetros son opcionales, se pueden omitir:
-\begin{verbatim}
+\begin{pyconcode}
 >>> horaActual = Hora()
 >>> horaActual.imprimirHora()
 >>> 0:0:0
-\end{verbatim}
+\end{pyconcode}
 
 O podemos pasar solo un parámetro:
-\begin{verbatim}
+\begin{pyconcode}
 >>> horaActual = Hora(9)
 >>> horaActual.imprimirHora()
 >>> 9:0:0
-\end{verbatim}
+\end{pyconcode}
 
 O, sólo los dos primeros:
-\begin{verbatim}
+\begin{pyconcode}
 >>> horaActual = Hora(9, 14)
 >>> horaActual.imprimirHora()
 >>> 9:14:0
-\end{verbatim}
+\end{pyconcode}
 
 Finalmente, podemos proporcionar algunos parámetros, nombrándolos
 explícitamente:
-\begin{verbatim}
+\begin{pyconcode}
 >>> horaActual = Hora(segundos = 30, hora = 9)
 >>> horaActual.imprimirHora()
 >>> 9:0:30
-\end{verbatim}
+\end{pyconcode}
 
 \section{Reconsiderando la clase Punto}
 
@@ -314,7 +314,7 @@ explícitamente:
 
 Reescribamos la clase \texttt{Punto} de la Sección~\ref{point} en
 un estilo más orientado a objetos:
-\begin{verbatim}
+\begin{pythoncode}
 class Punto:
   def __init__(self, x=0, y=0):
     self.x = x
@@ -322,7 +322,7 @@ class Punto:
 
   def __str__(self):
     return '(' + str(self.x) + ', ' + str(self.y) + ')'
-\end{verbatim}
+\end{pythoncode}
 
 El método de inicialización toma los valores $x$ y $y$ como parámetros
 opcionales, el valor por defecto que tienen es 0.
@@ -331,20 +331,20 @@ El método \texttt{\_\_str\_\_}, retorna una representación de un objeto
 \texttt{Punto} en forma de cadena de texto. Si una clase proporciona
 un método denominado \texttt{\_\_str\_\_}, éste sobreescribe el comportamiento
 por defecto de la función primitiva \texttt{str}.
-\begin{verbatim}
+\begin{pyconcode}
 >>> p = Punto(3, 4)
 >>> str(p)
 '(3, 4)'
-\end{verbatim}
+\end{pyconcode}
 
 Imprimir un objeto \texttt{Punto} implícitamente invoca a \texttt{\_\_str\_\_}
 o sobre éste, así que definir a \texttt{\_\_str\_\_} también cambia
 el comportamiento de la sentencia \texttt{print}:
-\begin{verbatim}
+\begin{pyconcode}
 >>> p = Punto(3, 4)
 >>> print(p)
 (3, 4)
-\end{verbatim}
+\end{pyconcode}
 
 Cuando escribimos una nueva clase, casi siempre empezamos escribiendo
 \texttt{\_\_init\_\_}, ya que facilita la instanciación de objetos,
@@ -362,13 +362,13 @@ Es especialmente útil para definir tipos de datos matemáticos.
 
 Por ejemplo, para sobrecargar el operador suma, \texttt{+}, proporcionamos
 un método denominado \texttt{\_\_add\_\_}:
-\begin{verbatim}
+\begin{pythoncode}
 class Punto:
   # los métodos definidos previamente van aquí...
 
   def __add__(self, otro):
     return Punto(self.x + otro.x, self.y + otro.y)
-\end{verbatim}
+\end{pythoncode}
 
 Como de costumbre, el primer parámetro es el objeto con el cual se
 invoca el método. El segundo parámetro se denomina con la palabra
@@ -379,13 +379,13 @@ las coordenadas en el eje $y$.
 
 Ahora, cuando aplicamos el operador \texttt{+} a dos objetos \texttt{Punto},
 Python hace el llamado del método \texttt{\_\_add\_\_}:
-\begin{verbatim}
+\begin{pyconcode}
 >>>   p1 = Punto(3, 4)
 >>>   p2 = Punto(5, 7)
 >>>   p3 = p1 + p2
 >>>   print(p3)
 (8, 11)
-\end{verbatim}
+\end{pyconcode}
 
 La expresión \texttt{p1 + p2} es equivalente a \texttt{p1.\_\_add\_\_(p2)},
 pero luce mucho mas elegante.
@@ -398,18 +398,18 @@ Si el operando izquierdo de \texttt{{*}} es un \texttt{Punto}, Python
 invoca a \texttt{\_\_mul\_\_}, asumiendo que el otro operando también
 es un \texttt{Punto}. Calcula el \textbf{producto escalar} de los
 dos puntos de acuerdo a las reglas del álgebra lineal:
-\begin{verbatim}
+\begin{pythoncode}
 def __mul__(self, otro):
   return self.x * otro.x + self.y * otro.y
-\end{verbatim}
+\end{pythoncode}
 
 Si el operando izquierdo de \texttt{{*}} es un tipo primitivo y el
 operando derecho es un \texttt{Punto}, Python llama a \texttt{\_\_rmul\_\_},
 que ejecuta la \textbf{multiplicación escalar }:
-\begin{verbatim}
+\begin{pythoncode}
 def __rmul__(self, otro):
   return Punto(otro * self.x,  otro * self.y)
-\end{verbatim}
+\end{pythoncode}
 
 El resultado ahora es un nuevo \texttt{Punto} cuyas coordenadas son
 múltiplos de las originales. Si \texttt{otro} pertenece a un tipo
@@ -417,24 +417,24 @@ que no se puede multiplicar por un número de punto flotante, la función
 \texttt{\_\_rmul\_\_} producirá un error.
 
 Este ejemplo ilustra las dos clases de multiplicación:
-\begin{verbatim}
+\begin{pyconcode}
 >>> p1 = Punto(3, 4)
 >>> p2 = Punto(5, 7)
 >>> print(p1 * p2)
 43
 >>> print(2 * p2)
 (10, 14)
-\end{verbatim}
+\end{pyconcode}
  ¿Que pasa si tratamos de evaluar \texttt{p2 {*} 2}? Ya que el primer
 parámetro es un \texttt{Punto}, Python llama a \texttt{\_\_mul\_\_}
 con \texttt{2} como segundo argumento. Dentro de \texttt{\_\_mul\_\_},
 el programa intenta acceder al valor \texttt{x} de \texttt{otro},
 lo que falla porque un número entero no tiene atributos:
 
-\begin{verbatim}
+\begin{pythoncode}
 >>> print(p2 * 2)
 AttributeError: 'int' object has no attribute 'x'
-\end{verbatim}
+\end{pythoncode}
  Desafortunadamente, el mensaje de error es un poco opaco. Este ejemplo
 demuestra una de las dificultades de la programación orientada a objetos.
 Algunas veces es difícil saber qué código está ejecutándose.
@@ -460,29 +460,29 @@ Por ejemplo la operación \texttt{multsuma} (que se usa en el álgebra
 lineal) toma tres parámetros, multiplica los primeros dos y luego
 suma a esto el tercero. En Python se puede escribir así:
 
-\begin{verbatim}
+\begin{pythoncode}
 def multsuma (x, y, z):
   return x * y + z
-\end{verbatim}
+\end{pythoncode}
  Este método funcionará para cualesquier valores de \texttt{x} e \texttt{y}
 que puedan multiplicarse, y para cualquier valor de \texttt{z} que
 pueda sumarse al producto.
 
 Podemos llamarla sobre números:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> multsuma (3, 2, 1)
 7
-\end{verbatim}
+\end{pyconcode}
  O sobre \texttt{Punto}s:
-\begin{verbatim}
+\begin{pyconcode}
 >>> p1 = Punto(3, 4)
 >>> p2 = Punto(5, 7)
 >>> print(multsuma (2, p1, p2))
 (11, 15)
 >>> print(multsuma (p1, p2, 1))
 44
-\end{verbatim}
+\end{pyconcode}
 
 En el primer caso, el \texttt{Punto} se multiplica por un escalar
 y luego se suma a otro \texttt{Punto}. En el segundo caso, el producto
@@ -495,24 +495,24 @@ se denomina \textbf{polimórfica}.
 Otro ejemplo es la función \texttt{derechoyAlReves}, que imprime una
 lista dos veces, al derecho y al revés:
 
-\begin{verbatim}
+\begin{pythoncode}
 def derechoyAlReves(l):
   import copy
   r = copy.copy(l)
   r.reverse()
   print(str(l) + str(r))
-\end{verbatim}
+\end{pythoncode}
  Como el método \texttt{reverse} es una función modificadora, tenemos
 que tomar la precaución de hacer una copia de la lista antes de llamarlo.
 De esta forma la lista que llega como parámetro no se modifica.
 
 Aquí hay un ejemplo que aplica \texttt{derechoyAlReves} a una lista:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> miLista = [1, 2, 3, 4]
 >>> derechoyAlReves(miLista)
 [1, 2, 3, 4][4, 3, 2, 1]
-\end{verbatim}
+\end{pyconcode}
  Por supuesto que funciona para listas, esto no es sorprendente. Lo
 que sería sorprendente es que pudiéramos aplicarla a un \texttt{Punto}.
 
@@ -529,17 +529,17 @@ y \texttt{print}.
 un método \texttt{\_\_str\_\_} para los \texttt{Punto}s, lo único
 que nos falta es el método \texttt{reverse} dentro de la clase \texttt{Punto}:
 
-\begin{verbatim}
+\begin{pythoncode}
 def reverse(self):
   self.x , self.y = self.y, self.x
-\end{verbatim}
+\end{pythoncode}
  Entonces podemos aplicar \texttt{derechoyAlReves} a objetos \texttt{Punto}:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>>   p = Punto(3, 4)
 >>>   derechoyAlReves(p)
 (3, 4)(4, 3)
-\end{verbatim}
+\end{pyconcode}
  El mejor tipo de polimorfismo es el que no se pretendía lograr, aquel
 en el que se descubre que una función escrita puede aplicarse a un
 tipo para el cual no se había planeado hacerlo.
