@@ -9,14 +9,14 @@ calculando el residuo del primer operando cuando se divide por el
 segundo. En Python este operador es un signo porcentaje (\texttt{\%}).
 La sintaxis es la misma que para los otros operadores:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> cociente = 7 // 3
 >>> print(cociente)
 2
 >>> residuo = 7 % 3
 >>> print(residuo)
 1
-\end{verbatim}
+\end{pyconcode}
 
 Así que 7 dividido por 3 da 2 con residuo 1.
 
@@ -45,25 +45,25 @@ mayúsculas importan, ya que true y false no son valores booleanos.
 El operador \texttt{==} compara dos valores y produce una expresión
 booleana:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> 5 == 5
 True
 >>> 5 == 6
 False
-\end{verbatim}
+\end{pyconcode}
  En la primera sentencia, los dos operandos son iguales, así que la
 expresión evalúa a True (cierto); en la segunda sentencia, 5 no es
 igual a 6, así que obtenemos False (falso).
 
 El operador \texttt{==} es uno de los \textbf{operadores de comparación};
 los otros son:
-\begin{verbatim}
+\begin{pyconcode}
       x != y               # x no es igual y
       x > y                # x es mayor que y
       x < y                # x es menor que y
       x >= y               # x es mayor o igual a y
       x <= y               # x es menor o igual a y
-\end{verbatim}
+\end{pyconcode}
 
 Aunque estas operaciones probablemente son familiares para usted,
 los símbolos en Python difieren de los matemáticos. Un error común
@@ -94,14 +94,14 @@ es falsa, esto es, si \texttt{x} es menor o igual a \texttt{y}.
 Formalmente, los operandos de los operadores lógicos deben ser expresiones
 booleanas, pero Python no es muy formal. Cualquier número diferente
 de cero se interpreta como ``cierto.''
-\begin{verbatim}
+\begin{pyconcode}
 >>>  x = 5
 >>>  x and 1
 1
 >>>  y = 0
 >>>  y and 1
 0
-\end{verbatim}
+\end{pyconcode}
 
 En general, esto no se considera un buen estilo de programación. Si
 usted desea comparar un valor con cero, procure codificarlo explícitamente.
@@ -115,10 +115,10 @@ A fin de escribir programas útiles, casi siempre necesitamos la capacidad
 de chequear condiciones y cambiar el comportamiento del programa en
 consecuencia. Las \textbf{sentencias condicionales} nos dan este poder.
 La más simple es la sentencia \texttt{if}: 
-\begin{verbatim}
+\begin{pythoncode}
 if x > 0:
   print("x es positivo")
-\end{verbatim}
+\end{pythoncode}
 
 La expresión después de la sentencia \texttt{if} se denomina la \textbf{condición}.
 Si es cierta, la sentencia de abajo se ejecuta. Si no lo es, no pasa
@@ -130,12 +130,12 @@ nada.
 
 Como otras sentencias compuestas, la sentencia \texttt{if} comprende
 una cabecera y un bloque de sentencias:
-\begin{verbatim}
+\begin{pythoncode}
 CABECERA:
   PRIMERA SENTENCIA
   ...
   ULTIMA SENTENCIA
-\end{verbatim}
+\end{pythoncode}
 La cabecera comienza en una nueva línea y termina con dos puntos seguidos
 (:). Las sentencias sangradas o indentadas que vienen a continuación
 se denominan el \textbf{bloque}. La primera sentencia sin sangrar
@@ -159,12 +159,12 @@ sentencia \texttt{pass}, que no hace nada.
 Una segunda forma de sentencia \texttt{if} es la ejecución alternativa
 en la que hay dos posibilidades y la condición determina cual de ellas
 se ejecuta. La sintaxis luce así:
-\begin{verbatim}
+\begin{pythoncode}
 if x%2 == 0:
   print(x, "es par")
 else:
   print(x, "es impar")
-\end{verbatim}
+\end{pythoncode}
 
 Si el residuo de dividir \texttt{x} por 2 es 0, entonces sabemos que
 \texttt{x} es par, y el programa despliega un mensaje anunciando esto.
@@ -179,21 +179,21 @@ de ejecución.
 Yéndonos ``por las ramas'', si usted necesita chequear la paridad
 (si un número es par o impar) a menudo, se podría ``envolver'' el
 código anterior en una función:
-\begin{verbatim}
+\begin{pythoncode}
 def imprimirParidad(x):
   if x%2 == 0:
     print(x, "es par")
   else:
     print(x, "es impar")
-\end{verbatim}
+\end{pythoncode}
 
 Para cualquier valor de \texttt{x}, \texttt{imprimirParidad} despliega
 un mensaje apropiado. Cuando se llama la función, se le puede pasar
 cualquier expresión entera como argumento.
-\begin{verbatim}
+\begin{pythoncode}
 >>> imprimirParidad(17)
 >>> imprimirParidad(y+1)
-\end{verbatim}
+\end{pythoncode}
 
 \section{Condicionales encadenados}
 
@@ -203,19 +203,19 @@ Algunas veces hay más de dos posibilidades y necesitamos más de dos
 ramas. Una forma de expresar un cálculo así es un \textbf{condicional
 encadenado}:
 
-\begin{verbatim}
+\begin{pythoncode}
 if x < y:
   print(x, "es menor que", y)
 elif x > y:
   print(x, "es mayor que", y)
 else:
   print(x, "y", y, "son iguales")
-\end{verbatim}
+\end{pythoncode}
 
 \texttt{elif} es una abreviatura de ``else if.'' De nuevo, exactamente
 una de las ramas se ejecutará. No hay límite en el número de sentencias
 \texttt{elif}, pero la última rama tiene que ser una sentencia \texttt{else}:
-\begin{verbatim}
+\begin{pythoncode}
 if eleccion == 'A':
   funcionA()
 elif eleccion == 'B':
@@ -224,7 +224,7 @@ elif eleccion == 'C':
   funcionC()
 else:
   print("Eleccion incorrecta.")
-\end{verbatim}
+\end{pythoncode}
 
 Cada condición se chequea en orden. Si la primera es falsa, se chequea
 la siguiente, y así sucesivamente. Si una de ellas es cierta, se ejecuta
@@ -236,7 +236,7 @@ condición cierta, sólo la primera rama que evalúa a cierto se ejecuta.
 Un condicional también se puede anidar dentro de otro. La tricotomía
 anterior se puede escribir así:
 
-\begin{verbatim}
+\begin{pythoncode}
 if x == y:
   print(x, "y", y, "son iguales")
 else:
@@ -244,7 +244,7 @@ else:
     print(x, "es menor que", y)
   else:
     print(x, "es mayor que", y)
-\end{verbatim}
+\end{pythoncode}
  El condicional externo contiene dos ramas: la primera contiene una
 sentencia de salida sencilla, la segunda contiene otra sentencia \texttt{if},
 que tiene dos ramas propias. Esas dos ramas son sentencias de impresión,
@@ -257,25 +257,25 @@ En general, es una buena idea evitarlos cada vez que se pueda.
 Los operadores lógicos proporcionan formas de simplificar las sentencias
 condicionales anidadas. Por ejemplo, podemos reescribir el siguiente
 código usando un solo condicional:
-\begin{verbatim}
+\begin{pythoncode}
 if 0 < x:
   if x < 10:
     print("x es un digito positivo.")
-\end{verbatim}
+\end{pythoncode}
 
 La sentencia \texttt{print} se ejecuta solamente si el flujo de ejecución
 ha pasado las dos condiciones, así que podemos usar el operador \texttt{and}:
-\begin{verbatim}
+\begin{pythoncode}
 if 0 < x and x < 10:
   print("x es un digito positivo.")
-\end{verbatim}
+\end{pythoncode}
 
 Esta clase de condiciones es muy común, por esta razón Python proporciona
 una sintaxis alternativa que es similar a la notación matemática:
-\begin{verbatim}
+\begin{pythoncode}
 if 0 < x < 10:
   print("x es un digito positivo")
-\end{verbatim}
+\end{pythoncode}
 
 Desde el punto de vista semántico ésta condición es la misma que la
 expresión compuesta y que el condicional anidado.
@@ -288,7 +288,7 @@ La sentencia \texttt{return} permite terminar la ejecución de una
 función antes de llegar al final. Una razón para usarla es reaccionar
 a una condición de error:
 
-\begin{verbatim}
+\begin{pythoncode}
 import math
 
 def imprimirLogaritmo(x):
@@ -298,7 +298,7 @@ def imprimirLogaritmo(x):
 
   result = math.log(x)
   print("El logaritmo de ",  x ," es ", result)
-\end{verbatim}
+\end{pythoncode}
  La función \texttt{imprimirLogaritmo} toma un parámetro denominado
 \texttt{x}. Lo primero que hace es chequear si \texttt{x} es menor
 o igual a 0, caso en el que despliega un mensaje de error y luego
@@ -320,16 +320,14 @@ parece algo útil, pero resulta ser una de las capacidades más interesantes
 y mágicas que un programa puede tener. Por ejemplo, observe la siguiente
 función:
 
-\pagebreak{}
-
-\begin{verbatim}
+\begin{pythoncode}
 def conteo(n):
   if n == 0:
     print("Despegue!")
   else:
     print(n)
     conteo(n-1)
-\end{verbatim}
+\end{pythoncode}
 
 \texttt{conteo} espera que el parámetro \texttt{n} sea un número entero
 positivo. Si \texttt{n} es 0, despliega la cadena, ``Despegue!''.
@@ -337,9 +335,9 @@ Si no lo es, despliega \texttt{n} y luego llama a la función llamada
 \texttt{conteo}—ella misma—pasando a \texttt{n-1} como argumento.
 
 Analicemos lo que sucede si llamamos a esta función así:
-\begin{verbatim}
+\begin{pyconcode}
 >>> conteo(3)
-\end{verbatim}
+\end{pyconcode}
 
 La ejecución de \texttt{conteo} comienza con \texttt{n=3}, y como
 \texttt{n} no es 0, despliega el valor 3, y se llama a sí misma ...
@@ -363,16 +361,16 @@ El \texttt{conteo} que recibió \texttt{n=3} retorna.
 
 Y el flujo de ejecución regresa a \texttt{\_\_main\_\_} (vaya viaje!).
 Así que, la salida total luce así:
-\begin{verbatim}
+\begin{pythoncode}
 3
 2
 1
 Despegue!
-\end{verbatim}
+\end{pythoncode}
 Como otro ejemplo, utilizaremos nuevamente las funciones \texttt{nuevaLinea}
 y \texttt{tresLineas}:
 
-\begin{verbatim}
+\begin{pythoncode}
 def nuevalinea():
   print()
 
@@ -380,17 +378,17 @@ def tresLineas():
   nuevaLinea()
   nuevaLinea()
   nuevaLinea()
-\end{verbatim}
+\end{pythoncode}
 
 Este trabajo no sería de mucha ayuda si quisiéramos desplegar 2 líneas
 o 106. Una mejor alternativa sería:
 
-\begin{verbatim}
+\begin{pythoncode}
 def nLineas(n):
   if n > 0:
     print()
     nLineas(n-1)
-\end{verbatim}
+\end{pythoncode}
  Esta función es similar a \texttt{conteo}; en tanto \texttt{n} sea
 mayor a 0, despliega una nueva línea y luego se llama a sí misma para
 desplegar \texttt{n-1} líneas adicionales. Así, el número total de
@@ -443,19 +441,19 @@ recursivos por siempre y el programa nunca termina. Esto se conoce
 como \textbf{recursión infinita}, y, generalmente, no se considera
 una buena idea. Aquí hay un programa minimalista con recursión infinita:
 
-\begin{verbatim}
+\begin{pythoncode}
 def recurrir():
   recurrir()
-\end{verbatim}
+\end{pythoncode}
  En la mayoría de ambientes de programación un programa con recursión
 infinita no corre realmente para siempre. Python reporta un mensaje
 de error cuando alcanza la máxima profundidad de recursión:
-\begin{verbatim}
+\begin{pythoncode}
   File "<stdin>", line 2, in recurrir
   (98 repeticiones omitidas)
   File "<stdin>", line 2, in recurrir
 RuntimeError: Maximum recursion depth exceeded
-\end{verbatim}
+\end{pythoncode}
 Este trazado inverso es un poco más grande que el que vimos en el
 capítulo anterior. Cuando se presenta el error, ¡hay más de 100 marcos
 de \texttt{recurrir} en la pila!.
@@ -472,12 +470,12 @@ digite algo. Cuando el usuario digita la tecla Enter o Intro, el programa
 retoma la ejecución y \texttt{raw\_input} retorna lo que el usuario
 digitó como una cadena (\texttt{string}):
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> entrada = raw_input ()
 Que esta esperando?
 >>> print(entrada)
 Que esta esperando?
-\end{verbatim}
+\end{pyconcode}
  Antes de llamar a \texttt{raw\_input} es una muy buena idea desplegar
 un mensaje diciéndole al usuario qué digitar. Este mensaje se denomina
 indicador de entrada (\textbf{prompt} en inglés). Podemos dar un argumento
@@ -485,30 +483,30 @@ prompt a \texttt{raw\_input}:
 
 \index{prompt}
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> nombre = raw_input ("Cual es tu nombre? ")
 Cual es tu nombre? Arturo, Rey de los Bretones!
 >>> print(nombre)
 Arturo, Rey de los Bretones!
-\end{verbatim}
+\end{pyconcode}
 
 Si esperamos que la respuesta sea un entero, podemos usar la función
 \texttt{input}:
 
-\begin{verbatim}
+\begin{pythoncode}
 prompt = "Cual es la velocidad de una golondrina sin carga?\n"
 velocidad = input(prompt)
-\end{verbatim}
+\end{pythoncode}
  Si el usuario digita una cadena de dígitos, éstos se convierten a
 un entero que se asigna a \texttt{velocidad}. Desafortunadamente,
 si el usuario digita una entrada que no representa un dígito, velocidad
 almacenará una cadena de texto.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> prompt = "Cual es la velocidad una golondrina sin carga?\n"
 >>> velocidad = input (prompt)
 Que quiere decir, una golondria Africana o Europea?
-\end{verbatim}
+\end{pyconcode}
 
 Para evitar este error, es una buena idea usar \texttt{raw\_input}
 para obtener una cadena y las funciones de conversión (int, float)
@@ -563,16 +561,16 @@ al usuario que digite alguna información.
 en la que el primer argumento sea menor que el segundo, otra en la
 que aquel sea mayor que éste, y una tercera en la que los argumentos
 sean iguales. 
-\begin{verbatim}
+\begin{pythoncode}
  if x < y:
     print(x, "es menor que", y)
  elif x > y:
     print(x, "es mayor que", y)
  else:
     print(x, "y", y, "son iguales")
-\end{verbatim}
+\end{pythoncode}
 \item Copie este programa en un archivo llamado tabladeverdad.py: 
-\begin{verbatim}
+\begin{pythoncode}
 def tabladeverdad(expresion):
     print(" p      q      %s"  % expresion)
     longitud = len( " p      q      %s"  % expresion)
@@ -581,11 +579,8 @@ def tabladeverdad(expresion):
     for p in True, False:
         for q in True, False:
             print("%-7s %-7s %-7s" % (p, q, eval(expresion)))
-\end{verbatim}
+\end{pythoncode}
 
-\begin{verbatim}
- 
-\end{verbatim}
 Pruébelo con el llamado \verb+tabladeverdad("p or q")+. Ahora ejecútelo
 con las siguientes expresiones: 
 \begin{enumerate}

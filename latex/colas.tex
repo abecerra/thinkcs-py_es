@@ -57,7 +57,7 @@ enlazada} porque está compuesta de objetos \texttt{Nodo} enlazados.
 Aquí está la definición:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class Cola:
   def __init__(self):
     self.numElementos = 0
@@ -85,7 +85,7 @@ class Cola:
     self.primero = self.primero.siguiente
     self.numElementos = self.numElementos - 1
     return carga
-\end{verbatim}
+\end{pythoncode}
 \afterverb El método \texttt{estaVacia} es idéntico al de la \texttt{ListaEnlazada},
 \texttt{sacar} es quitar el enlace del primer nodo. El método \texttt{meter}
 es un poco más largo.
@@ -147,7 +147,7 @@ al último nodo, como se ilustra en la figura siguiente:
 La implementación de \texttt{ColaMejorada} es la siguiente:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class ColaMejorada:
   def __init__(self):
     self.numElementos = 0
@@ -156,12 +156,12 @@ class ColaMejorada:
 
   def estaVacia(self):
     return (self.numElementos == 0)
-\end{verbatim}
+\end{pythoncode}
 \afterverb Hasta aquí el único cambio es al nuevo atributo \texttt{ultimo}.
 Este debe ser usado en los métodos \texttt{meter} y \texttt{sacar}:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class ColaMejorada:
   ...
   def meter(self, carga):
@@ -177,7 +177,7 @@ class ColaMejorada:
       ultimo.siguiente = nodo
       self.ultimo = nodo
     self.numElementos = self.numElementos + 1
-\end{verbatim}
+\end{pythoncode}
 \afterverb Ya que \texttt{ultimo} lleva la pista del último nodo,
 no tenemos que buscarlo. Como resultado, este método tiene un tiempo
 constante de ejecución.
@@ -187,7 +187,7 @@ especial a \texttt{sacar} que asigne a \texttt{ultimo} el valor \texttt{None}
 cuando se saca el único elemento:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class ColaMejorada:
   ...
   def sacar(self):
@@ -197,7 +197,7 @@ class ColaMejorada:
     if self.numElementos == 0:
       self.ultimo = None
     return carga
-\end{verbatim}
+\end{pythoncode}
 \afterverb Esta implementación es más compleja que la inicial y es
 más difícil demostrar su corrección. La ventaja es que hemos logrado
 el objetivo —\texttt{meter} y \texttt{sacar} son operaciones que se
@@ -237,7 +237,7 @@ Esta implementación de la cola de prioridad tiene como atributo una
 lista de Python que contiene los elementos en la Cola.
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class ColaPrioridad:
   def __init__(self):
     self.items = []
@@ -247,13 +247,13 @@ class ColaPrioridad:
 
   def meter(self, item):
     self.items.append(item)
-\end{verbatim}
+\end{pythoncode}
 \afterverb El método de inicialización, \texttt{estaVacia}, y \texttt{meter}
 solo son barniz para operaciones sobre listas. El único interesante
 es \texttt{sacar}:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class ColaPrioridad:
   ...
   def sacar(self):
@@ -264,7 +264,7 @@ class ColaPrioridad:
     item = self.items[maxi]
     self.items[maxi:maxi+1] = []
     return item
-\end{verbatim}
+\end{pythoncode}
 \afterverb Al iniciar cada iteración, \texttt{maxi} almacena el índice
 del ítem más grande (con la prioridad más alta) que hayamos encontrado
 {\em hasta el momento}. En cada iteración, el programa compara
@@ -279,7 +279,7 @@ el mayor ítem de todos. Éste se saca de la lista y se retorna.
 Probemos la implementación:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> q = ColaPrioridad()
 >>> q.meter(11)
 >>> q.meter(12)
@@ -290,7 +290,7 @@ Probemos la implementación:
 13
 12
 11
-\end{verbatim}
+\end{pyconcode}
 \afterverb Si la Cola contiene números o cadenas, se sacan en orden
 alfabético o numérico, del más alto al más bajo. Python puede encontrar
 el mayor entero o cadena a través de los operadores de comparación
@@ -313,7 +313,7 @@ que lleva el registro de los nombres y los puntajes de jugadores de
 golf. Primero definimos \texttt{\_\_init\_\_} y \texttt{\_\_str\_\_}:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class golfista:
   def __init__(self, nombre, puntaje):
     self.nombre = nombre
@@ -321,7 +321,7 @@ class golfista:
 
   def __str__(self):
     return "%-16s: %d" % (self.nombre, self.puntaje)
-\end{verbatim}
+\end{pythoncode}
 \afterverb \texttt{\_\_str\_\_} utiliza el operador de formato para
 poner los nombres y los puntajes en dos columnas.
 
@@ -334,7 +334,7 @@ que'' \texttt{otro}, -1 si \texttt{self} es ``menor'' otro, y 0
 si son iguales.
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class golfista:
   ...
   def __cmp__(self, otro):
@@ -342,12 +342,12 @@ class golfista:
     if self.puntaje < otro.puntaje: return  1   
     if self.puntaje > otro.puntaje: return -1
     return 0
-\end{verbatim}
+\end{pythoncode}
 \afterverb Ahora estamos listos para probar la cola de prioridad
 almacenando instancias de la clase \texttt{golfista}:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> tiger = golfista("Tiger Woods",    61)
 >>> phil  = golfista("Phil Mickelson", 72)
 >>> hal   = golfista("Hal Sutton",     69)
@@ -360,7 +360,7 @@ almacenando instancias de la clase \texttt{golfista}:
 Tiger Woods    : 61
 Hal Sutton     : 69
 Phil Mickelson : 72
-\end{verbatim}
+\end{pyconcode}
 \afterverb
 \begin{quote}
 {\em Como ejercicio, escriba una implementación del TAD cola de

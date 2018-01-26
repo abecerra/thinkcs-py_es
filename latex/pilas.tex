@@ -78,7 +78,7 @@ los requerimientos sintácticos y semánticos de una interfaz.
 Aquí hay una implementación del TAD Pila que usa una lista de Python:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class Pila :
   def __init__(self) :
     self.items = []
@@ -91,7 +91,7 @@ class Pila :
 
   def estaVacia(self) :
     return (self.items == [])
-\end{verbatim}
+\end{pythoncode}
 \afterverb Una objeto \texttt{Pila} contiene un atributo llamado
 \texttt{items} que es una lista de los objetos que están en la Pila.
 El método de inicialización le asigna a \texttt{items} la lista vacía.
@@ -124,20 +124,20 @@ agregar datos de cualquier tipo a ella. El siguiente ejemplo mete
 dos enteros y una cadena en la Pila:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> s = Pila()
 >>> s.meter(54)
 >>> s.meter(45)
 >>> s.meter("+")
-\end{verbatim}
+\end{pyconcode}
 \afterverb Podemos usar los métodos \texttt{estaVacia} y \texttt{sacar}
 para eliminar e imprimir todos los objetos en la Pila:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 while not s.estaVacia() :
   print(s.sacar()),
-\end{verbatim}
+\end{pythoncode}
 \afterverb La salida es \texttt{+ 45 54}. En otras palabras, acabamos
 de usar la Pila para imprimir los objetos al revés, ¡y de una manera
 muy sencilla!
@@ -206,11 +206,11 @@ parte una cadena en una lista de cadenas usando un caracter como \textbf{delimit
 Por ejemplo:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> import string
 >>> string.split("Ha llegado la hora"," ")
 ['Ha', 'llegado', 'la', 'hora']
-\end{verbatim}
+\end{pyconcode}
 \afterverb En este caso, el delimitador es el caracter espacio, así
 que la cadena se separa cada vez que se encuentra un espacio.
 
@@ -224,11 +224,11 @@ lo que no es un número), y esto es exactamente lo que deseamos usar
 para separar una expresión postfija:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> import re
 >>> re.split("([^0-9])", "123+456*/")
 ['123', '+', '456', '*', '', '/', '']
-\end{verbatim}
+\end{pyconcode}
 \afterverb Observe que el orden de los argumentos es diferente al
 que se usa en la función \texttt{string.split}; el delimitador va
 antes de la cadena.
@@ -247,7 +247,7 @@ y \texttt{{*}}:
 \adjustpage{-3} %\pagebreak
 
 %\beforeverb
-\begin{verbatim}
+\begin{pythoncode}
 def evalPostfija(expr):
   import re
   listaLexemas = re.split("([^0-9])", expr)
@@ -264,7 +264,7 @@ def evalPostfija(expr):
     else:
       Pila.meter(int(lexema))
   return Pila.sacar()
-\end{verbatim}
+\end{pythoncode}
 %\afterverbLa primera condición ignora los espacios y las cadenas
 vacías. Las siguientes dos condiciones detectan los operadores. Asumimos
 por ahora —intrépidamente—, que cualquier caracter no numérico es
@@ -274,10 +274,10 @@ Verifiquemos la función evaluando la expresión \texttt{(56+47){*}2}
 en notación postfija:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(evalPostfija ("56 47 + 2 *"))
 206
-\end{verbatim}
+\end{pyconcode}
 \afterverb Bien, por ahora.
 
 \section{Clientes y proveedores}

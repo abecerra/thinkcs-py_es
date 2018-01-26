@@ -62,7 +62,7 @@ El proceso de construir un árbol es similar al de una lista enlazada.
 La llamada al constructor arma un árbol con un solo nodo.
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 class arbol:
   def __init__(self, carga, izquierdo=None, derecho=None):
     self.carga = carga
@@ -71,7 +71,7 @@ class arbol:
 
   def __str__(self):
     return str(self.carga)
-\end{verbatim}
+\end{pythoncode}
 \afterverb La \texttt{carga} puede tener cualquier tipo, pero los
 parámetros \texttt{izquierdo} y \texttt{derecho} deben ser nodos.
 En \texttt{\_\_init\_\_}, \texttt{izquierdo} y \texttt{derecho} son
@@ -82,23 +82,23 @@ Una forma de construir un árbol es de abajo hacia arriba. Primero
 se construyen los nodos hijos:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 izquierdo = arbol(2)
 derecho = arbol(3)
-\end{verbatim}
+\end{pythoncode}
 \afterverb Ahora se crea el padre y se enlazan los hijos:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 arbol = arbol(1, izquierdo, derecho);
-\end{verbatim}
+\end{pythoncode}
 \afterverb Podemos escribir esto de una manera más compacta anidando
 los llamados:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> arbol = arbol(1, arbol(2), arbol(3))
-\end{verbatim}
+\end{pyconcode}
 \afterverb Con las dos formas se obtiene como resultado el árbol
 que ilustramos al principio del capítulo.
 
@@ -112,14 +112,14 @@ de recorrer un árbol es recursiva. Si el árbol contiene números enteros
 en la carga, esta función calcula su suma :
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def total(arbol):
   if arbol == None: 
      return 0
   else:
      return total(arbol.izquierdo) + total(arbol.derecho) 
             + arbol.carga
-\end{verbatim}
+\end{pythoncode}
 \afterverb El caso base se da cuando el argumento es el árbol vacío,
 que no tiene carga, así que la suma se define como 0. El paso recursivo
 realiza dos llamados recursivos para encontrar la suma de los árboles
@@ -149,10 +149,10 @@ así que solamente tienen dos operandos.
 Un árbol como el siguiente representa la figura anterior:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> arbol = arbol('+', arbol(1), 
                        arbol('*', arbol(2), arbol(3)))
-\end{verbatim}
+\end{pyconcode}
 \afterverb Observando la figura no hay ninguna duda sobre el orden
 de las operaciones; la multiplicación ocurre primero para que se calcule
 el segundo operando de la suma.
@@ -171,14 +171,14 @@ Podemos recorrer un árbol de expresiones e imprimir el contenido de
 la siguiente forma:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def imprimirarbol(arbol):
   if arbol == None: 
      return
   print(arbol.carga),
   imprimirarbol(arbol.izquierdo)
   imprimirarbol(arbol.derecho)
-\end{verbatim}
+\end{pythoncode}
 \afterverb \index{Preorden} \index{prefija}
 
 En otras palabras, para imprimir un árbol, primero se imprime el contenido
@@ -188,12 +188,12 @@ porque el contenido de la raíz se despliega {\em antes} que el
 contenido de los hijos. Para el ejemplo anterior, la salida es:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> arbol = arbol('+', arbol(1), 
                        arbol('*', arbol(2), arbol(3)))
 >>> imprimirarbol(arbol)
 + 1 * 2 3
-\end{verbatim}
+\end{pyconcode}
 \afterverb Esta notación diferente a la infija y a la postfija, se
 denomina \textbf{prefija}, porque los operadores aparecen antes que
 sus operandos.
@@ -203,7 +203,7 @@ se obtiene otra notación. Por ejemplo si se despliegan los dos subárboles
 primero y a continuación el nodo raíz, se obtiene
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def imprimirarbolPostorden(arbol):
   if arbol == None: 
      return
@@ -211,7 +211,7 @@ def imprimirarbolPostorden(arbol):
      imprimirarbolPostorden(arbol.izquierdo)
      imprimirarbolPostorden(arbol.derecho)
      print(arbol.carga),
-\end{verbatim}
+\end{pythoncode}
 \afterverb \index{postorden} \index{en orden} El resultado, \texttt{1
 2 3 {*} +}, está en notación postfija!. Por esta razón este recorrido
 se denomina \textbf{postorden}.
@@ -220,14 +220,14 @@ Finalmente, para recorrer el árbol \textbf{en orden}, se imprime el
 árbol izquierdo, luego la raíz y, por último, el árbol derecho:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def imprimirabolEnOrden(árbol):
   if arbol == None: 
      return
   imprimirabolEnOrden(arbol.izquierdo)
   print(arbol.carga),
   imprimirabolEnOrden(arbol.derecho)
-\end{verbatim}
+\end{pythoncode}
 \afterverb El resultado es \texttt{1 + 2 {*} 3}, la expresión en
 notación infija.
 
@@ -250,14 +250,14 @@ Si realizamos un recorrido en orden y llevamos pista del nivel en
 el que vamos podemos generar una representación gráfica del árbol:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def imprimirarbolSangrado(arbol, nivel=0):
   if arbol == None: 
      return
   imprimirarbolSangrado(arbol.derecho, nivel+1)
   print('  '*nivel + str(arbol.carga))
   imprimirarbolSangrado(arbol.izquierdo, nivel+1)
-\end{verbatim}
+\end{pythoncode}
 \afterverb El parámetro \texttt{nivel} lleva el nivel actual. Por
 defecto es 0. Cada vez que hacemos un llamado recursivo pasamos \texttt{nivel+1},
 porque el nivel de los hijos siempre es uno más del nivel del padre.
@@ -265,14 +265,14 @@ Cada objeto se sangra o indenta con dos espacios por nivel. El resultado
 para el árbol de ejemplo es:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> imprimirarbolSangrado(arbol)
     3
   *
     2
 +
   1
-\end{verbatim}
+\end{pyconcode}
 \afterverb Si rota el libro 90 grados en el sentido de las manecillas
 del reloj verá una forma simplificada del dibujo al principio del
 capítulo.
@@ -298,9 +298,9 @@ la cadena de entrada ha sido separada en una lista de lexemas; por
 ejemplo, para \texttt{(3+7){*}9} la lista de lexemas es:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 ['(', 3, '+', 7, ')', '*', 9, 'fin']
-\end{verbatim}
+\end{pythoncode}
 \afterverb La cadena \texttt{fin} sirve para prevenir que el analizador
 sintáctico siga leyendo más allá del final de la lista.
 \begin{quote}
@@ -314,14 +314,14 @@ el lexema esperado con el primero de la lista: si son iguales, elimina
 el lexema de la lista y retorna True, si no son iguales, retorna False:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def obtenerLexema(listaLexemas, esperado):
   if listaLexemas[0] == esperado:
     del listaLexemas[0]
     return 1
   else:
     return 0
-\end{verbatim}
+\end{pythoncode}
 \afterverb Como \texttt{listaLexemas} se refiere a un objeto mutable,
 los cambios que hacemos son visibles en cualquier otra parte del programa
 que tenga una referencia a la lista.
@@ -332,33 +332,33 @@ lo elimina y retorna un nodo hoja cuya carga será el número; si no
 es un número retorna \texttt{None}.
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def obtenerNumero(listaLexemas):
   x = listaLexemas[0]
   if type(x) != type(0): 
      return None
   del listaLexemas[0]
   return arbol (x, None, None)
-\end{verbatim}
+\end{pythoncode}
 \afterverb Probemos a \texttt{obtenerNumero} con una lista pequeña
 de números. Después del llamado, imprimimos el árbol resultante y
 lo que queda de la lista:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> listaLexemas = [9, 11, 'fin']
 >>> x = obtenerNumero(listaLexemas)
 >>> imprimirarbolPostorden(x)
 9
 >>> print(listaLexemas)
 [11, 'fin']
-\end{verbatim}
+\end{pyconcode}
 \afterverb El siguiente método que necesitamos es \texttt{obtenerProducto},
 que construye un árbol de expresión para productos. Un producto sencillo
 tiene dos números como operandos, como en \texttt{3 {*} 7}.
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def obtenerProducto(listaLexemas):
   a = obtenerNumero(listaLexemas)
   if obtenerLexema(listaLexemas, '*'):
@@ -366,7 +366,7 @@ def obtenerProducto(listaLexemas):
     return árbol ('*', a, b)
   else:
     return a
-\end{verbatim}
+\end{pythoncode}
 \afterverb Asumiendo que \texttt{obtenerNumero} retorna un árbol,
 le asignamos el primer operando a \texttt{a}. Si el siguiente carácter
 es \texttt{{*}}, obtenemos el segundo número y construimos un árbol
@@ -376,21 +376,21 @@ Si el siguiente carácter es cualquier otro, retornamos el nodo hoja
 con \texttt{a}. Aquí hay dos ejemplos:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> listaLexemas = [9, '*', 11, 'fin']
 >>> arbol = obtenerProducto(listaLexemas)
 >>> imprimirarbolPostorden(árbol)
 9 11 *
-\end{verbatim}
+\end{pyconcode}
 \afterverb
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> listaLexemas = [9, '+', 11, 'fin']
 >>> arbol = obtenerProducto(listaLexemas)
 >>> imprimirarbolPostorden(arbol)
 9
-\end{verbatim}
+\end{pyconcode}
 \afterverb El segundo ejemplo implica que consideramos que un solo
 operando sea tratado como una clase de producto. Esta definición de
 ``producto'' es contraintuitiva, pero resulta ser muy provechosa.
@@ -406,7 +406,7 @@ Con un pequeño cambio en \texttt{obtenerProducto}, podemos analizar
 un producto arbitrariamente largo:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def obtenerProducto(listaLexemas):
   a = obtenerNumero(listaLexemas)
   if obtenerLexema(listaLexemas, '*'):
@@ -414,7 +414,7 @@ def obtenerProducto(listaLexemas):
     return arbol ('*', a, b)
   else:
     return a
-\end{verbatim}
+\end{pythoncode}
 \afterverb En otras palabras, un producto puede ser un árbol singular
 o un árbol con \texttt{{*}} en la raíz, un número en el subárbol izquierdo,
 y un producto en el subárbol derecho.
@@ -426,12 +426,12 @@ Esta clase de definición recursiva debería empezar a ser familiar.
 Probemos la nueva versión con un producto compuesto:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> listaLexemas = [2, '*', 3, '*', 5 , '*', 7, 'fin']
 >>> arbol = obtenerProducto(listaLexemas)
 >>> imprimirarbolPostorden(arbol)
 2 3 5 7 * * *
-\end{verbatim}
+\end{pyconcode}
 \afterverb Ahora, agregaremos la posibilidad de analizar sumas. Otra
 vez daremos una definición contraintuitiva a la ``suma.'' Una suma
 puede ser un árbol con \texttt{+} en la raíz, un producto en el subárbol
@@ -450,7 +450,7 @@ izquierdo y una suma en derecho. Pero si no encuentra un \texttt{+},
 solamente construye un producto.
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def obtenerSuma(listaLexemas):
   a = obtenerProducto(listaLexemas)
   if obtenerLexema(listaLexemas, '+'):
@@ -458,16 +458,16 @@ def obtenerSuma(listaLexemas):
     return arbol ('+', a, b)
   else:
     return a
-\end{verbatim}
+\end{pythoncode}
 \afterverb Probemos con \texttt{9 {*} 11 + 5 {*} 7}:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> listaLexemas = [9, '*', 11, '+', 5, '*', 7, 'fin']
 >>> arbol = obtenerSuma(listaLexemas)
 >>> imprimirarbolPostorden(árbol)
 9 11 * 5 7 * +
-\end{verbatim}
+\end{pyconcode}
 \afterverb Casi terminamos, pero todavía faltan los paréntesis. En
 cualquier posición de una expresión donde podamos encontrar un número
 puede también haber una suma completa cerrada entre paréntesis. Necesitamos
@@ -476,7 +476,7 @@ modificar \texttt{obtenerNumero} para que sea capaz de manejar \textbf{subexpres
 \index{subexpresión}
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def obtenerNumero(listaLexemas):
   if obtenerLexema(listaLexemas, '('):
     # obtiene la subexpresión
@@ -490,17 +490,17 @@ def obtenerNumero(listaLexemas):
        return None
     listaLexemas[0:1] = []
     return árbol (x, None, None)    
-\end{verbatim}
+\end{pythoncode}
 \afterverb Probemos esto con \texttt{9 {*} (11 + 5) {*} 7}:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pyconcode}
 >>> listaLexemas = [9, '*', '(', 11, '+', 5, ')','*', 7, 
 'fin']
 >>> arbol = obtenerSuma(listaLexemas)
 >>> imprimirarbolPostorden(arbol)
 9 11 5 + 7 * *
-\end{verbatim}
+\end{pyconcode}
 \afterverb %\adjustpage{-2}%\pagebreak
 
 El analizador manejó los paréntesis correctamente, la suma se hace
@@ -519,7 +519,7 @@ que el siguiente carácter es un paréntesis derecho. Si hay un error
 y el siguiente carácter es algo distinto debemos manejar esta situación.
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def obtenerNumero(listaLexemas):
   if obtenerLexema(listaLexemas, '('):
     x = obtenerSuma(listaLexemas)       
@@ -528,7 +528,7 @@ def obtenerNumero(listaLexemas):
     return x
   else:
     # el resto del código se omite
-\end{verbatim}
+\end{pythoncode}
 \afterverb La sentencia \texttt{raise} crea una excepción. En este
 caso creamos una nueva clase de excepción llamada \texttt{ErrorExpresionMalFormada}.
 Si la función que llamó a \texttt{obtenerNumero}, o una de las funciones
@@ -554,7 +554,7 @@ y nombres de animales. Aquí hay una ejecución de ejemplo:
 \adjustpage{-3} %\pagebreak
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 ¿Esta pensando en un animal? s
 ¿Es un pájaro? n
 ¿Cual es el nombre del animal? perro
@@ -577,7 +577,7 @@ la respuesta sería? n
 ¿Es un perro? s
 ¡Soy el mejor!
 
-\end{verbatim}
+\end{pythoncode}
 \afterverb Este es el árbol que el diálogo genera:
 
 \beforefig \centerline{\includegraphics{illustrations/tree5}}
@@ -596,7 +596,7 @@ Aquí está el código fuente:
 \adjustpage{-2} %\pagebreak
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def animal():
   # Un solo nodo
   raiz = arbol("pajaro")
@@ -640,18 +640,18 @@ def animal():
     else:
       arbol.asignarizquierdo(arbol(animal))
       arbol.asignarderecho(arbol(conjetura))
-\end{verbatim}
+\end{pythoncode}
 \afterverb La función \texttt{si} es auxiliar, imprime una pregunta
 y recibe la respuesta del usuario. Si la respuesta empieza con {\em
 s} o {\em S}, retorna cierto:
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 def si(preg):
   from string import lower
   r = lower(raw_input(preg))
   return (r[0] == 's')
-\end{verbatim}
+\end{pythoncode}
 \afterverb La condición del ciclo es \texttt{True}, lo que implica
 que el ciclo iterará hasta que la sentencia \texttt{break} se ejecute
 cuando el usuario deje de pensar en animales.

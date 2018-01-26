@@ -29,11 +29,11 @@ se especifica su nombre y se indica si se desea leer o escribir.
 
 La apertura de un archivo crea un objeto archivo. En este ejemplo,
 la variable \texttt{f} apunta al nuevo objeto archivo.
-\begin{verbatim}
+\begin{pyconcode}
 >>> f = open("test.dat","w")
 >>> print(f)
 <open file 'test.dat', mode 'w' at fe820>
-\end{verbatim}
+\end{pyconcode}
 
 La función open toma dos argumentos: el primero, es el nombre del
 archivo y el segundo, el modo. El modo {\verb+"w"+} significa que
@@ -47,65 +47,65 @@ y la localización del objeto.
 
 Para escribir datos en el archivo invocamos al método \texttt{write}
 sobre el objeto archivo:
-\begin{verbatim}
+\begin{pyconcode}
 >>> f.write("Ya es hora")
 >>> f.write("de cerrar el archivo")
-\end{verbatim}
+\end{pyconcode}
 
 El cierre del archivo le dice al sistema que hemos terminado de escribir
 y deja el archivo listo para leer:
-\begin{verbatim}
+\begin{pyconcode}
 >>> f.close()
-\end{verbatim}
+\end{pyconcode}
 
 Ya podemos abrir el archivo de nuevo, esta vez para lectura, y poner
 su contenido en una cadena. Esta vez el argumento de modo es {\verb+"r"+},
 para lectura:
-\begin{verbatim}
+\begin{pyconcode}
 >>> f = open("test.dat","r")
-\end{verbatim}
+\end{pyconcode}
 
 Si intentamos abrir un archivo que no existe, recibimos un mensaje
 de error:
 
 \index{error en tiempo de ejecución}
-\begin{verbatim}
+\begin{pyconcode}
 >>> f = open("test.cat","r")
 IOError: [Errno 2] No such file or directory: 'test.cat'
-\end{verbatim}
+\end{pyconcode}
 
 Como era de esperar, el método \texttt{read} lee datos del archivo.
 Sin argumentos, lee el archivo completo:
-\begin{verbatim}
+\begin{pyconcode}
 >>> texto = f.read()
 >>> print(texto)
 Ya es horade cerrar el archivo
-\end{verbatim}
+\end{pyconcode}
 
 No hay un espacio entre ``hora'' y ``de'' porque no escribimos
 un espacio entre las cadenas. \texttt{read} también puede aceptar
 un argumento que le indica cuántos caracteres leer:
-\begin{verbatim}
+\begin{pyconcode}
 >>> f = open("test.dat","r")
 >>> print(f.read(7))
 Ya es h
-\end{verbatim}
+\end{pyconcode}
 
 Si no quedan suficientes caracteres en el archivo, \texttt{read} devuelve
 los que haya. Cuando llegamos al final del archivo, \texttt{read}
 devuelve una cadena vacía:
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(f.read(1000006))
 orade cerrar el archivo
 >>> print(f.read())
 
 >>>
-\end{verbatim}
+\end{pyconcode}
 
 La siguiente función copia un archivo, leyendo y escribiendo los caracteres
 de cincuenta en cincuenta. El primer argumento es el nombre del archivo
 original; el segundo es el nombre del archivo nuevo:
-\begin{verbatim}
+\begin{pythoncode}
 def copiaArchivo(archViejo, archNuevo):
   f1 = open(archViejo, "r")
   f2 = open(archNuevo, "w")
@@ -117,7 +117,7 @@ def copiaArchivo(archViejo, archNuevo):
   f1.close()
   f2.close()
   return
-\end{verbatim}
+\end{pythoncode}
 
 La sentencia \texttt{break} es nueva. Su ejecución interrumpe el ciclo;
 el flujo de la ejecución pasa a la primera sentencia después del while.
@@ -140,28 +140,28 @@ texto, proporciona métodos que facilitan esta tarea.
 
 Para hacer una demostración, crearemos un archivo de texto con tres
 líneas de texto separadas por saltos de línea:
-\begin{verbatim}
+\begin{pyconcode}
 >>> f = open("test.dat","w")
 >>> f.write("línea uno\nlínea dos\nlínea tres\n")
 >>> f.close()
-\end{verbatim}
+\end{pyconcode}
 
 El método \texttt{readline} lee todos los caracteres hasta, e incluyendo,
 el siguiente salto de línea:
-\begin{verbatim}
+\begin{pyconcode}
 >>> f = open("test.dat","r")
 >>> print(f.readline())
 línea uno
 
 >>>
-\end{verbatim}
+\end{pyconcode}
 
 \texttt{readlines} devuelve todas las líneas que queden como una lista
 de cadenas:
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(f.readlines())
 ['línea dos\012', 'línea tres\012']
-\end{verbatim}
+\end{pyconcode}
 
 En este caso, la salida está en forma de lista, lo que significa que
 las cadenas aparecen con comillas y el carácter de salto de línea
@@ -169,17 +169,17 @@ aparece como la secuencia de escape \texttt{012}.
 
 Al final del archivo, \texttt{readline} devuelve una cadena vacía
 y \texttt{readlines} devuelve una lista vacía:
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(f.readline())
 
 >>> print(f.readlines())
 []
-\end{verbatim}
+\end{pyconcode}
 
 Lo que sigue es un ejemplo de un programa de proceso de líneas. \texttt{filtraArchivo}
 hace una copia de \texttt{archViejo}, omitiendo las líneas que comienzan
 por \texttt{\#}:
-\begin{verbatim}
+\begin{pythoncode}
 def filtraArchivo(archViejo, archNuevo):
   f1 = open(archViejo, "r")
   f2 = open(archNuevo, "w")
@@ -193,7 +193,7 @@ def filtraArchivo(archViejo, archNuevo):
   f1.close()
   f2.close()
   return
-\end{verbatim}
+\end{pythoncode}
 
 La sentencia \texttt{continue} termina la iteración actual del ciclo,
 pero sigue haciendo las que le faltan. El flujo de ejecución pasa
@@ -213,10 +213,10 @@ fallan copiamos \texttt{texto} en el archivo nuevo.
 El argumento de \texttt{write} debe ser una cadena, así que si queremos
 poner otros valores en un archivo, tenemos que convertirlos previamente
 en cadenas. La forma más fácil de hacerlo es con la función \texttt{str}:
-\begin{verbatim}
+\begin{pyconcode}
 >>> x = 52
 >>> f.write (str(x))
-\end{verbatim}
+\end{pyconcode}
 
 Una alternativa es usar el \textbf{operador de formato} \texttt{\%}.
 Cuando aplica a enteros, \texttt{\%} es el operador de módulo. Pero
@@ -231,30 +231,30 @@ de formato.
 A modo de ejemplo simple, la \textbf{secuencia de formato} {\verb+"%d"+}
 significa que la primera expresión de la tupla debería formatearse
 como un entero. Aquí la letra {\em d} quiere decir ``decimal'':
-\begin{verbatim}
+\begin{pyconcode}
 >>> motos = 52
 >>> "%d" % motos
 '52'
-\end{verbatim}
+\end{pyconcode}
 
 El resultado es la cadena \texttt{'52'}, que no debe confundirse con
 el valor entero \texttt{52}.
 
 Una secuencia de formato puede aparecer en cualquier lugar de la cadena
 de formato, de modo que podemos incrustar un valor en una frase:
-\begin{verbatim}
+\begin{pyconcode}
 >>> motos = 52
 >>> "En julio vendimos %d motos." % motos
 'En julio vendimos 52 motos.'
-\end{verbatim}
+\end{pyconcode}
 
 La secuencia de formato {\verb+"%f"+} formatea el siguiente elemento
 de la tupla como un número en punto flotante, y {\verb+"%s"+} formatea
 el siguiente elemento como una cadena:
-\begin{verbatim}
+\begin{pyconcode}
 >>> "En %d dias ganamos %f millones de %s." % (4,1.2,'pesos')
 'En 4 dias ganamos 1.200000 millones de pesos.'
-\end{verbatim}
+\end{pyconcode}
 
 Por defecto, el formato de punto flotante imprime seis decimales.
 
@@ -263,40 +263,40 @@ de secuencias de formato de la cadena. Igualmente, los tipos de las
 expresiones deben coincidir con las secuencias de formato:
 
 \index{error en tiempo de ejecución}
-\begin{verbatim}
+\begin{pyconcode}
 >>> "%d %d %d" % (1,2)
 TypeError: not enough arguments for format string
 >>> "%d" % 'dolares'
 TypeError: illegal argument type for built-in operation
-\end{verbatim}
+\end{pyconcode}
 
 En el primer ejemplo no hay suficientes expresiones; en el segundo,
 la expresión es de un tipo incorrecto.
 
 Para tener más control sobre el formato de los números, podemos detallar
 el número de dígitos como parte de la secuencia de formato:
-\begin{verbatim}
+\begin{pyconcode}
 >>> "%6d" % 62
 '    62'
 >>> "%12f" % 6.1
 '    6.100000'
-\end{verbatim}
+\end{pyconcode}
 
 El número tras el signo de porcentaje es el número mínimo de espacios
 que ocupará el número. Si el valor necesita menos dígitos, se añaden
 espacios en blanco delante del número. Si el número de espacios es
 negativo, se añaden los espacios tras el número:
-\begin{verbatim}
+\begin{pyconcode}
 >>> "%-6d" % 62
 '62    '
-\end{verbatim}
+\end{pyconcode}
 
 También podemos especificar el número de decimales para los números
 en coma flotante:
-\begin{verbatim}
+\begin{pyconcode}
 >>> "%12.2f" % 6.1
 '        6.10'
-\end{verbatim}
+\end{pyconcode}
 
 En este ejemplo, el resultado ocupa doce espacios e incluye dos dígitos
 tras la coma. Este formato es útil para imprimir cantidades de dinero
@@ -308,23 +308,23 @@ Imagine, por ejemplo, un diccionario que contiene los nombres de los
 estudiantes como clave y las tarifas horarias como valores. He aquí
 una función que imprime el contenido del diccionario como de un informe
 formateado:
-\begin{verbatim}
+\begin{pythoncode}
 def informe (tarifas) :
   estudiantes = tarifas.keys()
   estudiantes.sort()
   for estudiante in estudiantes :
     print("%-20s %12.02f"%(estudiante, tarifas[estudiante]))
-\end{verbatim}
+\end{pythoncode}
 
 Para probar la función, crearemos un pequeño diccionario e imprimiremos
 el contenido:
-\begin{verbatim}
+\begin{pyconcode}
 >>> tarifas = {'maria': 6.23, 'jose': 5.45, 'jesus': 4.25}
 >>> informe (tarifas)
 jose                         5.45
 jesus                        4.25
 maria                        6.23
-\end{verbatim}
+\end{pyconcode}
 
 Controlando el ancho de cada valor nos aseguramos de que las columnas
 van a quedar alineadas, siempre que los nombre tengan menos de veintiún
@@ -342,11 +342,11 @@ leerlo, Python lo busca en el directorio en uso.
 Si usted quiere abrir un archivo de cualquier otro sitio, tiene que
 especificar la \textbf{ruta} del archivo, que es el nombre del directorio
 (o carpeta) donde se encuentra este:
-\begin{verbatim}
+\begin{pyconcode}
 >>>   f = open("/usr/share/dict/words","r")
 >>>   print(f.readline())
 Aarhus
-\end{verbatim}
+\end{pyconcode}
 
 Este ejemplo abre un archivo denominado \texttt{words}, que se encuentra
 en un directorio llamado \texttt{dict}, que está en \texttt{share},
@@ -368,40 +368,40 @@ universidad danesa.
 
 Para poner valores en un archivo, se deben convertir a cadenas. Usted
 ya ha visto cómo hacerlo con \texttt{str}:
-\begin{verbatim}
+\begin{pyconcode}
 >>> f.write (str(12.3))
 >>> f.write (str([1,2,3]))
-\end{verbatim}
+\end{pyconcode}
  El problema es que cuando se vuelve a leer el valor, se obtiene una
 cadena. Se ha perdido la información del tipo de dato original. En
 realidad, no se puede distinguir dónde termina un valor y dónde comienza
 el siguiente:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>>   f.readline()
 '12.3[1, 2, 3]'
-\end{verbatim}
+\end{pyconcode}
  La solución es el \textbf{encurtido}, llamado así porque ``encurte''
 estructuras de datos. El módulo \texttt{pickle} contiene las órdenes
 necesarias. Para usarlo, se importa \texttt{pickle} y luego se abre
 el archivo de la forma habitual:
-\begin{verbatim}
+\begin{pyconcode}
 >>> import pickle
 >>> f = open("test.pck","w")
-\end{verbatim}
+\end{pyconcode}
 
 Para almacenar una estructura de datos, se usa el método \texttt{dump}
 y luego se cierra el archivo de la forma habitual:
-\begin{verbatim}
+\begin{pyconcode}
 >>> pickle.dump(12.3, f)
 >>> pickle.dump([1,2,3], f)
 >>> f.close()
-\end{verbatim}
+\end{pyconcode}
 
 Ahora podemos abrir el archivo para leer y cargar las estructuras
 de datos que volcamos ahí:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> f = open("test.pck","r")
 >>> x = pickle.load(f)
 >>> x
@@ -413,7 +413,7 @@ de datos que volcamos ahí:
 [1, 2, 3]
 >>> type(y)
 <type 'list'>
-\end{verbatim}
+\end{pyconcode}
  Cada vez que invocamos \texttt{load} obtenemos un valor del archivo
 completo con su tipo original.
 
@@ -427,24 +427,24 @@ Siempre que ocurre un error en tiempo de ejecución, se crea una \textbf{excepci
 Normalmente el programa se para y Python presenta un mensaje de error.
 
 Por ejemplo, la división por cero crea una excepción:
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(55/0)
 ZeroDivisionError: integer division or modulo
-\end{verbatim}
+\end{pyconcode}
 
 Un elemento no existente en una lista hace lo mismo:
-\begin{verbatim}
+\begin{pyconcode}
 >>> a = []
 >>> print(a[5])
 IndexError: list index out of range
-\end{verbatim}
+\end{pyconcode}
 
 O el acceso a una clave que no está en el diccionario:
-\begin{verbatim}
+\begin{pyconcode}
 >>> b = {}
 >>> print(b['qué'])
 KeyError: qué
-\end{verbatim}
+\end{pyconcode}
 
 En cada caso, el mensaje de error tiene dos partes: el tipo de error
 antes de los dos puntos y detalles sobre el error después de los dos
@@ -460,13 +460,13 @@ la excepción usando las sentencias \texttt{try} y \texttt{except}.
 Por ejemplo, podemos preguntar al usuario por el nombre de un archivo
 y luego intentar abrirlo. Si el archivo no existe, no queremos que
 el programa se aborte; queremos manejar la excepción.
-\begin{verbatim}
+\begin{pythoncode}
 nombreArch = raw_input('Introduce un nombre de archivo: ')
 try:
   f = open (nombreArch, "r")
 except:
   print('No hay ningún archivo que se llame', nombreArch)
-\end{verbatim}
+\end{pythoncode}
 
 La sentencia \texttt{try} ejecuta las sentencias del primer bloque.
 Si no se produce ninguna excepción, pasa por alto la sentencia \texttt{except}.
@@ -476,7 +476,7 @@ y después continúa.
 Podemos encapsular esta capacidad en una función: \texttt{existe},
 que acepta un nombre de archivo y devuelve verdadero si el archivo
 existe y falso si no:
-\begin{verbatim}
+\begin{pythoncode}
 def existe(nombreArch):
   try:
     f = open(nombreArch)
@@ -484,7 +484,7 @@ def existe(nombreArch):
     return True
   except:
     return False
-\end{verbatim}
+\end{pythoncode}
 Se pueden usar múltiples bloques \texttt{except} para manejar diferentes
 tipos de excepciones. El {\em Manual de Referencia de Python} contiene
 los detalles.
@@ -493,14 +493,14 @@ Si su programa detecta una condición de error, se puede lanzar (\textbf{raise}
 en inglés) una excepción. Aquí hay un ejemplo que acepta una entrada
 del usuario y comprueba si es 17. Suponiendo que 17 no es una entrada
 válida por cualquier razón, lanzamos una excepción.
-\begin{verbatim}
+\begin{pythoncode}
 # -*- coding: utf-8 -*-
 def tomaNumero () :                 
   x = input ('Elige un número: ')   
   if x == 17 :
     raise 'ErrorNumeroMalo', '17 es un mal número'
   return x
-\end{verbatim}
+\end{pythoncode}
 
 La sentencia \texttt{raise} acepta dos argumentos: el tipo de excepción
 e información específica acerca del error. \texttt{ErrorNumeroMalo}
@@ -509,11 +509,11 @@ es un nuevo tipo de excepción que hemos inventado para esta aplicación.
 Si la función llamada \texttt{tomaNumero} maneja el error, el programa
 puede continuar; en caso contrario, Python imprime el mensaje de error
 y sale:
-\begin{verbatim}
+\begin{pyconcode}
 >>> tomaNumero ()
 Elige un número: 17
 ErrorNumeroMalo: 17 es un mal número
-\end{verbatim}
+\end{pyconcode}
 
 El mensaje de error incluye el tipo de excepción y la información
 adicional proporcionada.

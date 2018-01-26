@@ -19,62 +19,62 @@ son \textbf{mutables}.
 Hay otro tipo de dato en Python denominado \textbf{tupla}, que se
 parece a una lista, con la excepción de que es inmutable. Sintácticamente,
 una tupla es una lista de valores separados por comas:
-\begin{verbatim}
+\begin{pyconcode}
 >>> tupla = 'a', 'b', 'c', 'd', 'e'
-\end{verbatim}
+\end{pyconcode}
 
 Aunque no es necesario, se pueden encerrar entre paréntesis:
-\begin{verbatim}
+\begin{pyconcode}
 >>> tupla = ('a', 'b', 'c', 'd', 'e')
-\end{verbatim}
+\end{pyconcode}
 
 Para crear una tupla con un único elemento, tenemos que incluir la
 coma final:
-\begin{verbatim}
+\begin{pyconcode}
 >>> t1 = ('a',)
 >>> type(t1)
 <type 'tuple'>
-\end{verbatim}
+\end{pyconcode}
 
 Sin la coma, Python creería que \texttt{('a')} es una cadena en paréntesis:
-\begin{verbatim}
+\begin{pyconcode}
 >>> t2 = ('a')
 >>> type(t2)
 <type 'string'>
-\end{verbatim}
+\end{pyconcode}
 
 Las operaciones sobre tuplas son las mismas que vimos con las listas.
 El operador corchete selecciona un elemento de la tupla.
-\begin{verbatim}
+\begin{pyconcode}
 >>> tupla = ('a', 'b', 'c', 'd', 'e')
 >>> tupla[0]
 'a'
-\end{verbatim}
+\end{pyconcode}
 
 Y el operador segmento selecciona un rango de elementos:
-\begin{verbatim}
+\begin{pyconcode}
 >>> tupla[1:3]
 ('b', 'c')
-\end{verbatim}
+\end{pyconcode}
 
 Pero si intentamos modificar un elemento de la tupla obtenemos un
 error:
 
 \index{error en tiempo de ejecución}
-\begin{verbatim}
+\begin{pyconcode}
 >>> tupla[0] = 'A'
 TypeError: object doesn't support item assignment
-\end{verbatim}
+\end{pyconcode}
 
 Aunque no podemos modificar los elementos, sí podemos modificar toda
 la tupla:
-\begin{verbatim}
+\begin{pyconcode}
 >>> tupla = ('A',) + tupla[1:]
 >>> tupla
 ('A', 'b', 'c', 'd', 'e')
 >>> tupla = (1,2,3)
 >>> tupla
-\end{verbatim}
+\end{pyconcode}
 
 \section{Asignación de tuplas}
 
@@ -83,18 +83,18 @@ la tupla:
 De vez en cuando necesitamos intercambiar los valores de dos variables.
 Con el operador de asignación normal tenemos que usar una variable
 temporal. Por ejemplo, para intercambiar \texttt{a} y \texttt{b}:
-\begin{verbatim}
+\begin{pyconcode}
 >>> temp = a
 >>> a = b
 >>> b = temp
-\end{verbatim}
+\end{pyconcode}
 
 Si tenemos que intercambiar variables muchas veces, el código tiende
 a ser engorroso. Python proporciona una forma de \textbf{asignación
 de tuplas} que resuelve este problema:
-\begin{verbatim}
+\begin{pyconcode}
 >>> a, b = b, a
-\end{verbatim}
+\end{pyconcode}
 
 El lado izquierdo es una tupla de variables; el derecho es una tupla
 de valores. Cada valor se asigna a su respectiva variable en el orden
@@ -104,10 +104,10 @@ una herramienta bastante versátil.
 
 Naturalmente, el número de variables a la izquierda y el número de
 valores a la derecha deben coincidir.
-\begin{verbatim}
+\begin{pyconcode}
 >>> a, b, c, d = 1, 2, 3
 ValueError: unpack tuple of wrong size
-\end{verbatim}
+\end{pyconcode}
 
 \section{Tuplas como valores de retorno}
 
@@ -116,28 +116,28 @@ ValueError: unpack tuple of wrong size
 
 Las funciones pueden tener tuplas como valores de retorno. Por ejemplo,
 podríamos escribir una función que intercambie sus dos parámetros:
-\begin{verbatim}
+\begin{pythoncode}
 def intercambiar(x, y):
   return y, x
-\end{verbatim}
+\end{pythoncode}
 
 Así podemos asignar el valor de retorno a una tupla con dos variables:
-\begin{verbatim}
+\begin{pythoncode}
 a, b = intercambiar(a, b)
-\end{verbatim}
+\end{pythoncode}
 
 En este caso, escribir una función \texttt{intercambio} no es muy
 provechoso. De hecho, hay un peligro al tratar de encapsular \texttt{intercambio},
 que consiste en el siguiente error:
-\begin{verbatim}
+\begin{pythoncode}
 def intercambio(x, y):      # version incorrecta
   x, y = y, x
-\end{verbatim}
+\end{pythoncode}
 
 Si llamamos a esta función así:
-\begin{verbatim}
+\begin{pythoncode}
 intercambio(a, b)
-\end{verbatim}
+\end{pythoncode}
 
 entonces \texttt{a} y \texttt{x} son dos alias para el mismo valor.
 Cambiar \texttt{x} dentro de \texttt{intercambio} hace que \texttt{x}
@@ -172,13 +172,13 @@ El módulo \texttt{random} contiene una función llamada \texttt{random}
 que retorna un número flotante entre 0.0 y 1.0. Cada vez que se llama
 a \texttt{random}, se obtiene el siguiente número de una serie muy
 larga. Para ver un ejemplo ejecute el siguiente ciclo:
-\begin{verbatim}
+\begin{pythoncode}
 import random
 
 for i in range(10):
   x = random.random()
   print(x)
-\end{verbatim}
+\end{pythoncode}
 
 Para generar un número aleatorio entre 0.0 y un límite superior como
 \texttt{sup}, multiplique \texttt{x} por \texttt{sup}.
@@ -191,17 +191,17 @@ especifique el número de elementos a generar. Primero, genera una
 lista de \texttt{n} ceros. Luego cada vez que itera en un ciclo for,
 reemplaza uno de los ceros por un número aleatorio. El valor de retorno
 es una referencia a la lista construida:
-\begin{verbatim}
+\begin{pythoncode}
 def listaAleatoria(n):
   s = [0] * n
   for i in range(n):
     s[i] = random.random()
   return s
-\end{verbatim}
+\end{pythoncode}
 
 La probaremos con ocho elementos. Para depurar es una buena idea empezar
 con pocos datos:
-\begin{verbatim}
+\begin{pyconcode}
 >>> listaAleatoria(8)
 0.15156642489
 0.498048560109
@@ -211,7 +211,7 @@ con pocos datos:
 0.328578797631
 0.759199803101
 0.800367163582
-\end{verbatim}
+\end{pyconcode}
 
 Los números generados por \texttt{random} deben distribuirse uniformemente,
 lo que significa que cada valor es igualmente probable.
@@ -239,13 +239,13 @@ una cadena y contaba el números de veces que aparecía una letra determinada.
 
 Entonces podemos copiar el programa viejo para adaptarlo posteriormente
 a nuestro problema actual. El original es:
-\begin{verbatim}
+\begin{pythoncode}
 cont = 0
 for c in fruta:
   if c == 'a':
     cont = cont + 1
 print(cont)
-\end{verbatim}
+\end{pythoncode}
 
 El primer paso es reemplazar \texttt{fruta} con \texttt{lista} y \texttt{c}
 por \texttt{num}. Esto no cambia el programa, sólo lo hace más legible.
@@ -253,25 +253,25 @@ por \texttt{num}. Esto no cambia el programa, sólo lo hace más legible.
 El segundo paso es cambiar la prueba. No queremos buscar letras. Queremos
 ver si \texttt{num} está entre dos valores dados \texttt{inf} y \texttt{sup}.
 
-\begin{verbatim}
+\begin{pythoncode}
 cont = 0
 for num in lista:
   if inf < num < sup:
     cont = cont + 1
 print(cont)
-\end{verbatim}
+\end{pythoncode}
 
 El último paso consiste en encapsular este código en una función denominada
 \texttt{enRegion}. Los parámetros son la lista y los valores \texttt{inf}
 y \texttt{sup}.
-\begin{verbatim}
+\begin{pythoncode}
 def enRegion(lista, inf, sup):
   cont = 0
   for num in lista:
     if inf < num < sup:
       cont = cont + 1
   return cont
-\end{verbatim}
+\end{pythoncode}
 
 Copiando y modificando un programa existente fuimos capaces de escribir
 esta función rápidamente y ahorrarnos un buen tiempo de depuración.
@@ -285,17 +285,17 @@ reutilice la solución.
 
 Como el número de regiones aumenta, \texttt{enRegion} es un poco engorroso.
 Con dos no esta tan mal:
-\begin{verbatim}
+\begin{pythoncode}
 inf = enRegion(a, 0.0, 0.5)
 sup = enRegion(a, 0.5, 1)
-\end{verbatim}
+\end{pythoncode}
  Pero con cuatro:
-\begin{verbatim}
+\begin{pythoncode}
 Region1 = enRegion(a, 0.0, 0.25)
 Region2 = enRegion(a, 0.25, 0.5)
 Region3 = enRegion(a, 0.5, 0.75)
 Region4 = enRegion(a, 0.75, 1.0)
-\end{verbatim}
+\end{pythoncode}
 
 Hay dos problemas. Uno es que siempre tenemos que crear nuevos nombres
 de variables para cada resultado. El otro es que tenemos que calcular
@@ -307,20 +307,20 @@ de cada región está dado por la expresión \texttt{1.0/numRegiones}.
 
 Usaremos un ciclo para calcular el rango de cada región. La variable
 de ciclo \texttt{i} cuenta de 1 a \texttt{numRegiones-1}:
-\begin{verbatim}
+\begin{pythoncode}
 ancho = 1.0 / numRegiones
 for i in range(numRegiones):
   inf = i * ancho
   sup = inf + ancho
   print(inf, " hasta ", sup)
-\end{verbatim}
+\end{pythoncode}
 
 Para calcular el extremo inferior de cada región, multiplicamos la
 variable de ciclo por el ancho. El extremo superior está a un \texttt{ancho}
 de región de distancia.
 
 Con \texttt{numRegiones = 8}, la salida es:
-\begin{verbatim}
+\begin{pythoncode}
 0.0 hasta 0.125
 0.125 hasta 0.25
 0.25 hasta 0.375
@@ -329,7 +329,7 @@ Con \texttt{numRegiones = 8}, la salida es:
 0.625 hasta 0.75
 0.75 hasta 0.875
 0.875 hasta 1.0
-\end{verbatim}
+\end{pythoncode}
 Usted puede confirmar que cada región tiene el mismo ancho, que no
 se solapan y que cubren el rango completo de 0.0 a 1.0.
 
@@ -340,7 +340,7 @@ debe estar pensando ``¡una lista!''
 Tenemos que crear la lista de regiones fuera del ciclo, porque esto
 sólo debe ocurrir una vez. Dentro del ciclo, llamaremos a \texttt{enRegion}
 repetidamente y actualizaremos el \texttt{i}ésimo elemento de la lista:
-\begin{verbatim}
+\begin{pythoncode}
 numRegiones = 8
 Regiones = [0] * numRegiones
 ancho = 1.0 / numRegiones
@@ -349,13 +349,13 @@ for i in range(numRegiones):
   sup = inf + ancho
   Regiones[i] = enRegion(lista, inf, sup)
 print(Regiones)
-\end{verbatim}
+\end{pythoncode}
 
 Con una lista de 1000 valores, este código produce la siguiente lista
 de conteo:
-\begin{verbatim}
+\begin{pythoncode}
 [138, 124, 128, 118, 130, 117, 114, 131]
-\end{verbatim}
+\end{pythoncode}
 Todos estos valores están muy cerca a 125, que es lo que esperamos.
 Al menos, están lo suficientemente cerca como para creer que el generador
 de números pseudoaleatorios está funcionando bien.
@@ -385,13 +385,13 @@ un número en el rango 0.0 a 1.0 por \texttt{numRegiones}, obtenemos
 un número en el rango de 0.0 a \texttt{numRegiones}. Si redondeamos
 ese número al entero más cercano por debajo, obtenemos lo que queremos,
 un índice de región:
-\begin{verbatim}
+\begin{pythoncode}
 numRegiones = 8
 Regiones = [0] * numRegiones
 for i in lista:
   ind = int(i * numRegiones)
   Regiones[ind] = Regiones[ind] + 1
-\end{verbatim}
+\end{pythoncode}
 
 Usamos la función \texttt{int} para pasar de número de punto flotante
 a entero.
@@ -446,12 +446,12 @@ Solución: \url{http://thinkpython.com/code/most_frequent.py}
 imprima todos los conjuntos de palabras que son anagramas.
 
 Este es un ejemplo de la salida del programa con palabras en inglés:
-\begin{verbatim}
+\begin{pythoncode}
 ['deltas', 'desalt', 'lasted', 'salted', 'slated', 'staled'] 
 ['retainers', 'ternaries'] 
 ['generating', 'greatening']
 ['resmelts', 'smelters', 'termless']
-\end{verbatim}
+\end{pythoncode}
 Pista: cree un diccionario que asocie cada conjunto de letras a una
 lista de palabras que puedan ser formadas con esas letras. ¿Como se
 puede representar el conjunto de letras de forma que pueda ser usado

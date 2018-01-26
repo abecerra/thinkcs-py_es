@@ -9,10 +9,10 @@
 
 Usted ya ha visto un ejemplo de una \textbf{llamada a función}:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> type("32")
 str
-\end{verbatim}
+\end{pyconcode}
 
 El nombre de la función es \texttt{type}, y despliega el tipo de un
 valor o variable. El valor o variable, que se denomina el \textbf{argumento}
@@ -25,23 +25,23 @@ El resultado se denomina el \textbf{valor de retorno}.
 En lugar de imprimir el valor de retorno, podemos asignarlo a una
 variable:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> b = type("32")
 >>> print(b)
 <class 'string'>
-\end{verbatim}
+\end{pyconcode}
  
 
 Otro ejemplo es la función \texttt{id} que toma un valor o una variable
 y retorna un entero que actúa como un identificador único:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> id(3)
 134882108
 >>> b = 3
 >>> id(b)
 134882108
-\end{verbatim}
+\end{pyconcode}
  Cada valor tiene un \texttt{id} que es un número único relacionado
 con el lugar en la memoria en el que está almacenado. El \texttt{id}
 de una variable es el \texttt{id} del valor al que la variable se
@@ -55,38 +55,38 @@ Python proporciona una colección de funciones que convierten valores
 de un tipo a otro. La función \texttt{int} toma cualquier valor y
 lo convierte a un entero, si es posible, de lo contrario se queja:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> int("32")
 32
 >>> int("Hola")
 ValueError: invalid literal for int() with base 10: Hola
-\end{verbatim}
+\end{pyconcode}
  \texttt{int} también puede convertir valores de punto flotante a
 enteros, pero hay que tener en cuenta que va a eliminar la parte decimal:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> int(3.99999)
 3
 >>> int(-2.3)
 -2
-\end{verbatim}
+\end{pyconcode}
  La función \texttt{float} convierte enteros y cadenas a números de
 punto flotante:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> float(32)
 32.0
 >>> float("3.14159")
 3.14159
-\end{verbatim}
+\end{pyconcode}
  Finalmente, la función \texttt{str} convierte al tipo cadena (\texttt{string}):
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> str(32)
 '32'
 >>> str(3.14149)
 '3.14149'
-\end{verbatim}
+\end{pyconcode}
  Puede parecer extraño el hecho de que Python distinga el valor entero
 \texttt{1} del valor en punto flotante \texttt{1.0}. Pueden representar
 el mismo número pero tienen diferentes tipos. La razón para esto es
@@ -102,11 +102,11 @@ que se denominan \textbf{coerción de tipos}. Para los operadores matemáticos,
 si algún operando es un número \texttt{flotante}, el otro se convierte
 automáticamente a \texttt{flotante}:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> minuto = 59
 >>> minuto / 60.0
 0.983333333333
-\end{verbatim}
+\end{pyconcode}
 
 Así que haciendo el denominador flotante, forzamos a Python a realizar
 división en punto flotante.
@@ -139,20 +139,20 @@ de funciones relacionadas.
 
 Antes de que podamos usar funciones de un módulo, tenemos que importarlas:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> import math
-\end{verbatim}
+\end{pyconcode}
  Para llamar a una de las funciones, tenemos que especificar el nombre
 del módulo y el nombre de la función, separados por un punto. Este
 formato se denomina \textbf{notación punto}.
 
 \index{notación punto}
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> decibel = math.log10(17.0)
 >>> angulo = 1.5
 >>> altura = math.sin(angulo)
-\end{verbatim}
+\end{pyconcode}
  La primera sentencia le asigna a \texttt{decibel} el logaritmo de
 17, en base \texttt{10}. También hay una función llamada \texttt{log}
 que usa la base logarítmica \texttt{e}.
@@ -164,19 +164,19 @@ de grados a radianes hay que dividir por 360 y multiplicar por \texttt{2{*}pi}.
 Por ejemplo, para encontrar el seno de 45 grados, primero calculamos
 el ángulo en radianes y luego tomamos el seno:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> grados = 45
 >>> angulo = grados * 2 * math.pi / 360.0
 >>> math.sin(angulo)
-\end{verbatim}
+\end{pyconcode}
  La constante \texttt{pi} también hace parte del módulo matemático.
 Si usted recuerda geometría puede verificar el resultado comparándolo
 con la raíz cuadrada de 2 dividida por 2:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> math.sqrt(2) / 2.0
 0.707106781187
-\end{verbatim}
+\end{pyconcode}
  
 
 \section{Composición}
@@ -187,9 +187,9 @@ Así como las funciones matemáticas, las funciones de Python pueden
 componerse, de forma que una expresión sea parte de otra. Por ejemplo,
 usted puede usar cualquier expresión como argumento a una función:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> x = math.cos(angulo + math.pi/2)
-\end{verbatim}
+\end{pyconcode}
 
 Esta sentencia toma el valor de \texttt{pi}, lo divide por 2, y suma
 este resultado al valor de \texttt{angulo}. Después, la suma se le
@@ -197,9 +197,9 @@ pasa como argumento a la función coseno (\texttt{cos}).
 
 También se puede tomar el resultado de una función y pasarlo como
 argumento a otra:
-\begin{verbatim}
+\begin{pyconcode}
 >>> x = math.exp(math.log(10.0))
-\end{verbatim}
+\end{pyconcode}
 
 Esta sentencia halla el logaritmo en base \texttt{e} de 10 y luego
 eleva \texttt{e} a dicho resultado. El resultado se asigna a \texttt{x}.
@@ -222,10 +222,10 @@ de los detalles de sus definiciones.
 
 La sintaxis para una definición de función es:
 
-\begin{verbatim}
+\begin{pythoncode}
 def NOMBRE( LISTA DE PARAMETROS ):
   SENTENCIAS
-\end{verbatim}
+\end{pythoncode}
  Usted puede inventar los nombres que desee para sus funciones con
 tal de que no use una palabra reservada. La lista de parámetros especifica
 que información, si es que la hay, se debe proporcionar a fin de usar
@@ -238,10 +238,10 @@ La práctica estándar de Python es usar 4 espacios.
 Las primeras funciones que vamos a escribir no tienen parámetros,
 así que la sintaxis luce así:
 
-\begin{verbatim}
+\begin{pythoncode}
 def nuevaLinea():
   print()
-\end{verbatim}
+\end{pythoncode}
  Esta función se llama \texttt{nuevaLinea}. Los paréntesis vacíos
 indican que no tiene parámetros. Contiene solamente una sentencia,
 que produce como salida una línea vacía. Eso es lo que ocurre cuando
@@ -250,33 +250,33 @@ se usa el comando \texttt{print} sin argumentos.
 La sintaxis para llamar la nueva función es la misma que para las
 funciones predefinidas en Python:
 
-\begin{verbatim}
+\begin{pythoncode}
 print("Primera Linea.")
 nuevaLinea()
 print("Segunda Linea.")
-\end{verbatim}
+\end{pythoncode}
  La salida para este programa es:
-\begin{verbatim}
+\begin{pythoncode}
 Primera Linea.
 
 Segunda Linea.
-\end{verbatim}
+\end{pythoncode}
 Note el espacio extra entre las dos líneas. ¿Qué pasa si deseamos
 más espacio entre las líneas? Podemos llamar la misma función repetidamente:
 
-\begin{verbatim}
+\begin{pythoncode}
 print("Primera Linea.")
 nuevaLinea()
 nuevaLinea()
 nuevaLinea()
 print("Segunda Linea.")
-\end{verbatim}
+\end{pythoncode}
  
 
 O podemos escribir una nueva función llamada \texttt{tresLineas} que
 imprima tres líneas:
 
-\begin{verbatim}
+\begin{pythoncode}
 def tresLineas():
   nuevaLinea()
   nuevaLinea()
@@ -285,7 +285,7 @@ def tresLineas():
 print("Primera Linea.")
 tresLineas()
 print("Segunda Linea.")
-\end{verbatim}
+\end{pythoncode}
  Esta función contiene tres sentencias, y todas están sangradas por
 dos espacios. Como la próxima sentencia, \texttt{print("Primera Linea")},
 no está sangrada, Python la interpreta afuera de la función.
@@ -316,7 +316,7 @@ tres veces.
 Uniendo los fragmentos de la sección 3.6, el programa completo luce
 así:
 
-\begin{verbatim}
+\begin{pythoncode}
 def nuevaLinea():
   print()
 
@@ -328,7 +328,7 @@ def tresLineas():
 print("Primera Linea.")
 tresLineas()
 print("Segunda Linea.")
-\end{verbatim}
+\end{pythoncode}
  Este programa contiene dos definiciones de funciones: \texttt{nuevaLinea}
 y \texttt{tresLineas}. Las definiciones de funciones se ejecutan como
 las otras sentencias, pero su efecto es crear nuevas funciones. Las
@@ -394,10 +394,10 @@ una función, los valores que se pasan se asignan a variables llamadas
 Aquí hay un ejemplo de una función definida por el programador que
 toma un parámetro:
 
-\begin{verbatim}
+\begin{pythoncode}
 def imprimaDoble(pedro):
   print(pedro, pedro)
-\end{verbatim}
+\end{pythoncode}
  Esta función toma un argumento y lo asigna a un parámetro llamado
 \texttt{pedro}. El valor del parámetro (en este momento no tenemos
 idea de lo que será) se imprime dos veces, y después, se imprime una
@@ -408,14 +408,14 @@ en general, usted desea escoger algo mas ilustrativo que \texttt{pedro}.
 La función \texttt{imprimaDoble} funciona para cualquier tipo que
 pueda imprimirse:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> imprimaDoble('Spam')
 Spam Spam
 >>> imprimaDoble(5)
 5 5
 >>> imprimaDoble(3.14159)
 3.14159 3.14159
-\end{verbatim}
+\end{pyconcode}
  En el primer llamado de función el argumento es una cadena. En el
 segundo es un entero. En el tercero es un flotante (\texttt{float}).
 
@@ -423,23 +423,23 @@ Las mismas reglas de composición que se aplican a las funciones primitivas,
 se aplican a las definidas por el programador, así que podemos usar
 cualquier clase de expresión como un argumento para \texttt{imprimaDoble}:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> imprimaDoble('Spam'*4)
 SpamSpamSpamSpam SpamSpamSpamSpam
 >>> imprimaDoble(math.cos(math.pi))
 -1.0 -1.0
-\end{verbatim}
+\end{pyconcode}
  Como de costumbre, la expresión se evalúa antes de que la función
 se ejecute así que \texttt{imprimaDoble} retorna \texttt{SpamSpamSpamSpam
 SpamSpamSpamSpam} en lugar de \texttt{'Spam'{*}4 'Spam'{*}4}.
 
 También podemos usar una variable como argumento:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> m = 'Oh, mundo cruel.'
 >>> imprimaDoble(m)
 Oh, mundo cruel. Oh, mundo cruel.
-\end{verbatim}
+\end{pyconcode}
  Observe algo muy importante, el nombre de la variable que pasamos
 como argumento (\texttt{m}) no tiene nada que ver con el nombre del
 parámetro (\texttt{pedro}). No importa como se nombraba el valor originalmente
@@ -453,29 +453,29 @@ la seguimos llamando de la misma manera \texttt{pedro}.
 Cuando usted crea una \textbf{variable local} en una función, solamente
 existe dentro de ella, y no se puede usar por fuera. Por ejemplo:
 
-\begin{verbatim}
+\begin{pythoncode}
 def concatenarDoble(parte1, parte2):
   cat = parte1 + parte2
   imprimaDoble(cat)
-\end{verbatim}
+\end{pythoncode}
  Esta función toma dos argumentos, los concatena, y luego imprime
 el resultado dos veces. Podemos llamar a la función con dos cadenas:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> cantar1 = "Pie Jesu domine, "
 >>> cantar2 = "Dona eis requiem."
 >>> concatenarDoble(cantar1, cantar2)
 Pie Jesu domine, Dona eis requiem. Pie Jesu domine, Dona 
 eis requiem.
-\end{verbatim}
+\end{pyconcode}
 
 Cuando \texttt{concatenarDoble} termina, la variable \texttt{cat}
 se destruye. Si intentáramos imprimirla obtendríamos un error:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(cat)
 NameError: cat
-\end{verbatim}
+\end{pyconcode}
  Los parámetros también son locales. Por ejemplo, afuera de la función
 \texttt{imprimaDoble}, no existe algo como \texttt{pedro}. Si usted
 intenta usarlo Python se quejará.
@@ -514,7 +514,7 @@ hasta llegar a \texttt{\_\_main\_\_}.
 
 Por ejemplo, si intentamos acceder a \texttt{cat} desde \texttt{imprimaDoble},
 obtenemos un \texttt{error de nombre (NameError)}:
-\begin{verbatim}
+\begin{pythoncode}
 Traceback (innermost last):
   File "test.py", line 13, in __main__
     concatenarDoble(cantar1, cantar2)
@@ -523,7 +523,7 @@ Traceback (innermost last):
   File "test.py", line 9, in imprimaDoble
     print(cat)
 NameError: cat
-\end{verbatim}
+\end{pythoncode}
 Esta lista de funciones se denomina un \textbf{trazado inverso}. Nos
 informa en qué archivo de programa ocurrió el error, en qué línea,
 y qué funciones se estaban ejecutando en ese momento. También muestra

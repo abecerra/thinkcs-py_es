@@ -12,12 +12,12 @@ una asignación a la misma variable. Una nueva asignación hace que
 la variable existente se refiera a un nuevo valor (y deje de referirse
 al viejo valor).
 
-\begin{verbatim}
+\begin{pythoncode}
 pedro = 5
 print(pedro)
 pedro = 7
 print(pedro)
-\end{verbatim}
+\end{pythoncode}
  La salida de este programa es:
 
 \texttt{5 }
@@ -47,11 +47,11 @@ es cierta. Si $a=b$ ahora, entonces $a$ siempre será igual a $b$.
 En Python, una sentencia de asignación puede lograr que dos variables
 sean iguales pero sólo por un tiempo determinado:
 
-\begin{verbatim}
+\begin{pythoncode}
 a = 5
 b = a    # a y b ahora son iguales
 a = 3    # a y b no son iguales ahora
-\end{verbatim}
+\end{pythoncode}
  La tercera línea cambia el valor de \texttt{a} pero no cambia el
 valor de \texttt{b}, así que ya no serán iguales. En algunos lenguajes
 de programación se usa un signo diferente para la asignación como
@@ -79,13 +79,13 @@ varios elementos para facilitarla. El primero que veremos es la sentencia
 Aquí presentamos a la función \texttt{conteo} usando una sentencia
 \texttt{while}:
 
-\begin{verbatim}
+\begin{pythoncode}
 def conteo(n):
   while n > 0:
     print(n)
     n = n-1
   print("Despegue!")
-\end{verbatim}
+\end{pythoncode}
  Como eliminamos el llamado recursivo, esta función deja de ser recursiva.
 
 La sentencia \texttt{while} se puede leer como en el lenguaje natural.
@@ -126,7 +126,7 @@ que va haciéndose más pequeño cada vez que el while itera (da la vuelta),
 así que eventualmente llegaremos a 0. En otros casos esto no es tan
 fácil de asegurar:
 
-\begin{verbatim}
+\begin{pythoncode}
 def secuencia(n):
   while n != 1:
     print(n),
@@ -134,7 +134,7 @@ def secuencia(n):
       n = n/2
     else:               # n es impar
       n = n*3+1
-\end{verbatim}
+\end{pythoncode}
  La condición para este ciclo es \texttt{n != 1}, así que se repetirá
 hasta que \texttt{n} sea \texttt{1}, lo que hará que la condición
 sea falsa.
@@ -190,13 +190,13 @@ Aunque una tabla logarítmica no es tan útil como en el pasado, todavía
 sirve como un buen ejemplo de iteración. El siguiente programa despliega
 una secuencia de valores en la columna izquierda y sus logaritmos
 en la columna derecha: 
-\begin{verbatim}
+\begin{pythoncode}
 import math
 x = 1.0
 while x < 10.0:
   print(x, '\t', math.log(x))
   x = x + 1.0
-\end{verbatim}
+\end{pythoncode}
 
 La cadena \verb+'\t'+ representa un carácter \textbf{tab} (tabulador).
 
@@ -209,7 +209,7 @@ El carácter tabulador mueve el cursor hacia la derecha hasta que alcanza
 un punto de parada (cada cierto número de espacios, que pueden variar
 de sistema a sistema). Los tabuladores son útiles para alinear columnas
 de texto, como la salida del anterior programa:
-\begin{verbatim}
+\begin{pythoncode}
 1.0     0.0
 2.0     0.69314718056
 3.0     1.09861228867
@@ -219,7 +219,7 @@ de texto, como la salida del anterior programa:
 7.0     1.94591014906
 8.0     2.07944154168
 9.0     2.19722457734
-\end{verbatim}
+\end{pythoncode}
 Si estos valores parecen extraños, recuerde que la función \texttt{log}
 usa la base \texttt{e}. Ya que las potencias de dos son importantes
 en la ciencias de la computación, a menudo deseamos calcular logaritmos
@@ -230,10 +230,10 @@ en base 2. Para este fin podemos usar la siguiente fórmula:
 \end{equation}
 
 Cambiando la salida del ciclo a:
-\begin{verbatim}
+\begin{pythoncode}
 print(x, '\t',  math.log(x)/math.log(2.0))
-\end{verbatim}
-\begin{verbatim}
+\end{pythoncode}
+\begin{pythoncode}
    resulta en:
 1.0     0.0
 2.0     1.0
@@ -244,16 +244,16 @@ print(x, '\t',  math.log(x)/math.log(2.0))
 7.0     2.80735492206
 8.0     3.0
 9.0     3.16992500144
-\end{verbatim}
+\end{pythoncode}
 Podemos ver que 1, 2, 4, y 8 son potencias de dos porque sus logaritmos
 en base 2 son números enteros. Si deseamos calcular el logaritmo de
 más potencias de dos podemos modificar el programa así:
-\begin{verbatim}
+\begin{pythoncode}
 x = 1.0
 while x < 100.0:
   print(x, '\t', math.log(x)/math.log(2.0))
   x = x * 2.0
-\end{verbatim}
+\end{pythoncode}
 
 Ahora, en lugar de agregar algo a \texttt{x} en cada iteración del
 ciclo, produciendo una serie aritmética, multiplicamos a \texttt{x}
@@ -261,7 +261,7 @@ por algo constante, produciendo una serie geométrica. El resultado
 es:
 
 \index{serie aritmética} \index{serie geométrica}
-\begin{verbatim}
+\begin{pythoncode}
 1.0     0.0
 2.0     1.0
 4.0     2.0
@@ -269,7 +269,7 @@ es:
 16.0    4.0
 32.0    5.0
 64.0    6.0
-\end{verbatim}
+\end{pythoncode}
 Gracias a los caracteres tabuladores entre las columnas, la posición
 de la segunda columna no depende del número de dígitos en la primera.
 
@@ -301,14 +301,14 @@ de multiplicación para los valores del 1 al 6.
 
 Una buena forma de empezar es escribir un ciclo que imprima los múltiplos
 de 2, en una sola línea:
-\begin{verbatim}
+\begin{pythoncode}
 i = 1
 while i <= 6:
   print(2*i, '   ',end=' ')
   i = i + 1
 
 print()
-\end{verbatim}
+\end{pythoncode}
 
 La primera línea inicializa una variable llamada \texttt{i}, que actúa
 como un contador o \textbf{variable de ciclo}. A medida que se ejecuta
@@ -322,9 +322,9 @@ Después de que el ciclo termina la segunda sentencia \texttt{print}
 comienza una nueva línea.
 
 La salida del programa es:
-\begin{verbatim}
+\begin{pythoncode}
 2      4      6      8      10     12
-\end{verbatim}
+\end{pythoncode}
 Hasta aquí vamos bien. El paso siguiente es \textbf{encapsular} y
 \textbf{generalizar}.
 
@@ -347,14 +347,14 @@ los múltiplos de cualquier entero.
 
 Esta función encapsula el ciclo anterior y lo generaliza para imprimir
 múltiplos de un parámetro \texttt{n}:
-\begin{verbatim}
+\begin{pythoncode}
 def imprimaMultiplos(n):
   i = 1
   while i <= 6:
     print(n*i, end='\t')
     i = i + 1
   print()
-\end{verbatim}
+\end{pythoncode}
 
 Para encapsular el ciclo, todo lo que agregamos fue la primera línea
 que declara el nombre de la función y la lista de parámetros. Para
@@ -363,49 +363,49 @@ generalizar, lo que hicimos fue reemplazar el valor 2 con el parámetro
 
 Si llamamos a esta función con el argumento 2, obtenemos la misma
 salida de la sección anterior. Con el argumento 3, la salida es:
-\begin{verbatim}
+\begin{pythoncode}
 3      6      9      12     15     18
-\end{verbatim}
+\end{pythoncode}
 Con el argumento 4, la salida es:
-\begin{verbatim}
+\begin{pythoncode}
 4      8      12     16     20     24
-\end{verbatim}
+\end{pythoncode}
 Ahora, usted probablemente imagine cómo imprimir una tabla de multiplicación
 —llamando a \texttt{imprimaMultiplos} repetidamente con diferentes
 argumentos. De hecho, podemos usar otro ciclo:
 
-\begin{verbatim}
+\begin{pythoncode}
 i = 1
 while i <= 6:
   imprimaMultiplos(i)
   i = i + 1
-\end{verbatim}
+\end{pythoncode}
 
 Observe lo similar que es este ciclo al ciclo interno de la función
 \texttt{imprimaMultiplos}. Todo lo que hicimos fue reemplazar la sentencia
 \texttt{print} con un llamado de función.
 
 La salida de este programa es una tabla de multiplicación:
-\begin{verbatim}
+\begin{pythoncode}
 1      2      3      4      5      6
 2      4      6      8      10     12
 3      6      9      12     15     18
 4      8      12     16     20     24
 5      10     15     20     25     30
 6      12     18     24     30     36
-\end{verbatim}
+\end{pythoncode}
 
 \section{Más encapsulamiento}
 
 Para demostrar el encapsulamiento otra vez, tomemos el código de la
 sección \ref{encapsulation} y envolvámoslo en una función:
-\begin{verbatim}
+\begin{pythoncode}
 def imprimirTablaMultiplicacion():
   i = 1
   while i <= 6:
     imprimaMultiplos(i)
     i = i + 1
-\end{verbatim}
+\end{pythoncode}
 
 Este proceso es un \textbf{plan de desarrollo} común. Desarrollamos
 código escribiendo líneas afuera de cualquier función o digitándolas
@@ -462,17 +462,17 @@ lectura del programa.
 Como otro ejemplo de generalización, imagine que le piden un programa
 que imprima una tabla de multiplicación de cualquier tamaño; no sólo
 la tabla de seis por seis. Podría agregarse un parámetro a \texttt{imprimaTabla}:
-\begin{verbatim}
+\begin{pythoncode}
 def imprimaTabla(tope):
   i = 1
   while i <= tope:
     imprimaMultiplos(i)
     i = i + 1
-\end{verbatim}
+\end{pythoncode}
 
 Reemplazamos el valor 6 con el parámetro \texttt{tope}. Si llamamos
 a \texttt{imprimaTabla} con el argumento 7, despliega:
-\begin{verbatim}
+\begin{pythoncode}
 1      2      3      4      5      6
 2      4      6      8      10     12
 3      6      9      12     15     18
@@ -480,7 +480,7 @@ a \texttt{imprimaTabla} con el argumento 7, despliega:
 5      10     15     20     25     30
 6      12     18     24     30     36
 7      14     21     28     35     42
-\end{verbatim}
+\end{pythoncode}
 Esto está bien, pero quizás deseamos que la tabla sea cuadrada—con
 el mismo número de filas y columnas. Para lograrlo, añadimos un parámetro
 a imprimaMultiplos que especifique cuántas columnas debe tener la
@@ -489,7 +489,7 @@ tabla.
 Sólo por confundir, vamos a nombrarlo \texttt{tope}, demostrando que
 diferentes funciones pueden tener parámetros con el mismo nombre (igual
 que las variables locales). Aquí está el programa completo:
-\begin{verbatim}
+\begin{pythoncode}
 def imprimaMultiplos(n, tope):
   i = 1
   while i <= tope:
@@ -502,14 +502,14 @@ def imprimaTabla(tope):
   while i <= tope:
     imprimaMultiplos(i, tope)
     i = i + 1
-\end{verbatim}
+\end{pythoncode}
 
 Note que cuando agregamos el nuevo parámetro tuvimos que cambiar la
 primera línea de la función (la cabecera), y también el lugar donde
 la función se llama en \texttt{imprimaTabla}.
 
 Como se esperaba, este programa genera una tabla cuadrada de siete-por-siete:
-\begin{verbatim}
+\begin{pythoncode}
 1      2      3      4      5      6      7
 2      4      6      8      10     12     14
 3      6      9      12     15     18     21
@@ -517,22 +517,22 @@ Como se esperaba, este programa genera una tabla cuadrada de siete-por-siete:
 5      10     15     20     25     30     35
 6      12     18     24     30     36     42
 7      14     21     28     35     42     49
-\end{verbatim}
+\end{pythoncode}
 Cuando se generaliza una función adecuadamente, a menudo se obtiene
 un programa con capacidades que no se habían planeado. Por ejemplo,
 podríamos aprovechar el hecho de que $ab=ba$, que causa que todas
 las entradas de la tabla aparezcan dos veces para ahorrar tinta imprimiendo
 solamente la mitad de la tabla. Para lograrlo sólo se necesita cambiar
 una línea de \texttt{imprimaTabla}. Cambiamos:
-\begin{verbatim}
+\begin{pythoncode}
     imprimaMultiplos(i, tope)
-\end{verbatim}
+\end{pythoncode}
 por
-\begin{verbatim}
+\begin{pythoncode}
     imprimaMultiplos(i, i)
-\end{verbatim}
+\end{pythoncode}
 y se obtiene:
-\begin{verbatim}
+\begin{pythoncode}
 1
 2      4
 3      6      9
@@ -540,7 +540,7 @@ y se obtiene:
 5      10     15     20     25
 6      12     18     24     30     36
 7      14     21     28     35     42     49
-\end{verbatim}
+\end{pythoncode}
 
 \section{Funciones}
 
@@ -608,11 +608,11 @@ usando iteración en vez de recursión.
 \item Escriba una sola cadena que
 
 \beforeverb 
-\begin{verbatim}
+\begin{pythoncode}
 produzca
         esta
                 salida.
-\end{verbatim}
+\end{pythoncode}
 \afterverb
 \item Escriba un programa que despliegue las potencias de 2 hasta 65,536
 (esto es $2^{16}$).
@@ -620,14 +620,14 @@ produzca
 los primeros n números triangulares. Una llamada a \verb+muestra_numeros_triangulares(5)+
 produciría la siguiente salida: \beforeverb 
 
-\begin{verbatim}
+\begin{pythoncode}
   1       1
   2       3
   3       6
   4       10
   5       15
   
-\end{verbatim}
+\end{pythoncode}
 \afterverb
 \item Muchos cálculos de funciones matemáticas se realizan con series infinitas,
 por ejemplo:
@@ -652,4 +652,3 @@ y \verb+False+ en caso contrario.
 \item Agregue el código para chequeo de tipo de datos y para las prueba
 unitarias a todas las funciones desarrolladas previamente.
 \end{enumerate}
-

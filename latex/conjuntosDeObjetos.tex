@@ -79,12 +79,12 @@ La razón para usar notación matemática en estas correspondencias es
 que ellas no hacen parte del programa en Python. Son parte del diseño,
 pero nunca aparecen explícitamente en el código fuente. La definición
 de la clase \texttt{Carta} luce así:
-\begin{verbatim}
+\begin{pythoncode}
 class Carta:
   def __init__(self, figura=0, valor=0):
     self.figura = figura
     self.valor = valor
-\end{verbatim}
+\end{pythoncode}
  Como de costumbre, proporcionamos un método de inicialización que
 toma un parámetro opcional para cada atributo.
 
@@ -92,9 +92,9 @@ toma un parámetro opcional para cada atributo.
 
 Para crear un objeto que represente el 3 de tréboles, usamos este
 comando:
-\begin{verbatim}
+\begin{pythoncode}
 tresTreboles = Carta(0, 3)
-\end{verbatim}
+\end{pythoncode}
 
 El primer argumento, \texttt{0}, representa la figura (tréboles).
 
@@ -107,7 +107,7 @@ leer fácilmente, queremos establecer una correspondencia entre códigos
 enteros y palabras. Una forma natural de hacerlo es con listas de
 cadenas de texto. Asignamos estas listas a \textbf{atributos de clase}
 al principio de la clase:
-\begin{verbatim}
+\begin{pythoncode}
 class Carta:
   listaFiguras = ["Treboles", "Diamantes", "Corazones", 
   "Picas"]
@@ -119,7 +119,7 @@ class Carta:
   def __str__(self):
     return self.listaFiguras[self.valor] + " de " + 
             self.listaValores[self.figura]
-\end{verbatim}
+\end{pythoncode}
 
 Un atributo de clase se define afuera de los métodos y puede ser accedido
 desde cualquiera de ellos.
@@ -139,22 +139,22 @@ no es necesario, podríamos haber empezado a contar desde 0, pero es
 menos confuso codificar 2 como 2, 3 como 3 ... y 13 como 13.
 
 Con los métodos que tenemos hasta aquí, podemos crear e imprimir cartas:
-\begin{verbatim}
+\begin{pyconcode}
 >>> c1 = Carta(1, 11)
 >>> print(c1)
 Jota de Diamantes
-\end{verbatim}
+\end{pyconcode}
  Los atributos de clase como \texttt{listaFiguras} se comparten por
 todos los objetos \texttt{Carta}. La ventaja de esto es que podemos
 usar cualquier objeto \texttt{Carta} para acceder a ellos:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> c2 = Carta(1, 3)
 >>> print(c2)
 3 de Diamantes
 >>> print(c2.listaFiguras[1])
 Diamantes
-\end{verbatim}
+\end{pyconcode}
  La desventaja es que si modificamos un atributo de clase, afecta
 a todas las otras instancias de la clase. Por ejemplo, si decidimos
 que ``Jota de Diamantes'' debería llamarse ``Caballero de Rombos
@@ -162,18 +162,18 @@ rojos,'' podríamos ejecutar:
 
 \index{instancia!objeto} \index{objeto instancia}
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> c1.listaFiguras[1] = "Caballero de Rombos rojos"
 >>> print(c1)
 Caballero de Rombos rojos
-\end{verbatim}
+\end{pyconcode}
  El problema es que {\em todos} los Diamantes ahora son Rombos
 rojos:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(c2)
 3 de Rombos rojos
-\end{verbatim}
+\end{pyconcode}
  Usualmente no es una buena idea modificar los atributos de clase.
 
 \section{Comparando cartas}
@@ -217,7 +217,7 @@ es más importante, basándonos en que un mazo de cartas nuevo viene
 con las Picas (en orden), luego los Diamantes, y así sucesivamente.
 
 Con esta decisión \texttt{\_\_cmp\_\_} queda así:
-\begin{verbatim}
+\begin{pythoncode}
 def __cmp__(self, otro):
   # chequea las figuras
   if self.figura > otro.figura: return 1
@@ -227,7 +227,7 @@ def __cmp__(self, otro):
   if self.valor < otro.valor: return -1
   # si los valores son iguales... hay un empate
   return 0
-\end{verbatim}
+\end{pythoncode}
 
 Con este orden los Ases valen menos que los Dos.
 
@@ -249,14 +249,14 @@ usual de cincuenta y dos cartas:
 
 \index{composición} \index{ciclo!anidado}
 
-\begin{verbatim}
+\begin{pythoncode}
 class Mazo:
   def __init__(self):
     self.cartas = []
     for figura in range(4):
       for valor in range(1, 14):
         self.cartas.append(Carta(figura, valor))
-\end{verbatim}
+\end{pythoncode}
  La forma más sencilla de llenar el mazo consiste en usar un ciclo
 anidado. El ciclo exterior enumera las figuras de 0 a 3. El ciclo
 interno enumera los valores de 1 a 13. Como el ciclo exterior itera
@@ -276,13 +276,13 @@ y no acepta tuplas.
 Como de costumbre, cuando definimos un nuevo tipo de objeto, deseamos
 tener un método que imprima su contenido. Para imprimir un \texttt{Mazo},
 recorremos la lista e imprimimos cada objeto \texttt{Carta}:
-\begin{verbatim}
+\begin{pythoncode}
 class Mazo:
   ...
   def imprimirMazo(self):
     for carta in self.cartas:
       print(carta)
-\end{verbatim}
+\end{pythoncode}
 
 En este ejemplo y en los que siguen, los puntos suspensivos indican
 que hemos omitido los otros métodos de la clase.
@@ -297,7 +297,7 @@ imprimirse.
 A continuación hay una versión de \texttt{\_\_str\_\_} que retorna
 una representación de un \texttt{Mazo}. Para añadir un estilo de cascada,
 cada carta se imprime un espacio mas hacia la derecha que la anterior:
-\begin{verbatim}
+\begin{pythoncode}
 class Mazo:
   ...
   def __str__(self):
@@ -305,7 +305,7 @@ class Mazo:
     for i in range(len(self.cartas)):
       s = s + " "*i + str(self.cartas[i]) + "\n"
     return s
-\end{verbatim}
+\end{pythoncode}
 
 Este ejemplo demuestra varios puntos. Primero, en vez de recorrer
 los elementos de la lista \texttt{self.cartas}, estamos usando a \texttt{i}
@@ -330,7 +330,7 @@ de \texttt{s} para obtener el nuevo valor. Cuando el ciclo finaliza,
 \texttt{s} contiene la representación completa del \texttt{Mazo},
 que se despliega (parcialmente) así:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> mazo = Mazo()
 >>> print(mazo)
 As de Picas
@@ -347,7 +347,7 @@ As de Picas
            Reina de Picas
             Rey de Picas
              As de Diamantes
-\end{verbatim}
+\end{pyconcode}
  Aunque el resultado se despliega en 52 líneas, es una sola cadena
 que contiene caracteres nueva linea \verb+(\n)+.
 
@@ -370,16 +370,16 @@ usar el número de elementos de una lista como el segundo parámetro
 y siempre obtendremos un índice válido como resultado. Por ejemplo,
 esta expresión escoge al azar el índice de una carta en un mazo:
 
-\begin{verbatim}
+\begin{pythoncode}
 random.randrange(0, len(self.cartas))
-\end{verbatim}
+\end{pythoncode}
  Una manera sencilla de barajar el mazo consiste en recorrer todas
 las cartas intercambiando cada una con otra carta escogida al azar.
 Es posible que la carta se intercambie consigo misma, pero esto no
 causa ningún problema. De hecho, si prohibiéramos esto, el orden de
 las cartas no sería tan aleatorio:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Mazo:
   ...
   def barajar(self):
@@ -389,7 +389,7 @@ class Mazo:
       j = random.randrange(i, nCartas)
       self.cartas[i], self.cartas[j] = self.cartas[j], \
                                        self.cartas[i]
-\end{verbatim}
+\end{pythoncode}
  En vez de asumir que hay 52 cartas en el mazo, obtenemos el número
 de ellas a través de la función len y lo almacenamos en la variable
 \texttt{nCartas}.
@@ -401,10 +401,10 @@ las que no han sido barajadas todavía. Intercambiamos la carta actual
 (con índice \texttt{i}) con la seleccionada (con índice \texttt{j}).
 Para intercambiar las cartas usamos asignación de tuplas, como en
 la sección ~\ref{tuple assignment}:
-\begin{verbatim}
+\begin{pythoncode}
 self.cartas[i], self.cartas[j] = self.cartas[j], \
                                  self.cartas[i]
-\end{verbatim}
+\end{pythoncode}
 
 \section{Eliminando y entregando cartas}
 
@@ -414,7 +414,7 @@ Otro método que sería útil para la clase \texttt{Mazo} es \texttt{eliminarCar
 que toma una carta como parámetro, la remueve y retorna True si la
 encontró en el mazo o False si no estaba:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Mazo:
   ...
   def eliminarCarta(self, carta):
@@ -423,7 +423,7 @@ class Mazo:
       return True
     else: 
       return True
-\end{verbatim}
+\end{pythoncode}
  El operador \texttt{in} retorna True si el primer operando se encuentra
 dentro del segundo, que debe ser una secuencia. Si el primer operando
 es un objeto, Python usa el método \texttt{\_\_cmp\_\_} para determinar
@@ -435,12 +435,12 @@ detecta igualdad profunda.
 
 Para entregar cartas necesitamos eliminar y retornar la primera carta
 del mazo. El método \texttt{pop} de las listas proporciona esta funcionalidad:
-\begin{verbatim}
+\begin{pythoncode}
 class Mazo:
   ...
   def entregarCarta(self):
     return self.cards.pop()
-\end{verbatim}
+\end{pythoncode}
  En realidad, \texttt{pop} elimina la {\em última} carta de la
 lista, así que realmente estamos entregando cartas por la parte inferior,
 y esto no causa ningún inconveniente.
@@ -450,12 +450,12 @@ y esto no causa ningún inconveniente.
 Una operación más que podemos requerir es la función booleana \texttt{estaVacio},
 que retorna True si el mazo está vacío:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Mazo:
   ...
   def estaVacio(self):
     return (len(self.cartas) == 0)
-\end{verbatim}
+\end{pythoncode}
 
 \section{Glosario}
 \begin{description}

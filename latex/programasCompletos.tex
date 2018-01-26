@@ -3,7 +3,7 @@
 
 \section{Clase punto}
 
-\begin{verbatim}
+\begin{pythoncode}
 class Punto:
   def __init__(self, x=0, y=0):
     self.x = x
@@ -32,11 +32,11 @@ class Punto:
     alreves = copy(derecho)
     alreves.invertir()
     print(str(derecho) + str(alreves))
-\end{verbatim}
+\end{pythoncode}
 
 \section{Clase hora}
 
-\begin{verbatim}
+\begin{pythoncode}
 class Hora:
   def __init__(self, hora=0, minutos=0, segundos=0):
     self.hora = hora
@@ -69,11 +69,11 @@ def crearHora(segs):
   segs = segs - H.minutos * 60
   H.segundos = segs
   return H
-\end{verbatim}
+\end{pythoncode}
 
 \section{Cartas, mazos y juegos}
 
-\begin{verbatim}
+\begin{pythoncode}
 import random
 
 class Carta:
@@ -246,13 +246,11 @@ class JuegoSolterona(JuegoCartas):
   def imprimirmanos(self) :
     for mano in self.manos :
       print(mano)
-\end{verbatim}
+\end{pythoncode}
 
 \section{Listas enlazadas}
-\begin{verbatim}
 
-\end{verbatim}
-\begin{verbatim}
+\begin{pythoncode}
 def imprimirlista(Nodo) :
   while Nodo :
     print(Nodo),
@@ -314,11 +312,11 @@ class ListaEnlazada :
     nodo.siguiente = self.cabeza
     self.cabeza = nodo
     self.numElementos = self.numElementos + 1
-\end{verbatim}
+\end{pythoncode}
 
 \section{Clase pila}
 
-\begin{verbatim}
+\begin{pythoncode}
 class Pila:              
   def __init__(self):
     self.items = []
@@ -348,14 +346,11 @@ def evalPostfija(expr) :
     else :
       pila.meter(int(lexema))
   return pila.sacar()
-\end{verbatim}
-\begin{verbatim}
-
-\end{verbatim}
+\end{pythoncode}
 
 \section{Colas PEPS y de colas de prioridad}
 
-\begin{verbatim}
+\begin{pythoncode}
 class Cola:
   def __init__(self):
     self.numElementos = 0
@@ -374,9 +369,9 @@ class Cola:
        # encontrar el ultimo nodo
        ultimo = self.primero
        while ultimo.siguiente:
-	 ultimo = ultimo.siguiente
-	 # pegar el nuevo
-	 ultimo.siguiente = nodo
+     ultimo = ultimo.siguiente
+     # pegar el nuevo
+     ultimo.siguiente = nodo
        self.numElementos = self.numElementos + 1
 
   def sacar(self):
@@ -431,7 +426,7 @@ class ColaPrioridad:
     maxi = 0
     for i in range(1,len(self.items)) :
       if self.items[i] > self.items[maxi] :
-	maxi = i
+    maxi = i
     item = self.items[maxi]
     self.items[maxi:maxi+1] = []
     return item
@@ -440,7 +435,7 @@ class ColaPrioridad:
     maxi = 0
     for i in range(0,len(self.items)): 
       if self.items[i] > self.items[maxi]:
-	maxi = i
+    maxi = i
       item = self.items[maxi]
       self.items[maxi:maxi+1] = []
       return item
@@ -459,11 +454,11 @@ class golfista:
     if self.puntaje < otro.puntaje: return 1
       if self.puntaje > otro.puntaje: return -1
         return 0
-\end{verbatim}
+\end{pythoncode}
 
 \section{Árboles}
 
-\begin{verbatim}
+\begin{pythoncode}
 class Arbol:
   def __init__(self, carga, izquierdo=None, derecho=None):
     self.carga = carga
@@ -526,11 +521,11 @@ def imprimirarbolSangrado(arbol, nivel=0):
   imprimirarbolSangrado(arbol.derecho, nivel+1)
   print(" "*nivel + str(arbol.carga))
   imprimirarbolSangrado(arbol.izquierdo, nivel+1)
-\end{verbatim}
+\end{pythoncode}
 
 \section{Árboles de expresiones}
 
-\begin{verbatim}
+\begin{pythoncode}
 def obtenerLexema(listaLexemas, esperado):
   if listaLexemas[0] == esperado:
       del listaLexemas[0]
@@ -567,11 +562,11 @@ def obtenerNumero(listaLexemas):
       return None
     listaLexemas[0:1] = []
    return Arbol (x, None, None)  
-\end{verbatim}
+\end{pythoncode}
 
 \section{Adivinar el animal}
 
-\begin{verbatim}
+\begin{pythoncode}
 def animal():
   # Un solo nodo
   raiz = Arbol("pajaro")
@@ -579,15 +574,15 @@ def animal():
   while True:
     print()
     if not si("Esta pensando en un animal? "):
-	break
+    break
     # Recorrer el arbol
     arbol = raiz
     while arbol.obtenerizquierdo() != None:
       pregunta = arbol.obtenercarga() + "? "
       if si(pregunta):
-	  arbol = arbol.obtenerderecho()
+      arbol = arbol.obtenerderecho()
       else:
-	  arbol = arbol.obtenerizquierdo()
+      arbol = arbol.obtenerizquierdo()
     # conjetura
     conjetura = arbol.obtenercarga()
     pregunta = "¿Es un" + conjetura + "? "
@@ -598,12 +593,12 @@ def animal():
     pregunta = "¿Cual es el nombre el animal? "
     animal = raw_input(pregunta)
     pregunta = "¿Que pregunta permitiria distinguir 
-		un %s de un %s? "
+        un %s de un %s? "
     q = raw_input(pregunta % (animal,conjetura))
     # agrega un nuevo nodo arbol
     arbol.asignarcarga(q)
     pregunta = "¿Si el animal fuera %s 
-		la respuesta sería? "
+        la respuesta sería? "
     if si(pregunta % animal):
       arbol.asignarizquierdo(Arbol(conjetura))
       arbol.asignarderecho(Arbol(animal))
@@ -615,12 +610,12 @@ def si(preg):
   from string import lower
   r = lower(raw_input(preg))
   return (r[0] == 's')
-\end{verbatim}
+\end{pythoncode}
 
 \section{Clase \texttt{Fraccion}}
 
 \texttt{}
-\begin{verbatim}[language=Python,showstringspaces=false,tabsize=4]
+\begin{pythoncode}
 class Fraccion:
   def __init__(self,numerador,denominador=1):
     self.numerador = numerador
@@ -633,7 +628,7 @@ class Fraccion:
     if type(otro) == type(5):
       otro = Fraccion(otro)
     return Fraccion(self.numerador * otro.numerador,
-		    self.denominador * otro.denominador)
+            self.denominador * otro.denominador)
   
   __rmul__ = __mul__ 
 
@@ -642,8 +637,8 @@ class Fraccion:
     if type(otro) == type(5):
       otro = Fraccion(otro)
     return Fraccion(self.numerador * otro.denominador +
-		    self.denominador * otro.numerador,
-		    self.denominador * otro.denominador)
+            self.denominador * otro.numerador,
+            self.denominador * otro.denominador)
   
   __radd__ = __add__
   
@@ -654,13 +649,13 @@ class Fraccion:
   
   def __cmp__(self, otro):
     dif = (self.numerador * otro.denominador -
-	   otro.numerador * self.denominador)
+       otro.numerador * self.denominador)
     return dif
 
 def MDC (m,n):
       if m%n==0:
-	  return n
+      return n
       else:
-	  return MDC(n,m%n)
-\end{verbatim}
+      return MDC(n,m%n)
+\end{pythoncode}
 

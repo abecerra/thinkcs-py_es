@@ -66,7 +66,7 @@ se cambie de tamaño.
 
 Nuestro primer programa importa lo que necesita de kivy:
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui0.py
 import kivy
 kivy.require('1.9.1')
@@ -85,7 +85,7 @@ class Programa(App):
 
 if __name__ == '__main__':
     Programa().run()
-\end{verbatim}
+\end{pythoncode}
 
 El gran ciclo reside en la clase \texttt{App} de Kivy, de la que heredamos
 la clase \texttt{Programa}. Cuando arranca el programa, al ejecutar
@@ -112,7 +112,7 @@ la ventana, el mecanismo que se utiliza para reaccionar ante los eventos
 es el de registrar métodos que serán invocados automáticamente por
 el gran ciclo.
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui1.py
 class Triqui(GridLayout):
     def __init__(self, **kwargs):
@@ -122,7 +122,7 @@ class Triqui(GridLayout):
     
     def boton_presionado(self, w):
         pass
-\end{verbatim}
+\end{pythoncode}
 
 Los widgets se agregan a una ventana mediante el método \texttt{add\_widget}.
 Aquí agregamos un botón y registramos un método que responde al evento
@@ -135,7 +135,7 @@ de 3 filas y 3 columnas en la que cada elemento es un botón. Ahora,
 en el método \texttt{boton\_presionado} vamos a mostrar un cuadro
 de diálogo que muestra un texto sencillo.
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui2.py
 class Triqui(GridLayout):
     def __init__(self, **kwargs):
@@ -149,12 +149,12 @@ class Triqui(GridLayout):
         
     def boton_presionado(self, w):
         MostrarMensaje("Titulo","Presionaste una casilla")
-\end{verbatim}
+\end{pythoncode}
 
 \texttt{MostrarMensaje} es una clase que heredamos de \texttt{PopUp},
 la clase que tiene kivy para cuadros de diálogo:
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui2.py
 class MostrarMensaje(Popup): 
     def __init__(self, titulo, mensaje, **kwargs):
@@ -164,7 +164,7 @@ class MostrarMensaje(Popup):
         self.add_widget(Button(text=mensaje, \
                         on_press=lambda x:self.dismiss()))
         self.open()
-\end{verbatim}
+\end{pythoncode}
 
 El cuadro de diálogo tiene un título y un botón que, al ser presionado,
 cierra todo el cuadro. La acción del botón se registra asignando al
@@ -181,7 +181,7 @@ en la clase Triqui. Hay que crear el atributo en el método de inicialización
 y modificarlo en cada jugada. El \texttt{turno} será 'O' para el primer
 jugador y 'X' para el segundo.
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui3.py
 class Triqui(GridLayout):
     def __init__(self, **kwargs):
@@ -205,7 +205,7 @@ class Triqui(GridLayout):
         else:
             w.text = 'X'
             self.turno = 'O'
-\end{verbatim}
+\end{pythoncode}
 
 Cuando se presiona un botón se verifica si la casilla está vacía para
 poder jugar en ella. Si no es así se cambia el texto del botón y se
@@ -220,7 +220,7 @@ le asigna un espacio.
 Agregamos un botón que tiene propiedades para registrar la fila y
 la columna, heredando de la clase \texttt{Button}.
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui4.py
 class Boton(Button):
     fila = NumericProperty(0)
@@ -230,19 +230,19 @@ class Boton(Button):
         super(Boton, self).__init__(**kwargs)
         self.font_size=100
         self.text=' '
-\end{verbatim}
+\end{pythoncode}
 
 Esto nos permite pasar el estado de los botones a una matriz con el
 siguiente método de la clase \texttt{Triqui}:
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui4.py
     def botones_a_matriz(self,tablero):
         for i in self.children:
             f = i.fila
             c = i.columna
             self.tablero[f][c]=i.text
-\end{verbatim}
+\end{pythoncode}
 
 En Kivy, children contiene todos los widgets que se han agregado a
 una ventana, en nuestro caso los 9 botones.
@@ -250,7 +250,7 @@ una ventana, en nuestro caso los 9 botones.
 Así podremos reutilizar el módulo \texttt{validar}, creando la matriz
 que lleva el estado del juego :
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui4.py
 
 from validar import *
@@ -264,12 +264,12 @@ from validar import *
                        fila=i,columna=j))
         self.turno = 'O'
         self.tablero = crear()
-\end{verbatim}
+\end{pythoncode}
 
 Ahora estamos en condiciones de poner valores a la matriz cada vez
 que se halla realizado una jugada:
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui5.py
     def boton_presionado(self, w):
         if w.text != ' ':
@@ -285,25 +285,25 @@ que se halla realizado una jugada:
                     MostrarMensaje("Fin", "Gana el jugador O")
             else:
                 # Muy similar para el otro jugador!
-\end{verbatim}
+\end{pythoncode}
 
 \section{Reset}
 
 Podemos reiniciar el juego cada vez que un jugador gane, mediante
 la creación del siguiente método de \texttt{Triqui}:
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui6.py
    def reset(self):
         for i in self.children:
             i.text = ' '
         self.turno = 'O'
-\end{verbatim}
+\end{pythoncode}
 
 Ahora lo llamamos cada vez que un jugador gana, así el tablero de
 juego quedará limpio para que se inicie otra partida.
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui6.py
     def boton_presionado(self, w):
         # Todo lo anterior igual
@@ -314,19 +314,19 @@ juego quedará limpio para que se inicie otra partida.
                 if gana("X",self.tablero):
                     MostrarMensaje("Fin", "Gana el jugador X")
                     self.reset()
-\end{verbatim}
+\end{pythoncode}
 
 Aprovechando al método reset, añadimos el chequeo de empates entre
 los dos jugadores:
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui7.py
     def boton_presionado(self, w):
         # Todo lo anterior igual
             if empate(self.tablero):
                 MostrarMensaje("Fin", "Empate!")
                 self.reset()
-\end{verbatim}
+\end{pythoncode}
 
 \section{Reestructurando, otra vez}
 
@@ -339,10 +339,8 @@ que:
 \item Si hay empate, muestra el mensaje y resetea.
 \item Si nadie gana y no hay empate, pasa el turno al otro jugador. 
 \end{itemize}
-\begin{verbatim}
 
-\end{verbatim}
-\begin{verbatim}
+\begin{pythoncode}
 # triqui8.py
   def revisar(self):          
         if gana(self.turno,self.tablero):
@@ -354,18 +352,18 @@ que:
             self.reset()
         else:
             self.turno = self.otro()
-\end{verbatim}
+\end{pythoncode}
 
 Que depende del método otro:
 
-\begin{verbatim}
+\begin{pythoncode}
 # triqui8.py
     def otro(self):
         if self.turno == 'O':
             return 'X'
         else:
             return 'O'
-\end{verbatim}
+\end{pythoncode}
 
 Así terminamos con un programa que tiene en total 4 clases, con 9
 métodos distribuidos en ellas, además de las 9 funciones del módulo

@@ -16,21 +16,21 @@ pueden identificar cadenas porque están encerradas entre comillas.
 
 La función de impresión también trabaja con enteros.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(4)
 4
-\end{verbatim}
+\end{pyconcode}
 
 
 Si no está seguro del tipo que un valor tiene, el intérprete le puede
 decir.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> type("Hola, Mundo!")
 str
 >>> type(17)
 int
-\end{verbatim}
+\end{pyconcode}
 
 
 Sin despertar ninguna sorpresa, las cadenas pertenecen al tipo \texttt{\textbf{str}}\texttt{ing
@@ -42,20 +42,20 @@ denominado \textbf{punto flotante}.
 \index{tipo} \index{cadena} \index{tipo!cadena} \index{int} \index{tipo!int}
 \index{float} \index{tipo!float}
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> type(3.2)
 float
-\end{verbatim}
+\end{pyconcode}
 
 ¿Qué ocurre con valores como {\verb+"17"+} y {\verb+"3.2"+}?
 Parecen números, pero están encerrados entre comillas como las cadenas.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> type("17")
 str
 >>> type("3.2")
 str
-\end{verbatim}
+\end{pyconcode}
 
 Ellos son cadenas.
 
@@ -63,10 +63,10 @@ Cuando usted digita un número grande, podría estar tentado a usar
 comas para separar grupos de tres dígitos, como en \texttt{1,000,000}.
 Esto no es un número entero legal en Python, pero esto si es legal:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(1,000,000)
 1 0 0
-\end{verbatim}
+\end{pyconcode}
 
 ¡Bueno, eso no es lo que esperábamos!. Resulta que \texttt{1,000,000}
 es una tupla, algo que encontraremos en el Capítulo \ref{tuplechap}.
@@ -83,11 +83,11 @@ nombre que se refiere a un valor.
 La \textbf{sentencia de asignación} crea nuevas variables y les da
 valores:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> mensaje = "¿Qué Onda?"
 >>> n = 17
 >>> pi = 3.14159
-\end{verbatim}
+\end{pyconcode}
 
 Este ejemplo hace tres asignaciones: la primera asigna la cadena {\verb+"¿Qué Onda?"+}
 a una nueva variable denominada \texttt{mensaje}, la segunda le asigna
@@ -108,28 +108,28 @@ de las sentencias de asignación anteriores:
 
 La función \texttt{print} también funciona con variables.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(mensaje)
 Que Onda?
 >>> print(n)
 17
 >>> print(pi)
 3.14159
-\end{verbatim}
+\end{pyconcode}
 
 
 En cada caso el resultado es el valor de la variable. Las variables
 también tienen tipos; nuevamente, le podemos preguntar al intérprete
 cuales son.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> type(mensaje)
 str
 >>> type(n)
 int
 >>> type(pi)
 float
-\end{verbatim}
+\end{pyconcode}
 
 
 El tipo de una variable es el mismo del valor al que se refiere.
@@ -155,18 +155,18 @@ menudo se usa en nombres con múltiples palabras, tales como \texttt{mi\_nombre}
 
 Si usted le da un nombre ilegal a una variable obtendrá un error sintáctico:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> 76trombones = "gran desfile"
 SyntaxError: invalid syntax
->>> mas$ = 1000000
+>>> mas+ = 1000000
 SyntaxError: invalid syntax
->>> class = "introducción a la programación"
+>>> class= "introducción a la programación"
 SyntaxError: invalid syntax
-\end{verbatim}
+\end{pyconcode}
 
 \texttt{76trombones} es ilegal porque no empieza con una letra.\\
-\texttt{mas\$} es ilegal porque contiene un carácter ilegal, el símbolo
-\$.\\
+\texttt{mas+} es ilegal porque contiene un carácter ilegal, el símbolo
++.\\
 ¿Qué sucede con \texttt{class}?
 
 Resulta que \texttt{class} es una de las \textbf{palabras reservadas
@@ -178,13 +178,13 @@ de variables.
 
 Python tiene veintiocho palabras reservadas:
 
-\begin{verbatim}
+\begin{pyconcode}
 and       continue  else      for       import    not       
 assert    def       except    from      in        or        
 break     del       exec      global    is        pass      
 class     elif      finally   if        lambda    print     
 raise     return    try       while
-\end{verbatim}
+\end{pyconcode}
 
 
 Usted puede mantener esta lista a mano. Si el intérprete se queja
@@ -207,16 +207,16 @@ se ejecutan.
 
 Por ejemplo, el guión
 
-\begin{verbatim}
+\begin{pythoncode}
 print(1)
 x = 2
 print(x)
-\end{verbatim}
+\end{pythoncode}
 produce la salida:
-\begin{verbatim}
+\begin{pythoncode}
 1
 2
-\end{verbatim}
+\end{pythoncode}
 Observe nuevamente que la sentencia de asignación no produce salida.
 
 \section{Evaluando expresiones}
@@ -225,33 +225,33 @@ Una expresión es una combinación de valores, variables y operadores.
 Si usted digita una expresión en la línea de comandos, el intérprete
 la \textbf{evalúa} y despliega su resultado:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> 1 + 1
 2
-\end{verbatim}
+\end{pyconcode}
 
 
 Un valor, por si mismo, se considera como una expresión, lo mismo
 ocurre para las variables.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> 17
 17
 >>> x
 2
-\end{verbatim}
+\end{pyconcode}
 
 
 Aunque es un poco confuso, evaluar una expresión no es lo mismo que
 imprimir o desplegar un valor.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> mensaje = "Como le va, Doc?"
 >>> mensaje
 "Como le va, Doc?"
 >>> print(mensaje)
 Como le va, Doc?
-\end{verbatim}
+\end{pyconcode}
 
 
 Cuando Python muestra el valor de una expresión que ha evaluado, utiliza
@@ -262,12 +262,12 @@ usa la función print, el efecto es distinto como usted ya lo ha evidenciado.
 En un guión, una expresión, por sí misma, es una sentencia legal,
 pero no realiza nada. El guión:
 
-\begin{verbatim}
+\begin{pythoncode}
 17
 3.2
 "Hola, Mundo!"
 1 + 1
-\end{verbatim}
+\end{pythoncode}
 
 
 no produce ninguna salida. ¿Cómo cambiaría el guión de manera que
@@ -284,13 +284,11 @@ se denominan \textbf{operandos}.
 Los siguientes son expresiones válidas en Python, cuyo significado
 es más o menos claro: 
 
-\begin{verbatim}
+\begin{pyconcode}
 20+32       hora-1   hora*60+minuto   
 minuto/60   5**2     (5+9)*(15-7)
-\end{verbatim}
-\begin{verbatim}
+\end{pyconcode}
 
-\end{verbatim}
 Los símbolos \texttt{+}, \texttt{-}, y \texttt{/}, y los paréntesis
 para agrupar, significan en Python lo mismo que en la matemática.
 El asterisco (\texttt{{*}}) es el símbolo para la multiplicación,
@@ -302,11 +300,11 @@ La suma, resta, multiplicación y exponenciación realizan lo que usted
 esperaría, pero la división usando el operador // podría sorprenderlo.
 La siguiente operación tiene un resultado inesperado:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> minuto = 59
 >>> minuto//60
 0
-\end{verbatim}
+\end{pyconcode}
 
 El valor de \texttt{minuto} es 59, y 59 dividido por 60 es 0.98333,
 no 0. La razón para esta discrepancia radica en que Python está realizando
@@ -362,9 +360,9 @@ cadenas, incluso si las cadenas lucen como números. Las siguientes
 operaciones son ilegales (asumiendo que \texttt{mensaje} tiene el
 tipo \texttt{cadena}):
 
-\begin{verbatim}
+\begin{pyconcode}
  mensaje-1   "Hola"/123   mensaje*"Hola"   "15"+2
-\end{verbatim}
+\end{pyconcode}
 
 Sin embargo, el operador \texttt{+} funciona con cadenas, aunque no
 calcula lo que usted esperaría. Para las cadenas, el operador \texttt{+}
@@ -373,11 +371,11 @@ enlazándolos en el orden en que aparecen. Por ejemplo:
 
 \index{concatenación}
 
-\begin{verbatim}
+\begin{pythoncode}
 fruta = "banano"
 bienCocinada = " pan con nueces"
 print(fruta + bienCocinada)
-\end{verbatim}
+\end{pythoncode}
 
 La salida de este programa es \texttt{banano pan con nueces}. El espacio
 antes de la palabra \texttt{pan} es parte de la cadena y sirve para
@@ -409,28 +407,28 @@ es su capacidad de tomar pequeños bloques para \textbf{componer} con
 ellos. Por ejemplo, ya que sabemos cómo sumar números y cómo imprimirlos;
 podemos hacer las dos cosas al mismo tiempo:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(17 + 3)
 20
-\end{verbatim}
+\end{pyconcode}
 De hecho, la suma tiene que calcularse antes que la impresión, así
 que las acciones no están ocurriendo realmente al mismo tiempo. El
 punto es que cualquier expresión que tenga números, cadenas y variables
 puede ser usada en una sentencia de impresión (\texttt{print}). Usted
 ha visto un ejemplo de esto:
 
-\begin{verbatim}
+\begin{pythoncode}
 print("Número de minutos desde media noche: ",  \
   hora*60+minuto)
-\end{verbatim}
+\end{pythoncode}
 El caracter \textbackslash{} permite continuar en la siguiente línea.
 Lo usaremos cuando las expresiones sean muy largas. Usted también
 puede poner expresiones arbitrarias en el lado derecho de una sentencia
 de asignación:
 
-\begin{verbatim}
+\begin{pythoncode}
 porcentaje = (minuto * 100) / 60
-\end{verbatim}
+\end{pythoncode}
 Esto no parece nada impresionante ahora, pero vamos a ver otros ejemplos
 en los que la composición hace posible expresar cálculos complejos
 organizada y concisamente.
@@ -453,16 +451,16 @@ Por esta razón, es una muy buena idea añadir notas a sus programas
 para explicar, en lenguaje natural, lo que hacen. Estas notas se denominan
 \textbf{comentarios }y se marcan con el símbolo \texttt{\#}:
 
-\begin{verbatim}
+\begin{pythoncode}
 # calcula el porcentaje de la hora que ha pasado
 porcentaje = (minuto * 100) / 60
-\end{verbatim}
+\end{pythoncode}
 En este caso, el comentario aparece en una línea completa. También
 pueden ir comentarios al final de una línea:
 
-\begin{verbatim}
+\begin{pythoncode}
 porcentaje = (minute * 100) // 60 # div entera
-\end{verbatim}
+\end{pythoncode}
 
 todo lo que sigue desde el \texttt{\#} hasta el fin de la línea se
 ignora—no tiene efecto en el programa. El mensaje es para el programador
@@ -523,13 +521,13 @@ ejecución.
 \begin{enumerate}
 \item ¿Qué sucede cuando se usa la función print con una expresión?, por
 ejemplo: 
-\begin{verbatim}
+\begin{pythoncode}
 print(8+5)
-\end{verbatim}
+\end{pythoncode}
 \item ¿Qué sucede cuando se ejecuta esto?
-\begin{verbatim}
+\begin{pythoncode}
 print(5.2, "esto", 4 - 2, "aquello", 5/2.0)
-\end{verbatim}
+\end{pythoncode}
 \item Tome la siguiente oración: Sólo trabajo y nada de juegos hacen de
 Juan un niño aburrido. Almacene cada palabra en variables separadas,
 después muestre la oración en una sola línea usando la función print.
@@ -543,14 +541,14 @@ la función input evalúa la cadena introducida y la función raw\_input
 no lo hace. Escriba lo siguiente en el intérprete de Python, registre
 qué sucede y explique:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> x = input()
 3.14
 >>> type(x)
 >>> x = raw_input()
 3.14
 >>> type(x)
-\end{verbatim}
+\end{pyconcode}
 \item Escriba una expresión que calcule la nota definitiva de su curso de
 programación.
 \end{enumerate}

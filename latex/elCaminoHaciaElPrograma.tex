@@ -86,13 +86,13 @@ A Python se lo considera un lenguaje interpretado, porque sus programas
 son ejecutados por un intérprete. Existen dos maneras de usar el intérprete:
 modo de comando y modo de guión. En modo de comando se escriben sentencias
 en el lenguaje Python y el intérprete muestra el resultado.
-\begin{verbatim}
+\begin{pyconcode}
 $python
 Python 3.6.1 (default, Apr 29 2017, 15:32:44) [GCC 5.4.0] on linux 
 Type "help", "copyright", "credits" or "license" for more information. 
 >>>1+1
 2
-\end{verbatim}
+\end{pyconcode}
 La primera línea de este ejemplo es el comando que pone en marcha
 al intérprete de Python. Las dos líneas siguientes son mensajes del
 intérprete. La tercera línea comienza con {\verb+>>>+}, lo que
@@ -105,21 +105,19 @@ en este caso, se denomina un \textbf{guión (script)}; por ejemplo,
 en un editor de texto se puede crear un archivo \texttt{unomasuno.py}
 que contenga esta línea:
 
-\begin{verbatim}
+\begin{pyconcode}
 print(1 + 1)
-\end{verbatim}
+\end{pyconcode}
 
 Por acuerdo unánime, los archivos que contienen programas de Python
 tienen nombres que terminan con \texttt{.py}. Para ejecutar el programa,
 se le tiene que indicar el nombre del guión al intérprete.
 
-\begin{verbatim}
+\begin{pyconcode}
 $ python unomasuno.py
 2
-\end{verbatim}
-\begin{verbatim}
+\end{pyconcode}
 
-\end{verbatim}
 En otros entornos de desarrollo, los detalles de la ejecución de programas
 diferirán. Además, la mayoría de programas son más interesantes que
 el anterior.
@@ -378,17 +376,17 @@ Tradicionalmente el primer programa en un lenguaje nuevo se llama
 ``Hola todo el mundo!'' (en inglés, Hello world!) porque sólo muestra
 las palabras ``Hola todo el mundo'' . En el lenguaje Python es así:
 
-\begin{verbatim}
+\begin{pyconcode}
 print("Hola todo el mundo!")
-\end{verbatim}
+\end{pyconcode}
 
 Este es un ejemplo de llamado a la función {\em print}, la cual
 no imprime nada en papel, más bien muestra un valor. En este caso,
 el resultado es mostrar en pantalla las palabras:
 
-\begin{verbatim}
+\begin{pyconcode}
 Hola todo el mundo!
-\end{verbatim}
+\end{pyconcode}
 
 Las comillas señalan el comienzo y el final del valor; no aparecen
 en el resultado.
@@ -463,7 +461,6 @@ muestre un valor en la pantalla.
 \section{Ejercicios}
 
 En los ejercicios 1,2,3 y 4 escriba una oración en español:\\
- \\
 \begin{enumerate}
 \item Con estructura válida pero compuesta de unidades irreconocibles.
 \item Con unidades aceptables pero con estructura no válida.
@@ -481,7 +478,7 @@ obtenidos los esperados? Explique.
 expresión, pero no puede, porque la expresión es sintácticamente incorrecta.
 Así, Python responde con el siguiente mensaje de error:
 
-\begin{verbatim}
+\begin{pyconcode}
  File "<stdin>", line 1
 
     1 2
@@ -489,7 +486,7 @@ Así, Python responde con el siguiente mensaje de error:
       ^
 
 SyntaxError: invalid syntax
-\end{verbatim}
+\end{pyconcode}
 Muchas veces Python indica la ubicación del error de sintaxis, sin
 embargo, no siempre es precisa, por lo que no proporciona suficiente
 información sobre cuál es el problema. De esta manera, el mejor antídoto
