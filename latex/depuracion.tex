@@ -163,7 +163,7 @@ al final de éste que imprima los valores de las variables de ciclo
 (las que aparecen en la condición) y el valor de la condición.
 
 Por ejemplo:
-\begin{verbatim}
+\begin{pythoncode}
 while x > 0 and y < 0 :
   # hace algo con x
   # hace algo con y
@@ -171,7 +171,7 @@ while x > 0 and y < 0 :
   print( "x: ", x )
   print( "y: ", y )
   print( "condicion: ", (x > 0 and y < 0))
-\end{verbatim}
+\end{pythoncode}
  Ahora, cuando ejecute el programa, usted verá tres líneas de salida
 para cada iteración del ciclo. En la última iteración la condición
 debe ser \texttt{falsa}. Si el ciclo sigue, usted podrá ver los valores
@@ -369,7 +369,7 @@ sin embargo, puede ser difícil depurarlas. Es una buena idea separar
 una expresión compleja en una serie de asignaciones a variables temporales.
 
 Por ejemplo:
-\begin{verbatim}
+\begin{pythoncode}
 self.manos[i].agregarCarta( \
   self.manos[self.encontrarVecino(i)].eliminarCarta())
  Esto puede reescribirse como:
@@ -377,7 +377,7 @@ self.manos[i].agregarCarta( \
 vecino = self.encontrarVecino (i)
 cartaEscogida = self.manos[vecino].eliminarCarta()
 self.manos[i].agregarCarta(cartaEscogida)
-\end{verbatim}
+\end{pythoncode}
  La versión explícita es más fácil de leer porque los nombres de variables
 proporcionan una documentación adicional y porque se pueden chequear
 los tipos de los valores intermedios desplegándolos.
@@ -389,18 +389,18 @@ Otro problema que ocurre con las expresiones grandes es que el orden
 de evaluación puede no ser el que usted espera. Por ejemplo, si usted
 está traduciendo la expresión $\frac{x}{2\pi}$ a Python, podría escribir:
 
-\begin{verbatim}
+\begin{pythoncode}
 y = x / 2 * math.pi;
-\end{verbatim}
+\end{pythoncode}
  Esto es incorrecto, porque la multiplicación y la división tienen
 la misma precedencia y se evalúan de izquierda a derecha. Así que
 ese código calcula $x\pi/2$.
 
 Una buena forma de depurar expresiones es agregar paréntesis para
 hacer explícito el orden de evaluación:
-\begin{verbatim}
+\begin{pythoncode}
  y = x / (2 * math.pi);
-\end{verbatim}
+\end{pythoncode}
  Cuando no esté seguro del orden de evaluación, use paréntesis. No
 sólo corregirá el programa si había un error, sino que también lo
 hará mas legible para otras personas que no se sepan las reglas de
@@ -415,15 +415,15 @@ no hay posibilidad de imprimir el valor del \texttt{return} antes
 de retornar. Aquí también se puede usar una variable temporal. Por
 ejemplo, en vez de:
 
-\begin{verbatim}
+\begin{pythoncode}
 return self.manos[i].eliminarParejas()
-\end{verbatim}
+\end{pythoncode}
  se podría escribir:
 
-\begin{verbatim}
+\begin{pythoncode}
 cont = self.manos[i].eliminarParejas()
 return cont
-\end{verbatim}
+\end{pythoncode}
  Ahora usted tiene la oportunidad de desplegar el valor de \texttt{count}
 antes de retornar.
 
