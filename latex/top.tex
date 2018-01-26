@@ -1,3 +1,18 @@
+% !TEX TS-program = xelatex
+
+%% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[10pt,spanish,letter]{book}
+\usepackage[utf8x]{inputenc}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setlength{\parskip}{1.7ex}
+\setlength{\parindent}{0pt}
+\usepackage{makeidx}
+\makeindex
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 % LaTeX source for the spanish traslation of the textbook ``How to think like a computer scientist''
 % Copyright (c)  2001,2002  Allen B. Downey.
 % Traslation completed by
@@ -19,14 +34,29 @@
 % Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 %
 
-\documentclass[letter,10pt]{book}
-\usepackage[spanish]{babel}
+%\usepackage[spanish]{babel} % Not needed, loaded language in lecv.tex
 \usepackage{fancyhdr}
 \usepackage{graphicx}
-\usepackage{makeidx}
 \usepackage{ucs}
-\usepackage[utf8x]{inputenc}
+\usepackage{hyperref}
 %\pssilent
+
+\label{MY_VARS}
+\def\AutorPrefijo{Prof.}
+\def\AutorNombre{Leandro E.}
+\def\AutorApellido{Colombo Viña}
+\def\AutorNombreCompleto{\AutorPrefijo\ \AutorNombre\ \AutorApellido}
+\def\AutorURL{http://leo.bitson.com.ar/}
+\def\AutorNombreLink{\href{\AutorURL}{\AutorNombreCompleto}}
+\def\AutorCargo{Profesor en Disciplinas Industriales - Técnico Superior en Informática Aplicada}
+\def\Title{Aprenda a pensar como un programador con Python 3}
+\def\PDFSubject{Adaptación de la traducción de la 2da edición}
+\def\Fecha{24 de enero de 2018}
+\def\Lugar{Ciudad Autónoma de Buenos Aires}
+
+\label{MY_PACKAGES}
+\input{lecv}
+\input{mintedopt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %         INCLUDE ONLY 
@@ -49,8 +79,8 @@
 \setlength{\headsep}{3ex}
 \setlength{\textheight}{7.2in}
 
-\setlength{\parindent}{0.0in}
-\setlength{\parskip}{1.7ex plus 0.5ex minus 0.5ex}
+
+
 \renewcommand{\baselinestretch}{1.02}
 
 % see LaTeX Companion page 62
@@ -63,21 +93,21 @@
 % these are copied from /usr/local/teTeX/share/texmf/tex/latex/base/book.cls
 % all I changed is afterskip
 
-\makeatletter
+
 \renewcommand{\section}{\@startsection 
     {section} {1} {0mm}%
     {-3.5ex \@plus -1ex \@minus -.2ex}%
     {0.7ex \@plus.2ex}%
     {\normalfont\Large\bfseries}}
-\renewcommand\subsection{\@startsection {subsection}{2}{0mm}%
+\renewcommand{\subsection}{\@startsection {subsection}{2}{0mm}%
     {-3.25ex\@plus -1ex \@minus -.2ex}%
     {0.3ex \@plus .2ex}%
     {\normalfont\large\bfseries}}
-\renewcommand\subsubsection{\@startsection {subsubsection}{3}{0mm}%
+\renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{0mm}%
     {-3.25ex\@plus -1ex \@minus -.2ex}%
     {0.3ex \@plus .2ex}%
     {\normalfont\normalsize\bfseries}}
-\makeatother
+
 
 \newcommand{\beforefig}{\vspace{1.3\parskip}}
 \newcommand{\afterfig}{\vspace{-0.2\parskip}}
@@ -89,7 +119,7 @@
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 \newcommand{\blankpage}{\pagestyle{empty}\vspace*{1in}\newpage}
 
-\pagestyle{fancyplain}
+
 
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}{}}
@@ -105,182 +135,195 @@
 
 % the following is a brute-force way to prevent the headers
 % from getting transformed into all-caps
-\renewcommand\MakeUppercase{}
-\makeindex
+\renewcommand{\MakeUppercase}{}
+
+
+
+
+\makeatother
+
+\usepackage{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
 
 \begin{document}
-
 \frontmatter
 
-%-half title--------------------------------------------------
-\thispagestyle{empty}
+%-half title--------------------------------------------------\thispagestyle{empty}
 
 \begin{flushright}
 \vspace*{2.5in}
-{\huge Como Pensar como un Científico de la Computación}
-\vspace{0.25in}
-{\LARGE con Python}
-\vfill
-\end{flushright}
+ {\huge{}Como Pensar como un Científico de la Computación} \vspace{0.25in}
+ {\LARGE{}con Python} \vfill{}
+\par\end{flushright}
 
-%--verso------------------------------------------------------
-\clearemptydoublepage
-%\pagebreak
-%\thispagestyle{empty}
-%\vspace*{6in}
+%--verso------------------------------------------------------\clearemptydoublepage
+%\pagebreak%\thispagestyle{empty}%\vspace*{6in}
 
-%--title page--------------------------------------------------
-\pagebreak
-\thispagestyle{empty}
+%--title page--------------------------------------------------\pagebreak{}\thispagestyle{empty}
 
 \begin{flushright}
 \vspace*{2.5in}
-{\huge Como Pensar como un Científico de la Computación}
-\vspace{0.25in}
-{\LARGE con Python}
-\vspace{0.5in}
+ {\huge{}Como Pensar como un Científico de la Computación} \vspace{0.25in}
+ {\LARGE{}con Python} \vspace{0.5in}
+ 
+\par\end{flushright}
+
 \author{Allen Downey, Jeffrey Elkner y Chris Meyers}
+%\maketitle
+\begin{flushright}
+{\small{}Allen Downey}\\
+{\small{} Jeffrey Elkner}\\
+{\small{} Chris Meyers}\\
+{\small{} }
+\par\end{flushright}{\small \par}
 
-{\small
-Allen Downey\\
-Jeffrey Elkner\\
-Chris Meyers\\
-}
+\begin{flushright}
+\vspace{0.25in}
+\par\end{flushright}
 
-\vspace{.25in}
+\begin{flushright}
+{\small{}Traducido y adaptado por}\\
+{\small{} Andrés Becerra Sandoval }\\
+{\small{} }
+\par\end{flushright}{\small \par}
 
-{\small
-Traducido y adaptado por\\
-Andrés Becerra Sandoval \\
-}
-
+\begin{flushright}
 \vspace{0.5in}
-{\Large Pontificia Universidad Javeriana} \\
-{\small Santiago de Cali, Colombia}
-%\includegraphics{illustrations/logo1.eps,width=1in}
-\vfill
-\end{flushright}
+ {\Large{}Pontificia Universidad Javeriana} \\
+ {\small{}Santiago de Cali, Colombia} %\includegraphics{illustrations/logo1.eps,width=1in}\vfill{}
+\par\end{flushright}
 
-
-%--copyright--------------------------------------------------
-\pagebreak
-\thispagestyle{empty}
-Copyright \copyright ~2002 Allen Downey, Jeffrey Elkner, y Chris Meyers.
-\vspace{0.25in}
-%Corregido por Shannon Turlington y Lisa Cutler.
-%Diseño de la cubierta por Rebecca Gimenez.
+%--copyright--------------------------------------------------\pagebreak{}\thispagestyle{empty}
+Copyright \copyright ~2002 Allen Downey, Jeffrey Elkner, y Chris
+Meyers. \vspace{0.25in}
+ %Corregido por Shannon Turlington y Lisa Cutler.%Diseño de la cubierta por Rebecca Gimenez.
 
 \vspace{0.25in}
-
 \begin{flushleft}
 Pontificia Universidad Javeriana \\
 Calle 18 No. 118-250 \\
-A.A. No.  26239 \\
+A.A. No. 26239 \\
 Cali, Colombia \\
-%Green Tea Press       \\
-%1 Grove St.           \\
-%P.O. Box 812901       \\
-%Wellesley, MA 02482   \\
-\end{flushleft}
+%Green Tea Press       \\%1 Grove St.           \\%P.O. Box 812901       \\%Wellesley, MA 02482   \\
+\par\end{flushleft}
 
 \vspace{0.25in}
 
-Se concede permiso para copiar, distribuir, y/o modificar este documento bajo
-los terminos de la GNU Free Documentation License, Versión 1.1 o cualquier
-versión posterior publicada por la Free Software Foundation; manteniendo 
-sin variaciones las secciones ``Prólogo,'' ``Prefacio,'' y ``Lista de contribuidores,''
-sin texto de cubierta, y sin texto de contracubierta. Una copia de la licencia
-está incluida en el apéndice titulado ``GNU Free Documentation License'' y una 
-traducción de ésta al español en el apéndice titulado Licencia de Documentación Libre de GNU
+Se concede permiso para copiar, distribuir, y/o modificar este documento
+bajo los terminos de la GNU Free Documentation License, Versión 1.1
+o cualquier versión posterior publicada por la Free Software Foundation;
+manteniendo sin variaciones las secciones ``Prólogo,'' ``Prefacio,''
+y ``Lista de contribuidores,'' sin texto de cubierta, y sin texto
+de contracubierta. Una copia de la licencia está incluida en el apéndice
+titulado ``GNU Free Documentation License'' y una traducción de
+ésta al español en el apéndice titulado Licencia de Documentación
+Libre de GNU
 
 La GNU Free Documentation License está disponible a través de \texttt{www.gnu.org}
 o escribiendo a la Free Software Foundation, Inc., 59 Temple Place,
 Suite 330, Boston, MA 02111-1307, USA.
 
-La forma original de este libro es código fuente \LaTeX\  y compilarlo
-tiene el efecto de generar un libro de texto en una 
-repesentacion independiente del dispositivo que puede ser convertida a otros 
-formatos e imprimirse.
+La forma original de este libro es código fuente \LaTeX{}\ y compilarlo
+tiene el efecto de generar un libro de texto en una repesentacion
+independiente del dispositivo que puede ser convertida a otros formatos
+e imprimirse.
 
-El código  fuente \LaTeX\  para este libro y mas información sobre este proyecto
-se encuentra en:
-
-\begin{verbatim}
-      http://www.thinkpython.com
-\end{verbatim}
-
-Este libro ha sido preparado utilizando \LaTeX\ y las figuras
-se han realizado con xfig.  Todos estos son programas de código
-abierto, gratuito.
+El código fuente \LaTeX{}\ para este libro y mas información sobre
+este proyecto se encuentra en:
+\begin{center}
+      \url{http://www.thinkpython.com}
+\end{center}
+Este libro ha sido preparado utilizando \LaTeX{}\ y las figuras
+se han realizado con xfig. Todos estos son programas de código abierto,
+gratuito.
 
 \vspace{0.25in}
 
 Historia de la impresión:
 
-%\begin{description}
-%\item[Abril 2002:] Primera edición.
-%\end{description}
+%\begin{description}%\item[Abril 2002:] Primera edición.%\end{description}
 
 %ISBN 0-9716775-0-6
-
 \begin{verbatim}
 
 \end{verbatim}
-
-
 %-----------------------------------------------------------------
 
-\include{foreword} 	\clearemptydoublepage
-\include{preface}  	\clearemptydoublepage
-\include{contrib}  	\clearemptydoublepage
-\include{traduccion}	\clearemptydoublepage
+\include{foreword} \clearemptydoublepage \include{preface} \clearemptydoublepage
+\include{contrib} \clearemptydoublepage \include{traduccion} \clearemptydoublepage
 
-% The following lines add a little extra space to the column
-% in which the Section numbers appear in the table of contents
-\makeatletter
-\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{3.0em}}
-\makeatother
-\setcounter{tocdepth}{1}
+% The following lines add a little extra space to the column% in which the Section numbers appear in the table of contents\makeatletter
+%\global\long\def\{}
+ \makeatother \setcounter{tocdepth}{1}
 
-\tableofcontents
-\clearemptydoublepage
+\tableofcontents{}\clearemptydoublepage
 
 \mainmatter
 
-%\include{chap00}	\clearemptydoublepage  % solucion de problemas
-\include{chap01}	\clearemptydoublepage  % el camino del programa
-\include{chap02}	\clearemptydoublepage  % variables, expresiones, sentencias
-\include{chap03}	\clearemptydoublepage  % funciones
-\include{chap04}	\clearemptydoublepage  % condicionales y recursion 
-\include{chap05}	\clearemptydoublepage  % funciones fructíferas
-\include{chap06}	\clearemptydoublepage  % iteracion
-\include{chap07}	\clearemptydoublepage  % cadenas
-\include{chap08}	\clearemptydoublepage  % listas
-\include{chap09}	\clearemptydoublepage  % tuplas
-\include{chap10}	\clearemptydoublepage  % diccionarios 
-\include{chap11}	\clearemptydoublepage  % archivos y excepciones
-\include{chap12}	\clearemptydoublepage  % clases y objetos
-\include{chap13}	\clearemptydoublepage  % clases y funciones
-\include{chap14}	\clearemptydoublepage  % clases y metodos
-%FIX %\setcounter{page}{168}
-\include{chap15}	\clearemptydoublepage  % conjuntos de objetos
-\include{chap16}	\clearemptydoublepage  % herencia
-\include{chap17}	\clearemptydoublepage  % listas enlazadas
-\include{chap18}	\clearemptydoublepage  % pilas
-\include{chap19}	\clearemptydoublepage  % colas (normales y de prioridad)
-\include{chap20}	\clearemptydoublepage  % arboles
+\include{solucionProblemas}
+\clearemptydoublepage  % solucion de problemas
+\include{elCaminoHaciaElPrograma}
+\clearemptydoublepage % el camino del programa
+\include{variablesExpresionesSentencias}
+\clearemptydoublepage % variables, expresiones, sentencias
+\include{funciones}
+\clearemptydoublepage % funciones
+\include{condicionalesYRecursion}
+\clearemptydoublepage % condicionales y recursion
+\include{funcionesFructiferas}
+\clearemptydoublepage % funciones fructíferas
+\include{iteracion}
+\clearemptydoublepage % iteracion
+\include{cadenas} 
+\clearemptydoublepage % cadenas
+\include{listas}
+\clearemptydoublepage % listas
+\include{tuplas} 
+\clearemptydoublepage % tuplas
+\include{diccionarios}
+\clearemptydoublepage % diccionarios
+\include{archivosYExcepciones}
+\clearemptydoublepage % archivos y excepciones
+\include{clasesYObjetos}
+\clearemptydoublepage % clases y objetos
+\include{clasesYFunciones}
+\clearemptydoublepage % clases y funciones
+\include{clasesYMetodos}
+\clearemptydoublepage % clases y metodos
+%%FIX %
+%\setcounter{page}{168}
+\include{conjuntosDeObjetos}
+\clearemptydoublepage % conjuntos de objetos
+\include{herencia}
+\clearemptydoublepage % herencia
+\include{listasEnlazadas}
+\clearemptydoublepage % listas enlazadas
+\include{pilas}
+\clearemptydoublepage % pilas
+\include{colas}
+\clearemptydoublepage % colas (normales y de prioridad)
+\include{arboles}
+\clearemptydoublepage % arboles
 
 
 \appendix
-\include{app01}	\clearemptydoublepage          % depuracion
-\include{app02}	\clearemptydoublepage          % creando un nuevo tipo de dato
-\include{app03}	\clearemptydoublepage	       % programas completos
-\include{app04}	\clearemptydoublepage  	       % lecturas recomendadas
-\include{gfdles}\clearemptydoublepage          % GNU free doc license (spanish)
-\include{fdl}	\clearemptydoublepage          % GNU free doc license
-
-\printindex				       % indice alfabetico
-
+%dummy comment inserted by tex2lyx to ensure that this paragraph is not empty
+\include{depuracion}
+\clearemptydoublepage % depuracion
+\include{interludioTriqui}
+\include{interludioFraccion}
+\include{interludioTriquiGUI}
+\clearemptydoublepage % creando un nuevo tipo de dato
+\include{programasCompletos}
+\clearemptydoublepage % programas completos
+\include{lecturasRecomendadas}
+\clearemptydoublepage % lecturas recomendadas
+\include{gfdles}
 \clearemptydoublepage
+% GNU free doc license (spanish)
+\include{fdl}
 \clearemptydoublepage
+% GNU free doc license
+
+\printindex{}\clearemptydoublepage \clearemptydoublepage 
 \end{document}

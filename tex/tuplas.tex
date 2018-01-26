@@ -1,0 +1,491 @@
+
+\chapter{Tuplas}
+
+\label{tuplechap} \index{tupla}
+
+\section{Mutabilidad y tuplas}
+
+\index{tupla} \index{tipo de dato!tupla} \index{tipo de dato!inmutable}
+
+Hasta aquí, usted ha visto dos tipos de datos compuestos: cadenas,
+que están compuestas de caracteres; y listas, compuestas de elementos
+de cualquier tipo. Una de las diferencias que notamos es que los elementos
+de una lista pueden modificarse, pero los caracteres en una cadena
+no. En otras palabras, las cadenas son \textbf{inmutables} y las listas
+son \textbf{mutables}.
+
+\index{mutable} \index{inmutable}
+
+Hay otro tipo de dato en Python denominado \textbf{tupla}, que se
+parece a una lista, con la excepción de que es inmutable. Sintácticamente,
+una tupla es una lista de valores separados por comas:\inputencoding{latin9}
+\begin{lstlisting}
+>>> tupla = 'a', 'b', 'c', 'd', 'e'
+\end{lstlisting}
+\inputencoding{utf8}
+Aunque no es necesario, se pueden encerrar entre paréntesis:\inputencoding{latin9}
+\begin{lstlisting}
+>>> tupla = ('a', 'b', 'c', 'd', 'e')
+\end{lstlisting}
+\inputencoding{utf8}
+Para crear una tupla con un único elemento, tenemos que incluir la
+coma final:\inputencoding{latin9}
+\begin{lstlisting}
+>>> t1 = ('a',)
+>>> type(t1)
+<type 'tuple'>
+\end{lstlisting}
+\inputencoding{utf8}
+Sin la coma, Python creería que \texttt{('a')} es una cadena en paréntesis:\inputencoding{latin9}
+\begin{lstlisting}
+>>> t2 = ('a')
+>>> type(t2)
+<type 'string'>
+\end{lstlisting}
+\inputencoding{utf8}
+Las operaciones sobre tuplas son las mismas que vimos con las listas.
+El operador corchete selecciona un elemento de la tupla.\inputencoding{latin9}
+\begin{lstlisting}
+>>> tupla = ('a', 'b', 'c', 'd', 'e')
+>>> tupla[0]
+'a'
+\end{lstlisting}
+\inputencoding{utf8}
+Y el operador segmento selecciona un rango de elementos:\inputencoding{latin9}
+\begin{lstlisting}
+>>> tupla[1:3]
+('b', 'c')
+\end{lstlisting}
+\inputencoding{utf8}
+Pero si intentamos modificar un elemento de la tupla obtenemos un
+error:
+
+\index{error en tiempo de ejecución}\inputencoding{latin9}
+\begin{lstlisting}
+>>> tupla[0] = 'A'
+TypeError: object doesn't support item assignment
+\end{lstlisting}
+\inputencoding{utf8}
+Aunque no podemos modificar los elementos, sí podemos modificar toda
+la tupla:\inputencoding{latin9}
+\begin{lstlisting}
+>>> tupla = ('A',) + tupla[1:]
+>>> tupla
+('A', 'b', 'c', 'd', 'e')
+>>> tupla = (1,2,3)
+>>> tupla
+\end{lstlisting}
+\inputencoding{utf8}
+\section{Asignación de tuplas}
+
+\label{tuple assignment} \index{asignación de tuplas} \index{Asignación!de tuplas}
+
+De vez en cuando necesitamos intercambiar los valores de dos variables.
+Con el operador de asignación normal tenemos que usar una variable
+temporal. Por ejemplo, para intercambiar \texttt{a} y \texttt{b}:\inputencoding{latin9}
+\begin{lstlisting}
+>>> temp = a
+>>> a = b
+>>> b = temp
+\end{lstlisting}
+\inputencoding{utf8}
+Si tenemos que intercambiar variables muchas veces, el código tiende
+a ser engorroso. Python proporciona una forma de \textbf{asignación
+de tuplas} que resuelve este problema:\inputencoding{latin9}
+\begin{lstlisting}
+>>> a, b = b, a
+\end{lstlisting}
+\inputencoding{utf8}
+El lado izquierdo es una tupla de variables; el derecho es una tupla
+de valores. Cada valor se asigna a su respectiva variable en el orden
+en que se presenta. Las expresiones en el lado derecho se evalúan
+antes de cualquier asignación. Esto hace a la asignación de tuplas
+una herramienta bastante versátil.
+
+Naturalmente, el número de variables a la izquierda y el número de
+valores a la derecha deben coincidir.\inputencoding{latin9}
+\begin{lstlisting}
+>>> a, b, c, d = 1, 2, 3
+ValueError: unpack tuple of wrong size
+\end{lstlisting}
+\inputencoding{utf8}
+\section{Tuplas como valores de retorno}
+
+\index{tupla} \index{valor!tupla} \index{valor de retorno!tupla}
+\index{función!tupla como valor de retorno}
+
+Las funciones pueden tener tuplas como valores de retorno. Por ejemplo,
+podríamos escribir una función que intercambie sus dos parámetros:\inputencoding{latin9}
+\begin{lstlisting}
+def intercambiar(x, y):
+  return y, x
+\end{lstlisting}
+\inputencoding{utf8}
+Así podemos asignar el valor de retorno a una tupla con dos variables:\inputencoding{latin9}
+\begin{lstlisting}
+a, b = intercambiar(a, b)
+\end{lstlisting}
+\inputencoding{utf8}
+En este caso, escribir una función \texttt{intercambio} no es muy
+provechoso. De hecho, hay un peligro al tratar de encapsular \texttt{intercambio},
+que consiste en el siguiente error:\inputencoding{latin9}
+\begin{lstlisting}
+def intercambio(x, y):      # version incorrecta
+  x, y = y, x
+\end{lstlisting}
+\inputencoding{utf8}
+Si llamamos a esta función así:\inputencoding{latin9}
+\begin{lstlisting}
+intercambio(a, b)
+\end{lstlisting}
+\inputencoding{utf8}
+entonces \texttt{a} y \texttt{x} son dos alias para el mismo valor.
+Cambiar \texttt{x} dentro de \texttt{intercambio} hace que \texttt{x}
+se refiera a un valor diferente, pero no tiene efecto en la \texttt{a}
+dentro de \texttt{\_\_main\_\_}. Igualmente, cambiar \texttt{y} no
+tiene efecto en \texttt{b}.
+
+Esta función se ejecuta sin errores, pero no hace lo que se pretende.
+Es un ejemplo de error semántico.
+
+\index{error semántico}
+
+\section{Números aleatorios}
+
+\index{número aleatorio} \index{número!aleatorio}
+
+La gran mayoría de los programas hacen lo mismo cada vez que se ejecutan,
+esto es, son \textbf{determinísticos}. El determinismo generalmente
+es una buena propiedad, ya que usualmente esperamos que los cálculos
+produzcan el mismo resultado. Sin embargo, para algunas aplicaciones
+necesitamos que el computador sea impredecible. Los juegos son un
+ejemplo inmediato, pero hay más.
+
+Lograr que un programa sea verdaderamente no determinístico no es
+una tarea fácil, pero hay formas de que parezca no determinístico.
+Una de ellas es generar números aleatorios y usarlos para determinar
+la salida de un programa. Python tiene una función primitiva que genera
+números \textbf{pseudoaleatorios}, que, aunque no sean aleatorios
+desde el punto de vista matemático, sirven para nuestros propósitos.
+
+El módulo \texttt{random} contiene una función llamada \texttt{random}
+que retorna un número flotante entre 0.0 y 1.0. Cada vez que se llama
+a \texttt{random}, se obtiene el siguiente número de una serie muy
+larga. Para ver un ejemplo ejecute el siguiente ciclo:\inputencoding{latin9}
+\begin{lstlisting}
+import random
+
+for i in range(10):
+  x = random.random()
+  print(x)
+\end{lstlisting}
+\inputencoding{utf8}
+Para generar un número aleatorio entre 0.0 y un límite superior como
+\texttt{sup}, multiplique \texttt{x} por \texttt{sup}.
+
+\section{Lista de números aleatorios}
+
+Vamos a escribir una función llamada \texttt{listaAleatoria} que cree
+una lista de números aleatorios. Recibirá un parámetro entero que
+especifique el número de elementos a generar. Primero, genera una
+lista de \texttt{n} ceros. Luego cada vez que itera en un ciclo for,
+reemplaza uno de los ceros por un número aleatorio. El valor de retorno
+es una referencia a la lista construida:\inputencoding{latin9}
+\begin{lstlisting}
+def listaAleatoria(n):
+  s = [0] * n
+  for i in range(n):
+    s[i] = random.random()
+  return s
+\end{lstlisting}
+\inputencoding{utf8}
+La probaremos con ocho elementos. Para depurar es una buena idea empezar
+con pocos datos:\inputencoding{latin9}
+\begin{lstlisting}
+>>> listaAleatoria(8)
+0.15156642489
+0.498048560109
+0.810894847068
+0.360371157682
+0.275119183077
+0.328578797631
+0.759199803101
+0.800367163582
+\end{lstlisting}
+\inputencoding{utf8}
+Los números generados por \texttt{random} deben distribuirse uniformemente,
+lo que significa que cada valor es igualmente probable.
+
+Si dividimos el rango de valores posibles en ``regiones'' del mismo
+tamaño y contamos el número de veces que un valor aleatorio cae en
+cada región, deberíamos obtener un resultado aproximado en todas las
+regiones.
+
+Podemos probar esta hipótesis escribiendo un programa que divida el
+rango en regiones y cuente el número de valores que caen en cada una.
+
+\section{Conteo}
+
+\index{conteo}
+
+Un enfoque que funciona en problemas como éste es dividir el problema
+en subproblemas que se puedan resolver con un patrón computacional
+que ya sepamos.
+
+En este caso, necesitamos recorrer una lista de números y contar el
+número de veces que un valor cae en un rango dado. Esto parece familiar.
+En la Sección~\ref{counter}, escribimos un programa que recorría
+una cadena y contaba el números de veces que aparecía una letra determinada.
+
+Entonces podemos copiar el programa viejo para adaptarlo posteriormente
+a nuestro problema actual. El original es:\inputencoding{latin9}
+\begin{lstlisting}
+cont = 0
+for c in fruta:
+  if c == 'a':
+    cont = cont + 1
+print(cont)
+\end{lstlisting}
+\inputencoding{utf8}
+El primer paso es reemplazar \texttt{fruta} con \texttt{lista} y \texttt{c}
+por \texttt{num}. Esto no cambia el programa, sólo lo hace más legible.
+
+El segundo paso es cambiar la prueba. No queremos buscar letras. Queremos
+ver si \texttt{num} está entre dos valores dados \texttt{inf} y \texttt{sup}.
+
+\inputencoding{latin9}\begin{lstlisting}
+cont = 0
+for num in lista:
+  if inf < num < sup:
+    cont = cont + 1
+print(cont)
+\end{lstlisting}
+\inputencoding{utf8}
+El último paso consiste en encapsular este código en una función denominada
+\texttt{enRegion}. Los parámetros son la lista y los valores \texttt{inf}
+y \texttt{sup}.\inputencoding{latin9}
+\begin{lstlisting}
+def enRegion(lista, inf, sup):
+  cont = 0
+  for num in lista:
+    if inf < num < sup:
+      cont = cont + 1
+  return cont
+\end{lstlisting}
+\inputencoding{utf8}
+Copiando y modificando un programa existente fuimos capaces de escribir
+esta función rápidamente y ahorrarnos un buen tiempo de depuración.
+Este plan de desarrollo se denomina \textbf{concordancia de patrones}.
+Si se encuentra trabajando en un problema que ya ha resuelto antes,
+reutilice la solución.
+
+\section{Muchas regiones}
+
+\label{muchasregiones}
+
+Como el número de regiones aumenta, \texttt{enRegion} es un poco engorroso.
+Con dos no esta tan mal:\inputencoding{latin9}
+\begin{lstlisting}
+inf = enRegion(a, 0.0, 0.5)
+sup = enRegion(a, 0.5, 1)
+\end{lstlisting}
+\inputencoding{utf8} Pero con cuatro:\inputencoding{latin9}
+\begin{lstlisting}
+Region1 = enRegion(a, 0.0, 0.25)
+Region2 = enRegion(a, 0.25, 0.5)
+Region3 = enRegion(a, 0.5, 0.75)
+Region4 = enRegion(a, 0.75, 1.0)
+\end{lstlisting}
+\inputencoding{utf8}
+Hay dos problemas. Uno es que siempre tenemos que crear nuevos nombres
+de variables para cada resultado. El otro es que tenemos que calcular
+el rango de cada región.
+
+Primero resolveremos el segundo problema. Si el número de regiones
+está dado por la variable \texttt{numRegiones}, entonces, el ancho
+de cada región está dado por la expresión \texttt{1.0/numRegiones}.
+
+Usaremos un ciclo para calcular el rango de cada región. La variable
+de ciclo \texttt{i} cuenta de 1 a \texttt{numRegiones-1}:\inputencoding{latin9}
+\begin{lstlisting}
+ancho = 1.0 / numRegiones
+for i in range(numRegiones):
+  inf = i * ancho
+  sup = inf + ancho
+  print(inf, " hasta ", sup)
+\end{lstlisting}
+\inputencoding{utf8}
+Para calcular el extremo inferior de cada región, multiplicamos la
+variable de ciclo por el ancho. El extremo superior está a un \texttt{ancho}
+de región de distancia.
+
+Con \texttt{numRegiones = 8}, la salida es:
+\begin{verbatim}
+0.0 hasta 0.125
+0.125 hasta 0.25
+0.25 hasta 0.375
+0.375 hasta 0.5
+0.5 hasta 0.625
+0.625 hasta 0.75
+0.75 hasta 0.875
+0.875 hasta 1.0
+\end{verbatim}
+Usted puede confirmar que cada región tiene el mismo ancho, que no
+se solapan y que cubren el rango completo de 0.0 a 1.0.
+
+Ahora regresemos al primer problema. Necesitamos una manera de almacenar
+ocho enteros, usando una variable para indicarlos uno a uno. Usted
+debe estar pensando ``¡una lista!''
+
+Tenemos que crear la lista de regiones fuera del ciclo, porque esto
+sólo debe ocurrir una vez. Dentro del ciclo, llamaremos a \texttt{enRegion}
+repetidamente y actualizaremos el \texttt{i}ésimo elemento de la lista:\inputencoding{latin9}
+\begin{lstlisting}
+numRegiones = 8
+Regiones = [0] * numRegiones
+ancho = 1.0 / numRegiones
+for i in range(numRegiones):
+  inf = i * ancho
+  sup = inf + ancho
+  Regiones[i] = enRegion(lista, inf, sup)
+print(Regiones)
+\end{lstlisting}
+\inputencoding{utf8}
+Con una lista de 1000 valores, este código produce la siguiente lista
+de conteo:
+\begin{verbatim}
+[138, 124, 128, 118, 130, 117, 114, 131]
+\end{verbatim}
+Todos estos valores están muy cerca a 125, que es lo que esperamos.
+Al menos, están lo suficientemente cerca como para creer que el generador
+de números pseudoaleatorios está funcionando bien.
+
+\section{Una solución en una sola pasada}
+
+\label{histograma} \index{histograma}
+
+Aunque funciona, este programa no es tan eficiente como debería. Cada
+vez que llama a \texttt{enRegion}, recorre la lista entera. A medida
+que el número de regiones incrementa, va a hacer muchos recorridos.
+
+Sería mejor hacer una sola pasada a través de la lista y calcular
+para cada región el índice de la región en la que cae. Así podemos
+incrementar el contador apropiado.
+
+En la sección anterior tomamos un índice \texttt{i} y lo multiplicamos
+por el \texttt{ancho} para encontrar el extremo inferior de una región.
+Ahora vamos a encontrar el índice de la región en la que cae.
+
+Como este problema es el inverso del anterior, podemos intentar dividir
+por \texttt{ancho} en vez de multiplicar. ¡Esto funciona!
+
+Como \texttt{ancho = 1.0 / numRegiones}, dividir por \texttt{ancho}
+es lo mismo que multiplicar por \texttt{numRegiones}. Si multiplicamos
+un número en el rango 0.0 a 1.0 por \texttt{numRegiones}, obtenemos
+un número en el rango de 0.0 a \texttt{numRegiones}. Si redondeamos
+ese número al entero más cercano por debajo, obtenemos lo que queremos,
+un índice de región:\inputencoding{latin9}
+\begin{lstlisting}
+numRegiones = 8
+Regiones = [0] * numRegiones
+for i in lista:
+  ind = int(i * numRegiones)
+  Regiones[ind] = Regiones[ind] + 1
+\end{lstlisting}
+\inputencoding{utf8}
+Usamos la función \texttt{int} para pasar de número de punto flotante
+a entero.
+
+¿Es posible que este programa produzca un índice que esté fuera de
+rango (por ser negativo o mayor que \texttt{len(Regiones)-1})?
+
+Una lista como \texttt{Regiones} que almacena los conteos del número
+de valores que hay en cada rango se denomina \textbf{histograma}.
+
+\section{Glosario}
+\begin{description}
+\item [{Tipo inmutable:}] es un tipo de dato en el que los elementos no
+pueden ser modificados. Las asignaciones a elementos o segmentos de
+tipos inmutables causan errores. Las cadenas y las tuplas son inmutables.
+\item [{Tipo mutable:}] tipo de dato en el que los elementos pueden ser
+modificados. Todos los tipos mutables son compuestos. Las listas y
+los diccionarios son mutables.
+\item [{Tupla:}] tipo de dato secuencial similar a la lista, pero inmutable.
+Las tuplas se pueden usar donde se requiera un tipo inmutable, por
+ejemplo como llaves de un diccionario.
+\item [{Asignación de tuplas:}] una asignación a todos los elementos
+de una tupla en una sola sentencia. La asignación ocurre en paralelo
+y no secuencialmente. Es útil para intercambiar valores de variables.
+\item [{Determinístico:}] programa que hace lo mismo cada vez que se llama.
+\item [{Pseudoaleatoria:}] secuencia de números que parece aleatoria, pero
+en realidad es el resultado de un cómputo determinístico, bien diseñado.
+\item [{Histograma:}] lista de enteros en la que cada elemento cuenta el
+número de veces que algo sucede.
+\item [{Correspondencia de patrones:}] plan de desarrollo de programas
+que implica identificar un patrón computacional familiar y copiar
+la solución de un problema similar.
+
+\index{tipo mutable} \index{tipo inmutable} \index{tupla} \index{asignación de tupla}
+\index{asignación!de tupla} \index{determinístico} \index{pseudoaleatorio}
+\index{histograma} \index{correspondencia de patrones}
+\end{description}
+
+\section{Ejercicios}
+
+Para cada función, agregue chequeo de tipos y pruebas unitarias.
+\begin{enumerate}
+\item Escriba una función mas\_frecuentes que tome una cadena e imprima
+las letras en orden descendente por frecuencia. Ejecútela con textos
+de diferentes lenguajes y observe como varían las frecuencias de letras.
+Compare sus resultados con las tablas en:
+
+\url{http://en.wikipedia.org/wiki/Letter_frequencies}
+
+Solución: \url{http://thinkpython.com/code/most_frequent.py}
+\item Escriba un programa que lea una lista de palabras de un archivo e
+imprima todos los conjuntos de palabras que son anagramas.
+
+Este es un ejemplo de la salida del programa con palabras en inglés:
+\begin{verbatim}
+['deltas', 'desalt', 'lasted', 'salted', 'slated', 'staled'] 
+['retainers', 'ternaries'] 
+['generating', 'greatening']
+['resmelts', 'smelters', 'termless']
+\end{verbatim}
+Pista: cree un diccionario que asocie cada conjunto de letras a una
+lista de palabras que puedan ser formadas con esas letras. ¿Como se
+puede representar el conjunto de letras de forma que pueda ser usado
+como llave? Modifique el programa que obtuvo para que imprima en orden
+descendente por tamaño los conjuntos de anagramas. En el juego Scrabble,
+un 'bingo' se da cuando se juegan las 7 fichas, junto con otra letra
+en el tablero, para formar una palabra de 8 letras. ¿Que conjunto
+de 8 letras forma los bingos mas posibles?
+
+Solución: \url{http://thinkpython.com/code/anagram_sets.py}
+\item Dos palabras forma un 'par de metatesis' si se puede transformar una
+en otra intercambiando dos letras. Por ejemplo, 'conversación' y 'conservación'.
+Escriba un programa que encuentre todos los pares de metatesis en
+el diccionario. Pista: no pruebe todos los pares.
+
+Solución: \url{http://thinkpython.com/code/metathesis.py}
+
+Crédito: el ejercicio está inspirado por un ejemplo de \url{http://puzzlers.org}
+\item ¿Cual es la palabra mas larga que sigue siendo válida a medida que
+se remueven una a una sus letras? Por ejemplo, en inglés, 'sprite'
+sin la 'r' es 'spite', que sin la 'e', es 'spit', que sin la 's' es
+'pit', que sin la 'p' es 'it' que sin la 't' es 'i'. Las letras se
+pueden remover de cualquier posición, pero no se pueden reordenar.
+
+Escriba un programa que encuentre todas las palabras que pueden reducirse
+de esta forma y que encuentre la mas larga.
+
+Pistas:
+
+Escriba una función que tome una palabra y calcule todas las palabras
+que pueden formarse al removerle una letra. Estas son las palabras
+'hijas'. Recursivamente, una palabra es reducible si alguno de sus
+hijas es reducible. El caso base lo da la cadena vacía.
+
+Solución: \url{http://thinkpython.com/code/reducible.py} 
+\end{enumerate}
+

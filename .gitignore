@@ -1,0 +1,9 @@
+# LaTeX auxiliary
+*.aux
+*.idx
+*.log
+*.pdf
+*.synctex.gz
+*.toc
+latex/_minted-top/
+*.out

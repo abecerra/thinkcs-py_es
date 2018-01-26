@@ -1,0 +1,426 @@
+
+\chapter{Postludio: Triqui con interfaz gráfica }
+
+\label{triqui-kivy}
+
+\index{Triqui}
+
+\section{Motivación}
+
+En el capítulo \ref{cap:inter1:triqui} desarrollamos un juego de
+triqui completo para integrar varios conceptos de programación. Ahora,
+para integrar varios conceptos de programación con objetos haremos
+casi lo mismo, construiremos un triqui con interfaz gráfica de usuario.
+
+El programa utiliza la biblioteca Kivy, que permite realizar interfaces
+gráficas que corran en celulares, tablets (con pantallas sensibles
+al tacto) y computadores tradicionales (corriendo MacOS X, Windows
+y Linux). Hay que conseguir el instalador de:
+
+\url{ http://kivy.org}
+
+Los archivos triqui0.py a triqui8.py están en:
+
+\url{https://github.com/abecerra/thinkcs-py_es/releases/download/thinkcs-py_es_e2-rc1/triqui-kivy-python3.zip}
+
+Para comprender el capítulo hay que ejecutar cada versión del programa
+a medida que se avanza en la lectura. En las secciones a continuación
+se discuten los fragmentos del programa a medida que se van agregando,
+cada fragmento tiene el nombre del archivo en que se introdujo como
+comentario inicial.
+
+\section{Ganar y empatar}
+
+Para empezar tomamos el código final del triqui desarrollado en el
+capítulo \ref{cap:inter1:triqui} y lo convertimos en un módulo que
+nos permite verificar si alguien gana el juego o si hay un empate.
+El proceso es sencillo: eliminamos todo el código que no tenga que
+ver con verificar quien gana o si hay empate, tomando \texttt{triqui9.py}
+para transformarlo en \texttt{validar.py}, un módulo con 9 funciones:
+crear, ganaDiagonal1, ganaDiagonal2, ganaFila, ganaHorizontal, ganaColumna,
+ganaVertical, gana y empate. Mas adelante lo importaremos, para reutilizar
+el código.
+
+\index{reutilización}
+
+\section{Programación orientada a eventos}
+
+\index{Programación orientada a eventos}
+
+En muchas bibliotecas gráficas como kivy existe un gran ciclo que
+procesa los eventos generados a través del teclado, apuntador o la
+pantalla sensible al tacto. Este ciclo es infinito, pero se le hace
+un break cuando se cierra la ventana de la aplicación. En la programación
+orientada a eventos debemos acostumbrarnos a varias cosas.
+
+Primero, el flujo del programa está determinado por lo que haga el
+usuario con los elementos gráficos de la pantalla. Kivy procesará
+cada evento (click, tecla digitada) de manera predeterminada, por
+ejemplo cerrar la ventana hará un break en el gran ciclo.
+
+\index{evento}
+
+Segundo, las bibliotecas como Kivy se encargan de redibujar automáticamente
+partes de la ventana cuando otra ventana se pase por encima, o cuando
+se cambie de tamaño.
+
+Nuestro primer programa importa lo que necesita de kivy:
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui0.py
+import kivy
+kivy.require('1.9.1')
+from kivy.app import App
+from kivy.uix.gridlayout import GridLayout
+
+class Triqui(GridLayout):
+    def __init__(self, **kwargs):
+        super(Triqui, self).__init__(**kwargs)
+   
+
+class Programa(App):
+    def build(self):
+        self.title = 'Triqui'
+        return Triqui()
+
+if __name__ == '__main__':
+    Programa().run()
+\end{lstlisting}
+\inputencoding{utf8}
+El gran ciclo reside en la clase \texttt{App} de Kivy, de la que heredamos
+la clase \texttt{Programa}. Cuando arranca el programa, al ejecutar
+\texttt{run()} se corre este gran ciclo que procesa eventos.
+
+El método build de programa retorna un objeto Triqui, que es nuestra
+ventana. La clase Triqui hereda de GridLayout, una ventana que contiene
+elementos en disposición de cuadrícula (como una matriz). El método
+\texttt{init} de Triqui llama al método \texttt{init} de la clase
+madre y le pasa una lista con un número de argumentos variable ({*}{*}kwargs).
+
+Por ahora nuestra ventana, instancia de la clase \texttt{Triqui},
+está vacía.
+
+\section{Widgets}
+
+Las ventanas suelen tener muchos elementos gráficos como menús, botones,
+paneles entre otros. En bibliotecas como kivy se llaman widgets. Por
+ejemplo, un botón es un tipo de widget que se define en la clase \texttt{Button}.
+
+Como el flujo de los programas gráficos no está determinado por el
+programador, sino por el usuario al interactuar con los widgets de
+la ventana, el mecanismo que se utiliza para reaccionar ante los eventos
+es el de registrar métodos que serán invocados automáticamente por
+el gran ciclo.
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui1.py
+class Triqui(GridLayout):
+    def __init__(self, **kwargs):
+        super(Triqui, self).__init__(**kwargs)
+        self.add_widget(Button(font_size=100, 
+                        on_press=self.boton_presionado))
+    
+    def boton_presionado(self, w):
+        pass
+\end{lstlisting}
+\inputencoding{utf8}
+Los widgets se agregan a una ventana mediante el método \texttt{add\_widget}.
+Aquí agregamos un botón y registramos un método que responde al evento
+de presionarlo (\texttt{on\_press}). Por ahora el método no hace nada.
+
+\section{El Triqui}
+
+A continuación, definimos la geometría de la ventana como una matriz
+de 3 filas y 3 columnas en la que cada elemento es un botón. Ahora,
+en el método \texttt{boton\_presionado} vamos a mostrar un cuadro
+de diálogo que muestra un texto sencillo.
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui2.py
+class Triqui(GridLayout):
+    def __init__(self, **kwargs):
+        super(Triqui, self).__init__(**kwargs)
+        self.cols = 3
+        self.rows = 3
+        for i in range(3):
+            for j in range(3):
+                self.add_widget(Button(font_size=100, \
+                                on_press=self.boton_presionado))
+        
+    def boton_presionado(self, w):
+        MostrarMensaje("Titulo","Presionaste una casilla")
+\end{lstlisting}
+\inputencoding{utf8}
+\texttt{MostrarMensaje} es una clase que heredamos de \texttt{PopUp},
+la clase que tiene kivy para cuadros de diálogo:
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui2.py
+class MostrarMensaje(Popup): 
+    def __init__(self, titulo, mensaje, **kwargs):
+        self.size_hint_x = self.size_hint_y = .5
+        self.title = titulo
+        super(MostrarMensaje, self).__init__(**kwargs)
+        self.add_widget(Button(text=mensaje, \
+                        on_press=lambda x:self.dismiss()))
+        self.open()
+\end{lstlisting}
+\inputencoding{utf8}
+El cuadro de diálogo tiene un título y un botón que, al ser presionado,
+cierra todo el cuadro. La acción del botón se registra asignando al
+parámetro \inputencoding{latin9}\lstinline!on_press!\inputencoding{utf8}
+una función anónima (\inputencoding{latin9}\lstinline!lambda x: self.dismiss()!\inputencoding{utf8}).
+Esta función recibe un parámetro x que no necesitamos. El método dismiss
+de la clase Popup cierra el cuadro de diálogo.
+
+\section{Jugando por turnos}
+
+Como el flujo de ejecución depende de los usuarios, vamos a llevar
+pista en el programa de quien tiene el turno de juego con un atributo
+en la clase Triqui. Hay que crear el atributo en el método de inicialización
+y modificarlo en cada jugada. El \texttt{turno} será 'O' para el primer
+jugador y 'X' para el segundo.
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui3.py
+class Triqui(GridLayout):
+    def __init__(self, **kwargs):
+        super(Triqui, self).__init__(**kwargs)
+        self.cols = 3
+        self.rows = 3
+        for i in range(3):
+            for j in range(3):
+                self.add_widget(Button(font_size=100, \
+                  on_press=self.boton_presionado, text=' '))
+        self.turno = 'O'
+
+    def boton_presionado(self, w):
+        if w.text != ' ':
+            MostrarMensaje('Error!', "Ya se ha jugado \
+                            en esa casilla!")
+            return
+        if self.turno == 'O':
+            w.text =  'O'
+            self.turno = 'X'
+        else:
+            w.text = 'X'
+            self.turno = 'O'
+\end{lstlisting}
+\inputencoding{utf8}
+Cuando se presiona un botón se verifica si la casilla está vacía para
+poder jugar en ella. Si no es así se cambia el texto del botón y se
+cambia el turno para el otro jugador. Observe que en el método de
+inicialización de \texttt{Triqui} al texto de todos los botones se
+le asigna un espacio.
+
+\section{Reutilización}
+
+\index{reutilización}
+
+Agregamos un botón que tiene propiedades para registrar la fila y
+la columna, heredando de la clase \texttt{Button}.
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui4.py
+class Boton(Button):
+    fila = NumericProperty(0)
+    columna = NumericProperty(0)
+    
+    def __init__(self, **kwargs):      
+        super(Boton, self).__init__(**kwargs)
+        self.font_size=100
+        self.text=' '
+\end{lstlisting}
+\inputencoding{utf8}
+Esto nos permite pasar el estado de los botones a una matriz con el
+siguiente método de la clase \texttt{Triqui}:
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui4.py
+    def botones_a_matriz(self,tablero):
+        for i in self.children:
+            f = i.fila
+            c = i.columna
+            self.tablero[f][c]=i.text
+\end{lstlisting}
+\inputencoding{utf8}
+En Kivy, children contiene todos los widgets que se han agregado a
+una ventana, en nuestro caso los 9 botones.
+
+Así podremos reutilizar el módulo \texttt{validar}, creando la matriz
+que lleva el estado del juego :
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui4.py
+
+from validar import *
+    def __init__(self, **kwargs):
+        super(Triqui, self).__init__(**kwargs)
+        self.cols = 3
+        self.rows = 3
+        for i in range(3):
+            for j in range(3):
+                self.add_widget(Boton(on_press=self.boton_presionado,\
+                       fila=i,columna=j))
+        self.turno = 'O'
+        self.tablero = crear()
+\end{lstlisting}
+\inputencoding{utf8}
+Ahora estamos en condiciones de poner valores a la matriz cada vez
+que se halla realizado una jugada:
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui5.py
+    def boton_presionado(self, w):
+        if w.text != ' ':
+            MostrarMensaje('Error!', \
+                  "Ya se ha jugado en esa casilla!")
+            return
+        else:
+            if self.turno == 'O':
+                w.text =  'O'                
+                self.turno = 'X'
+                self.botones_a_matriz()
+                if gana("O",self.tablero):
+                    MostrarMensaje("Fin", "Gana el jugador O")
+            else:
+                # Muy similar para el otro jugador!
+\end{lstlisting}
+\inputencoding{utf8}
+\section{Reset}
+
+Podemos reiniciar el juego cada vez que un jugador gane, mediante
+la creación del siguiente método de \texttt{Triqui}:
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui6.py
+   def reset(self):
+        for i in self.children:
+            i.text = ' '
+        self.turno = 'O'
+\end{lstlisting}
+\inputencoding{utf8}
+Ahora lo llamamos cada vez que un jugador gana, así el tablero de
+juego quedará limpio para que se inicie otra partida.
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui6.py
+    def boton_presionado(self, w):
+        # Todo lo anterior igual
+        else:
+                w.text = 'X'
+                self.turno = 'O'
+                self.botones_a_matriz()
+                if gana("X",self.tablero):
+                    MostrarMensaje("Fin", "Gana el jugador X")
+                    self.reset()
+\end{lstlisting}
+\inputencoding{utf8}
+Aprovechando al método reset, añadimos el chequeo de empates entre
+los dos jugadores:
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui7.py
+    def boton_presionado(self, w):
+        # Todo lo anterior igual
+            if empate(self.tablero):
+                MostrarMensaje("Fin", "Empate!")
+                self.reset()
+\end{lstlisting}
+\inputencoding{utf8}
+\section{Reestructurando, otra vez}
+
+Otra vez tenemos código parecido para revisar el estado del juego
+con los dos jugadores que es mejor consolidar en una función para
+mejorar la calidad del programa. Para esto definimos el método revisar,
+que:
+\begin{itemize}
+\item Si el jugador actual gana, muestra el mensaje y resetea.
+\item Si hay empate, muestra el mensaje y resetea.
+\item Si nadie gana y no hay empate, pasa el turno al otro jugador. 
+\end{itemize}
+\begin{verbatim}
+
+\end{verbatim}
+\inputencoding{latin9}\begin{lstlisting}
+# triqui8.py
+  def revisar(self):          
+        if gana(self.turno,self.tablero):
+            mensaje = "Gana el jugador "+self.turno+"."
+            MostrarMensaje("Fin", mensaje)
+            self.reset()
+        elif empate(self.tablero):
+            MostrarMensaje("Fin", "Empate!")
+            self.reset()
+        else:
+            self.turno = self.otro()
+\end{lstlisting}
+\inputencoding{utf8}
+Que depende del método otro:
+
+\inputencoding{latin9}\begin{lstlisting}
+# triqui8.py
+    def otro(self):
+        if self.turno == 'O':
+            return 'X'
+        else:
+            return 'O'
+\end{lstlisting}
+\inputencoding{utf8}
+Así terminamos con un programa que tiene en total 4 clases, con 9
+métodos distribuidos en ellas, además de las 9 funciones del módulo
+validar. Tiene 96 líneas de código en triqui9.py y 66 en validar,
+para un total de 162.
+
+Ilustra algo que siempre pasa con los programas textuales, cuando
+se convierten a gráficos se aumenta el código substancialmente. La
+ventaja, aparte de la estética, es que el Triqui con la biblioteca
+kivy puede ejecutarse en Linux, Windows, Mac OS X, Android y iOS (el
+sistema operativo de los teléfonos iphone y de los tablets ipad).
+
+Por ejemplo, el paquete para Android del triqui puede descargarse
+de:
+
+\url{https://github.com/abecerra/thinkcs-py_es/releases/download/thinkcs-py_es_e2-rc1/KivyTriquiABe-1.1.0-debug.apk}
+
+Para instalarlo en un smartphone o tablet.
+
+\section{Resumen}
+\begin{description}
+\item [{triqui0.py:}] crea una ventana vacía 
+\item [{triqui1.py:}] Agrega un botón a la ventana (se ve feo!) 
+\item [{triqui2.py:}] Agrega 9 botones para formar el tablero del triqui 
+\item [{triqui3.py:}] Permite jugar a los dos jugadores sin ningún chequeo 
+\item [{triqui4.py:}] Agrega una clase heredada de Button para llevar fila
+y columna 
+\item [{triqui5.py:}] Cada vez que se juega se copia el estado de los botones
+a una matriz 
+\item [{triqui6.py:}] Se valida si los jugadores ganan el juego con el
+código del triqui viejo y se resetea el juego. 
+\item [{triqui7.py:}] Se revisa si hay empate, si lo hay, se resetea el
+juego. 
+\item [{triqui8.py:}] Se mejora el código evitando la duplicación. 
+\end{description}
+
+\section{Glosario}
+\begin{description}
+\item [{Evento:}] Acción generada por el usuario de una aplicación gráfica.
+\item [{Widget:}] Elemento de una aplicación gráfica que se coloca en una
+ventana. Hay botones, paneles, barras deslizadoras, áreas de texto,
+entre otras clases de widgets.
+\end{description}
+
+\section{Ejercicios}
+\begin{enumerate}
+\item Modifique el triqui para que el computador juegue automáticamente,
+seleccionando una casilla vacía al azar.
+\item Agregue un sonido cada vez que se haga una jugada válida y otro sonido
+de error para cuando el jugador seleccione una casilla en la que ya
+se ha jugado.
+\item Modifique el triqui para que tenga un menú gráfico de entrada en el
+que se pueda escoger entre dos modalidades: 1 jugador contra el computador,
+2 jugadores entre si por turnos y 3, salir del programa. Ahora, cada
+vez que termine una partida el flujo de ejecución del programa debe
+volver al menú.
+\end{enumerate}
+
