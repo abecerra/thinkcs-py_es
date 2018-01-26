@@ -65,10 +65,10 @@ en ésta y se podrán agregar nuevos métodos.
 En la definición de una clase hija, el nombre de la clase madre se
 encierra entre paréntesis:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Mano(Mazo):
   pass
-\end{verbatim}
+\end{pythoncode}
  Esta sentencia indica que la nueva clase \texttt{Mano} hereda de
 la clase \texttt{Mazo}.
 
@@ -78,22 +78,22 @@ probablemente con el nombre del jugador que la sostiene. Por defecto,
 el parámetro nombre es una cadena vacía. \texttt{cartas} es la lista
 de cartas en la mano, inicializada a una lista vacía:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Mano(Mazo):
   def __init__(self, nombre=""):
     self.cartas = []
     self.nombre = nombre
-\end{verbatim}
+\end{pythoncode}
  Para la gran mayoría de juegos de cartas es necesario agregar y remover
 cartas del mazo. Como \texttt{Mano} hereda \texttt{eliminarCarta}
 de \texttt{Mazo}, ya tenemos la mitad del trabajo hecho, solo tenemos
 que escribir \texttt{agregarCarta}:
-\begin{verbatim}
+\begin{pythoncode}
 class Mano(Mazo):
   ...
   def agregarCarta(self,carta) :
     self.cartas.append(carta)
-\end{verbatim}
+\end{pythoncode}
 
 Recuerde que la elipsis (...) indica que estamos omitiendo los otros
 métodos. El método \texttt{append} de las listas permite agregar la
@@ -119,7 +119,7 @@ de manos y el número total de cartas que se deben entregar. Si no
 hay suficientes cartas en el mazo para repartir, entrega todas las
 cartas y se detiene:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Mazo:
   ...
   def repartir(self, manos, nCartas=999):
@@ -133,7 +133,7 @@ class Mazo:
       mano = manos[i % nManos] 
       # agrega la carta a la mano
       mano.agregarCarta(carta) 
-\end{verbatim}
+\end{pythoncode}
  El segundo parámetro, \texttt{nCartas}, es opcional; y por defecto
 es un número entero grande que garantice que todas las cartas del
 mazo se repartan.
@@ -160,7 +160,7 @@ Para imprimir el contenido de una mano podemos aprovechar los métodos
 \texttt{\_\_str\_\_} e \texttt{imprimirMazo} heredados de \texttt{Mazo}.
 Por ejemplo:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> mazo = Mazo()
 >>> mazo.barajar()
 >>> mano = Mano("Rafael")
@@ -172,7 +172,7 @@ La Mano Rafael contiene
   4 de Picas
    As de Corazones
     9 de tréboles
-\end{verbatim}
+\end{pyconcode}
  No es una gran mano, pero se puede mejorar.
 
 Aunque es conveniente heredar los métodos existentes, hay un dato
@@ -180,7 +180,7 @@ adicional que un objeto \texttt{Mano} puede incluir cuando se imprime,
 para lograr esto implementamos \texttt{\_\_str\_\_} sobrecargando
 el que está definido en la clase \texttt{Mazo}:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Mano(Mazo)
   ...
   def __str__(self):
@@ -190,7 +190,7 @@ class Mano(Mazo)
     else:
       s = s + " contiene\n"
     return s + Mazo.__str__(self)
-\end{verbatim}
+\end{pythoncode}
  Inicialmente, \texttt{s} es una cadena que identifica la mano. Si
 está vacía, se añade la cadena \texttt{esta vacia}. Si esto no es
 así se añade la cadena \texttt{contiene} y la representación textual
@@ -213,12 +213,12 @@ vez de una instancia de la clase padre.
 La clase \texttt{JuegoDeCartas} se encarga de algunas operaciones
 básicas comunes a todos los juegos, tales como crear el mazo y barajarlo:
 
-\begin{verbatim}
+\begin{pythoncode}
 class JuegoDeCartas:
   def __init__(self):
     self.mazo = Mazo()
     self.mazo.barajar()
-\end{verbatim}
+\end{pythoncode}
  En este ejemplo vemos que la inicialización realiza algo más importante
 que asignar valores iniciales a los atributos.
 
@@ -263,7 +263,7 @@ no están presentes en la clase \texttt{Mano}. Vamos a definir una
 nueva clase \texttt{ManoSolterona}, que hereda de \texttt{Mano} y
 provee un método adicional llamado \texttt{quitarPareja}:
 
-\begin{verbatim}
+\begin{pythoncode}
 class ManoSolterona(Mano):
   def quitarPareja(self):
     conteo = 0
@@ -277,7 +277,7 @@ class ManoSolterona(Mano):
               (self.name,carta,m))
         cont = cont + 1
     return cont
-\end{verbatim}
+\end{pythoncode}
  Empezamos haciendo una copia de la lista de cartas, de forma que
 podamos recorrerla y simultáneamente eliminar cartas. Como \texttt{self.cartas}
 se modifica en el ciclo, no vamos a utilizarlo para controlar el recorrido.
@@ -296,7 +296,7 @@ carta que se empareje, las dos se eliminan.
 
 El siguiente ejemplo demuestra cómo usar \texttt{quitarPareja}:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> juego = JuegoDeCartas()
 >>> mano = ManoSolterona("frank")
 >>> juego.mazo.repartir([mano], 13)
@@ -329,7 +329,7 @@ Ace de Picas
     7 de Diamantes
      5 de Treboles
       Jota de Diamantes
-\end{verbatim}
+\end{pyconcode}
  Tenga en cuenta que no hay método \texttt{\_\_init\_\_} en la clase
 \texttt{ManoSolterna}. Lo heredamos de \texttt{Mano}.
 
@@ -345,7 +345,7 @@ Como \texttt{\_\_init\_\_} se hereda de \texttt{JuegoDeCartas}, tendremos
 la garantía de que un objeto de tipo \texttt{JuegoSolterona} contendrá
 un mazo barajado:
 
-\begin{verbatim}
+\begin{pythoncode}
 class JuegoSolterona(JuegoDeCartas):
   def jugar(self, nombres):
     # elimina la Reina de Treboles
@@ -375,11 +375,11 @@ class JuegoSolterona(JuegoDeCartas):
 
     print("-------- Juego terminado")
     self.printManos()
-\end{verbatim}
+\end{pythoncode}
  Algunos de las etapas del juego se han separado en métodos. \texttt{eliminarParejas}
 recorre la lista de manos invocando \texttt{eliminarPareja} en cada
 una de ellas:
-\begin{verbatim}
+\begin{pythoncode}
 class JuegoSolterona(JuegoDeCartas):
   ...
   def eliminarParejas(self):
@@ -387,7 +387,7 @@ class JuegoSolterona(JuegoDeCartas):
     for mano in self.manos:
       cont = cont + mano.eliminarParejas()
     return cont
-\end{verbatim}
+\end{pythoncode}
 
 \texttt{cont} es un acumulador que lleva cuenta del número de parejas
 que se encontraron en cada mano.
@@ -407,7 +407,7 @@ El método \texttt{jugarUnTurno} toma un parámetro que indica el jugador
 que tiene el turno. El valor de retorno es el número de parejas encontradas
 durante este turno:
 
-\begin{verbatim}
+\begin{pythoncode}
 class JuegoSolterona(JuegoDeCartas):
   ...
   def jugarUnTurno(self, i):
@@ -421,7 +421,7 @@ class JuegoSolterona(JuegoDeCartas):
     cont = self.manos[i].eliminarParejas()
     self.manos[i].barajar()
     return cont
-\end{verbatim}
+\end{pythoncode}
  Si la mano de un jugador está vacía, este jugador está fuera del
 juego, así que no hace ninguna acción y retorna 0.
 
@@ -433,7 +433,7 @@ del siguiente jugador sea al azar.
 El método \texttt{encontrarVecino} comienza con el jugador a la izquierda
 y continua buscando de manera circular hasta que encuentra un jugador
 que tenga cartas:
-\begin{verbatim}
+\begin{pythoncode}
 class JuegoSolterona(JuegoDeCartas):
   ...
   def encontrarVecino(self, i):
@@ -442,7 +442,7 @@ class JuegoSolterona(JuegoDeCartas):
       vecino = (i + siguiente) % numManos
       if not self.manos[vecino].estaVacia():
         return vecino
-\end{verbatim}
+\end{pythoncode}
 
 Si \texttt{encontrarVecino} diera toda la vuelta sin encontrar cartas,
 retornaría \texttt{None} y causaría un error en algún otro lugar del
@@ -455,7 +455,7 @@ La siguiente salida es de un juego en el que solo las primeras 15
 cartas mas altas (con valor 10 y superior) se repartieron a tres jugadores.
 Con este pequeño mazo, el juego termina después de siete parejas encontradas,
 en vez de veinticinco.
-\begin{verbatim}
+\begin{pyconcode}
 >>> import cartas
 >>> juego = cartas.JuegoSolterona()
 >>> juego.jugar(["Allen","Jeff","Chris"])
@@ -529,10 +529,8 @@ Mano Jeff contiene
 Reina de Picas
 
 Mano Chris esta vacia
-\end{verbatim}
-\begin{verbatim}
+\end{pyconcode}
 
-\end{verbatim}
 Así que Jeff pierde.
 
 \section{Glosario}
