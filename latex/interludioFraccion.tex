@@ -18,12 +18,12 @@ El número superior es el numerador y el inferior es es el denominador.
 La clase \texttt{Fraccion} empieza con un método constructor que recibe
 como parámetros al numerador y al denominador:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Fraccion:
   def __init__(self, numerador, denominador=1):
     self.numerador = numerador
     self.denominador = denominador
-\end{verbatim}
+\end{pythoncode}
 El denominador es opcional. Una Fracción con un solo parámetro representa
 a un número entero. Si el numerador es $n$, construimos la fracción
 $n/1$.
@@ -33,22 +33,22 @@ que despliegue las fracciones de una manera natural. Como estamos
 acostumbrados a la notación ``numerador/denominador'', lo más natural
 es:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Fraccion:
   ...
   def __str__(self):
     return "%d/%d" % (self.numerador, self.denominador)
-\end{verbatim}
+\end{pythoncode}
  Para realizar pruebas, ponemos este código en un archivo \texttt{Fraccion.py}
 y lo importamos en el intérprete de Python. Ahora creamos un objeto
 fracción y lo imprimimos.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> from Fraccion import Fraccion
 >>> s = Fraccion(5,6)
 >>> print("La fraccion es", s)
 La fraccion es 5/6
-\end{verbatim}
+\end{pyconcode}
  El método \texttt{print}, automáticamente invoca al método \texttt{\_\_str\_\_}
 de manera implícita.
 
@@ -70,25 +70,25 @@ a y b).
 
 Python define que el método \texttt{\_\_mul\_\_} se puede definir
 en una clase para sobrecargar el operador \texttt{{*}}:
-\begin{verbatim}
+\begin{pythoncode}
 class Fraccion:
   ...
   def __mul__(self, otro):
     return Fraccion(self.numerador*otro.numerador, \
                     self.denominador*otro.denominador)
-\end{verbatim}
+\end{pythoncode}
 
 Podemos probar este método calculando un producto sencillo:
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(Fraccion(5,6) * Fraccion(3,4))
 15/24
-\end{verbatim}
+\end{pyconcode}
 
 Funciona, pero se puede mejorar. Podemos manejar el caso en el que
 se multiplique una fracción por un número entero. Por medio de la
 función \texttt{type} se puede probar si \texttt{otro} es un entero
 y convertirlo a una fracción antes de realizar el producto:
-\begin{verbatim}
+\begin{pythoncode}
 class Fraccion:
   ...
   def __mul__(self, otro):
@@ -96,17 +96,17 @@ class Fraccion:
       otro = Fraccion(otro)
     return Fraccion(self.numerador   * otro.numerador, \
                     self.denominador * otro.denominador)
-\end{verbatim}
+\end{pythoncode}
 
 Ahora, la multiplicación entre enteros y fracciones funciona, pero
 sólo si la fracción es el operando a la izquierda :
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(Fraccion(5,6) * 4)
 20/6
 >>> print(4 * Fraccion(5,6))
 TypeError: __mul__ nor __rmul__ defined for these operands
-\end{verbatim}
+\end{pyconcode}
  Para evaluar un operador binario como la multiplicación, Python chequea
 el operando izquierdo primero, para ver si su clase define el método
 \texttt{\_\_mul\_\_}, y que tenga soporte para el tipo del segundo
@@ -119,20 +119,20 @@ En este caso, como no hay definición de \texttt{\_\_rmul\_\_} en la
 clase \texttt{Fraccion}, se genera un error de tipo.
 
 Hay una forma sencilla de definir \texttt{\_\_rmul\_\_}:
-\begin{verbatim}
+\begin{pythoncode}
 class Fraccion:
   ...
   __rmul__ = __mul__
-\end{verbatim}
+\end{pythoncode}
  Esta asignación dice que \texttt{\_\_rmul\_\_} contiene el mismo
 código que \texttt{\_\_mul\_\_}. Si ahora evaluamos \texttt{4 {*}
 Fraccion(5,6)}, Python llama a \texttt{\_\_rmul\_\_} y le pasa al
 4 como parámetro:
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(4 * Fraccion(5,6))
 20/6
-\end{verbatim}
+\end{pyconcode}
  Como \texttt{\_\_rmul\_\_} tiene el mismo código que \texttt{\_\_mul\_\_},
 y el método \texttt{\_\_mul\_\_} puede recibir un parámetro entero,
 nuestra multiplicación de fracciones funciona bien.
@@ -147,7 +147,7 @@ da como resultado $\frac{(ad+cb)}{bd}$.
 Basándonos en la multiplicación, podemos escribir los métodos \texttt{\_\_add\_\_}
 y \texttt{\_\_radd\_\_}:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Fraccion:
   ...
   def __add__(self, otro):
@@ -158,18 +158,18 @@ class Fraccion:
                     self.denominador * otro.denominador) 
 
   __radd__ = __add__
-\end{verbatim}
+\end{pythoncode}
  Podemos probar estos métodos con objetos \texttt{Fraccion} y con
 números enteros.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> print(Fraccion(5,6) + Fraccion(5,6))
 60/36
 >>> print(Fraccion(5,6) + 3)
 23/6
 >>> print(2 + Fraccion(5,6))
 17/6
-\end{verbatim}
+\end{pyconcode}
  Los primeros ejemplos llaman al método \texttt{\_\_add\_\_}; el último
 ejemplo llama al método \texttt{\_\_radd\_\_}.
 
@@ -197,13 +197,13 @@ $m/n$.
 \end{quote}
 Esta definición recursiva se puede implementar en una función:
 
-\begin{verbatim}
+\begin{pythoncode}
 def MDC (m, n):
   if m % n == 0:
     return n
   else:
     return MDC(n, m%n)
-\end{verbatim}
+\end{pythoncode}
  En la primera línea el operador residuo nos permite chequear si n
 divide a n exactamente. En la última línea, lo usamos para calcular
 el residuo de la división.
@@ -212,19 +212,19 @@ Como todas las operaciones que hemos escrito crean nuevas fracciones
 como resultado, podemos simplificar todos los valores de retorno modificando
 el método constructor.
 
-\begin{verbatim}
+\begin{pythoncode}
 class Fraccion:
   def __init__(self, numerador, denominador=1):
     g = MDC (numerador, denominador)
     self.numerador   =   numerador / g
     self.denominador = denominador / g
-\end{verbatim}
+\end{pythoncode}
  Ahora, cada vez que creamos una nueva \texttt{Fraccion}, ¡se simplifica!.
 
-\begin{verbatim}
+\begin{pyconcode}
 >>> Fraccion(100,-36)
 -25/9
-\end{verbatim}
+\end{pyconcode}
  Una característica adicional que nos provee \texttt{MDC} es que si
 la fracción es negativa, el signo menos siempre se mueve hacia el
 numerador.
@@ -255,14 +255,14 @@ La forma más sencilla de comparar fracciones consiste en hacer una
 multiplicación cruzada. Si $a/b>c/d$, entonces $ad>bc$. Con esto
 en mente, implementamos \texttt{\_\_cmp\_\_}:
 
-\begin{verbatim}
+\begin{pythoncode}
 class Fraccion:
   ...
   def __cmp__(self, otro):
     dif = (self.numerador  * otro.denominador - \
             otro.numerador * self.denominador)
     return dif
-\end{verbatim}
+\end{pythoncode}
  Si \texttt{self} es mayor que \texttt{otro}, entonces \texttt{dif}
 será positivo. Si \texttt{otro} es mayor, \texttt{dif} será negativo.
 Si son iguales, \texttt{dif} es cero.
