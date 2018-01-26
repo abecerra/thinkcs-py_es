@@ -222,10 +222,10 @@ de los detalles de sus definiciones.
 
 La sintaxis para una definición de función es:
 
-\begin{pyconcode}
+\begin{pythoncode}
 def NOMBRE( LISTA DE PARAMETROS ):
   SENTENCIAS
-\end{pyconcode}
+\end{pythoncode}
  Usted puede inventar los nombres que desee para sus funciones con
 tal de que no use una palabra reservada. La lista de parámetros especifica
 que información, si es que la hay, se debe proporcionar a fin de usar
@@ -238,10 +238,10 @@ La práctica estándar de Python es usar 4 espacios.
 Las primeras funciones que vamos a escribir no tienen parámetros,
 así que la sintaxis luce así:
 
-\begin{pyconcode}
+\begin{pythoncode}
 def nuevaLinea():
   print()
-\end{pyconcode}
+\end{pythoncode}
  Esta función se llama \texttt{nuevaLinea}. Los paréntesis vacíos
 indican que no tiene parámetros. Contiene solamente una sentencia,
 que produce como salida una línea vacía. Eso es lo que ocurre cuando
@@ -250,33 +250,33 @@ se usa el comando \texttt{print} sin argumentos.
 La sintaxis para llamar la nueva función es la misma que para las
 funciones predefinidas en Python:
 
-\begin{pyconcode}
+\begin{pythoncode}
 print("Primera Linea.")
 nuevaLinea()
 print("Segunda Linea.")
-\end{pyconcode}
+\end{pythoncode}
  La salida para este programa es:
-\begin{pyconcode}
+\begin{pythoncode}
 Primera Linea.
 
 Segunda Linea.
-\end{pyconcode}
+\end{pythoncode}
 Note el espacio extra entre las dos líneas. ¿Qué pasa si deseamos
 más espacio entre las líneas? Podemos llamar la misma función repetidamente:
 
-\begin{pyconcode}
+\begin{pythoncode}
 print("Primera Linea.")
 nuevaLinea()
 nuevaLinea()
 nuevaLinea()
 print("Segunda Linea.")
-\end{pyconcode}
+\end{pythoncode}
  
 
 O podemos escribir una nueva función llamada \texttt{tresLineas} que
 imprima tres líneas:
 
-\begin{pyconcode}
+\begin{pythoncode}
 def tresLineas():
   nuevaLinea()
   nuevaLinea()
@@ -285,7 +285,7 @@ def tresLineas():
 print("Primera Linea.")
 tresLineas()
 print("Segunda Linea.")
-\end{pyconcode}
+\end{pythoncode}
  Esta función contiene tres sentencias, y todas están sangradas por
 dos espacios. Como la próxima sentencia, \texttt{print("Primera Linea")},
 no está sangrada, Python la interpreta afuera de la función.
@@ -316,7 +316,7 @@ tres veces.
 Uniendo los fragmentos de la sección 3.6, el programa completo luce
 así:
 
-\begin{pyconcode}
+\begin{pythoncode}
 def nuevaLinea():
   print()
 
@@ -328,7 +328,7 @@ def tresLineas():
 print("Primera Linea.")
 tresLineas()
 print("Segunda Linea.")
-\end{pyconcode}
+\end{pythoncode}
  Este programa contiene dos definiciones de funciones: \texttt{nuevaLinea}
 y \texttt{tresLineas}. Las definiciones de funciones se ejecutan como
 las otras sentencias, pero su efecto es crear nuevas funciones. Las
@@ -394,10 +394,10 @@ una función, los valores que se pasan se asignan a variables llamadas
 Aquí hay un ejemplo de una función definida por el programador que
 toma un parámetro:
 
-\begin{pyconcode}
+\begin{pythoncode}
 def imprimaDoble(pedro):
   print(pedro, pedro)
-\end{pyconcode}
+\end{pythoncode}
  Esta función toma un argumento y lo asigna a un parámetro llamado
 \texttt{pedro}. El valor del parámetro (en este momento no tenemos
 idea de lo que será) se imprime dos veces, y después, se imprime una
@@ -453,11 +453,11 @@ la seguimos llamando de la misma manera \texttt{pedro}.
 Cuando usted crea una \textbf{variable local} en una función, solamente
 existe dentro de ella, y no se puede usar por fuera. Por ejemplo:
 
-\begin{pyconcode}
+\begin{pythoncode}
 def concatenarDoble(parte1, parte2):
   cat = parte1 + parte2
   imprimaDoble(cat)
-\end{pyconcode}
+\end{pythoncode}
  Esta función toma dos argumentos, los concatena, y luego imprime
 el resultado dos veces. Podemos llamar a la función con dos cadenas:
 
@@ -514,7 +514,7 @@ hasta llegar a \texttt{\_\_main\_\_}.
 
 Por ejemplo, si intentamos acceder a \texttt{cat} desde \texttt{imprimaDoble},
 obtenemos un \texttt{error de nombre (NameError)}:
-\begin{pyconcode}
+\begin{pythoncode}
 Traceback (innermost last):
   File "test.py", line 13, in __main__
     concatenarDoble(cantar1, cantar2)
@@ -523,7 +523,7 @@ Traceback (innermost last):
   File "test.py", line 9, in imprimaDoble
     print(cat)
 NameError: cat
-\end{pyconcode}
+\end{pythoncode}
 Esta lista de funciones se denomina un \textbf{trazado inverso}. Nos
 informa en qué archivo de programa ocurrió el error, en qué línea,
 y qué funciones se estaban ejecutando en ese momento. También muestra

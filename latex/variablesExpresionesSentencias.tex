@@ -158,15 +158,15 @@ Si usted le da un nombre ilegal a una variable obtendrá un error sintáctico:
 \begin{pyconcode}
 >>> 76trombones = "gran desfile"
 SyntaxError: invalid syntax
->>> mas$ = 1000000
+>>> mas+ = 1000000
 SyntaxError: invalid syntax
->>> class = "introducción a la programación"
+>>> class= "introducción a la programación"
 SyntaxError: invalid syntax
 \end{pyconcode}
 
 \texttt{76trombones} es ilegal porque no empieza con una letra.\\
-\texttt{mas\$} es ilegal porque contiene un carácter ilegal, el símbolo
-\$.\\
+\texttt{mas+} es ilegal porque contiene un carácter ilegal, el símbolo
++.\\
 ¿Qué sucede con \texttt{class}?
 
 Resulta que \texttt{class} es una de las \textbf{palabras reservadas
@@ -207,16 +207,16 @@ se ejecutan.
 
 Por ejemplo, el guión
 
-\begin{pyconcode}
+\begin{pythoncode}
 print(1)
 x = 2
 print(x)
-\end{pyconcode}
+\end{pythoncode}
 produce la salida:
-\begin{pyconcode}
+\begin{pythoncode}
 1
 2
-\end{pyconcode}
+\end{pythoncode}
 Observe nuevamente que la sentencia de asignación no produce salida.
 
 \section{Evaluando expresiones}
@@ -262,12 +262,12 @@ usa la función print, el efecto es distinto como usted ya lo ha evidenciado.
 En un guión, una expresión, por sí misma, es una sentencia legal,
 pero no realiza nada. El guión:
 
-\begin{pyconcode}
+\begin{pythoncode}
 17
 3.2
 "Hola, Mundo!"
 1 + 1
-\end{pyconcode}
+\end{pythoncode}
 
 
 no produce ninguna salida. ¿Cómo cambiaría el guión de manera que
@@ -288,9 +288,7 @@ es más o menos claro:
 20+32       hora-1   hora*60+minuto   
 minuto/60   5**2     (5+9)*(15-7)
 \end{pyconcode}
-\begin{pyconcode}
 
-\end{pyconcode}
 Los símbolos \texttt{+}, \texttt{-}, y \texttt{/}, y los paréntesis
 para agrupar, significan en Python lo mismo que en la matemática.
 El asterisco (\texttt{{*}}) es el símbolo para la multiplicación,
@@ -373,11 +371,11 @@ enlazándolos en el orden en que aparecen. Por ejemplo:
 
 \index{concatenación}
 
-\begin{pyconcode}
+\begin{pythoncode}
 fruta = "banano"
 bienCocinada = " pan con nueces"
 print(fruta + bienCocinada)
-\end{pyconcode}
+\end{pythoncode}
 
 La salida de este programa es \texttt{banano pan con nueces}. El espacio
 antes de la palabra \texttt{pan} es parte de la cadena y sirve para
@@ -419,18 +417,18 @@ punto es que cualquier expresión que tenga números, cadenas y variables
 puede ser usada en una sentencia de impresión (\texttt{print}). Usted
 ha visto un ejemplo de esto:
 
-\begin{pyconcode}
+\begin{pythoncode}
 print("Número de minutos desde media noche: ",  \
   hora*60+minuto)
-\end{pyconcode}
+\end{pythoncode}
 El caracter \textbackslash{} permite continuar en la siguiente línea.
 Lo usaremos cuando las expresiones sean muy largas. Usted también
 puede poner expresiones arbitrarias en el lado derecho de una sentencia
 de asignación:
 
-\begin{pyconcode}
+\begin{pythoncode}
 porcentaje = (minuto * 100) / 60
-\end{pyconcode}
+\end{pythoncode}
 Esto no parece nada impresionante ahora, pero vamos a ver otros ejemplos
 en los que la composición hace posible expresar cálculos complejos
 organizada y concisamente.
@@ -453,16 +451,16 @@ Por esta razón, es una muy buena idea añadir notas a sus programas
 para explicar, en lenguaje natural, lo que hacen. Estas notas se denominan
 \textbf{comentarios }y se marcan con el símbolo \texttt{\#}:
 
-\begin{pyconcode}
+\begin{pythoncode}
 # calcula el porcentaje de la hora que ha pasado
 porcentaje = (minuto * 100) / 60
-\end{pyconcode}
+\end{pythoncode}
 En este caso, el comentario aparece en una línea completa. También
 pueden ir comentarios al final de una línea:
 
-\begin{pyconcode}
+\begin{pythoncode}
 porcentaje = (minute * 100) // 60 # div entera
-\end{pyconcode}
+\end{pythoncode}
 
 todo lo que sigue desde el \texttt{\#} hasta el fin de la línea se
 ignora—no tiene efecto en el programa. El mensaje es para el programador
@@ -523,13 +521,13 @@ ejecución.
 \begin{enumerate}
 \item ¿Qué sucede cuando se usa la función print con una expresión?, por
 ejemplo: 
-\begin{pyconcode}
+\begin{pythoncode}
 print(8+5)
-\end{pyconcode}
+\end{pythoncode}
 \item ¿Qué sucede cuando se ejecuta esto?
-\begin{pyconcode}
+\begin{pythoncode}
 print(5.2, "esto", 4 - 2, "aquello", 5/2.0)
-\end{pyconcode}
+\end{pythoncode}
 \item Tome la siguiente oración: Sólo trabajo y nada de juegos hacen de
 Juan un niño aburrido. Almacene cada palabra en variables separadas,
 después muestre la oración en una sola línea usando la función print.
