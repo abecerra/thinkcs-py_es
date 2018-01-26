@@ -14,18 +14,18 @@ cadenas—y otras conjuntos ordenados que veremos— se denominan \textbf{secuen
 
 Hay varias formas de crear una nueva lista; la más simple es encerrar
 los elementos entre corchetes (\verb+[+ y \verb+]+):
-\begin{verbatim}
+\begin{pythoncode}
 [10, 20, 30, 40]
 ["correo", "lapiz", "carro"]
-\end{verbatim}
+\end{pythoncode}
 
 El primer ejemplo es una lista de cuatro enteros, la segunda, una
 lista de tres cadenas. Los elementos de una lista no tienen que tener
 el mismo tipo. La siguiente lista contiene una cadena, un flotante,
 un entero y (mirabile dictu) otra lista:
-\begin{verbatim}
+\begin{pythoncode}
 ["hola", 2.0, 5, [10, 20]]
-\end{verbatim}
+\end{pythoncode}
 
 Cuando una lista está contenida por otra se dice que está \textbf{anidada}.
 
@@ -33,10 +33,10 @@ Cuando una lista está contenida por otra se dice que está \textbf{anidada}.
 
 Las listas que contienen enteros consecutivos son muy comunes, así
 que Python proporciona una forma de crearlas:
-\begin{verbatim}
+\begin{pyconcode}
 >>> list(range(1,5))
 [1, 2, 3, 4]
-\end{verbatim}
+\end{pyconcode}
 
 La función \texttt{range} toma dos argumentos y retorna una colección
 que contiene todos los enteros desde el primero hasta el segundo,
@@ -45,18 +45,18 @@ a lista con la función  \texttt{ list }
 
 Hay otras formas de usar a \texttt{range}. Con un solo argumento crea
 una lista que empieza en 0:
-\begin{verbatim}
+\begin{pyconcode}
 >>> list(range(10))
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-\end{verbatim}
+\end{pyconcode}
 
 Si hay un tercer argumento, este especifica el espacio entre los valores
 sucesivos, que se denomina el \textbf{tamaño del paso}. Este ejemplo
 cuenta de 1 a 10 con un paso de tamaño 2:
-\begin{verbatim}
+\begin{pyconcode}
 >>> list(range(1, 10, 2))
 [1, 3, 5, 7, 9]
-\end{verbatim}
+\end{pyconcode}
 
 Finalmente, existe una lista especial que no contiene elementos. Se
 denomina lista vacía, y se denota con \texttt{{[}{]}}.
@@ -64,13 +64,13 @@ denomina lista vacía, y se denota con \texttt{{[}{]}}.
 Con todas estas formas de crear listas sería decepcionante si no pudiéramos
 asignar listas a variables o pasarlas como parámetros a funciones.
 De hecho, podemos hacerlo:
-\begin{verbatim}
+\begin{pyconcode}
 >>> vocabulario = ["mejorar", "castigar", "derrocar"]
 >>> numeros = [17, 123]
 >>> vacia = []
 >>> print(vocabulario, numeros, vacia)
 ["mejorar", "castigar", "derrocar"] [17, 123] []
-\end{verbatim}
+\end{pyconcode}
 
 \section{Accediendo a los elementos}
 
@@ -80,10 +80,10 @@ La sintaxis para acceder a los elementos de una lista es la misma
 que usamos en las cadenas—el operador corchete (\texttt{{[}{]}}).
 La expresión dentro de los corchetes especifica el índice. Recuerde
 que los índices o posiciones empiezan desde 0:
-\begin{verbatim}
+\begin{pythoncode}
 print(numeros[0])
 numeros[1] = 5
-\end{verbatim}
+\end{pythoncode}
 
 El operador corchete para listas puede aparecer en cualquier lugar
 de una expresión. Cuanto aparece al lado izquierdo de una asignación
@@ -91,45 +91,45 @@ cambia uno de los elementos de la lista de forma que el elemento 1
 de \texttt{numeros}, que tenía el valor 123, ahora es 5.
 
 Cualquier expresión entera puede usarse como índice:
-\begin{verbatim}
+\begin{pyconcode}
 >>> numeros[3-2]
 5
 >>> numeros[1.0]
 TypeError: sequence index must be integer
-\end{verbatim}
+\end{pyconcode}
 
 Si usted intenta leer o escribir un elemento que no existe, obtiene
 un error en tiempo de ejecución:
 
 \index{error en tiempo de ejecución}
-\begin{verbatim}
+\begin{pyconcode}
 >>> numeros[2] = 5
 IndexError: list assignment index out of range
-\end{verbatim}
+\end{pyconcode}
 
 Si el índice tiene un valor negativo, cuenta hacia atrás desde el
 final de la lista:
-\begin{verbatim}
+\begin{pyconcode}
 >>> numeros[-1]
 5
 >>> numeros[-2]
 17
 >>> numeros[-3]
 IndexError: list index out of range
-\end{verbatim}
+\end{pyconcode}
 
 \texttt{numeros{[}-1{]}} es el último elemento de la lista, \texttt{numeros{[}-2{]}}
 es el penúltimo, y \texttt{numeros{[}-3{]}} no existe.
 
 Usualmente se usan variables de ciclo como índices de listas:
-\begin{verbatim}
+\begin{pythoncode}
 combatientes = ["guerra", "hambruna", "peste", "muerte"]
 
 i = 0
 while i < 4:
   print(combatientes[i])
   i = i + 1
-\end{verbatim}
+\end{pythoncode}
 
 Este ciclo \texttt{while} cuenta de 0 a 4. Cuando la variable de ciclo
 \texttt{i} es 4, la condición falla y el ciclo termina. El cuerpo
@@ -150,14 +150,14 @@ idea usar este valor como límite superior de un ciclo en vez de una
 constante. De ésta forma, si la lista cambia, usted no tendrá que
 cambiar todos los ciclos del programa, ellos funcionarán correctamente
 para listas de cualquier tamaño:
-\begin{verbatim}
+\begin{pythoncode}
 combatientes = ["guerra", "hambruna", "peste", "muerte"]
 
 i = 0
 while i < len(combatientes):
   print(combatientes[i])
   i = i + 1
-\end{verbatim}
+\end{pythoncode}
 
 La última vez que el ciclo se ejecuta \texttt{i} es \texttt{len(combatientes)
 - 1}, que es la posición del último elemento. Cuando \texttt{i} es
@@ -167,10 +167,10 @@ no es un índice válido.
 
 Aunque una lista puede contener a otra, la lista anidada se sigue
 viendo como un elemento único. La longitud de esta lista es cuatro:
-\begin{verbatim}
+\begin{pythoncode}
 ['basura!', 1, ['Brie', 'Roquefort', 'Pol le Veq'], 
  [1, 2, 3]]
-\end{verbatim}
+\end{pythoncode}
 
 \section{Pertenencia}
 
@@ -179,13 +179,13 @@ viendo como un elemento único. La longitud de esta lista es cuatro:
 \texttt{in} es un operador booleano que chequea la pertenencia de
 un valor a una secuencia. Lo usamos en la Sección~\ref{in} con cadenas,
 pero también funciona con listas y otras secuencias:
-\begin{verbatim}
+\begin{pyconcode}
 >>> combatientes = ["guerra", "hambruna", "peste", "muerte"]
 >>> 'peste' in combatientes
 True
 >>> 'corrupcion' in combatientes
 False
-\end{verbatim}
+\end{pyconcode}
 
 Ya que ``peste'' es un miembro de la lista \texttt{combatientes},
 el operador \texttt{in} retorna cierto. Como ``corrupcion'' no está
@@ -193,10 +193,10 @@ en la lista, \texttt{in} retorna falso.
 
 Podemos usar el operador lógico \texttt{not} en combinación con el
 \texttt{in} para chequear si un elemento no es miembro de una lista:
-\begin{verbatim}
+\begin{pyconcode}
 >>> 'corrupcion' not in combatientes
 True
-\end{verbatim}
+\end{pyconcode}
 
 \section{Listas y ciclos \texttt{for}}
 
@@ -205,40 +205,40 @@ True
 El ciclo \texttt{for} que vimos en la Sección~\ref{for} también
 funciona con listas. La sintaxis generalizada de un ciclo \texttt{for}
 es:
-\begin{verbatim}
+\begin{pythoncode}
 for VARIABLE in LISTA:
   CUERPO
-\end{verbatim}
+\end{pythoncode}
 
 Esto es equivalente a:
-\begin{verbatim}
+\begin{pythoncode}
 i = 0
 while i < len(LISTA):
   VARIABLE = LISTA[i]
   CUERPO
   i = i + 1
-\end{verbatim}
+\end{pythoncode}
 
 El ciclo \texttt{for} es más conciso porque podemos eliminar la variable
 de ciclo \texttt{i}. Aquí está el ciclo de la sección anterior escrito
 con un \texttt{for} en vez de un while: 
-\begin{verbatim}
+\begin{pythoncode}
 for combatiente in combatientes:
   print(combatiente)
-\end{verbatim}
+\end{pythoncode}
 
 Casi se lee como en español: ``Para (cada) combatiente en (la lista
 de) combatientes, imprima (el nombre del) combatiente''.
 
 Cualquier expresión que cree una lista puede usarse en un ciclo \texttt{for}:
-\begin{verbatim}
+\begin{pythoncode}
 for numero in range(20):
   if numero % 2 == 0:
     print(numero)
 
 for fruta in ["banano", "manzana", "pera"]:
   print("Me gustaria comer " + fruta + "s!")
-\end{verbatim}
+\end{pythoncode}
 
 El primer ejemplo imprime todos los números pares entre uno y diecinueve.
 El segundo expresa entusiasmo sobre varias frutas.
@@ -250,24 +250,24 @@ El segundo expresa entusiasmo sobre varias frutas.
 El operador \texttt{+} concatena listas:
 
 \index{concatenación!de listas}
-\begin{verbatim}
+\begin{pyconcode}
 >>> a = [1, 2, 3]
 >>> b = [4, 5, 6]
 >>> c = a + b
 >>> print(c)
 [1, 2, 3, 4, 5, 6]
-\end{verbatim}
+\end{pyconcode}
 
 Similarmente, el operador \texttt{{*}} repite una lista un número
 de veces determinado:
 
 \index{repetición!de listas}
-\begin{verbatim}
+\begin{pyconcode}
 >>> [0] * 4
 [0, 0, 0, 0]
 >>> [1, 2, 3] * 3
 [1, 2, 3, 1, 2, 3, 1, 2, 3]
-\end{verbatim}
+\end{pyconcode}
 
 El primer ejemplo repite \texttt{{[}0{]}} cuatro veces. El segundo
 repite \texttt{{[}1, 2, 3{]}} tres veces.
@@ -278,7 +278,7 @@ repite \texttt{{[}1, 2, 3{]}} tres veces.
 
 Las operaciones para sacar segmentos de cadenas que vimos en la Sección~\ref{slice}
 también funcionan con listas:
-\begin{verbatim}
+\begin{pyconcode}
 >>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
 >>> lista[1:3]
 ['b', 'c']
@@ -288,7 +288,7 @@ también funcionan con listas:
 ['d', 'e', 'f']
 >>> lista[:]
 ['a', 'b', 'c', 'd', 'e', 'f']
-\end{verbatim}
+\end{pyconcode}
 
 \section{Las listas son mutables}
 
@@ -297,33 +297,33 @@ también funcionan con listas:
 Las listas son mutables y no tienen la restricción de las cadenas,
 esto quiere decir que podemos cambiar los elementos internos usando
 el operador corchete al lado izquierdo de una asignación.
-\begin{verbatim}
+\begin{pyconcode}
 >>> fruta = ["banano", "manzana", "pera"]
 >>> fruta[0] = "mandarina"
 >>> fruta[-1] = "naranja"
 >>> print(fruta)
 ['mandarina', 'manzana', 'naranja']
-\end{verbatim}
+\end{pyconcode}
  Con el operador segmento podemos actualizar varios elementos a la
 vez:
-\begin{verbatim}
+\begin{pyconcode}
 >>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
 >>> lista[1:3] = ['x', 'y']
 >>> print(lista)
 ['a', 'x', 'y', 'd', 'e', 'f']
-\end{verbatim}
+\end{pyconcode}
 
 También podemos eliminar varios elementos asignándoles la lista vacía:
-\begin{verbatim}
+\begin{pyconcode}
 >>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
 >>> lista[1:3] = []
 >>> print(lista)
 ['a', 'd', 'e', 'f']
-\end{verbatim}
+\end{pyconcode}
 
 Igualmente, podemos agregar elementos a una lista apretándolos dentro
 de un segmento vacío en la posición que deseamos:
-\begin{verbatim}
+\begin{pyconcode}
 >>> lista = ['a', 'd', 'f']
 >>> lista[1:1] = ['b', 'c']
 >>> print(lista)
@@ -331,7 +331,7 @@ de un segmento vacío en la posición que deseamos:
 >>> lista[4:4] = ['e']
 >>> print(lista)
 ['a', 'b', 'c', 'd', 'e', 'f']
-\end{verbatim}
+\end{pyconcode}
 
 \section{Otras operaciones sobre listas}
 
@@ -342,34 +342,34 @@ y propenso a errores. Hay mecanismos alternativos más legibles como
 \texttt{del} que elimina un elemento de una lista.
 
 \index{borrado!en listas} \index{borrado en listas} \index{del}
-\begin{verbatim}
+\begin{pyconcode}
 >>> a = ['one', 'two', 'three']
 >>> del a[1]
 >>> a
 ['one', 'three']
-\end{verbatim}
+\end{pyconcode}
 
 Como es de esperar, \texttt{del} recibe índices negativos, y causa
 errores en tiempo de ejecución si el índice está fuera de rango.
 
 También se puede usar un segmento como argumento a \texttt{del}:
-\begin{verbatim}
+\begin{pyconcode}
 >>> lista = ['a', 'b', 'c', 'd', 'e', 'f']
 >>> del lista[1:5]
 >>> print(lista)
 ['a', 'f']
-\end{verbatim}
+\end{pyconcode}
 
 Como de costumbre, los segmentos seleccionan todos los elementos hasta
 el segundo índice, sin incluirlo.
 
 La función \texttt{append} agrega un elemento (o una lista) al final
 de una lista existente:
-\begin{verbatim}
+\begin{pyconcode}
 >>> a = ['uno', 'dos']
 >>> a.append('tres')
 >>> print(a)
-\end{verbatim}
+\end{pyconcode}
 
 Observe que se llama con la notación punto, a diferencia de \texttt{len}
 y \texttt{del}.
@@ -379,10 +379,10 @@ y \texttt{del}.
 \index{objeto} \index{valor}
 
 Si ejecutamos estas asignaciones
-\begin{verbatim}
+\begin{pythoncode}
 a = "banana"
 b = "banana"
-\end{verbatim}
+\end{pythoncode}
 
 sabemos que \texttt{a} y \texttt{b} se referirán a una cadena con
 las letras \texttt{``banana''}. Pero no podemos afirmar que sea
@@ -401,12 +401,12 @@ Un objeto es algo a lo que se puede referir una variable.
 Cada objeto tiene un \textbf{identificador} único, que podemos obtener
 con la función \texttt{id}. Imprimiendo el identificador de \texttt{a}
 y \texttt{b}, podemos saber si se refieren al mismo objeto.
-\begin{verbatim}
+\begin{pyconcode}
 >>> id(a)
 135044008
 >>> id(b)
 135044008
-\end{verbatim}
+\end{pyconcode}
 
 De hecho, obtenemos el mismo identificador dos veces, lo que nos dice
 que Python sólo creó una cadena, y que \texttt{a} y \texttt{b} se
@@ -414,14 +414,14 @@ refieren a ella.
 
 Las listas, por otro lado, se comportan de manera diferente. Cuando
 creamos dos listas obtenemos dos objetos:
-\begin{verbatim}
+\begin{pyconcode}
 >>> a = [1, 2, 3]
 >>> b = [1, 2, 3]
 >>> id(a)
 135045528
 >>> id(b)
 135041704
-\end{verbatim}
+\end{pyconcode}
 
 Así que el diagrama de estados luce así:
 
@@ -437,10 +437,10 @@ al mismo objeto.
 
 Como las variables se pueden referir a objetos, si asignamos una variable
 a otra, las dos se referirán al mismo objeto:
-\begin{verbatim}
+\begin{pyconcode}
 >>> a = [1, 2, 3]
 >>> b = a
-\end{verbatim}
+\end{pyconcode}
 
 En este caso el diagrama de estados luce así:
 
@@ -450,11 +450,11 @@ En este caso el diagrama de estados luce así:
 Como la misma lista tiene dos nombres distintos, \texttt{a} y \texttt{b},
 podemos decir que b es un \textbf{alias} de a. Los cambios que se
 hagan a través de un alias afectan al otro:
-\begin{verbatim}
+\begin{pyconcode}
 >>> b[0] = 5
 >>> print(a)
 [5, 2, 3]
-\end{verbatim}
+\end{pyconcode}
 
 Aunque este comportamiento puede ser útil, algunas veces puede ser
 indeseable. En general, es más seguro evitar los alias cuando se está
@@ -475,22 +475,22 @@ Este proceso se denomina \textbf{clonación}, para evitar la ambigüedad
 de la palabra ``copiar''.
 
 La forma más sencilla de clonar una lista es usar el operador segmento:
-\begin{verbatim}
+\begin{pyconcode}
 >>> a = [1, 2, 3]
 >>> b = a[:]
 >>> print(b)
 [1, 2, 3]
-\end{verbatim}
+\end{pyconcode}
 
 Al tomar cualquier segmento de \texttt{a} creamos una nueva lista.
 En este caso el segmento comprende toda la lista.
 
 Ahora podemos realizar cambios a \texttt{b} sin preocuparnos por \texttt{a}:
-\begin{verbatim}
+\begin{pyconcode}
 >>> b[0] = 5
 >>> print(a)
 [1, 2, 3]
-\end{verbatim}
+\end{pyconcode}
 
 ¿Como sería un diagrama de estados para \texttt{a} y \texttt{b} antes
 y después de este cambio? 
@@ -502,17 +502,17 @@ y después de este cambio?
 Pasar una lista como argumento es pasar un alias (o una referencia),
 no una copia de ella. Por ejemplo, la función \texttt{cabeza} toma
 una lista como parámetro y retorna el primer elemento:
-\begin{verbatim}
+\begin{pythoncode}
 def cabeza(lista):
   return lista[0]
-\end{verbatim}
+\end{pythoncode}
 
 Se puede usar así:
-\begin{verbatim}
+\begin{pyconcode}
 >>> numeros = [1, 2, 3]
 >>> cabeza(numeros)
 1
-\end{verbatim}
+\end{pyconcode}
 
 El parámetro \texttt{lista} y la variable \texttt{numeros} son alias
 para el mismo objeto. El diagrama de estados luce así:
@@ -526,34 +526,34 @@ en el medio.
 Si una función modifica un parámetro de tipo lista, el que hizo el
 llamado ve los cambios. Por ejemplo, \texttt{borrarCabeza} borra el
 primer elemento de una lista:
-\begin{verbatim}
+\begin{pythoncode}
 def borrarCabeza(lista):
   del lista[0]
-\end{verbatim}
+\end{pythoncode}
 
 Y se puede usar así::
-\begin{verbatim}
+\begin{pyconcode}
 >>> numeros = [1, 2, 3]
 >>> borrarCabeza(numeros)
 >>> print(numeros)
 [2, 3]
-\end{verbatim}
+\end{pyconcode}
 
 Si una función retorna una lista, retorna una referencia a ella. Por
 ejemplo, la función \texttt{cola} retorna una lista que contiene todos
 los elementos, excepto el primero:
-\begin{verbatim}
+\begin{pythoncode}
 def cola(lista):
   return lista[1:]
-\end{verbatim}
+\end{pythoncode}
 
 \texttt{cola} se puede usar así:
-\begin{verbatim}
+\begin{pyconcode}
 >>> numeros = [1, 2, 3]
 >>> resto = cola(numeros)
 >>> print(resto)
 [2, 3]
-\end{verbatim}
+\end{pyconcode}
 
 Como el valor de retorno se creó con el operador segmento, es una
 nueva lista. La creación de \texttt{resto}, y los cambios subsecuentes
@@ -565,22 +565,22 @@ sobre esta variable no tienen efecto sobre \texttt{numeros}.
 
 Una lista anidada aparece como elemento dentro de otra lista. En la
 siguiente lista, el tercer elemento es una lista anidada:
-\begin{verbatim}
+\begin{pyconcode}
 >>> lista = ["hola", 2.0, 5, [10, 20]]
-\end{verbatim}
+\end{pyconcode}
 
 Si imprimimos \texttt{lista{[}3{]}}, vemos \texttt{{[}10, 20{]}}.
 Para tomar un elemento de la lista anidada podemos realizar dos pasos:
-\begin{verbatim}
+\begin{pyconcode}
 >>> elt = lista[3]
 >>> elt[0]
 10
-\end{verbatim}
+\end{pyconcode}
  O, los podemos combinar:
-\begin{verbatim}
+\begin{pyconcode}
 >>> lista[3][1]
 20
-\end{verbatim}
+\end{pyconcode}
 
 Las aplicaciones del operador corchete se evalúan de izquierda a derecha,
 así que ésta expresión obtiene el elemento 3 de \texttt{lista} y extrae
@@ -597,22 +597,22 @@ ejemplo, la matriz:
 \afterfig
 
 se puede representar así:
-\begin{verbatim}
+\begin{pyconcode}
 >>> matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-\end{verbatim}
+\end{pyconcode}
 
 \texttt{matriz} es una lista con tres elementos, cada uno es una fila.
 Podemos seleccionar una fila de la manera usual:
-\begin{verbatim}
+\begin{pyconcode}
 >>> matriz[1]
 [4, 5, 6]
-\end{verbatim}
+\end{pyconcode}
 
 O podemos extraer un elemento individual de la matriz usando dos índices:
-\begin{verbatim}
+\begin{pyconcode}
 >>> matriz[1][1]
 5
-\end{verbatim}
+\end{pyconcode}
 
 El primero escoge la fila, y el segundo selecciona la columna. Aunque
 esta forma de representar matrices es común, no es la única posibilidad.
@@ -630,35 +630,35 @@ Dos de las funciones más usadas de las cadenas implican listas de
 cadenas. \texttt{split} separa una cadena en una lista de palabras.
 Por defecto, cualquier número de espacios en blanco sirven como criterio
 de separación:
-\begin{verbatim}
+\begin{pyconcode}
 >>> cancion = "La vida es un ratico..."
 >>> str.split(cancion)
 ['La', 'vida', 'es', 'un', 'ratico...']
-\end{verbatim}
+\end{pyconcode}
 Un argumento opcional denominado \textbf{delimitador} se puede usar
 para especificar que caracteres usar como criterio de separación.
 El siguiente ejemplo usa la cadena \texttt{an} como delimitador:
-\begin{verbatim}
+\begin{pyconcode}
 >>> str.split( "La rana que canta", "an")
 ['La r', 'a que c', 'ta']
-\end{verbatim}
+\end{pyconcode}
 
 Note que el delimitador no aparece en la lista resultante.
 
 La función \texttt{join} es la inversa de \texttt{split}. Toma una
 lista de cadenas y las concatena usando como separador a la cadena
 que la llama con notación punto:
-\begin{verbatim}
+\begin{pyconcode}
 >>> m = ['La', 'vida', 'es', 'un', 'ratico']
 >>> " ".join(m)
 'La vida es un ratico'
-\end{verbatim}
+\end{pyconcode}
 
 Si usamos una cadena diferente de espacio, obtenemos otro resultado:
-\begin{verbatim}
+\begin{pyconcode}
 >>> "_".join(m)
 'La_vida_es_un_ratico'
-\end{verbatim}
+\end{pyconcode}
 
 \section{Glosario}
 \begin{description}
