@@ -231,15 +231,10 @@ status open
 frontmatter
 \end_layout
 
-\end_inset
+\begin_layout Plain Layout
 
-
+% archivo para la institucion o editorial
 \end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand input
-filename "usc.lyx"
 
 \end_inset
 
