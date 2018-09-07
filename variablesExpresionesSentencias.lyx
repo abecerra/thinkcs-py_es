@@ -1105,7 +1105,7 @@ palabra reservada
 \end_layout
 
 \begin_layout Standard
-Python tiene veintiocho palabras reservadas:
+Python tiene 35 palabras reservadas:
 \end_layout
 
 \begin_layout Standard
@@ -1115,27 +1115,32 @@ status open
 
 \begin_layout Verbatim
 
-and       continue  else      for       import    not       
+False	await	else	import	pass	None
 \end_layout
 
 \begin_layout Verbatim
 
-assert    def       except    from      in        or        
+break	except	in	raise	True	class
 \end_layout
 
 \begin_layout Verbatim
 
-break     del       exec      global    is        pass      
+finally	is	return	and	continue	for
 \end_layout
 
 \begin_layout Verbatim
 
-class     elif      finally   if        lambda    print     
+lambda	try	as	def	from	nonlocal
 \end_layout
 
 \begin_layout Verbatim
 
-raise     return    try       while
+while	assert	del	global	not	with
+\end_layout
+
+\begin_layout Verbatim
+
+async	elif	if	or	yield
 \end_layout
 
 \end_inset
