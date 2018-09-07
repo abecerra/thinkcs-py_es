@@ -1,7 +1,9 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
 \maintain_unincluded_children false
@@ -9,16 +11,18 @@
 \language_package none
 \inputencoding utf8
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -48,6 +52,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -56,7 +61,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -74,7 +82,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -123,18 +132,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self, x=0, y=0):
 \end_layout
 
 \begin_layout Verbatim
+
     self.x = x
 \end_layout
 
 \begin_layout Verbatim
+
     self.y = y
 \end_layout
 
@@ -143,10 +156,12 @@ class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return '(' + str(self.x) + ',' + str(self.y) + ')'
 \end_layout
 
@@ -155,10 +170,12 @@ class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   def __add__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
     return Punto(self.x + otro.x, self.y + otro.y)
 \end_layout
 
@@ -167,10 +184,12 @@ class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   def __sub__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
     return Punto(self.x - otro.x, self.y - otro.y)
 \end_layout
 
@@ -179,10 +198,12 @@ class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   def __mul__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
     return self.x * otro.x + self.y * otro.y
 \end_layout
 
@@ -191,10 +212,12 @@ class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   def __rmul__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
     return Punto(otro * self.x, otro * self.y)
 \end_layout
 
@@ -203,10 +226,12 @@ class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   def invertir(self):
 \end_layout
 
 \begin_layout Verbatim
+
     self.x, self.y = self.y, self.x
 \end_layout
 
@@ -215,22 +240,27 @@ class Punto:
 \end_layout
 
 \begin_layout Verbatim
+
   def DerechoYAlReves(derecho):
 \end_layout
 
 \begin_layout Verbatim
+
     from copy import copy
 \end_layout
 
 \begin_layout Verbatim
+
     alreves = copy(derecho)
 \end_layout
 
 \begin_layout Verbatim
+
     alreves.invertir()
 \end_layout
 
 \begin_layout Verbatim
+
     print(str(derecho) + str(alreves))
 \end_layout
 
@@ -249,22 +279,27 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self, hora=0, minutos=0, segundos=0):
 \end_layout
 
 \begin_layout Verbatim
+
     self.hora = hora
 \end_layout
 
 \begin_layout Verbatim
+
     self.minutos = minutos
 \end_layout
 
 \begin_layout Verbatim
+
     self.segundos = segundos
 \end_layout
 
@@ -273,14 +308,17 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return str(self.hora) + ":" + str(self.minutos) + 
 \end_layout
 
 \begin_layout Verbatim
+
            ":" + str(self.segundos)
 \end_layout
 
@@ -289,18 +327,22 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
   def convertirAsegundoss(self):
 \end_layout
 
 \begin_layout Verbatim
+
     minutos = self.hora * 60 + self.minutos
 \end_layout
 
 \begin_layout Verbatim
+
     segundos = self.minutos * 60 + self.segundos
 \end_layout
 
 \begin_layout Verbatim
+
     return segundos
 \end_layout
 
@@ -309,10 +351,12 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
   def incrementar(self, segs):
 \end_layout
 
 \begin_layout Verbatim
+
     segs = segs + self.segundos
 \end_layout
 
@@ -321,22 +365,27 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
     self.hora = self.hora + segs/3600
 \end_layout
 
 \begin_layout Verbatim
+
     segs = segs % 3600
 \end_layout
 
 \begin_layout Verbatim
+
     self.minutos = self.minutos + segs/60
 \end_layout
 
 \begin_layout Verbatim
+
     segs = segs % 60
 \end_layout
 
 \begin_layout Verbatim
+
     self.segundos = segs
 \end_layout
 
@@ -345,34 +394,42 @@ class Hora:
 \end_layout
 
 \begin_layout Verbatim
+
 def crearHora(segs):
 \end_layout
 
 \begin_layout Verbatim
+
   H = Hora()
 \end_layout
 
 \begin_layout Verbatim
+
   H.hora = segs/3600
 \end_layout
 
 \begin_layout Verbatim
+
   segs = segs - H.hora * 3600
 \end_layout
 
 \begin_layout Verbatim
+
   H.minutos = segs/60
 \end_layout
 
 \begin_layout Verbatim
+
   segs = segs - H.minutos * 60
 \end_layout
 
 \begin_layout Verbatim
+
   H.segundos = segs
 \end_layout
 
 \begin_layout Verbatim
+
   return H
 \end_layout
 
@@ -391,6 +448,7 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 import random
 \end_layout
 
@@ -399,22 +457,27 @@ import random
 \end_layout
 
 \begin_layout Verbatim
+
 class Carta:
 \end_layout
 
 \begin_layout Verbatim
+
   listaFiguras = ["Treboles", "Diamantes", 
 \end_layout
 
 \begin_layout Verbatim
+
                   "Corazones", "Picas"]
 \end_layout
 
 \begin_layout Verbatim
+
   listaValores = [ "narf", "As", "2", "3", "4", "5", "6", 
 \end_layout
 
 \begin_layout Verbatim
+
                "7","8", "9", "10","Jota", "Reina", "Rey"]
 \end_layout
 
@@ -423,14 +486,17 @@ class Carta:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self, figura=0, valor=0):
 \end_layout
 
 \begin_layout Verbatim
+
     self.figura = figura
 \end_layout
 
 \begin_layout Verbatim
+
     self.valor = valor
 \end_layout
 
@@ -439,14 +505,17 @@ class Carta:
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return self.listaValores[self.valor] + " de " 
 \end_layout
 
 \begin_layout Verbatim
+
            + self.listaFiguras[self.figura]
 \end_layout
 
@@ -455,54 +524,67 @@ class Carta:
 \end_layout
 
 \begin_layout Verbatim
+
   def __cmp__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
     # revisa las figuras
 \end_layout
 
 \begin_layout Verbatim
+
     if self.figura > otro.figura: 
 \end_layout
 
 \begin_layout Verbatim
+
        return 1
 \end_layout
 
 \begin_layout Verbatim
+
     if self.figura < otro.figura: 
 \end_layout
 
 \begin_layout Verbatim
+
        return -1
 \end_layout
 
 \begin_layout Verbatim
+
     # las figuras son iguales, se chequean los valores
 \end_layout
 
 \begin_layout Verbatim
+
     if self.valor > otro.valor: 
 \end_layout
 
 \begin_layout Verbatim
+
       return 1
 \end_layout
 
 \begin_layout Verbatim
+
     if self.valor < otro.valor: 
 \end_layout
 
 \begin_layout Verbatim
+
       return -1
 \end_layout
 
 \begin_layout Verbatim
+
     # los valores son iguales,  hay empate
 \end_layout
 
 \begin_layout Verbatim
+
     return 0
 \end_layout
 
@@ -511,26 +593,32 @@ class Carta:
 \end_layout
 
 \begin_layout Verbatim
+
 class Mazo:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     self.Cartas = []
 \end_layout
 
 \begin_layout Verbatim
+
     for figura in range(4):
 \end_layout
 
 \begin_layout Verbatim
+
       for valor in range(1, 14):
 \end_layout
 
 \begin_layout Verbatim
+
         self.Cartas.append(Carta(figura, valor))
 \end_layout
 
@@ -539,14 +627,17 @@ class Mazo:
 \end_layout
 
 \begin_layout Verbatim
+
   def imprimirMazo(self):
 \end_layout
 
 \begin_layout Verbatim
+
     for Carta in self.Cartas:
 \end_layout
 
 \begin_layout Verbatim
+
       print(Carta)
 \end_layout
 
@@ -555,24 +646,29 @@ class Mazo:
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     s = ""
 \end_layout
 
 \begin_layout Verbatim
+
     for i in range(len(self.Cartas)):
 \end_layout
 
 \begin_layout Verbatim
+
       s = s + " "*i + str(self.Cartas[i]) + "
 \backslash
 n"
 \end_layout
 
 \begin_layout Verbatim
+
     return s
 \end_layout
 
@@ -581,30 +677,37 @@ n"
 \end_layout
 
 \begin_layout Verbatim
+
   def barajar(self):
 \end_layout
 
 \begin_layout Verbatim
+
     import random
 \end_layout
 
 \begin_layout Verbatim
+
     nCartas = len(self.Cartas)
 \end_layout
 
 \begin_layout Verbatim
+
     for i in range(nCartas):
 \end_layout
 
 \begin_layout Verbatim
+
       j = random.randrange(i, nCartas)
 \end_layout
 
 \begin_layout Verbatim
+
       [self.Cartas[i], self.Cartas[j]] = [self.Cartas[j], 
 \end_layout
 
 \begin_layout Verbatim
+
                                           self.Cartas[i]]
 \end_layout
 
@@ -613,22 +716,27 @@ n"
 \end_layout
 
 \begin_layout Verbatim
+
   def eliminarCarta(self, Carta):
 \end_layout
 
 \begin_layout Verbatim
+
     if Carta in self.Cartas:
 \end_layout
 
 \begin_layout Verbatim
+
       self.Cartas.remove(Carta)
 \end_layout
 
 \begin_layout Verbatim
+
       return 1
 \end_layout
 
 \begin_layout Verbatim
+
     else: return 0
 \end_layout
 
@@ -637,10 +745,12 @@ n"
 \end_layout
 
 \begin_layout Verbatim
+
   def entregarCarta(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return self.Cartas.pop()
 \end_layout
 
@@ -649,10 +759,12 @@ n"
 \end_layout
 
 \begin_layout Verbatim
+
   def estaVacio(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return (len(self.Cartas) == 0)
 \end_layout
 
@@ -661,46 +773,57 @@ n"
 \end_layout
 
 \begin_layout Verbatim
+
   def repartir(self, manos, nCartas=999):
 \end_layout
 
 \begin_layout Verbatim
+
     nmanos = len(manos)
 \end_layout
 
 \begin_layout Verbatim
+
     for i in range(nCartas):
 \end_layout
 
 \begin_layout Verbatim
+
       if self.estaVacio(): 
 \end_layout
 
 \begin_layout Verbatim
+
          break    # rompe el ciclo si no hay cartas
 \end_layout
 
 \begin_layout Verbatim
+
       # quita la carta del tope
 \end_layout
 
 \begin_layout Verbatim
+
       Carta = self.entregarCarta()      
 \end_layout
 
 \begin_layout Verbatim
+
       # quien tiene el proximo turnoo?
 \end_layout
 
 \begin_layout Verbatim
+
       mano = manos[i % nmanos]    
 \end_layout
 
 \begin_layout Verbatim
+
       # agrega la carta a la mano
 \end_layout
 
 \begin_layout Verbatim
+
       mano.agregarCarta(Carta)         
 \end_layout
 
@@ -709,18 +832,22 @@ n"
 \end_layout
 
 \begin_layout Verbatim
+
 class mano(Mazo):
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self, nombre=""):
 \end_layout
 
 \begin_layout Verbatim
+
     self.Cartas = []
 \end_layout
 
 \begin_layout Verbatim
+
     self.nombre = nombre
 \end_layout
 
@@ -729,10 +856,12 @@ class mano(Mazo):
 \end_layout
 
 \begin_layout Verbatim
+
   def agregarCarta(self,Carta) :
 \end_layout
 
 \begin_layout Verbatim
+
     self.Cartas.append(Carta)
 \end_layout
 
@@ -741,34 +870,41 @@ class mano(Mazo):
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     s = "mano " + self.nombre
 \end_layout
 
 \begin_layout Verbatim
+
     if self.estaVacio():
 \end_layout
 
 \begin_layout Verbatim
+
       s = s + " esta vacia
 \backslash
 n"
 \end_layout
 
 \begin_layout Verbatim
+
     else:
 \end_layout
 
 \begin_layout Verbatim
+
       s = s + " contiene
 \backslash
 n"
 \end_layout
 
 \begin_layout Verbatim
+
     return s + Mazo.__str__(self)
 \end_layout
 
@@ -777,18 +913,22 @@ n"
 \end_layout
 
 \begin_layout Verbatim
+
 class JuegoCartas:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     self.Mazo = Mazo()
 \end_layout
 
 \begin_layout Verbatim
+
     self.Mazo.barajar()
 \end_layout
 
@@ -797,54 +937,67 @@ class JuegoCartas:
 \end_layout
 
 \begin_layout Verbatim
+
 class ManoJuegoSolterona(mano):
 \end_layout
 
 \begin_layout Verbatim
+
   def eliminarParejas(self):
 \end_layout
 
 \begin_layout Verbatim
+
     cont = 0
 \end_layout
 
 \begin_layout Verbatim
+
     originalCartas = self.Cartas[:]
 \end_layout
 
 \begin_layout Verbatim
+
     for carta in originalCartas:
 \end_layout
 
 \begin_layout Verbatim
+
       m = Carta(3-carta.figura, carta.valor)
 \end_layout
 
 \begin_layout Verbatim
+
       if m in self.Cartas:
 \end_layout
 
 \begin_layout Verbatim
+
         self.Cartas.remove(carta)
 \end_layout
 
 \begin_layout Verbatim
+
         self.Cartas.remove(m)
 \end_layout
 
 \begin_layout Verbatim
+
         print("mano %s: %s parejas %s" % 
 \end_layout
 
 \begin_layout Verbatim
+
                  (self.nombre,carta,m))
 \end_layout
 
 \begin_layout Verbatim
+
         cont = cont+1
 \end_layout
 
 \begin_layout Verbatim
+
     return cont
 \end_layout
 
@@ -853,18 +1006,22 @@ class ManoJuegoSolterona(mano):
 \end_layout
 
 \begin_layout Verbatim
+
 class JuegoSolterona(JuegoCartas):
 \end_layout
 
 \begin_layout Verbatim
+
   def jugar(self, nombres):
 \end_layout
 
 \begin_layout Verbatim
+
     # elimina la reina de treboles
 \end_layout
 
 \begin_layout Verbatim
+
     self.Mazo.eliminarCarta(Carta(0,12))
 \end_layout
 
@@ -873,18 +1030,22 @@ class JuegoSolterona(JuegoCartas):
 \end_layout
 
 \begin_layout Verbatim
+
     # crea manos con base en los nombres
 \end_layout
 
 \begin_layout Verbatim
+
     self.manos = []
 \end_layout
 
 \begin_layout Verbatim
+
     for nombre in nombres : 
 \end_layout
 
 \begin_layout Verbatim
+
         self.manos.append(ManoJuegoSolterona(nombre))
 \end_layout
 
@@ -893,18 +1054,22 @@ class JuegoSolterona(JuegoCartas):
 \end_layout
 
 \begin_layout Verbatim
+
     # reparte las Cartas
 \end_layout
 
 \begin_layout Verbatim
+
     self.Mazo.repartir(self.manos)
 \end_layout
 
 \begin_layout Verbatim
+
     print("---------- Cartas se han repartido")
 \end_layout
 
 \begin_layout Verbatim
+
     self.imprimirmanos()
 \end_layout
 
@@ -913,18 +1078,22 @@ class JuegoSolterona(JuegoCartas):
 \end_layout
 
 \begin_layout Verbatim
+
     # eliminar parejas iniciales
 \end_layout
 
 \begin_layout Verbatim
+
     parejas = self.eliminarParejas()
 \end_layout
 
 \begin_layout Verbatim
+
     print("----- parejas descartadas, empieza el juego")
 \end_layout
 
 \begin_layout Verbatim
+
     self.imprimirmanos()
 \end_layout
 
@@ -933,26 +1102,32 @@ class JuegoSolterona(JuegoCartas):
 \end_layout
 
 \begin_layout Verbatim
+
     # jugar hasta que se eliminan 50 cartas
 \end_layout
 
 \begin_layout Verbatim
+
     turno = 0
 \end_layout
 
 \begin_layout Verbatim
+
     nummanos = len(self.manos)
 \end_layout
 
 \begin_layout Verbatim
+
     while parejas < 25:
 \end_layout
 
 \begin_layout Verbatim
+
       parejas = parejas + self.jugarUnturno(turno)
 \end_layout
 
 \begin_layout Verbatim
+
       turno = (turno + 1) % nummanos
 \end_layout
 
@@ -961,10 +1136,12 @@ class JuegoSolterona(JuegoCartas):
 \end_layout
 
 \begin_layout Verbatim
+
     print("---------- Juego Terminado")
 \end_layout
 
 \begin_layout Verbatim
+
     self.imprimirmanos ()
 \end_layout
 
@@ -973,22 +1150,27 @@ class JuegoSolterona(JuegoCartas):
 \end_layout
 
 \begin_layout Verbatim
+
   def eliminarParejas(self):
 \end_layout
 
 \begin_layout Verbatim
+
     cont = 0
 \end_layout
 
 \begin_layout Verbatim
+
     for mano in self.manos:
 \end_layout
 
 \begin_layout Verbatim
+
       cont = cont + mano.eliminarParejas()
 \end_layout
 
 \begin_layout Verbatim
+
     return cont
 \end_layout
 
@@ -997,46 +1179,57 @@ class JuegoSolterona(JuegoCartas):
 \end_layout
 
 \begin_layout Verbatim
+
   def jugarUnturno(self, i):
 \end_layout
 
 \begin_layout Verbatim
+
     if self.manos[i].estaVacio():
 \end_layout
 
 \begin_layout Verbatim
+
       return 0
 \end_layout
 
 \begin_layout Verbatim
+
     vecino = self.encontrarvecino(i)
 \end_layout
 
 \begin_layout Verbatim
+
     cartaEscogida = self.manos[vecino].entregarCarta()
 \end_layout
 
 \begin_layout Verbatim
+
     self.manos[i].agregarCarta(cartaEscogida)
 \end_layout
 
 \begin_layout Verbatim
+
     print("mano", self.manos[i].nombre, 
 \end_layout
 
 \begin_layout Verbatim
+
           "escogió", cartaEscogida)
 \end_layout
 
 \begin_layout Verbatim
+
     count = self.manos[i].eliminarParejas()
 \end_layout
 
 \begin_layout Verbatim
+
     self.manos[i].barajar()
 \end_layout
 
 \begin_layout Verbatim
+
     return count
 \end_layout
 
@@ -1045,26 +1238,32 @@ class JuegoSolterona(JuegoCartas):
 \end_layout
 
 \begin_layout Verbatim
+
   def encontrarvecino(self, i):
 \end_layout
 
 \begin_layout Verbatim
+
     nummanos = len(self.manos)
 \end_layout
 
 \begin_layout Verbatim
+
     for siguiente in range(1,nummanos):
 \end_layout
 
 \begin_layout Verbatim
+
       vecino = (i + siguiente) % nummanos
 \end_layout
 
 \begin_layout Verbatim
+
       if not self.manos[vecino].estaVacio():
 \end_layout
 
 \begin_layout Verbatim
+
         return vecino
 \end_layout
 
@@ -1073,14 +1272,17 @@ class JuegoSolterona(JuegoCartas):
 \end_layout
 
 \begin_layout Verbatim
+
   def imprimirmanos(self) :
 \end_layout
 
 \begin_layout Verbatim
+
     for mano in self.manos :
 \end_layout
 
 \begin_layout Verbatim
+
       print(mano)
 \end_layout
 
@@ -1103,22 +1305,27 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 def imprimirlista(Nodo) :
 \end_layout
 
 \begin_layout Verbatim
+
   while Nodo :
 \end_layout
 
 \begin_layout Verbatim
+
     print(Nodo),
 \end_layout
 
 \begin_layout Verbatim
+
     Nodo = Nodo.siguiente
 \end_layout
 
 \begin_layout Verbatim
+
   print()
 \end_layout
 
@@ -1127,30 +1334,37 @@ def imprimirlista(Nodo) :
 \end_layout
 
 \begin_layout Verbatim
+
 def imprimirAlReves(lista) :
 \end_layout
 
 \begin_layout Verbatim
+
   if lista == None : 
 \end_layout
 
 \begin_layout Verbatim
+
       return
 \end_layout
 
 \begin_layout Verbatim
+
   cabeza = lista
 \end_layout
 
 \begin_layout Verbatim
+
   resto = lista.siguiente
 \end_layout
 
 \begin_layout Verbatim
+
   imprimirAlReves(resto)
 \end_layout
 
 \begin_layout Verbatim
+
   print(cabeza),
 \end_layout
 
@@ -1159,34 +1373,42 @@ def imprimirAlReves(lista) :
 \end_layout
 
 \begin_layout Verbatim
+
 def imprimirAlRevesBien(lista) :
 \end_layout
 
 \begin_layout Verbatim
+
   print("("),
 \end_layout
 
 \begin_layout Verbatim
+
   if lista != None :
 \end_layout
 
 \begin_layout Verbatim
+
     cabeza = lista
 \end_layout
 
 \begin_layout Verbatim
+
     resto = lista.siguiente
 \end_layout
 
 \begin_layout Verbatim
+
     imprimirAlReves(resto)
 \end_layout
 
 \begin_layout Verbatim
+
     print(cabeza),
 \end_layout
 
 \begin_layout Verbatim
+
   print(")"),
 \end_layout
 
@@ -1195,30 +1417,37 @@ def imprimirAlRevesBien(lista) :
 \end_layout
 
 \begin_layout Verbatim
+
 def eliminarSegundo(lista) :
 \end_layout
 
 \begin_layout Verbatim
+
   if lista == None : return
 \end_layout
 
 \begin_layout Verbatim
+
   first  = lista
 \end_layout
 
 \begin_layout Verbatim
+
   second = lista.siguiente
 \end_layout
 
 \begin_layout Verbatim
+
   first.siguiente = second.siguiente
 \end_layout
 
 \begin_layout Verbatim
+
   second.siguiente = None
 \end_layout
 
 \begin_layout Verbatim
+
   return second
 \end_layout
 
@@ -1227,18 +1456,22 @@ def eliminarSegundo(lista) :
 \end_layout
 
 \begin_layout Verbatim
+
 class Nodo :
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self, carga=None) :
 \end_layout
 
 \begin_layout Verbatim
+
     self.carga = carga
 \end_layout
 
 \begin_layout Verbatim
+
     self.siguiente  = None
 \end_layout
 
@@ -1247,10 +1480,12 @@ class Nodo :
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self) :
 \end_layout
 
 \begin_layout Verbatim
+
     return str(self.carga)
 \end_layout
 
@@ -1259,22 +1494,27 @@ class Nodo :
 \end_layout
 
 \begin_layout Verbatim
+
   def imprimirAlReves(self) :
 \end_layout
 
 \begin_layout Verbatim
+
     if self.siguiente != None :
 \end_layout
 
 \begin_layout Verbatim
+
       resto = self.siguiente
 \end_layout
 
 \begin_layout Verbatim
+
       resto.imprimirAlReves()
 \end_layout
 
 \begin_layout Verbatim
+
     print(self.carga),
 \end_layout
 
@@ -1283,18 +1523,22 @@ class Nodo :
 \end_layout
 
 \begin_layout Verbatim
+
 class ListaEnlazada :
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self) :
 \end_layout
 
 \begin_layout Verbatim
+
     self.numElementos = 0
 \end_layout
 
 \begin_layout Verbatim
+
     self.cabeza   = None
 \end_layout
 
@@ -1303,22 +1547,27 @@ class ListaEnlazada :
 \end_layout
 
 \begin_layout Verbatim
+
   def imprimirAlReves(self) :
 \end_layout
 
 \begin_layout Verbatim
+
     print("("),
 \end_layout
 
 \begin_layout Verbatim
+
     if self.cabeza != None :
 \end_layout
 
 \begin_layout Verbatim
+
       self.cabeza.imprimirAlReves()
 \end_layout
 
 \begin_layout Verbatim
+
     print(")"),
 \end_layout
 
@@ -1327,22 +1576,27 @@ class ListaEnlazada :
 \end_layout
 
 \begin_layout Verbatim
+
   def agregarAlPrincipio(self, carga) :
 \end_layout
 
 \begin_layout Verbatim
+
     nodo = Nodo(carga)
 \end_layout
 
 \begin_layout Verbatim
+
     nodo.siguiente = self.cabeza
 \end_layout
 
 \begin_layout Verbatim
+
     self.cabeza = nodo
 \end_layout
 
 \begin_layout Verbatim
+
     self.numElementos = self.numElementos + 1
 \end_layout
 
@@ -1361,14 +1615,17 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 class Pila:              
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     self.items = []
 \end_layout
 
@@ -1377,10 +1634,12 @@ class Pila:
 \end_layout
 
 \begin_layout Verbatim
+
   def meter(self, item):
 \end_layout
 
 \begin_layout Verbatim
+
     self.items.append(item)
 \end_layout
 
@@ -1389,10 +1648,12 @@ class Pila:
 \end_layout
 
 \begin_layout Verbatim
+
   def sacar(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return self.items.pop()
 \end_layout
 
@@ -1401,10 +1662,12 @@ class Pila:
 \end_layout
 
 \begin_layout Verbatim
+
   def estaVacia(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return(self.items == [])
 \end_layout
 
@@ -1413,66 +1676,82 @@ class Pila:
 \end_layout
 
 \begin_layout Verbatim
+
 def evalPostfija(expr) :
 \end_layout
 
 \begin_layout Verbatim
+
   import re
 \end_layout
 
 \begin_layout Verbatim
+
   expr = re.split("([^0-9])", expr)
 \end_layout
 
 \begin_layout Verbatim
+
   pila = Pila()
 \end_layout
 
 \begin_layout Verbatim
+
   for lexema in expr :
 \end_layout
 
 \begin_layout Verbatim
+
     if  lexema == '' or lexema == ' ':
 \end_layout
 
 \begin_layout Verbatim
+
       continue
 \end_layout
 
 \begin_layout Verbatim
+
     if  lexema == '+' :
 \end_layout
 
 \begin_layout Verbatim
+
       suma = pila.sacar() + pila.sacar()
 \end_layout
 
 \begin_layout Verbatim
+
       pila.meter(suma)
 \end_layout
 
 \begin_layout Verbatim
+
     elif lexema == '*' :
 \end_layout
 
 \begin_layout Verbatim
+
       producto = pila.sacar() * pila.sacar()
 \end_layout
 
 \begin_layout Verbatim
+
       pila.meter(producto)
 \end_layout
 
 \begin_layout Verbatim
+
     else :
 \end_layout
 
 \begin_layout Verbatim
+
       pila.meter(int(lexema))
 \end_layout
 
 \begin_layout Verbatim
+
   return pila.sacar()
 \end_layout
 
@@ -1495,18 +1774,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 class Cola:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     self.numElementos = 0
 \end_layout
 
 \begin_layout Verbatim
+
     self.primero = None
 \end_layout
 
@@ -1515,10 +1798,12 @@ class Cola:
 \end_layout
 
 \begin_layout Verbatim
+
   def estaVacia(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return (self.numElementos == 0)
 \end_layout
 
@@ -1527,58 +1812,72 @@ class Cola:
 \end_layout
 
 \begin_layout Verbatim
+
   def meter(self, carga):
 \end_layout
 
 \begin_layout Verbatim
+
     nodo = Nodo(carga) 
 \end_layout
 
 \begin_layout Verbatim
+
     nodo.siguiente = None
 \end_layout
 
 \begin_layout Verbatim
+
     if self.primero == None:
 \end_layout
 
 \begin_layout Verbatim
+
        # si esta vacia este nodo sera el primero
 \end_layout
 
 \begin_layout Verbatim
+
        self.primero = nodo
 \end_layout
 
 \begin_layout Verbatim
+
     else:
 \end_layout
 
 \begin_layout Verbatim
+
        # encontrar el ultimo nodo
 \end_layout
 
 \begin_layout Verbatim
+
        ultimo = self.primero
 \end_layout
 
 \begin_layout Verbatim
+
        while ultimo.siguiente:
 \end_layout
 
 \begin_layout Verbatim
+
 	 ultimo = ultimo.siguiente
 \end_layout
 
 \begin_layout Verbatim
+
 	 # pegar el nuevo
 \end_layout
 
 \begin_layout Verbatim
+
 	 ultimo.siguiente = nodo
 \end_layout
 
 \begin_layout Verbatim
+
        self.numElementos = self.numElementos + 1
 \end_layout
 
@@ -1587,22 +1886,27 @@ class Cola:
 \end_layout
 
 \begin_layout Verbatim
+
   def sacar(self):
 \end_layout
 
 \begin_layout Verbatim
+
     carga = self.primero.carga
 \end_layout
 
 \begin_layout Verbatim
+
     self.primero = self.primero.siguiente
 \end_layout
 
 \begin_layout Verbatim
+
     self.numElementos = self.numElementos - 1
 \end_layout
 
 \begin_layout Verbatim
+
     return carga
 \end_layout
 
@@ -1611,34 +1915,42 @@ class Cola:
 \end_layout
 
 \begin_layout Verbatim
+
 class ColaMejorada:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     self.numElementos = 0
 \end_layout
 
 \begin_layout Verbatim
+
     self.primero = None
 \end_layout
 
 \begin_layout Verbatim
+
     self.ultimo = None
 \end_layout
 
 \begin_layout Verbatim
+
         
 \end_layout
 
 \begin_layout Verbatim
+
   def estaVacia(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return (self.numElementos == 0)
 \end_layout
 
@@ -1647,58 +1959,72 @@ class ColaMejorada:
 \end_layout
 
 \begin_layout Verbatim
+
   def meter(self, carga):
 \end_layout
 
 \begin_layout Verbatim
+
     nodo = Nodo(carga) 
 \end_layout
 
 \begin_layout Verbatim
+
     nodo.siguiente = None
 \end_layout
 
 \begin_layout Verbatim
+
     if self.numElementos == 0:
 \end_layout
 
 \begin_layout Verbatim
+
       # si esta vacia, el nuevo nodo 
 \end_layout
 
 \begin_layout Verbatim
+
       # es primero y ultimo
 \end_layout
 
 \begin_layout Verbatim
+
       self.primero = self.ultimo = nodo
 \end_layout
 
 \begin_layout Verbatim
+
     else:
 \end_layout
 
 \begin_layout Verbatim
+
       # encontrar el ultimo nodo
 \end_layout
 
 \begin_layout Verbatim
+
       ultimo = self.ultimo
 \end_layout
 
 \begin_layout Verbatim
+
       # pegar el nuevo nodo
 \end_layout
 
 \begin_layout Verbatim
+
       ultimo.siguiente = nodo
 \end_layout
 
 \begin_layout Verbatim
+
       self.ultimo = nodo
 \end_layout
 
 \begin_layout Verbatim
+
       self.numElementos = self.numElementos + 1
 \end_layout
 
@@ -1707,30 +2033,37 @@ class ColaMejorada:
 \end_layout
 
 \begin_layout Verbatim
+
     def sacar(self):
 \end_layout
 
 \begin_layout Verbatim
+
       carga = self.primero.carga
 \end_layout
 
 \begin_layout Verbatim
+
       self.primero = self.primero.siguiente
 \end_layout
 
 \begin_layout Verbatim
+
       self.numElementos = self.numElementos - 1
 \end_layout
 
 \begin_layout Verbatim
+
       if self.numElementos == 0:
 \end_layout
 
 \begin_layout Verbatim
+
         self.ultimo = None
 \end_layout
 
 \begin_layout Verbatim
+
       return carga
 \end_layout
 
@@ -1739,38 +2072,47 @@ class ColaMejorada:
 \end_layout
 
 \begin_layout Verbatim
+
 class ColaPrioridad:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     self.items = []
 \end_layout
 
 \begin_layout Verbatim
+
       
 \end_layout
 
 \begin_layout Verbatim
+
   def estaVacia(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return self.items == []
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
 \begin_layout Verbatim
+
   def meter(self, item):
 \end_layout
 
 \begin_layout Verbatim
+
     self.items.append(item)
 \end_layout
 
@@ -1779,34 +2121,42 @@ class ColaPrioridad:
 \end_layout
 
 \begin_layout Verbatim
+
   def eliminar(self) :
 \end_layout
 
 \begin_layout Verbatim
+
     maxi = 0
 \end_layout
 
 \begin_layout Verbatim
+
     for i in range(1,len(self.items)) :
 \end_layout
 
 \begin_layout Verbatim
+
       if self.items[i] > self.items[maxi] :
 \end_layout
 
 \begin_layout Verbatim
+
 	maxi = i
 \end_layout
 
 \begin_layout Verbatim
+
     item = self.items[maxi]
 \end_layout
 
 \begin_layout Verbatim
+
     self.items[maxi:maxi+1] = []
 \end_layout
 
 \begin_layout Verbatim
+
     return item
 \end_layout
 
@@ -1815,34 +2165,42 @@ class ColaPrioridad:
 \end_layout
 
 \begin_layout Verbatim
+
   def sacar(self):
 \end_layout
 
 \begin_layout Verbatim
+
     maxi = 0
 \end_layout
 
 \begin_layout Verbatim
+
     for i in range(0,len(self.items)): 
 \end_layout
 
 \begin_layout Verbatim
+
       if self.items[i] > self.items[maxi]:
 \end_layout
 
 \begin_layout Verbatim
+
 	maxi = i
 \end_layout
 
 \begin_layout Verbatim
+
       item = self.items[maxi]
 \end_layout
 
 \begin_layout Verbatim
+
       self.items[maxi:maxi+1] = []
 \end_layout
 
 \begin_layout Verbatim
+
       return item
 \end_layout
 
@@ -1855,30 +2213,37 @@ class ColaPrioridad:
 \end_layout
 
 \begin_layout Verbatim
+
 class golfista:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self, nombre, puntaje):
 \end_layout
 
 \begin_layout Verbatim
+
     self.nombre = nombre
 \end_layout
 
 \begin_layout Verbatim
+
     self.puntaje= puntaje
 \end_layout
 
 \begin_layout Verbatim
+
     
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return "%-16s: %d" % (self.nombre, self.puntaje)
 \end_layout
 
@@ -1887,22 +2252,27 @@ class golfista:
 \end_layout
 
 \begin_layout Verbatim
+
   def __cmp__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
     # el menor tiene mayor prioridad
 \end_layout
 
 \begin_layout Verbatim
+
     if self.puntaje < otro.puntaje: return 1
 \end_layout
 
 \begin_layout Verbatim
+
       if self.puntaje > otro.puntaje: return -1
 \end_layout
 
 \begin_layout Verbatim
+
         return 0
 \end_layout
 
@@ -1921,106 +2291,132 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 class Arbol:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self, carga, izquierdo=None, derecho=None):
 \end_layout
 
 \begin_layout Verbatim
+
     self.carga = carga
 \end_layout
 
 \begin_layout Verbatim
+
     self.izquierdo = izquierdo
 \end_layout
 
 \begin_layout Verbatim
+
     self.derecho = derecho
 \end_layout
 
 \begin_layout Verbatim
+
       
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return str(self.carga)
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
 \begin_layout Verbatim
+
   def obtenerizquierdo(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return self.izquierdo
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
 \begin_layout Verbatim
+
   def obtenerderecho(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return self.derecho
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
 \begin_layout Verbatim
+
   def obtenercarga(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return self.carga
 \end_layout
 
 \begin_layout Verbatim
+
     
 \end_layout
 
 \begin_layout Verbatim
+
   def asignarcarga(self, carga):
 \end_layout
 
 \begin_layout Verbatim
+
     self.carga = carga
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
 \begin_layout Verbatim
+
   def asignarizquierdo(self, i):
 \end_layout
 
 \begin_layout Verbatim
+
     self.izquierdo = i
 \end_layout
 
 \begin_layout Verbatim
+
     
 \end_layout
 
 \begin_layout Verbatim
+
   def asignarderecho(self, d):
 \end_layout
 
 \begin_layout Verbatim
+
     self.derecho = d
 \end_layout
 
@@ -2029,58 +2425,72 @@ class Arbol:
 \end_layout
 
 \begin_layout Verbatim
+
 def total(arbol):
 \end_layout
 
 \begin_layout Verbatim
+
   if arbol.izquierdo == None or arbol.derecho== None:
 \end_layout
 
 \begin_layout Verbatim
+
     return arbol.carga
 \end_layout
 
 \begin_layout Verbatim
+
   else:
 \end_layout
 
 \begin_layout Verbatim
+
     return total(arbol.izquierdo) + total(arbol.derecho) + 
 \end_layout
 
 \begin_layout Verbatim
+
              arbol.carga
 \end_layout
 
 \begin_layout Verbatim
+
    
 \end_layout
 
 \begin_layout Verbatim
+
 def imprimirarbol(arbol):
 \end_layout
 
 \begin_layout Verbatim
+
   if arbol == None:
 \end_layout
 
 \begin_layout Verbatim
+
     return 
 \end_layout
 
 \begin_layout Verbatim
+
   else:
 \end_layout
 
 \begin_layout Verbatim
+
     print(arbol.carga)
 \end_layout
 
 \begin_layout Verbatim
+
     imprimirarbol(arbol.izquierdo)
 \end_layout
 
 \begin_layout Verbatim
+
     imprimirarbol(arbol.derecho)
 \end_layout
 
@@ -2089,30 +2499,37 @@ def imprimirarbol(arbol):
 \end_layout
 
 \begin_layout Verbatim
+
 def imprimirarbolPostorden(arbol):
 \end_layout
 
 \begin_layout Verbatim
+
   if arbol == None:
 \end_layout
 
 \begin_layout Verbatim
+
     return
 \end_layout
 
 \begin_layout Verbatim
+
   else:
 \end_layout
 
 \begin_layout Verbatim
+
     imprimirarbolPostorden(arbol.izquierdo)
 \end_layout
 
 \begin_layout Verbatim
+
     imprimirarbolPostorden(arbol.derecho)
 \end_layout
 
 \begin_layout Verbatim
+
     print(arbol.carga)   
 \end_layout
 
@@ -2121,22 +2538,27 @@ def imprimirarbolPostorden(arbol):
 \end_layout
 
 \begin_layout Verbatim
+
 def imprimirabolEnOrden(arbol):
 \end_layout
 
 \begin_layout Verbatim
+
   if arbol == None:
 \end_layout
 
 \begin_layout Verbatim
+
     return
 \end_layout
 
 \begin_layout Verbatim
+
   imprimirabolEnOrden(arbol.izquierdo)
 \end_layout
 
 \begin_layout Verbatim
+
   print(arbol.carga,imprimirabolEnOrden(arbol.derecho))
 \end_layout
 
@@ -2145,26 +2567,32 @@ def imprimirabolEnOrden(arbol):
 \end_layout
 
 \begin_layout Verbatim
+
 def imprimirarbolSangrado(arbol, nivel=0):
 \end_layout
 
 \begin_layout Verbatim
+
   if arbol == None:
 \end_layout
 
 \begin_layout Verbatim
+
     return
 \end_layout
 
 \begin_layout Verbatim
+
   imprimirarbolSangrado(arbol.derecho, nivel+1)
 \end_layout
 
 \begin_layout Verbatim
+
   print(" "*nivel + str(arbol.carga))
 \end_layout
 
 \begin_layout Verbatim
+
   imprimirarbolSangrado(arbol.izquierdo, nivel+1)
 \end_layout
 
@@ -2183,26 +2611,32 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 def obtenerLexema(listaLexemas, esperado):
 \end_layout
 
 \begin_layout Verbatim
+
   if listaLexemas[0] == esperado:
 \end_layout
 
 \begin_layout Verbatim
+
       del listaLexemas[0]
 \end_layout
 
 \begin_layout Verbatim
+
       return 1
 \end_layout
 
 \begin_layout Verbatim
+
   else:
 \end_layout
 
 \begin_layout Verbatim
+
       return 0
 \end_layout
 
@@ -2211,26 +2645,32 @@ def obtenerLexema(listaLexemas, esperado):
 \end_layout
 
 \begin_layout Verbatim
+
 def obtenerNumero(listaLexemas):
 \end_layout
 
 \begin_layout Verbatim
+
   x = listaLexemas[0]
 \end_layout
 
 \begin_layout Verbatim
+
   if type(x) != type(0):
 \end_layout
 
 \begin_layout Verbatim
+
       return None
 \end_layout
 
 \begin_layout Verbatim
+
   del listaLexemas[0]
 \end_layout
 
 \begin_layout Verbatim
+
   return arbol (x, None, None)
 \end_layout
 
@@ -2243,30 +2683,37 @@ def obtenerNumero(listaLexemas):
 \end_layout
 
 \begin_layout Verbatim
+
 def obtenerProducto(listaLexemas):
 \end_layout
 
 \begin_layout Verbatim
+
   a = obtenerNumero(listaLexemas)
 \end_layout
 
 \begin_layout Verbatim
+
   if obtenerLexema(listaLexemas, "*"):
 \end_layout
 
 \begin_layout Verbatim
+
     b = obtenerProducto(listaLexemas) 
 \end_layout
 
 \begin_layout Verbatim
+
     return arbol ("*", a, b)
 \end_layout
 
 \begin_layout Verbatim
+
   else:
 \end_layout
 
 \begin_layout Verbatim
+
     return a
 \end_layout
 
@@ -2275,54 +2722,67 @@ def obtenerProducto(listaLexemas):
 \end_layout
 
 \begin_layout Verbatim
+
 def obtenerNumero(listaLexemas):
 \end_layout
 
 \begin_layout Verbatim
+
   if obtenerLexema(listaLexemas, "("):
 \end_layout
 
 \begin_layout Verbatim
+
     # obtiene la subexpresión
 \end_layout
 
 \begin_layout Verbatim
+
     x = obtenerSuma(listaLexemas) 
 \end_layout
 
 \begin_layout Verbatim
+
     # elimina los paréntesis
 \end_layout
 
 \begin_layout Verbatim
+
     obtenerLexema(listaLexemas, ")") 
 \end_layout
 
 \begin_layout Verbatim
+
     return x
 \end_layout
 
 \begin_layout Verbatim
+
   else:
 \end_layout
 
 \begin_layout Verbatim
+
     x = listaLexemas[0]
 \end_layout
 
 \begin_layout Verbatim
+
     if type(x) != type(0):
 \end_layout
 
 \begin_layout Verbatim
+
       return None
 \end_layout
 
 \begin_layout Verbatim
+
     listaLexemas[0:1] = []
 \end_layout
 
 \begin_layout Verbatim
+
    return Arbol (x, None, None)  
 \end_layout
 
@@ -2341,154 +2801,192 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 def animal():
 \end_layout
 
 \begin_layout Verbatim
+
   # Un solo nodo
 \end_layout
 
 \begin_layout Verbatim
+
   raiz = Arbol("pajaro")
 \end_layout
 
 \begin_layout Verbatim
+
       # Hasta que el usuario salga
 \end_layout
 
 \begin_layout Verbatim
+
   while True:
 \end_layout
 
 \begin_layout Verbatim
+
     print()
 \end_layout
 
 \begin_layout Verbatim
+
     if not si("Esta pensando en un animal? "):
 \end_layout
 
 \begin_layout Verbatim
+
 	break
 \end_layout
 
 \begin_layout Verbatim
+
     # Recorrer el arbol
 \end_layout
 
 \begin_layout Verbatim
+
     arbol = raiz
 \end_layout
 
 \begin_layout Verbatim
+
     while arbol.obtenerizquierdo() != None:
 \end_layout
 
 \begin_layout Verbatim
+
       pregunta = arbol.obtenercarga() + "? "
 \end_layout
 
 \begin_layout Verbatim
+
       if si(pregunta):
 \end_layout
 
 \begin_layout Verbatim
+
 	  arbol = arbol.obtenerderecho()
 \end_layout
 
 \begin_layout Verbatim
+
       else:
 \end_layout
 
 \begin_layout Verbatim
+
 	  arbol = arbol.obtenerizquierdo()
 \end_layout
 
 \begin_layout Verbatim
+
     # conjetura
 \end_layout
 
 \begin_layout Verbatim
+
     conjetura = arbol.obtenercarga()
 \end_layout
 
 \begin_layout Verbatim
+
     pregunta = "¿Es un" + conjetura + "? "
 \end_layout
 
 \begin_layout Verbatim
+
     if si(pregunta):
 \end_layout
 
 \begin_layout Verbatim
+
       print("¡Soy el mejor!")
 \end_layout
 
 \begin_layout Verbatim
+
       continue
 \end_layout
 
 \begin_layout Verbatim
+
     # obtener mas informacion
 \end_layout
 
 \begin_layout Verbatim
+
     pregunta = "¿Cual es el nombre el animal? "
 \end_layout
 
 \begin_layout Verbatim
-    animal = raw_input(pregunta)
+
+    animal = input(pregunta)
 \end_layout
 
 \begin_layout Verbatim
+
     pregunta = "¿Que pregunta permitiria distinguir 
 \end_layout
 
 \begin_layout Verbatim
+
 		un %s de un %s? "
 \end_layout
 
 \begin_layout Verbatim
-    q = raw_input(pregunta % (animal,conjetura))
+
+    q = input(pregunta % (animal,conjetura))
 \end_layout
 
 \begin_layout Verbatim
+
     # agrega un nuevo nodo arbol
 \end_layout
 
 \begin_layout Verbatim
+
     arbol.asignarcarga(q)
 \end_layout
 
 \begin_layout Verbatim
+
     pregunta = "¿Si el animal fuera %s 
 \end_layout
 
 \begin_layout Verbatim
+
 		la respuesta sería? "
 \end_layout
 
 \begin_layout Verbatim
+
     if si(pregunta % animal):
 \end_layout
 
 \begin_layout Verbatim
+
       arbol.asignarizquierdo(Arbol(conjetura))
 \end_layout
 
 \begin_layout Verbatim
+
       arbol.asignarderecho(Arbol(animal))
 \end_layout
 
 \begin_layout Verbatim
+
     else:
 \end_layout
 
 \begin_layout Verbatim
+
       arbol.asignarizquierdo(Arbol(animal))
 \end_layout
 
 \begin_layout Verbatim
+
       arbol.asignarderecho(Arbol(conjetura))
 \end_layout
 
@@ -2497,18 +2995,22 @@ def animal():
 \end_layout
 
 \begin_layout Verbatim
+
 def si(preg):
 \end_layout
 
 \begin_layout Verbatim
+
   from string import lower
 \end_layout
 
 \begin_layout Verbatim
-  r = lower(raw_input(preg))
+
+  r = lower(input(preg))
 \end_layout
 
 \begin_layout Verbatim
+
   return (r[0] == 's')
 \end_layout
 
@@ -2532,18 +3034,22 @@ inline false
 status open
 
 \begin_layout Verbatim
+
 class Fraccion:
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self,numerador,denominador=1):
 \end_layout
 
 \begin_layout Verbatim
+
     self.numerador = numerador
 \end_layout
 
 \begin_layout Verbatim
+
     self.denominador = denominador
 \end_layout
 
@@ -2552,42 +3058,52 @@ class Fraccion:
 \end_layout
 
 \begin_layout Verbatim
+
   def __str__(self):
 \end_layout
 
 \begin_layout Verbatim
+
     return "%d/%d" % (self.numerador, self.denominador)
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
 \begin_layout Verbatim
+
   def __mul__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
     if type(otro) == type(5):
 \end_layout
 
 \begin_layout Verbatim
+
       otro = Fraccion(otro)
 \end_layout
 
 \begin_layout Verbatim
+
     return Fraccion(self.numerador * otro.numerador,
 \end_layout
 
 \begin_layout Verbatim
+
 		    self.denominador * otro.denominador)
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
 \begin_layout Verbatim
+
   __rmul__ = __mul__ 
 \end_layout
 
@@ -2596,78 +3112,97 @@ class Fraccion:
 \end_layout
 
 \begin_layout Verbatim
+
   #suma de fracciones
 \end_layout
 
 \begin_layout Verbatim
+
   def __add__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
     if type(otro) == type(5):
 \end_layout
 
 \begin_layout Verbatim
+
       otro = Fraccion(otro)
 \end_layout
 
 \begin_layout Verbatim
+
     return Fraccion(self.numerador * otro.denominador +
 \end_layout
 
 \begin_layout Verbatim
+
 		    self.denominador * otro.numerador,
 \end_layout
 
 \begin_layout Verbatim
+
 		    self.denominador * otro.denominador)
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
 \begin_layout Verbatim
+
   __radd__ = __add__
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
 \begin_layout Verbatim
+
   def __init__(self, numerador, denominador=1):      
 \end_layout
 
 \begin_layout Verbatim
+
     g=MDC(numerador,denominador)
 \end_layout
 
 \begin_layout Verbatim
+
     self.numerador=numerador / g
 \end_layout
 
 \begin_layout Verbatim
+
     self.denominador=denominador / g
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
 \begin_layout Verbatim
+
   def __cmp__(self, otro):
 \end_layout
 
 \begin_layout Verbatim
+
     dif = (self.numerador * otro.denominador -
 \end_layout
 
 \begin_layout Verbatim
+
 	   otro.numerador * self.denominador)
 \end_layout
 
 \begin_layout Verbatim
+
     return dif
 \end_layout
 
@@ -2676,22 +3211,27 @@ class Fraccion:
 \end_layout
 
 \begin_layout Verbatim
+
 def MDC (m,n):
 \end_layout
 
 \begin_layout Verbatim
+
       if m%n==0:
 \end_layout
 
 \begin_layout Verbatim
+
 	  return n
 \end_layout
 
 \begin_layout Verbatim
+
       else:
 \end_layout
 
 \begin_layout Verbatim
+
 	  return MDC(n,m%n)
 \end_layout
 

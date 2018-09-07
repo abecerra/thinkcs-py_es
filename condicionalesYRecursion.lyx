@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -25,6 +25,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -54,6 +56,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -62,7 +65,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -2257,7 +2263,7 @@ Los programas que hemos escrito son un poco toscos ya que no aceptan entrada
 Python proporciona funciones primitivas que obtienen entrada desde el teclado.
  La más sencilla se llama 
 \family typewriter
-raw_input
+input
 \family default
 .
  Cuando esta función se llama el programa se detiene y espera a que el usuario
@@ -2265,7 +2271,7 @@ raw_input
  Cuando el usuario digita la tecla Enter o Intro, el programa retoma la
  ejecución y 
 \family typewriter
-raw_input
+input
 \family default
  retorna lo que el usuario digitó como una cadena (
 \family typewriter
@@ -2281,7 +2287,7 @@ status open
 
 \begin_layout Verbatim
 
->>> entrada = raw_input ()
+>>> entrada = input ()
 \end_layout
 
 \begin_layout Verbatim
@@ -2303,7 +2309,7 @@ Que esta esperando?
 
  Antes de llamar a 
 \family typewriter
-raw_input
+input
 \family default
  es una muy buena idea desplegar un mensaje diciéndole al usuario qué digitar.
  Este mensaje se denomina indicador de entrada (
@@ -2313,7 +2319,7 @@ prompt
  en inglés).
  Podemos dar un argumento prompt a 
 \family typewriter
-raw_input
+input
 \family default
 :
 \end_layout
@@ -2338,7 +2344,7 @@ status open
 
 \begin_layout Verbatim
 
->>> nombre = raw_input ("Cual es tu nombre? ")
+>>> nombre = input ("Cual es tu nombre? ")
 \end_layout
 
 \begin_layout Verbatim
@@ -2432,7 +2438,7 @@ n"
 \begin_layout Standard
 Para evitar este error, es una buena idea usar 
 \family typewriter
-raw_input
+input
 \family default
  para obtener una cadena y las funciones de conversión (int, float) para
  transformarla en otros tipos.
