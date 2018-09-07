@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -25,6 +25,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -54,6 +56,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -62,7 +65,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -2575,10 +2581,7 @@ Inserte una línea de comentario en un línea previa a una de código funcional,
 \end_layout
 
 \begin_layout Enumerate
-La diferencia entre la función input y la función raw_input es que la función
- input evalúa la cadena introducida y la función raw_input no lo hace.
- Escriba lo siguiente en el intérprete de Python, registre qué sucede y
- explique:
+Escriba lo siguiente en el intérprete de Python, registre qué sucede y explique:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2608,7 +2611,7 @@ status open
 
 \begin_layout Verbatim
 
->>> x = raw_input()
+>>> y = float(input())
 \end_layout
 
 \begin_layout Verbatim
@@ -2618,7 +2621,7 @@ status open
 
 \begin_layout Verbatim
 
->>> type(x)
+>>> type(y)
 \end_layout
 
 \end_inset
