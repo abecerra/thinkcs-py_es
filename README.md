@@ -30,7 +30,7 @@ http://cic.puj.edu.co/wiki/lib/exe/fetch.php?media=webpages:abecerra:introprog-p
 - fuentes:
 http://cic.puj.edu.co/wiki/lib/exe/fetch.php?media=webpages:abecerra:introprogpyes_ed1.tar.gz
 - volcado de repositorio subversion:
-http://cic.javerianacali.edu.co/~abecerra/files/backupThinkCSpy-09Ago2010.dump.bz2
+https://github.com/abecerra/thinkcs-py_es/releases/download/thinkcs-py_es_e2-rc1/backupThinkCSpy-09Ago2010.dump.bz2
 
 A partir de la segunda versión puede descargarla aquí en GitHub.
 
