@@ -5,10 +5,6 @@
 \save_transient_properties true
 \origin unavailable
 \textclass book
-\begin_preamble
-\newcommand{\beforefig}{\vspace{1.3\parskip}}
-\newcommand{\afterfig}{\vspace{-0.2\parskip}}
-\end_preamble
 \use_default_options false
 \maintain_unincluded_children false
 \language spanish
@@ -286,12 +282,12 @@ La función de impresión también trabaja con enteros.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(4)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 4
 \end_layout
@@ -310,22 +306,22 @@ Si no está seguro del tipo que un valor tiene, el intérprete le puede decir.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type("Hola, Mundo!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 str
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(17)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 int
 \end_layout
@@ -441,12 +437,12 @@ tipo!float
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(3.2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 float
 \end_layout
@@ -535,22 +531,22 @@ status collapsed
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type("17")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 str
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type("3.2")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 str
 \end_layout
@@ -579,12 +575,12 @@ Cuando usted digita un número grande, podría estar tentado a usar comas
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(1,000,000)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 1 0 0
 \end_layout
@@ -671,17 +667,17 @@ sentencia de asignación
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> mensaje = "¿Qué Onda?"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> n = 17
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> pi = 3.14159
 \end_layout
@@ -847,32 +843,32 @@ print
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(mensaje)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Que Onda?
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(n)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 17
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(pi)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 3.14159
 \end_layout
@@ -893,32 +889,32 @@ En cada caso el resultado es el valor de la variable.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(mensaje)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 str
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(n)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 int
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(pi)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 float
 \end_layout
@@ -1018,32 +1014,32 @@ Si usted le da un nombre ilegal a una variable obtendrá un error sintáctico:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> 76trombones = "gran desfile"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 SyntaxError: invalid syntax
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> mas$ = 1000000
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 SyntaxError: invalid syntax
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> class = "introducción a la programación"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 SyntaxError: invalid syntax
 \end_layout
@@ -1113,32 +1109,32 @@ Python tiene 35 palabras reservadas:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 False	await	else	import	pass	None
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 break	except	in	raise	True	class
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-finally	is	return	and	continue	for
+finally	is	return	and	for	continue
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 lambda	try	as	def	from	nonlocal
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 while	assert	del	global	not	with
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 async	elif	if	or	yield
 \end_layout
@@ -1189,17 +1185,17 @@ Por ejemplo, el guión
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print(1)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 x = 2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print(x)
 \end_layout
@@ -1240,12 +1236,12 @@ evalúa
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> 1 + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 2
 \end_layout
@@ -1265,22 +1261,22 @@ Un valor, por si mismo, se considera como una expresión, lo mismo ocurre
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> 17
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 17
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> x
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 2
 \end_layout
@@ -1300,27 +1296,27 @@ Aunque es un poco confuso, evaluar una expresión no es lo mismo que imprimir
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> mensaje = "Como le va, Doc?"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> mensaje
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 "Como le va, Doc?"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(mensaje)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Como le va, Doc?
 \end_layout
@@ -1349,22 +1345,22 @@ En un guión, una expresión, por sí misma, es una sentencia legal, pero no
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 17
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 3.2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 "Hola, Mundo!"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 1 + 1
 \end_layout
@@ -1441,12 +1437,12 @@ Los siguientes son expresiones válidas en Python, cuyo significado es más
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 20+32       hora-1   hora*60+minuto   
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 minuto/60   5**2     (5+9)*(15-7)
 \end_layout
@@ -1499,17 +1495,17 @@ La suma, resta, multiplicación y exponenciación realizan lo que usted esperar�
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> minuto = 59
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> minuto//60
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0
 \end_layout
@@ -1779,7 +1775,7 @@ cadena
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
  mensaje-1   "Hola"/123   mensaje*"Hola"   "15"+2
 \end_layout
@@ -1825,17 +1821,17 @@ concatenación
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 fruta = "banano"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 bienCocinada = " pan con nueces"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print(fruta + bienCocinada)
 \end_layout
@@ -1990,12 +1986,12 @@ componer
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(17 + 3)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 20
 \end_layout
@@ -2018,14 +2014,14 @@ print
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print("Número de minutos desde media noche: ",  
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   hora*60+minuto)
 \end_layout
@@ -2045,7 +2041,7 @@ print("Número de minutos desde media noche: ",
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 porcentaje = (minuto * 100) / 60
 \end_layout
@@ -2147,12 +2143,12 @@ y se marcan con el símbolo
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # calcula el porcentaje de la hora que ha pasado
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 porcentaje = (minuto * 100) / 60
 \end_layout
@@ -2168,7 +2164,7 @@ porcentaje = (minuto * 100) / 60
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 porcentaje = (minute * 100) // 60 # div entera
 \end_layout
@@ -2599,32 +2595,32 @@ Escriba lo siguiente en el intérprete de Python, registre qué sucede y expliqu
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> x = input()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 3.14
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(x)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> y = float(input())
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 3.14
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(y)
 \end_layout

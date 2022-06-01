@@ -1,24 +1,28 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
 \maintain_unincluded_children false
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -48,6 +52,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -56,7 +61,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -74,7 +82,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -417,7 +426,7 @@ invalid token
 \end_layout
 
 \begin_layout Enumerate
-Un paréntesis sin cerrar---
+Un paréntesis sin cerrar—
 \begin_inset ERT
 status open
 
@@ -456,7 +465,7 @@ verb+[+
 
 \end_inset
 
----hace que Python continúe con la siguiente línea como si fuera parte de
+—hace que Python continúe con la siguiente línea como si fuera parte de
  la sentencia actual.
  Generalmente, esto causa un error inmediato en la siguiente línea.
 \end_layout
@@ -615,6 +624,10 @@ saliendo del ciclo.
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -654,6 +667,10 @@ Recursión Infinita
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -753,36 +770,36 @@ Por ejemplo:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 while x > 0 and y < 0 :
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   # hace algo con x
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   # hace algo con y
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print( "x: ", x )
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print( "y: ", y )
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print( "condicion: ", (x > 0 and y < 0))
 \end_layout
@@ -1022,6 +1039,10 @@ NameError: usted está tratando de usar una variable que no existe en el
  ambiente actual.
  Recuerde que las variables locales son locales.
  No es posible referirse a ellas afuera de la función donde se definieron.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1051,12 +1072,20 @@ TypeError
 \end_deeper
 \begin_layout Description
 TypeError: hay varias causas:
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Usted está tratando de usar un valor impropiamente.
  Por ejemplo: indexar una cadena, lista o tupla con un valor que no es entero.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1079,6 +1108,10 @@ No hay correspondencia entre los elementos en una cadena de formato y los
  elementos pasados para hacer la conversión.
  Esto puede pasar porque el número de elementos no coincide o porque se
  está pidiendo una conversión invalida.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1122,6 +1155,10 @@ self
 \begin_layout Description
 KeyError: usted está tratando de acceder a un elemento de un diccionario
  usando una llave que éste no contiene.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1151,6 +1188,10 @@ diccionario
 \end_deeper
 \begin_layout Description
 AttributeError: está tratando de acceder a un atributo o método que no existe.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1177,6 +1218,10 @@ print
 \family default
  para desplegar el valor del índice y la longitud de la secuencia.
  ¿Tiene ésta el tamaño correcto? ¿Tiene el índice el valor correcto?
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1475,14 +1520,14 @@ Por ejemplo:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 self.manos[i].agregarCarta( 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   self.manos[self.encontrarVecino(i)].eliminarCarta())
 \end_layout
@@ -1497,17 +1542,17 @@ self.manos[i].agregarCarta(
  
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 vecino = self.encontrarVecino (i)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 cartaEscogida = self.manos[vecino].eliminarCarta()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 self.manos[i].agregarCarta(cartaEscogida)
 \end_layout
@@ -1577,7 +1622,7 @@ Otro problema que ocurre con las expresiones grandes es que el orden de
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 y = x / 2 * math.pi;
 \end_layout
@@ -1600,7 +1645,7 @@ Una buena forma de depurar expresiones es agregar paréntesis para hacer
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
  y = x / (2 * math.pi);
 \end_layout
@@ -1659,7 +1704,7 @@ return
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 return self.manos[i].eliminarParejas()
 \end_layout
@@ -1674,12 +1719,12 @@ return self.manos[i].eliminarParejas()
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 cont = self.manos[i].eliminarParejas()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 return cont
 \end_layout
