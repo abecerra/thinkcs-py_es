@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -14,7 +14,7 @@
 \maintain_unincluded_children false
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding utf8x
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -26,6 +26,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -55,6 +57,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -63,7 +66,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -178,12 +184,12 @@ llamada a función
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type("32")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 str
 \end_layout
@@ -260,17 +266,17 @@ En lugar de imprimir el valor de retorno, podemos asignarlo a una variable:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> b = type("32")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(b)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 <class 'string'>
 \end_layout
@@ -294,27 +300,27 @@ id
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> id(3)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 134882108
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> b = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> id(b)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 134882108
 \end_layout
@@ -381,22 +387,22 @@ int
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> int("32")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 32
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> int("Hola")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 ValueError: invalid literal for int() with base 10: Hola
 \end_layout
@@ -416,22 +422,22 @@ int
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> int(3.99999)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> int(-2.3)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 -2
 \end_layout
@@ -450,22 +456,22 @@ float
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> float(32)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 32.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> float("3.14159")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 3.14159
 \end_layout
@@ -488,22 +494,22 @@ string
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> str(32)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 '32'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> str(3.14149)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 '3.14149'
 \end_layout
@@ -594,17 +600,17 @@ flotante
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> minuto = 59
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> minuto / 60.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0.983333333333
 \end_layout
@@ -737,7 +743,7 @@ Antes de que podamos usar funciones de un módulo, tenemos que importarlas:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> import math
 \end_layout
@@ -771,17 +777,17 @@ notación punto
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> decibel = math.log10(17.0)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> angulo = 1.5
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> altura = math.sin(angulo)
 \end_layout
@@ -842,17 +848,17 @@ tan
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> grados = 45
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> angulo = grados * 2 * math.pi / 360.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> math.sin(angulo)
 \end_layout
@@ -873,12 +879,12 @@ pi
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> math.sqrt(2) / 2.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0.707106781187
 \end_layout
@@ -894,7 +900,7 @@ Composición
 
 \begin_layout Standard
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
 composición
@@ -904,7 +910,7 @@ composición
 
  
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
 función!composición
@@ -927,7 +933,7 @@ Así como las funciones matemáticas, las funciones de Python pueden componerse,
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> x = math.cos(angulo + math.pi/2)
 \end_layout
@@ -961,7 +967,7 @@ También se puede tomar el resultado de una función y pasarlo como argumento
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> x = math.exp(math.log(10.0))
 \end_layout
@@ -1059,12 +1065,12 @@ La sintaxis para una definición de función es:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def NOMBRE( LISTA DE PARAMETROS ):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   SENTENCIAS
 \end_layout
@@ -1093,12 +1099,12 @@ Las primeras funciones que vamos a escribir no tienen parámetros, así que
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def nuevaLinea():
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print()
 \end_layout
@@ -1129,17 +1135,17 @@ La sintaxis para llamar la nueva función es la misma que para las funciones
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print("Primera Linea.")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print("Segunda Linea.")
 \end_layout
@@ -1172,27 +1178,27 @@ Note el espacio extra entre las dos líneas.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print("Primera Linea.")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print("Segunda Linea.")
 \end_layout
@@ -1215,41 +1221,41 @@ tresLineas
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def tresLineas():
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print("Primera Linea.")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 tresLineas()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print("Segunda Linea.")
 \end_layout
@@ -1336,55 +1342,55 @@ Uniendo los fragmentos de la sección 3.6, el programa completo luce así:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def nuevaLinea():
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def tresLineas():
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print("Primera Linea.")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 tresLineas()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print("Segunda Linea.")
 \end_layout
@@ -1577,12 +1583,12 @@ Aquí hay un ejemplo de una función definida por el programador que toma
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def imprimaDoble(pedro):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print(pedro, pedro)
 \end_layout
@@ -1622,32 +1628,32 @@ imprimaDoble
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> imprimaDoble('Spam')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Spam Spam
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> imprimaDoble(5)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 5 5
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> imprimaDoble(3.14159)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 3.14159 3.14159
 \end_layout
@@ -1678,22 +1684,22 @@ imprimaDoble
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> imprimaDoble('Spam'*4)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 SpamSpamSpamSpam SpamSpamSpamSpam
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> imprimaDoble(math.cos(math.pi))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 -1.0 -1.0
 \end_layout
@@ -1725,17 +1731,17 @@ También podemos usar una variable como argumento:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> m = 'Oh, mundo cruel.'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> imprimaDoble(m)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Oh, mundo cruel.
  Oh, mundo cruel.
@@ -1807,17 +1813,17 @@ variable local
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def concatenarDoble(parte1, parte2):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   cat = parte1 + parte2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   imprimaDoble(cat)
 \end_layout
@@ -1834,28 +1840,28 @@ def concatenarDoble(parte1, parte2):
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> cantar1 = "Pie Jesu domine, "
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> cantar2 = "Dona eis requiem."
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> concatenarDoble(cantar1, cantar2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Pie Jesu domine, Dona eis requiem.
  Pie Jesu domine, Dona 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 eis requiem.
 \end_layout
@@ -1883,12 +1889,12 @@ cat
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(cat)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 NameError: cat
 \end_layout

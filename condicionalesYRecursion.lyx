@@ -13,7 +13,7 @@
 \maintain_unincluded_children false
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -173,33 +173,27 @@ operador residuo
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> cociente = 7 // 3
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> print(cociente)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 2
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> residuo = 7 % 3
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> print(residuo)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 1
 \end_layout
 
@@ -320,23 +314,19 @@ El operador
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> 5 == 5
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 True
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> 5 == 6
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 False
 \end_layout
 
@@ -361,28 +351,23 @@ operadores de comparación
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       x != y               # x no es igual y
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       x > y                # x es mayor que y
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       x < y                # x es menor que y
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       x >= y               # x es mayor o igual a y
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       x <= y               # x es menor o igual a y
 \end_layout
 
@@ -634,33 +619,27 @@ cierto.
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>>  x = 5
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>>  x and 1
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 1
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>>  y = 0
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>>  y and 1
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 0
 \end_layout
 
@@ -726,13 +705,11 @@ if
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 if x > 0:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print("x es positivo")
 \end_layout
 
@@ -944,23 +921,19 @@ if
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 if x%2 == 0:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print(x, "es par")
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print(x, "es impar")
 \end_layout
 
@@ -1025,28 +998,23 @@ envolver
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def imprimirParidad(x):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if x%2 == 0:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(x, "es par")
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(x, "es impar")
 \end_layout
 
@@ -1071,14 +1039,12 @@ imprimirParidad
 inline false
 status open
 
-\begin_layout Verbatim
-
->>> imprimirParidad(17)
+\begin_layout Plain Layout
+imprimirParidad(17)
 \end_layout
 
-\begin_layout Verbatim
-
->>> imprimirParidad(y+1)
+\begin_layout Plain Layout
+imprimirParidad(y+1)
 \end_layout
 
 \end_inset
@@ -1091,21 +1057,30 @@ Condicionales encadenados
 \end_layout
 
 \begin_layout Standard
-\begin_inset Index idx
-status collapsed
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-condicional encadenados
+\begin_inset Index idx
+status open
+
+\begin_layout Plain Layout
+condicional encadenado
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
-status collapsed
+status open
 
 \begin_layout Plain Layout
-condicional!encadenados
+condicional!encadenado
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1127,33 +1102,27 @@ condicional encadenado
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 if x < y:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print(x, "es menor que", y)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 elif x > y:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print(x, "es mayor que", y)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print(x, "y", y, "son iguales")
 \end_layout
 
@@ -1189,43 +1158,35 @@ else
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 if eleccion == 'A':
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   funcionA()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 elif eleccion == 'B':
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   funcionB()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 elif eleccion == 'C':
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   funcionC()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print("Eleccion incorrecta.")
 \end_layout
 
@@ -1257,38 +1218,31 @@ Un condicional también se puede anidar dentro de otro.
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 if x == y:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print(x, "y", y, "son iguales")
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if x < y:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(x, "es menor que", y)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(x, "es mayor que", y)
 \end_layout
 
@@ -1318,18 +1272,15 @@ Los operadores lógicos proporcionan formas de simplificar las sentencias
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 if 0 < x:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if x < 10:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print("x es un digito positivo.")
 \end_layout
 
@@ -1353,13 +1304,11 @@ and
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 if 0 < x and x < 10:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print("x es un digito positivo.")
 \end_layout
 
@@ -1375,13 +1324,11 @@ Esta clase de condiciones es muy común, por esta razón Python proporciona
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 if 0 < x < 10:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print("x es un digito positivo")
 \end_layout
 
@@ -1440,47 +1387,40 @@ return
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 import math
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def imprimirLogaritmo(x):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if x <= 0:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print("Numeros positivos solamente.
  Por favor")
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   result = math.log(x)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print("El logaritmo de ",  x ," es ", result)
 \end_layout
 
@@ -1560,33 +1500,27 @@ Hemos mencionado que es legal que una función llame a otra, y usted ha visto
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def conteo(n):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if n == 0:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print("Despegue!")
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(n)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     conteo(n-1)
 \end_layout
 
@@ -1639,8 +1573,7 @@ Analicemos lo que sucede si llamamos a esta función así:
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> conteo(3)
 \end_layout
 
@@ -1814,37 +1747,31 @@ tresLineas
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def nuevalinea():
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def tresLineas():
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   nuevaLinea()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   nuevaLinea()
 \end_layout
 
@@ -1864,23 +1791,19 @@ Este trabajo no sería de mucha ayuda si quisiéramos desplegar 2 líneas o
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def nLineas(n):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if n > 0:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     nLineas(n-1)
 \end_layout
 
@@ -2205,13 +2128,11 @@ recursión infinita
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def recurrir():
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   recurrir()
 \end_layout
 
@@ -2285,23 +2206,19 @@ string
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> entrada = input ()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 Que esta esperando?
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> print(entrada)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 Que esta esperando?
 \end_layout
 
@@ -2342,23 +2259,19 @@ prompt
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> nombre = input ("Cual es tu nombre? ")
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 Cual es tu nombre? Arturo, Rey de los Bretones!
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> print(nombre)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 Arturo, Rey de los Bretones!
 \end_layout
 
@@ -2380,15 +2293,13 @@ input
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 prompt = "¿Cual es la velocidad de una golondrina sin carga?
 \backslash
 n"
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 velocidad = input(prompt)
 \end_layout
 
@@ -2409,24 +2320,21 @@ velocidad
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> prompt = "¿Cual es la velocidad una golondrina sin carga?
 \backslash
 n"
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 >>> velocidad = input (prompt)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 ¿Que quiere decir, una golondria Africana o Europea?
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -2847,33 +2755,27 @@ verb+comparar(x, y)+
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
  if x < y:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(x, "es menor que", y)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
  elif x > y:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(x, "es mayor que", y)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
  else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(x, "y", y, "son iguales")
 \end_layout
 
@@ -2888,42 +2790,35 @@ Copie este programa en un archivo llamado tabladeverdad.py:
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def tabladeverdad(expresion):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(" p      q      %s"  % expresion)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     longitud = len( " p      q      %s"  % expresion)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(longitud*"=")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     for p in True, False:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
         for q in True, False:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
             print("%-7s %-7s %-7s" % (p, q, eval(expresion)))
 \end_layout
 

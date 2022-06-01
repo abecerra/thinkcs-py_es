@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -29,7 +29,7 @@
 
 
 \usepackage[text={5in,7in},centering,twoside,letterpaper]{geometry}
-
+%\usepackage[utf8]{inputenc}
 \setlength{\marginparsep}{0in}
 \setlength{\marginparwidth}{0in}
 \setlength{\marginparpush}{0in}
@@ -104,7 +104,7 @@ customHeadersFooters
 \maintain_unincluded_children true
 \language spanish
 \language_package default
-\inputencoding utf8
+\inputencoding auto
 \fontencoding global
 \font_roman "palatino" "default"
 \font_sans "kurier" "default"
@@ -116,11 +116,13 @@ customHeadersFooters
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format pdf2
 \output_sync 1
 \bibtex_command default
-\index_command default
+\index_command makeindex
 \paperfontsize 10
 \spacing onehalf
 \use_hyperref true
@@ -158,6 +160,7 @@ customHeadersFooters
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -166,7 +169,10 @@ customHeadersFooters
 \tocdepth 1
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language french
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle default
@@ -409,25 +415,28 @@ filename "variablesExpresionesSentencias.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "funciones.lyx"
+filename "condicionalesYRecursion.lyx"
 
-\end_inset
-
-
-\begin_inset Newpage cleardoublepage
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
 \begin_inset CommandInset include
 LatexCommand input
-filename "condicionalesYRecursion.lyx"
+filename "funciones.lyx"
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage cleardoublepage
 \end_inset
 
@@ -705,6 +714,8 @@ filename "gfdles.lyx"
 \begin_inset CommandInset index_print
 LatexCommand printindex
 type "idx"
+name "Index"
+literal "true"
 
 \end_inset
 
