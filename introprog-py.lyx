@@ -415,21 +415,18 @@ filename "variablesExpresionesSentencias.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand input
-filename "condicionalesYRecursion.lyx"
+filename "funciones.lyx"
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Newpage cleardoublepage
 \end_inset
 
 
 \begin_inset CommandInset include
 LatexCommand input
-filename "funciones.lyx"
+filename "condicionalesYRecursion.lyx"
 
 \end_inset
 
