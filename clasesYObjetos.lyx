@@ -1,24 +1,30 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -48,6 +54,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -56,15 +65,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -74,34 +91,44 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -115,6 +142,8 @@ Clases y objetos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -125,6 +154,8 @@ clase
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -149,6 +180,8 @@ name "point"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -159,6 +192,8 @@ tipo de datos compuestos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -169,6 +204,8 @@ tipo de datos!compuesto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -179,6 +216,8 @@ tipo de datos definido por el usuario
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -189,6 +228,8 @@ tipo de datos!definido por el usuario
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -201,8 +242,9 @@ constructor
 \end_layout
 
 \begin_layout Standard
-Una vez utilizados algunos de los tipos internos de Python, estamos listos
- para crear un tipo definido por el usuario: el 
+Una vez utilizados algunos de los tipos internos de Python,
+ estamos listos para crear un tipo definido por el usuario:
+ el 
 \family typewriter
 Punto
 \family default
@@ -211,15 +253,17 @@ Punto
 
 \begin_layout Standard
 Piense en el concepto de un punto matemático.
- En dos dimensiones, un punto tiene dos números (coordenadas) que se tratan
- colectivamente como un solo objeto.
- En notación matemática, los puntos suelen escribirse entre paréntesis con
- una coma separando las coordenadas.
- Por ejemplo, 
+ En dos dimensiones,
+ un punto tiene dos números (coordenadas) que se tratan colectivamente como un solo objeto.
+ En notación matemática,
+ los puntos suelen escribirse entre paréntesis con una coma separando las coordenadas.
+ Por ejemplo,
+ 
 \begin_inset Formula $(0,0)$
 \end_inset
 
- representa el origen, y 
+ representa el origen,
+ y 
 \begin_inset Formula $(x,y)$
 \end_inset
 
@@ -235,15 +279,18 @@ Piense en el concepto de un punto matemático.
 \end_layout
 
 \begin_layout Standard
-Una forma natural de representar un punto en Python es con dos valores en
- punto flotante.
- La cuestión es, entonces, cómo agrupar esos dos valores en un objeto compuesto.
- La solución rápida y burda es utilizar una lista o tupla, y para algunas
- aplicaciones esa podría ser la mejor opción.
+Una forma natural de representar un punto en Python es con dos valores en punto flotante.
+ La cuestión es,
+ entonces,
+ cómo agrupar esos dos valores en un objeto compuesto.
+ La solución rápida y burda es utilizar una lista o tupla,
+ y para algunas aplicaciones esa podría ser la mejor opción.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -262,8 +309,8 @@ Una alternativa es que el usuario defina un nuevo tipo de dato compuesto,
 clase
 \series default
 .
- Esta aproximación exige un poco más de esfuerzo, pero tiene algunas ventajas
- que pronto se harán evidentes.
+ Esta aproximación exige un poco más de esfuerzo,
+ pero tiene algunas ventajas que pronto se harán evidentes.
 \end_layout
 
 \begin_layout Standard
@@ -272,12 +319,12 @@ Una definición de clase se parece a esto:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Punto:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   pass
 \end_layout
@@ -294,8 +341,7 @@ Las definiciones de clase pueden aparecer en cualquier lugar de un programa,
 import
 \family default
 ).
- Las reglas sintácticas de la definición de clases son las mismas que para
- las otras sentencias compuestas.
+ Las reglas sintácticas de la definición de clases son las mismas que para las otras sentencias compuestas.
  (ver la Sección
 \begin_inset space ~
 \end_inset
@@ -304,6 +350,7 @@ import
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "alternative execution"
+nolink "false"
 
 \end_inset
 
@@ -320,8 +367,8 @@ Punto
 \series bold
 pass
 \series default
- no tiene efectos; sólo es necesaria porque una sentencia compuesta debe
- tener algo en su cuerpo.
+ no tiene efectos;
+ sólo es necesaria porque una sentencia compuesta debe tener algo en su cuerpo.
 \end_layout
 
 \begin_layout Standard
@@ -329,7 +376,8 @@ Al crear la clase
 \family typewriter
 Punto
 \family default
- hemos creado un nuevo tipo, que también se llama 
+ hemos creado un nuevo tipo,
+ que también se llama 
 \family typewriter
 Punto
 \family default
@@ -361,6 +409,8 @@ Punto
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -371,6 +421,8 @@ instancia!objeto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -381,6 +433,8 @@ instancia de un objeto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -394,7 +448,7 @@ instanciación
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 limpio = Punto()
 \end_layout
@@ -431,6 +485,8 @@ Atributos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -448,12 +504,12 @@ Podemos añadir nuevos datos a una instancia utilizando la notación de punto:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> limpio.x = 3.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> limpio.y = 4.0
 \end_layout
@@ -464,8 +520,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Esta sintaxis es similar a la sintaxis para seleccionar una variable de
- un módulo, como 
+Esta sintaxis es similar a la sintaxis para seleccionar una variable de un módulo,
+ como 
 \family typewriter
 math.pi
 \family default
@@ -474,7 +530,9 @@ math.pi
 string.uppercase
 \family default
 .
- En este caso, sin embargo, estamos seleccionando un dato de una instancia.
+ En este caso,
+ sin embargo,
+ estamos seleccionando un dato de una instancia.
  Estos datos con nombre se denominan 
 \series bold
 atributos
@@ -550,7 +608,8 @@ La variable
 \family typewriter
 limpio
 \family default
- apunta a un objeto Punto, que contiene dos atributos.
+ apunta a un objeto Punto,
+ que contiene dos atributos.
  Cada atributo apunta a un número en punto flotante.
 \end_layout
 
@@ -563,27 +622,27 @@ Podemos leer el valor de un atributo utilizando la misma sintaxis:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(limpio.y)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 4.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> x = limpio.x
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(x)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 3.0
 \end_layout
@@ -598,7 +657,8 @@ La expresión
 \family typewriter
 limpio.x
 \family default
- significa, 
+ significa,
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -615,7 +675,8 @@ x
 \end_inset
 
 .
- En este caso, asignamos ese valor a una variable llamada 
+ En este caso,
+ asignamos ese valor a una variable llamada 
 \family typewriter
 x
 \family default
@@ -629,28 +690,29 @@ x
 x
 \family default
 .
- El propósito de la notación punto es identificar de forma inequívoca a
- qué variable se refiere el programador.
+ El propósito de la notación punto es identificar de forma inequívoca a qué variable se refiere el programador.
 \end_layout
 
 \begin_layout Standard
 Se puede usar la notación punto como parte de cualquier expresión.
- Así, las sentencias que siguen son correctas:
+ Así,
+ las sentencias que siguen son correctas:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-print('(' + str(limpio.x) + ', ' + str(limpio.y) + ')')
+print('(' + str(limpio.x) + ',
+ ' + str(limpio.y) + ')')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 distanciaAlCuadrado = limpio.x * limpio.x + 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                       limpio.y * limpio.y
 \end_layout
@@ -663,9 +725,11 @@ distanciaAlCuadrado = limpio.x * limpio.x +
 \begin_layout Standard
 La primera línea presenta 
 \family typewriter
-(3.0, 4.0)
+(3.0,
+ 4.0)
 \family default
-; la segunda línea calcula el valor 25.0.
+;
+ la segunda línea calcula el valor 25.0.
 \end_layout
 
 \begin_layout Standard
@@ -678,12 +742,12 @@ limpio
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(limpio)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 <__main__.Point instance at 80f8e70>
 \end_layout
@@ -711,7 +775,8 @@ __main__
 \family typewriter
 80f8e70
 \family default
- es el identificador único de este objeto, escrito en hexadecimal.
+ es el identificador único de este objeto,
+ escrito en hexadecimal.
  Probablemente ésta no es la manera más clara de mostrar un objeto 
 \family typewriter
 Punto
@@ -722,6 +787,8 @@ Punto
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -739,6 +806,8 @@ Instancias como parámetro
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -749,6 +818,8 @@ instancia
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -767,14 +838,15 @@ Se puede pasar una instancia como parámetro de la forma habitual.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def imprimePunto(p):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  print('(' + str(p.x) + ', ' + str(p.y) + ')')
+  print('(' + str(p.x) + ',
+ ' + str(p.y) + ')')
 \end_layout
 
 \end_inset
@@ -787,15 +859,16 @@ def imprimePunto(p):
 \family typewriter
 imprimePunto
 \family default
- acepta un punto como argumento y lo muestra en el formato estándar de la
- matemática.
+ acepta un punto como argumento y lo muestra en el formato estándar de la matemática.
  Si llamas a 
 \family typewriter
 imprimePunto(limpio)
 \family default
-, el resultado es 
+,
+ el resultado es 
 \family typewriter
-(3.0, 4.0)
+(3.0,
+ 4.0)
 \family default
 .
 \end_layout
@@ -806,6 +879,8 @@ Mismidad
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -826,12 +901,13 @@ mismo
 \begin_inset Quotes erd
 \end_inset
 
- parece totalmente claro hasta que uno se detiene a pensarlo un poco y se
- da cuenta de que hay algo más de lo que se supone comúnmente.
+ parece totalmente claro hasta que uno se detiene a pensarlo un poco y se da cuenta de que hay algo más de lo que se supone comúnmente.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -842,6 +918,8 @@ ambigüedad
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -852,6 +930,8 @@ lenguaje natural
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -864,7 +944,8 @@ lenguaje
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, si alguien dice 
+Por ejemplo,
+ si alguien dice 
 \begin_inset Quotes eld
 \end_inset
 
@@ -872,8 +953,9 @@ Pepe y yo tenemos la misma moto
 \begin_inset Quotes erd
 \end_inset
 
-, lo que quiere decir es que su moto y la de Pepe son de la misma marca
- y modelo, pero que son dos motos distintas.
+,
+ lo que quiere decir es que su moto y la de Pepe son de la misma marca y modelo,
+ pero que son dos motos distintas.
  Si dice 
 \begin_inset Quotes eld
 \end_inset
@@ -882,14 +964,15 @@ Pepe y yo tenemos la misma madre
 \begin_inset Quotes erd
 \end_inset
 
-, quiere decir que su madre y la de Pepe son la misma persona
+,
+ quiere decir que su madre y la de Pepe son la misma persona
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
 No todas las lenguas tienen el mismo problema.
- Por ejemplo, el alemán tiene palabras diferentes para los diferentes tipos
- de identidad.
+ Por ejemplo,
+ el alemán tiene palabras diferentes para los diferentes tipos de identidad.
  
 \begin_inset Quotes eld
 \end_inset
@@ -940,18 +1023,20 @@ identidad
 \end_layout
 
 \begin_layout Standard
-Cuando uno habla de objetos, hay una ambigüedad parecida.
- Por ejemplo, si dos 
+Cuando uno habla de objetos,
+ hay una ambigüedad parecida.
+ Por ejemplo,
+ si dos 
 \family typewriter
 Puntos
 \family default
- son el mismo, ¿significa que contienen los mismos datos (coordenadas) o
- que son de verdad el mismo objeto?
+ son el mismo,
+ ¿significa que contienen los mismos datos (coordenadas) o que son de verdad el mismo objeto?
 \end_layout
 
 \begin_layout Standard
-Para averiguar si dos referencias se refieren al mismo objeto, se utiliza
- el operador 
+Para averiguar si dos referencias se refieren al mismo objeto,
+ se utiliza el operador 
 \family typewriter
 ==
 \family default
@@ -961,42 +1046,42 @@ Para averiguar si dos referencias se refieren al mismo objeto, se utiliza
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1 = Punto()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1.x = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1.y = 4
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p2 = Punto()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p2.x = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p2.y = 4
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1 == p2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 False
 \end_layout
@@ -1015,7 +1100,8 @@ p1
 \family typewriter
 p2
 \family default
- contienen las mismas coordenadas, no son el mismo objeto.
+ contienen las mismas coordenadas,
+ no son el mismo objeto.
  Si asignamos 
 \family typewriter
 p1
@@ -1024,22 +1110,23 @@ p1
 \family typewriter
 p2
 \family default
-, las dos variables son alias del mismo objeto:
+,
+ las dos variables son alias del mismo objeto:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p2 = p1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1 == p2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 True
 \end_layout
@@ -1054,11 +1141,15 @@ Este tipo de igualdad se llama
 \series bold
 igualdad superficial
 \series default
-, porque sólo compara las referencias, pero no el contenido de los objetos.
+,
+ porque sólo compara las referencias,
+ pero no el contenido de los objetos.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1069,6 +1160,8 @@ igualdad
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1079,6 +1172,8 @@ identidad
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1089,6 +1184,8 @@ igualdad superficial
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1117,20 +1214,20 @@ mismoPunto
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def mismoPunto(p1, p2) :
+def mismoPunto(p1,
+ p2) :
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return (p1.x == p2.x) and (p1.y == p2.y)
 \end_layout
 
 \end_inset
 
- Si ahora creamos dos objetos diferentes que contienen los mismos datos
- podremos usar 
+ Si ahora creamos dos objetos diferentes que contienen los mismos datos podremos usar 
 \family typewriter
 mismoPunto
 \family default
@@ -1142,49 +1239,51 @@ mismoPunto
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1 = Punto()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1.x = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1.y = 4
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p2 = Punto()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p2.x = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p2.y = 4
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> mismoPunto(p1, p2)
+>>> mismoPunto(p1,
+ p2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 True
 \end_layout
 
 \end_inset
 
- Por supuesto, si las dos variables apuntan al mismo objeto 
+ Por supuesto,
+ si las dos variables apuntan al mismo objeto 
 \family typewriter
 mismoPunto
 \family default
@@ -1204,6 +1303,8 @@ name "embedded"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1217,31 +1318,34 @@ rectángulo
 
 \begin_layout Standard
 Digamos que queremos una clase que represente un rectángulo.
- La pregunta es, ¿qué información tenemos que proporcionar para definir
- un rectángulo? Para simplificar las cosas, supongamos que el rectángulo
- está orientado vertical u horizontalmente, nunca en diagonal.
+ La pregunta es,
+ ¿qué información tenemos que proporcionar para definir un rectángulo?
+ Para simplificar las cosas,
+ supongamos que el rectángulo está orientado vertical u horizontalmente,
+ nunca en diagonal.
 \end_layout
 
 \begin_layout Standard
-Tenemos varias posibilidades: podemos señalar el centro del rectángulo (dos
- coordenadas) y su tamaño (ancho y altura); o podemos señalar una de las
- esquinas y el tamaño; o podemos señalar dos esquinas opuestas.
- Un modo convencional es señalar la esquina superior izquierda del rectángulo
- y el tamaño.
+Tenemos varias posibilidades:
+ podemos señalar el centro del rectángulo (dos coordenadas) y su tamaño (ancho y altura);
+ o podemos señalar una de las esquinas y el tamaño;
+ o podemos señalar dos esquinas opuestas.
+ Un modo convencional es señalar la esquina superior izquierda del rectángulo y el tamaño.
 \end_layout
 
 \begin_layout Standard
-De nuevo, definiremos una nueva clase:
+De nuevo,
+ definiremos una nueva clase:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Rectangulo:	
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   pass
 \end_layout
@@ -1261,17 +1365,17 @@ Y la instanciaremos:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 caja = Rectangulo()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 caja.ancho = 100.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 caja.altura = 200.0
 \end_layout
@@ -1287,23 +1391,22 @@ Este código crea un nuevo objeto
 Rectangulo
 \family default
  con dos atributos flotantes.
- ¡Para señalar la esquina superior izquierda podemos incrustar un objeto
- dentro de otro!
+ ¡Para señalar la esquina superior izquierda podemos incrustar un objeto dentro de otro!
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 caja.esquina = Punto()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 caja.esquina.x = 0.0;
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 caja.esquina.y = 0.0;
 \end_layout
@@ -1331,7 +1434,8 @@ caja
 \family typewriter
 esquina
 \family default
-; entonces ve a ese objeto y selecciona el atributo llamado x
+;
+ entonces ve a ese objeto y selecciona el atributo llamado x
 \begin_inset Quotes erd
 \end_inset
 
@@ -1407,6 +1511,8 @@ Instancias como valores de retorno
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1417,6 +1523,8 @@ instancia
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1430,7 +1538,8 @@ valor de retorno
 
 \begin_layout Standard
 Las funciones pueden devolver instancias.
- Por ejemplo, 
+ Por ejemplo,
+ 
 \family typewriter
 encuentraCentro
 \family default
@@ -1451,27 +1560,27 @@ Rectangulo
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def encuentraCentro(caja):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   p = Punto()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   p.x = caja.esquina.x + caja.ancho/2.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   p.y = caja.esquina.y + caja.altura/2.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return p
 \end_layout
@@ -1482,7 +1591,8 @@ def encuentraCentro(caja):
 \end_layout
 
 \begin_layout Standard
-Para llamar a esta función, se pasa 
+Para llamar a esta función,
+ se pasa 
 \family typewriter
 caja
 \family default
@@ -1491,19 +1601,20 @@ caja
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> centro = encuentraCentro(caja)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> imprimePunto(centro)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-(50.0, 100.0)
+(50.0,
+ 100.0)
 \end_layout
 
 \end_inset
@@ -1517,6 +1628,8 @@ Los objetos son mutables
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1527,6 +1640,8 @@ objeto!mutable
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1539,9 +1654,9 @@ objeto mutable
 \end_layout
 
 \begin_layout Standard
-Podemos cambiar el estado de un objeto efectuando una asignación sobre uno
- de sus atributos.
- Por ejemplo, para cambiar el tamaño de un rectángulo sin cambiar su posición,
+Podemos cambiar el estado de un objeto efectuando una asignación sobre uno de sus atributos.
+ Por ejemplo,
+ para cambiar el tamaño de un rectángulo sin cambiar su posición,
  podemos cambiar los valores de 
 \family typewriter
 ancho
@@ -1555,12 +1670,12 @@ altura
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 caja.ancho = caja.ancho + 50
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 caja.altura = caja.altura + 100
 \end_layout
@@ -1571,12 +1686,13 @@ caja.altura = caja.altura + 100
 \end_layout
 
 \begin_layout Standard
-Podemos encapsular este código en un método y generalizarlo para agrandar
- el rectángulo en cualquier cantidad:
+Podemos encapsular este código en un método y generalizarlo para agrandar el rectángulo en cualquier cantidad:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1587,6 +1703,8 @@ encapsulamiento
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1600,17 +1718,19 @@ generalización
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def agrandarRect(caja, dancho, daltura) :
+def agrandarRect(caja,
+ dancho,
+ daltura) :
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   caja.ancho = caja.ancho + dancho
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   caja.altura = caja.altura + daltura
 \end_layout
@@ -1638,7 +1758,8 @@ Rectangulo
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, podemos crear un nuevo 
+Por ejemplo,
+ podemos crear un nuevo 
 \family typewriter
 Rectangulo
 \family default
@@ -1655,39 +1776,41 @@ agrandarRect
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> b = Rectangulo()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> b.ancho = 100.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> b.altura = 200.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> b.esquina = Punto()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> b.esquina.x = 0.0;
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> b.esquina.y = 0.0;
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> agrandarRect(b, 50, 100)
+>>> agrandarRect(b,
+ 50,
+ 100)
 \end_layout
 
 \end_inset
@@ -1700,7 +1823,8 @@ Mientras
 \family typewriter
 agrandarRect
 \family default
- se está ejecutando, el parámetro 
+ se está ejecutando,
+ el parámetro 
 \family typewriter
 caja
 \family default
@@ -1726,6 +1850,8 @@ Copiado
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1736,6 +1862,8 @@ uso de alias
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1746,6 +1874,8 @@ copiado
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1756,6 +1886,8 @@ módulo copy
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1768,15 +1900,15 @@ módulo!copy
 \end_layout
 
 \begin_layout Standard
-El uso de un alias puede hacer que un programa sea difícil de leer, porque
- los cambios hechos en un lugar pueden tener efectos inesperados en otro
- lugar.
- Es difícil estar al tanto de todas las variables que pueden apuntar a un
- objeto dado.
+El uso de un alias puede hacer que un programa sea difícil de leer,
+ porque los cambios hechos en un lugar pueden tener efectos inesperados en otro lugar.
+ Es difícil estar al tanto de todas las variables que pueden apuntar a un objeto dado.
 \end_layout
 
 \begin_layout Standard
-Copiar un objeto es, muchas veces, una alternativa a la creación de un alias.
+Copiar un objeto es,
+ muchas veces,
+ una alternativa a la creación de un alias.
  El módulo 
 \family typewriter
 copy
@@ -1790,47 +1922,48 @@ copy
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> import copy
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1 = Punto()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1.x = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1.y = 4
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p2 = copy.copy(p1)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> p1 == p2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 False
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> mismoPunto(p1, p2)
+>>> mismoPunto(p1,
+ p2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 True
 \end_layout
@@ -1845,7 +1978,8 @@ Una vez que hemos importado el módulo
 \family typewriter
 copy
 \family default
-, podemos usar el método 
+,
+ podemos usar el método 
 \family typewriter
 copy
 \family default
@@ -1862,7 +1996,8 @@ p1
 \family typewriter
 p2
 \family default
- no son el mismo punto, pero contienen los mismos datos.
+ no son el mismo punto,
+ pero contienen los mismos datos.
 \end_layout
 
 \begin_layout Standard
@@ -1870,7 +2005,9 @@ Para copiar un objeto simple como un
 \family typewriter
 Punto
 \family default
-, que no contiene objetos incrustados, 
+,
+ que no contiene objetos incrustados,
+ 
 \family typewriter
 copy
 \family default
@@ -1887,11 +2024,13 @@ Para algo como un
 \family typewriter
 Rectangulo
 \family default
-, que contiene una referencia a un 
+,
+ que contiene una referencia a un 
 \family typewriter
 Punto
 \family default
-, 
+,
+ 
 \family typewriter
 copy
 \family default
@@ -1900,7 +2039,8 @@ copy
 \family typewriter
 Punto
 \family default
-, de modo que tanto el 
+,
+ de modo que tanto el 
 \family typewriter
 Rectangulo
 \family default
@@ -1912,19 +2052,24 @@ Punto
 \end_layout
 
 \begin_layout Standard
-Si creamos una caja, 
+Si creamos una caja,
+ 
 \family typewriter
 b1
 \family default
-, de la forma habitual y entonces hacemos una copia, 
+,
+ de la forma habitual y entonces hacemos una copia,
+ 
 \family typewriter
 b2
 \family default
-, usando 
+,
+ usando 
 \family typewriter
 copy
 \family default
-, el diagrama de estados resultante se ve así:
+,
+ el diagrama de estados resultante se ve así:
 \end_layout
 
 \begin_layout Standard
@@ -1988,7 +2133,8 @@ afterfig
 
 \begin_layout Standard
 Es casi seguro que esto no es lo que queremos.
- En este caso, la invocación de 
+ En este caso,
+ la invocación de 
 \family typewriter
 agrandaRect
 \family default
@@ -1996,16 +2142,18 @@ agrandaRect
 \family typewriter
 Rectangulo
 \family default
-s no afectaría al otro, ¡pero la invocación de 
+s no afectaría al otro,
+ ¡pero la invocación de 
 \family typewriter
 mueveRect
 \family default
- sobre cualquiera afectaría a ambos! Este comportamiento es confuso y propicia
- los errores.
+ sobre cualquiera afectaría a ambos!
+ Este comportamiento es confuso y propicia los errores.
 \end_layout
 
 \begin_layout Standard
-Afortunadamente, el módulo 
+Afortunadamente,
+ el módulo 
 \family typewriter
 copy
 \family default
@@ -2013,8 +2161,8 @@ copy
 \family typewriter
 deepcopy
 \family default
- que copia no sólo el objeto, sino también cualesquiera objetos incrustados
- en él.
+ que copia no sólo el objeto,
+ sino también cualesquiera objetos incrustados en él.
  No lo sorprenderá saber que esta operación se llama 
 \series bold
 copia profunda
@@ -2027,7 +2175,7 @@ copia profunda
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> b2 = copy.deepcopy(b1)
 \end_layout
@@ -2058,7 +2206,8 @@ agrandaRect
 \family typewriter
 Rectangulo
 \family default
- existente, cree un nuevo 
+ existente,
+ cree un nuevo 
 \family typewriter
 Rectangulo
 \family default
@@ -2070,32 +2219,34 @@ Rectangulo
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def agrandaRect(caja, dancho, daltura) :
+def agrandaRect(caja,
+ dancho,
+ daltura) :
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   import copy
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   nuevaCaja = copy.deepcopy(caja)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   nuevaCaja.ancho = nuevaCaja.ancho + dancho
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   nuevaCaja.altura = nuevaCaja.altura + daltura
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return nuevaCaja
 \end_layout
@@ -2110,30 +2261,34 @@ Glosario
 \end_layout
 
 \begin_layout Description
-Clase: tipo compuesto definido por el usuario.
- También se puede pensar en una clase como una plantilla para los objetos
- que son instancias de la misma.
+Clase:
+ tipo compuesto definido por el usuario.
+ También se puede pensar en una clase como una plantilla para los objetos que son instancias de la misma.
 \end_layout
 
 \begin_layout Description
-Instanciar: Crear una instancia de una clase.
+Instanciar:
+ Crear una instancia de una clase.
 \end_layout
 
 \begin_layout Description
-Instancia: objeto que pertenece a una clase.
+Instancia:
+ objeto que pertenece a una clase.
 \end_layout
 
 \begin_layout Description
-Objeto: tipo de dato compuesto que suele usarse para representar una cosa
- o concepto del mundo real.
+Objeto:
+ tipo de dato compuesto que suele usarse para representar una cosa o concepto del mundo real.
 \end_layout
 
 \begin_layout Description
-Constructor: método usado para crear nuevos objetos.
+Constructor:
+ método usado para crear nuevos objetos.
 \end_layout
 
 \begin_layout Description
-Atributo: uno de los elementos de datos con nombre que constituyen una instancia.
+Atributo:
+ uno de los elementos de datos con nombre que constituyen una instancia.
 \end_layout
 
 \begin_layout Description
@@ -2147,7 +2302,8 @@ Igualdad superficial:
 
 \end_inset
 
- igualdad de referencias, o dos referencias que apuntan al mismo objeto.
+ igualdad de referencias,
+ o dos referencias que apuntan al mismo objeto.
 \end_layout
 
 \begin_layout Description
@@ -2161,8 +2317,8 @@ Igualdad profunda:
 
 \end_inset
 
- igualdad de valores, o dos referencias que apuntan a objetos que tienen
- el mismo valor.
+ igualdad de valores,
+ o dos referencias que apuntan a objetos que tienen el mismo valor.
 \end_layout
 
 \begin_layout Description
@@ -2176,8 +2332,9 @@ Copia superficial:
 
 \end_inset
 
- copiar el contenido de un objeto, incluyendo cualquier referencia a objetos
- incrustados; implementada por la función 
+ copiar el contenido de un objeto,
+ incluyendo cualquier referencia a objetos incrustados;
+ implementada por la función 
 \family typewriter
 copy
 \family default
@@ -2200,7 +2357,8 @@ Copia profunda:
 \end_inset
 
  copiar el contenido de un objeto así como cualesquiera objetos incrustados,
- y los incrustados en estos, y así sucesivamente.
+ y los incrustados en estos,
+ y así sucesivamente.
  Está implementada en la función 
 \family typewriter
 deepcopy
@@ -2210,11 +2368,17 @@ deepcopy
 copy
 \family default
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2225,6 +2389,8 @@ clase
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2235,6 +2401,8 @@ instanciar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2245,6 +2413,8 @@ instancia
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2255,6 +2425,8 @@ objeto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2265,6 +2437,8 @@ constructor
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2275,6 +2449,8 @@ atributo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2285,6 +2461,8 @@ igualdad superficial
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2295,6 +2473,8 @@ igualdad profunda
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2305,6 +2485,8 @@ copia superficial
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2347,6 +2529,7 @@ distancia
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "program development"
+nolink "false"
 
 \end_inset
 
@@ -2379,7 +2562,8 @@ dy
 \family typewriter
 esquina
 \family default
-: 
+:
+ 
 \family typewriter
 dx
 \family default
@@ -2416,8 +2600,8 @@ Investigue la documentación del módulo Turtle de Python.
 \end_layout
 
 \begin_layout Enumerate
-Escriba un programa que dibuje dos tortugas haciendo un movimiento circular
- permanente.Pista: Piense en como intercalar los movimientos de las dos tortugas.
+Escriba un programa que dibuje dos tortugas haciendo un movimiento circular permanente.Pista:
+ Piense en como intercalar los movimientos de las dos tortugas.
 \end_layout
 
 \end_body

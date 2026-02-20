@@ -1,24 +1,30 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -48,6 +54,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -56,15 +65,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -74,34 +91,44 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -114,38 +141,39 @@ Lista de los colaboradores
 \end_layout
 
 \begin_layout Standard
-Este libro vino a la luz debido a una colaboración que no sería posible
- sin la licencia de documentación libre de la GNU (Free Documentation License).
- Quisiéramos agradecer a la Free Software Foundation por desarrollar esta
- licencia y, por supuesto, por ponerla a nuestra disposición.
+Este libro vino a la luz debido a una colaboración que no sería posible sin la licencia de documentación libre de la GNU (Free Documentation License).
+ Quisiéramos agradecer a la Free Software Foundation por desarrollar esta licencia y,
+ por supuesto,
+ por ponerla a nuestra disposición.
 \end_layout
 
 \begin_layout Standard
-Nosotros queremos agradecer a los mas de 100 juiciosos y reflexivos lectores
- que nos han enviado sugerencias y correcciones durante los años pasados.
- En el espíritu del software libre, decidimos expresar nuestro agradecimiento
- en la forma de una lista de colaboradores.
- Desafortunadamente, esta lista no está completa, pero estamos haciendo
- nuestro mejor esfuerzo para mantenerla actualizada.
+Nosotros queremos agradecer a los mas de 100 juiciosos y reflexivos lectores que nos han enviado sugerencias y correcciones durante los años pasados.
+ En el espíritu del software libre,
+ decidimos expresar nuestro agradecimiento en la forma de una lista de colaboradores.
+ Desafortunadamente,
+ esta lista no está completa,
+ pero estamos haciendo nuestro mejor esfuerzo para mantenerla actualizada.
 \end_layout
 
 \begin_layout Standard
-Si tiene la oportunidad de leer la lista, tenga en cuenta que cada persona
- mencionada aquí le ha ahorrado a usted y a todos los lectores subsecuentes
- la confusión debida a un error técnico o debido a una explicación confusa,
+Si tiene la oportunidad de leer la lista,
+ tenga en cuenta que cada persona mencionada aquí le ha ahorrado a usted y a todos los lectores subsecuentes la confusión debida a un error técnico o debido a una explicación confusa,
  solo por enviarnos una nota.
 \end_layout
 
 \begin_layout Standard
-Después de tantas correcciones, todavía pueden haber errores en este libro.
- Si ve uno, esperamos que tome un minuto para contactarnos.
+Después de tantas correcciones,
+ todavía pueden haber errores en este libro.
+ Si ve uno,
+ esperamos que tome un minuto para contactarnos.
  El correo electrónico es 
 \family typewriter
 feedback@thinkpython.com
 \family default
 .
- Si hacemos un cambio debido a su sugerencias, usted aparecerá en la siguiente
- versión de la lista de colaboradores (a menos que usted pida ser omitido).
+ Si hacemos un cambio debido a su sugerencias,
+ usted aparecerá en la siguiente versión de la lista de colaboradores (a menos que usted pida ser omitido).
  Gracias!
 \end_layout
 
@@ -157,7 +185,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{lha2@columbia.edu}
 \end_layout
@@ -175,7 +204,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%She can be reached at: 
+%She can be reached at:
+ 
 \backslash
 texttt{mystic@monuniverse.net}
 \end_layout
@@ -193,7 +223,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at:  
+%He can be reached at:
+  
 \backslash
 texttt{Fred.Bremmer@ubc.cu}
 \end_layout
@@ -215,7 +246,13 @@ LaTeX
 
 \end_inset
 
-, de este libro, a un maravilloso HTML.
+,
+ de este libro,
+ a un maravilloso HTML.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -250,9 +287,12 @@ texttt{JonahCohen@aol.com}
 
 \end_deeper
 \begin_layout Itemize
-Michael Conlon remitió una corrección de gramática en el Capítulo 3 una
- mejora de estilo en el Capítulo 2, e inició la discusión de los aspectos
- técnicos de los intérpretes.
+Michael Conlon remitió una corrección de gramática en el Capítulo 3 una mejora de estilo en el Capítulo 2,
+ e inició la discusión de los aspectos técnicos de los intérpretes.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -262,7 +302,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%Michael can be reached at: 
+%Michael can be reached at:
+ 
 \backslash
 texttt{michael.conlon@sru.edu}
 \end_layout
@@ -275,6 +316,10 @@ texttt{michael.conlon@sru.edu}
 \end_deeper
 \begin_layout Itemize
 Benoit Girard envió una corrección a un extraño error en la Sección 5.6.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -311,8 +356,13 @@ Courtney Gleason y Katherine Smith escribieron
 \family typewriter
 horsebet.py
 \family default
-, que se usaba como un caso de estudio en una versión anterior de este libro.
+,
+ que se usaba como un caso de estudio en una versión anterior de este libro.
  Su programa se puede encontrar en su website.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -322,7 +372,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%Courtney can be reached at: {
+%Courtney can be reached at:
+ {
 \backslash
 tt
 \end_layout
@@ -345,9 +396,14 @@ status collapsed
 
 \end_deeper
 \begin_layout Itemize
-Lee Harr sometió más correcciones de las que tenemos espacio para enumerar
- aquí, y, por supuesto, debería ser listado como uno de los editores principales
- del texto.
+Lee Harr sometió más correcciones de las que tenemos espacio para enumerar aquí,
+ y,
+ por supuesto,
+ debería ser listado como uno de los editores principales del texto.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -357,7 +413,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{missive@linuxfreemail.com}
 \end_layout
@@ -371,6 +428,10 @@ texttt{missive@linuxfreemail.com}
 \begin_layout Itemize
 James Kaylin es un estudiante usando el texto.
  Él ha enviado numerosas correcciones.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -380,7 +441,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%James can be reached by email at: 
+%James can be reached by email at:
+ 
 \backslash
 texttt{Jamarf@aol.com}
 \end_layout
@@ -397,6 +459,10 @@ David Kershaw arregló la función errónea
 imprimaDoble
 \family default
  en la Sección 3.10.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -406,7 +472,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{david
 \backslash
@@ -420,10 +487,16 @@ _kershaw@merck.com}
 
 \end_deeper
 \begin_layout Itemize
-Eddie Lam ha enviado numerosas correcciones a los Capítulos 1, 2, y 3.
- Él corrigió el Makefile para que creara un índice, la primera vez que se
- compilaba el documento, y nos ayudó a instalar un sistema de control de
- versiones.
+Eddie Lam ha enviado numerosas correcciones a los Capítulos 1,
+ 2,
+ y 3.
+ Él corrigió el Makefile para que creara un índice,
+ la primera vez que se compilaba el documento,
+ y nos ayudó a instalar un sistema de control de versiones.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -457,6 +530,10 @@ texttt{nautilus@yoyo.cc.monash.edu.au}
 \end_deeper
 \begin_layout Itemize
 Man-Yong Lee envió una corrección al código de ejemplo en la Sección 2.4.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -466,7 +543,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reaced at: 
+%He can be reaced at:
+ 
 \backslash
 texttt{yong@linuxkorea.co.kr}
 \end_layout
@@ -495,6 +573,10 @@ subconscientemente
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -517,6 +599,10 @@ texttt{bdbear44@netscape.net}
 \end_deeper
 \begin_layout Itemize
 Chris McAloon envió varias correcciones a las Secciones 3.9 y 3.10.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -526,7 +612,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{cmcaloon@ou.edu}
 \end_layout
@@ -539,8 +626,11 @@ texttt{cmcaloon@ou.edu}
 \end_deeper
 \begin_layout Itemize
 Matthew J.
- Moelter ha sido un contribuidor de mucho tiempo quien remitió numerosas
- correcciones y sugerencias al libro.
+ Moelter ha sido un contribuidor de mucho tiempo quien remitió numerosas correcciones y sugerencias al libro.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -573,13 +663,16 @@ texttt{mmoelter@calpoly.edu}
 
 \end_deeper
 \begin_layout Itemize
-Simon Dicon Montford reportó una definición de función que faltaba y varios
- errores en el Capítulo 3.
+Simon Dicon Montford reportó una definición de función que faltaba y varios errores en el Capítulo 3.
  Él también encontró errores en la función 
 \family typewriter
 incrementar
 \family default
  del Capítulo 13.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -589,7 +682,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{dicon@bigfoot.com}
 \end_layout
@@ -610,6 +704,10 @@ valor de retorno
 \end_inset
 
  en el Capítulo 3.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -619,7 +717,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{jouzts@bigfoot.com}
 \end_layout
@@ -631,8 +730,11 @@ texttt{jouzts@bigfoot.com}
 
 \end_deeper
 \begin_layout Itemize
-Kevin Parks envió sugerencias valiosas para mejorar la distribución del
- libro.
+Kevin Parks envió sugerencias valiosas para mejorar la distribución del libro.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -642,7 +744,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{cpsoct@lycos.com}
 \end_layout
@@ -654,8 +757,11 @@ texttt{cpsoct@lycos.com}
 
 \end_deeper
 \begin_layout Itemize
-David Pool envió la corrección de un error en el glosario del Capítulo 1
- y palabras de estímulo.
+David Pool envió la corrección de un error en el glosario del Capítulo 1 y palabras de estímulo.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -665,7 +771,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{pooldavid@hotmail.com}
 \end_layout
@@ -678,6 +785,10 @@ texttt{pooldavid@hotmail.com}
 \end_deeper
 \begin_layout Itemize
 Michael Schmitt envió una corrección al capítulo de archivos y excepciones.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -687,7 +798,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{ipv6
 \backslash
@@ -701,8 +813,12 @@ _128@yahoo.com}
 
 \end_deeper
 \begin_layout Itemize
-Robin Shaw notó un error en la Sección 13.1, donde la función imprimirHora
- se usaba en un ejemplo sin estar definida.
+Robin Shaw notó un error en la Sección 13.1,
+ donde la función imprimirHora se usaba en un ejemplo sin estar definida.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -712,7 +828,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%Robin can be reached at: 
+%Robin can be reached at:
+ 
 \backslash
 texttt{randj@iowatelecom.net}
 \end_layout
@@ -724,8 +841,7 @@ texttt{randj@iowatelecom.net}
 
 \end_deeper
 \begin_layout Itemize
-Paul Sleigh encontró un error en el Capítulo 7 y otro en los guiones de
- Perl de Jonah Cohen que generan HTML a partir de 
+Paul Sleigh encontró un error en el Capítulo 7 y otro en los guiones de Perl de Jonah Cohen que generan HTML a partir de 
 \begin_inset ERT
 status collapsed
 
@@ -737,6 +853,10 @@ LaTeX
 \end_inset
 
 .
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -746,7 +866,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{bat@atdot.dotat.org}
 \end_layout
@@ -789,7 +910,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{csmith@blakeschool.org or smiles@saysomething.com}
 \end_layout
@@ -804,6 +926,10 @@ texttt{csmith@blakeschool.org or smiles@saysomething.com}
 Craig T.
  Snydal está probando el texto en un curso en Drew University.
  El ha aportado varias sugerencias valiosas y correcciones.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -813,7 +939,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%and can be reached at: 
+%and can be reached at:
+ 
 \backslash
 texttt{csnydal@drew.edu}
 \end_layout
@@ -826,8 +953,11 @@ texttt{csnydal@drew.edu}
 \end_deeper
 \begin_layout Itemize
 Ian Thomas y sus estudiantes están usando el texto en un curso de programación.
- Ellos son los primeros en probar los capítulos de la segunda mitad del
- libro y han enviado numerosas correcciones y sugerencias.
+ Ellos son los primeros en probar los capítulos de la segunda mitad del libro y han enviado numerosas correcciones y sugerencias.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -837,7 +967,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%Ian can be reached at: 
+%Ian can be reached at:
+ 
 \backslash
 texttt{ithomas@sd70.bc.ca}
 \end_layout
@@ -850,6 +981,10 @@ texttt{ithomas@sd70.bc.ca}
 \end_deeper
 \begin_layout Itemize
 Keith Verheyden envió una corrección al Capítulo 3.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -859,7 +994,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{kverheyd@glam.ac.uk}
 \end_layout
@@ -871,8 +1007,12 @@ texttt{kverheyd@glam.ac.uk}
 
 \end_deeper
 \begin_layout Itemize
-Peter Winstanley descubrió un viejo error en nuestro Latín, en el capítulo
- 3.
+Peter Winstanley descubrió un viejo error en nuestro Latín,
+ en el capítulo 3.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -896,6 +1036,10 @@ texttt{Peter.Winstanley@scotland.gsi.gov.uk}
 \begin_layout Itemize
 Chris Wrobel hizo correcciones al código en el capítulo sobre archivos,
  E/S y excepciones.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -905,7 +1049,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{ferz980@yahoo.com}
 \end_layout
@@ -920,6 +1065,10 @@ texttt{ferz980@yahoo.com}
 Moshe Zadka hizo contribuciones inestimables a este proyecto.
  Además de escribir el primer bosquejo del capítulo sobre Diccionarios,
  también proporcionó una dirección continua en los primeros años del libro.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -929,7 +1078,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-%He can be reached at: 
+%He can be reached at:
+ 
 \backslash
 texttt{moshez@math.huji.ac.il}
 \end_layout
@@ -1016,8 +1166,12 @@ status collapsed
 \end_layout
 
 \begin_layout Itemize
-James Mayer nos envió un montón de errores tipográficos y de deletreo, incluyend
-o dos en la lista de colaboradores
+James Mayer nos envió un montón de errores tipográficos y de deletreo,
+ incluyendo dos en la lista de colaboradores
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1037,13 +1191,11 @@ status collapsed
 
 \end_deeper
 \begin_layout Itemize
-Hayden McAfee descubrió una inconsistencia potencialmente confusa entre
- dos ejemplos.
+Hayden McAfee descubrió una inconsistencia potencialmente confusa entre dos ejemplos.
 \end_layout
 
 \begin_layout Itemize
-Angel Arnal hace parte de un equipo internacional de traductores que trabajan
- en la versión española del texto.
+Angel Arnal hace parte de un equipo internacional de traductores que trabajan en la versión española del texto.
  Él también ha encontrado varios errores en la versión inglesa.
 \end_layout
 

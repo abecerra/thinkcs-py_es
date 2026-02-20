@@ -1,15 +1,15 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -18,9 +18,13 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -50,6 +54,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -58,15 +65,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -81,30 +96,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -117,57 +141,51 @@ Lecturas adicionales recomendadas
 \end_layout
 
 \begin_layout Standard
-¿Así que, hacia adonde ir desde aquí? Hay muchas direcciones para avanzar,
- extender su conocimiento de Python específicamente y sobre la ciencia de
- la computación en general.
+¿Así que,
+ hacia adonde ir desde aquí?
+ Hay muchas direcciones para avanzar,
+ extender su conocimiento de Python específicamente y sobre la ciencia de la computación en general.
 \end_layout
 
 \begin_layout Standard
-Los ejemplos en este libro han sido deliberadamente sencillos, por esto
- no han mostrado las capacidades más excitantes de Python.
- Aquí hay una pequeña muestra de las extensiones de Python y sugerencias
- de proyectos que las utilizan.
+Los ejemplos en este libro han sido deliberadamente sencillos,
+ por esto no han mostrado las capacidades más excitantes de Python.
+ Aquí hay una pequeña muestra de las extensiones de Python y sugerencias de proyectos que las utilizan.
 \end_layout
 
 \begin_layout Itemize
-La programación de interfaces gráficas de usuario, tiene muchos mas elementos
- de los que vimos en el último capítulo.
+La programación de interfaces gráficas de usuario,
+ tiene muchos mas elementos de los que vimos en el último capítulo.
 \end_layout
 
 \begin_layout Itemize
 La programación en la Web integra a Python con Internet.
- Por ejemplo, usted puede construir programas cliente que abran y lean páginas
- remotas (casi) tan fácilmente como abren un archivo en disco.
- También hay módulos en Python que permiten acceder a archivos remotos por
- medio de ftp, y otros que posibilitan enviar y recibir correo electrónico.
- Python también se usa extensivamente para desarrollar servidores web que
- presten servicios.
+ Por ejemplo,
+ usted puede construir programas cliente que abran y lean páginas remotas (casi) tan fácilmente como abren un archivo en disco.
+ También hay módulos en Python que permiten acceder a archivos remotos por medio de ftp,
+ y otros que posibilitan enviar y recibir correo electrónico.
+ Python también se usa extensivamente para desarrollar servidores web que presten servicios.
 \end_layout
 
 \begin_layout Itemize
-Las bases de datos son como superarchivos, donde la información se almacena
- en esquemas predefinidos y las relaciones entre los datos permiten navegar
- por ellos de diferentes formas.
- Python tiene varios módulos que facilitan conectar programas a varios motores
- de bases de datos, de código abierto y comerciales.
+Las bases de datos son como superarchivos,
+ donde la información se almacena en esquemas predefinidos y las relaciones entre los datos permiten navegar por ellos de diferentes formas.
+ Python tiene varios módulos que facilitan conectar programas a varios motores de bases de datos,
+ de código abierto y comerciales.
 \end_layout
 
 \begin_layout Itemize
-La programación con hilos permite ejecutar diferentes hilos de ejecución
- dentro de un mismo programa.
- Si usted ha tenido la experiencia de desplazarse al inicio de una página
- web mientras el navegador continúa cargando el resto de ella, entonces
- tiene una noción de lo que los hilos pueden lograr.
+La programación con hilos permite ejecutar diferentes hilos de ejecución dentro de un mismo programa.
+ Si usted ha tenido la experiencia de desplazarse al inicio de una página web mientras el navegador continúa cargando el resto de ella,
+ entonces tiene una noción de lo que los hilos pueden lograr.
 \end_layout
 
 \begin_layout Itemize
-Cuando la preocupación es la velocidad, se pueden escribir extensiones a
- Python en un lenguaje compilado como C o C++.
- Estas extensiones forman la base de muchos módulos en la biblioteca de
- Python.
+Cuando la preocupación es la velocidad,
+ se pueden escribir extensiones a Python en un lenguaje compilado como C o C++.
+ Estas extensiones forman la base de muchos módulos en la biblioteca de Python.
  El mecanismo para enlazar funciones y datos es algo complejo.
- La herramienta SWIG (Simplified Wrapper and Interface Generator) simplifica
- mucho estas tareas.
+ La herramienta SWIG (Simplified Wrapper and Interface Generator) simplifica mucho estas tareas.
  
 \end_layout
 
@@ -184,10 +202,12 @@ La página web de
 \family typewriter
 www.python.org
 \family default
- es el lugar para empezar cualquier búsqueda de material relacionado con
- Python.
- Encontrará ayuda, documentación, enlaces a otros sitios, SIG (Special Interest
- Groups), y listas de correo a las que se puede unir.
+ es el lugar para empezar cualquier búsqueda de material relacionado con Python.
+ Encontrará ayuda,
+ documentación,
+ enlaces a otros sitios,
+ SIG (Special Interest Groups),
+ y listas de correo a las que se puede unir.
 \end_layout
 
 \begin_layout Itemize
@@ -195,9 +215,10 @@ EL proyecto Open Book
 \family typewriter
 www.ibiblio.com/obp
 \family default
- no sólo contiene este libro en línea, también los libros similares para
- Java y C++ de Allen Downey.
- Además, está 
+ no sólo contiene este libro en línea,
+ también los libros similares para Java y C++ de Allen Downey.
+ Además,
+ está 
 \begin_inset ERT
 status collapsed
 
@@ -233,7 +254,8 @@ status collapsed
 \end_inset
 
  de Tony R.
- Kuphaldt, 
+ Kuphaldt,
+ 
 \begin_inset ERT
 status collapsed
 
@@ -268,8 +290,7 @@ status collapsed
 
 \end_inset
 
- un conjunto de tutoriales (que cubren varios tópicos en ciencias de la
- computación) que han sido escritos y editados por estudiantes universitarios;
+ un conjunto de tutoriales (que cubren varios tópicos en ciencias de la computación) que han sido escritos y editados por estudiantes universitarios;
  
 \begin_inset ERT
 status collapsed
@@ -305,8 +326,9 @@ status collapsed
 
 \end_inset
 
-, un conjunto de casos de estudio en Python escrito por Chris Meyers, y
- 
+,
+ un conjunto de casos de estudio en Python escrito por Chris Meyers,
+ y 
 \begin_inset ERT
 status collapsed
 
@@ -341,7 +363,8 @@ status collapsed
 
 \end_inset
 
- de Michael Stultz, con 300 páginas de consejos y sugerencias.
+ de Michael Stultz,
+ con 300 páginas de consejos y sugerencias.
 \end_layout
 
 \begin_layout Itemize
@@ -428,10 +451,13 @@ status collapsed
 
 \end_inset
 
-, de Wesley Chun, es un gran libro de 750 páginas, aproximadamente.
+,
+ de Wesley Chun,
+ es un gran libro de 750 páginas,
+ aproximadamente.
  La primera parte cubre las características básicas.
- La segunda introduce adecuadamente muchos tópicos más avanzados, incluyendo
- muchos de los que mencionamos anteriormente.
+ La segunda introduce adecuadamente muchos tópicos más avanzados,
+ incluyendo muchos de los que mencionamos anteriormente.
 \end_layout
 
 \begin_layout Itemize
@@ -469,9 +495,11 @@ status collapsed
 
 \end_inset
 
-, de David M.
- Beazley, es un pequeño libro, pero contiene mucha información sobre el
- lenguaje y la biblioteca estándar.
+,
+ de David M.
+ Beazley,
+ es un pequeño libro,
+ pero contiene mucha información sobre el lenguaje y la biblioteca estándar.
  También provee un excelente índice.
 \end_layout
 
@@ -510,7 +538,9 @@ status collapsed
 
 \end_inset
 
-, de Mark Lutz, realmente cabe en su bolsillo.
+,
+ de Mark Lutz,
+ realmente cabe en su bolsillo.
  Aunque no es tan comprensivo como 
 \begin_inset ERT
 status collapsed
@@ -546,7 +576,8 @@ status collapsed
 
 \end_inset
 
-; es una buena referencia para las funciones y módulos más usados.
+;
+ es una buena referencia para las funciones y módulos más usados.
  Mark Lutz también es el autor de 
 \begin_inset ERT
 status collapsed
@@ -582,8 +613,8 @@ status collapsed
 
 \end_inset
 
-, uno de los primeros (y más grandes) libros sobre Python que no está dirigido
- a novatos.
+,
+ uno de los primeros (y más grandes) libros sobre Python que no está dirigido a novatos.
  Su libro posterior 
 \begin_inset ERT
 status collapsed
@@ -657,7 +688,9 @@ status collapsed
 
 \end_inset
 
-, de Mark Hammond y Andy Robinson, se 
+,
+ de Mark Hammond y Andy Robinson,
+ se 
 \begin_inset Quotes eld
 \end_inset
 
@@ -666,9 +699,9 @@ debe tener
 \end_inset
 
  si pretende construir aplicaciones para el sistema operativo Windows.
- Entre otras cosas cubre la integración entre Python y COM, construye una
- pequeña aplicación con wxPython, e incluso realiza guiones que agregan
- funcionalidad a aplicaciones como Word y Excel.
+ Entre otras cosas cubre la integración entre Python y COM,
+ construye una pequeña aplicación con wxPython,
+ e incluso realiza guiones que agregan funcionalidad a aplicaciones como Word y Excel.
 \end_layout
 
 \begin_layout Section
@@ -676,10 +709,8 @@ Libros generales de ciencias de la computación recomendados
 \end_layout
 
 \begin_layout Standard
-Las siguientes sugerencias de lectura incluyen muchos de los libros favoritos
- de los autores.
- Tratan sobre buenas prácticas de programación y las ciencias de la computación
- en general.
+Las siguientes sugerencias de lectura incluyen muchos de los libros favoritos de los autores.
+ Tratan sobre buenas prácticas de programación y las ciencias de la computación en general.
 \end_layout
 
 \begin_layout Itemize
@@ -717,11 +748,11 @@ status collapsed
 
 \end_inset
 
- de Kernighan y Pike no sólo cubre el diseño y la codificación de algoritmos
- y estructuras de datos, sino que también trata la depuración, las pruebas
- y la optimización de los programas.
- La mayoría de los ejemplos está escrita en C++ y Java, no hay ninguno en
- Python.
+ de Kernighan y Pike no sólo cubre el diseño y la codificación de algoritmos y estructuras de datos,
+ sino que también trata la depuración,
+ las pruebas y la optimización de los programas.
+ La mayoría de los ejemplos está escrita en C++ y Java,
+ no hay ninguno en Python.
 \end_layout
 
 \begin_layout Itemize
@@ -759,13 +790,14 @@ status collapsed
 
 \end_inset
 
-, editado por Al Vermeulen, es otro libro pequeño que discute algunos de
- los puntos mas sutiles de la buena programación, como el uso de buenas
- convenciones para los nombres, comentarios, incluso el uso de los espacios
- en blanco y la indentación (algo que no es problema en Python).
- El libro también cubre la programación por contrato que usa aserciones
- para atrapar errores mediante el chequeo de pre y postcondiciones, y la
- programación multihilo.
+,
+ editado por Al Vermeulen,
+ es otro libro pequeño que discute algunos de los puntos mas sutiles de la buena programación,
+ como el uso de buenas convenciones para los nombres,
+ comentarios,
+ incluso el uso de los espacios en blanco y la indentación (algo que no es problema en Python).
+ El libro también cubre la programación por contrato que usa aserciones para atrapar errores mediante el chequeo de pre y postcondiciones,
+ y la programación multihilo.
 \end_layout
 
 \begin_layout Itemize
@@ -803,9 +835,10 @@ status collapsed
 
 \end_inset
 
-, de Jon Bentley, es un libro clásico.
- Comprende varios casos de estudio que aparecieron originalmente en la columna
- del autor en las 
+,
+ de Jon Bentley,
+ es un libro clásico.
+ Comprende varios casos de estudio que aparecieron originalmente en la columna del autor en las 
 \begin_inset ERT
 status collapsed
 
@@ -841,13 +874,13 @@ status collapsed
 \end_inset
 
 .
- Los estudios examinan los compromisos que hay que tomar cuando se programa
- y por qué tan a menudo es una mala idea apresurarse con la primera idea
- que se tiene para desarrollar un programa.
- Este libro es uno poco más viejo que los otros (1986), así que los ejemplos
- están escritos en lenguajes más viejos.
- Hay muchos problemas para resolver, algunos traen pistas y otros su solución.
- Este libro fue muy popular, incluso hay un segundo volumen.
+ Los estudios examinan los compromisos que hay que tomar cuando se programa y por qué tan a menudo es una mala idea apresurarse con la primera idea que se tiene para desarrollar un programa.
+ Este libro es uno poco más viejo que los otros (1986),
+ así que los ejemplos están escritos en lenguajes más viejos.
+ Hay muchos problemas para resolver,
+ algunos traen pistas y otros su solución.
+ Este libro fue muy popular,
+ incluso hay un segundo volumen.
 \end_layout
 
 \begin_layout Itemize
@@ -885,9 +918,11 @@ status collapsed
 
 \end_inset
 
-, de A.K Dewdney, hace una amable introducción a 66 tópicos en ciencias de
- la computación, que van desde la computación paralela hasta los virus de
- computador, desde escanografías hasta algoritmos genéticos.
+,
+ de A.K Dewdney,
+ hace una amable introducción a 66 tópicos en ciencias de la computación,
+ que van desde la computación paralela hasta los virus de computador,
+ desde escanografías hasta algoritmos genéticos.
  Todos son cortos e interesantes.
  Un libro anterior de Dewdney 
 \begin_inset ERT
@@ -994,7 +1029,8 @@ status collapsed
 
 \end_inset
 
-, estos libros son una rica fuente de ideas para emprender proyectos.
+,
+ estos libros son una rica fuente de ideas para emprender proyectos.
 \end_layout
 
 \begin_layout Itemize
@@ -1021,7 +1057,8 @@ em
 
 \end_inset
 
- Turtles, Termites and Traffic Jams
+ Turtles,
+ Termites and Traffic Jams
 \begin_inset ERT
 status collapsed
 
@@ -1032,16 +1069,14 @@ status collapsed
 
 \end_inset
 
-, de Mitchel Resnick, trata sobre el poder de la descentralización y cómo
- el comportamiento complejo puede emerger de la simple actividad coordinada
- de una multitud de agentes.
+,
+ de Mitchel Resnick,
+ trata sobre el poder de la descentralización y cómo el comportamiento complejo puede emerger de la simple actividad coordinada de una multitud de agentes.
  Introduce el lenguaje StarLogo que permite escribir programas multiagentes.
  Los programas examinados demuestran el comportamiento complejo agregado,
  que a menudo es contraintuitivo.
- Muchos de estos programas fueron escritos por estudiantes de colegio y
- universidad.
- Programas similares pueden escribirse en Python usando hilos y gráficos
- simples.
+ Muchos de estos programas fueron escritos por estudiantes de colegio y universidad.
+ Programas similares pueden escribirse en Python usando hilos y gráficos simples.
 \end_layout
 
 \begin_layout Itemize
@@ -1068,7 +1103,8 @@ em
 
 \end_inset
 
- Gödel, Escher y Bach
+ Gödel,
+ Escher y Bach
 \begin_inset ERT
 status collapsed
 
@@ -1079,9 +1115,11 @@ status collapsed
 
 \end_inset
 
-, de Douglas Hofstadter.
- Simplemente, si usted ha encontrado magia en la recursión, también la encontrar
-á en éste best seller.
+,
+ de Douglas Hofstadter.
+ Simplemente,
+ si usted ha encontrado magia en la recursión,
+ también la encontrará en éste best seller.
  Uno de los temas que trata Hofstadter es el de los 
 \begin_inset Quotes eld
 \end_inset
@@ -1090,8 +1128,8 @@ ciclos extraños
 \begin_inset Quotes erd
 \end_inset
 
-, en los que los patrones evolucionan y ascienden hasta que se encuentran
- a sí mismos otra vez.
+,
+ en los que los patrones evolucionan y ascienden hasta que se encuentran a sí mismos otra vez.
  La tesis de Hofstadter es que esos 
 \begin_inset Quotes eld
 \end_inset
@@ -1101,8 +1139,8 @@ ciclos extraños
 \end_inset
 
  son una parte esencial de lo que separa lo animado de lo inanimado.
- Él muestra patrones como éstos en la música de Bach, los cuadros de Escher
- y el teorema de incompletitud de Gödel.
+ Él muestra patrones como éstos en la música de Bach,
+ los cuadros de Escher y el teorema de incompletitud de Gödel.
 \end_layout
 
 \end_body

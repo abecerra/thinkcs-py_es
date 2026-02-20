@@ -1,15 +1,15 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -18,9 +18,13 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -50,6 +54,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -58,15 +65,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -81,30 +96,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -122,6 +146,8 @@ Composición
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -132,6 +158,8 @@ composición
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -146,8 +174,9 @@ estructura anidada
 \begin_layout Standard
 En este momento usted ya ha visto varios ejemplos de composición.
  Uno de los primeros fue una invocación de un método como parte de una expresión.
- Otro ejemplo es la estructura anidada de sentencias; por ejemplo, se puede
- colocar una sentencia 
+ Otro ejemplo es la estructura anidada de sentencias;
+ por ejemplo,
+ se puede colocar una sentencia 
 \family typewriter
 if
 \family default
@@ -155,7 +184,8 @@ if
 \family typewriter
 while
 \family default
-, dentro de otra sentencia 
+,
+ dentro de otra sentencia 
 \family typewriter
 if
 \family default
@@ -163,15 +193,17 @@ if
 \end_layout
 
 \begin_layout Standard
-Después de observar esto y haber aprendido sobre listas y objetos no debería
- sorprenderse al saber que se pueden crear listas de objetos.
- También pueden crearse objetos que contengan listas (como atributos), listas
- que contengan listas, objetos que contengan objetos, y así sucesivamente.
+Después de observar esto y haber aprendido sobre listas y objetos no debería sorprenderse al saber que se pueden crear listas de objetos.
+ También pueden crearse objetos que contengan listas (como atributos),
+ listas que contengan listas,
+ objetos que contengan objetos,
+ y así sucesivamente.
 \end_layout
 
 \begin_layout Standard
-En este capítulo y el siguiente, mostraremos algunos ejemplos de estas combinaci
-ones, usando objetos 
+En este capítulo y el siguiente,
+ mostraremos algunos ejemplos de estas combinaciones,
+ usando objetos 
 \family typewriter
 Carta
 \family default
@@ -188,6 +220,8 @@ Carta
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -198,6 +232,8 @@ Carta
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -210,19 +246,34 @@ clase!Carta
 \end_layout
 
 \begin_layout Standard
-Si usted no tiene familiaridad con juegos de cartas este es un buen momento
- para conseguir una baraja, de lo contrario este capítulo no tendrá mucho
- sentido.
- Hay cincuenta y dos cartas en una baraja, cada una pertenece a una de las
- cuatro figuras y uno de los trece valores.
- Las figuras son Picas, Corazones, Diamantes y Tréboles.
- Los valores son As, 2, 3, 4, 5, 6, 7, 8, 9, 10, J, Q, K.
- Dependiendo del juego, el valor del As puede ser más alto que el de un
- rey o más bajo que 2.
+Si usted no tiene familiaridad con juegos de cartas este es un buen momento para conseguir una baraja,
+ de lo contrario este capítulo no tendrá mucho sentido.
+ Hay cincuenta y dos cartas en una baraja,
+ cada una pertenece a una de las cuatro figuras y uno de los trece valores.
+ Las figuras son Picas,
+ Corazones,
+ Diamantes y Tréboles.
+ Los valores son As,
+ 2,
+ 3,
+ 4,
+ 5,
+ 6,
+ 7,
+ 8,
+ 9,
+ 10,
+ J,
+ Q,
+ K.
+ Dependiendo del juego,
+ el valor del As puede ser más alto que el de un rey o más bajo que 2.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -233,6 +284,8 @@ valor
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -265,12 +318,13 @@ Picas
 Reina
 \family default
  para los valores.
- Un problema de esta implementación es que no sería tan fácil comparar cartas
- para ver cuál tiene un valor mayor o una figura mayor.
+ Un problema de esta implementación es que no sería tan fácil comparar cartas para ver cuál tiene un valor mayor o una figura mayor.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -281,6 +335,8 @@ codificar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -291,6 +347,8 @@ encriptar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -316,7 +374,8 @@ codificar
 \begin_inset Quotes erd
 \end_inset
 
-, no estamos haciendo alusión a encriptar o traducir a un código secreto.
+,
+ no estamos haciendo alusión a encriptar o traducir a un código secreto.
  Lo que un científico de la computación considera 
 \begin_inset Quotes eld
 \end_inset
@@ -329,8 +388,7 @@ codificar
 \begin_inset Quotes eld
 \end_inset
 
-definir una correspondencia entre una secuencia de números y los objetos
- que deseamos representar
+definir una correspondencia entre una secuencia de números y los objetos que deseamos representar
 \begin_inset Quotes erd
 \end_inset
 
@@ -507,13 +565,12 @@ afterfig
 \end_layout
 
 \begin_layout Standard
-Una característica notable de esta correspondencia es que las figuras aparecen
- en orden decreciente de valor así como los enteros van disminuyendo.
- De esta forma, podemos comparar figuras mediante los enteros que las representa
-n.
- Una correspondencia para los valores es bastante sencilla; cada número
- se relaciona con el entero correspondiente, y para las cartas que se representa
-n con letras tenemos lo siguiente:
+Una característica notable de esta correspondencia es que las figuras aparecen en orden decreciente de valor así como los enteros van disminuyendo.
+ De esta forma,
+ podemos comparar figuras mediante los enteros que las representan.
+ Una correspondencia para los valores es bastante sencilla;
+ cada número se relaciona con el entero correspondiente,
+ y para las cartas que se representan con letras tenemos lo siguiente:
 \end_layout
 
 \begin_layout Standard
@@ -685,9 +742,9 @@ afterfig
 \end_layout
 
 \begin_layout Standard
-La razón para usar notación matemática en estas correspondencias es que
- ellas no hacen parte del programa en Python.
- Son parte del diseño, pero nunca aparecen explícitamente en el código fuente.
+La razón para usar notación matemática en estas correspondencias es que ellas no hacen parte del programa en Python.
+ Son parte del diseño,
+ pero nunca aparecen explícitamente en el código fuente.
  La definición de la clase 
 \family typewriter
 Carta
@@ -697,34 +754,38 @@ Carta
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Carta:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def __init__(self, figura=0, valor=0):
+  def __init__(self,
+ figura=0,
+ valor=0):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     self.figura = figura
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     self.valor = valor
 \end_layout
 
 \end_inset
 
- Como de costumbre, proporcionamos un método de inicialización que toma
- un parámetro opcional para cada atributo.
+ Como de costumbre,
+ proporcionamos un método de inicialización que toma un parámetro opcional para cada atributo.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -737,14 +798,16 @@ constructor
 \end_layout
 
 \begin_layout Standard
-Para crear un objeto que represente el 3 de tréboles, usamos este comando:
+Para crear un objeto que represente el 3 de tréboles,
+ usamos este comando:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-tresTreboles = Carta(0, 3)
+tresTreboles = Carta(0,
+ 3)
 \end_layout
 
 \end_inset
@@ -753,11 +816,13 @@ tresTreboles = Carta(0, 3)
 \end_layout
 
 \begin_layout Standard
-El primer argumento, 
+El primer argumento,
+ 
 \family typewriter
 0
 \family default
-, representa la figura (tréboles).
+,
+ representa la figura (tréboles).
 \end_layout
 
 \begin_layout Section
@@ -768,6 +833,8 @@ __str__
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -778,10 +845,13 @@ atributo de clase
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-atributo! de clase
+atributo!
+ de clase
 \end_layout
 
 \end_inset
@@ -794,8 +864,8 @@ Para imprimir objetos
 \family typewriter
 Carta
 \family default
- en una forma que la gente pueda leer fácilmente, queremos establecer una
- correspondencia entre códigos enteros y palabras.
+ en una forma que la gente pueda leer fácilmente,
+ queremos establecer una correspondencia entre códigos enteros y palabras.
  Una forma natural de hacerlo es con listas de cadenas de texto.
  Asignamos estas listas a 
 \series bold
@@ -806,55 +876,70 @@ atributos de clase
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Carta:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  listaFiguras = ["Treboles", "Diamantes", "Corazones", 
+  listaFiguras = ["Treboles",
+ "Diamantes",
+ "Corazones",
+ 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   "Picas"]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  listaValores = ["narf", "As", "2", "3", "4", "5", "6", 
+  listaValores = ["narf",
+ "As",
+ "2",
+ "3",
+ "4",
+ "5",
+ "6",
+ 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  "7","8", "9", "10", "Jota", "Reina", "Rey"]
+  "7","8",
+ "9",
+ "10",
+ "Jota",
+ "Reina",
+ "Rey"]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   # se omite el metodo init
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def __str__(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return self.listaFiguras[self.valor] + " de " + 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             self.listaValores[self.figura]
 \end_layout
@@ -865,8 +950,7 @@ class Carta:
 \end_layout
 
 \begin_layout Standard
-Un atributo de clase se define afuera de los métodos y puede ser accedido
- desde cualquiera de ellos.
+Un atributo de clase se define afuera de los métodos y puede ser accedido desde cualquiera de ellos.
 \end_layout
 
 \begin_layout Standard
@@ -874,7 +958,8 @@ Dentro de
 \family typewriter
 __str__
 \family default
-, podemos usar a 
+,
+ podemos usar a 
 \family typewriter
 listaFiguras
 \family default
@@ -886,7 +971,8 @@ listaValores
 \family typewriter
 figura
 \family default
-, 
+,
+ 
 \family typewriter
 valor
 \family default
@@ -920,7 +1006,8 @@ self
 \family typewriter
 listaFiguras
 \family default
-, esto seleccionará la cadena de texto apropiada
+,
+ esto seleccionará la cadena de texto apropiada
 \begin_inset Quotes erd
 \end_inset
 
@@ -944,31 +1031,34 @@ narf
 \family typewriter
 listaValores
 \family default
- consiste en ocupar el elemento cero de la lista que no va a ser usado en
- el programa.
+ consiste en ocupar el elemento cero de la lista que no va a ser usado en el programa.
  Los valores válidos son de 1 a 13.
- Este elemento desperdiciado no es necesario, podríamos haber empezado a
- contar desde 0, pero es menos confuso codificar 2 como 2, 3 como 3 ...
+ Este elemento desperdiciado no es necesario,
+ podríamos haber empezado a contar desde 0,
+ pero es menos confuso codificar 2 como 2,
+ 3 como 3 ...
  y 13 como 13.
 \end_layout
 
 \begin_layout Standard
-Con los métodos que tenemos hasta aquí, podemos crear e imprimir cartas:
+Con los métodos que tenemos hasta aquí,
+ podemos crear e imprimir cartas:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> c1 = Carta(1, 11)
+>>> c1 = Carta(1,
+ 11)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(c1)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Jota de Diamantes
 \end_layout
@@ -996,36 +1086,38 @@ Carta
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> c2 = Carta(1, 3)
+>>> c2 = Carta(1,
+ 3)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(c2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 3 de Diamantes
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(c2.listaFiguras[1])
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Diamantes
 \end_layout
 
 \end_inset
 
- La desventaja es que si modificamos un atributo de clase, afecta a todas
- las otras instancias de la clase.
- Por ejemplo, si decidimos que 
+ La desventaja es que si modificamos un atributo de clase,
+ afecta a todas las otras instancias de la clase.
+ Por ejemplo,
+ si decidimos que 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1046,6 +1138,8 @@ Caballero de Rombos rojos,
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1056,6 +1150,8 @@ instancia!objeto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1072,17 +1168,17 @@ objeto instancia
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> c1.listaFiguras[1] = "Caballero de Rombos rojos"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(c1)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Caballero de Rombos rojos
 \end_layout
@@ -1132,12 +1228,12 @@ status collapsed
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(c2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 3 de Rombos rojos
 \end_layout
@@ -1160,6 +1256,8 @@ name "comparecard"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1170,6 +1268,8 @@ operador!condicional
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1186,27 +1286,34 @@ Para los tipos primitivos contamos con los operadores (
 \family typewriter
 <
 \family default
-, 
+,
+ 
 \family typewriter
 >
 \family default
-, 
+,
+ 
 \family typewriter
 ==
 \family default
-, etc.) que determinan cuándo un valor es mayor, menor, mayor o igual, menor
- o igual, o igual al otro.
- Para los tipos definidos por el programador podemos sobrecargar el comportamien
-to de los operadores predefinidos proporcionando un método llamado 
+,
+ etc.) que determinan cuándo un valor es mayor,
+ menor,
+ mayor o igual,
+ menor o igual,
+ o igual al otro.
+ Para los tipos definidos por el programador podemos sobrecargar el comportamiento de los operadores predefinidos proporcionando un método llamado 
 \family typewriter
 __cmp__
 \family default
 .
- Por convención, 
+ Por convención,
+ 
 \family typewriter
 __cmp__
 \family default
- toma dos parámetros, 
+ toma dos parámetros,
+ 
 \family typewriter
 self
 \family default
@@ -1214,12 +1321,15 @@ self
 \family typewriter
 otro
 \family default
-, y retorna 1 si el primer objeto es más grande, -1 si el segundo es más
- grande y 0 si son iguales entre si.
+,
+ y retorna 1 si el primer objeto es más grande,
+ -1 si el segundo es más grande y 0 si son iguales entre si.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1230,6 +1340,8 @@ sobrecargar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1240,6 +1352,8 @@ sobrecarga de operadores
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1250,6 +1364,8 @@ orden
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1260,6 +1376,8 @@ orden total
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1272,27 +1390,35 @@ orden parcial
 \end_layout
 
 \begin_layout Standard
-Algunos tipos tienen un orden total, lo que quiere decir que cualquier pareja
- de elementos se puede comparar para decidir cuál de ellos es mayor.
- Por ejemplo, los números enteros y los de punto flotante tienen un orden
- total.
- Algunos conjuntos no tienen relación de orden, lo que quiere decir que
- no hay una manera sensata de determinar que un elemento es mayor que otro.
- Por ejemplo, las frutas no tienen una relación de orden, y esta es la razón
- por la que no se pueden comparar manzanas con naranjas.
+Algunos tipos tienen un orden total,
+ lo que quiere decir que cualquier pareja de elementos se puede comparar para decidir cuál de ellos es mayor.
+ Por ejemplo,
+ los números enteros y los de punto flotante tienen un orden total.
+ Algunos conjuntos no tienen relación de orden,
+ lo que quiere decir que no hay una manera sensata de determinar que un elemento es mayor que otro.
+ Por ejemplo,
+ las frutas no tienen una relación de orden,
+ y esta es la razón por la que no se pueden comparar manzanas con naranjas.
 \end_layout
 
 \begin_layout Standard
-El conjunto de cartas tiene un orden parcial, lo que quiere decir que algunas
- veces se pueden comparar elementos, y otras veces no.
- Por ejemplo, el 3 de Picas es mayor que el 2 de picas, y el 3 de Diamantes
- es mayor que el 3 de Picas.
- Pero, ¿que es más alto, el 3 de Picas o el 2 de Diamantes? Uno tiene un
- valor más alto, pero el otro tiene una figura más alta.
+El conjunto de cartas tiene un orden parcial,
+ lo que quiere decir que algunas veces se pueden comparar elementos,
+ y otras veces no.
+ Por ejemplo,
+ el 3 de Picas es mayor que el 2 de picas,
+ y el 3 de Diamantes es mayor que el 3 de Picas.
+ Pero,
+ ¿que es más alto,
+ el 3 de Picas o el 2 de Diamantes?
+ Uno tiene un valor más alto,
+ pero el otro tiene una figura más alta.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1305,12 +1431,14 @@ comparable
 \end_layout
 
 \begin_layout Standard
-Para lograr comparar las cartas, hay que tomar una decisión sobre la importancia
- del valor y de la figura.
- Para ser honestos, esta decisión es arbitraria.
+Para lograr comparar las cartas,
+ hay que tomar una decisión sobre la importancia del valor y de la figura.
+ Para ser honestos,
+ esta decisión es arbitraria.
  Así que tomaremos la opción de determinar qué figura es más importante,
  basándonos en que un mazo de cartas nuevo viene con las Picas (en orden),
- luego los Diamantes, y así sucesivamente.
+ luego los Diamantes,
+ y así sucesivamente.
 \end_layout
 
 \begin_layout Standard
@@ -1323,49 +1451,54 @@ __cmp__
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def __cmp__(self, otro):
+def __cmp__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   # chequea las figuras
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  if self.figura > otro.figura: return 1
+  if self.figura > otro.figura:
+ return 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  if self.figura < otro.figura: return -1
+  if self.figura < otro.figura:
+ return -1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   # Si tienen la misma figura...
  
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  if self.valor > otro.valor: return 1
+  if self.valor > otro.valor:
+ return 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  if self.valor < otro.valor: return -1
+  if self.valor < otro.valor:
+ return -1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   # si los valores son iguales...
  hay un empate
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return 0
 \end_layout
@@ -1385,6 +1518,8 @@ Mazos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1395,6 +1530,8 @@ lista!de objetos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1405,6 +1542,8 @@ objeto!lista de
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1421,14 +1560,15 @@ Ahora que tenemos objetos para representar
 \family typewriter
 Carta
 \family default
-s, el siguiente paso lógico consiste en definir una clase para representar
- un 
+s,
+ el siguiente paso lógico consiste en definir una clase para representar un 
 \family typewriter
 Mazo
 \family default
 .
- Por supuesto, un mazo (o baraja) está compuesto por cartas, así que cada
- instancia de 
+ Por supuesto,
+ un mazo (o baraja) está compuesto por cartas,
+ así que cada instancia de 
 \family typewriter
 Mazo
 \family default
@@ -1437,6 +1577,8 @@ Mazo
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1447,6 +1589,8 @@ método de inicialización
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1473,6 +1617,8 @@ cartas
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1483,6 +1629,8 @@ composición
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1499,34 +1647,36 @@ ciclo!anidado
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Mazo:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def __init__(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     self.cartas = []
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     for figura in range(4):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      for valor in range(1, 14):
+      for valor in range(1,
+ 14):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        self.cartas.append(Carta(figura, valor))
+        self.cartas.append(Carta(figura,
+ valor))
 \end_layout
 
 \end_inset
@@ -1561,6 +1711,8 @@ append
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1571,6 +1723,8 @@ método append
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1581,6 +1735,8 @@ método de lista
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1605,6 +1761,8 @@ name "printdeck"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1617,13 +1775,15 @@ imprimir!objeto mazo
 \end_layout
 
 \begin_layout Standard
-Como de costumbre, cuando definimos un nuevo tipo de objeto, deseamos tener
- un método que imprima su contenido.
+Como de costumbre,
+ cuando definimos un nuevo tipo de objeto,
+ deseamos tener un método que imprima su contenido.
  Para imprimir un 
 \family typewriter
 Mazo
 \family default
-, recorremos la lista e imprimimos cada objeto 
+,
+ recorremos la lista e imprimimos cada objeto 
 \family typewriter
 Carta
 \family default
@@ -1632,27 +1792,27 @@ Carta
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Mazo:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   ...
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def imprimirMazo(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     for carta in self.cartas:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       print(carta)
 \end_layout
@@ -1663,8 +1823,8 @@ class Mazo:
 \end_layout
 
 \begin_layout Standard
-En este ejemplo y en los que siguen, los puntos suspensivos indican que
- hemos omitido los otros métodos de la clase.
+En este ejemplo y en los que siguen,
+ los puntos suspensivos indican que hemos omitido los otros métodos de la clase.
 \end_layout
 
 \begin_layout Standard
@@ -1686,8 +1846,8 @@ Mazo
 __str__
 \family default
  radica en su mayor flexibilidad.
- Además de imprimir el contenido del objeto, genera una representación de
- él en una cadena de texto que puede manipularse en otros lugares del programa,
+ Además de imprimir el contenido del objeto,
+ genera una representación de él en una cadena de texto que puede manipularse en otros lugares del programa,
  incluso antes de imprimirse.
 \end_layout
 
@@ -1701,45 +1861,45 @@ __str__
 Mazo
 \family default
 .
- Para añadir un estilo de cascada, cada carta se imprime un espacio mas
- hacia la derecha que la anterior:
+ Para añadir un estilo de cascada,
+ cada carta se imprime un espacio mas hacia la derecha que la anterior:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Mazo:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   ...
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def __str__(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     s = ""
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     for i in range(len(self.cartas)):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       s = s + " "*i + str(self.cartas[i]) + "
 \backslash
 n"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return s
 \end_layout
@@ -1751,21 +1911,23 @@ n"
 
 \begin_layout Standard
 Este ejemplo demuestra varios puntos.
- Primero, en vez de recorrer los elementos de la lista 
+ Primero,
+ en vez de recorrer los elementos de la lista 
 \family typewriter
 self.cartas
 \family default
-, estamos usando a 
+,
+ estamos usando a 
 \family typewriter
 i
 \family default
- como variable de ciclo que lleva la posición de cada elemento en la lista
- de cartas.
+ como variable de ciclo que lleva la posición de cada elemento en la lista de cartas.
 \end_layout
 
 \begin_layout Standard
-Segundo, estamos usando el operador multiplicación aplicado a un número
- y una cadena, de forma que la expresión 
+Segundo,
+ estamos usando el operador multiplicación aplicado a un número y una cadena,
+ de forma que la expresión 
 \begin_inset ERT
 status collapsed
 
@@ -1786,11 +1948,13 @@ i
 \end_layout
 
 \begin_layout Standard
-Tercero, en vez de usar el comando 
+Tercero,
+ en vez de usar el comando 
 \family typewriter
 print
 \family default
- para realizar la impresión, utilizamos la función 
+ para realizar la impresión,
+ utilizamos la función 
 \family typewriter
 str
 \family default
@@ -1808,6 +1972,8 @@ __str__
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1820,7 +1986,8 @@ acumulador
 \end_layout
 
 \begin_layout Standard
-Finalmente, estamos usando a la variable 
+Finalmente,
+ estamos usando a la variable 
 \family typewriter
 s
 \family default
@@ -1834,13 +2001,13 @@ acumulador
 s
 \family default
  es la cadena vacía.
- En cada iteración del ciclo se genera una nueva cadena y se concatena con
- el valor viejo de 
+ En cada iteración del ciclo se genera una nueva cadena y se concatena con el valor viejo de 
 \family typewriter
 s
 \family default
  para obtener el nuevo valor.
- Cuando el ciclo finaliza, 
+ Cuando el ciclo finaliza,
+ 
 \family typewriter
 s
 \family default
@@ -1848,7 +2015,8 @@ s
 \family typewriter
 Mazo
 \family default
-, que se despliega (parcialmente) así:
+,
+ que se despliega (parcialmente) así:
 \end_layout
 
 \begin_layout Standard
@@ -1856,90 +2024,90 @@ Mazo
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> mazo = Mazo()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(mazo)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 As de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
  2 de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   3 de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
    4 de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     5 de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
      6 de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       7 de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
        8 de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         9 de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
          10 de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
           J de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            Reina de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             Rey de Picas
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
              As de Diamantes
 \end_layout
 
 \end_inset
 
- Aunque el resultado se despliega en 52 líneas, es una sola cadena que contiene
- caracteres nueva linea 
+ Aunque el resultado se despliega en 52 líneas,
+ es una sola cadena que contiene caracteres nueva linea 
 \begin_inset ERT
 status collapsed
 
@@ -1963,6 +2131,8 @@ Barajando el mazo
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1975,13 +2145,15 @@ barajar
 \end_layout
 
 \begin_layout Standard
-Si un mazo se baraja completamente, cualquier carta tiene la misma probabilidad
- de aparecer en cualquier posición, y cualquier posición tiene la misma
- probabilidad de contener a cualquier carta.
+Si un mazo se baraja completamente,
+ cualquier carta tiene la misma probabilidad de aparecer en cualquier posición,
+ y cualquier posición tiene la misma probabilidad de contener a cualquier carta.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1992,6 +2164,8 @@ random
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2004,7 +2178,8 @@ randrange
 \end_layout
 
 \begin_layout Standard
-Para barajar el mazo, usamos la función 
+Para barajar el mazo,
+ usamos la función 
 \family typewriter
 randrange
 \family default
@@ -2025,7 +2200,8 @@ a
 \family typewriter
 b
 \family default
-, y se encarga de escoger al azar un valor perteneciente al rango 
+,
+ y se encarga de escoger al azar un valor perteneciente al rango 
 \family typewriter
 a <= x < b
 \family default
@@ -2034,10 +2210,10 @@ a <= x < b
 \family typewriter
 b
 \family default
-, podemos usar el número de elementos de una lista como el segundo parámetro
- y siempre obtendremos un índice válido como resultado.
- Por ejemplo, esta expresión escoge al azar el índice de una carta en un
- mazo:
+,
+ podemos usar el número de elementos de una lista como el segundo parámetro y siempre obtendremos un índice válido como resultado.
+ Por ejemplo,
+ esta expresión escoge al azar el índice de una carta en un mazo:
 \end_layout
 
 \begin_layout Standard
@@ -2045,18 +2221,20 @@ b
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-random.randrange(0, len(self.cartas))
+random.randrange(0,
+ len(self.cartas))
 \end_layout
 
 \end_inset
 
- Una manera sencilla de barajar el mazo consiste en recorrer todas las cartas
- intercambiando cada una con otra carta escogida al azar.
- Es posible que la carta se intercambie consigo misma, pero esto no causa
- ningún problema.
- De hecho, si prohibiéramos esto, el orden de las cartas no sería tan aleatorio:
+ Una manera sencilla de barajar el mazo consiste en recorrer todas las cartas intercambiando cada una con otra carta escogida al azar.
+ Es posible que la carta se intercambie consigo misma,
+ pero esto no causa ningún problema.
+ De hecho,
+ si prohibiéramos esto,
+ el orden de las cartas no sería tan aleatorio:
 \end_layout
 
 \begin_layout Standard
@@ -2064,57 +2242,60 @@ random.randrange(0, len(self.cartas))
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Mazo:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   ...
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def barajar(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     import random
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     nCartas = len(self.cartas)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     for i in range(nCartas):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      j = random.randrange(i, nCartas)
+      j = random.randrange(i,
+ nCartas)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      self.cartas[i], self.cartas[j] = self.cartas[j], 
+      self.cartas[i],
+ self.cartas[j] = self.cartas[j],
+ 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                                        self.cartas[i]
 \end_layout
 
 \end_inset
 
- En vez de asumir que hay 52 cartas en el mazo, obtenemos el número de ellas
- a través de la función len y lo almacenamos en la variable 
+ En vez de asumir que hay 52 cartas en el mazo,
+ obtenemos el número de ellas a través de la función len y lo almacenamos en la variable 
 \family typewriter
 nCartas
 \family default
@@ -2123,6 +2304,8 @@ nCartas
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2133,6 +2316,8 @@ intercambiar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2143,6 +2328,8 @@ asignación de tuplas
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2155,8 +2342,10 @@ asignación!de tuplas
 \end_layout
 
 \begin_layout Standard
-Para cada carta en el mazo, escogemos, aleatoriamente, una carta de las
- que no han sido barajadas todavía.
+Para cada carta en el mazo,
+ escogemos,
+ aleatoriamente,
+ una carta de las que no han sido barajadas todavía.
  Intercambiamos la carta actual (con índice 
 \family typewriter
 i
@@ -2166,8 +2355,8 @@ i
 j
 \family default
 ).
- Para intercambiar las cartas usamos asignación de tuplas, como en la sección
- 
+ Para intercambiar las cartas usamos asignación de tuplas,
+ como en la sección 
 \begin_inset space ~
 \end_inset
 
@@ -2175,6 +2364,7 @@ j
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tuple assignment"
+nolink "false"
 
 \end_inset
 
@@ -2183,14 +2373,16 @@ reference "tuple assignment"
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-self.cartas[i], self.cartas[j] = self.cartas[j], 
+self.cartas[i],
+ self.cartas[j] = self.cartas[j],
+ 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                                  self.cartas[i]
 \end_layout
@@ -2206,6 +2398,8 @@ Eliminando y entregando cartas
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2226,8 +2420,9 @@ Mazo
 \family typewriter
 eliminarCarta
 \family default
-, que toma una carta como parámetro, la remueve y retorna True si la encontró
- en el mazo o False si no estaba:
+,
+ que toma una carta como parámetro,
+ la remueve y retorna True si la encontró en el mazo o False si no estaba:
 \end_layout
 
 \begin_layout Standard
@@ -2235,42 +2430,44 @@ eliminarCarta
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Mazo:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   ...
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def eliminarCarta(self, carta):
+  def eliminarCarta(self,
+ carta):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if carta in self.cartas:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       self.cartas.remove(carta)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       return True
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    else: 
+    else:
+ 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       return True
 \end_layout
@@ -2281,9 +2478,10 @@ class Mazo:
 \family typewriter
 in
 \family default
- retorna True si el primer operando se encuentra dentro del segundo, que
- debe ser una secuencia.
- Si el primer operando es un objeto, Python usa el método 
+ retorna True si el primer operando se encuentra dentro del segundo,
+ que debe ser una secuencia.
+ Si el primer operando es un objeto,
+ Python usa el método 
 \family typewriter
 __cmp__
 \family default
@@ -2296,7 +2494,8 @@ __cmp__
 \family typewriter
 Carta
 \family default
- detecta igualdad profunda, el método 
+ detecta igualdad profunda,
+ el método 
 \family typewriter
 eliminarCarta
 \family default
@@ -2305,6 +2504,8 @@ eliminarCarta
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2315,6 +2516,8 @@ operador in
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2327,8 +2530,7 @@ operador!in
 \end_layout
 
 \begin_layout Standard
-Para entregar cartas necesitamos eliminar y retornar la primera carta del
- mazo.
+Para entregar cartas necesitamos eliminar y retornar la primera carta del mazo.
  El método 
 \family typewriter
 pop
@@ -2338,29 +2540,30 @@ pop
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Mazo:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   ...
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def entregarCarta(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return self.cards.pop()
 \end_layout
 
 \end_inset
 
- En realidad, 
+ En realidad,
+ 
 \family typewriter
 pop
 \family default
@@ -2399,12 +2602,15 @@ status collapsed
 
 \end_inset
 
- carta de la lista, así que realmente estamos entregando cartas por la parte
- inferior, y esto no causa ningún inconveniente.
+ carta de la lista,
+ así que realmente estamos entregando cartas por la parte inferior,
+ y esto no causa ningún inconveniente.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2415,6 +2621,8 @@ función booleana
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2431,7 +2639,8 @@ Una operación más que podemos requerir es la función booleana
 \family typewriter
 estaVacio
 \family default
-, que retorna True si el mazo está vacío:
+,
+ que retorna True si el mazo está vacío:
 \end_layout
 
 \begin_layout Standard
@@ -2439,22 +2648,22 @@ estaVacio
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Mazo:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   ...
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def estaVacio(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return (len(self.cartas) == 0)
 \end_layout
@@ -2469,8 +2678,8 @@ Glosario
 \end_layout
 
 \begin_layout Description
-Codificar: representar un conjunto de valores usando otro conjunto de valores
- estableciendo una correspondencia entre ellos.
+Codificar:
+ representar un conjunto de valores usando otro conjunto de valores estableciendo una correspondencia entre ellos.
 \end_layout
 
 \begin_layout Description
@@ -2485,14 +2694,14 @@ Atributo de clase:
 \end_inset
 
  variable de una clase que está fuera de todos los métodos.
- Puede ser accedida desde todos los métodos y se comparte por todas las
- instancias de la clase.
+ Puede ser accedida desde todos los métodos y se comparte por todas las instancias de la clase.
 \end_layout
 
 \begin_layout Description
-Acumulador: variable que se usa para acumular una serie de valores en un
- ciclo.
- Por ejemplo, concatenar varios valores en una cadena o sumarlos.
+Acumulador:
+ variable que se usa para acumular una serie de valores en un ciclo.
+ Por ejemplo,
+ concatenar varios valores en una cadena o sumarlos.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2502,6 +2711,8 @@ Acumulador: variable que se usa para acumular una serie de valores en un
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2512,6 +2723,8 @@ codificar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2522,16 +2735,21 @@ atributo de clase
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-atributo! de clase
+atributo!
+ de clase
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2577,8 +2795,11 @@ __init__
 \end_layout
 
 \begin_layout Enumerate
-Agregue cuatro métodos a la clase para averiguar la cantidad de cada nucleótido
- en la secuencia, cuantas A, G, C, T.
+Agregue cuatro métodos a la clase para averiguar la cantidad de cada nucleótido en la secuencia,
+ cuantas A,
+ G,
+ C,
+ T.
 \end_layout
 
 \end_body

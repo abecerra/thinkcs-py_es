@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -15,10 +15,10 @@
 \newcommand{\adjustpage}[1]{\enlargethispage{#1\baselineskip}}
 \end_preamble
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -27,9 +27,13 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -59,6 +63,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -67,15 +74,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -90,30 +105,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -127,6 +151,8 @@ Iteración
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -144,6 +170,8 @@ Asignación múltiple
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -154,6 +182,8 @@ asignación
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -164,6 +194,8 @@ sentencia!asignación
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -176,10 +208,8 @@ asignación múltiple
 \end_layout
 
 \begin_layout Standard
-Puede que usted ya haya descubierto que es posible realizar más de una asignació
-n a la misma variable.
- Una nueva asignación hace que la variable existente se refiera a un nuevo
- valor (y deje de referirse al viejo valor).
+Puede que usted ya haya descubierto que es posible realizar más de una asignación a la misma variable.
+ Una nueva asignación hace que la variable existente se refiera a un nuevo valor (y deje de referirse al viejo valor).
 \end_layout
 
 \begin_layout Standard
@@ -187,19 +217,23 @@ n a la misma variable.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 pedro = 5
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 print(pedro)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 pedro = 7
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 print(pedro)
 \end_layout
 
@@ -227,7 +261,9 @@ porque la primera vez que
 \family typewriter
 pedro
 \family default
- se imprime, tiene el valor 5, y la segunda vez tiene el valor 7.
+ se imprime,
+ tiene el valor 5,
+ y la segunda vez tiene el valor 7.
 \end_layout
 
 \begin_layout Standard
@@ -298,14 +334,12 @@ afterfig
 \end_layout
 
 \begin_layout Standard
-Con asignación múltiple es muy importante distinguir entre una asignación
- y una igualdad.
+Con asignación múltiple es muy importante distinguir entre una asignación y una igualdad.
  Como Python usa el signo igual (
 \family typewriter
 =
 \family default
-) para la asignación podemos caer en la tentación de interpretar a una sentencia
- como 
+) para la asignación podemos caer en la tentación de interpretar a una sentencia como 
 \family typewriter
 a = b
 \family default
@@ -314,8 +348,10 @@ a = b
 \end_layout
 
 \begin_layout Standard
-Primero, la igualdad es conmutativa y la asignación no lo es.
- Por ejemplo, en la matemática si 
+Primero,
+ la igualdad es conmutativa y la asignación no lo es.
+ Por ejemplo,
+ en la matemática si 
 \begin_inset Formula $a=7$
 \end_inset
 
@@ -324,7 +360,8 @@ Primero, la igualdad es conmutativa y la asignación no lo es.
 \end_inset
 
 .
- Pero en Python, la sentencia 
+ Pero en Python,
+ la sentencia 
 \family typewriter
 a = 7
 \family default
@@ -336,7 +373,9 @@ a = 7
 \end_layout
 
 \begin_layout Standard
-Además, en matemática, una sentencia de igualdad 
+Además,
+ en matemática,
+ una sentencia de igualdad 
 \shape italic
 siempre
 \shape default
@@ -345,7 +384,8 @@ siempre
 \begin_inset Formula $a=b$
 \end_inset
 
- ahora, entonces 
+ ahora,
+ entonces 
 \begin_inset Formula $a$
 \end_inset
 
@@ -354,8 +394,8 @@ siempre
 \end_inset
 
 .
- En Python, una sentencia de asignación puede lograr que dos variables sean
- iguales pero sólo por un tiempo determinado:
+ En Python,
+ una sentencia de asignación puede lograr que dos variables sean iguales pero sólo por un tiempo determinado:
 \end_layout
 
 \begin_layout Standard
@@ -363,15 +403,18 @@ siempre
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 a = 5
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 b = a    # a y b ahora son iguales
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 a = 3    # a y b no son iguales ahora
 \end_layout
 
@@ -385,9 +428,9 @@ a
 \family typewriter
 b
 \family default
-, así que ya no serán iguales.
- En algunos lenguajes de programación se usa un signo diferente para la
- asignación como 
+,
+ así que ya no serán iguales.
+ En algunos lenguajes de programación se usa un signo diferente para la asignación como 
 \family typewriter
 <-
 \family default
@@ -400,8 +443,7 @@ b
 
 \begin_layout Standard
 Aunque la asignación múltiple puede ser útil se debe usar con precaución.
- Si los valores de las variables cambian frecuentemente se puede dificultar
- la lectura y la depuración del código.
+ Si los valores de las variables cambian frecuentemente se puede dificultar la lectura y la depuración del código.
 \end_layout
 
 \begin_layout Section
@@ -414,6 +456,8 @@ while (mientras)
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -424,6 +468,8 @@ sentencia while
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -434,6 +480,8 @@ sentencia!while
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -444,6 +492,8 @@ ciclo!while
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -457,12 +507,12 @@ iteración
 
 \begin_layout Standard
 Los computadores se usan a menudo para automatizar tareas repetitivas.
- Esto es algo que los computadores hacen bien y los seres humanos hacemos
- mal.
+ Esto es algo que los computadores hacen bien y los seres humanos hacemos mal.
 \end_layout
 
 \begin_layout Standard
-Hemos visto dos programas, 
+Hemos visto dos programas,
+ 
 \family typewriter
 nLineas
 \family default
@@ -470,14 +520,15 @@ nLineas
 \family typewriter
 conteo
 \family default
-, que usan la recursión para lograr repetir, lo que también se denomina
- 
+,
+ que usan la recursión para lograr repetir,
+ lo que también se denomina 
 \series bold
 iteración
 \series default
 .
- Como la iteración es tan común, Python proporciona varios elementos para
- facilitarla.
+ Como la iteración es tan común,
+ Python proporciona varios elementos para facilitarla.
  El primero que veremos es la sentencia 
 \family typewriter
 while
@@ -502,29 +553,35 @@ while
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 def conteo(n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   while n > 0:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
     print(n)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
     n = n-1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   print("Despegue!")
 \end_layout
 
 \end_inset
 
- Como eliminamos el llamado recursivo, esta función deja de ser recursiva.
+ Como eliminamos el llamado recursivo,
+ esta función deja de ser recursiva.
 \end_layout
 
 \begin_layout Standard
@@ -533,7 +590,8 @@ La sentencia
 while
 \family default
  se puede leer como en el lenguaje natural.
- Quiere decir, 
+ Quiere decir,
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -541,7 +599,8 @@ Mientras
 \family typewriter
 n
 \family default
- sea mayor que 0, continúe desplegando el valor de 
+ sea mayor que 0,
+ continúe desplegando el valor de 
 \family typewriter
 n
 \family default
@@ -550,7 +609,8 @@ n
 n
 \family default
  en 1.
- Cuando llegue a 0, despliegue la cadena 
+ Cuando llegue a 0,
+ despliegue la cadena 
 \family typewriter
 Despegue!
 \family default
@@ -562,7 +622,8 @@ Despegue!
 \end_layout
 
 \begin_layout Standard
-Más formalmente, el flujo de ejecución de una sentencia 
+Más formalmente,
+ el flujo de ejecución de una sentencia 
 \family typewriter
 while
 \family default
@@ -570,7 +631,8 @@ while
 \end_layout
 
 \begin_layout Enumerate
-Evalúa la condición, resultando en 
+Evalúa la condición,
+ resultando en 
 \family typewriter
 False
 \family default
@@ -582,7 +644,8 @@ True
 \end_layout
 
 \begin_layout Enumerate
-Si la condición es falsa (False), se sale de la sentencia 
+Si la condición es falsa (False),
+ se sale de la sentencia 
 \family typewriter
 while
 \family default
@@ -590,13 +653,12 @@ while
 \end_layout
 
 \begin_layout Enumerate
-Si la condición es cierta (True), ejecute cada una de las sentencias en
- el cuerpo y regrese al paso 1.
+Si la condición es cierta (True),
+ ejecute cada una de las sentencias en el cuerpo y regrese al paso 1.
 \end_layout
 
 \begin_layout Standard
-El cuerpo comprende todas las sentencias bajo la cabecera que tienen la
- misma indentación.
+El cuerpo comprende todas las sentencias bajo la cabecera que tienen la misma indentación.
 \end_layout
 
 \begin_layout Standard
@@ -611,6 +673,8 @@ ciclo
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -621,6 +685,8 @@ condición
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -631,6 +697,8 @@ ciclo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -641,6 +709,8 @@ ciclo!cuerpo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -651,6 +721,8 @@ cuerpo!ciclo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -661,6 +733,8 @@ ciclo infinito
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -673,19 +747,23 @@ ciclo!infinito
 \end_layout
 
 \begin_layout Standard
-El cuerpo del ciclo debería cambiar el valor de una o más variables, de
- forma que la condición se haga falsa en algún momento y el ciclo termine.
- De otra forma, el ciclo se repetirá para siempre, obteniendo un 
+El cuerpo del ciclo debería cambiar el valor de una o más variables,
+ de forma que la condición se haga falsa en algún momento y el ciclo termine.
+ De otra forma,
+ el ciclo se repetirá para siempre,
+ obteniendo un 
 \series bold
 ciclo infinito
 \series default
 .
- Una broma común entre los científicos de la computación es interpretar
- las instrucciones de los champús, 
+ Una broma común entre los científicos de la computación es interpretar las instrucciones de los champús,
+ 
 \begin_inset Quotes eld
 \end_inset
 
-Aplique champú, aplique rinse, repita,
+Aplique champú,
+ aplique rinse,
+ repita,
 \begin_inset Quotes erd
 \end_inset
 
@@ -697,12 +775,14 @@ En el caso de
 \family typewriter
 conteo
 \family default
-, podemos probar que el ciclo termina porque sabemos que el valor de 
+,
+ podemos probar que el ciclo termina porque sabemos que el valor de 
 \family typewriter
 n
 \family default
- es finito, y podemos ver que va haciéndose más pequeño cada vez que el
- while itera (da la vuelta), así que eventualmente llegaremos a 0.
+ es finito,
+ y podemos ver que va haciéndose más pequeño cada vez que el while itera (da la vuelta),
+ así que eventualmente llegaremos a 0.
  En otros casos esto no es tan fácil de asegurar:
 \end_layout
 
@@ -711,31 +791,40 @@ n
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 def secuencia(n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   while n != 1:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
     print(n),
 \end_layout
 
-\begin_layout Verbatim
-    if n%2 == 0:        # n es par
+\begin_layout Plain Layout
+
+    if n%2 == 0:
+        # n es par
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
       n = n/2
 \end_layout
 
-\begin_layout Verbatim
-    else:               # n es impar
+\begin_layout Plain Layout
+
+    else:
+               # n es impar
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
       n = n*3+1
 \end_layout
 
@@ -745,7 +834,8 @@ def secuencia(n):
 \family typewriter
 n != 1
 \family default
-, así que se repetirá hasta que 
+,
+ así que se repetirá hasta que 
 \family typewriter
 n
 \family default
@@ -753,7 +843,8 @@ n
 \family typewriter
 1
 \family default
-, lo que hará que la condición sea falsa.
+,
+ lo que hará que la condición sea falsa.
 \end_layout
 
 \begin_layout Standard
@@ -762,7 +853,8 @@ En cada iteración del ciclo while el programa despliega el valor de
 n
 \family default
  y luego chequea si es par o impar.
- Si es par, el valor de 
+ Si es par,
+ el valor de 
 \family typewriter
 n
 \family default
@@ -772,8 +864,15 @@ n
 n*3+1
 \family default
 .
- Si el valor inicial (del argumento) es 3, la secuencia que resulta es 3,
- 10, 5, 16, 8, 4, 2, 1.
+ Si el valor inicial (del argumento) es 3,
+ la secuencia que resulta es 3,
+ 10,
+ 5,
+ 16,
+ 8,
+ 4,
+ 2,
+ 1.
 \end_layout
 
 \begin_layout Standard
@@ -781,19 +880,21 @@ Como
 \family typewriter
 n
 \family default
- aumenta algunas veces y otras disminuye, no hay una demostración obvia
- de que 
+ aumenta algunas veces y otras disminuye,
+ no hay una demostración obvia de que 
 \family typewriter
 n
 \family default
- llegará a ser 1, o de que el programa termina.
+ llegará a ser 1,
+ o de que el programa termina.
  Para algunos valores particulares de 
 \family typewriter
 n
 \family default
  podemos demostrar la terminación.
- Por ejemplo, si el valor inicial es una potencia de dos, entonces el valor
- de 
+ Por ejemplo,
+ si el valor inicial es una potencia de dos,
+ entonces el valor de 
 \family typewriter
 n
 \family default
@@ -802,8 +903,8 @@ n
 \end_layout
 
 \begin_layout Standard
-Dejando los valores particulares de lado, la interesante pregunta que nos
- planteamos es si podemos demostrar que este programa termina para 
+Dejando los valores particulares de lado,
+ la interesante pregunta que nos planteamos es si podemos demostrar que este programa termina para 
 \begin_inset ERT
 status collapsed
 
@@ -843,7 +944,8 @@ status collapsed
 n
 \family default
 .
- Hasta ahora, ¡nadie ha sido capaz de probarlo 
+ Hasta ahora,
+ ¡nadie ha sido capaz de probarlo 
 \begin_inset ERT
 status collapsed
 
@@ -894,6 +996,8 @@ name "tables"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -904,6 +1008,8 @@ tabla
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -916,45 +1022,47 @@ logaritmo
 \end_layout
 
 \begin_layout Standard
-Una gama de aplicaciones donde los ciclos se destacan es la de generación
- de información tabular.
- Antes de que los computadores existieran la gente tenía que calcular logaritmos
-, senos, cosenos y otras funciones matemáticas a mano.
- Para facilitar la tarea, los libros matemáticos incluían largas tablas
- con los valores de dichas funciones.
- La creación de las tablas era un proceso lento y aburridor, y tendían a
- quedar con muchos errores.
+Una gama de aplicaciones donde los ciclos se destacan es la de generación de información tabular.
+ Antes de que los computadores existieran la gente tenía que calcular logaritmos,
+ senos,
+ cosenos y otras funciones matemáticas a mano.
+ Para facilitar la tarea,
+ los libros matemáticos incluían largas tablas con los valores de dichas funciones.
+ La creación de las tablas era un proceso lento y aburridor,
+ y tendían a quedar con muchos errores.
 \end_layout
 
 \begin_layout Standard
-Cuando los computadores entraron en escena, una de las reacciones iniciales
- fue 
+Cuando los computadores entraron en escena,
+ una de las reacciones iniciales fue 
 \begin_inset Quotes eld
 \end_inset
 
-Esto es maravilloso! Podemos usar los computadores para generar las tablas,
+Esto es maravilloso!
+ Podemos usar los computadores para generar las tablas,
  de forma que no habrían errores
 \begin_inset Quotes erd
 \end_inset
 
 .
- Eso resultó (casi) cierto, pero poco prospectivo.
- Poco después los computadores y las calculadoras se hicieron tan ubicuos
- que las tablas se hicieron obsoletas.
+ Eso resultó (casi) cierto,
+ pero poco prospectivo.
+ Poco después los computadores y las calculadoras se hicieron tan ubicuos que las tablas se hicieron obsoletas.
 \end_layout
 
 \begin_layout Standard
-Bueno, casi.
- Para algunas operaciones los computadores usan tablas de valores para obtener
- una respuesta aproximada y luego hacer mas cálculos para mejorar la aproximació
-n.
- En algunos casos, se han encontrado errores en las tablas subyacentes,
- el más famoso ha sido el de la tabla para realizar la división en punto
- flotante en los procesadores Pentium de la compañía Intel.
+Bueno,
+ casi.
+ Para algunas operaciones los computadores usan tablas de valores para obtener una respuesta aproximada y luego hacer mas cálculos para mejorar la aproximación.
+ En algunos casos,
+ se han encontrado errores en las tablas subyacentes,
+ el más famoso ha sido el de la tabla para realizar la división en punto flotante en los procesadores Pentium de la compañía Intel.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -965,6 +1073,8 @@ Intel
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -977,33 +1087,40 @@ Pentium
 \end_layout
 
 \begin_layout Standard
-Aunque una tabla logarítmica no es tan útil como en el pasado, todavía sirve
- como un buen ejemplo de iteración.
- El siguiente programa despliega una secuencia de valores en la columna
- izquierda y sus logaritmos en la columna derecha: 
+Aunque una tabla logarítmica no es tan útil como en el pasado,
+ todavía sirve como un buen ejemplo de iteración.
+ El siguiente programa despliega una secuencia de valores en la columna izquierda y sus logaritmos en la columna derecha:
+ 
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 import math
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 x = 1.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 while x < 10.0:
 \end_layout
 
-\begin_layout Verbatim
-  print(x, '
+\begin_layout Plain Layout
+
+  print(x,
+ '
 \backslash
-t', math.log(x))
+t',
+ math.log(x))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   x = x + 1.0
 \end_layout
 
@@ -1036,8 +1153,7 @@ tab
 \end_layout
 
 \begin_layout Standard
-A medida que los caracteres y las cadenas se despliegan en la pantalla un
- marcador invisible denominado 
+A medida que los caracteres y las cadenas se despliegan en la pantalla un marcador invisible denominado 
 \series bold
 cursor
 \series default
@@ -1046,55 +1162,65 @@ cursor
 \family typewriter
 print
 \family default
-, el cursor va al comienzo de la siguiente línea.
+,
+ el cursor va al comienzo de la siguiente línea.
 \end_layout
 
 \begin_layout Standard
-El carácter tabulador mueve el cursor hacia la derecha hasta que alcanza
- un punto de parada (cada cierto número de espacios, que pueden variar de
- sistema a sistema).
- Los tabuladores son útiles para alinear columnas de texto, como la salida
- del anterior programa:
+El carácter tabulador mueve el cursor hacia la derecha hasta que alcanza un punto de parada (cada cierto número de espacios,
+ que pueden variar de sistema a sistema).
+ Los tabuladores son útiles para alinear columnas de texto,
+ como la salida del anterior programa:
 \end_layout
 
 \begin_layout Verbatim
+
 1.0     0.0
 \end_layout
 
 \begin_layout Verbatim
+
 2.0     0.69314718056
 \end_layout
 
 \begin_layout Verbatim
+
 3.0     1.09861228867
 \end_layout
 
 \begin_layout Verbatim
+
 4.0     1.38629436112
 \end_layout
 
 \begin_layout Verbatim
+
 5.0     1.60943791243
 \end_layout
 
 \begin_layout Verbatim
+
 6.0     1.79175946923
 \end_layout
 
 \begin_layout Verbatim
+
 7.0     1.94591014906
 \end_layout
 
 \begin_layout Verbatim
+
 8.0     2.07944154168
 \end_layout
 
 \begin_layout Verbatim
+
 9.0     2.19722457734
 \end_layout
 
 \begin_layout Standard
-Si estos valores parecen extraños, recuerde que la función 
+Si estos valores parecen extraños,
+ recuerde que la función 
 \family typewriter
 log
 \family default
@@ -1125,10 +1251,13 @@ Cambiando la salida del ciclo a:
 inline false
 status open
 
-\begin_layout Verbatim
-print(x, '
+\begin_layout Plain Layout
+
+print(x,
+ '
 \backslash
-t',  math.log(x)/math.log(2.0))
+t',
+  math.log(x)/math.log(2.0))
 \end_layout
 
 \end_inset
@@ -1137,69 +1266,86 @@ t',  math.log(x)/math.log(2.0))
 \end_layout
 
 \begin_layout Verbatim
+
    resulta en:
 \end_layout
 
 \begin_layout Verbatim
+
 1.0     0.0
 \end_layout
 
 \begin_layout Verbatim
+
 2.0     1.0
 \end_layout
 
 \begin_layout Verbatim
+
 3.0     1.58496250072
 \end_layout
 
 \begin_layout Verbatim
+
 4.0     2.0
 \end_layout
 
 \begin_layout Verbatim
+
 5.0     2.32192809489
 \end_layout
 
 \begin_layout Verbatim
+
 6.0     2.58496250072
 \end_layout
 
 \begin_layout Verbatim
+
 7.0     2.80735492206
 \end_layout
 
 \begin_layout Verbatim
+
 8.0     3.0
 \end_layout
 
 \begin_layout Verbatim
+
 9.0     3.16992500144
 \end_layout
 
 \begin_layout Standard
-Podemos ver que 1, 2, 4, y 8 son potencias de dos porque sus logaritmos
- en base 2 son números enteros.
- Si deseamos calcular el logaritmo de más potencias de dos podemos modificar
- el programa así:
+Podemos ver que 1,
+ 2,
+ 4,
+ y 8 son potencias de dos porque sus logaritmos en base 2 son números enteros.
+ Si deseamos calcular el logaritmo de más potencias de dos podemos modificar el programa así:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 x = 1.0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 while x < 100.0:
 \end_layout
 
-\begin_layout Verbatim
-  print(x, '
+\begin_layout Plain Layout
+
+  print(x,
+ '
 \backslash
-t', math.log(x)/math.log(2.0))
+t',
+ math.log(x)/math.log(2.0))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   x = x * 2.0
 \end_layout
 
@@ -1209,21 +1355,26 @@ t', math.log(x)/math.log(2.0))
 \end_layout
 
 \begin_layout Standard
-Ahora, en lugar de agregar algo a 
+Ahora,
+ en lugar de agregar algo a 
 \family typewriter
 x
 \family default
- en cada iteración del ciclo, produciendo una serie aritmética, multiplicamos
- a 
+ en cada iteración del ciclo,
+ produciendo una serie aritmética,
+ multiplicamos a 
 \family typewriter
 x
 \family default
- por algo constante, produciendo una serie geométrica.
+ por algo constante,
+ produciendo una serie geométrica.
  El resultado es:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1234,6 +1385,8 @@ serie aritmética
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1246,46 +1399,54 @@ serie geométrica
 \end_layout
 
 \begin_layout Verbatim
+
 1.0     0.0
 \end_layout
 
 \begin_layout Verbatim
+
 2.0     1.0
 \end_layout
 
 \begin_layout Verbatim
+
 4.0     2.0
 \end_layout
 
 \begin_layout Verbatim
+
 8.0     3.0
 \end_layout
 
 \begin_layout Verbatim
+
 16.0    4.0
 \end_layout
 
 \begin_layout Verbatim
+
 32.0    5.0
 \end_layout
 
 \begin_layout Verbatim
+
 64.0    6.0
 \end_layout
 
 \begin_layout Standard
-Gracias a los caracteres tabuladores entre las columnas, la posición de
- la segunda columna no depende del número de dígitos en la primera.
+Gracias a los caracteres tabuladores entre las columnas,
+ la posición de la segunda columna no depende del número de dígitos en la primera.
 \end_layout
 
 \begin_layout Standard
-Puede que las tablas de logaritmos no sirvan en nuestros días, ¡pero para
- los científicos de la computación saber las potencias de dos sí es muy
- importante!.
+Puede que las tablas de logaritmos no sirvan en nuestros días,
+ ¡pero para los científicos de la computación saber las potencias de dos sí es muy importante!.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1318,8 +1479,7 @@ verb+'
 secuencia de escape
 \series default
 .
- Estas secuencias se utilizan para representar caracteres invisibles como
- tabuladores y nuevas líneas.
+ Estas secuencias se utilizan para representar caracteres invisibles como tabuladores y nuevas líneas.
  La secuencia 
 \begin_inset ERT
 status collapsed
@@ -1340,7 +1500,8 @@ n'+
 
 \begin_layout Standard
 Una secuencia de escape puede empezar en cualquier posición de una cadena;
- en el ejemplo anterior, la secuencia de escape tabuladora es toda la cadena.
+ en el ejemplo anterior,
+ la secuencia de escape tabuladora es toda la cadena.
 \end_layout
 
 \begin_layout Standard
@@ -1353,6 +1514,8 @@ Tablas de dos dimensiones
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1365,41 +1528,45 @@ tabla!bidimensional
 \end_layout
 
 \begin_layout Standard
-Una tabla de dos dimensiones es una en la que los valores se leen en la
- intersección de una fila y una columna.
+Una tabla de dos dimensiones es una en la que los valores se leen en la intersección de una fila y una columna.
  Una tabla de multiplicación es un ejemplo familiar.
- Digamos que usted desea imprimir una tabla de multiplicación para los valores
- del 1 al 6.
+ Digamos que usted desea imprimir una tabla de multiplicación para los valores del 1 al 6.
 \end_layout
 
 \begin_layout Standard
-Una buena forma de empezar es escribir un ciclo que imprima los múltiplos
- de 2, en una sola línea:
+Una buena forma de empezar es escribir un ciclo que imprima los múltiplos de 2,
+ en una sola línea:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 i = 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 while i <= 6:
 \end_layout
 
-\begin_layout Verbatim
-  print(2*i, '   ',end=' ')
+\begin_layout Plain Layout
+
+  print(2*i,
+ '   ',end=' ')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   i = i + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 print()
 \end_layout
 
@@ -1413,12 +1580,14 @@ La primera línea inicializa una variable llamada
 \family typewriter
 i
 \family default
-, que actúa como un contador o 
+,
+ que actúa como un contador o 
 \series bold
 variable de ciclo
 \series default
 .
- A medida que se ejecuta el ciclo, el valor de 
+ A medida que se ejecuta el ciclo,
+ el valor de 
 \family typewriter
 i
 \family default
@@ -1427,12 +1596,14 @@ i
 \family typewriter
 i
 \family default
- es 7, el ciclo termina.
+ es 7,
+ el ciclo termina.
  En cada iteración del ciclo despliega el valor 
 \family typewriter
 2*i
 \family default
-, seguido de tres espacios.
+,
+ seguido de tres espacios.
 \end_layout
 
 \begin_layout Standard
@@ -1444,8 +1615,8 @@ end=' '
 \family typewriter
 print
 \family default
- cambia el último caracter que se imprime, que por defecto es el de fin
- de línea.
+ cambia el último caracter que se imprime,
+ que por defecto es el de fin de línea.
  Después de que el ciclo termina la segunda sentencia 
 \family typewriter
 print
@@ -1458,6 +1629,7 @@ La salida del programa es:
 \end_layout
 
 \begin_layout Verbatim
+
 2      4      6      8      10     12
 \end_layout
 
@@ -1490,6 +1662,8 @@ name "encapsulation"
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1500,6 +1674,8 @@ encapsulamiento
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1510,6 +1686,8 @@ generalización
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1520,6 +1698,8 @@ desarrollo de programas!encapsulamiento
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1534,7 +1714,8 @@ desarrollo de programas!generalización
 \begin_layout Standard
 Encapsular es el proceso de envolver un trozo de código en una función,
  permitiendo tomar ventaja de todas los beneficios que esto conlleva.
- Usted ha visto dos ejemplos de encapsulamiento: 
+ Usted ha visto dos ejemplos de encapsulamiento:
+ 
 \family typewriter
 imprimirParidad
 \family default
@@ -1546,10 +1727,12 @@ imprimirParidad
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "alternative execution"
+nolink "false"
 
 \end_inset
 
-; y 
+;
+ y 
 \family typewriter
 esDivisible
 \family default
@@ -1561,6 +1744,7 @@ esDivisible
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "boolean"
+nolink "false"
 
 \end_inset
 
@@ -1568,14 +1752,14 @@ reference "boolean"
 \end_layout
 
 \begin_layout Standard
-La generalización es tomar algo específico, tal como imprimir los múltiplos
- de 2, y convertirlo en algo más general, tal como imprimir los múltiplos
- de cualquier entero.
+La generalización es tomar algo específico,
+ tal como imprimir los múltiplos de 2,
+ y convertirlo en algo más general,
+ tal como imprimir los múltiplos de cualquier entero.
 \end_layout
 
 \begin_layout Standard
-Esta función encapsula el ciclo anterior y lo generaliza para imprimir múltiplos
- de un parámetro 
+Esta función encapsula el ciclo anterior y lo generaliza para imprimir múltiplos de un parámetro 
 \family typewriter
 n
 \family default
@@ -1584,34 +1768,37 @@ n
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 def imprimaMultiplos(n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   i = 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   while i <= 6:
 \end_layout
 
-\begin_layout Verbatim
-    print(n*i, 
-end=
-\lang spanish
-'
+\begin_layout Plain Layout
+
+    print(n*i,
+ end='
 \backslash
 t')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
     i = i + 1
 \end_layout
 
-\begin_layout Verbatim
-  print
-()
+\begin_layout Plain Layout
+
+  print()
 \end_layout
 
 \end_inset
@@ -1620,10 +1807,10 @@ t')
 \end_layout
 
 \begin_layout Standard
-Para encapsular el ciclo, todo lo que agregamos fue la primera línea que
- declara el nombre de la función y la lista de parámetros.
- Para generalizar, lo que hicimos fue reemplazar el valor 2 con el parámetro
- 
+Para encapsular el ciclo,
+ todo lo que agregamos fue la primera línea que declara el nombre de la función y la lista de parámetros.
+ Para generalizar,
+ lo que hicimos fue reemplazar el valor 2 con el parámetro 
 \family typewriter
 n
 \family default
@@ -1631,31 +1818,37 @@ n
 \end_layout
 
 \begin_layout Standard
-Si llamamos a esta función con el argumento 2, obtenemos la misma salida
- de la sección anterior.
- Con el argumento 3, la salida es:
+Si llamamos a esta función con el argumento 2,
+ obtenemos la misma salida de la sección anterior.
+ Con el argumento 3,
+ la salida es:
 \end_layout
 
 \begin_layout Verbatim
+
 3      6      9      12     15     18
 \end_layout
 
 \begin_layout Standard
-Con el argumento 4, la salida es:
+Con el argumento 4,
+ la salida es:
 \end_layout
 
 \begin_layout Verbatim
+
 4      8      12     16     20     24
 \end_layout
 
 \begin_layout Standard
-Ahora, usted probablemente imagine cómo imprimir una tabla de multiplicación
- —llamando a 
+Ahora,
+ usted probablemente imagine cómo imprimir una tabla de multiplicación —
+llamando a 
 \family typewriter
 imprimaMultiplos
 \family default
  repetidamente con diferentes argumentos.
- De hecho, podemos usar otro ciclo:
+ De hecho,
+ podemos usar otro ciclo:
 \end_layout
 
 \begin_layout Standard
@@ -1663,19 +1856,23 @@ imprimaMultiplos
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 i = 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 while i <= 6:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   imprimaMultiplos(i)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   i = i + 1
 \end_layout
 
@@ -1702,26 +1899,32 @@ La salida de este programa es una tabla de multiplicación:
 \end_layout
 
 \begin_layout Verbatim
+
 1      2      3      4      5      6
 \end_layout
 
 \begin_layout Verbatim
+
 2      4      6      8      10     12
 \end_layout
 
 \begin_layout Verbatim
+
 3      6      9      12     15     18
 \end_layout
 
 \begin_layout Verbatim
+
 4      8      12     16     20     24
 \end_layout
 
 \begin_layout Verbatim
+
 5      10     15     20     25     30
 \end_layout
 
 \begin_layout Verbatim
+
 6      12     18     24     30     36
 \end_layout
 
@@ -1730,11 +1933,12 @@ Más encapsulamiento
 \end_layout
 
 \begin_layout Standard
-Para demostrar el encapsulamiento otra vez, tomemos el código de la sección
- 
+Para demostrar el encapsulamiento otra vez,
+ tomemos el código de la sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "encapsulation"
+nolink "false"
 
 \end_inset
 
@@ -1743,23 +1947,28 @@ reference "encapsulation"
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 def imprimirTablaMultiplicacion():
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   i = 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   while i <= 6:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
     imprimaMultiplos(i)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
     i = i + 1
 \end_layout
 
@@ -1774,14 +1983,15 @@ Este proceso es un
 plan de desarrollo
 \series default
  común.
- Desarrollamos código escribiendo líneas afuera de cualquier función o digitándo
-las en el intérprete.
- Cuando funcionan, las ponemos dentro de una función.
+ Desarrollamos código escribiendo líneas afuera de cualquier función o digitándolas en el intérprete.
+ Cuando funcionan,
+ las ponemos dentro de una función.
 \end_layout
 
 \begin_layout Standard
-Este plan de desarrollo es particularmente útil si usted no sabe, cuando
- está empezando a programar, cómo dividir el programa en funciones.
+Este plan de desarrollo es particularmente útil si usted no sabe,
+ cuando está empezando a programar,
+ cómo dividir el programa en funciones.
  Este enfoque permite diseñar a medida que se escribe código.
 \end_layout
 
@@ -1791,6 +2001,8 @@ Variables locales
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1801,6 +2013,8 @@ variable!local
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1813,7 +2027,8 @@ variable local
 \end_layout
 
 \begin_layout Standard
-Puede estar preguntándose cómo usamos la misma variable, 
+Puede estar preguntándose cómo usamos la misma variable,
+ 
 \family typewriter
 i
 \family default
@@ -1830,7 +2045,8 @@ imprimaTabla
 \end_layout
 
 \begin_layout Standard
-La respuesta es no, porque la 
+La respuesta es no,
+ porque la 
 \family typewriter
 i
 \family default
@@ -1885,8 +2101,8 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Las variables creadas dentro de una definición de función son locales; no
- se puede acceder a ellas fuera de su función 
+Las variables creadas dentro de una definición de función son locales;
+ no se puede acceder a ellas fuera de su función 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1895,19 +2111,17 @@ casa
 \end_inset
 
 .
- Esto quiere decir que usted tiene la libertad de tener múltiples variables
- con el mismo nombre en tanto no pertenezcan a la misma función.
+ Esto quiere decir que usted tiene la libertad de tener múltiples variables con el mismo nombre en tanto no pertenezcan a la misma función.
 \end_layout
 
 \begin_layout Standard
-El diagrama de pila para este programa muestra que las dos variables llamadas
- 
+El diagrama de pila para este programa muestra que las dos variables llamadas 
 \family typewriter
 i
 \family default
  no son la misma.
- Se pueden referir a valores diferentes, y cambiar una de ellas no altera
- la otra.
+ Se pueden referir a valores diferentes,
+ y cambiar una de ellas no altera la otra.
 \end_layout
 
 \begin_layout Standard
@@ -1981,7 +2195,8 @@ imprimaTabla
  va de 1 a 6.
  En el diagrama va por el valor 3.
  En la próxima iteración del ciclo será 4.
- En cada iteración, 
+ En cada iteración,
+ 
 \family typewriter
 imprimaTabla
 \family default
@@ -2011,7 +2226,8 @@ imprimaMultiplos
 i
 \family default
  va de 1 a 6.
- En el diagrama, es 2.
+ En el diagrama,
+ es 2.
  Cambiar esta variable no tiene efecto en el valor de 
 \family typewriter
 i
@@ -2025,7 +2241,8 @@ imprimaTabla
 
 \begin_layout Standard
 Es legal y muy común tener diferentes variables locales con el mismo nombre.
- Particularmente, nombres como 
+ Particularmente,
+ nombres como 
 \family typewriter
 i
 \family default
@@ -2034,8 +2251,8 @@ i
 j
 \family default
  se usan frecuentemente como variables de ciclo.
- Si usted evita usarlas en una función porque ya las usó en otra, probablemente
- dificultará la lectura del programa.
+ Si usted evita usarlas en una función porque ya las usó en otra,
+ probablemente dificultará la lectura del programa.
 \end_layout
 
 \begin_layout Standard
@@ -2072,9 +2289,9 @@ Mas generalización
 \end_layout
 
 \begin_layout Standard
-Como otro ejemplo de generalización, imagine que le piden un programa que
- imprima una tabla de multiplicación de cualquier tamaño; no sólo la tabla
- de seis por seis.
+Como otro ejemplo de generalización,
+ imagine que le piden un programa que imprima una tabla de multiplicación de cualquier tamaño;
+ no sólo la tabla de seis por seis.
  Podría agregarse un parámetro a 
 \family typewriter
 imprimaTabla
@@ -2084,23 +2301,28 @@ imprimaTabla
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 def imprimaTabla(tope):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   i = 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   while i <= tope:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
     imprimaMultiplos(i)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
     i = i + 1
 \end_layout
 
@@ -2119,107 +2341,127 @@ tope
 \family typewriter
 imprimaTabla
 \family default
- con el argumento 7, despliega:
+ con el argumento 7,
+ despliega:
 \end_layout
 
 \begin_layout Verbatim
+
 1      2      3      4      5      6
 \end_layout
 
 \begin_layout Verbatim
+
 2      4      6      8      10     12
 \end_layout
 
 \begin_layout Verbatim
+
 3      6      9      12     15     18
 \end_layout
 
 \begin_layout Verbatim
+
 4      8      12     16     20     24
 \end_layout
 
 \begin_layout Verbatim
+
 5      10     15     20     25     30
 \end_layout
 
 \begin_layout Verbatim
+
 6      12     18     24     30     36
 \end_layout
 
 \begin_layout Verbatim
+
 7      14     21     28     35     42
 \end_layout
 
 \begin_layout Standard
-Esto está bien, pero quizás deseamos que la tabla sea cuadrada—con el mismo
- número de filas y columnas.
- Para lograrlo, añadimos un parámetro a imprimaMultiplos que especifique
- cuántas columnas debe tener la tabla.
+Esto está bien,
+ pero quizás deseamos que la tabla sea cuadrada—
+con el mismo número de filas y columnas.
+ Para lograrlo,
+ añadimos un parámetro a imprimaMultiplos que especifique cuántas columnas debe tener la tabla.
 \end_layout
 
 \begin_layout Standard
-Sólo por confundir, vamos a nombrarlo 
+Sólo por confundir,
+ vamos a nombrarlo 
 \family typewriter
 tope
 \family default
-, demostrando que diferentes funciones pueden tener parámetros con el mismo
- nombre (igual que las variables locales).
+,
+ demostrando que diferentes funciones pueden tener parámetros con el mismo nombre (igual que las variables locales).
  Aquí está el programa completo:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
-def imprimaMultiplos(n, tope):
+\begin_layout Plain Layout
+
+def imprimaMultiplos(n,
+ tope):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   i = 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   while i <= tope:
 \end_layout
 
-\begin_layout Verbatim
-    print(n*i, 
-end=
-\lang spanish
-'
+\begin_layout Plain Layout
+
+    print(n*i,
+ end='
 \backslash
 t')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
     i = i + 1
 \end_layout
 
-\begin_layout Verbatim
-  print
-()
+\begin_layout Plain Layout
+
+  print()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
 def imprimaTabla(tope):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   i = 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
   while i <= tope:
 \end_layout
 
-\begin_layout Verbatim
-    imprimaMultiplos(i, tope)
+\begin_layout Plain Layout
+
+    imprimaMultiplos(i,
+ tope)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+
     i = i + 1
 \end_layout
 
@@ -2229,9 +2471,8 @@ def imprimaTabla(tope):
 \end_layout
 
 \begin_layout Standard
-Note que cuando agregamos el nuevo parámetro tuvimos que cambiar la primera
- línea de la función (la cabecera), y también el lugar donde la función
- se llama en 
+Note que cuando agregamos el nuevo parámetro tuvimos que cambiar la primera línea de la función (la cabecera),
+ y también el lugar donde la función se llama en 
 \family typewriter
 imprimaTabla
 \family default
@@ -2239,46 +2480,55 @@ imprimaTabla
 \end_layout
 
 \begin_layout Standard
-Como se esperaba, este programa genera una tabla cuadrada de siete-por-siete:
+Como se esperaba,
+ este programa genera una tabla cuadrada de siete-por-siete:
 \end_layout
 
 \begin_layout Verbatim
+
 1      2      3      4      5      6      7
 \end_layout
 
 \begin_layout Verbatim
+
 2      4      6      8      10     12     14
 \end_layout
 
 \begin_layout Verbatim
+
 3      6      9      12     15     18     21
 \end_layout
 
 \begin_layout Verbatim
+
 4      8      12     16     20     24     28
 \end_layout
 
 \begin_layout Verbatim
+
 5      10     15     20     25     30     35
 \end_layout
 
 \begin_layout Verbatim
+
 6      12     18     24     30     36     42
 \end_layout
 
 \begin_layout Verbatim
+
 7      14     21     28     35     42     49
 \end_layout
 
 \begin_layout Standard
-Cuando se generaliza una función adecuadamente, a menudo se obtiene un programa
- con capacidades que no se habían planeado.
- Por ejemplo, podríamos aprovechar el hecho de que 
+Cuando se generaliza una función adecuadamente,
+ a menudo se obtiene un programa con capacidades que no se habían planeado.
+ Por ejemplo,
+ podríamos aprovechar el hecho de que 
 \begin_inset Formula $ab=ba$
 \end_inset
 
-, que causa que todas las entradas de la tabla aparezcan dos veces para
- ahorrar tinta imprimiendo solamente la mitad de la tabla.
+,
+ que causa que todas las entradas de la tabla aparezcan dos veces para ahorrar tinta imprimiendo solamente la mitad de la tabla.
  Para lograrlo sólo se necesita cambiar una línea de 
 \family typewriter
 imprimaTabla
@@ -2288,7 +2538,9 @@ imprimaTabla
 \end_layout
 
 \begin_layout Verbatim
-    imprimaMultiplos(i, tope)
+
+    imprimaMultiplos(i,
+ tope)
 \end_layout
 
 \begin_layout Standard
@@ -2296,7 +2548,9 @@ por
 \end_layout
 
 \begin_layout Verbatim
-    imprimaMultiplos(i, i)
+
+    imprimaMultiplos(i,
+ i)
 \end_layout
 
 \begin_layout Standard
@@ -2304,30 +2558,37 @@ y se obtiene:
 \end_layout
 
 \begin_layout Verbatim
+
 1
 \end_layout
 
 \begin_layout Verbatim
+
 2      4
 \end_layout
 
 \begin_layout Verbatim
+
 3      6      9
 \end_layout
 
 \begin_layout Verbatim
+
 4      8      12     16
 \end_layout
 
 \begin_layout Verbatim
+
 5      10     15     20     25
 \end_layout
 
 \begin_layout Verbatim
+
 6      12     18     24     30     36
 \end_layout
 
 \begin_layout Verbatim
+
 7      14     21     28     35     42     49
 \end_layout
 
@@ -2337,6 +2598,8 @@ Funciones
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2362,13 +2625,13 @@ beneficios de las funciones.
 \end_layout
 
 \begin_layout Itemize
-Nombrar una secuencia de sentencias aumenta la legibilidad de los programas
- y los hace más fáciles de depurar.
+Nombrar una secuencia de sentencias aumenta la legibilidad de los programas y los hace más fáciles de depurar.
 \end_layout
 
 \begin_layout Itemize
 Dividir un programa grande en funciones permite separar partes de éste,
- depurarlas aisladamente, y luego componerlas en un todo coherente.
+ depurarlas aisladamente,
+ y luego componerlas en un todo coherente.
 \end_layout
 
 \begin_layout Itemize
@@ -2377,7 +2640,8 @@ Las funciones facilitan la recursión y la iteración.
 
 \begin_layout Itemize
 Las funciones bien diseñadas resultan ser útiles para muchos programas.
- Una vez que usted escribe y depura una, se puede reutilizar.
+ Una vez que usted escribe y depura una,
+ se puede reutilizar.
 \end_layout
 
 \begin_layout Section
@@ -2395,18 +2659,18 @@ Asignación múltiple:
 
 \end_inset
 
- realizar más de una asignación a una misma variable durante la ejecución
- de un programa.
+ realizar más de una asignación a una misma variable durante la ejecución de un programa.
 \end_layout
 
 \begin_layout Description
-Iteración: la ejecución repetida de un grupo de sentencias, ya sea en una
- función recursiva o en un ciclo.
+Iteración:
+ la ejecución repetida de un grupo de sentencias,
+ ya sea en una función recursiva o en un ciclo.
 \end_layout
 
 \begin_layout Description
-Ciclo: una sentencia o grupo de sentencias que se ejecuta repetidamente
- hasta que una condición de terminación se cumple.
+Ciclo:
+ una sentencia o grupo de sentencias que se ejecuta repetidamente hasta que una condición de terminación se cumple.
 \end_layout
 
 \begin_layout Description
@@ -2424,7 +2688,8 @@ Ciclo infinito:
 \end_layout
 
 \begin_layout Description
-Cuerpo: las sentencias adentro de un ciclo.
+Cuerpo:
+ las sentencias adentro de un ciclo.
 \end_layout
 
 \begin_layout Description
@@ -2442,8 +2707,8 @@ Variable de ciclo:
 \end_layout
 
 \begin_layout Description
-Tab: (tabulador) carácter especial que causa el movimiento del cursor al
- siguiente punto de parada en la línea actual.
+Tab:
+ (tabulador) carácter especial que causa el movimiento del cursor al siguiente punto de parada en la línea actual.
 \end_layout
 
 \begin_layout Description
@@ -2457,13 +2722,12 @@ Nueva línea:
 
 \end_inset
 
- carácter que causa que el cursor se mueva al principio de la siguiente
- línea.
+ carácter que causa que el cursor se mueva al principio de la siguiente línea.
 \end_layout
 
 \begin_layout Description
-Cursor: marcador invisible que lleva pista de dónde se va a imprimir el
- siguiente carácter.
+Cursor:
+ marcador invisible que lleva pista de dónde se va a imprimir el siguiente carácter.
 \end_layout
 
 \begin_layout Description
@@ -2481,20 +2745,20 @@ Secuencia de escape:
 \begin_inset Formula $\backslash$
 \end_inset
 
-) seguido por uno o más caracteres imprimibles que se usan para denotar
- un carácter no imprimible.
+) seguido por uno o más caracteres imprimibles que se usan para denotar un carácter no imprimible.
 \end_layout
 
 \begin_layout Description
-Encapsular: dividir un programa grande y complejo en componentes (como funciones
-) y aislarlos entre sí (usando variables locales, por ejemplo).
+Encapsular:
+ dividir un programa grande y complejo en componentes (como funciones) y aislarlos entre sí (usando variables locales,
+ por ejemplo).
 \end_layout
 
 \begin_layout Description
-Generalizar: reemplazar algo innecesariamente específico (como un valor
- constante) con algo general más apropiado (como una variable o parámetro).
- La generalización aumenta la versatilidad del código, lo hace más reutilizable
- y en algunos casos facilita su escritura.
+Generalizar:
+ reemplazar algo innecesariamente específico (como un valor constante) con algo general más apropiado (como una variable o parámetro).
+ La generalización aumenta la versatilidad del código,
+ lo hace más reutilizable y en algunos casos facilita su escritura.
 \end_layout
 
 \begin_layout Description
@@ -2509,9 +2773,8 @@ Plan de desarrollo:
 \end_inset
 
  proceso para desarrollar un programa.
- En este capítulo demostramos un estilo de desarrollo basado en escribir
- código que realiza cómputos simples y específicos, para luego encapsularlo
- y generalizarlo.
+ En este capítulo demostramos un estilo de desarrollo basado en escribir código que realiza cómputos simples y específicos,
+ para luego encapsularlo y generalizarlo.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2521,6 +2784,8 @@ Plan de desarrollo:
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2531,6 +2796,8 @@ asignación múltiple
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2541,6 +2808,8 @@ asignación!múltiple
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2551,6 +2820,8 @@ iteración
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2561,6 +2832,8 @@ ciclo!cuerpo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2571,6 +2844,8 @@ ciclo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2581,6 +2856,8 @@ ciclo infinito
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2591,6 +2868,8 @@ secuencia de escape
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2601,6 +2880,8 @@ cursor
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2611,6 +2892,8 @@ tab
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2621,6 +2904,8 @@ nueva línea
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2631,6 +2916,8 @@ variable de ciclo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2641,6 +2928,8 @@ encapsular
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2651,6 +2940,8 @@ generalizar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2661,6 +2952,8 @@ plan de desarrollo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2695,10 +2988,12 @@ nLineas
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "recursion"
+nolink "false"
 
 \end_inset
 
-, usando iteración en vez de recursión.
+,
+ usando iteración en vez de recursión.
  
 \end_layout
 
@@ -2728,14 +3023,17 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
+
 produzca
 \end_layout
 
 \begin_layout Verbatim
+
         esta
 \end_layout
 
 \begin_layout Verbatim
+
                 salida.
 \end_layout
 
@@ -2757,8 +3055,7 @@ afterverb
 
 \end_deeper
 \begin_layout Enumerate
-Escriba un programa que despliegue las potencias de 2 hasta 65,536 (esto
- es 
+Escriba un programa que despliegue las potencias de 2 hasta 65,536 (esto es 
 \begin_inset Formula $2^{16}$
 \end_inset
 
@@ -2793,7 +3090,8 @@ verb+muestra_numeros_triangulares(5)+
 
 \end_inset
 
- produciría la siguiente salida: 
+ produciría la siguiente salida:
+ 
 \begin_inset ERT
 status collapsed
 
@@ -2815,26 +3113,32 @@ beforeverb
 
 \begin_deeper
 \begin_layout Verbatim
+
   1       1
 \end_layout
 
 \begin_layout Verbatim
+
   2       3
 \end_layout
 
 \begin_layout Verbatim
+
   3       6
 \end_layout
 
 \begin_layout Verbatim
+
   4       10
 \end_layout
 
 \begin_layout Verbatim
+
   5       15
 \end_layout
 
 \begin_layout Verbatim
+
   
 \end_layout
 
@@ -2877,16 +3181,15 @@ que son aproximadas fijando un valor
 \begin_inset Formula $n$
 \end_inset
 
- tal que la precisión, dada por el número de cifras significativas correctas
- del valor calculado, sea buena.
- Escriba un programa que calcule el logaritmo natural de un número dado
- basado en la formula anterior.
+ tal que la precisión,
+ dada por el número de cifras significativas correctas del valor calculado,
+ sea buena.
+ Escriba un programa que calcule el logaritmo natural de un número dado basado en la formula anterior.
  Para esto debe probar con varios valores de 
 \begin_inset Formula $n$
 \end_inset
 
- hasta que obtenga un buen número de cifras significativas correctas comparando
- el resultado de su programa con el de 
+ hasta que obtenga un buen número de cifras significativas correctas comparando el resultado de su programa con el de 
 \begin_inset ERT
 status collapsed
 
@@ -2904,9 +3207,8 @@ verb+math.log+
 
 \end_deeper
 \begin_layout Enumerate
-Busque una formula correcta para calcular el seno de un ángulo y escriba
- un programa para calcular este valor basado en la formula, como en el punto
- anterior.
+Busque una formula correcta para calcular el seno de un ángulo y escriba un programa para calcular este valor basado en la formula,
+ como en el punto anterior.
  Compare con 
 \begin_inset ERT
 status collapsed
@@ -2933,7 +3235,8 @@ Compare los valores de
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función, 
+Escriba una función,
+ 
 \begin_inset ERT
 status collapsed
 
@@ -2946,7 +3249,8 @@ verb+es_primo+
 
 \end_inset
 
-, que tome un solo argumento entero y devuelva 
+,
+ que tome un solo argumento entero y devuelva 
 \begin_inset ERT
 status collapsed
 
@@ -2976,8 +3280,7 @@ verb+False+
 \end_layout
 
 \begin_layout Enumerate
-Agregue el código para chequeo de tipo de datos y para las prueba unitarias
- a todas las funciones desarrolladas previamente.
+Agregue el código para chequeo de tipo de datos y para las prueba unitarias a todas las funciones desarrolladas previamente.
 \end_layout
 
 \end_body

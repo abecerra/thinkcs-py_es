@@ -9,7 +9,7 @@
 \maintain_unincluded_children false
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"

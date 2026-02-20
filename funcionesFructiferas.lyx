@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -15,10 +15,10 @@
 \newcommand{\adjustpage}[1]{\enlargethispage{#1\baselineskip}}
 \end_preamble
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -27,9 +27,13 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -59,6 +63,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -67,15 +74,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -90,30 +105,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -141,6 +165,8 @@ Valores de retorno
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -153,20 +179,21 @@ valor de retorno
 \end_layout
 
 \begin_layout Standard
-Algunas de las funciones primitivas que hemos usado, como las matemáticas,
+Algunas de las funciones primitivas que hemos usado,
+ como las matemáticas,
  entregan resultados.
- El llamar a estas funciones genera un valor nuevo, que usualmente asignamos
- a una variable o usamos como parte de una expresión.
+ El llamar a estas funciones genera un valor nuevo,
+ que usualmente asignamos a una variable o usamos como parte de una expresión.
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 e = math.exp(1.0)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 altura = radio * math.sin(angulo)
 \end_layout
@@ -177,22 +204,23 @@ altura = radio * math.sin(angulo)
 \end_layout
 
 \begin_layout Standard
-Pero hasta ahora ninguna de las funciones que hemos escrito ha retornado
- un valor.
+Pero hasta ahora ninguna de las funciones que hemos escrito ha retornado un valor.
 \end_layout
 
 \begin_layout Standard
-En este capítulo vamos a escribir funciones que retornan valores, los cuales
- denominamos 
+En este capítulo vamos a escribir funciones que retornan valores,
+ los cuales denominamos 
 \series bold
 funciones fructíferas
 \series default
-, o provechosas
+,
+ o provechosas
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-En algunos libros de programación, las 
+En algunos libros de programación,
+ las 
 \shape italic
 funciones
 \shape default
@@ -204,11 +232,10 @@ procedimientos
 \shape italic
 funciones
 \shape default
-, ya que los lenguajes de programación usados para enseñar (como Pascal)
- hacían la distinción.
- Muchos lenguajes de programación vigentes (incluido Python y C) no diferencian
- sintácticamente entre procedimientos y funciones, por eso usamos esta terminolo
-gía.
+,
+ ya que los lenguajes de programación usados para enseñar (como Pascal) hacían la distinción.
+ Muchos lenguajes de programación vigentes (incluido Python y C) no diferencian sintácticamente entre procedimientos y funciones,
+ por eso usamos esta terminología.
 \end_layout
 
 \end_inset
@@ -218,31 +245,32 @@ gía.
 \family typewriter
 area
 \family default
-, que retorna el área de un círculo dado su radio:
+,
+ que retorna el área de un círculo dado su radio:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 import math
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def area(radio):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   temp = math.pi * radio**2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return temp
 \end_layout
@@ -257,7 +285,10 @@ Ya nos habíamos topado con la sentencia
 \family typewriter
 return
 \family default
- antes, pero, en una función fructífera, la sentencia 
+ antes,
+ pero,
+ en una función fructífera,
+ la sentencia 
 \family typewriter
 return
 \family default
@@ -266,17 +297,17 @@ return
 valor de retorno
 \series default
 .
- Esta sentencia significa: 
+ Esta sentencia significa:
+ 
 \begin_inset Quotes eld
 \end_inset
 
-Retorne inmediatamente de esta función y use la siguiente expresión como
- un valor de retorno.
+Retorne inmediatamente de esta función y use la siguiente expresión como un valor de retorno.
 \begin_inset Quotes erd
 \end_inset
 
- La expresión proporcionada puede ser arbitrariamente compleja, así que
- podríamos escribir esta función más concisamente:
+ La expresión proporcionada puede ser arbitrariamente compleja,
+ así que podríamos escribir esta función más concisamente:
 \end_layout
 
 \begin_layout Standard
@@ -284,12 +315,12 @@ Retorne inmediatamente de esta función y use la siguiente expresión como
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def area(radio):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return math.pi * radio**2
 \end_layout
@@ -300,19 +331,24 @@ def area(radio):
 \end_layout
 
 \begin_layout Standard
-Por otro lado, las 
+Por otro lado,
+ las 
 \series bold
 variables temporales
 \series default
-, como 
+,
+ como 
 \family typewriter
 temp
 \family default
-, a menudo permiten depurar los programas más fácilmente.
+,
+ a menudo permiten depurar los programas más fácilmente.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -323,6 +359,8 @@ variable temporal
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -335,8 +373,8 @@ variable!temporal
 \end_layout
 
 \begin_layout Standard
-Algunas veces es muy útil tener múltiples sentencias return, ubicadas en
- ramas distintas de un condicional:
+Algunas veces es muy útil tener múltiples sentencias return,
+ ubicadas en ramas distintas de un condicional:
 \end_layout
 
 \begin_layout Standard
@@ -344,27 +382,27 @@ Algunas veces es muy útil tener múltiples sentencias return, ubicadas en
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def valorAbsoluto(x):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if x < 0:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return -x
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return x
 \end_layout
@@ -379,9 +417,10 @@ Ya que estas sentencias
 \family typewriter
 return
 \family default
- están en un condicional alternativo, sólo una será ejecutada.
- Tan pronto como esto suceda, la función termina sin ejecutar las sentencias
- que siguen.
+ están en un condicional alternativo,
+ sólo una será ejecutada.
+ Tan pronto como esto suceda,
+ la función termina sin ejecutar las sentencias que siguen.
 \end_layout
 
 \begin_layout Standard
@@ -389,8 +428,9 @@ El código que aparece después de la sentencia
 \family typewriter
 return
 \family default
-, o en un lugar que el flujo de ejecución nunca puede alcanzar, se denomina
- 
+,
+ o en un lugar que el flujo de ejecución nunca puede alcanzar,
+ se denomina 
 \series bold
 código muerto
 \series default
@@ -399,6 +439,8 @@ código muerto
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -411,8 +453,7 @@ código muerto
 \end_layout
 
 \begin_layout Standard
-En una función fructífera es una buena idea garantizar que toda ruta posible
- de ejecución del programa llegue a una sentencia 
+En una función fructífera es una buena idea garantizar que toda ruta posible de ejecución del programa llegue a una sentencia 
 \family typewriter
 return
 \family default
@@ -425,27 +466,27 @@ return
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def valorAbsoluto(x):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if x < 0:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return -x
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   elif x > 0:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return x
 \end_layout
@@ -456,14 +497,13 @@ def valorAbsoluto(x):
 \family typewriter
 x
 \family default
- llega a ser 0, ninguna condición es cierta y la función puede terminar
- sin alcanzar una sentencia 
+ llega a ser 0,
+ ninguna condición es cierta y la función puede terminar sin alcanzar una sentencia 
 \family typewriter
 return
 \family default
 .
- En este caso el valor de retorno que Python entrega es un valor especial
- denominado 
+ En este caso el valor de retorno que Python entrega es un valor especial denominado 
 \family typewriter
 None
 \family default
@@ -472,6 +512,8 @@ None
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -485,12 +527,12 @@ None
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(valorAbsoluto(0))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 None
 \end_layout
@@ -513,6 +555,8 @@ name "program development"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -525,29 +569,28 @@ andamiaje
 \end_layout
 
 \begin_layout Standard
-En este momento usted debería ser capaz de leer funciones completas y deducir
- lo que hacen.
- También, si ha realizado los ejercicios, ya ha escrito algunas funciones
- pequeñas.
- A medida en que usted escriba funciones más grandes puede empezar a tener
- una dificultad mayor, especialmente con los errores semánticos y de tiempo
- de ejecución.
+En este momento usted debería ser capaz de leer funciones completas y deducir lo que hacen.
+ También,
+ si ha realizado los ejercicios,
+ ya ha escrito algunas funciones pequeñas.
+ A medida en que usted escriba funciones más grandes puede empezar a tener una dificultad mayor,
+ especialmente con los errores semánticos y de tiempo de ejecución.
 \end_layout
 
 \begin_layout Standard
-Para desarrollar programas cada vez más complejos, vamos a sugerir una técnica
- denominada 
+Para desarrollar programas cada vez más complejos,
+ vamos a sugerir una técnica denominada 
 \series bold
 desarrollo incremental
 \series default
 .
- El objetivo del desarrollo incremental es evitar largas sesiones de depuración
- mediante la adición y prueba de una pequeña cantidad de código en cada
- paso.
+ El objetivo del desarrollo incremental es evitar largas sesiones de depuración mediante la adición y prueba de una pequeña cantidad de código en cada paso.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -558,6 +601,8 @@ desarrollo incremental
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -570,8 +615,8 @@ desarrollo!incremental
 \end_layout
 
 \begin_layout Standard
-Como ejemplo, suponga que usted desea hallar la distancia entre dos puntos
- dados por las coordenadas 
+Como ejemplo,
+ suponga que usted desea hallar la distancia entre dos puntos dados por las coordenadas 
 \begin_inset Formula $(x_{1},y_{1})$
 \end_inset
 
@@ -580,7 +625,8 @@ Como ejemplo, suponga que usted desea hallar la distancia entre dos puntos
 \end_inset
 
 .
- Por el teorema de Pitágoras, la distancia se calcula con:
+ Por el teorema de Pitágoras,
+ la distancia se calcula con:
 \end_layout
 
 \begin_layout Standard
@@ -596,14 +642,16 @@ El primer paso es considerar cómo luciría la función
 distancia
 \family default
  en Python.
- En otras palabras, ¿cuales son las entradas (parámetros) y cual es la salida
- (valor de retorno)?
+ En otras palabras,
+ ¿cuales son las entradas (parámetros) y cual es la salida (valor de retorno)?
 \end_layout
 
 \begin_layout Standard
-En este caso, los dos puntos son las entradas, que podemos representar usando
- cuatro parámetros.
- El valor de retorno es la distancia, que es un valor de punto flotante.
+En este caso,
+ los dos puntos son las entradas,
+ que podemos representar usando cuatro parámetros.
+ El valor de retorno es la distancia,
+ que es un valor de punto flotante.
 \end_layout
 
 \begin_layout Standard
@@ -615,22 +663,26 @@ Ya podemos escribir un borrador de la función:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def distancia(x1, y1, x2, y2):
+def distancia(x1,
+ y1,
+ x2,
+ y2):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return 0.0
 \end_layout
 
 \end_inset
 
- Obviamente, esta versión de la función no calcula distancias; siempre retorna
- cero.
- Pero es correcta sintácticamente y puede correr, lo que implica que la
- podemos probar antes de que la hagamos más compleja.
+ Obviamente,
+ esta versión de la función no calcula distancias;
+ siempre retorna cero.
+ Pero es correcta sintácticamente y puede correr,
+ lo que implica que la podemos probar antes de que la hagamos más compleja.
 \end_layout
 
 \begin_layout Standard
@@ -642,29 +694,34 @@ Para probar la nueva función la llamamos con valores simples:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> distancia(1, 2, 4, 6)
+>>> distancia(1,
+ 2,
+ 4,
+ 6)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0.0
 \end_layout
 
 \end_inset
 
- Escogemos estos valores de forma que la distancia horizontal sea 3 y la
- vertical 4; de esta forma el resultado es 5 (la hipotenusa de un triángulo
- con medidas 3-4-5).
+ Escogemos estos valores de forma que la distancia horizontal sea 3 y la vertical 4;
+ de esta forma el resultado es 5 (la hipotenusa de un triángulo con medidas 3-4-5).
  Cuando probamos una función es fundamental conocer algunas respuestas correctas.
 \end_layout
 
 \begin_layout Standard
 En este punto hemos confirmado que la función está bien sintácticamente,
  y que podemos empezar a agregar líneas de código.
- Después de cada cambio, probamos la función otra vez.
- Si hay un error, sabemos dónde debe estar —en la última línea que agregamos.
+ Después de cada cambio,
+ probamos la función otra vez.
+ Si hay un error,
+ sabemos dónde debe estar —
+en la última línea que agregamos.
 \end_layout
 
 \begin_layout Standard
@@ -693,42 +750,49 @@ dy
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def distancia(x1, y1, x2, y2):
+def distancia(x1,
+ y1,
+ x2,
+ y2):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   dx = x2 - x1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   dy = y2 - y1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  print("dx es", dx)
+  print("dx es",
+ dx)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  print("dy es", dy)
+  print("dy es",
+ dy)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return 0.0
 \end_layout
 
 \end_inset
 
- Si la función trabaja bien, las salidas deben ser 3 y 4.
- Si es así, sabemos que la función está obteniendo los parámetros correctos
- y calculando el primer paso correctamente.
- Si no ocurre ésto, entonces hay unas pocas líneas para chequear.
+ Si la función trabaja bien,
+ las salidas deben ser 3 y 4.
+ Si es así,
+ sabemos que la función está obteniendo los parámetros correctos y calculando el primer paso correctamente.
+ Si no ocurre ésto,
+ entonces hay unas pocas líneas para chequear.
 \end_layout
 
 \begin_layout Standard
@@ -748,32 +812,37 @@ dy
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def distancia(x1, y1, x2, y2):
+def distancia(x1,
+ y1,
+ x2,
+ y2):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   dx = x2 - x1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   dy = y2 - y1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   discuadrado = dx**2 + dy**2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  print("discuadrado es: ", discuadrado)
+  print("discuadrado es:
+ ",
+ discuadrado)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return 0.0
 \end_layout
@@ -789,16 +858,18 @@ print
 \series bold
 andamiaje
 \series default
- porque es útil para construir el programa pero no hace parte del producto
- final.
+ porque es útil para construir el programa pero no hace parte del producto final.
 \end_layout
 
 \begin_layout Standard
-De nuevo, corremos el programa y chequeamos la salida (que debe ser 25).
+De nuevo,
+ corremos el programa y chequeamos la salida (que debe ser 25).
 \end_layout
 
 \begin_layout Standard
-Finalmente, si importamos el módulo math, podemos usar la función 
+Finalmente,
+ si importamos el módulo math,
+ podemos usar la función 
 \family typewriter
 sqrt
 \family default
@@ -810,40 +881,45 @@ sqrt
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def distancia(x1, y1, x2, y2):
+def distancia(x1,
+ y1,
+ x2,
+ y2):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   dx = x2 - x1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   dy = y2 - y1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   discuadrado = dx**2 + dy**2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   resultado = math.sqrt(discuadrado)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return resultado
 \end_layout
 
 \end_inset
 
- Si esto funciona bien, usted ha terminado.
- Si no, se podría imprimir el valor de 
+ Si esto funciona bien,
+ usted ha terminado.
+ Si no,
+ se podría imprimir el valor de 
 \family typewriter
 resultado
 \family default
@@ -851,14 +927,14 @@ resultado
 \end_layout
 
 \begin_layout Standard
-Recapitulando, para empezar, usted debería agregar solamente una línea o
- dos cada vez.
+Recapitulando,
+ para empezar,
+ usted debería agregar solamente una línea o dos cada vez.
 \end_layout
 
 \begin_layout Standard
 A medida que gane más experiencia podrá escribir y depurar trozos mayores.
- De cualquier forma el proceso de desarrollo incremental puede evitarle
- mucho tiempo de depuración.
+ De cualquier forma el proceso de desarrollo incremental puede evitarle mucho tiempo de depuración.
 \end_layout
 
 \begin_layout Standard
@@ -867,18 +943,18 @@ Los aspectos claves del proceso son:
 
 \begin_layout Enumerate
 Empezar con un programa correcto y hacer pequeños cambios incrementales.
- Si en cualquier punto hay un error, usted sabrá exactamente donde está.
+ Si en cualquier punto hay un error,
+ usted sabrá exactamente donde está.
 \end_layout
 
 \begin_layout Enumerate
-Use variables temporales para almacenar valores intermedios de manera que
- se puedan imprimir y chequear.
+Use variables temporales para almacenar valores intermedios de manera que se puedan imprimir y chequear.
 \end_layout
 
 \begin_layout Enumerate
-Ya que el programa esté corriendo, usted puede remover parte del andamiaje
- o consolidar múltiples sentencias en expresiones compuestas, pero sólo
- si esto no dificulta la lectura del programa.
+Ya que el programa esté corriendo,
+ usted puede remover parte del andamiaje o consolidar múltiples sentencias en expresiones compuestas,
+ pero sólo si esto no dificulta la lectura del programa.
 \end_layout
 
 \begin_layout Section
@@ -887,6 +963,8 @@ Composición
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -897,6 +975,8 @@ composición
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -909,7 +989,8 @@ función!composición
 \end_layout
 
 \begin_layout Standard
-Como usted esperaría, se puede llamar una función fructífera desde otra.
+Como usted esperaría,
+ se puede llamar una función fructífera desde otra.
  Esta capacidad es la 
 \series bold
 composición
@@ -918,9 +999,9 @@ composición
 \end_layout
 
 \begin_layout Standard
-Como ejemplo vamos a escribir una función que toma dos puntos: el centro
- de un círculo y un punto en el perímetro, y que calcule el área total del
- círculo.
+Como ejemplo vamos a escribir una función que toma dos puntos:
+ el centro de un círculo y un punto en el perímetro,
+ y que calcule el área total del círculo.
 \end_layout
 
 \begin_layout Standard
@@ -932,7 +1013,8 @@ xc
 \family typewriter
 yc
 \family default
-, y que el punto perimetral está en 
+,
+ y que el punto perimetral está en 
 \family typewriter
 xp
 \family default
@@ -941,13 +1023,16 @@ xp
 yp
 \family default
 .
- El primer paso es encontrar el radio del círculo, que es la distancia entre
- los dos puntos.
- Afortunadamente, hay una función, 
+ El primer paso es encontrar el radio del círculo,
+ que es la distancia entre los dos puntos.
+ Afortunadamente,
+ hay una función,
+ 
 \family typewriter
 distancia
 \family default
-, que hace eso:
+,
+ que hace eso:
 \end_layout
 
 \begin_layout Standard
@@ -955,9 +1040,12 @@ distancia
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-radio = distancia(xc, yc, xp, yp)
+radio = distancia(xc,
+ yc,
+ xp,
+ yp)
 \end_layout
 
 \end_inset
@@ -974,12 +1062,12 @@ El segundo paso es encontrar el área de un círculo con dicho radio y retornarl
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 resultado = area(radio)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 return resultado
 \end_layout
@@ -994,22 +1082,28 @@ return resultado
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def area2(xc, yc, xp, yp):
+def area2(xc,
+ yc,
+ xp,
+ yp):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  radio = distancia(xc, yc, xp, yp)
+  radio = distancia(xc,
+ yc,
+ xp,
+ yp)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   resultado = area(radio)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return resultado
 \end_layout
@@ -1037,9 +1131,8 @@ radio
 \family typewriter
 area
 \family default
- son útiles para desarrollar y depurar, pero una vez que el programa está
- funcionando podemos hacer la función más concisa componiendo las llamadas
- a funciones:
+ son útiles para desarrollar y depurar,
+ pero una vez que el programa está funcionando podemos hacer la función más concisa componiendo las llamadas a funciones:
 \end_layout
 
 \begin_layout Standard
@@ -1047,14 +1140,20 @@ area
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def area2(xc, yc, xp, yp):
+def area2(xc,
+ yc,
+ xp,
+ yp):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  return area(distancia(xc, yc, xp, yp))
+  return area(distancia(xc,
+ yc,
+ xp,
+ yp))
 \end_layout
 
 \end_inset
@@ -1075,6 +1174,8 @@ name "boolean"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1085,6 +1186,8 @@ función booleana
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1097,8 +1200,7 @@ función booleana
 \end_layout
 
 \begin_layout Standard
-Las funciones que pueden retornar un valor booleano son convenientes para
- ocultar chequeos complicados adentro de funciones.
+Las funciones que pueden retornar un valor booleano son convenientes para ocultar chequeos complicados adentro de funciones.
  Por ejemplo:
 \end_layout
 
@@ -1107,27 +1209,28 @@ Las funciones que pueden retornar un valor booleano son convenientes para
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def esDivisible(x, y):
+def esDivisible(x,
+ y):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if x % y == 0:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return True       #  es cierto
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return False      # es falso
 \end_layout
@@ -1139,9 +1242,7 @@ def esDivisible(x, y):
 esDivisible
 \family default
 .
- Es muy usual nombrar las funciones booleanas con palabras o frases que
- suenan como preguntas de sí o no (que tienen como respuesta un sí o un
- no).
+ Es muy usual nombrar las funciones booleanas con palabras o frases que suenan como preguntas de sí o no (que tienen como respuesta un sí o un no).
  
 \family typewriter
 esDivisible
@@ -1158,13 +1259,13 @@ False
 \end_layout
 
 \begin_layout Standard
-Podemos hacerla más concisa tomando ventaja del hecho de que una condición
- dentro de una sentencia 
+Podemos hacerla más concisa tomando ventaja del hecho de que una condición dentro de una sentencia 
 \family typewriter
 if
 \family default
  es una expresión booleana.
- Podemos retornarla directamente, evitando completamente el 
+ Podemos retornarla directamente,
+ evitando completamente el 
 \family typewriter
 if
 \family default
@@ -1176,12 +1277,13 @@ if
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def esDivisible(x, y):
+def esDivisible(x,
+ y):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return x % y == 0
 \end_layout
@@ -1196,22 +1298,24 @@ def esDivisible(x, y):
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>>   esDivisible(6, 4)
+>>>   esDivisible(6,
+ 4)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 False
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>>   esDivisible(6, 3)
+>>>   esDivisible(6,
+ 3)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 True
 \end_layout
@@ -1230,22 +1334,23 @@ Las funciones booleanas se usan a menudo en las sentencias condicionales:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-if esDivisible(x, y):
+if esDivisible(x,
+ y):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print("x es divisible por y")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print("x no es divisible por y")
 \end_layout
@@ -1260,9 +1365,10 @@ else:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-if esDivisible(x, y) == True:
+if esDivisible(x,
+ y) == True:
 \end_layout
 
 \end_inset
@@ -1276,6 +1382,8 @@ Más recursión
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1286,6 +1394,8 @@ recursión
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1296,6 +1406,8 @@ lenguaje completo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1306,20 +1418,26 @@ lenguaje!completo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-Turing, Alan
+Turing,
+ Alan
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-Turing, Tésis de 
+Turing,
+ Tésis de 
 \end_layout
 
 \end_inset
@@ -1328,9 +1446,9 @@ Turing, Tésis de
 \end_layout
 
 \begin_layout Standard
-Hasta aquí, usted sólo ha aprendido un pequeño subconjunto de Python, pero
- podría interesarle saber que este subconjunto es un lenguaje de programación
- 
+Hasta aquí,
+ usted sólo ha aprendido un pequeño subconjunto de Python,
+ pero podría interesarle saber que este subconjunto es un lenguaje de programación 
 \begin_inset ERT
 status collapsed
 
@@ -1365,22 +1483,22 @@ status collapsed
 
 \end_inset
 
-, lo que quiere decir que cualquier cosa que pueda ser calculada puede ser
- expresada en este subconjunto.
- Cualquier programa escrito alguna vez puede ser reescrito usando solamente
- las características que usted ha aprendido hasta ahora (de hecho, necesitaría
- algunos comandos mas para manejar dispositivos como el teclado, el ratón,
- los discos, etc., pero eso sería todo).
+,
+ lo que quiere decir que cualquier cosa que pueda ser calculada puede ser expresada en este subconjunto.
+ Cualquier programa escrito alguna vez puede ser reescrito usando solamente las características que usted ha aprendido hasta ahora (de hecho,
+ necesitaría algunos comandos mas para manejar dispositivos como el teclado,
+ el ratón,
+ los discos,
+ etc.,
+ pero eso sería todo).
 \end_layout
 
 \begin_layout Standard
-Demostrar esta afirmación no es un ejercicio trivial y fue logrado por Alan
- Turing, uno de los primeros científicos de la computación (algunos dirían
- que el era un matemático, pero la mayoría de los científicos pioneros de
- la computación eran matemáticos).
+Demostrar esta afirmación no es un ejercicio trivial y fue logrado por Alan Turing,
+ uno de los primeros científicos de la computación (algunos dirían que el era un matemático,
+ pero la mayoría de los científicos pioneros de la computación eran matemáticos).
  Esto se conoce como la Tesis de Turing.
- Si usted toma un curso de Teoría de la Computación tendrá la oportunidad
- de ver la demostración.
+ Si usted toma un curso de Teoría de la Computación tendrá la oportunidad de ver la demostración.
 \end_layout
 
 \begin_layout Standard
@@ -1389,17 +1507,20 @@ Para darle una idea de lo que puede hacer con las herramientas que ha aprendido,
 \end_layout
 
 \begin_layout Standard
-Una definición recursiva es similar a una circular, ya que éstas contienen
- una referencia al concepto que se pretende definir.
+Una definición recursiva es similar a una circular,
+ ya que éstas contienen una referencia al concepto que se pretende definir.
  Una definición circular verdadera no es muy útil:
 \end_layout
 
 \begin_layout Description
-frabjuoso: un adjetivo usado para describir algo que es frabjuoso.
+frabjuoso:
+ un adjetivo usado para describir algo que es frabjuoso.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1410,6 +1531,8 @@ frabjuoso
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1420,6 +1543,8 @@ definición circular
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1432,9 +1557,10 @@ definición!circular
 \end_layout
 
 \begin_layout Standard
-Si usted viera dicha definición en el diccionario, quedaría confundido.
- Por otro lado, si encontrara la definición de la función factorial hallaría
- algo como esto:
+Si usted viera dicha definición en el diccionario,
+ quedaría confundido.
+ Por otro lado,
+ si encontrara la definición de la función factorial hallaría algo como esto:
 \end_layout
 
 \begin_layout Standard
@@ -1458,12 +1584,14 @@ Si usted viera dicha definición en el diccionario, quedaría confundido.
 \end_layout
 
 \begin_layout Standard
-Esta definición dice que el factorial de 0 es 1, y que el factorial de cualquier
- otro valor, 
+Esta definición dice que el factorial de 0 es 1,
+ y que el factorial de cualquier otro valor,
+ 
 \begin_inset Formula $n$
 \end_inset
 
-, es 
+,
+ es 
 \begin_inset Formula $n$
 \end_inset
 
@@ -1483,24 +1611,30 @@ Así que
 \begin_inset Formula $2!$
 \end_inset
 
-, que es 2 veces 
+,
+ que es 2 veces 
 \begin_inset Formula $1!$
 \end_inset
 
-, que es 1 vez 
+,
+ que es 1 vez 
 \begin_inset Formula $0!$
 \end_inset
 
 .
- Juntando todo esto, 
+ Juntando todo esto,
+ 
 \begin_inset Formula $3!$
 \end_inset
 
- es igual a 3 veces 2 veces 1 vez 1, lo que da 6.
+ es igual a 3 veces 2 veces 1 vez 1,
+ lo que da 6.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1511,6 +1645,8 @@ función factorial
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1523,8 +1659,8 @@ función!factorial
 \end_layout
 
 \begin_layout Standard
-Si usted puede escribir una definición recursiva para algo, usualmente podrá
- escribir un programa para evaluarlo.
+Si usted puede escribir una definición recursiva para algo,
+ usualmente podrá escribir un programa para evaluarlo.
  El primer paso es decidir cuales son los parámetros para esta función.
  Con un poco de esfuerzo usted concluiría que 
 \family typewriter
@@ -1538,7 +1674,7 @@ factorial
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def factorial(n):
 \end_layout
@@ -1549,7 +1685,8 @@ def factorial(n):
 \end_layout
 
 \begin_layout Standard
-Si el argumento es 0, todo lo que hacemos es retornar 1:
+Si el argumento es 0,
+ todo lo que hacemos es retornar 1:
 \end_layout
 
 \begin_layout Standard
@@ -1557,17 +1694,17 @@ Si el argumento es 0, todo lo que hacemos es retornar 1:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def factorial(n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if n == 0:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return 1
 \end_layout
@@ -1578,12 +1715,15 @@ def factorial(n):
 \end_layout
 
 \begin_layout Standard
-Sino, y ésta es la parte interesante, tenemos que hacer una llamada recursiva
- para encontrar el factorial de 
+Sino,
+ y ésta es la parte interesante,
+ tenemos que hacer una llamada recursiva para encontrar el factorial de 
 \begin_inset Formula $n-1$
 \end_inset
 
- y, entonces, multiplicarlo por 
+ y,
+ entonces,
+ multiplicarlo por 
 \begin_inset Formula $n$
 \end_inset
 
@@ -1592,37 +1732,37 @@ Sino, y ésta es la parte interesante, tenemos que hacer una llamada recursiva
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def factorial(n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if n == 0:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     recur = factorial(n-1)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     da = n * recur
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return da
 \end_layout
@@ -1645,6 +1785,7 @@ conteo
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "recursion"
+nolink "false"
 
 \end_inset
 
@@ -1695,7 +1836,8 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Como 3 no es 0, tomamos la segunda rama y calculamos el factorial de 
+Como 3 no es 0,
+ tomamos la segunda rama y calculamos el factorial de 
 \family typewriter
 n-1
 \family default
@@ -1703,7 +1845,8 @@ n-1
 \end_layout
 
 \begin_layout Quote
-Como 2 no es 0, tomamos la segunda rama y calculamos el factorial de 
+Como 2 no es 0,
+ tomamos la segunda rama y calculamos el factorial de 
 \family typewriter
 n-1
 \family default
@@ -1716,7 +1859,8 @@ n-1
 
 \begin_deeper
 \begin_layout Quote
-Como 1 no es 0, tomamos la segunda rama y calculamos el factorial de 
+Como 1 no es 0,
+ tomamos la segunda rama y calculamos el factorial de 
 \family typewriter
 n-1
 \family default
@@ -1764,7 +1908,8 @@ status collapsed
 
 \end_inset
 
- 0, tomamos la primera rama y retornamos 1 sin hacer más llamados recursivos.
+ 0,
+ tomamos la primera rama y retornamos 1 sin hacer más llamados recursivos.
  
 \end_layout
 
@@ -1774,7 +1919,9 @@ El valor de retorno (1) se multiplica por
 \begin_inset Formula $n$
 \end_inset
 
-, que es 1, y el resultado se retorna.
+,
+ que es 1,
+ y el resultado se retorna.
  
 \end_layout
 
@@ -1784,7 +1931,9 @@ El valor de retorno (1) se multiplica por
 \begin_inset Formula $n$
 \end_inset
 
-, que es 2, y el resultado se retorna.
+,
+ que es 2,
+ y el resultado se retorna.
  
 \end_layout
 
@@ -1793,8 +1942,11 @@ El valor de retorno (2) se multiplica por
 \begin_inset Formula $n$
 \end_inset
 
-, que es 3, y el resultado, 6, se convierte en el valor de retorno del llamado
- de función que empezó todo el proceso.
+,
+ que es 3,
+ y el resultado,
+ 6,
+ se convierte en el valor de retorno del llamado de función que empezó todo el proceso.
 \end_layout
 
 \begin_layout Standard
@@ -1870,11 +2022,13 @@ afterfig
 
 \begin_layout Standard
 Los valores de retorno mostrados se pasan hacia arriba a través de la pila.
- En cada marco, el valor de retorno es el valor de 
+ En cada marco,
+ el valor de retorno es el valor de 
 \family typewriter
 da
 \family default
-, que es el producto de 
+,
+ que es el producto de 
 \family typewriter
 n
 \family default
@@ -1886,7 +2040,8 @@ recur
 \end_layout
 
 \begin_layout Standard
-Observe que en el último marco, las variables locales 
+Observe que en el último marco,
+ las variables locales 
 \family typewriter
 recur
 \family default
@@ -1903,6 +2058,8 @@ El salto de fe
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1913,6 +2070,8 @@ recursión
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1925,8 +2084,8 @@ salto de fe
 \end_layout
 
 \begin_layout Standard
-Seguir el flujo de ejecución es una forma de leer programas, pero rápidamente
- puede tornarse algo laberíntico.
+Seguir el flujo de ejecución es una forma de leer programas,
+ pero rápidamente puede tornarse algo laberíntico.
  Una alternativa es lo que denominamos hacer el 
 \begin_inset Quotes eld
 \end_inset
@@ -1935,8 +2094,9 @@ salto de fe.
 \begin_inset Quotes erd
 \end_inset
 
- Cuando usted llega a un llamado de función, en lugar de seguir el flujo
- de ejecución, se 
+ Cuando usted llega a un llamado de función,
+ en lugar de seguir el flujo de ejecución,
+ se 
 \begin_inset ERT
 status collapsed
 
@@ -1975,8 +2135,8 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-De hecho, usted ya está haciendo el salto de fe cuando usa las funciones
- primitivas.
+De hecho,
+ usted ya está haciendo el salto de fe cuando usa las funciones primitivas.
  Cuando llama a 
 \family typewriter
 math.cos
@@ -1985,14 +2145,15 @@ math.cos
 \family typewriter
 math.exp
 \family default
-, no está examinando las implementaciones de estas funciones.
- Usted sólo asume que están correctas porque los que escribieron el módulo
- math son buenos programadores.
+,
+ no está examinando las implementaciones de estas funciones.
+ Usted sólo asume que están correctas porque los que escribieron el módulo math son buenos programadores.
 \end_layout
 
 \begin_layout Standard
 Lo mismo se cumple para una de sus propias funciones.
- Por ejemplo, en la Sección
+ Por ejemplo,
+ en la Sección
 \begin_inset space ~
 \end_inset
 
@@ -2000,23 +2161,27 @@ Lo mismo se cumple para una de sus propias funciones.
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "boolean"
+nolink "false"
 
 \end_inset
 
-, escribimos una función llamada 
+,
+ escribimos una función llamada 
 \family typewriter
 esDivisible
 \family default
  que determina si un número es divisible por otro.
- Una vez que nos hemos convencido de que esta función es correcta —probándola
- y examinando el código—podemos usarla sin mirar el código nuevamente.
+ Una vez que nos hemos convencido de que esta función es correcta —
+probándola y examinando el código—
+podemos usarla sin mirar el código nuevamente.
 \end_layout
 
 \begin_layout Standard
 Lo mismo vale para los programas recursivos.
- Cuando usted llega a una llamada recursiva, en lugar de seguir el flujo
- de ejecución, debería asumir que el llamado recursivo funciona (retorna
- el resultado correcto) y luego preguntarse, 
+ Cuando usted llega a una llamada recursiva,
+ en lugar de seguir el flujo de ejecución,
+ debería asumir que el llamado recursivo funciona (retorna el resultado correcto) y luego preguntarse,
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2024,7 +2189,8 @@ Asumiendo que puedo encontrar el factorial de
 \begin_inset Formula $n-1$
 \end_inset
 
-, ¿puedo calcular el factorial de 
+,
+ ¿puedo calcular el factorial de 
 \begin_inset Formula $n$
 \end_inset
 
@@ -2032,7 +2198,9 @@ Asumiendo que puedo encontrar el factorial de
 \begin_inset Quotes erd
 \end_inset
 
- En este caso, es claro que se puede lograr, multiplicándolo por 
+ En este caso,
+ es claro que se puede lograr,
+ multiplicándolo por 
 \begin_inset Formula $n$
 \end_inset
 
@@ -2040,9 +2208,8 @@ Asumiendo que puedo encontrar el factorial de
 \end_layout
 
 \begin_layout Standard
-Por supuesto que es un poco raro asumir que la función trabaja correctamente
- cuando ni siquiera hemos terminado de escribirla, ¡por eso es que denominamos
- a esto el salto de fe!.
+Por supuesto que es un poco raro asumir que la función trabaja correctamente cuando ni siquiera hemos terminado de escribirla,
+ ¡por eso es que denominamos a esto el salto de fe!.
 \end_layout
 
 \begin_layout Section
@@ -2060,9 +2227,8 @@ name "one more example"
 \end_layout
 
 \begin_layout Standard
-En el ejemplo anterior usábamos variables temporales para desplegar los
- pasos y depurar el código más fácilmente, pero podríamos ahorrar unas cuantas
- líneas:
+En el ejemplo anterior usábamos variables temporales para desplegar los pasos y depurar el código más fácilmente,
+ pero podríamos ahorrar unas cuantas líneas:
 \end_layout
 
 \begin_layout Standard
@@ -2070,41 +2236,44 @@ En el ejemplo anterior usábamos variables temporales para desplegar los
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def factorial(n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if n == 0:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return n * factorial(n-1)
 \end_layout
 
 \end_inset
 
- Desde ahora, vamos a usar esta forma más compacta, pero le recomendamos
- que use la forma más explícita mientras desarrolla las funciones.
- Cuando estén terminadas y funcionando, con un poco de inspiración se pueden
- compactar.
+ Desde ahora,
+ vamos a usar esta forma más compacta,
+ pero le recomendamos que use la forma más explícita mientras desarrolla las funciones.
+ Cuando estén terminadas y funcionando,
+ con un poco de inspiración se pueden compactar.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2121,12 +2290,15 @@ Después de
 \family typewriter
 factorial
 \family default
-, el ejemplo más común de función matemática, definida recursivamente, es
- la serie de 
+,
+ el ejemplo más común de función matemática,
+ definida recursivamente,
+ es la serie de 
 \family typewriter
 fibonacci
 \family default
-, que tiene la siguiente definición:
+,
+ que tiene la siguiente definición:
 \end_layout
 
 \begin_layout Standard
@@ -2143,7 +2315,8 @@ fibonacci
 
 \end_inset
 
-Traducida a Python, luce así:
+Traducida a Python,
+ luce así:
 \end_layout
 
 \begin_layout Standard
@@ -2151,42 +2324,44 @@ Traducida a Python, luce así:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def fibonacci (n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if n == 0 or n == 1:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return fibonacci(n-1) + fibonacci(n-2)
 \end_layout
 
 \end_inset
 
- Si usted intenta seguir el flujo de ejecución de fibonacci, incluso para
- valores pequeños de 
+ Si usted intenta seguir el flujo de ejecución de fibonacci,
+ incluso para valores pequeños de 
 \begin_inset Formula $n$
 \end_inset
 
-, le va a doler la cabeza.
- Pero, si seguimos el salto de fe, si asumimos que los dos llamados recursivos
- funcionan correctamente, es claro que el resultado correcto es la suma
- de éstos dos.
+,
+ le va a doler la cabeza.
+ Pero,
+ si seguimos el salto de fe,
+ si asumimos que los dos llamados recursivos funcionan correctamente,
+ es claro que el resultado correcto es la suma de éstos dos.
 \end_layout
 
 \begin_layout Section
@@ -2195,6 +2370,8 @@ Chequeo de tipos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2205,6 +2382,8 @@ chequeo de tipos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2215,6 +2394,8 @@ chequeo de errores
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2239,20 +2420,23 @@ factorial
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> factorial (1.5)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-RuntimeError: Maximum recursion depth exceeded
+RuntimeError:
+ Maximum recursion depth exceeded
 \end_layout
 
 \end_inset
 
  Parece recursión infinita.
- ¿Cómo puede darse? Hay un caso base —cuando 
+ ¿Cómo puede darse?
+ Hay un caso base —
+cuando 
 \family typewriter
 n == 0
 \family default
@@ -2301,6 +2485,8 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2311,6 +2497,8 @@ recursión infinita
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2329,23 +2517,26 @@ n
 \family default
  es 0.5.
  En la siguiente es -0.5.
- Desde allí se hace cada vez más pequeño, pero nunca será 0.
+ Desde allí se hace cada vez más pequeño,
+ pero nunca será 0.
 \end_layout
 
 \begin_layout Standard
-Tenemos dos opciones, podemos intentar generalizar la función 
+Tenemos dos opciones,
+ podemos intentar generalizar la función 
 \family typewriter
 factorial
 \family default
- para que trabaje con números de punto flotante, o podemos chequear el tipo
- del parámetro que llega.
- La primera opción se denomina en matemática la función gama y está fuera
- del alcance de este libro.
+ para que trabaje con números de punto flotante,
+ o podemos chequear el tipo del parámetro que llega.
+ La primera opción se denomina en matemática la función gama y está fuera del alcance de este libro.
  Optaremos por la segunda.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2362,8 +2553,7 @@ Podemos usar la función
 \family typewriter
 type
 \family default
- para comparar el tipo del parámetro al tipo de un valor entero conocido
- (como 1).
+ para comparar el tipo del parámetro al tipo de un valor entero conocido (como 1).
  Mientras estamos en eso también aseguraremos que el parámetro sea positivo:
 \end_layout
 
@@ -2372,57 +2562,57 @@ type
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def factorial (n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if type(n) != type(1):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     print("Factorial solo esta definido para enteros.")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return -1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   elif n < 0:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     print("Factorial solo esta definido para positivos")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return -1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   elif n == 0:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return n * factorial(n-1)
 \end_layout
@@ -2434,40 +2624,41 @@ def factorial (n):
 
 \begin_layout Standard
 Ahora tenemos tres casos base.
- El primero atrapa a los valores que no son enteros, el segundo a los enteros
- negativos.
- En ambos casos el programa imprime un mensaje de error y retorna un valor
- especial, -1, para indicar que algo falló:
+ El primero atrapa a los valores que no son enteros,
+ el segundo a los enteros negativos.
+ En ambos casos el programa imprime un mensaje de error y retorna un valor especial,
+ -1,
+ para indicar que algo falló:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> factorial ("pedro")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Factorial solo esta definido para enteros.
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 -1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> factorial (-2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Factorial solo esta definido para positivos.
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 -1
 \end_layout
@@ -2478,11 +2669,13 @@ Factorial solo esta definido para positivos.
 \end_layout
 
 \begin_layout Standard
-Si pasamos los dos chequeos, tenemos la garantía de que 
+Si pasamos los dos chequeos,
+ tenemos la garantía de que 
 \begin_inset Formula $n$
 \end_inset
 
- es un número entero positivo, y podemos probar que la recursión termina.
+ es un número entero positivo,
+ y podemos probar que la recursión termina.
 \end_layout
 
 \begin_layout Standard
@@ -2491,8 +2684,8 @@ Este programa demuestra el uso de un patrón denominado
 guarda
 \series default
 .
- Los primeros dos condicionales actúan como guardas, protegiendo al código
- interno de los valores que pueden causar un error.
+ Los primeros dos condicionales actúan como guardas,
+ protegiendo al código interno de los valores que pueden causar un error.
  Las guardas hacen posible demostrar que el código es correcto.
 \end_layout
 
@@ -2502,8 +2695,9 @@ Pruebas unitarias con doctest
 
 \begin_layout Standard
 Con funciones fructíferas podemos realizar pruebas unitarias.
- Por ejemplo, la función área de un cuadrado puede adornarse con un bloque
- de comentarios con triple comillas, que explica su propósito:
+ Por ejemplo,
+ la función área de un cuadrado puede adornarse con un bloque de comentarios con triple comillas,
+ que explica su propósito:
 \end_layout
 
 \begin_layout Standard
@@ -2511,32 +2705,33 @@ Con funciones fructíferas podemos realizar pruebas unitarias.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def area(lado):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """ Calcula el area de un cuadrado
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         Parámetros:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-            radio: número
+            radio:
+ número
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return lado**2
 \end_layout
@@ -2547,8 +2742,8 @@ def area(lado):
 \end_layout
 
 \begin_layout Standard
-Si al bloque le agregamos una línea probando el llamado de la función, seguida
- del valor de retorno que debe entregar:
+Si al bloque le agregamos una línea probando el llamado de la función,
+ seguida del valor de retorno que debe entregar:
 \end_layout
 
 \begin_layout Standard
@@ -2556,47 +2751,48 @@ Si al bloque le agregamos una línea probando el llamado de la función, seguida
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def area(lado):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """ Calcula el area de un cuadrado
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         Parámetros:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-            radio: número
+            radio:
+ número
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         Pruebas:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         >>> area(1)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         1        
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return lado**2
 \end_layout
@@ -2608,10 +2804,9 @@ def area(lado):
 
 \begin_layout Standard
 Logramos obtener una función que se puede probar en un caso particular.
- El módulo doctest de Python permite ejecutar automáticamente los casos
- de prueba que tengamos en las funciones agregando al final del guión su
- importación y el llamado de la función testmod(), como se ilustra a continuació
-n con la función area, ahora con cuatro casos de prueba:
+ El módulo doctest de Python permite ejecutar automáticamente los casos de prueba que tengamos en las funciones agregando al final del guión su importación y el llamado de la función testmod(),
+ como se ilustra a continuación con la función area,
+ ahora con cuatro casos de prueba:
 \end_layout
 
 \begin_layout Standard
@@ -2619,101 +2814,102 @@ n con la función area, ahora con cuatro casos de prueba:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def area(lado):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """ Calcula el area de un cuadrado
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         Parámetros:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-            radio: número
+            radio:
+ número
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         Pruebas:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         >>> area(1)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         >>> area(2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         4
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         >>> area(4)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         16
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         >>> area(10)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         100
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return lado**2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 if __name__ == '__main__':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     import doctest
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     doctest.testmod()
 \end_layout
@@ -2724,9 +2920,10 @@ if __name__ == '__main__':
 \end_layout
 
 \begin_layout Standard
-Si se ejecuta el guión se ejecutarán todas las pruebas unitarias de todas
- las funciones, esto nos permite atrapar errores rápidamente y corregirlos.
- En Unix/Linux, al ejecutar 
+Si se ejecuta el guión se ejecutarán todas las pruebas unitarias de todas las funciones,
+ esto nos permite atrapar errores rápidamente y corregirlos.
+ En Unix/Linux,
+ al ejecutar 
 \begin_inset ERT
 status collapsed
 
@@ -2739,8 +2936,7 @@ verb+python -m doctest -v guión.py+
 
 \end_inset
 
- se logran ejecutar los casos de prueba y visualizar detalladamente en la
- pantalla.
+ se logran ejecutar los casos de prueba y visualizar detalladamente en la pantalla.
 \end_layout
 
 \begin_layout Section
@@ -2800,8 +2996,8 @@ Código muerto:
 
 \end_inset
 
- parte de un programa que nunca puede ser ejecutada, a menudo porque aparece
- después de una sentencia 
+ parte de un programa que nunca puede ser ejecutada,
+ a menudo porque aparece después de una sentencia 
 \family typewriter
 return
 \family default
@@ -2809,8 +3005,9 @@ return
 \end_layout
 
 \begin_layout Description
-None: valor especial en Python retornado por las funciones que no tienen
- una sentencia return, o que tienen una sentencia return sin un argumento.
+None:
+ valor especial en Python retornado por las funciones que no tienen una sentencia return,
+ o que tienen una sentencia return sin un argumento.
 \end_layout
 
 \begin_layout Description
@@ -2824,18 +3021,19 @@ Desarrollo incremental:
 
 \end_inset
 
- un plan de desarrollo de programas que evita la depuración, agregando y
- probando solo pequeñas porciones de código en cada momento.
+ un plan de desarrollo de programas que evita la depuración,
+ agregando y probando solo pequeñas porciones de código en cada momento.
 \end_layout
 
 \begin_layout Description
-Andamiaje: código que se usa durante el desarrollo de programas, pero no
- hace parte de la solución final.
+Andamiaje:
+ código que se usa durante el desarrollo de programas,
+ pero no hace parte de la solución final.
 \end_layout
 
 \begin_layout Description
-Guarda: una condición que chequea y controla circunstancias que pueden causar
- errores.
+Guarda:
+ una condición que chequea y controla circunstancias que pueden causar errores.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2845,6 +3043,8 @@ Guarda: una condición que chequea y controla circunstancias que pueden causar
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2855,6 +3055,8 @@ variable temporal
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2865,6 +3067,8 @@ variable!temporal
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2875,6 +3079,8 @@ valor de retorno
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2885,6 +3091,8 @@ código muerto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2895,6 +3103,8 @@ None
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2905,6 +3115,8 @@ desarrollo incremental
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2915,6 +3127,8 @@ andamiaje
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2949,11 +3163,13 @@ verb+comparar(a,b)+
 \begin_inset Formula $a<b$
 \end_inset
 
-, 0 si 
+,
+ 0 si 
 \begin_inset Formula $a=b$
 \end_inset
 
-, y -1 si 
+,
+ y -1 si 
 \begin_inset Formula $a>b$
 \end_inset
 
@@ -2961,13 +3177,12 @@ verb+comparar(a,b)+
 \end_layout
 
 \begin_layout Enumerate
-Tome la solución del último ejercicio del capítulo anterior y conviértala
- en una función que retorne la nota definitiva de su curso de programación.
+Tome la solución del último ejercicio del capítulo anterior y conviértala en una función que retorne la nota definitiva de su curso de programación.
 \end_layout
 
 \begin_layout Enumerate
-Calcule en una función el área de un disco, teniendo como entrada el radio
- menor y el radio mayor.
+Calcule en una función el área de un disco,
+ teniendo como entrada el radio menor y el radio mayor.
 \end_layout
 
 \begin_layout Enumerate
@@ -2979,7 +3194,10 @@ status collapsed
 
 
 \backslash
-verb+pendiente(x1, y1, x2, y2)+
+verb+pendiente(x1,
+ y1,
+ x2,
+ y2)+
 \end_layout
 
 \end_inset
@@ -2996,14 +3214,13 @@ verb+pendiente(x1, y1, x2, y2)+
 \end_layout
 
 \begin_layout Enumerate
-Convierta las funciones de los capítulos pasados, y que se puedan transformar,
+Convierta las funciones de los capítulos pasados,
+ y que se puedan transformar,
  a fructíferas.
 \end_layout
 
 \begin_layout Enumerate
-Convierta las funciones que obtuvo en el punto anterior agregando guardas
- para protegerlas de las situaciones en que reciben argumentos de un tipo
- de dato que no pueden manipular.
+Convierta las funciones que obtuvo en el punto anterior agregando guardas para protegerlas de las situaciones en que reciben argumentos de un tipo de dato que no pueden manipular.
 \end_layout
 
 \begin_layout Enumerate

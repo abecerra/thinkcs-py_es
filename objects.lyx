@@ -102,7 +102,7 @@ customHeadersFooters
 \maintain_unincluded_children true
 \language spanish
 \language_package default
-\inputencoding utf8
+\inputencoding auto
 \fontencoding global
 \font_roman palatino
 \font_sans kurier
