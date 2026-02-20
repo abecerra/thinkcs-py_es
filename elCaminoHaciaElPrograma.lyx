@@ -1,15 +1,15 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -18,7 +18,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -52,7 +54,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -68,11 +72,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -87,30 +96,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -123,17 +141,19 @@ El camino hacia el programa
 \end_layout
 
 \begin_layout Standard
-El objetivo de este libro es el de enseñar al estudiante a pensar como lo
- hacen los científicos informáticos.
+El objetivo de este libro es el de enseñar al estudiante a pensar como lo hacen los científicos informáticos.
  Esta manera de pensar combina las mejores características de la matemática,
  la ingeniería y las ciencias naturales.
- Como los matemáticos, los científicos informáticos usan lenguajes formales
- para diseñar ideas (específicamente, cómputos).
- Como los ingenieros, ellos diseñan cosas, construyendo sistemas mediante
- el ensamble de componentes y evaluando las ventajas y desventajas de cada
- una de las alternativas de construcción.
- Como los científicos, ellos observan el comportamiento de sistemas complejos,
- forman hipótesis, y prueban sus predicciones.
+ Como los matemáticos,
+ los científicos informáticos usan lenguajes formales para diseñar ideas (específicamente,
+ cómputos).
+ Como los ingenieros,
+ ellos diseñan cosas,
+ construyendo sistemas mediante el ensamble de componentes y evaluando las ventajas y desventajas de cada una de las alternativas de construcción.
+ Como los científicos,
+ ellos observan el comportamiento de sistemas complejos,
+ forman hipótesis,
+ y prueban sus predicciones.
 \end_layout
 
 \begin_layout Standard
@@ -142,10 +162,10 @@ La habilidad más importante del científico informático es
 la solución de problemas
 \series default
 .
- La solución de problemas incluye poder formular problemas, pensar en soluciones
- de manera creativa y expresar soluciones clara y precisamente.
- Como se verá, el proceso de aprender a programar es la oportunidad perfecta
- para desarrollar la habilidad de resolver problemas.
+ La solución de problemas incluye poder formular problemas,
+ pensar en soluciones de manera creativa y expresar soluciones clara y precisamente.
+ Como se verá,
+ el proceso de aprender a programar es la oportunidad perfecta para desarrollar la habilidad de resolver problemas.
  Por esa razón este capítulo se llama 
 \begin_inset Quotes eld
 \end_inset
@@ -158,9 +178,11 @@ El camino hacia el programa
 \end_layout
 
 \begin_layout Standard
-A cierto nivel, usted aprenderá a programar, lo cual es una habilidad muy
- útil por sí misma.
- A otro nivel, usted utilizará la programación para obtener algún resultado.
+A cierto nivel,
+ usted aprenderá a programar,
+ lo cual es una habilidad muy útil por sí misma.
+ A otro nivel,
+ usted utilizará la programación para obtener algún resultado.
  Ese resultado se verá más claramente durante el proceso.
 \end_layout
 
@@ -170,6 +192,8 @@ El lenguaje de programación Python
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -180,6 +204,8 @@ lenguaje de programación
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -197,7 +223,10 @@ El lenguaje de programación que aprenderá es Python.
 \series bold
 lenguaje de alto nivel
 \series default
-; otros ejemplos de lenguajes de alto nivel son C, C++, Perl y Java.
+;
+ otros ejemplos de lenguajes de alto nivel son C,
+ C++,
+ Perl y Java.
 \end_layout
 
 \begin_layout Standard
@@ -213,16 +242,19 @@ lenguaje de alto nivel,
 \series bold
 lenguajes de bajo nivel
 \series default
-, que también se denominan lenguajes de máquina o lenguajes ensambladores.
- A propósito, las computadoras sólo ejecutan programas escritos en lenguajes
- de bajo nivel.
+,
+ que también se denominan lenguajes de máquina o lenguajes ensambladores.
+ A propósito,
+ las computadoras sólo ejecutan programas escritos en lenguajes de bajo nivel.
  Los programas de alto nivel tienen que ser traducidos antes de ser ejecutados.
- Esta traducción lleva tiempo, lo cual es una pequeña desventaja de los
- lenguajes de alto nivel.
+ Esta traducción lleva tiempo,
+ lo cual es una pequeña desventaja de los lenguajes de alto nivel.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -233,6 +265,8 @@ portátil
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -243,6 +277,8 @@ lenguaje de alto nivel
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -253,6 +289,8 @@ lenguaje de bajo nivel
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -263,6 +301,8 @@ lenguaje!alto nivel
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -275,32 +315,33 @@ lenguaje!bajo nivel
 \end_layout
 
 \begin_layout Standard
-Aun así, las ventajas son enormes.
- En primer lugar, la programación en lenguajes de alto nivel es mucho más
- fácil; escribir programas en un lenguaje de alto nivel toma menos tiempo
- ya que los programas son más cortos, más fáciles de leer, y es más probable
- que queden correctos.
- En segundo lugar, los lenguajes de alto nivel son 
+Aun así,
+ las ventajas son enormes.
+ En primer lugar,
+ la programación en lenguajes de alto nivel es mucho más fácil;
+ escribir programas en un lenguaje de alto nivel toma menos tiempo ya que los programas son más cortos,
+ más fáciles de leer,
+ y es más probable que queden correctos.
+ En segundo lugar,
+ los lenguajes de alto nivel son 
 \series bold
 portables
 \series default
-, lo que significa que los programas escritos con estos pueden ser ejecutados
- en tipos diferentes de computadoras sin modificación alguna o con pocas
- modificaciones.
- Programas escritos en lenguajes de bajo nivel sólo pueden ser ejecutados
- en un tipo de computadora y deben ser reescritos para ser ejecutados en
- otra.
+,
+ lo que significa que los programas escritos con estos pueden ser ejecutados en tipos diferentes de computadoras sin modificación alguna o con pocas modificaciones.
+ Programas escritos en lenguajes de bajo nivel sólo pueden ser ejecutados en un tipo de computadora y deben ser reescritos para ser ejecutados en otra.
 \end_layout
 
 \begin_layout Standard
-Debido a estas ventajas, casi todo programa se escribe en un lenguaje de
- alto nivel.
- Los lenguajes de bajo nivel son sólo usados para unas pocas aplicaciones
- especiales.
+Debido a estas ventajas,
+ casi todo programa se escribe en un lenguaje de alto nivel.
+ Los lenguajes de bajo nivel son sólo usados para unas pocas aplicaciones especiales.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -311,6 +352,8 @@ compilar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -323,8 +366,8 @@ interpretar
 \end_layout
 
 \begin_layout Standard
-Hay dos tipos de programas que traducen lenguajes de alto nivel a lenguajes
- de bajo nivel: 
+Hay dos tipos de programas que traducen lenguajes de alto nivel a lenguajes de bajo nivel:
+ 
 \series bold
 intérpretes
 \series default
@@ -333,9 +376,10 @@ intérpretes
 compiladores
 \series default
 .
- Un intérprete lee un programa de alto nivel y lo ejecuta, lo que significa
- que lleva a cabo lo que indica el programa.
- Traduce el programa poco a poco, leyendo y ejecutando cada comando.
+ Un intérprete lee un programa de alto nivel y lo ejecuta,
+ lo que significa que lleva a cabo lo que indica el programa.
+ Traduce el programa poco a poco,
+ leyendo y ejecutando cada comando.
 \end_layout
 
 \begin_layout Standard
@@ -381,15 +425,17 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Un compilador lee el programa y lo traduce todo al mismo tiempo, antes de
- ejecutar alguno de los programas.
- A menudo se compila un programa como un paso aparte, y luego se ejecuta
- el código compilado.
- En este caso, al programa de alto nivel se lo llama el 
+Un compilador lee el programa y lo traduce todo al mismo tiempo,
+ antes de ejecutar alguno de los programas.
+ A menudo se compila un programa como un paso aparte,
+ y luego se ejecuta el código compilado.
+ En este caso,
+ al programa de alto nivel se lo llama el 
 \series bold
 código fuente
 \series default
-, y al programa traducido es llamado el 
+,
+ y al programa traducido es llamado el 
 \series bold
 código de objeto
 \series default
@@ -443,37 +489,45 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-A Python se lo considera un lenguaje interpretado, porque sus programas
- son ejecutados por un intérprete.
- Existen dos maneras de usar el intérprete: modo de comando y modo de guión.
- En modo de comando se escriben sentencias en el lenguaje Python y el intérprete
- muestra el resultado.
+A Python se lo considera un lenguaje interpretado,
+ porque sus programas son ejecutados por un intérprete.
+ Existen dos maneras de usar el intérprete:
+ modo de comando y modo de guión.
+ En modo de comando se escriben sentencias en el lenguaje Python y el intérprete muestra el resultado.
 \end_layout
 
 \begin_layout Verbatim
+
 $python
 \end_layout
 
 \begin_layout Verbatim
-Python 3.6.1 (default, Apr 29 2017, 15:32:44) [GCC 5.4.0] on linux 
+
+Python 3.6.1 (default,
+ Apr 29 2017,
+ 15:32:44) [GCC 5.4.0] on linux 
 \end_layout
 
 \begin_layout Verbatim
-Type "help", "copyright", "credits" or "license" for more information.
+
+Type "help",
+ "copyright",
+ "credits" or "license" for more information.
  
 \end_layout
 
 \begin_layout Verbatim
+
 >>>1+1
 \end_layout
 
 \begin_layout Verbatim
+
 2
 \end_layout
 
 \begin_layout Standard
-La primera línea de este ejemplo es el comando que pone en marcha al intérprete
- de Python.
+La primera línea de este ejemplo es el comando que pone en marcha al intérprete de Python.
  Las dos líneas siguientes son mensajes del intérprete.
  La tercera línea comienza con 
 \begin_inset ERT
@@ -510,7 +564,8 @@ status collapsed
 
 \end_inset
 
-, lo que indica que el intérprete está listo para recibir comandos.
+,
+ lo que indica que el intérprete está listo para recibir comandos.
  Escribimos 
 \family typewriter
 1+1
@@ -523,13 +578,17 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Alternativamente, se puede escribir el programa en un archivo y usar el
- intérprete para ejecutar el contenido de dicho archivo.
- El archivo, en este caso, se denomina un 
+Alternativamente,
+ se puede escribir el programa en un archivo y usar el intérprete para ejecutar el contenido de dicho archivo.
+ El archivo,
+ en este caso,
+ se denomina un 
 \series bold
 guión (script)
 \series default
-; por ejemplo, en un editor de texto se puede crear un archivo 
+;
+ por ejemplo,
+ en un editor de texto se puede crear un archivo 
 \family typewriter
 unomasuno.py
 \family default
@@ -541,7 +600,7 @@ unomasuno.py
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print(1 + 1)
 \end_layout
@@ -552,14 +611,14 @@ print(1 + 1)
 \end_layout
 
 \begin_layout Standard
-Por acuerdo unánime, los archivos que contienen programas de Python tienen
- nombres que terminan con 
+Por acuerdo unánime,
+ los archivos que contienen programas de Python tienen nombres que terminan con 
 \family typewriter
 .py
 \family default
 .
- Para ejecutar el programa, se le tiene que indicar el nombre del guión
- al intérprete.
+ Para ejecutar el programa,
+ se le tiene que indicar el nombre del guión al intérprete.
 \end_layout
 
 \begin_layout Standard
@@ -567,12 +626,12 @@ Por acuerdo unánime, los archivos que contienen programas de Python tienen
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 $ python unomasuno.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 2
 \end_layout
@@ -587,18 +646,18 @@ $ python unomasuno.py
 \end_layout
 
 \begin_layout Standard
-En otros entornos de desarrollo, los detalles de la ejecución de programas
- diferirán.
- Además, la mayoría de programas son más interesantes que el anterior.
+En otros entornos de desarrollo,
+ los detalles de la ejecución de programas diferirán.
+ Además,
+ la mayoría de programas son más interesantes que el anterior.
 \end_layout
 
 \begin_layout Standard
 La mayoría de ejemplos en este libro son ejecutados en la línea de comandos.
- La línea de comandos es más conveniente para el desarrollo de programas
- y para pruebas rápidas, porque las instrucciones de Python se pueden pasar
- a la máquina para ser ejecutadas inmediatamente.
- Una vez que el programa está completo, se lo puede archivar en un guión
- para ejecutarlo o modificarlo en el futuro.
+ La línea de comandos es más conveniente para el desarrollo de programas y para pruebas rápidas,
+ porque las instrucciones de Python se pueden pasar a la máquina para ser ejecutadas inmediatamente.
+ Una vez que el programa está completo,
+ se lo puede archivar en un guión para ejecutarlo o modificarlo en el futuro.
 \end_layout
 
 \begin_layout Section
@@ -606,16 +665,17 @@ La mayoría de ejemplos en este libro son ejecutados en la línea de comandos.
 \end_layout
 
 \begin_layout Standard
-Un programa es una secuencia de instrucciones que especifican cómo ejecutar
- un cómputo.
- El cómputo puede ser matemático, cómo solucionar un sistema de ecuaciones
- o determinar las raíces de un polinomio, pero también puede ser simbólico,
- cómo buscar y reemplazar el texto de un documento o (aunque parezca raro)
- compilar un programa.
+Un programa es una secuencia de instrucciones que especifican cómo ejecutar un cómputo.
+ El cómputo puede ser matemático,
+ cómo solucionar un sistema de ecuaciones o determinar las raíces de un polinomio,
+ pero también puede ser simbólico,
+ cómo buscar y reemplazar el texto de un documento o (aunque parezca raro) compilar un programa.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -628,21 +688,26 @@ instrucción
 \end_layout
 
 \begin_layout Standard
-Las instrucciones (comandos, órdenes) tienen una apariencia diferente en
- lenguajes de programación diferentes, pero existen algunas funciones básicas
- que se presentan en casi todo lenguaje:
+Las instrucciones (comandos,
+ órdenes) tienen una apariencia diferente en lenguajes de programación diferentes,
+ pero existen algunas funciones básicas que se presentan en casi todo lenguaje:
 \end_layout
 
 \begin_layout Description
-Entrada: recibir datos del teclado, o de un archivo o de otro aparato.
+Entrada:
+ recibir datos del teclado,
+ o de un archivo o de otro aparato.
 \end_layout
 
 \begin_layout Description
-Salida: mostrar datos en el monitor o enviar datos a un archivo u otro aparato.
+Salida:
+ mostrar datos en el monitor o enviar datos a un archivo u otro aparato.
 \end_layout
 
 \begin_layout Description
-Matemáticas: ejecutar operaciones básicas, como la adición y la multiplicación.
+Matemáticas:
+ ejecutar operaciones básicas,
+ como la adición y la multiplicación.
 \end_layout
 
 \begin_layout Description
@@ -656,22 +721,20 @@ Operación condicional:
 
 \end_inset
 
- probar la veracidad de alguna condición y ejecutar una secuencia de instruccion
-es apropiada.
+ probar la veracidad de alguna condición y ejecutar una secuencia de instrucciones apropiada.
 \end_layout
 
 \begin_layout Description
-Repetición ejecutar alguna acción repetidas veces, usualmente con alguna
- variación.
+Repetición ejecutar alguna acción repetidas veces,
+ usualmente con alguna variación.
 \end_layout
 
 \begin_layout Standard
-Aunque sea difícil de creer, todos los programas en existencia son formulados
- exclusivamente con tales instrucciones.
- Así, una manera de describir la programación es: el proceso de romper una
- tarea en tareas cada vez más pequeñas hasta que éstas sean lo suficientemente
- sencillas como para ser ejecutadas con una secuencia de estas instrucciones
- básicas.
+Aunque sea difícil de creer,
+ todos los programas en existencia son formulados exclusivamente con tales instrucciones.
+ Así,
+ una manera de describir la programación es:
+ el proceso de romper una tarea en tareas cada vez más pequeñas hasta que éstas sean lo suficientemente sencillas como para ser ejecutadas con una secuencia de estas instrucciones básicas.
 \end_layout
 
 \begin_layout Standard
@@ -690,6 +753,8 @@ algoritmos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -700,6 +765,8 @@ depuración (debugging)
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -712,11 +779,13 @@ error (bug)
 \end_layout
 
 \begin_layout Standard
-La programación es un proceso complejo, y a veces este proceso lleva a 
+La programación es un proceso complejo,
+ y a veces este proceso lleva a 
 \series bold
 errores indefinidos
 \series default
-, también llamados 
+,
+ también llamados 
 \series bold
 defectos
 \series default
@@ -724,8 +793,8 @@ defectos
 \series bold
 errores de programación
 \series default
- (en inglés `bugs'), y el proceso de buscarlos y corregirlos es llamado
- 
+ (en inglés `bugs'),
+ y el proceso de buscarlos y corregirlos es llamado 
 \series bold
 depuración
 \series default
@@ -743,6 +812,8 @@ Errores sintácticos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -753,6 +824,8 @@ error sintáctico
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -766,16 +839,19 @@ error!sintaxis
 
 \begin_layout Standard
 Python sólo puede ejecutar un programa si está sintácticamente bien escrito.
- Al contrario, es decir, si el programa tiene algún error de sintaxis, el
- proceso falla y devuelve un mensaje de error.
+ Al contrario,
+ es decir,
+ si el programa tiene algún error de sintaxis,
+ el proceso falla y devuelve un mensaje de error.
  La palabra 
 \series bold
 sintáctica
 \series default
- se refiere a la estructura de cualquier programa y a las reglas de esa
- estructura.
+ se refiere a la estructura de cualquier programa y a las reglas de esa estructura.
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -784,20 +860,23 @@ sintáctica
 
 \end_inset
 
- Por ejemplo, en español, la primera letra de toda oración debe ser mayúscula
- y el fin de toda oración debe llevar un punto.
+ Por ejemplo,
+ en español,
+ la primera letra de toda oración debe ser mayúscula y el fin de toda oración debe llevar un punto.
  esta oración tiene un error sintáctico.
  Esta oración también
 \end_layout
 
 \begin_layout Standard
-Para la mayoría de lectores, unos pocos errores no impiden la comprensión
- de los grafitis en la calle que, a menudo, rompen muchas reglas de sintaxis.
+Para la mayoría de lectores,
+ unos pocos errores no impiden la comprensión de los grafitis en la calle que,
+ a menudo,
+ rompen muchas reglas de sintaxis.
  Sin embargo Python no es así.
- Si hay aunque sea un error sintáctico en el programa, Python mostrará un
- mensaje de error y abortará su ejecución.
- Al principio usted pasará mucho tiempo buscando errores sintácticos, pero
- con el tiempo no cometerá tantos errores y los encontrará rápidamente.
+ Si hay aunque sea un error sintáctico en el programa,
+ Python mostrará un mensaje de error y abortará su ejecución.
+ Al principio usted pasará mucho tiempo buscando errores sintácticos,
+ pero con el tiempo no cometerá tantos errores y los encontrará rápidamente.
 \end_layout
 
 \begin_layout Subsection
@@ -813,6 +892,8 @@ name "runtime"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -823,6 +904,8 @@ error en tiempo de ejecución
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -833,6 +916,8 @@ error!en tiempo de ejecución
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -843,6 +928,8 @@ excepción
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -853,6 +940,8 @@ lenguaje seguro
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -871,12 +960,13 @@ El segundo tipo de error es el de tiempo de ejecución.
 \series bold
 excepciones
 \series default
-, porque indican que algo excepcional ha ocurrido.
+,
+ porque indican que algo excepcional ha ocurrido.
 \end_layout
 
 \begin_layout Standard
-Con los programas que vamos a escribir al principio, los errores de tiempo
- de ejecución ocurrirán con poca frecuencia.
+Con los programas que vamos a escribir al principio,
+ los errores de tiempo de ejecución ocurrirán con poca frecuencia.
 \end_layout
 
 \begin_layout Subsection
@@ -885,6 +975,8 @@ Errores semánticos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -895,6 +987,8 @@ semántica
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -905,6 +999,8 @@ error semántico
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -922,8 +1018,9 @@ El tercer tipo de error es el
 semántico
 \series default
 .
- Si hay un error de lógica en su programa, éste será ejecutado sin ningún
- mensaje de error, pero el resultado no será el deseado.
+ Si hay un error de lógica en su programa,
+ éste será ejecutado sin ningún mensaje de error,
+ pero el resultado no será el deseado.
  El programa ejecutará la lógica que usted le dijo que ejecutara.
 \end_layout
 
@@ -931,8 +1028,8 @@ semántico
 A veces ocurre que el programa escrito no es el que se tenía en mente.
  El sentido o significado del programa no es correcto.
  Es difícil hallar errores de lógica.
- Eso requiere trabajar al revés, comenzando a analizar la salida para encontrar
- al problema.
+ Eso requiere trabajar al revés,
+ comenzando a analizar la salida para encontrar al problema.
 \end_layout
 
 \begin_layout Subsection
@@ -941,34 +1038,37 @@ Depuración experimental
 
 \begin_layout Standard
 Una de las técnicas más importantes que usted aprenderá es la depuración.
- Aunque a veces es frustrante, la depuración es una de las partes de la
- programación más estimulantes, interesantes e intelectualmente exigentes.
+ Aunque a veces es frustrante,
+ la depuración es una de las partes de la programación más estimulantes,
+ interesantes e intelectualmente exigentes.
 \end_layout
 
 \begin_layout Standard
-La depuración es una actividad parecida a la tarea de un investigador: se
- tienen que estudiar las pistas para inferir los procesos y eventos que
- han generado los resultados encontrados.
+La depuración es una actividad parecida a la tarea de un investigador:
+ se tienen que estudiar las pistas para inferir los procesos y eventos que han generado los resultados encontrados.
 \end_layout
 
 \begin_layout Standard
 La depuración también es una ciencia experimental.
- Una vez que se tiene conciencia de un error, se modifica el programa y
- se intenta nuevamente.
- Si la hipótesis fue la correcta se pueden predecir los resultados de la
- modificación y estaremos más cerca a un programa correcto.
+ Una vez que se tiene conciencia de un error,
+ se modifica el programa y se intenta nuevamente.
+ Si la hipótesis fue la correcta se pueden predecir los resultados de la modificación y estaremos más cerca a un programa correcto.
  Si la hipótesis fue la errónea tendrá que idearse otra hipótesis.
- Como dijo Sherlock Holmes: 
+ Como dijo Sherlock Holmes:
+ 
 \begin_inset Quotes eld
 \end_inset
 
-Cuando se ha descartado lo imposible, lo que queda, no importa cuan inverosímil,
+Cuando se ha descartado lo imposible,
+ lo que queda,
+ no importa cuan inverosímil,
  debe ser la verdad
 \begin_inset Quotes erd
 \end_inset
 
  (A.
- Conan Doyle, 
+ Conan Doyle,
+ 
 \begin_inset ERT
 status collapsed
 
@@ -1008,20 +1108,26 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-Holmes, Sherlock
+Holmes,
+ Sherlock
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-Doyle, Arthur Conan
+Doyle,
+ Arthur Conan
 \end_layout
 
 \end_inset
@@ -1030,24 +1136,27 @@ Doyle, Arthur Conan
 \end_layout
 
 \begin_layout Standard
-Para algunas personas, la programación y la depuración son lo mismo: la
- programación es el proceso de depurar un programa gradualmente, hasta que
- el programa tenga el resultado deseado.
- Esto quiere decir que el programa debe ser, desde un principio, un programa
- que funcione, aunque su función sea solo mínima.
+Para algunas personas,
+ la programación y la depuración son lo mismo:
+ la programación es el proceso de depurar un programa gradualmente,
+ hasta que el programa tenga el resultado deseado.
+ Esto quiere decir que el programa debe ser,
+ desde un principio,
+ un programa que funcione,
+ aunque su función sea solo mínima.
  El programa es depurado mientras crece y se desarrolla.
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, aunque el sistema operativo Linux contenga miles de líneas
- de instrucciones, Linus Torvalds lo comenzó como un programa para explorar
- el microprocesador Intel 80836.
- Según Larry Greenfield: 
+Por ejemplo,
+ aunque el sistema operativo Linux contenga miles de líneas de instrucciones,
+ Linus Torvalds lo comenzó como un programa para explorar el microprocesador Intel 80836.
+ Según Larry Greenfield:
+ 
 \begin_inset Quotes eld
 \end_inset
 
-Uno de los proyectos tempranos de Linus fue un programa que intercambiaría
- la impresión de AAAA con BBBB.
+Uno de los proyectos tempranos de Linus fue un programa que intercambiaría la impresión de AAAA con BBBB.
  Este programa se convirtió en Linux
 \begin_inset Quotes erd
 \end_inset
@@ -1092,6 +1201,8 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1104,8 +1215,7 @@ Linux
 \end_layout
 
 \begin_layout Standard
-Otros capítulos tratarán más el tema de la depuración y otras técnicas de
- programación.
+Otros capítulos tratarán más el tema de la depuración y otras técnicas de programación.
 \end_layout
 
 \begin_layout Section
@@ -1114,6 +1224,8 @@ Lenguajes formales y lenguajes naturales
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1124,6 +1236,8 @@ lenguaje formal
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1134,6 +1248,8 @@ lenguaje natural
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1144,6 +1260,8 @@ formal!lenguaje
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1160,9 +1278,11 @@ Los
 \series bold
 lenguajes naturales
 \series default
- son los hablados por seres humanos, como el español, el inglés y el francés.
- Éstos no han sido diseñados artificialmente (aunque se trate de imponer
- cierto orden en ellos), pues se han desarrollado naturalmente.
+ son los hablados por seres humanos,
+ como el español,
+ el inglés y el francés.
+ Éstos no han sido diseñados artificialmente (aunque se trate de imponer cierto orden en ellos),
+ pues se han desarrollado naturalmente.
 \end_layout
 
 \begin_layout Standard
@@ -1171,18 +1291,18 @@ Los
 Lenguajes formales
 \series default
  son diseñados por humanos y tienen aplicaciones específicas.
- La notación matemática, por ejemplo, es un lenguaje formal, ya que se presta
- a la representación de las relaciones entre números y símbolos.
- Los químicos utilizan un lenguaje formal para representar la estructura
- química de las moléculas.
+ La notación matemática,
+ por ejemplo,
+ es un lenguaje formal,
+ ya que se presta a la representación de las relaciones entre números y símbolos.
+ Los químicos utilizan un lenguaje formal para representar la estructura química de las moléculas.
  Es necesario notar que:
 \end_layout
 
 \begin_layout Quote
 
 \series bold
-Los lenguajes de programación son formales y han sido desarrollados para
- expresar cómputos.
+Los lenguajes de programación son formales y han sido desarrollados para expresar cómputos.
 
 \series default
  
@@ -1190,20 +1310,24 @@ Los lenguajes de programación son formales y han sido desarrollados para
 
 \begin_layout Standard
 Los lenguajes formales casi siempre tienen reglas sintácticas estrictas.
- Por ejemplo, 
+ Por ejemplo,
+ 
 \begin_inset Formula $3+3=6$
 \end_inset
 
- es una expresión matemática correcta, pero 
+ es una expresión matemática correcta,
+ pero 
 \begin_inset Formula $3=+6\$$
 \end_inset
 
  no lo es.
- De la misma manera, 
+ De la misma manera,
+ 
 \begin_inset Formula $H_{2}O$
 \end_inset
 
- es una nomenclatura química correcta, pero 
+ es una nomenclatura química correcta,
+ pero 
 \begin_inset Formula $_{2}Zz$
 \end_inset
 
@@ -1211,19 +1335,24 @@ Los lenguajes formales casi siempre tienen reglas sintácticas estrictas.
 \end_layout
 
 \begin_layout Standard
-Existen dos clases de reglas sintácticas, en cuanto a unidades y estructura.
- Las unidades son los elementos básicos de un lenguaje, como lo son las
- palabras, los números y los elementos químicos.
- Por ejemplo, en 
+Existen dos clases de reglas sintácticas,
+ en cuanto a unidades y estructura.
+ Las unidades son los elementos básicos de un lenguaje,
+ como lo son las palabras,
+ los números y los elementos químicos.
+ Por ejemplo,
+ en 
 \family typewriter
 3=+6$
 \family default
-, 
+,
+ 
 \family typewriter
 $
 \family default
  no es una unidad matemática aceptada.
- Similarmente, 
+ Similarmente,
+ 
 \begin_inset Formula $_{2}Zz$
 \end_inset
 
@@ -1235,30 +1364,36 @@ $
 \end_layout
 
 \begin_layout Standard
-La segunda clase de error sintáctico está relacionado con la estructura
- de un elemento; mejor dicho, el orden de las unidades.
+La segunda clase de error sintáctico está relacionado con la estructura de un elemento;
+ mejor dicho,
+ el orden de las unidades.
  La estructura de la sentencia 
 \family typewriter
 3=+6$
 \family default
- no es aceptada porque no se puede escribir el símbolo de igualdad seguido
- de un símbolo más.
- Similarmente, las fórmulas moleculares tienen que mostrar el número de
- subíndice después del elemento, no antes.
+ no es aceptada porque no se puede escribir el símbolo de igualdad seguido de un símbolo más.
+ Similarmente,
+ las fórmulas moleculares tienen que mostrar el número de subíndice después del elemento,
+ no antes.
 \end_layout
 
 \begin_layout Standard
-Al leer una oración, sea en un lenguaje natural o una sentencia en un lenguaje
- técnico, se debe discernir la estructura de la oración.
- En un lenguaje natural este proceso, llamado 
+Al leer una oración,
+ sea en un lenguaje natural o una sentencia en un lenguaje técnico,
+ se debe discernir la estructura de la oración.
+ En un lenguaje natural este proceso,
+ llamado 
 \series bold
 análisis sintáctico
 \series default
-, ocurre subconscientemente.
+,
+ ocurre subconscientemente.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1279,7 +1414,8 @@ el otro zapato se cayó
 \begin_inset Quotes erd
 \end_inset
 
-, se puede distinguir el sustantivo 
+,
+ se puede distinguir el sustantivo 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1296,20 +1432,26 @@ se cayó
 \end_inset
 
 .
- Cuando se ha analizado la oración sintácticamente, se puede deducir el
- significado, o la semántica, de la oración.
- Si usted sabe lo que es un zapato y el significado de caer, comprenderá
- el significado de la oración.
+ Cuando se ha analizado la oración sintácticamente,
+ se puede deducir el significado,
+ o la semántica,
+ de la oración.
+ Si usted sabe lo que es un zapato y el significado de caer,
+ comprenderá el significado de la oración.
 \end_layout
 
 \begin_layout Standard
-Aunque existen muchas cosas en común entre los lenguajes naturales y los
- formales—por ejemplo las unidades, la estructura, la sintáctica y la semántica—
+Aunque existen muchas cosas en común entre los lenguajes naturales y los formales—
+por ejemplo las unidades,
+ la estructura,
+ la sintáctica y la semántica—
  también existen muchas diferencias.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1320,6 +1462,8 @@ Ambigüedad
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1330,6 +1474,8 @@ Redundancia
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1342,24 +1488,27 @@ Literalidad
 \end_layout
 
 \begin_layout Description
-Ambigüedad: los lenguajes naturales tienen muchísimas ambigüedades que se
- superan usando claves contextuales e información adicional.
- Los lenguajes formales son diseñados para estar completamente libres de
- ambigüedades o, tanto como sea posible, lo que quiere decir que cualquier
- sentencia tiene sólo un significado sin importar el contexto en el que
- se encuentra.
+Ambigüedad:
+ los lenguajes naturales tienen muchísimas ambigüedades que se superan usando claves contextuales e información adicional.
+ Los lenguajes formales son diseñados para estar completamente libres de ambigüedades o,
+ tanto como sea posible,
+ lo que quiere decir que cualquier sentencia tiene sólo un significado sin importar el contexto en el que se encuentra.
 \end_layout
 
 \begin_layout Description
-Redundancia: para reducir la ambigüedad y los malentendidos, los lenguajes
- naturales utilizan bastante redundancia.
+Redundancia:
+ para reducir la ambigüedad y los malentendidos,
+ los lenguajes naturales utilizan bastante redundancia.
  Como resultado tienen una abundancia de posibilidades para expresarse.
  Los lenguajes formales son menos redundantes y mas concisos.
 \end_layout
 
 \begin_layout Description
-Literalidad: los lenguajes naturales tienen muchas metáforas y frases comunes.
- El significado de un dicho, por ejemplo: 
+Literalidad:
+ los lenguajes naturales tienen muchas metáforas y frases comunes.
+ El significado de un dicho,
+ por ejemplo:
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1367,21 +1516,24 @@ Estirar la pata
 \begin_inset Quotes erd
 \end_inset
 
-, es diferente al significado de sus sustantivos y verbos.
- En este ejemplo, la oración no tiene nada que ver con una pata y significa
- 'morirse'.
+,
+ es diferente al significado de sus sustantivos y verbos.
+ En este ejemplo,
+ la oración no tiene nada que ver con una pata y significa 'morirse'.
  En los lenguajes formales solo existe el significado literal.
 \end_layout
 
 \begin_layout Standard
-Los que aprenden a hablar un lenguaje natural—es decir todo el mundo—muchas
- veces tienen dificultad en adaptarse a los lenguajes formales.
- A veces la diferencia entre los lenguajes formales y los naturales es comparabl
-e a la diferencia entre la prosa y la poesía:
+Los que aprenden a hablar un lenguaje natural—
+es decir todo el mundo—
+muchas veces tienen dificultad en adaptarse a los lenguajes formales.
+ A veces la diferencia entre los lenguajes formales y los naturales es comparable a la diferencia entre la prosa y la poesía:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1392,6 +1544,8 @@ Poesía
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1404,36 +1558,44 @@ Prosa
 \end_layout
 
 \begin_layout Description
-Poesía: se utiliza una palabra por su cualidad auditiva tanto como por su
- significado.
- El poema, en su totalidad, produce un efecto o reacción emocional.
- La ambigüedad no es sólo común, sino utilizada a propósito.
+Poesía:
+ se utiliza una palabra por su cualidad auditiva tanto como por su significado.
+ El poema,
+ en su totalidad,
+ produce un efecto o reacción emocional.
+ La ambigüedad no es sólo común,
+ sino utilizada a propósito.
 \end_layout
 
 \begin_layout Description
-Prosa: el significado literal de la palabra es más importante y la estructura
- contribuye más al significado.
- La prosa se presta más al análisis que la poesía, pero todavía contiene
- ambigüedad.
+Prosa:
+ el significado literal de la palabra es más importante y la estructura contribuye más al significado.
+ La prosa se presta más al análisis que la poesía,
+ pero todavía contiene ambigüedad.
 \end_layout
 
 \begin_layout Description
-Programa: el significado de un programa es inequívoco y literal, y es entendido
- en su totalidad analizando las unidades y la estructura.
+Programa:
+ el significado de un programa es inequívoco y literal,
+ y es entendido en su totalidad analizando las unidades y la estructura.
 \end_layout
 
 \begin_layout Standard
-He aquí unas sugerencias para la lectura de un programa (y de otros lenguajes
- formales).
- Primero, recuerde que los lenguajes formales son mucho más densos que los
- lenguajes naturales y, por consecuencia, toma mas tiempo dominarlos.
- Además, la estructura es muy importante, entonces no es una buena idea
- leerlo de pies a cabeza, de izquierda a derecha.
- En lugar de ésto, aprenda a separar las diferentes partes en su mente,
+He aquí unas sugerencias para la lectura de un programa (y de otros lenguajes formales).
+ Primero,
+ recuerde que los lenguajes formales son mucho más densos que los lenguajes naturales y,
+ por consecuencia,
+ toma mas tiempo dominarlos.
+ Además,
+ la estructura es muy importante,
+ entonces no es una buena idea leerlo de pies a cabeza,
+ de izquierda a derecha.
+ En lugar de ésto,
+ aprenda a separar las diferentes partes en su mente,
  identificar las unidades e interpretar la estructura.
- Finalmente, ponga atención a los detalles.
- La fallas de puntuación y la ortografía afectarán negativamente la ejecución
- de sus programas.
+ Finalmente,
+ ponga atención a los detalles.
+ La fallas de puntuación y la ortografía afectarán negativamente la ejecución de sus programas.
 \end_layout
 
 \begin_layout Section
@@ -1466,7 +1628,8 @@ Hola todo el mundo!
 \begin_inset Quotes erd
 \end_inset
 
- (en inglés, Hello world!) porque sólo muestra las palabras 
+ (en inglés,
+ Hello world!) porque sólo muestra las palabras 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1483,7 +1646,7 @@ Hola todo el mundo
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print("Hola todo el mundo!")
 \end_layout
@@ -1529,8 +1692,11 @@ status collapsed
 
 \end_inset
 
-, la cual no imprime nada en papel, más bien muestra un valor.
- En este caso, el resultado es mostrar en pantalla las palabras:
+,
+ la cual no imprime nada en papel,
+ más bien muestra un valor.
+ En este caso,
+ el resultado es mostrar en pantalla las palabras:
 \end_layout
 
 \begin_layout Standard
@@ -1538,7 +1704,7 @@ status collapsed
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Hola todo el mundo!
 \end_layout
@@ -1549,12 +1715,14 @@ Hola todo el mundo!
 \end_layout
 
 \begin_layout Standard
-Las comillas señalan el comienzo y el final del valor; no aparecen en el
- resultado.
+Las comillas señalan el comienzo y el final del valor;
+ no aparecen en el resultado.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1565,6 +1733,8 @@ función print
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1577,8 +1747,7 @@ print!función
 \end_layout
 
 \begin_layout Standard
-Hay gente que evalúa la calidad de un lenguaje de programación por la simplicida
-d del programa 
+Hay gente que evalúa la calidad de un lenguaje de programación por la simplicidad del programa 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1587,7 +1756,8 @@ Hola todo el mundo!
 \end_inset
 
 .
- Si seguimos ese criterio, Python cumple con esta meta.
+ Si seguimos ese criterio,
+ Python cumple con esta meta.
 \end_layout
 
 \begin_layout Section
@@ -1605,7 +1775,8 @@ Solución de problemas:
 
 \end_inset
 
- el proceso de formular un problema, hallar la solución y expresarla.
+ el proceso de formular un problema,
+ hallar la solución y expresarla.
 \end_layout
 
 \begin_layout Description
@@ -1619,8 +1790,7 @@ Lenguaje de alto nivel:
 
 \end_inset
 
- un lenguaje como Python que es diseñado para ser fácil de leer y escribir
- por la gente.
+ un lenguaje como Python que es diseñado para ser fácil de leer y escribir por la gente.
 \end_layout
 
 \begin_layout Description
@@ -1634,8 +1804,8 @@ Lenguaje de bajo nivel:
 
 \end_inset
 
- un lenguaje de programación que es diseñado para ser fácil de ejecutar
- para una computadora; también se lo llama 
+ un lenguaje de programación que es diseñado para ser fácil de ejecutar para una computadora;
+ también se lo llama 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1655,18 +1825,19 @@ lenguaje ensamblador
 \end_layout
 
 \begin_layout Description
-Portabilidad: la cualidad de un programa que puede ser ejecutado en más
- de un tipo de computadora.
+Portabilidad:
+ la cualidad de un programa que puede ser ejecutado en más de un tipo de computadora.
 \end_layout
 
 \begin_layout Description
-Interpretar: ejecutar un programa escrito en un lenguaje de alto nivel traducién
-dolo línea por línea.
+Interpretar:
+ ejecutar un programa escrito en un lenguaje de alto nivel traduciéndolo línea por línea.
 \end_layout
 
 \begin_layout Description
-Compilar: traducir un programa escrito en un lenguaje de alto nivel a un
- lenguaje de bajo nivel de una vez, en preparación para la ejecución posterior.
+Compilar:
+ traducir un programa escrito en un lenguaje de alto nivel a un lenguaje de bajo nivel de una vez,
+ en preparación para la ejecución posterior.
 \end_layout
 
 \begin_layout Description
@@ -1726,11 +1897,13 @@ Guión (Script):
 \end_layout
 
 \begin_layout Description
-Programa: un grupo de instrucciones que especifica un cómputo.
+Programa:
+ un grupo de instrucciones que especifica un cómputo.
 \end_layout
 
 \begin_layout Description
-Algoritmo: un proceso general para resolver una clase completa de problemas.
+Algoritmo:
+ un proceso general para resolver una clase completa de problemas.
 \end_layout
 
 \begin_layout Description
@@ -1748,12 +1921,13 @@ Error (bug):
 \end_layout
 
 \begin_layout Description
-Depuración: el proceso de hallazgo y eliminación de los tres tipos de errores
- de programación.
+Depuración:
+ el proceso de hallazgo y eliminación de los tres tipos de errores de programación.
 \end_layout
 
 \begin_layout Description
-Sintaxis: la estructura de un programa.
+Sintaxis:
+ la estructura de un programa.
 \end_layout
 
 \begin_layout Description
@@ -1767,8 +1941,7 @@ Error sintáctico:
 
 \end_inset
 
- un error estructural que hace que un programa sea imposible de analizar
- sintácticamente (e imposible de interpretar).
+ un error estructural que hace que un programa sea imposible de analizar sintácticamente (e imposible de interpretar).
 \end_layout
 
 \begin_layout Description
@@ -1782,12 +1955,12 @@ Error en tiempo de ejecución:
 
 \end_inset
 
- un error que no ocurre hasta que el programa ha comenzado a ejecutar e
- impide que el programa continúe.
+ un error que no ocurre hasta que el programa ha comenzado a ejecutar e impide que el programa continúe.
 \end_layout
 
 \begin_layout Description
-Excepción: otro nombre para un error en tiempo de ejecución.
+Excepción:
+ otro nombre para un error en tiempo de ejecución.
 \end_layout
 
 \begin_layout Description
@@ -1805,7 +1978,8 @@ Error semántico:
 \end_layout
 
 \begin_layout Description
-Semántica: el significado de un programa.
+Semántica:
+ el significado de un programa.
 \end_layout
 
 \begin_layout Description
@@ -1833,13 +2007,14 @@ Lenguaje formal:
 
 \end_inset
 
- cualquier lenguaje diseñado que tiene un propósito específico, como la
- representación de ideas matemáticas o programas de computadoras; todos
- los lenguajes de programación son lenguajes formales.
+ cualquier lenguaje diseñado que tiene un propósito específico,
+ como la representación de ideas matemáticas o programas de computadoras;
+ todos los lenguajes de programación son lenguajes formales.
 \end_layout
 
 \begin_layout Description
-Unidad: uno de los elementos básicos de la estructura sintáctica de un programa,
+Unidad:
+ uno de los elementos básicos de la estructura sintáctica de un programa,
  análogo a una palabra en un lenguaje natural.
 \end_layout
 
@@ -1868,8 +2043,7 @@ Función print:
 
 \end_inset
 
- una función que causa que el intérprete de Python muestre un valor en la
- pantalla.
+ una función que causa que el intérprete de Python muestre un valor en la pantalla.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1879,6 +2053,8 @@ Función print:
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1889,6 +2065,8 @@ programa
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1899,6 +2077,8 @@ solución de problemas
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1909,6 +2089,8 @@ lenguaje de alto nivel
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1919,6 +2101,8 @@ lenguaje de bajo nivel
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1929,6 +2113,8 @@ portabilidad
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1939,6 +2125,8 @@ interpretar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1949,6 +2137,8 @@ compilar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1959,6 +2149,8 @@ código de fuente
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1969,6 +2161,8 @@ código de objeto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1979,6 +2173,8 @@ código ejecutable
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1989,6 +2185,8 @@ algoritmo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1999,6 +2197,8 @@ error(bug)
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2009,6 +2209,8 @@ depuración
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2019,6 +2221,8 @@ sintaxis
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2029,6 +2233,8 @@ semántica
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2039,6 +2245,8 @@ error sintáctico
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2049,6 +2257,8 @@ error en tiempo de ejecución
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2059,6 +2269,8 @@ excepción
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2069,6 +2281,8 @@ error semántico
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2079,6 +2293,8 @@ lenguaje formal
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2089,6 +2305,8 @@ lenguaje natural
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2099,6 +2317,8 @@ análisis sintáctico
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2109,6 +2329,8 @@ unidad
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2119,6 +2341,8 @@ guión
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2129,6 +2353,8 @@ función print
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -2176,24 +2402,26 @@ Sintácticamente correcta pero que contenga errores semánticos.
 \begin_layout Enumerate
 Inicie la terminal de Python.
  Escriba 1 + 2 y luego presione la tecla Entrar.
- Python evalúa esta expresión, presenta el resultado, y enseguida muestra
- otro intérprete.
- Considerando que el símbolo * es el signo de multiplicación y el doble
- símbolo ** es el signo de potenciación, realice dos ejercicios adicionales
- escribiendo diferentes expresiones y reportando lo mostrado por el intérprete
- de Python.
+ Python evalúa esta expresión,
+ presenta el resultado,
+ y enseguida muestra otro intérprete.
+ Considerando que el símbolo * es el signo de multiplicación y el doble símbolo ** es el signo de potenciación,
+ realice dos ejercicios adicionales escribiendo diferentes expresiones y reportando lo mostrado por el intérprete de Python.
 \end_layout
 
 \begin_layout Enumerate
-¿Qué sucede si utiliza el signo de división (/)? ¿Son los resultados obtenidos
- los esperados? Explique.
+¿Qué sucede si utiliza el signo de división (/)?
+ ¿Son los resultados obtenidos los esperados?
+ Explique.
 \end_layout
 
 \begin_layout Enumerate
 Escriba 1 2 y presione la tecla Entrar.
- Python trata de evaluar esta expresión, pero no puede, porque la expresión
- es sintácticamente incorrecta.
- Así, Python responde con el siguiente mensaje de error:
+ Python trata de evaluar esta expresión,
+ pero no puede,
+ porque la expresión es sintácticamente incorrecta.
+ Así,
+ Python responde con el siguiente mensaje de error:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2202,29 +2430,32 @@ Escriba 1 2 y presione la tecla Entrar.
 
 \begin_deeper
 \begin_layout Verbatim
+
  
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-File "<stdin>", line 1
+File "<stdin>",
+ line 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     1 2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       ^
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-SyntaxError: invalid syntax
+SyntaxError:
+ invalid syntax
 \end_layout
 
 \end_inset
@@ -2233,17 +2464,18 @@ SyntaxError: invalid syntax
 \end_layout
 
 \begin_layout Standard
-Muchas veces Python indica la ubicación del error de sintaxis, sin embargo,
- no siempre es precisa, por lo que no proporciona suficiente información
- sobre cuál es el problema.
- De esta manera, el mejor antídoto es que usted aprenda la sintaxis de Python.
- En este caso, Python protesta porque no encuentra signo de operación alguno
- entre los números.
+Muchas veces Python indica la ubicación del error de sintaxis,
+ sin embargo,
+ no siempre es precisa,
+ por lo que no proporciona suficiente información sobre cuál es el problema.
+ De esta manera,
+ el mejor antídoto es que usted aprenda la sintaxis de Python.
+ En este caso,
+ Python protesta porque no encuentra signo de operación alguno entre los números.
 \end_layout
 
 \begin_layout Standard
-Escriba una entrada que produzca un mensaje de error cuando se introduzca
- en el intérprete de Python.
+Escriba una entrada que produzca un mensaje de error cuando se introduzca en el intérprete de Python.
  Explique por qué no tiene una sintaxis válida.
 \end_layout
 
@@ -2264,8 +2496,7 @@ verb+print('hola')+
 
 .
  Python ejecuta esta sentencia que muestra las letras h-o-l-a.
- Nótese que las comillas simples en los extremos de la cadena no son parte
- de la salida mostrada.
+ Nótese que las comillas simples en los extremos de la cadena no son parte de la salida mostrada.
  Ahora escriba 
 \begin_inset ERT
 status open
@@ -2319,9 +2550,8 @@ verb+'Esta es una prueba...'+
 \end_layout
 
 \begin_layout Enumerate
-Ahora cree un guión de Python con el nombre prueba1.py que contenga lo siguiente
- (asegúrese de guardar el archivo antes de intentar ejecutarlo): 'Esta es
- una prueba...'
+Ahora cree un guión de Python con el nombre prueba1.py que contenga lo siguiente (asegúrese de guardar el archivo antes de intentar ejecutarlo):
+ 'Esta es una prueba...'
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2335,7 +2565,8 @@ Ahora cree un guión de Python con el nombre prueba1.py que contenga lo siguient
 
 \end_deeper
 \begin_layout Enumerate
-Ahora cambie el contenido del guión a: 
+Ahora cambie el contenido del guión a:
+ 
 \begin_inset ERT
 status open
 
@@ -2361,12 +2592,13 @@ verb+print('Esta es una prueba...')+
 \end_layout
 
 \begin_layout Standard
-Cuando se escribe una expresión en el intérprete de Python, ésta es evaluada
- y el resultado es mostrado en la línea siguiente.
- 'Esta es una prueba...' es una expresión, que se evalúa a 'Esta es una prueba...'
- (de la misma manera que 42 se evalúa a 42).
- Sin embargo, la evaluación de expresiones en un guión no se envía a la
- salida del programa, por lo que es necesario mostrarla explícitamente.
+Cuando se escribe una expresión en el intérprete de Python,
+ ésta es evaluada y el resultado es mostrado en la línea siguiente.
+ 'Esta es una prueba...' es una expresión,
+ que se evalúa a 'Esta es una prueba...' (de la misma manera que 42 se evalúa a 42).
+ Sin embargo,
+ la evaluación de expresiones en un guión no se envía a la salida del programa,
+ por lo que es necesario mostrarla explícitamente.
  
 \end_layout
 

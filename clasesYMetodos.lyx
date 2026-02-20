@@ -1,24 +1,30 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -48,6 +54,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -56,15 +65,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -74,34 +91,44 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -119,6 +146,8 @@ Características de orientación a objetos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -129,6 +158,8 @@ lenguaje de programación orientado a objetos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -145,7 +176,8 @@ Python es un
 \series bold
 lenguaje de programación orientado a objetos
 \series default
-, lo que quiere decir que proporciona características que soportan la 
+,
+ lo que quiere decir que proporciona características que soportan la 
 \series bold
 programación orientada a objetos
 \series default
@@ -153,27 +185,28 @@ programación orientada a objetos
 \end_layout
 
 \begin_layout Standard
-No es fácil definir la programación orientada a objetos, pero ya hemos notado
- algunos de sus elementos clave:
+No es fácil definir la programación orientada a objetos,
+ pero ya hemos notado algunos de sus elementos clave:
 \end_layout
 
 \begin_layout Itemize
-Los programas se construyen a partir de definiciones de objetos y definiciones
- de funciones; la mayoría de los cómputos se hacen con base en objetos.
+Los programas se construyen a partir de definiciones de objetos y definiciones de funciones;
+ la mayoría de los cómputos se hacen con base en objetos.
 \end_layout
 
 \begin_layout Itemize
-Cada definición de objetos corresponde a algún concepto o cosa del mundo
- real, y las funciones que operan sobre esos objetos corresponden a las
- maneras en que los conceptos o cosas reales interactúan.
+Cada definición de objetos corresponde a algún concepto o cosa del mundo real,
+ y las funciones que operan sobre esos objetos corresponden a las maneras en que los conceptos o cosas reales interactúan.
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, la clase 
+Por ejemplo,
+ la clase 
 \family typewriter
 Hora
 \family default
-, definida en el Capítulo
+,
+ definida en el Capítulo
 \begin_inset space ~
 \end_inset
 
@@ -181,13 +214,14 @@ Hora
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "time"
+nolink "false"
 
 \end_inset
 
-, corresponde a la forma en que la gente registra las horas del día y las
- funciones que definimos corresponden a la clase de cosas que la gente hace
- con horas.
- Similarmente, las clases 
+,
+ corresponde a la forma en que la gente registra las horas del día y las funciones que definimos corresponden a la clase de cosas que la gente hace con horas.
+ Similarmente,
+ las clases 
 \family typewriter
 Punto
 \family default
@@ -199,23 +233,25 @@ Rectangulo
 \end_layout
 
 \begin_layout Standard
-Hasta aquí, no hemos aprovechado las características que Python proporciona
- para soportar la programación orientada a objetos.
- De hecho, estas características no son necesarias.
- La mayoría sólo proporciona una sintaxis alternativa para cosas que ya
- hemos logrado; pero, en muchos casos, esta forma alternativa es más concisa
- y comunica de una manera mas precisa la estructura de los programas.
+Hasta aquí,
+ no hemos aprovechado las características que Python proporciona para soportar la programación orientada a objetos.
+ De hecho,
+ estas características no son necesarias.
+ La mayoría sólo proporciona una sintaxis alternativa para cosas que ya hemos logrado;
+ pero,
+ en muchos casos,
+ esta forma alternativa es más concisa y comunica de una manera mas precisa la estructura de los programas.
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, en el programa 
+Por ejemplo,
+ en el programa 
 \family typewriter
 Hora
 \family default
- no hay una conexión obvia entre la definición de clase y las definiciones
- de funciones.
- Después de examinarlo un poco, es evidente que todas las funciones toman
- como parámetro al menos un objeto 
+ no hay una conexión obvia entre la definición de clase y las definiciones de funciones.
+ Después de examinarlo un poco,
+ es evidente que todas las funciones toman como parámetro al menos un objeto 
 \family typewriter
 Hora
 \family default
@@ -236,13 +272,15 @@ keys
 \family typewriter
 values
 \family default
-, que llamamos sobre diccionarios.
- Cada método se asocia con una clase y está pensado para invocarse sobre
- instancias de dicha clase.
+,
+ que llamamos sobre diccionarios.
+ Cada método se asocia con una clase y está pensado para invocarse sobre instancias de dicha clase.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -253,6 +291,8 @@ método
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -263,6 +303,8 @@ función
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -273,6 +315,8 @@ instancia!objeto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -285,12 +329,13 @@ objeto instancia
 \end_layout
 
 \begin_layout Standard
-Los métodos son como las funciones, pero con dos diferencias:
+Los métodos son como las funciones,
+ pero con dos diferencias:
 \end_layout
 
 \begin_layout Itemize
-Los métodos se definen adentro de una definición de clase, a fin de marcar
- explícitamente la relación entre la clase y éstos.
+Los métodos se definen adentro de una definición de clase,
+ a fin de marcar explícitamente la relación entre la clase y éstos.
 \end_layout
 
 \begin_layout Itemize
@@ -298,13 +343,11 @@ La sintaxis para llamar o invocar un método es distinta que para las funciones.
 \end_layout
 
 \begin_layout Standard
-En las siguientes secciones tomaremos las funciones de los capítulos anteriores
- y las transformaremos en métodos.
- Esta transformación es totalmente mecánica; se puede llevar a cabo siguiendo
- una secuencia de pasos.
- Si usted se siente cómodo al transformar de una forma a la otra, será capaz
- de escoger lo mejor de cada lado para resolver los problemas que tenga
- a la mano.
+En las siguientes secciones tomaremos las funciones de los capítulos anteriores y las transformaremos en métodos.
+ Esta transformación es totalmente mecánica;
+ se puede llevar a cabo siguiendo una secuencia de pasos.
+ Si usted se siente cómodo al transformar de una forma a la otra,
+ será capaz de escoger lo mejor de cada lado para resolver los problemas que tenga a la mano.
 \end_layout
 
 \begin_layout Section
@@ -322,6 +365,8 @@ name "printTime"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -342,10 +387,12 @@ En el capítulo
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "time"
+nolink "false"
 
 \end_inset
 
-, definimos una clase denominada 
+,
+ definimos una clase denominada 
 \family typewriter
 Hora
 \family default
@@ -353,41 +400,42 @@ Hora
 \family typewriter
 imprimirHora
 \family default
-, que lucía así:
+,
+ que lucía así:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Hora:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   pass
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def imprimirHora(h):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print(str(h.hora) + ":" + 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         str(h.minutos) + ":" + 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         str(h.segundos))
 \end_layout
@@ -398,7 +446,8 @@ def imprimirHora(h):
 \end_layout
 
 \begin_layout Standard
-Para llamar esta función, le pasamos un objeto 
+Para llamar esta función,
+ le pasamos un objeto 
 \family typewriter
 Hora
 \family default
@@ -407,27 +456,27 @@ Hora
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual = Hora()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual.hora = 9
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual.minutos = 14
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual.segundos = 30
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> imprimirHora(horaActual)
 \end_layout
@@ -442,8 +491,7 @@ Para convertir
 \family typewriter
 imprimirHora
 \family default
- en un método todo lo que tenemos que hacer es ponerla adentro de la definición
- de clase.
+ en un método todo lo que tenemos que hacer es ponerla adentro de la definición de clase.
  Note como ha cambiado la indentación.
 \end_layout
 
@@ -452,27 +500,27 @@ imprimirHora
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Hora:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def imprimirHora(h):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     print( str(h.hora) + ":" + 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
           str(h.minutos) + ":" + 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
           str(h.segundos))
 \end_layout
@@ -488,6 +536,8 @@ imprimirHora
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -501,7 +551,7 @@ notación punto
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual.imprimirHora()
 \end_layout
@@ -512,10 +562,10 @@ status open
 \end_layout
 
 \begin_layout Standard
-Como de costumbre, el objeto en el que el método se llama aparece antes
- del punto y el nombre del método va a la derecha.
- El objeto al cual se invoca el método se asigna al primer parámetro, así
- que 
+Como de costumbre,
+ el objeto en el que el método se llama aparece antes del punto y el nombre del método va a la derecha.
+ El objeto al cual se invoca el método se asigna al primer parámetro,
+ así que 
 \family typewriter
 horaActual
 \family default
@@ -527,11 +577,13 @@ h
 \end_layout
 
 \begin_layout Standard
-Por convención, el primer parámetro de un método se denomina 
+Por convención,
+ el primer parámetro de un método se denomina 
 \family typewriter
 self
 \family default
- (en inglés, eso es algo como 
+ (en inglés,
+ eso es algo como 
 \begin_inset Quotes eld
 \end_inset
 
@@ -540,25 +592,29 @@ sí mismo
 \end_inset
 
 ).
- La razón para hacerlo es un poco tortuosa, pero se basa en una metáfora
- muy útil.
+ La razón para hacerlo es un poco tortuosa,
+ pero se basa en una metáfora muy útil.
 \end_layout
 
 \begin_layout Standard
-La sintaxis para una llamada de función, 
+La sintaxis para una llamada de función,
+ 
 \family typewriter
 imprimirHora(horaActual)
 \family default
-, sugiere que la función es el agente activo.
+,
+ sugiere que la función es el agente activo.
  Dice algo como 
 \begin_inset Quotes eld
 \end_inset
 
-Hey, 
+Hey,
+ 
 \family typewriter
 imprimirHora
 \family default
-! Aquí hay un objeto para que imprimas
+!
+ Aquí hay un objeto para que imprimas
 \begin_inset Quotes erd
 \end_inset
 
@@ -566,7 +622,8 @@ imprimirHora
 \end_layout
 
 \begin_layout Standard
-En la programación orientada a objetos, los objetos son los agentes activos.
+En la programación orientada a objetos,
+ los objetos son los agentes activos.
  Una invocación como 
 \family typewriter
 horaActual.imprimirHora()
@@ -575,11 +632,14 @@ horaActual.imprimirHora()
 \begin_inset Quotes eld
 \end_inset
 
-Hey, objeto 
+Hey,
+ objeto 
 \family typewriter
 horaActual
 \family default
-! Por favor, imprímase a sí mismo!
+!
+ Por favor,
+ imprímase a sí mismo!
 \begin_inset Quotes erd
 \end_inset
 
@@ -595,11 +655,11 @@ cortesía
 \begin_inset Quotes erd
 \end_inset
 
-, pero puede ser útil.
+,
+ pero puede ser útil.
  En los ejemplos que hemos visto no lo es.
- Pero, el transferir la responsabilidad desde las funciones hacia los objetos
- hace posible escribir funciones más versátiles y facilita la reutilización
- y el mantenimiento de código.
+ Pero,
+ el transferir la responsabilidad desde las funciones hacia los objetos hace posible escribir funciones más versátiles y facilita la reutilización y el mantenimiento de código.
 \end_layout
 
 \begin_layout Section
@@ -619,92 +679,95 @@ incrementar
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "increment"
+nolink "false"
 
 \end_inset
 
 ) en un método.
- Para ahorrar espacio, omitiremos los métodos que ya definimos, pero usted
- debe conservarlos en su programa:
+ Para ahorrar espacio,
+ omitiremos los métodos que ya definimos,
+ pero usted debe conservarlos en su programa:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Hora:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   # Las definiciones anteriores van aquí...
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def incrementar(self, segundos):
+  def incrementar(self,
+ segundos):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     self.segundos = self.segundos + segundos
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if self.segundos >= 60:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       self.segundos = self.segundos - 60
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       self.minutos = self.minutos + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if self.minutos >= 60:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       self.minutos = self.minutos - 60
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       self.hora = self.hora + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return self
 \end_layout
 
 \end_inset
 
- La transformación es totalmente mecánica ---ponemos la definición del método
- adentro de la clase y cambiamos el nombre del primer parámetro.
+ La transformación es totalmente mecánica —
+ponemos la definición del método adentro de la clase y cambiamos el nombre del primer parámetro.
 \end_layout
 
 \begin_layout Standard
@@ -717,7 +780,7 @@ incrementar
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 horaActual.incrementar(500)
 \end_layout
@@ -728,13 +791,15 @@ horaActual.incrementar(500)
 \end_layout
 
 \begin_layout Standard
-Nuevamente, el objeto con el cual se invoca el método se asigna al primer
- parámetro, 
+Nuevamente,
+ el objeto con el cual se invoca el método se asigna al primer parámetro,
+ 
 \family typewriter
 self
 \family default
 .
- El segundo parámetro, 
+ El segundo parámetro,
+ 
 \family typewriter
 segundos
 \family default
@@ -758,12 +823,14 @@ despues
 \family typewriter
 Hora
 \family default
-, no sólo uno.
+,
+ no sólo uno.
  Solamente podemos convertir uno de los parámetros a 
 \family typewriter
 self
 \family default
-; el otro continúa igual:
+;
+ el otro continúa igual:
 \end_layout
 
 \begin_layout Standard
@@ -771,84 +838,85 @@ self
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Hora:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   # Las definiciones anteriores van aqui...
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def despues(self, hora2):
+  def despues(self,
+ hora2):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if self.hora > hora2.hora:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       return True
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if self.hora < hora2.hora:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       return False
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if self.minutos > hora2.minutos:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       return True
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if self.minutos < hora2.minutos:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       return False
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if self.segundos > hora2.segundos:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       return True
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return False
 \end_layout
@@ -860,12 +928,12 @@ class Hora:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 if horaComer.despues(horaActual):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print("El pan estará listo para comer en un momento.")
 \end_layout
@@ -880,7 +948,8 @@ Casi se puede leer el llamado en lenguaje natural:
 \begin_inset Quotes eld
 \end_inset
 
-Si la hora para Comer viene después de la hora Actual, entonces ...
+Si la hora para Comer viene después de la hora Actual,
+ entonces ...
 \begin_inset Quotes erd
 \end_inset
 
@@ -892,18 +961,20 @@ Argumentos opcionales
 \end_layout
 
 \begin_layout Standard
-Hemos visto varias funciones primitivas que toman un número variable de
- argumentos.
- Por ejemplo, 
+Hemos visto varias funciones primitivas que toman un número variable de argumentos.
+ Por ejemplo,
+ 
 \family typewriter
 string.find
 \family default
- puede tomar dos, tres o cuatro.
+ puede tomar dos,
+ tres o cuatro.
 \end_layout
 
 \begin_layout Standard
 Es posible escribir funciones con listas de argumentos opcionales.
- Por ejemplo, podemos mejorar nuestra versión de 
+ Por ejemplo,
+ podemos mejorar nuestra versión de 
 \family typewriter
 buscar
 \family default
@@ -923,6 +994,7 @@ Esta es la versión original que introdujimos en la Sección
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "find"
+nolink "false"
 
 \end_inset
 
@@ -941,79 +1013,82 @@ reference "find"
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def buscar(cad, c):
+def buscar(cad,
+ c):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   indice = 0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   while indice < len(cad):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if cad[indice] == c:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       return indice
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     indice = indice + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return -1
 \end_layout
 
 \end_inset
 
- Esta es la nueva versión, mejorada:
+ Esta es la nueva versión,
+ mejorada:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def buscar(cad, c,ini=0):
+def buscar(cad,
+ c,ini=0):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   indice = ini
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   while indice < len(cad):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if cad[indice] == c:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       return indice
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     indice = indice + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return -1
 \end_layout
@@ -1024,11 +1099,15 @@ def buscar(cad, c,ini=0):
 \end_layout
 
 \begin_layout Standard
-El tercer parámetro, 
+El tercer parámetro,
+ 
 \family typewriter
 ini
 \family default
-, es opcional, ya que tiene un valor por defecto, 
+,
+ es opcional,
+ ya que tiene un valor por defecto,
+ 
 \family typewriter
 0
 \family default
@@ -1037,18 +1116,19 @@ ini
 \family typewriter
 buscar
 \family default
- con dos argumentos, se usa el valor por defecto y la búsqueda se hace desde
- el principio de la cadena:
+ con dos argumentos,
+ se usa el valor por defecto y la búsqueda se hace desde el principio de la cadena:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> buscar("apple", "p")
+>>> buscar("apple",
+ "p")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 1
 \end_layout
@@ -1059,7 +1139,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Si se pasa el tercer parámetro, este 
+Si se pasa el tercer parámetro,
+ este 
 \series bold
 sobreescribe
 \series default
@@ -1068,22 +1149,26 @@ sobreescribe
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> buscar("apple", "p", 2)
+>>> buscar("apple",
+ "p",
+ 2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> buscar("apple", "p", 3)
+>>> buscar("apple",
+ "p",
+ 3)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 -1
 \end_layout
@@ -1099,6 +1184,8 @@ El método de inicialización
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1109,6 +1196,8 @@ método de inicialización
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1130,11 +1219,13 @@ de inicialización
 \family typewriter
 __init__
 \family default
- (dos caracteres de subrayado, seguidos por 
+ (dos caracteres de subrayado,
+ seguidos por 
 \family typewriter
 init
 \family default
-, y luego dos caracteres de subrayado más).
+,
+ y luego dos caracteres de subrayado más).
  Un método de inicialización para la clase 
 \family typewriter
 Hora
@@ -1144,27 +1235,30 @@ Hora
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Hora:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def __init__(self, hora=0, minutos=0, segundos=0):
+  def __init__(self,
+ hora=0,
+ minutos=0,
+ segundos=0):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     self.hora = hora
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     self.minutos = minutos
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     self.segundos = segundos
 \end_layout
@@ -1189,6 +1283,8 @@ hora
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1205,7 +1301,8 @@ Cuando llamamos al método constructor de
 \family typewriter
 Hora
 \family default
-, los argumentos se pasan a 
+,
+ los argumentos se pasan a 
 \family typewriter
 init
 \family default
@@ -1214,17 +1311,19 @@ init
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> horaActual = Hora(9, 14, 30)
+>>> horaActual = Hora(9,
+ 14,
+ 30)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual.imprimirHora()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> 9:14:30
 \end_layout
@@ -1235,22 +1334,23 @@ status open
 \end_layout
 
 \begin_layout Standard
-Como los parámetros son opcionales, se pueden omitir:
+Como los parámetros son opcionales,
+ se pueden omitir:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual = Hora()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual.imprimirHora()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> 0:0:0
 \end_layout
@@ -1266,17 +1366,17 @@ O podemos pasar solo un parámetro:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual = Hora(9)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual.imprimirHora()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> 9:0:0
 \end_layout
@@ -1287,22 +1387,24 @@ status open
 \end_layout
 
 \begin_layout Standard
-O, sólo los dos primeros:
+O,
+ sólo los dos primeros:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> horaActual = Hora(9, 14)
+>>> horaActual = Hora(9,
+ 14)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual.imprimirHora()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> 9:14:0
 \end_layout
@@ -1313,23 +1415,25 @@ status open
 \end_layout
 
 \begin_layout Standard
-Finalmente, podemos proporcionar algunos parámetros, nombrándolos explícitamente
-:
+Finalmente,
+ podemos proporcionar algunos parámetros,
+ nombrándolos explícitamente:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> horaActual = Hora(segundos = 30, hora = 9)
+>>> horaActual = Hora(segundos = 30,
+ hora = 9)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> horaActual.imprimirHora()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> 9:0:30
 \end_layout
@@ -1345,6 +1449,8 @@ Reconsiderando la clase Punto
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1355,6 +1461,8 @@ clase Punto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1379,6 +1487,7 @@ Punto
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "point"
+nolink "false"
 
 \end_inset
 
@@ -1387,38 +1496,41 @@ reference "point"
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Punto:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def __init__(self, x=0, y=0):
+  def __init__(self,
+ x=0,
+ y=0):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     self.x = x
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     self.y = y
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def __str__(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    return '(' + str(self.x) + ', ' + str(self.y) + ')'
+    return '(' + str(self.x) + ',
+ ' + str(self.y) + ')'
 \end_layout
 
 \end_inset
@@ -1435,7 +1547,8 @@ El método de inicialización toma los valores
 \begin_inset Formula $y$
 \end_inset
 
- como parámetros opcionales, el valor por defecto que tienen es 0.
+ como parámetros opcionales,
+ el valor por defecto que tienen es 0.
 \end_layout
 
 \begin_layout Standard
@@ -1443,7 +1556,8 @@ El método
 \family typewriter
 __str__
 \family default
-, retorna una representación de un objeto 
+,
+ retorna una representación de un objeto 
 \family typewriter
 Punto
 \family default
@@ -1452,8 +1566,8 @@ Punto
 \family typewriter
 __str__
 \family default
-, éste sobreescribe el comportamiento por defecto de la función primitiva
- 
+,
+ éste sobreescribe el comportamiento por defecto de la función primitiva 
 \family typewriter
 str
 \family default
@@ -1462,19 +1576,21 @@ str
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> p = Punto(3, 4)
+>>> p = Punto(3,
+ 4)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> str(p)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-'(3, 4)'
+'(3,
+ 4)'
 \end_layout
 
 \end_inset
@@ -1491,7 +1607,8 @@ Punto
 \family typewriter
 __str__
 \family default
- o sobre éste, así que definir a 
+ o sobre éste,
+ así que definir a 
 \family typewriter
 __str__
 \family default
@@ -1504,19 +1621,21 @@ print
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> p = Punto(3, 4)
+>>> p = Punto(3,
+ 4)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(p)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-(3, 4)
+(3,
+ 4)
 \end_layout
 
 \end_inset
@@ -1525,15 +1644,19 @@ status open
 \end_layout
 
 \begin_layout Standard
-Cuando escribimos una nueva clase, casi siempre empezamos escribiendo 
+Cuando escribimos una nueva clase,
+ casi siempre empezamos escribiendo 
 \family typewriter
 __init__
 \family default
-, ya que facilita la instanciación de objetos, y 
+,
+ ya que facilita la instanciación de objetos,
+ y 
 \family typewriter
 __str__
 \family default
-, que casi siempre es esencial para la depuración.
+,
+ que casi siempre es esencial para la depuración.
 \end_layout
 
 \begin_layout Section
@@ -1549,6 +1672,8 @@ name "operator overloading"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1559,6 +1684,8 @@ operadores sobrecarga de
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1569,6 +1696,8 @@ operadores!sobrecarga
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1579,6 +1708,8 @@ producto punto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1591,8 +1722,7 @@ multiplicación escalar
 \end_layout
 
 \begin_layout Standard
-Algunos lenguajes hacen posible cambiar la definición de los operadores
- primitivos cuando se aplican sobre tipos definidos por el programador.
+Algunos lenguajes hacen posible cambiar la definición de los operadores primitivos cuando se aplican sobre tipos definidos por el programador.
  Esta característica se denomina 
 \series bold
 sobrecarga de operadores
@@ -1602,11 +1732,14 @@ sobrecarga de operadores
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, para sobrecargar el operador suma, 
+Por ejemplo,
+ para sobrecargar el operador suma,
+ 
 \family typewriter
 +
 \family default
-, proporcionamos un método denominado 
+,
+ proporcionamos un método denominado 
 \family typewriter
 __add__
 \family default
@@ -1615,28 +1748,30 @@ __add__
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Punto:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   # los métodos definidos previamente van aquí...
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def __add__(self, otro):
+  def __add__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    return Punto(self.x + otro.x, self.y + otro.y)
+    return Punto(self.x + otro.x,
+ self.y + otro.y)
 \end_layout
 
 \end_inset
@@ -1645,8 +1780,8 @@ class Punto:
 \end_layout
 
 \begin_layout Standard
-Como de costumbre, el primer parámetro es el objeto con el cual se invoca
- el método.
+Como de costumbre,
+ el primer parámetro es el objeto con el cual se invoca el método.
  El segundo parámetro se denomina con la palabra 
 \family typewriter
 otro
@@ -1660,7 +1795,8 @@ self
 \family typewriter
 Punto
 \family default
-s, creamos y retornamos un nuevo 
+s,
+ creamos y retornamos un nuevo 
 \family typewriter
 Punto
 \family default
@@ -1676,7 +1812,8 @@ Punto
 \end_layout
 
 \begin_layout Standard
-Ahora, cuando aplicamos el operador 
+Ahora,
+ cuando aplicamos el operador 
 \family typewriter
 +
 \family default
@@ -1684,7 +1821,8 @@ Ahora, cuando aplicamos el operador
 \family typewriter
 Punto
 \family default
-, Python hace el llamado del método 
+,
+ Python hace el llamado del método 
 \family typewriter
 __add__
 \family default
@@ -1693,29 +1831,32 @@ __add__
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>>   p1 = Punto(3, 4)
+>>>   p1 = Punto(3,
+ 4)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>>   p2 = Punto(5, 7)
+>>>   p2 = Punto(5,
+ 7)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>>   p3 = p1 + p2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>>   print(p3)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-(8, 11)
+(8,
+ 11)
 \end_layout
 
 \end_inset
@@ -1732,7 +1873,8 @@ p1 + p2
 \family typewriter
 p1.__add__(p2)
 \family default
-, pero luce mucho mas elegante.
+,
+ pero luce mucho mas elegante.
 \end_layout
 
 \begin_layout Standard
@@ -1741,11 +1883,13 @@ Hay varias formas de sobrecargar el comportamiento del operador multiplicación:
 \family typewriter
 __mul__
 \family default
-, o 
+,
+ o 
 \family typewriter
 __rmul__
 \family default
-, o ambos.
+,
+ o ambos.
 \end_layout
 
 \begin_layout Standard
@@ -1757,11 +1901,13 @@ Si el operando izquierdo de
 \family typewriter
 Punto
 \family default
-, Python invoca a 
+,
+ Python invoca a 
 \family typewriter
 __mul__
 \family default
-, asumiendo que el otro operando también es un 
+,
+ asumiendo que el otro operando también es un 
 \family typewriter
 Punto
 \family default
@@ -1775,12 +1921,13 @@ producto escalar
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def __mul__(self, otro):
+def __mul__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return self.x * otro.x + self.y * otro.y
 \end_layout
@@ -1799,11 +1946,13 @@ Si el operando izquierdo de
 \family typewriter
 Punto
 \family default
-, Python llama a 
+,
+ Python llama a 
 \family typewriter
 __rmul__
 \family default
-, que ejecuta la 
+,
+ que ejecuta la 
 \series bold
 multiplicación escalar 
 \series default
@@ -1812,14 +1961,16 @@ multiplicación escalar
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def __rmul__(self, otro):
+def __rmul__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  return Punto(otro * self.x,  otro * self.y)
+  return Punto(otro * self.x,
+  otro * self.y)
 \end_layout
 
 \end_inset
@@ -1837,8 +1988,8 @@ Punto
 \family typewriter
 otro
 \family default
- pertenece a un tipo que no se puede multiplicar por un número de punto
- flotante, la función 
+ pertenece a un tipo que no se puede multiplicar por un número de punto flotante,
+ la función 
 \family typewriter
 __rmul__
 \family default
@@ -1851,34 +2002,37 @@ Este ejemplo ilustra las dos clases de multiplicación:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> p1 = Punto(3, 4)
+>>> p1 = Punto(3,
+ 4)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> p2 = Punto(5, 7)
+>>> p2 = Punto(5,
+ 7)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(p1 * p2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 43
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(2 * p2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-(10, 14)
+(10,
+ 14)
 \end_layout
 
 \end_inset
@@ -1887,11 +2041,13 @@ status open
 \family typewriter
 p2 * 2
 \family default
-? Ya que el primer parámetro es un 
+?
+ Ya que el primer parámetro es un 
 \family typewriter
 Punto
 \family default
-, Python llama a 
+,
+ Python llama a 
 \family typewriter
 __mul__
 \family default
@@ -1904,7 +2060,8 @@ __mul__
 \family typewriter
 __mul__
 \family default
-, el programa intenta acceder al valor 
+,
+ el programa intenta acceder al valor 
 \family typewriter
 x
 \family default
@@ -1912,7 +2069,8 @@ x
 \family typewriter
 otro
 \family default
-, lo que falla porque un número entero no tiene atributos:
+,
+ lo que falla porque un número entero no tiene atributos:
 \end_layout
 
 \begin_layout Standard
@@ -1920,21 +2078,22 @@ otro
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(p2 * 2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-AttributeError: 'int' object has no attribute 'x'
+AttributeError:
+ 'int' object has no attribute 'x'
 \end_layout
 
 \end_inset
 
- Desafortunadamente, el mensaje de error es un poco opaco.
- Este ejemplo demuestra una de las dificultades de la programación orientada
- a objetos.
+ Desafortunadamente,
+ el mensaje de error es un poco opaco.
+ Este ejemplo demuestra una de las dificultades de la programación orientada a objetos.
  Algunas veces es difícil saber qué código está ejecutándose.
 \end_layout
 
@@ -1943,6 +2102,7 @@ Para un ejemplo completo de sobrecarga de operadores vea el capítulo
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "overloading"
+nolink "false"
 
 \end_inset
 
@@ -1955,6 +2115,8 @@ Polimorfismo
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1967,17 +2129,16 @@ polimorfismo
 \end_layout
 
 \begin_layout Standard
-La mayoría de los métodos que hemos escrito sólo funcionan para un tipo
- de dato específico.
- Cuando se crea un nuevo tipo de objeto, se escriben métodos que operan
- sobre ese tipo.
+La mayoría de los métodos que hemos escrito sólo funcionan para un tipo de dato específico.
+ Cuando se crea un nuevo tipo de objeto,
+ se escriben métodos que operan sobre ese tipo.
 \end_layout
 
 \begin_layout Standard
-Pero hay ciertas operaciones que se podrían aplicar a muchos tipos, un ejemplo
- de éstas son las operaciones aritméticas de las secciones anteriores.
- Si muchos tipos soportan el mismo conjunto de operaciones, usted puede
- escribir funciones que trabajen con cualquiera de estos tipos.
+Pero hay ciertas operaciones que se podrían aplicar a muchos tipos,
+ un ejemplo de éstas son las operaciones aritméticas de las secciones anteriores.
+ Si muchos tipos soportan el mismo conjunto de operaciones,
+ usted puede escribir funciones que trabajen con cualquiera de estos tipos.
 \end_layout
 
 \begin_layout Standard
@@ -1985,8 +2146,8 @@ Por ejemplo la operación
 \family typewriter
 multsuma
 \family default
- (que se usa en el álgebra lineal) toma tres parámetros, multiplica los
- primeros dos y luego suma a esto el tercero.
+ (que se usa en el álgebra lineal) toma tres parámetros,
+ multiplica los primeros dos y luego suma a esto el tercero.
  En Python se puede escribir así:
 \end_layout
 
@@ -1995,12 +2156,14 @@ multsuma
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def multsuma (x, y, z):
+def multsuma (x,
+ y,
+ z):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return x * y + z
 \end_layout
@@ -2015,7 +2178,8 @@ x
 \family typewriter
 y
 \family default
- que puedan multiplicarse, y para cualquier valor de 
+ que puedan multiplicarse,
+ y para cualquier valor de 
 \family typewriter
 z
 \family default
@@ -2031,12 +2195,14 @@ Podemos llamarla sobre números:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> multsuma (3, 2, 1)
+>>> multsuma (3,
+ 2,
+ 1)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 7
 \end_layout
@@ -2052,32 +2218,39 @@ s:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> p1 = Punto(3, 4)
+>>> p1 = Punto(3,
+ 4)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> p2 = Punto(5, 7)
+>>> p2 = Punto(5,
+ 7)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> print(multsuma (2, p1, p2))
+>>> print(multsuma (2,
+ p1,
+ p2))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-(11, 15)
+(11,
+ 15)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> print(multsuma (p1, p2, 1))
+>>> print(multsuma (p1,
+ p2,
+ 1))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 44
 \end_layout
@@ -2088,7 +2261,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-En el primer caso, el 
+En el primer caso,
+ el 
 \family typewriter
 Punto
 \family default
@@ -2097,13 +2271,14 @@ Punto
 Punto
 \family default
 .
- En el segundo caso, el producto punto produce un valor numérico, así que
- el tercer parámetro también tiene que ser un número.
+ En el segundo caso,
+ el producto punto produce un valor numérico,
+ así que el tercer parámetro también tiene que ser un número.
 \end_layout
 
 \begin_layout Standard
-Una función como ésta, que puede tomar parámetros con tipos distintos se
- denomina 
+Una función como ésta,
+ que puede tomar parámetros con tipos distintos se denomina 
 \series bold
 polimórfica
 \series default
@@ -2115,7 +2290,9 @@ Otro ejemplo es la función
 \family typewriter
 derechoyAlReves
 \family default
-, que imprime una lista dos veces, al derecho y al revés:
+,
+ que imprime una lista dos veces,
+ al derecho y al revés:
 \end_layout
 
 \begin_layout Standard
@@ -2128,22 +2305,22 @@ status open
 def derechoyAlReves(l):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   import copy
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   r = copy.copy(l)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   r.reverse()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print(str(l) + str(r))
 \end_layout
@@ -2154,8 +2331,8 @@ def derechoyAlReves(l):
 \family typewriter
 reverse
 \family default
- es una función modificadora, tenemos que tomar la precaución de hacer una
- copia de la lista antes de llamarlo.
+ es una función modificadora,
+ tenemos que tomar la precaución de hacer una copia de la lista antes de llamarlo.
  De esta forma la lista que llega como parámetro no se modifica.
 \end_layout
 
@@ -2172,24 +2349,34 @@ derechoyAlReves
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> miLista = [1, 2, 3, 4]
+>>> miLista = [1,
+ 2,
+ 3,
+ 4]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> derechoyAlReves(miLista)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-[1, 2, 3, 4][4, 3, 2, 1]
+[1,
+ 2,
+ 3,
+ 4][4,
+ 3,
+ 2,
+ 1]
 \end_layout
 
 \end_inset
 
- Por supuesto que funciona para listas, esto no es sorprendente.
+ Por supuesto que funciona para listas,
+ esto no es sorprendente.
  Lo que sería sorprendente es que pudiéramos aplicarla a un 
 \family typewriter
 Punto
@@ -2198,15 +2385,14 @@ Punto
 \end_layout
 
 \begin_layout Standard
-Para determinar si una función puede aplicarse a un nuevo tipo de dato usamos
- la regla fundamental del polimorfismo:
+Para determinar si una función puede aplicarse a un nuevo tipo de dato usamos la regla fundamental del polimorfismo:
 \end_layout
 
 \begin_layout Quote
 
 \series bold
-Si todas las operaciones adentro de la función pueden aplicarse al otro
- tipo, la función puede aplicarse al tipo.
+Si todas las operaciones adentro de la función pueden aplicarse al otro tipo,
+ la función puede aplicarse al tipo.
 
 \series default
  
@@ -2217,11 +2403,13 @@ Las operaciones que usa el método son
 \family typewriter
 copy
 \family default
-, 
+,
+ 
 \family typewriter
 reverse
 \family default
-, y 
+,
+ y 
 \family typewriter
 print
 \family default
@@ -2233,7 +2421,8 @@ print
 \family typewriter
 copy
 \family default
- funciona para cualquier objeto, y como ya hemos escrito un método 
+ funciona para cualquier objeto,
+ y como ya hemos escrito un método 
 \family typewriter
 __str__
 \family default
@@ -2241,7 +2430,8 @@ __str__
 \family typewriter
 Punto
 \family default
-s, lo único que nos falta es el método 
+s,
+ lo único que nos falta es el método 
 \family typewriter
 reverse
 \family default
@@ -2257,14 +2447,16 @@ Punto
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def reverse(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  self.x , self.y = self.y, self.x
+  self.x ,
+ self.y = self.y,
+ self.x
 \end_layout
 
 \end_inset
@@ -2285,26 +2477,28 @@ Punto
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>>   p = Punto(3, 4)
+>>>   p = Punto(3,
+ 4)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>>   derechoyAlReves(p)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-(3, 4)(4, 3)
+(3,
+ 4)(4,
+ 3)
 \end_layout
 
 \end_inset
 
- El mejor tipo de polimorfismo es el que no se pretendía lograr, aquel en
- el que se descubre que una función escrita puede aplicarse a un tipo para
- el cual no se había planeado hacerlo.
+ El mejor tipo de polimorfismo es el que no se pretendía lograr,
+ aquel en el que se descubre que una función escrita puede aplicarse a un tipo para el cual no se había planeado hacerlo.
 \end_layout
 
 \begin_layout Section
@@ -2322,8 +2516,9 @@ Lenguaje orientado a objetos:
 
 \end_inset
 
- lenguaje que tiene características, como las clases definidas por el usuario
- y la herencia, que facilitan la programación orientada a objetos.
+ lenguaje que tiene características,
+ como las clases definidas por el usuario y la herencia,
+ que facilitan la programación orientada a objetos.
 \end_layout
 
 \begin_layout Description
@@ -2337,20 +2532,20 @@ Programación orientada a objetos:
 
 \end_inset
 
- estilo de programación en el que los datos y las operaciones que los manipulan
- se organizan en clases y métodos.
+ estilo de programación en el que los datos y las operaciones que los manipulan se organizan en clases y métodos.
 \end_layout
 
 \begin_layout Description
-Método: función que se define adentro de una clase y se llama sobre instancias
- de ésta.
+Método:
+ función que se define adentro de una clase y se llama sobre instancias de ésta.
 \end_layout
 
 \begin_layout Description
-Sobreescribir: reemplazar un valor preexistente.
- Por ejemplo, se puede reemplazar un parámetro por defecto con un argumento
- particular y un método ya definido, proporcionando un nuevo método con
- el mismo nombre.
+Sobreescribir:
+ reemplazar un valor preexistente.
+ Por ejemplo,
+ se puede reemplazar un parámetro por defecto con un argumento particular y un método ya definido,
+ proporcionando un nuevo método con el mismo nombre.
 \end_layout
 
 \begin_layout Description
@@ -2383,23 +2578,28 @@ Sobrecarga de operadores:
 \family typewriter
 +
 \family default
-, 
+,
+ 
 \family typewriter
 -
 \family default
-, 
+,
+ 
 \family typewriter
 *
 \family default
-, 
+,
+ 
 \family typewriter
 >
 \family default
-, 
+,
+ 
 \family typewriter
 <
 \family default
-, etc.) de forma que acepten tipos definidos por el usuario.
+,
+ etc.) de forma que acepten tipos definidos por el usuario.
 \end_layout
 
 \begin_layout Description
@@ -2431,8 +2631,7 @@ Multiplicación escalar:
 
 \end_inset
 
- operación del álgebra lineal que multiplica cada una de las coordenadas
- de un 
+ operación del álgebra lineal que multiplica cada una de las coordenadas de un 
 \family typewriter
 Punto
 \family default
@@ -2440,14 +2639,21 @@ Punto
 \end_layout
 
 \begin_layout Description
-Polimórfica: función que puede operar sobre varios tipos de datos.
- Si todas las operaciones que se llaman dentro de la función se le pueden
- aplicar al tipo de dato, entonces la función puede aplicársela al tipo.
+Polimórfica:
+ función que puede operar sobre varios tipos de datos.
+ Si todas las operaciones que se llaman dentro de la función se le pueden aplicar al tipo de dato,
+ entonces la función puede aplicársela al tipo.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2458,6 +2664,8 @@ lenguaje de programación orientado a objetos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2468,6 +2676,8 @@ método
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2478,6 +2688,8 @@ método de inicialización
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2488,6 +2700,8 @@ sobreescribir
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2498,6 +2712,8 @@ sobrecarga
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2508,6 +2724,8 @@ sobrecarga de operadores
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2518,6 +2736,8 @@ producto punto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2528,6 +2748,8 @@ multiplicación escalar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2557,6 +2779,7 @@ convertirASegundos
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "convert"
+nolink "false"
 
 \end_inset
 
@@ -2577,11 +2800,16 @@ fin
 buscar
 \family default
  que especifique hasta donde continuar la búsqueda.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-Advertencia: Este ejercicio tiene una cascarita.
+Advertencia:
+ Este ejercicio tiene una cascarita.
  El valor por defecto de 
 \family typewriter
 fin
@@ -2590,31 +2818,36 @@ fin
 \family typewriter
 len(cad)
 \family default
-, pero esto no funciona.
- Los valores por defecto se evalúan en el momento de definición de las funciones
-, no cuando se llaman.
+,
+ pero esto no funciona.
+ Los valores por defecto se evalúan en el momento de definición de las funciones,
+ no cuando se llaman.
  Cuando se define 
 \family typewriter
 buscar
 \family default
-, 
+,
+ 
 \family typewriter
 cad
 \family default
- no existe todavía, así que no se puede obtener su longitud.
+ no existe todavía,
+ así que no se puede obtener su longitud.
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
 Agregue un método 
 \family typewriter
-__sub__(self, otro)
+__sub__(self,
+ otro)
 \family default
  que sobrecargue el operador resta de la clase 
 \family typewriter
 Punto
 \family default
-, y pruébelo.
+,
+ y pruébelo.
 \end_layout
 
 \end_body

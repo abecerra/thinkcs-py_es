@@ -1,15 +1,15 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -18,9 +18,13 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -50,6 +54,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -58,15 +65,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -81,30 +96,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -113,7 +137,8 @@ This distribution includes a file named fdl.lyx that contains the text of
 \end_layout
 
 \begin_layout Chapter
-Postludio: Triqui con interfaz gráfica 
+Postludio:
+ Triqui con interfaz gráfica 
 \end_layout
 
 \begin_layout Standard
@@ -128,6 +153,8 @@ name "triqui-kivy"
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -148,19 +175,21 @@ En el capítulo
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:inter1:triqui"
+nolink "false"
 
 \end_inset
 
- desarrollamos un juego de triqui completo para integrar varios conceptos
- de programación.
- Ahora, para integrar varios conceptos de programación con objetos haremos
- casi lo mismo, construiremos un triqui con interfaz gráfica de usuario.
+ desarrollamos un juego de triqui completo para integrar varios conceptos de programación.
+ Ahora,
+ para integrar varios conceptos de programación con objetos haremos casi lo mismo,
+ construiremos un triqui con interfaz gráfica de usuario.
 \end_layout
 
 \begin_layout Standard
-El programa utiliza la biblioteca Kivy, que permite realizar interfaces
- gráficas que corran en celulares, tablets (con pantallas sensibles al tacto)
- y computadores tradicionales (corriendo MacOS X, Windows y Linux).
+El programa utiliza la biblioteca Kivy,
+ que permite realizar interfaces gráficas que corran en celulares,
+ tablets (con pantallas sensibles al tacto) y computadores tradicionales (corriendo MacOS X,
+ Windows y Linux).
  Hay que conseguir el instalador de:
 \end_layout
 
@@ -188,8 +217,7 @@ status open
 
 \begin_layout Plain Layout
 
-https://github.com/abecerra/thinkcs-py_es/releases/download/thinkcs-py_es_e2-rc1/
-triqui-kivy-python3.zip
+https://github.com/abecerra/thinkcs-py_es/releases/download/thinkcs-py_es_e2-rc1/triqui-kivy-python3.zip
 \end_layout
 
 \end_inset
@@ -198,11 +226,9 @@ triqui-kivy-python3.zip
 \end_layout
 
 \begin_layout Standard
-Para comprender el capítulo hay que ejecutar cada versión del programa a
- medida que se avanza en la lectura.
- En las secciones a continuación se discuten los fragmentos del programa
- a medida que se van agregando, cada fragmento tiene el nombre del archivo
- en que se introdujo como comentario inicial.
+Para comprender el capítulo hay que ejecutar cada versión del programa a medida que se avanza en la lectura.
+ En las secciones a continuación se discuten los fragmentos del programa a medida que se van agregando,
+ cada fragmento tiene el nombre del archivo en que se introdujo como comentario inicial.
 \end_layout
 
 \begin_layout Section
@@ -210,18 +236,18 @@ Ganar y empatar
 \end_layout
 
 \begin_layout Standard
-Para empezar tomamos el código final del triqui desarrollado en el capítulo
- 
+Para empezar tomamos el código final del triqui desarrollado en el capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:inter1:triqui"
+nolink "false"
 
 \end_inset
 
- y lo convertimos en un módulo que nos permite verificar si alguien gana
- el juego o si hay un empate.
- El proceso es sencillo: eliminamos todo el código que no tenga que ver
- con verificar quien gana o si hay empate, tomando 
+ y lo convertimos en un módulo que nos permite verificar si alguien gana el juego o si hay un empate.
+ El proceso es sencillo:
+ eliminamos todo el código que no tenga que ver con verificar quien gana o si hay empate,
+ tomando 
 \family typewriter
 triqui9.py
 \family default
@@ -229,13 +255,24 @@ triqui9.py
 \family typewriter
 validar.py
 \family default
-, un módulo con 9 funciones: crear, ganaDiagonal1, ganaDiagonal2, ganaFila,
- ganaHorizontal, ganaColumna, ganaVertical, gana y empate.
- Mas adelante lo importaremos, para reutilizar el código.
+,
+ un módulo con 9 funciones:
+ crear,
+ ganaDiagonal1,
+ ganaDiagonal2,
+ ganaFila,
+ ganaHorizontal,
+ ganaColumna,
+ ganaVertical,
+ gana y empate.
+ Mas adelante lo importaremos,
+ para reutilizar el código.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -253,6 +290,8 @@ Programación orientada a eventos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -265,24 +304,25 @@ Programación orientada a eventos
 \end_layout
 
 \begin_layout Standard
-En muchas bibliotecas gráficas como kivy existe un gran ciclo que procesa
- los eventos generados a través del teclado, apuntador o la pantalla sensible
- al tacto.
- Este ciclo es infinito, pero se le hace un break cuando se cierra la ventana
- de la aplicación.
- En la programación orientada a eventos debemos acostumbrarnos a varias
- cosas.
+En muchas bibliotecas gráficas como kivy existe un gran ciclo que procesa los eventos generados a través del teclado,
+ apuntador o la pantalla sensible al tacto.
+ Este ciclo es infinito,
+ pero se le hace un break cuando se cierra la ventana de la aplicación.
+ En la programación orientada a eventos debemos acostumbrarnos a varias cosas.
 \end_layout
 
 \begin_layout Standard
-Primero, el flujo del programa está determinado por lo que haga el usuario
- con los elementos gráficos de la pantalla.
- Kivy procesará cada evento (click, tecla digitada) de manera predeterminada,
+Primero,
+ el flujo del programa está determinado por lo que haga el usuario con los elementos gráficos de la pantalla.
+ Kivy procesará cada evento (click,
+ tecla digitada) de manera predeterminada,
  por ejemplo cerrar la ventana hará un break en el gran ciclo.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -295,9 +335,9 @@ evento
 \end_layout
 
 \begin_layout Standard
-Segundo, las bibliotecas como Kivy se encargan de redibujar automáticamente
- partes de la ventana cuando otra ventana se pase por encima, o cuando se
- cambie de tamaño.
+Segundo,
+ las bibliotecas como Kivy se encargan de redibujar automáticamente partes de la ventana cuando otra ventana se pase por encima,
+ o cuando se cambie de tamaño.
 \end_layout
 
 \begin_layout Standard
@@ -309,89 +349,91 @@ Nuestro primer programa importa lo que necesita de kivy:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui0.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 import kivy
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 kivy.require('1.9.1')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 from kivy.app import App
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 from kivy.uix.gridlayout import GridLayout
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Triqui(GridLayout):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def __init__(self, **kwargs):
+    def __init__(self,
+ **kwargs):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        super(Triqui, self).__init__(**kwargs)
+        super(Triqui,
+ self).__init__(**kwargs)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
    
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Programa(App):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     def build(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.title = 'Triqui'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         return Triqui()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 if __name__ == '__main__':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     Programa().run()
 \end_layout
@@ -406,12 +448,14 @@ El gran ciclo reside en la clase
 \family typewriter
 App
 \family default
- de Kivy, de la que heredamos la clase 
+ de Kivy,
+ de la que heredamos la clase 
 \family typewriter
 Programa
 \family default
 .
- Cuando arranca el programa, al ejecutar 
+ Cuando arranca el programa,
+ al ejecutar 
 \family typewriter
 run()
 \family default
@@ -419,9 +463,10 @@ run()
 \end_layout
 
 \begin_layout Standard
-El método build de programa retorna un objeto Triqui, que es nuestra ventana.
- La clase Triqui hereda de GridLayout, una ventana que contiene elementos
- en disposición de cuadrícula (como una matriz).
+El método build de programa retorna un objeto Triqui,
+ que es nuestra ventana.
+ La clase Triqui hereda de GridLayout,
+ una ventana que contiene elementos en disposición de cuadrícula (como una matriz).
  El método 
 \family typewriter
 init
@@ -430,16 +475,17 @@ init
 \family typewriter
 init
 \family default
- de la clase madre y le pasa una lista con un número de argumentos variable
- (**kwargs).
+ de la clase madre y le pasa una lista con un número de argumentos variable (**kwargs).
 \end_layout
 
 \begin_layout Standard
-Por ahora nuestra ventana, instancia de la clase 
+Por ahora nuestra ventana,
+ instancia de la clase 
 \family typewriter
 Triqui
 \family default
-, está vacía.
+,
+ está vacía.
 \end_layout
 
 \begin_layout Section
@@ -447,10 +493,12 @@ Widgets
 \end_layout
 
 \begin_layout Standard
-Las ventanas suelen tener muchos elementos gráficos como menús, botones,
+Las ventanas suelen tener muchos elementos gráficos como menús,
+ botones,
  paneles entre otros.
  En bibliotecas como kivy se llaman widgets.
- Por ejemplo, un botón es un tipo de widget que se define en la clase 
+ Por ejemplo,
+ un botón es un tipo de widget que se define en la clase 
 \family typewriter
 Button
 \family default
@@ -459,9 +507,8 @@ Button
 
 \begin_layout Standard
 Como el flujo de los programas gráficos no está determinado por el programador,
- sino por el usuario al interactuar con los widgets de la ventana, el mecanismo
- que se utiliza para reaccionar ante los eventos es el de registrar métodos
- que serán invocados automáticamente por el gran ciclo.
+ sino por el usuario al interactuar con los widgets de la ventana,
+ el mecanismo que se utiliza para reaccionar ante los eventos es el de registrar métodos que serán invocados automáticamente por el gran ciclo.
 \end_layout
 
 \begin_layout Standard
@@ -469,52 +516,56 @@ Como el flujo de los programas gráficos no está determinado por el programador
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui1.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Triqui(GridLayout):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def __init__(self, **kwargs):
+    def __init__(self,
+ **kwargs):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        super(Triqui, self).__init__(**kwargs)
+        super(Triqui,
+ self).__init__(**kwargs)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        self.add_widget(Button(font_size=100, 
+        self.add_widget(Button(font_size=100,
+ 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                         on_press=self.boton_presionado))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def boton_presionado(self, w):
+    def boton_presionado(self,
+ w):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         pass
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -529,8 +580,7 @@ Los widgets se agregan a una ventana mediante el método
 add_widget
 \family default
 .
- Aquí agregamos un botón y registramos un método que responde al evento
- de presionarlo (
+ Aquí agregamos un botón y registramos un método que responde al evento de presionarlo (
 \family typewriter
 on_press
 \family default
@@ -543,9 +593,10 @@ El Triqui
 \end_layout
 
 \begin_layout Standard
-A continuación, definimos la geometría de la ventana como una matriz de
- 3 filas y 3 columnas en la que cada elemento es un botón.
- Ahora, en el método 
+A continuación,
+ definimos la geometría de la ventana como una matriz de 3 filas y 3 columnas en la que cada elemento es un botón.
+ Ahora,
+ en el método 
 \family typewriter
 boton_presionado
 \family default
@@ -557,74 +608,78 @@ boton_presionado
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui2.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Triqui(GridLayout):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def __init__(self, **kwargs):
+    def __init__(self,
+ **kwargs):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        super(Triqui, self).__init__(**kwargs)
+        super(Triqui,
+ self).__init__(**kwargs)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.cols = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.rows = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         for i in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             for j in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-                self.add_widget(Button(font_size=100, 
+                self.add_widget(Button(font_size=100,
+ 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                                 on_press=self.boton_presionado))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def boton_presionado(self, w):
+    def boton_presionado(self,
+ w):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         MostrarMensaje("Titulo","Presionaste una casilla")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -642,7 +697,8 @@ MostrarMensaje
 \family typewriter
 PopUp
 \family default
-, la clase que tiene kivy para cuadros de diálogo:
+,
+ la clase que tiene kivy para cuadros de diálogo:
 \end_layout
 
 \begin_layout Standard
@@ -650,49 +706,55 @@ PopUp
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui2.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-class MostrarMensaje(Popup): 
+class MostrarMensaje(Popup):
+ 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def __init__(self, titulo, mensaje, **kwargs):
+    def __init__(self,
+ titulo,
+ mensaje,
+ **kwargs):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.size_hint_x = self.size_hint_y = .5
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.title = titulo
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        super(MostrarMensaje, self).__init__(**kwargs)
+        super(MostrarMensaje,
+ self).__init__(**kwargs)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        self.add_widget(Button(text=mensaje, 
+        self.add_widget(Button(text=mensaje,
+ 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                         on_press=lambda x:self.dismiss()))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.open()
 \end_layout
@@ -703,7 +765,8 @@ class MostrarMensaje(Popup):
 \end_layout
 
 \begin_layout Standard
-El cuadro de diálogo tiene un título y un botón que, al ser presionado,
+El cuadro de diálogo tiene un título y un botón que,
+ al ser presionado,
  cierra todo el cuadro.
  La acción del botón se registra asignando al parámetro 
 \begin_inset listings
@@ -724,7 +787,8 @@ status open
 
 \begin_layout Plain Layout
 
-lambda x: self.dismiss()
+lambda x:
+ self.dismiss()
 \end_layout
 
 \end_inset
@@ -739,11 +803,9 @@ Jugando por turnos
 \end_layout
 
 \begin_layout Standard
-Como el flujo de ejecución depende de los usuarios, vamos a llevar pista
- en el programa de quien tiene el turno de juego con un atributo en la clase
- Triqui.
- Hay que crear el atributo en el método de inicialización y modificarlo
- en cada jugada.
+Como el flujo de ejecución depende de los usuarios,
+ vamos a llevar pista en el programa de quien tiene el turno de juego con un atributo en la clase Triqui.
+ Hay que crear el atributo en el método de inicialización y modificarlo en cada jugada.
  El 
 \family typewriter
 turno
@@ -756,120 +818,126 @@ turno
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui3.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Triqui(GridLayout):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def __init__(self, **kwargs):
+    def __init__(self,
+ **kwargs):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        super(Triqui, self).__init__(**kwargs)
+        super(Triqui,
+ self).__init__(**kwargs)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.cols = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.rows = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         for i in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             for j in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-                self.add_widget(Button(font_size=100, 
+                self.add_widget(Button(font_size=100,
+ 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-                  on_press=self.boton_presionado, text=' '))
+                  on_press=self.boton_presionado,
+ text=' '))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.turno = 'O'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def boton_presionado(self, w):
+    def boton_presionado(self,
+ w):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if w.text != ' ':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-            MostrarMensaje('Error!', "Ya se ha jugado 
+            MostrarMensaje('Error!',
+ "Ya se ha jugado 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                             en esa casilla!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             return
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if self.turno == 'O':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             w.text =  'O'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             self.turno = 'X'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             w.text = 'X'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             self.turno = 'O'
 \end_layout
@@ -880,10 +948,8 @@ class Triqui(GridLayout):
 \end_layout
 
 \begin_layout Standard
-Cuando se presiona un botón se verifica si la casilla está vacía para poder
- jugar en ella.
- Si no es así se cambia el texto del botón y se cambia el turno para el
- otro jugador.
+Cuando se presiona un botón se verifica si la casilla está vacía para poder jugar en ella.
+ Si no es así se cambia el texto del botón y se cambia el turno para el otro jugador.
  Observe que en el método de inicialización de 
 \family typewriter
 Triqui
@@ -897,6 +963,8 @@ Reutilización
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -922,47 +990,50 @@ Button
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui4.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 class Boton(Button):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     fila = NumericProperty(0)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     columna = NumericProperty(0)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def __init__(self, **kwargs):      
+    def __init__(self,
+ **kwargs):
+      
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        super(Boton, self).__init__(**kwargs)
+        super(Boton,
+ self).__init__(**kwargs)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.font_size=100
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.text=' '
 \end_layout
@@ -973,8 +1044,7 @@ class Boton(Button):
 \end_layout
 
 \begin_layout Standard
-Esto nos permite pasar el estado de los botones a una matriz con el siguiente
- método de la clase 
+Esto nos permite pasar el estado de los botones a una matriz con el siguiente método de la clase 
 \family typewriter
 Triqui
 \family default
@@ -986,32 +1056,32 @@ Triqui
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui4.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     def botones_a_matriz(self,tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         for i in self.children:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             f = i.fila
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             c = i.columna
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             self.tablero[f][c]=i.text
 \end_layout
@@ -1022,7 +1092,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-En Kivy, children contiene todos los widgets que se han agregado a una ventana,
+En Kivy,
+ children contiene todos los widgets que se han agregado a una ventana,
  en nuestro caso los 9 botones.
 \end_layout
 
@@ -1031,7 +1102,8 @@ Así podremos reutilizar el módulo
 \family typewriter
 validar
 \family default
-, creando la matriz que lleva el estado del juego :
+,
+ creando la matriz que lleva el estado del juego :
 \end_layout
 
 \begin_layout Standard
@@ -1039,68 +1111,70 @@ validar
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui4.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 from validar import *
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def __init__(self, **kwargs):
+    def __init__(self,
+ **kwargs):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        super(Triqui, self).__init__(**kwargs)
+        super(Triqui,
+ self).__init__(**kwargs)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.cols = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.rows = 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         for i in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             for j in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 self.add_widget(Boton(on_press=self.boton_presionado,
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                        fila=i,columna=j))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.turno = 'O'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.tablero = crear()
 \end_layout
@@ -1111,8 +1185,7 @@ from validar import *
 \end_layout
 
 \begin_layout Standard
-Ahora estamos en condiciones de poner valores a la matriz cada vez que se
- halla realizado una jugada:
+Ahora estamos en condiciones de poner valores a la matriz cada vez que se halla realizado una jugada:
 \end_layout
 
 \begin_layout Standard
@@ -1120,79 +1193,82 @@ Ahora estamos en condiciones de poner valores a la matriz cada vez que se
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui5.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def boton_presionado(self, w):
+    def boton_presionado(self,
+ w):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if w.text != ' ':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-            MostrarMensaje('Error!', 
+            MostrarMensaje('Error!',
+ 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                   "Ya se ha jugado en esa casilla!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             return
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             if self.turno == 'O':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 w.text =  'O'                
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 self.turno = 'X'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 self.botones_a_matriz()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 if gana("O",self.tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-                    MostrarMensaje("Fin", "Gana el jugador O")
+                    MostrarMensaje("Fin",
+ "Gana el jugador O")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 # Muy similar para el otro jugador!
 \end_layout
@@ -1207,8 +1283,8 @@ Reset
 \end_layout
 
 \begin_layout Standard
-Podemos reiniciar el juego cada vez que un jugador gane, mediante la creación
- del siguiente método de 
+Podemos reiniciar el juego cada vez que un jugador gane,
+ mediante la creación del siguiente método de 
 \family typewriter
 Triqui
 \family default
@@ -1220,27 +1296,27 @@ Triqui
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui6.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
    def reset(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         for i in self.children:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             i.text = ' '
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         self.turno = 'O'
 \end_layout
@@ -1255,8 +1331,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Ahora lo llamamos cada vez que un jugador gana, así el tablero de juego
- quedará limpio para que se inicie otra partida.
+Ahora lo llamamos cada vez que un jugador gana,
+ así el tablero de juego quedará limpio para que se inicie otra partida.
 \end_layout
 
 \begin_layout Standard
@@ -1264,52 +1340,54 @@ Ahora lo llamamos cada vez que un jugador gana, así el tablero de juego
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui6.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def boton_presionado(self, w):
+    def boton_presionado(self,
+ w):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         # Todo lo anterior igual
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 w.text = 'X'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 self.turno = 'O'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 self.botones_a_matriz()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 if gana("X",self.tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-                    MostrarMensaje("Fin", "Gana el jugador X")
+                    MostrarMensaje("Fin",
+ "Gana el jugador X")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                     self.reset()
 \end_layout
@@ -1320,8 +1398,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Aprovechando al método reset, añadimos el chequeo de empates entre los dos
- jugadores:
+Aprovechando al método reset,
+ añadimos el chequeo de empates entre los dos jugadores:
 \end_layout
 
 \begin_layout Standard
@@ -1329,32 +1407,34 @@ Aprovechando al método reset, añadimos el chequeo de empates entre los dos
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui7.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    def boton_presionado(self, w):
+    def boton_presionado(self,
+ w):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         # Todo lo anterior igual
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             if empate(self.tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-                MostrarMensaje("Fin", "Empate!")
+                MostrarMensaje("Fin",
+ "Empate!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 self.reset()
 \end_layout
@@ -1365,26 +1445,29 @@ status open
 \end_layout
 
 \begin_layout Section
-Reestructurando, otra vez
+Reestructurando,
+ otra vez
 \end_layout
 
 \begin_layout Standard
-Otra vez tenemos código parecido para revisar el estado del juego con los
- dos jugadores que es mejor consolidar en una función para mejorar la calidad
- del programa.
- Para esto definimos el método revisar, que:
+Otra vez tenemos código parecido para revisar el estado del juego con los dos jugadores que es mejor consolidar en una función para mejorar la calidad del programa.
+ Para esto definimos el método revisar,
+ que:
 \end_layout
 
 \begin_layout Itemize
-Si el jugador actual gana, muestra el mensaje y resetea.
+Si el jugador actual gana,
+ muestra el mensaje y resetea.
 \end_layout
 
 \begin_layout Itemize
-Si hay empate, muestra el mensaje y resetea.
+Si hay empate,
+ muestra el mensaje y resetea.
 \end_layout
 
 \begin_layout Itemize
-Si nadie gana y no hay empate, pasa el turno al otro jugador.
+Si nadie gana y no hay empate,
+ pasa el turno al otro jugador.
  
 \end_layout
 
@@ -1397,57 +1480,60 @@ Si nadie gana y no hay empate, pasa el turno al otro jugador.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui8.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def revisar(self):          
+  def revisar(self):
+          
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if gana(self.turno,self.tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             mensaje = "Gana el jugador "+self.turno+"."
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-            MostrarMensaje("Fin", mensaje)
+            MostrarMensaje("Fin",
+ mensaje)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             self.reset()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         elif empate(self.tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-            MostrarMensaje("Fin", "Empate!")
+            MostrarMensaje("Fin",
+ "Empate!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             self.reset()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             self.turno = self.otro()
 \end_layout
@@ -1466,32 +1552,32 @@ Que depende del método otro:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui8.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     def otro(self):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if self.turno == 'O':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             return 'X'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             return 'O'
 \end_layout
@@ -1502,22 +1588,27 @@ status open
 \end_layout
 
 \begin_layout Standard
-Así terminamos con un programa que tiene en total 4 clases, con 9 métodos
- distribuidos en ellas, además de las 9 funciones del módulo validar.
- Tiene 96 líneas de código en triqui9.py y 66 en validar, para un total de
- 162.
+Así terminamos con un programa que tiene en total 4 clases,
+ con 9 métodos distribuidos en ellas,
+ además de las 9 funciones del módulo validar.
+ Tiene 96 líneas de código en triqui9.py y 66 en validar,
+ para un total de 162.
 \end_layout
 
 \begin_layout Standard
-Ilustra algo que siempre pasa con los programas textuales, cuando se convierten
- a gráficos se aumenta el código substancialmente.
- La ventaja, aparte de la estética, es que el Triqui con la biblioteca kivy
- puede ejecutarse en Linux, Windows, Mac OS X, Android y iOS (el sistema
- operativo de los teléfonos iphone y de los tablets ipad).
+Ilustra algo que siempre pasa con los programas textuales,
+ cuando se convierten a gráficos se aumenta el código substancialmente.
+ La ventaja,
+ aparte de la estética,
+ es que el Triqui con la biblioteca kivy puede ejecutarse en Linux,
+ Windows,
+ Mac OS X,
+ Android y iOS (el sistema operativo de los teléfonos iphone y de los tablets ipad).
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, el paquete para Android del triqui puede descargarse de:
+Por ejemplo,
+ el paquete para Android del triqui puede descargarse de:
 \end_layout
 
 \begin_layout Standard
@@ -1526,8 +1617,7 @@ status open
 
 \begin_layout Plain Layout
 
-https://github.com/abecerra/thinkcs-py_es/releases/download/thinkcs-py_es_e2-rc1/
-KivyTriquiABe-1.1.0-debug.apk
+https://github.com/abecerra/thinkcs-py_es/releases/download/thinkcs-py_es_e2-rc1/KivyTriquiABe-1.1.0-debug.apk
 \end_layout
 
 \end_inset
@@ -1544,44 +1634,52 @@ Resumen
 \end_layout
 
 \begin_layout Description
-triqui0.py: crea una ventana vacía 
+triqui0.py:
+ crea una ventana vacía 
 \end_layout
 
 \begin_layout Description
-triqui1.py: Agrega un botón a la ventana (se ve feo!) 
+triqui1.py:
+ Agrega un botón a la ventana (se ve feo!) 
 \end_layout
 
 \begin_layout Description
-triqui2.py: Agrega 9 botones para formar el tablero del triqui 
+triqui2.py:
+ Agrega 9 botones para formar el tablero del triqui 
 \end_layout
 
 \begin_layout Description
-triqui3.py: Permite jugar a los dos jugadores sin ningún chequeo 
+triqui3.py:
+ Permite jugar a los dos jugadores sin ningún chequeo 
 \end_layout
 
 \begin_layout Description
-triqui4.py: Agrega una clase heredada de Button para llevar fila y columna
+triqui4.py:
+ Agrega una clase heredada de Button para llevar fila y columna 
+\end_layout
+
+\begin_layout Description
+triqui5.py:
+ Cada vez que se juega se copia el estado de los botones a una matriz 
+\end_layout
+
+\begin_layout Description
+triqui6.py:
+ Se valida si los jugadores ganan el juego con el código del triqui viejo y se resetea el juego.
  
 \end_layout
 
 \begin_layout Description
-triqui5.py: Cada vez que se juega se copia el estado de los botones a una
- matriz 
-\end_layout
-
-\begin_layout Description
-triqui6.py: Se valida si los jugadores ganan el juego con el código del triqui
- viejo y se resetea el juego.
+triqui7.py:
+ Se revisa si hay empate,
+ si lo hay,
+ se resetea el juego.
  
 \end_layout
 
 \begin_layout Description
-triqui7.py: Se revisa si hay empate, si lo hay, se resetea el juego.
- 
-\end_layout
-
-\begin_layout Description
-triqui8.py: Se mejora el código evitando la duplicación.
+triqui8.py:
+ Se mejora el código evitando la duplicación.
  
 \end_layout
 
@@ -1590,13 +1688,18 @@ Glosario
 \end_layout
 
 \begin_layout Description
-Evento: Acción generada por el usuario de una aplicación gráfica.
+Evento:
+ Acción generada por el usuario de una aplicación gráfica.
 \end_layout
 
 \begin_layout Description
-Widget: Elemento de una aplicación gráfica que se coloca en una ventana.
- Hay botones, paneles, barras deslizadoras, áreas de texto, entre otras
- clases de widgets.
+Widget:
+ Elemento de una aplicación gráfica que se coloca en una ventana.
+ Hay botones,
+ paneles,
+ barras deslizadoras,
+ áreas de texto,
+ entre otras clases de widgets.
 \end_layout
 
 \begin_layout Section
@@ -1604,22 +1707,21 @@ Ejercicios
 \end_layout
 
 \begin_layout Enumerate
-Modifique el triqui para que el computador juegue automáticamente, seleccionando
- una casilla vacía al azar.
+Modifique el triqui para que el computador juegue automáticamente,
+ seleccionando una casilla vacía al azar.
 \end_layout
 
 \begin_layout Enumerate
-Agregue un sonido cada vez que se haga una jugada válida y otro sonido de
- error para cuando el jugador seleccione una casilla en la que ya se ha
- jugado.
+Agregue un sonido cada vez que se haga una jugada válida y otro sonido de error para cuando el jugador seleccione una casilla en la que ya se ha jugado.
 \end_layout
 
 \begin_layout Enumerate
-Modifique el triqui para que tenga un menú gráfico de entrada en el que
- se pueda escoger entre dos modalidades: 1 jugador contra el computador,
- 2 jugadores entre si por turnos y 3, salir del programa.
- Ahora, cada vez que termine una partida el flujo de ejecución del programa
- debe volver al menú.
+Modifique el triqui para que tenga un menú gráfico de entrada en el que se pueda escoger entre dos modalidades:
+ 1 jugador contra el computador,
+ 2 jugadores entre si por turnos y 3,
+ salir del programa.
+ Ahora,
+ cada vez que termine una partida el flujo de ejecución del programa debe volver al menú.
 \end_layout
 
 \end_body

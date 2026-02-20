@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -16,10 +16,10 @@
 \newcommand{\adjustpage}[1]{\enlargethispage{#1\baselineskip}}
 \end_preamble
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -28,9 +28,13 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures false
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -60,6 +64,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -68,15 +75,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -91,30 +106,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -142,6 +166,8 @@ Un tipo de dato compuesto
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -152,6 +178,8 @@ tipo de dato compuesto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -164,11 +192,13 @@ tipo de dato!compuesto
 \end_layout
 
 \begin_layout Standard
-Hasta aquí hemos visto tres tipos de datos: 
+Hasta aquí hemos visto tres tipos de datos:
+ 
 \family typewriter
 int
 \family default
-, 
+,
+ 
 \family typewriter
 float
 \family default
@@ -177,12 +207,14 @@ float
 string
 \family default
 .
- Las cadenas son cualitativamente diferentes de los otros dos tipos porque
- están compuestas de piezas más pequeñas—los caracteres.
+ Las cadenas son cualitativamente diferentes de los otros dos tipos porque están compuestas de piezas más pequeñas—
+los caracteres.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -200,13 +232,14 @@ Los tipos que comprenden piezas más pequeñas se denominan
 tipos de datos compuestos
 \series default
 .
- Dependiendo de lo que hagamos podemos tratar un tipo compuesto como unidad
- o podemos acceder a sus partes.
+ Dependiendo de lo que hagamos podemos tratar un tipo compuesto como unidad o podemos acceder a sus partes.
  Esta ambigüedad es provechosa.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -217,6 +250,8 @@ operador corchete
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -276,7 +311,8 @@ letra
 \family typewriter
 letra
 \family default
-, obtenemos una pequeña sorpresa:
+,
+ obtenemos una pequeña sorpresa:
 \end_layout
 
 \begin_layout Verbatim
@@ -298,7 +334,8 @@ banano
 a
 \family default
 .
- ¡A menos que usted sea un científico de la computación! Por razones perversas,
+ ¡A menos que usted sea un científico de la computación!
+ Por razones perversas,
  los científicos de la computación empiezan a contar desde cero.
  La letra número 0 de 
 \family typewriter
@@ -317,27 +354,29 @@ banano
 b
 \family default
 .
- La letra 1 es a, y la letra 2 es n.
+ La letra 1 es a,
+ y la letra 2 es n.
 \end_layout
 
 \begin_layout Standard
-Si usted desea la primera letra de una cadena se pone 0, o cualquier expresión
- con el valor 0, dentro de los corchetes:
+Si usted desea la primera letra de una cadena se pone 0,
+ o cualquier expresión con el valor 0,
+ dentro de los corchetes:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> letra = fruta[0]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(letra)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 b
 \end_layout
@@ -353,8 +392,8 @@ La expresión en corchetes se denomina
 índice
 \series default
 .
- Un índice especifica un miembro de un conjunto ordenado, en este caso el
- conjunto de caracteres de la cadena.
+ Un índice especifica un miembro de un conjunto ordenado,
+ en este caso el conjunto de caracteres de la cadena.
  El índice 
 \begin_inset ERT
 status collapsed
@@ -390,12 +429,15 @@ status collapsed
 
 \end_inset
 
- cual elemento desea usted, por eso se llama así.
+ cual elemento desea usted,
+ por eso se llama así.
  Puede ser cualquier expresión entera.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -413,6 +455,8 @@ Longitud
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -423,6 +467,8 @@ cadena!longitud
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -447,35 +493,34 @@ len
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> fruta = "banano"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> len(fruta)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 6
 \end_layout
 
 \end_inset
 
- Para acceder a la última letra de una cadena usted podría caer en algo
- como esto:
+ Para acceder a la última letra de una cadena usted podría caer en algo como esto:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 longitud = len(fruta)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 ultima = fruta[longitud]       # ERROR!
 \end_layout
@@ -487,9 +532,11 @@ ultima = fruta[longitud]       # ERROR!
 
 \begin_layout Standard
 Y no funcionará.
- Causa un error en tiempo de ejecución, 
+ Causa un error en tiempo de ejecución,
+ 
 \family typewriter
-IndexError: string index out of range
+IndexError:
+ string index out of range
 \family default
 .
  La razón yace en que no hay una letra 6 en 
@@ -501,8 +548,11 @@ banano
 \end_inset
 
 .
- Como empezamos a contar desde cero, las seis letras se numeran de 0 a 5.
- En general, para obtener la última letra, tenemos que restar 1 a la 
+ Como empezamos a contar desde cero,
+ las seis letras se numeran de 0 a 5.
+ En general,
+ para obtener la última letra,
+ tenemos que restar 1 a la 
 \family typewriter
 longitud
 \family default
@@ -511,6 +561,8 @@ longitud
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -527,12 +579,12 @@ error en tiempo de ejecución
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 longitud = len(fruta)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 ultima = fruta[longitud-1]
 \end_layout
@@ -543,8 +595,9 @@ ultima = fruta[longitud-1]
 \end_layout
 
 \begin_layout Standard
-Alternativamente, podemos usar índices negativos, que cuentan hacia atrás
- desde el fin de la cadena.
+Alternativamente,
+ podemos usar índices negativos,
+ que cuentan hacia atrás desde el fin de la cadena.
  La expresión 
 \family typewriter
 fruta[-1]
@@ -553,11 +606,14 @@ fruta[-1]
 \family typewriter
 fruta[-2]
 \family default
- retorna la penúltima, y así sucesivamente.
+ retorna la penúltima,
+ y así sucesivamente.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -587,6 +643,8 @@ name "for"
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -597,6 +655,8 @@ recorridos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -607,6 +667,8 @@ ciclo!recorrido
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -617,6 +679,8 @@ ciclo for
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -630,8 +694,9 @@ ciclo!ciclo for
 
 \begin_layout Standard
 Muchos cálculos implican procesar una cadena carácter por carácter.
- A menudo empiezan al inicio, seleccionan cada carácter en cada paso, le
- hacen algo y continúan hasta el final.
+ A menudo empiezan al inicio,
+ seleccionan cada carácter en cada paso,
+ le hacen algo y continúan hasta el final.
  Este patrón de procesamiento se denomina 
 \series bold
 recorrido
@@ -646,27 +711,27 @@ while
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 indice = 0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 while indice < len(fruta):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   letra = fruta[indice]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print(letra)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   indice = indice + 1
 \end_layout
@@ -682,22 +747,26 @@ Este ciclo recorre la cadena y despliega cada letra en una línea independiente.
 \family typewriter
 indice < len(fruta)
 \family default
-, así que cuando 
+,
+ así que cuando 
 \family typewriter
 indice
 \family default
- se hace igual a la longitud de la cadena, la condición es falsa, y el cuerpo
- del ciclo no se ejecuta.
+ se hace igual a la longitud de la cadena,
+ la condición es falsa,
+ y el cuerpo del ciclo no se ejecuta.
  El último carácter accedido es el que tiene el índice 
 \family typewriter
 len(fruta)-1
 \family default
-, es decir, el último.
+,
+ es decir,
+ el último.
 \end_layout
 
 \begin_layout Standard
-Usar un índice para recorrer un conjunto de valores es tan común que Python
- tiene una sintaxis alternativa más simple—el ciclo 
+Usar un índice para recorrer un conjunto de valores es tan común que Python tiene una sintaxis alternativa más simple—
+el ciclo 
 \family typewriter
 for
 \family default
@@ -709,12 +778,12 @@ for
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 for caracter in fruta:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
    print(caracter)
 \end_layout
@@ -725,8 +794,8 @@ for caracter in fruta:
 \end_layout
 
 \begin_layout Standard
-Cada vez que el ciclo itera, el próximo carácter en la cadena se asigna
- a la variable 
+Cada vez que el ciclo itera,
+ el próximo carácter en la cadena se asigna a la variable 
 \family typewriter
 caracter
 \family default
@@ -736,6 +805,8 @@ caracter
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -746,6 +817,8 @@ concatenación
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -756,16 +829,21 @@ lexicográfico
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-McCloskey, Robert
+McCloskey,
+ Robert
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -817,9 +895,9 @@ El siguiente ejemplo muestra cómo usar la concatenación y un ciclo
 for
 \family default
  para generar una serie en orden lexicográfico.
- Lexicográfico se refiere a una lista en la que los elementos aparecen en
- orden alfabético.
- Por ejemplo, en el libro 
+ Lexicográfico se refiere a una lista en la que los elementos aparecen en orden alfabético.
+ Por ejemplo,
+ en el libro 
 \begin_inset ERT
 status collapsed
 
@@ -854,33 +932,40 @@ status collapsed
 
 \end_inset
 
- de Robert McCloskey, los nombres de los patos son Jack, Kack, Lack, Mack,
- Nack, Ouack, Pack, and Quack.
+ de Robert McCloskey,
+ los nombres de los patos son Jack,
+ Kack,
+ Lack,
+ Mack,
+ Nack,
+ Ouack,
+ Pack,
+ and Quack.
  Este ciclo los despliega en orden:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 prefijos = "JKLMNOPQ"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 sufijo = "ack"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 for letra in prefijos:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print(letra + sufijo)
 \end_layout
@@ -896,42 +981,42 @@ La salida de este programa es:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Jack
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Kack
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Lack
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Mack
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Nack
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Oack
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Pack
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Qack
 \end_layout
@@ -942,7 +1027,8 @@ Qack
 \end_layout
 
 \begin_layout Standard
-Por supuesto que hay un error, ya que 
+Por supuesto que hay un error,
+ ya que 
 \begin_inset Quotes eld
 \end_inset
 
@@ -974,6 +1060,8 @@ name "slice"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -984,6 +1072,8 @@ segmento
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1006,37 +1096,39 @@ segmento
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> s = "Pedro, Pablo, y Maria"
+>>> s = "Pedro,
+ Pablo,
+ y Maria"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(s[0:5])
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Pedro
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(s[7:12])
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Pablo
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(s[16:21])
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Maria
 \end_layout
@@ -1051,10 +1143,10 @@ El operador
 \family typewriter
 [n:m]
 \family default
- retorna la parte de la cadena que va desde el carácter n hasta el m, incluyendo
- el primero y excluyendo el último.
- Este comportamiento es contraintuitivo, tiene más sentido si se imagina
- que los índices van 
+ retorna la parte de la cadena que va desde el carácter n hasta el m,
+ incluyendo el primero y excluyendo el último.
+ Este comportamiento es contraintuitivo,
+ tiene más sentido si se imagina que los índices van 
 \begin_inset ERT
 status collapsed
 
@@ -1089,7 +1181,8 @@ status collapsed
 
 \end_inset
 
- de los caracteres, como en el siguiente diagrama:
+ de los caracteres,
+ como en el siguiente diagrama:
 \end_layout
 
 \begin_layout Standard
@@ -1152,35 +1245,36 @@ afterfig
 \end_layout
 
 \begin_layout Standard
-Si usted omite el primer índice (antes de los puntos seguidos), el segmento
- comienza en el inicio de la cadena.
- Si se omite el segundo índice, el segmento va hasta el final.
+Si usted omite el primer índice (antes de los puntos seguidos),
+ el segmento comienza en el inicio de la cadena.
+ Si se omite el segundo índice,
+ el segmento va hasta el final.
  Entonces:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> fruta  = "banano"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> fruta[:3]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 'ban'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f[3:]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 'ano'
 \end_layout
@@ -1200,6 +1294,8 @@ Comparación de cadenas
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1210,6 +1306,8 @@ comparación de cadenas
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1228,50 +1326,51 @@ El operador de comparación funciona con cadenas.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 if palabra == "banana":
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print("No hay bananas!")
 \end_layout
 
 \end_inset
 
-Las otras operaciones de comparación son útiles para poner las palabras
- en orden alfabético:
+Las otras operaciones de comparación son útiles para poner las palabras en orden alfabético:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 if palabra < "banana":
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  print("Su palabra," + palabra + ", va antes que banana.")
+  print("Su palabra," + palabra + ",
+ va antes que banana.")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 elif palabra > "banana":
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  print("Su palabra," + palabra + ", va después de banana.")
+  print("Su palabra," + palabra + ",
+ va después de banana.")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print("No hay banana!")
 \end_layout
@@ -1282,8 +1381,8 @@ else:
 \end_layout
 
 \begin_layout Standard
-Sin embargo, usted debe ser consciente de que Python no maneja las letras
- minúsculas y mayúsculas de la misma forma en que lo hace la gente.
+Sin embargo,
+ usted debe ser consciente de que Python no maneja las letras minúsculas y mayúsculas de la misma forma en que lo hace la gente.
  Todas las letras mayúsculas vienen antes de las minúsculas.
  Si palabra vale 
 \begin_inset Quotes eld
@@ -1298,14 +1397,16 @@ Zebra
 
 \begin_layout Verbatim
 
-Su palabra, Zebra, va antes que banana.
+Su palabra,
+ Zebra,
+ va antes que banana.
 \end_layout
 
 \begin_layout Standard
-Este problema se resuelve usualmente convirtiendo las cadenas a un formato
- común, todas en minúsculas por ejemplo, antes de hacer la comparación.
- Un problema más difícil es lograr que el programa reconozca que una zebra
- no es una fruta.
+Este problema se resuelve usualmente convirtiendo las cadenas a un formato común,
+ todas en minúsculas por ejemplo,
+ antes de hacer la comparación.
+ Un problema más difícil es lograr que el programa reconozca que una zebra no es una fruta.
 \end_layout
 
 \begin_layout Section
@@ -1314,6 +1415,8 @@ Las cadenas son inmutables
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1324,6 +1427,8 @@ mutable
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1334,6 +1439,8 @@ cadena inmutable
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1350,24 +1457,23 @@ Uno puede caer en la trampa de usar el operador
 \family typewriter
 []
 \family default
- al lado izquierdo de una asignación con la intención de modificar un carácter
- en una cadena.
+ al lado izquierdo de una asignación con la intención de modificar un carácter en una cadena.
  Por ejemplo:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 saludo = "Hola mundo"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 saludo[0] = 'J'            # ERROR!
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print(saludo)
 \end_layout
@@ -1378,15 +1484,19 @@ print(saludo)
 \family typewriter
 Jola mundo!
 \family default
-, se produce un error en tiempo de ejecución 
+,
+ se produce un error en tiempo de ejecución 
 \family typewriter
-TypeError: object doesn't support item assignment
+TypeError:
+ object doesn't support item assignment
 \family default
 .
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1403,24 +1513,24 @@ Las cadenas son
 \series bold
 inmutables
 \series default
-, lo que quiere decir que no se puede cambiar una cadena existente.
- Lo máximo que se puede hacer es crear otra cadena que cambia un poco a
- la original:
+,
+ lo que quiere decir que no se puede cambiar una cadena existente.
+ Lo máximo que se puede hacer es crear otra cadena que cambia un poco a la original:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 saludo = "Hola mundo!"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 nuevoSaludo = 'J' + saludo[1:]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print(nuevoSaludo)
 \end_layout
@@ -1431,17 +1541,19 @@ print(nuevoSaludo)
 \end_layout
 
 \begin_layout Standard
-La solución consiste en concatenar la primera nueva letra con un segmento
- de 
+La solución consiste en concatenar la primera nueva letra con un segmento de 
 \family typewriter
 saludo
 \family default
 .
- Esto no tiene efecto sobre la primera cadena, usted puede chequearlo.
+ Esto no tiene efecto sobre la primera cadena,
+ usted puede chequearlo.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1470,6 +1582,8 @@ name "find"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1480,6 +1594,8 @@ recorrido
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1490,6 +1606,8 @@ recorrido eureka
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1500,6 +1618,8 @@ patrón
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1520,37 +1640,38 @@ patrón computacional
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def buscar(cad, c):
+def buscar(cad,
+ c):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   indice = 0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   while indice < len(cad):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if cad[indice] == c:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       return indice
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     indice = indice + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return -1
 \end_layout
@@ -1566,9 +1687,10 @@ buscar
 []
 \family default
 .
- En vez de tomar un índice y extraer el carácter correspondiente, toma un
- carácter y encuentra el índice donde éste se encuentra.
- Si no se encuentra el carácter en la cadena, la función retorna 
+ En vez de tomar un índice y extraer el carácter correspondiente,
+ toma un carácter y encuentra el índice donde éste se encuentra.
+ Si no se encuentra el carácter en la cadena,
+ la función retorna 
 \family typewriter
 -1
 \family default
@@ -1585,12 +1707,14 @@ return
 \family typewriter
 cadena[indice] == c
 \family default
-, la función retorna inmediatamente, rompiendo el ciclo prematuramente.
+,
+ la función retorna inmediatamente,
+ rompiendo el ciclo prematuramente.
 \end_layout
 
 \begin_layout Standard
-Si el carácter no está en la cadena, el programa completa todo el ciclo
- y retorna 
+Si el carácter no está en la cadena,
+ el programa completa todo el ciclo y retorna 
 \family typewriter
 -1
 \family default
@@ -1606,7 +1730,9 @@ eureka
 \begin_inset Quotes erd
 \end_inset
 
-, ya que tan pronto encontremos lo que buscamos, gritamos 
+,
+ ya que tan pronto encontremos lo que buscamos,
+ gritamos 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1630,6 +1756,8 @@ name "counter"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1640,6 +1768,8 @@ contador
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1661,32 +1791,32 @@ a
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 fruta = "banano"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 cont = 0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 for car in fruta:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if car == 'a':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     cont = cont + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print(cont)
 \end_layout
@@ -1711,11 +1841,13 @@ a
 \series bold
 incrementar
 \series default
- es añadir uno; es el opuesto de 
+ es añadir uno;
+ es el opuesto de 
 \series bold
 decrementar
 \series default
-, y no tienen nada que ver con 
+,
+ y no tienen nada que ver con 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1723,11 +1855,13 @@ excremento,
 \begin_inset Quotes erd
 \end_inset
 
- que es un sustantivo.) Cuando el ciclo finaliza, 
+ que es un sustantivo.) Cuando el ciclo finaliza,
+ 
 \family typewriter
 cont
 \family default
- contiene el resultado—el número total de 
+ contiene el resultado—
+el número total de 
 \family typewriter
 a
 \family default
@@ -1740,6 +1874,8 @@ Algunos métodos de las cadenas
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1750,6 +1886,8 @@ cadenas!métodos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1760,6 +1898,8 @@ método
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1770,6 +1910,8 @@ método!invocación
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1780,6 +1922,8 @@ métodos!cadenas
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1790,6 +1934,8 @@ métodos sobre cadenas
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1806,21 +1952,26 @@ Un
 \series bold
 método
 \series default
- es similar a una función, acepta parámetros y devuelve un valor, pero la
- sintaxis es diferente.
- Por ejemplo, las cadenas tienen un método denominado 
+ es similar a una función,
+ acepta parámetros y devuelve un valor,
+ pero la sintaxis es diferente.
+ Por ejemplo,
+ las cadenas tienen un método denominado 
 \family typewriter
 find
 \family default
  que hace lo mismo que buscar.
- Para llamarlo tenemos que especificar la cadena, o la variable que contiene
- la cadena, usando la notación punto, en la que el método se escribe después
- del punto.
+ Para llamarlo tenemos que especificar la cadena,
+ o la variable que contiene la cadena,
+ usando la notación punto,
+ en la que el método se escribe después del punto.
  La llamada a un método también se denomina 
 \series bold
 invocación
 \series default
-; en este caso, diríamos que estamos invocando 
+;
+ en este caso,
+ diríamos que estamos invocando 
 \family typewriter
 find
 \family default
@@ -1836,22 +1987,22 @@ fruta
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> fruta = "banano"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> ind = fruta.find("a")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(ind)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 1
 \end_layout
@@ -1866,17 +2017,19 @@ El método
 \family typewriter
 find
 \family default
- es más general que buscar, también puede buscar subcadenas, no solo caracteres:
+ es más general que buscar,
+ también puede buscar subcadenas,
+ no solo caracteres:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "banano".find("na")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 2
 \end_layout
@@ -1887,18 +2040,17 @@ status open
 \end_layout
 
 \begin_layout Standard
-También tiene un argumento adicional que especifica el índice desde el que
- debe empezar la búsqueda:
+También tiene un argumento adicional que especifica el índice desde el que debe empezar la búsqueda:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "banana".find("na",3) 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 4
 \end_layout
@@ -1909,18 +2061,18 @@ status open
 \end_layout
 
 \begin_layout Standard
-Igualmente, puede tomar dos argumentos adicionales que especifican un rango
- de índices:
+Igualmente,
+ puede tomar dos argumentos adicionales que especifican un rango de índices:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "bob".find("b",1,2) 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 -1
 \end_layout
@@ -1974,7 +2126,8 @@ status collapsed
 \family typewriter
 2
 \family default
- (recuerde que no se incluye el último índice, el 
+ (recuerde que no se incluye el último índice,
+ el 
 \family typewriter
 2
 \family default
@@ -1991,6 +2144,8 @@ string y
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2001,6 +2156,8 @@ módulo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2021,6 +2178,8 @@ name "in"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2031,6 +2190,8 @@ clasificación de caracteres
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2041,6 +2202,8 @@ clasificación!de caracteres
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2051,6 +2214,8 @@ mayúsculas
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2061,6 +2226,8 @@ minúsculas
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2073,8 +2240,8 @@ espacios en blanco
 \end_layout
 
 \begin_layout Standard
-Con frecuencia es útil examinar un carácter y decidir si está en mayúsculas
- o en minúsculas, o si es un dígito.
+Con frecuencia es útil examinar un carácter y decidir si está en mayúsculas o en minúsculas,
+ o si es un dígito.
  El módulo 
 \family typewriter
 string
@@ -2088,7 +2255,8 @@ La cadena
 string.lowercase
 \family default
  contiene todas las letras que el sistema considera como minúsculas.
- Igualmente, 
+ Igualmente,
+ 
 \family typewriter
 string.uppercase
 \family default
@@ -2098,22 +2266,22 @@ string.uppercase
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> import string
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(string.ascii_lowercase)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(string.ascii_uppercase)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(string.digits)
 \end_layout
@@ -2125,7 +2293,8 @@ Podemos usar estas constantes y el método
 find
 \family default
  para clasificar los caracteres.
- Por ejemplo, si 
+ Por ejemplo,
+ si 
 \family typewriter
 c.find(lowercase)
 \family default
@@ -2133,7 +2302,8 @@ c.find(lowercase)
 \family typewriter
 -1
 \family default
-, entonces 
+,
+ entonces 
 \family typewriter
 c
 \family default
@@ -2142,21 +2312,21 @@ c
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 import string
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def esMinuscula(c):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return string.ascii_lowercase.find(c) != -1
 \end_layout
@@ -2176,29 +2346,30 @@ in
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def esMinuscula(c):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return c in string.ascii_lowercase
 \end_layout
 
 \end_inset
 
- Y otra alternativa más, con el operador de comparación:
+ Y otra alternativa más,
+ con el operador de comparación:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def esMinuscula(c):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return 'a' <= c <= 'z'
 \end_layout
@@ -2283,7 +2454,8 @@ status collapsed
 
 \end_inset
 
-, debe ser una letra minúscula.
+,
+ debe ser una letra minúscula.
 \end_layout
 
 \begin_layout Standard
@@ -2296,7 +2468,7 @@ string
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(string.whitespace)
 \end_layout
@@ -2317,7 +2489,8 @@ whitespace
 \family typewriter
 string.whitespace
 \family default
- contiene todos los caracteres que representan espacios en blanco: espacio,
+ contiene todos los caracteres que representan espacios en blanco:
+ espacio,
  tab (
 \begin_inset ERT
 status collapsed
@@ -2333,7 +2506,8 @@ t+
 
 \end_inset
 
-), y nueva línea (
+),
+ y nueva línea (
 \begin_inset ERT
 status collapsed
 
@@ -2353,6 +2527,8 @@ n+
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2363,6 +2539,8 @@ módulo string
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2375,10 +2553,9 @@ módulo!string
 \end_layout
 
 \begin_layout Standard
-Hay otras funciones útiles en el módulo string, pero este libro no es un
- manual de referencia.
- Para esto usted puede consultar la referencia de las bibliotecas de Python
- (
+Hay otras funciones útiles en el módulo string,
+ pero este libro no es un manual de referencia.
+ Para esto usted puede consultar la referencia de las bibliotecas de Python (
 \begin_inset ERT
 status collapsed
 
@@ -2414,7 +2591,8 @@ status collapsed
 \end_inset
 
 ).
- Además, hay un gran cúmulo de documentación en el sitio web de Python 
+ Además,
+ hay un gran cúmulo de documentación en el sitio web de Python 
 \family typewriter
 www.python.org
 \family default
@@ -2423,6 +2601,8 @@ www.python.org
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2483,18 +2663,21 @@ Tipo de dato compuesto:
 
 \end_inset
 
- un tipo de dato en el que los valores están compuestos por componentes
- o elementos, que, a su vez, son valores.
+ un tipo de dato en el que los valores están compuestos por componentes o elementos,
+ que,
+ a su vez,
+ son valores.
 \end_layout
 
 \begin_layout Description
-Recorrido: iteración sobre todos los elementos de un conjunto ejecutando
- una operación similar en cada uno.
+Recorrido:
+ iteración sobre todos los elementos de un conjunto ejecutando una operación similar en cada uno.
 \end_layout
 
 \begin_layout Description
-Índice: variable o valor que se usa para seleccionar un miembro de un conjunto
- ordenado, tal como los caracteres de una cadena.
+Índice:
+ variable o valor que se usa para seleccionar un miembro de un conjunto ordenado,
+ tal como los caracteres de una cadena.
  También se puede usar el término 
 \family typewriter
 posición
@@ -2503,25 +2686,30 @@ posición
 \end_layout
 
 \begin_layout Description
-Segmento: parte de una cadena, especificada por un rango de índices.
+Segmento:
+ parte de una cadena,
+ especificada por un rango de índices.
 \end_layout
 
 \begin_layout Description
-Mutable: un tipo de dato compuesto a cuyos elementos pueden asignarseles
- nuevos valores.
+Mutable:
+ un tipo de dato compuesto a cuyos elementos pueden asignarseles nuevos valores.
 \end_layout
 
 \begin_layout Description
-Contador: una variable que se usa para contar algo, usualmente se inicializa
- en cero y se incrementa posteriormente dentro de un ciclo.
+Contador:
+ una variable que se usa para contar algo,
+ usualmente se inicializa en cero y se incrementa posteriormente dentro de un ciclo.
 \end_layout
 
 \begin_layout Description
-Incrementar: agregar uno al valor de una variable
+Incrementar:
+ agregar uno al valor de una variable
 \end_layout
 
 \begin_layout Description
-Decrementar: restar uno al valor de una variable
+Decrementar:
+ restar uno al valor de una variable
 \end_layout
 
 \begin_layout Description
@@ -2550,6 +2738,8 @@ string.whitespace
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2560,6 +2750,8 @@ tipo de dato compuesto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2570,6 +2762,8 @@ recorrido
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2580,6 +2774,8 @@ status collapsed
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2590,6 +2786,8 @@ segmento
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2600,6 +2798,8 @@ mutable
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2610,6 +2810,8 @@ contador
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2620,6 +2822,8 @@ incrementar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2630,6 +2834,8 @@ decrementar
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2647,12 +2853,13 @@ Ejercicios
 \end_layout
 
 \begin_layout Standard
-Para cada función, agregue chequeo de tipos y pruebas unitarias.
+Para cada función,
+ agregue chequeo de tipos y pruebas unitarias.
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función que tome una cadena como argumento y despliegue las
- letras al revés, una por cada línea.
+Escriba una función que tome una cadena como argumento y despliegue las letras al revés,
+ una por cada línea.
 \end_layout
 
 \begin_layout Enumerate
@@ -2660,6 +2867,7 @@ Modifique el programa de la sección
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "for"
+nolink "false"
 
 \end_inset
 
@@ -2671,8 +2879,8 @@ Modifique la función
 \family typewriter
 buscar
 \family default
- de forma que reciba un tercer parámetro, el índice en la cadena donde debe
- empezar a buscar.
+ de forma que reciba un tercer parámetro,
+ el índice en la cadena donde debe empezar a buscar.
 \end_layout
 
 \begin_layout Enumerate
@@ -2680,6 +2888,7 @@ Encapsule el código de la sección
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "counter"
+nolink "false"
 
 \end_inset
 
@@ -2687,12 +2896,13 @@ reference "counter"
 \family typewriter
 contarLetras
 \family default
-, y generalícela de forma que reciba la cadena y la letra como parámetros.
+,
+ y generalícela de forma que reciba la cadena y la letra como parámetros.
 \end_layout
 
 \begin_layout Enumerate
-Reescriba la función que obtuvo en el punto anterior de forma que en lugar
- de recorrer la cadena, llame a la función 
+Reescriba la función que obtuvo en el punto anterior de forma que en lugar de recorrer la cadena,
+ llame a la función 
 \family typewriter
 buscar
 \family default
@@ -2705,8 +2915,7 @@ Discuta qué versión de
 esMinuscula
 \family default
  cree que es la más rápida.
- ¿Puede pensar en otra razón distinta de la velocidad para preferir alguna
- de ellas sobre las otras?
+ ¿Puede pensar en otra razón distinta de la velocidad para preferir alguna de ellas sobre las otras?
 \end_layout
 
 \begin_layout Enumerate
@@ -2736,76 +2945,76 @@ verb+cadenas.py+
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def invertir(s):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> invertir('feliz')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'zilef'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> invertir('Python')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'nohtyP'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> invertir("")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       ''
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> invertir("P")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'P'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if __name__ == '__main__':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     import doctest
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     doctest.testmod()
 \end_layout
@@ -2829,7 +3038,8 @@ verb+cadenas.py+
 
 \end_inset
 
- cuerpos a cada una de las siguientes funciones, una a la vez.
+ cuerpos a cada una de las siguientes funciones,
+ una a la vez.
 \end_layout
 
 \end_deeper
@@ -2839,67 +3049,67 @@ Reflejar:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def reflejar(s):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> reflejar("bien")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'bienneib'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> reflejar("sí")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'síís'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> reflejar('Python')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'PythonnohtyP'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> reflejar("")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       ''
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> reflejar("a")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'aa'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
@@ -2915,57 +3125,62 @@ Eliminar letra:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def elimina_letra(letra, cadena):
+  def elimina_letra(letra,
+ cadena):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina_letra('a', 'manzana')
+      >>> elimina_letra('a',
+ 'manzana')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'mnzn'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina_letra('a', 'banana')
+      >>> elimina_letra('a',
+ 'banana')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'bnn'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina_letra('z', 'banana')
+      >>> elimina_letra('z',
+ 'banana')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'banana'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina_letra('i', 'Mississippi')
+      >>> elimina_letra('i',
+ 'Mississippi')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'Msssspp'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
@@ -2981,67 +3196,67 @@ Es palíndromo:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   def es_palindromo(s):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> es_palindromo('abba')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       True
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> es_palindromo('abab')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       False
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> es_palindromo('tenet')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       True
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> es_palindromo('banana')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       False
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       >>> es_palindromo('zorra arroz')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       True
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
@@ -3057,72 +3272,78 @@ Cuenta el número de ocurrencias:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def cuenta(sub, s):
+  def cuenta(sub,
+ s):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> cuenta('is', 'Mississippi')
+      >>> cuenta('is',
+ 'Mississippi')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> cuenta('an', 'banana')
+      >>> cuenta('an',
+ 'banana')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> cuenta('ana', 'banana')
+      >>> cuenta('ana',
+ 'banana')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> cuenta('nana', 'banana')
+      >>> cuenta('nana',
+ 'banana')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> cuenta('nanan', 'banana')
+      >>> cuenta('nanan',
+ 'banana')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -3132,67 +3353,73 @@ status open
 \end_layout
 
 \begin_layout Enumerate
-Eliminar la primera ocurrencia: 
+Eliminar la primera ocurrencia:
+ 
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def elimina(sub, s):
+  def elimina(sub,
+ s):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina('an', 'banana')
+      >>> elimina('an',
+ 'banana')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'bana'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina('cic', 'bicicleta')
+      >>> elimina('cic',
+ 'bicicleta')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'bileta'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina('iss', 'Mississippi')
+      >>> elimina('iss',
+ 'Mississippi')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'Missippi'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina('huevo', 'bicicleta')
+      >>> elimina('huevo',
+ 'bicicleta')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'bicicleta'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -3207,57 +3434,62 @@ Eliminar todas las ocurrencias:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  def elimina_todo(sub, s):
+  def elimina_todo(sub,
+ s):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina_todo('an', 'banana')
+      >>> elimina_todo('an',
+ 'banana')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'ba'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina_todo('cic', 'bicicleta')
+      >>> elimina_todo('cic',
+ 'bicicleta')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'bileta'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina_todo('iss', 'Mississippi')
+      >>> elimina_todo('iss',
+ 'Mississippi')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'Mippi'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      >>> elimina_todo('huevos', 'bicicleta')
+      >>> elimina_todo('huevos',
+ 'bicicleta')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       'bicicleta'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """
 \end_layout

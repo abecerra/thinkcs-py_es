@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -10,10 +10,10 @@
 \newcommand{\afterfig}{\vspace{-0.2\parskip}}
 \end_preamble
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding auto
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -22,7 +22,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -56,7 +58,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -72,11 +76,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -91,30 +100,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -132,6 +150,8 @@ El operador residuo
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -142,6 +162,8 @@ operador residuo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -158,8 +180,7 @@ El
 \series bold
 operador residuo
 \series default
- trabaja con enteros (y expresiones enteras) calculando el residuo del primer
- operando cuando se divide por el segundo.
+ trabaja con enteros (y expresiones enteras) calculando el residuo del primer operando cuando se divide por el segundo.
  En Python este operador es un signo porcentaje (
 \family typewriter
 %
@@ -174,26 +195,32 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 >>> cociente = 7 // 3
 \end_layout
 
 \begin_layout Plain Layout
+
 >>> print(cociente)
 \end_layout
 
 \begin_layout Plain Layout
+
 2
 \end_layout
 
 \begin_layout Plain Layout
+
 >>> residuo = 7 % 3
 \end_layout
 
 \begin_layout Plain Layout
+
 >>> print(residuo)
 \end_layout
 
 \begin_layout Plain Layout
+
 1
 \end_layout
 
@@ -208,12 +235,14 @@ Así que 7 dividido por 3 da 2 con residuo 1.
 
 \begin_layout Standard
 El operador residuo resulta ser sorprendentemente útil.
- Por ejemplo, usted puede chequear si un número es divisible por otro —si
- 
+ Por ejemplo,
+ usted puede chequear si un número es divisible por otro —
+si 
 \family typewriter
 x%y
 \family default
- es cero, entonces 
+ es cero,
+ entonces 
 \family typewriter
 x
 \family default
@@ -226,7 +255,8 @@ y
 
 \begin_layout Standard
 Usted también puede extraer el dígito o dígitos más a la derecha de un número.
- Por ejemplo, 
+ Por ejemplo,
+ 
 \family typewriter
 x % 10
 \family default
@@ -235,7 +265,8 @@ x % 10
 x
 \family default
  (en base 10).
- Igualmente, 
+ Igualmente,
+ 
 \family typewriter
 x % 100
 \family default
@@ -248,6 +279,8 @@ Expresiones booleanas
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -258,6 +291,8 @@ expresión Booleana
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -268,6 +303,8 @@ expresión!booleana
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -278,6 +315,8 @@ operador lógico
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -290,15 +329,16 @@ operador!lógico
 \end_layout
 
 \begin_layout Standard
-El tipo que Python provee para almacenar valores de verdad (cierto o falso)
- se denomina bool por el matemático británico George Bool.
- Él creó el Álgebra Booleana, que es la base para la aritmética que se usa
- en los computadores modernos.
+El tipo que Python provee para almacenar valores de verdad (cierto o falso) se denomina bool por el matemático británico George Bool.
+ Él creó el Álgebra Booleana,
+ que es la base para la aritmética que se usa en los computadores modernos.
 \end_layout
 
 \begin_layout Standard
-Sólo hay dos valores booleanos: True (cierto) y False (falso).
- Las mayúsculas importan, ya que true y false no son valores booleanos.
+Sólo hay dos valores booleanos:
+ True (cierto) y False (falso).
+ Las mayúsculas importan,
+ ya que true y false no son valores booleanos.
 \end_layout
 
 \begin_layout Standard
@@ -315,26 +355,33 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 >>> 5 == 5
 \end_layout
 
 \begin_layout Plain Layout
+
 True
 \end_layout
 
 \begin_layout Plain Layout
+
 >>> 5 == 6
 \end_layout
 
 \begin_layout Plain Layout
+
 False
 \end_layout
 
 \end_inset
 
- En la primera sentencia, los dos operandos son iguales, así que la expresión
- evalúa a True (cierto); en la segunda sentencia, 5 no es igual a 6, así
- que obtenemos False (falso).
+ En la primera sentencia,
+ los dos operandos son iguales,
+ así que la expresión evalúa a True (cierto);
+ en la segunda sentencia,
+ 5 no es igual a 6,
+ así que obtenemos False (falso).
 \end_layout
 
 \begin_layout Standard
@@ -346,28 +393,34 @@ El operador
 \series bold
 operadores de comparación
 \series default
-; los otros son:
+;
+ los otros son:
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
+
       x != y               # x no es igual y
 \end_layout
 
 \begin_layout Plain Layout
+
       x > y                # x es mayor que y
 \end_layout
 
 \begin_layout Plain Layout
+
       x < y                # x es menor que y
 \end_layout
 
 \begin_layout Plain Layout
+
       x >= y               # x es mayor o igual a y
 \end_layout
 
 \begin_layout Plain Layout
+
       x <= y               # x es menor o igual a y
 \end_layout
 
@@ -377,8 +430,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Aunque estas operaciones probablemente son familiares para usted, los símbolos
- en Python difieren de los matemáticos.
+Aunque estas operaciones probablemente son familiares para usted,
+ los símbolos en Python difieren de los matemáticos.
  Un error común consiste en usar un solo signo igual (
 \family typewriter
 =
@@ -414,6 +467,8 @@ Operadores lógicos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -424,6 +479,8 @@ operadores lógicos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -440,11 +497,13 @@ Hay tres
 \series bold
 operadores lógicos
 \series default
-: 
+:
+ 
 \family typewriter
 and
 \family default
-, 
+,
+ 
 \family typewriter
 or
 \family default
@@ -454,11 +513,13 @@ not
 \family default
 .
  La semántica (el significado) de ellos es similar a su significado en inglés.
- Por ejemplo, 
+ Por ejemplo,
+ 
 \family typewriter
 x>0 and x<10
 \family default
- es cierto, sólo si 
+ es cierto,
+ sólo si 
 \family typewriter
 x
 \family default
@@ -540,8 +601,9 @@ status collapsed
 
 \end_inset
 
- de las condiciones es cierta, esto es, si el número es divisible por 2
- 
+ de las condiciones es cierta,
+ esto es,
+ si el número es divisible por 2 
 \begin_inset ERT
 status collapsed
 
@@ -580,11 +642,13 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Finalmente, el operador 
+Finalmente,
+ el operador 
 \family typewriter
 not
 \family default
- niega una expresión booleana, así que 
+ niega una expresión booleana,
+ así que 
 \family typewriter
 not(x>y)
 \family default
@@ -592,7 +656,9 @@ not(x>y)
 \family typewriter
 (x>y)
 \family default
- es falsa, esto es, si 
+ es falsa,
+ esto es,
+ si 
 \family typewriter
 x
 \family default
@@ -604,8 +670,9 @@ y
 \end_layout
 
 \begin_layout Standard
-Formalmente, los operandos de los operadores lógicos deben ser expresiones
- booleanas, pero Python no es muy formal.
+Formalmente,
+ los operandos de los operadores lógicos deben ser expresiones booleanas,
+ pero Python no es muy formal.
  Cualquier número diferente de cero se interpreta como 
 \begin_inset Quotes eld
 \end_inset
@@ -620,26 +687,32 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 >>>  x = 5
 \end_layout
 
 \begin_layout Plain Layout
+
 >>>  x and 1
 \end_layout
 
 \begin_layout Plain Layout
+
 1
 \end_layout
 
 \begin_layout Plain Layout
+
 >>>  y = 0
 \end_layout
 
 \begin_layout Plain Layout
+
 >>>  y and 1
 \end_layout
 
 \begin_layout Plain Layout
+
 0
 \end_layout
 
@@ -649,8 +722,10 @@ status open
 \end_layout
 
 \begin_layout Standard
-En general, esto no se considera un buen estilo de programación.
- Si usted desea comparar un valor con cero, procure codificarlo explícitamente.
+En general,
+ esto no se considera un buen estilo de programación.
+ Si usted desea comparar un valor con cero,
+ procure codificarlo explícitamente.
 \end_layout
 
 \begin_layout Section
@@ -666,6 +741,8 @@ name "alternative execution"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -676,6 +753,8 @@ ramificación condicional
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -688,9 +767,8 @@ ejecución condicional
 \end_layout
 
 \begin_layout Standard
-A fin de escribir programas útiles, casi siempre necesitamos la capacidad
- de chequear condiciones y cambiar el comportamiento del programa en consecuenci
-a.
+A fin de escribir programas útiles,
+ casi siempre necesitamos la capacidad de chequear condiciones y cambiar el comportamiento del programa en consecuencia.
  Las 
 \series bold
 sentencias condicionales
@@ -700,16 +778,19 @@ sentencias condicionales
 \family typewriter
 if
 \family default
-: 
+:
+ 
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
+
 if x > 0:
 \end_layout
 
 \begin_layout Plain Layout
+
   print("x es positivo")
 \end_layout
 
@@ -728,12 +809,16 @@ if
 condición
 \series default
 .
- Si es cierta, la sentencia de abajo se ejecuta.
- Si no lo es, no pasa nada.
+ Si es cierta,
+ la sentencia de abajo se ejecuta.
+ Si no lo es,
+ no pasa nada.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -744,6 +829,8 @@ sentencia compuesta
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -754,6 +841,8 @@ sentencia compuesta!cabecera
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -764,6 +853,8 @@ sentencia compuesta!cuerpo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -774,6 +865,8 @@ sentencia compuesta!bloque de sentencias
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -786,7 +879,8 @@ sentencia!compuesta
 \end_layout
 
 \begin_layout Standard
-Como otras sentencias compuestas, la sentencia 
+Como otras sentencias compuestas,
+ la sentencia 
 \family typewriter
 if
 \family default
@@ -794,33 +888,34 @@ if
 \end_layout
 
 \begin_layout Verbatim
+
 CABECERA:
 \end_layout
 
 \begin_layout Verbatim
+
   PRIMERA SENTENCIA
 \end_layout
 
 \begin_layout Verbatim
+
   ...
 \end_layout
 
 \begin_layout Verbatim
+
   ULTIMA SENTENCIA
 \end_layout
 
 \begin_layout Standard
-La cabecera comienza en una nueva línea y termina con dos puntos seguidos
- (:).
- Las sentencias sangradas o indentadas que vienen a continuación se denominan
- el 
+La cabecera comienza en una nueva línea y termina con dos puntos seguidos (:).
+ Las sentencias sangradas o indentadas que vienen a continuación se denominan el 
 \series bold
 bloque
 \series default
 .
  La primera sentencia sin sangrar marca el fin del bloque.
- Un bloque de sentencias dentro de una sentencia compuesta también se denomina
- el 
+ Un bloque de sentencias dentro de una sentencia compuesta también se denomina el 
 \series bold
 cuerpo
 \series default
@@ -829,6 +924,8 @@ cuerpo
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -839,6 +936,8 @@ bloque
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -849,6 +948,8 @@ sentencia!bloque
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -861,19 +962,24 @@ cuerpo
 \end_layout
 
 \begin_layout Standard
-No hay límite en el número de sentencias que pueden aparecer en el cuerpo
- de una sentencia, pero siempre tiene que haber, al menos, una.
- Ocasionalmente, es útil tener un cuerpo sin sentencias (como un hueco para
- código que aún no se ha escrito).
+No hay límite en el número de sentencias que pueden aparecer en el cuerpo de una sentencia,
+ pero siempre tiene que haber,
+ al menos,
+ una.
+ Ocasionalmente,
+ es útil tener un cuerpo sin sentencias (como un hueco para código que aún no se ha escrito).
  En ese caso se puede usar la sentencia 
 \family typewriter
 pass
 \family default
-, que no hace nada.
+,
+ que no hace nada.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -884,6 +990,8 @@ sentencia pass
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -914,27 +1022,32 @@ Una segunda forma de sentencia
 \family typewriter
 if
 \family default
- es la ejecución alternativa en la que hay dos posibilidades y la condición
- determina cual de ellas se ejecuta.
+ es la ejecución alternativa en la que hay dos posibilidades y la condición determina cual de ellas se ejecuta.
  La sintaxis luce así:
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
+
 if x%2 == 0:
 \end_layout
 
 \begin_layout Plain Layout
-  print(x, "es par")
+
+  print(x,
+ "es par")
 \end_layout
 
 \begin_layout Plain Layout
+
 else:
 \end_layout
 
 \begin_layout Plain Layout
-  print(x, "es impar")
+
+  print(x,
+ "es impar")
 \end_layout
 
 \end_inset
@@ -947,23 +1060,33 @@ Si el residuo de dividir
 \family typewriter
 x
 \family default
- por 2 es 0, entonces sabemos que 
+ por 2 es 0,
+ entonces sabemos que 
 \family typewriter
 x
 \family default
- es par, y el programa despliega un mensaje anunciando esto.
- Si la condición es falsa, la segunda sentencia se ejecuta.
- Como la condición, que es una expresión booleana, debe ser cierta o falsa,
+ es par,
+ y el programa despliega un mensaje anunciando esto.
+ Si la condición es falsa,
+ la segunda sentencia se ejecuta.
+ Como la condición,
+ que es una expresión booleana,
+ debe ser cierta o falsa,
  exactamente una de las alternativas se va a ejecutar.
  Estas alternativas se denominan 
 \series bold
 ramas
 \series default
-, porque, de hecho, son ramas en el flujo de ejecución.
+,
+ porque,
+ de hecho,
+ son ramas en el flujo de ejecución.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -984,8 +1107,9 @@ por las ramas
 \begin_inset Quotes erd
 \end_inset
 
-, si usted necesita chequear la paridad (si un número es par o impar) a
- menudo, se podría 
+,
+ si usted necesita chequear la paridad (si un número es par o impar) a menudo,
+ se podría 
 \begin_inset Quotes eld
 \end_inset
 
@@ -999,23 +1123,30 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 def imprimirParidad(x):
 \end_layout
 
 \begin_layout Plain Layout
+
   if x%2 == 0:
 \end_layout
 
 \begin_layout Plain Layout
-    print(x, "es par")
+
+    print(x,
+ "es par")
 \end_layout
 
 \begin_layout Plain Layout
+
   else:
 \end_layout
 
 \begin_layout Plain Layout
-    print(x, "es impar")
+
+    print(x,
+ "es impar")
 \end_layout
 
 \end_inset
@@ -1028,22 +1159,25 @@ Para cualquier valor de
 \family typewriter
 x
 \family default
-, 
+,
+ 
 \family typewriter
 imprimirParidad
 \family default
  despliega un mensaje apropiado.
- Cuando se llama la función, se le puede pasar cualquier expresión entera
- como argumento.
+ Cuando se llama la función,
+ se le puede pasar cualquier expresión entera como argumento.
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
+
 imprimirParidad(17)
 \end_layout
 
 \begin_layout Plain Layout
+
 imprimirParidad(y+1)
 \end_layout
 
@@ -1062,6 +1196,8 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1072,6 +1208,8 @@ condicional encadenado
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1103,27 +1241,40 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 if x < y:
 \end_layout
 
 \begin_layout Plain Layout
-  print(x, "es menor que", y)
+
+  print(x,
+ "es menor que",
+ y)
 \end_layout
 
 \begin_layout Plain Layout
+
 elif x > y:
 \end_layout
 
 \begin_layout Plain Layout
-  print(x, "es mayor que", y)
+
+  print(x,
+ "es mayor que",
+ y)
 \end_layout
 
 \begin_layout Plain Layout
+
 else:
 \end_layout
 
 \begin_layout Plain Layout
-  print(x, "y", y, "son iguales")
+
+  print(x,
+ "y",
+ y,
+ "son iguales")
 \end_layout
 
 \end_inset
@@ -1144,12 +1295,14 @@ else if.
 \begin_inset Quotes erd
 \end_inset
 
- De nuevo, exactamente una de las ramas se ejecutará.
+ De nuevo,
+ exactamente una de las ramas se ejecutará.
  No hay límite en el número de sentencias 
 \family typewriter
 elif
 \family default
-, pero la última rama tiene que ser una sentencia 
+,
+ pero la última rama tiene que ser una sentencia 
 \family typewriter
 else
 \family default
@@ -1159,34 +1312,42 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 if eleccion == 'A':
 \end_layout
 
 \begin_layout Plain Layout
+
   funcionA()
 \end_layout
 
 \begin_layout Plain Layout
+
 elif eleccion == 'B':
 \end_layout
 
 \begin_layout Plain Layout
+
   funcionB()
 \end_layout
 
 \begin_layout Plain Layout
+
 elif eleccion == 'C':
 \end_layout
 
 \begin_layout Plain Layout
+
   funcionC()
 \end_layout
 
 \begin_layout Plain Layout
+
 else:
 \end_layout
 
 \begin_layout Plain Layout
+
   print("Eleccion incorrecta.")
 \end_layout
 
@@ -1197,11 +1358,13 @@ else:
 
 \begin_layout Standard
 Cada condición se chequea en orden.
- Si la primera es falsa, se chequea la siguiente, y así sucesivamente.
- Si una de ellas es cierta, se ejecuta la rama correspondiente y la sentencia
- termina.
- Si hay más de una condición cierta, sólo la primera rama que evalúa a cierto
- se ejecuta.
+ Si la primera es falsa,
+ se chequea la siguiente,
+ y así sucesivamente.
+ Si una de ellas es cierta,
+ se ejecuta la rama correspondiente y la sentencia termina.
+ Si hay más de una condición cierta,
+ sólo la primera rama que evalúa a cierto se ejecuta.
 \end_layout
 
 \begin_layout Section
@@ -1219,68 +1382,88 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 if x == y:
 \end_layout
 
 \begin_layout Plain Layout
-  print(x, "y", y, "son iguales")
+
+  print(x,
+ "y",
+ y,
+ "son iguales")
 \end_layout
 
 \begin_layout Plain Layout
+
 else:
 \end_layout
 
 \begin_layout Plain Layout
+
   if x < y:
 \end_layout
 
 \begin_layout Plain Layout
-    print(x, "es menor que", y)
+
+    print(x,
+ "es menor que",
+ y)
 \end_layout
 
 \begin_layout Plain Layout
+
   else:
 \end_layout
 
 \begin_layout Plain Layout
-    print(x, "es mayor que", y)
+
+    print(x,
+ "es mayor que",
+ y)
 \end_layout
 
 \end_inset
 
- El condicional externo contiene dos ramas: la primera contiene una sentencia
- de salida sencilla, la segunda contiene otra sentencia 
+ El condicional externo contiene dos ramas:
+ la primera contiene una sentencia de salida sencilla,
+ la segunda contiene otra sentencia 
 \family typewriter
 if
 \family default
-, que tiene dos ramas propias.
- Esas dos ramas son sentencias de impresión, aunque también podrían ser
- sentencias condicionales.
+,
+ que tiene dos ramas propias.
+ Esas dos ramas son sentencias de impresión,
+ aunque también podrían ser sentencias condicionales.
 \end_layout
 
 \begin_layout Standard
 Aunque la indentación o sangrado de las sentencias sugiere la estructura,
  los condicionales anidados rápidamente se hacen difíciles de leer.
- En general, es una buena idea evitarlos cada vez que se pueda.
+ En general,
+ es una buena idea evitarlos cada vez que se pueda.
 \end_layout
 
 \begin_layout Standard
-Los operadores lógicos proporcionan formas de simplificar las sentencias
- condicionales anidadas.
- Por ejemplo, podemos reescribir el siguiente código usando un solo condicional:
+Los operadores lógicos proporcionan formas de simplificar las sentencias condicionales anidadas.
+ Por ejemplo,
+ podemos reescribir el siguiente código usando un solo condicional:
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
+
 if 0 < x:
 \end_layout
 
 \begin_layout Plain Layout
+
   if x < 10:
 \end_layout
 
 \begin_layout Plain Layout
+
     print("x es un digito positivo.")
 \end_layout
 
@@ -1305,10 +1488,12 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 if 0 < x and x < 10:
 \end_layout
 
 \begin_layout Plain Layout
+
   print("x es un digito positivo.")
 \end_layout
 
@@ -1318,17 +1503,19 @@ if 0 < x and x < 10:
 \end_layout
 
 \begin_layout Standard
-Esta clase de condiciones es muy común, por esta razón Python proporciona
- una sintaxis alternativa que es similar a la notación matemática:
+Esta clase de condiciones es muy común,
+ por esta razón Python proporciona una sintaxis alternativa que es similar a la notación matemática:
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
+
 if 0 < x < 10:
 \end_layout
 
 \begin_layout Plain Layout
+
   print("x es un digito positivo")
 \end_layout
 
@@ -1338,8 +1525,7 @@ if 0 < x < 10:
 \end_layout
 
 \begin_layout Standard
-Desde el punto de vista semántico ésta condición es la misma que la expresión
- compuesta y que el condicional anidado.
+Desde el punto de vista semántico ésta condición es la misma que la expresión compuesta y que el condicional anidado.
 \end_layout
 
 \begin_layout Section
@@ -1352,6 +1538,8 @@ return
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1362,6 +1550,8 @@ sentencia return
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1388,6 +1578,7 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 import math
 \end_layout
 
@@ -1396,19 +1587,23 @@ import math
 \end_layout
 
 \begin_layout Plain Layout
+
 def imprimirLogaritmo(x):
 \end_layout
 
 \begin_layout Plain Layout
+
   if x <= 0:
 \end_layout
 
 \begin_layout Plain Layout
+
     print("Numeros positivos solamente.
  Por favor")
 \end_layout
 
 \begin_layout Plain Layout
+
     return
 \end_layout
 
@@ -1417,11 +1612,15 @@ def imprimirLogaritmo(x):
 \end_layout
 
 \begin_layout Plain Layout
+
   result = math.log(x)
 \end_layout
 
 \begin_layout Plain Layout
-  print("El logaritmo de ",  x ," es ", result)
+
+  print("El logaritmo de ",
+  x ," es ",
+ result)
 \end_layout
 
 \end_inset
@@ -1439,19 +1638,18 @@ x
 \family typewriter
 x
 \family default
- es menor o igual a 0, caso en el que despliega un mensaje de error y luego
- usa a 
+ es menor o igual a 0,
+ caso en el que despliega un mensaje de error y luego usa a 
 \family typewriter
 return
 \family default
  para salir de la función.
- El flujo de ejecución inmediatamente retorna al punto donde se había llamado
- la función, y las líneas restantes de la función no se ejecutan.
+ El flujo de ejecución inmediatamente retorna al punto donde se había llamado la función,
+ y las líneas restantes de la función no se ejecutan.
 \end_layout
 
 \begin_layout Standard
-Recuerde que para usar una función del módulo matemático (math) hay que
- importarlo previamente.
+Recuerde que para usar una función del módulo matemático (math) hay que importarlo previamente.
 \end_layout
 
 \begin_layout Section
@@ -1467,6 +1665,8 @@ name "recursion"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1479,13 +1679,13 @@ recursión
 \end_layout
 
 \begin_layout Standard
-Hemos mencionado que es legal que una función llame a otra, y usted ha visto
- varios ejemplos así.
- Hemos olvidado mencionar el hecho de que una función también puede llamarse
- a sí misma.
- Al principio no parece algo útil, pero resulta ser una de las capacidades
- más interesantes y mágicas que un programa puede tener.
- Por ejemplo, observe la siguiente función:
+Hemos mencionado que es legal que una función llame a otra,
+ y usted ha visto varios ejemplos así.
+ Hemos olvidado mencionar el hecho de que una función también puede llamarse a sí misma.
+ Al principio no parece algo útil,
+ pero resulta ser una de las capacidades más interesantes y mágicas que un programa puede tener.
+ Por ejemplo,
+ observe la siguiente función:
 \end_layout
 
 \begin_layout Standard
@@ -1501,26 +1701,32 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 def conteo(n):
 \end_layout
 
 \begin_layout Plain Layout
+
   if n == 0:
 \end_layout
 
 \begin_layout Plain Layout
+
     print("Despegue!")
 \end_layout
 
 \begin_layout Plain Layout
+
   else:
 \end_layout
 
 \begin_layout Plain Layout
+
     print(n)
 \end_layout
 
 \begin_layout Plain Layout
+
     conteo(n-1)
 \end_layout
 
@@ -1543,7 +1749,9 @@ n
 \family typewriter
 n
 \family default
- es 0, despliega la cadena, 
+ es 0,
+ despliega la cadena,
+ 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1552,7 +1760,8 @@ Despegue!
 \end_inset
 
 .
- Si no lo es, despliega 
+ Si no lo es,
+ despliega 
 \family typewriter
 n
 \family default
@@ -1560,7 +1769,9 @@ n
 \family typewriter
 conteo
 \family default
-—ella misma—pasando a 
+—
+ella misma—
+pasando a 
 \family typewriter
 n-1
 \family default
@@ -1574,6 +1785,7 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 >>> conteo(3)
 \end_layout
 
@@ -1591,11 +1803,14 @@ conteo
 \family typewriter
 n=3
 \family default
-, y como 
+,
+ y como 
 \family typewriter
 n
 \family default
- no es 0, despliega el valor 3, y se llama a sí misma ...
+ no es 0,
+ despliega el valor 3,
+ y se llama a sí misma ...
 \end_layout
 
 \begin_layout Quote
@@ -1607,11 +1822,14 @@ conteo
 \family typewriter
 n=2
 \family default
-, y como 
+,
+ y como 
 \family typewriter
 n
 \family default
- no es 0, despliega el valor 2, y se llama a si misma ...
+ no es 0,
+ despliega el valor 2,
+ y se llama a si misma ...
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1628,11 +1846,14 @@ conteo
 \family typewriter
 n=1
 \family default
-, y como 
+,
+ y como 
 \family typewriter
 n
 \family default
- no es 0, despliega el valor 1, y se llama a sí misma ...
+ no es 0,
+ despliega el valor 1,
+ y se llama a sí misma ...
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1649,11 +1870,13 @@ conteo
 \family typewriter
 n=0
 \family default
-, y como 
+,
+ y como 
 \family typewriter
 n
 \family default
- es 0, despliega la cadena 
+ es 0,
+ despliega la cadena 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1711,27 +1934,33 @@ Y el flujo de ejecución regresa a
 __main__
 \family default
  (vaya viaje!).
- Así que, la salida total luce así:
+ Así que,
+ la salida total luce así:
 \end_layout
 
 \begin_layout Verbatim
+
 3
 \end_layout
 
 \begin_layout Verbatim
+
 2
 \end_layout
 
 \begin_layout Verbatim
+
 1
 \end_layout
 
 \begin_layout Verbatim
+
 Despegue!
 \end_layout
 
 \begin_layout Standard
-Como otro ejemplo, utilizaremos nuevamente las funciones 
+Como otro ejemplo,
+ utilizaremos nuevamente las funciones 
 \family typewriter
 nuevaLinea
 \family default
@@ -1748,10 +1977,12 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 def nuevalinea():
 \end_layout
 
 \begin_layout Plain Layout
+
   print()
 \end_layout
 
@@ -1760,18 +1991,22 @@ def nuevalinea():
 \end_layout
 
 \begin_layout Plain Layout
+
 def tresLineas():
 \end_layout
 
 \begin_layout Plain Layout
+
   nuevaLinea()
 \end_layout
 
 \begin_layout Plain Layout
+
   nuevaLinea()
 \end_layout
 
 \begin_layout Plain Layout
+
   nuevaLinea()
 \end_layout
 
@@ -1781,8 +2016,7 @@ def tresLineas():
 \end_layout
 
 \begin_layout Standard
-Este trabajo no sería de mucha ayuda si quisiéramos desplegar 2 líneas o
- 106.
+Este trabajo no sería de mucha ayuda si quisiéramos desplegar 2 líneas o 106.
  Una mejor alternativa sería:
 \end_layout
 
@@ -1792,18 +2026,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 def nLineas(n):
 \end_layout
 
 \begin_layout Plain Layout
+
   if n > 0:
 \end_layout
 
 \begin_layout Plain Layout
+
     print()
 \end_layout
 
 \begin_layout Plain Layout
+
     nLineas(n-1)
 \end_layout
 
@@ -1813,21 +2051,25 @@ def nLineas(n):
 \family typewriter
 conteo
 \family default
-; en tanto 
+;
+ en tanto 
 \family typewriter
 n
 \family default
- sea mayor a 0, despliega una nueva línea y luego se llama a sí misma para
- desplegar 
+ sea mayor a 0,
+ despliega una nueva línea y luego se llama a sí misma para desplegar 
 \family typewriter
 n-1
 \family default
  líneas adicionales.
- Así, el número total de nuevas líneas es 
+ Así,
+ el número total de nuevas líneas es 
 \family typewriter
 1 + (n - 1)
 \family default
- que, si usted verifica con álgebra, resulta ser 
+ que,
+ si usted verifica con álgebra,
+ resulta ser 
 \family typewriter
 n
 \family default
@@ -1839,11 +2081,14 @@ El proceso por el cual una función se llama a sí misma es la
 \series bold
 recursión
 \series default
-, y se dice que estas funciones son recursivas.
+,
+ y se dice que estas funciones son recursivas.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1854,6 +2099,8 @@ recursión
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1871,6 +2118,8 @@ Diagramas de pila para funciones recursivas
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1881,6 +2130,8 @@ diagrama de pila
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1891,6 +2142,8 @@ marco de función
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1911,19 +2164,20 @@ En la Sección
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "stackdiagram"
+nolink "false"
 
 \end_inset
 
-, usamos un diagrama de pila para representar el estado de un programa durante
- un llamado de función.
+,
+ usamos un diagrama de pila para representar el estado de un programa durante un llamado de función.
  La misma clase de diagrama puede ayudarnos a interpretar una función recursiva.
 \end_layout
 
 \begin_layout Standard
-Cada vez que una función se llama, Python crea un nuevo marco de función
- que contiene los parámetros y variables locales de ésta.
- Para una función recursiva, puede existir más de un marco en la pila al
- mismo tiempo.
+Cada vez que una función se llama,
+ Python crea un nuevo marco de función que contiene los parámetros y variables locales de ésta.
+ Para una función recursiva,
+ puede existir más de un marco en la pila al mismo tiempo.
 \end_layout
 
 \begin_layout Standard
@@ -1998,7 +2252,8 @@ afterfig
 \end_layout
 
 \begin_layout Standard
-Como siempre, el tope de la pila es el marco para 
+Como siempre,
+ el tope de la pila es el marco para 
 \family typewriter
 __main__
 \family default
@@ -2020,20 +2275,25 @@ conteo
 n
 \family default
 .
- El fondo de la pila, donde 
+ El fondo de la pila,
+ donde 
 \family typewriter
 n=0
 \family default
-, se denomina el 
+,
+ se denomina el 
 \series bold
 caso base 
 \series default
 .
- Como no hace una llamada recursiva, no hay mas marcos.
+ Como no hace una llamada recursiva,
+ no hay mas marcos.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2044,6 +2304,8 @@ case base
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2061,6 +2323,8 @@ Recursión infinita
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2071,6 +2335,8 @@ recursión infinita
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2081,6 +2347,8 @@ recursión!infinita
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2091,6 +2359,8 @@ error de tiempo de ejecución
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2101,6 +2371,8 @@ error!de tiempo de ejecución
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2113,13 +2385,15 @@ trazado inverso
 \end_layout
 
 \begin_layout Standard
-Si una función recursiva nunca alcanza un caso base va a hacer llamados
- recursivos por siempre y el programa nunca termina.
+Si una función recursiva nunca alcanza un caso base va a hacer llamados recursivos por siempre y el programa nunca termina.
  Esto se conoce como 
 \series bold
 recursión infinita
 \series default
-, y, generalmente, no se considera una buena idea.
+,
+ y,
+ generalmente,
+ no se considera una buena idea.
  Aquí hay un programa minimalista con recursión infinita:
 \end_layout
 
@@ -2129,41 +2403,50 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 def recurrir():
 \end_layout
 
 \begin_layout Plain Layout
+
   recurrir()
 \end_layout
 
 \end_inset
 
- En la mayoría de ambientes de programación un programa con recursión infinita
- no corre realmente para siempre.
- Python reporta un mensaje de error cuando alcanza la máxima profundidad
- de recursión:
+ En la mayoría de ambientes de programación un programa con recursión infinita no corre realmente para siempre.
+ Python reporta un mensaje de error cuando alcanza la máxima profundidad de recursión:
 \end_layout
 
 \begin_layout Verbatim
-  File "<stdin>", line 2, in recurrir
+
+  File "<stdin>",
+ line 2,
+ in recurrir
 \end_layout
 
 \begin_layout Verbatim
+
   (98 repeticiones omitidas)
 \end_layout
 
 \begin_layout Verbatim
-  File "<stdin>", line 2, in recurrir
+
+  File "<stdin>",
+ line 2,
+ in recurrir
 \end_layout
 
 \begin_layout Verbatim
-RuntimeError: Maximum recursion depth exceeded
+
+RuntimeError:
+ Maximum recursion depth exceeded
 \end_layout
 
 \begin_layout Standard
-Este trazado inverso es un poco más grande que el que vimos en el capítulo
- anterior.
- Cuando se presenta el error, ¡hay más de 100 marcos de 
+Este trazado inverso es un poco más grande que el que vimos en el capítulo anterior.
+ Cuando se presenta el error,
+ ¡hay más de 100 marcos de 
 \family typewriter
 recurrir
 \family default
@@ -2175,8 +2458,7 @@ Entrada por el teclado
 \end_layout
 
 \begin_layout Standard
-Los programas que hemos escrito son un poco toscos ya que no aceptan entrada
- de un usuario.
+Los programas que hemos escrito son un poco toscos ya que no aceptan entrada de un usuario.
  Sólo hacen la misma operación todo el tiempo.
 \end_layout
 
@@ -2187,10 +2469,9 @@ Python proporciona funciones primitivas que obtienen entrada desde el teclado.
 input
 \family default
 .
- Cuando esta función se llama el programa se detiene y espera a que el usuario
- digite algo.
- Cuando el usuario digita la tecla Enter o Intro, el programa retoma la
- ejecución y 
+ Cuando esta función se llama el programa se detiene y espera a que el usuario digite algo.
+ Cuando el usuario digita la tecla Enter o Intro,
+ el programa retoma la ejecución y 
 \family typewriter
 input
 \family default
@@ -2207,18 +2488,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 >>> entrada = input ()
 \end_layout
 
 \begin_layout Plain Layout
+
 Que esta esperando?
 \end_layout
 
 \begin_layout Plain Layout
+
 >>> print(entrada)
 \end_layout
 
 \begin_layout Plain Layout
+
 Que esta esperando?
 \end_layout
 
@@ -2243,6 +2528,8 @@ input
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2260,19 +2547,27 @@ inline false
 status open
 
 \begin_layout Plain Layout
->>> nombre = input ("Cual es tu nombre? ")
+
+>>> nombre = input ("Cual es tu nombre?
+ ")
 \end_layout
 
 \begin_layout Plain Layout
-Cual es tu nombre? Arturo, Rey de los Bretones!
+
+Cual es tu nombre?
+ Arturo,
+ Rey de los Bretones!
 \end_layout
 
 \begin_layout Plain Layout
+
 >>> print(nombre)
 \end_layout
 
 \begin_layout Plain Layout
-Arturo, Rey de los Bretones!
+
+Arturo,
+ Rey de los Bretones!
 \end_layout
 
 \end_inset
@@ -2281,7 +2576,8 @@ Arturo, Rey de los Bretones!
 \end_layout
 
 \begin_layout Standard
-Si esperamos que la respuesta sea un entero, podemos usar la función 
+Si esperamos que la respuesta sea un entero,
+ podemos usar la función 
 \family typewriter
 input
 \family default
@@ -2294,25 +2590,28 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 prompt = "¿Cual es la velocidad de una golondrina sin carga?
 \backslash
 n"
 \end_layout
 
 \begin_layout Plain Layout
+
 velocidad = input(prompt)
 \end_layout
 
 \end_inset
 
- Si el usuario digita una cadena de dígitos, éstos se convierten a un entero
- que se asigna a 
+ Si el usuario digita una cadena de dígitos,
+ éstos se convierten a un entero que se asigna a 
 \family typewriter
 velocidad
 \family default
 .
- Desafortunadamente, si el usuario digita una entrada que no representa
- un dígito, velocidad almacenará una cadena de texto.
+ Desafortunadamente,
+ si el usuario digita una entrada que no representa un dígito,
+ velocidad almacenará una cadena de texto.
 \end_layout
 
 \begin_layout Standard
@@ -2321,17 +2620,21 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 >>> prompt = "¿Cual es la velocidad una golondrina sin carga?
 \backslash
 n"
 \end_layout
 
 \begin_layout Plain Layout
+
 >>> velocidad = input (prompt)
 \end_layout
 
 \begin_layout Plain Layout
-¿Que quiere decir, una golondria Africana o Europea?
+
+¿Que quiere decir,
+ una golondria Africana o Europea?
 \end_layout
 
 \begin_layout Plain Layout
@@ -2344,12 +2647,13 @@ n"
 \end_layout
 
 \begin_layout Standard
-Para evitar este error, es una buena idea usar 
+Para evitar este error,
+ es una buena idea usar 
 \family typewriter
 input
 \family default
- para obtener una cadena y las funciones de conversión (int, float) para
- transformarla en otros tipos.
+ para obtener una cadena y las funciones de conversión (int,
+ float) para transformarla en otros tipos.
 \end_layout
 
 \begin_layout Section
@@ -2371,8 +2675,8 @@ Operador residuo:
 \family typewriter
 %
 \family default
-), y trabaja sobre enteros produciendo el residuo de un número al dividirlo
- por otro.
+),
+ y trabaja sobre enteros produciendo el residuo de un número al dividirlo por otro.
 \end_layout
 
 \begin_layout Description
@@ -2400,27 +2704,33 @@ Operador de comparación:
 
 \end_inset
 
- uno de los operadores que compara dos valores: 
+ uno de los operadores que compara dos valores:
+ 
 \family typewriter
 ==
 \family default
-, 
+,
+ 
 \family typewriter
 !=
 \family default
-, 
+,
+ 
 \family typewriter
 >
 \family default
-, 
+,
+ 
 \family typewriter
 <
 \family default
-, 
+,
+ 
 \family typewriter
 >=
 \family default
-, y 
+,
+ y 
 \family typewriter
 <=
 \family default
@@ -2438,15 +2748,18 @@ Operador lógico:
 
 \end_inset
 
- uno de los operadores que combina expresiones booleanas: 
+ uno de los operadores que combina expresiones booleanas:
+ 
 \family typewriter
 and
 \family default
-, 
+,
+ 
 \family typewriter
 or
 \family default
-, y 
+,
+ y 
 \family typewriter
 not
 \family default
@@ -2468,8 +2781,8 @@ Sentencia condicional:
 \end_layout
 
 \begin_layout Description
-Condición: la expresión booleana en una sentencia condicional que determina
- que rama se ejecuta.
+Condición:
+ la expresión booleana en una sentencia condicional que determina que rama se ejecuta.
 \end_layout
 
 \begin_layout Description
@@ -2489,20 +2802,26 @@ Sentencia compuesta:
 \end_layout
 
 \begin_layout Description
-Bloque: grupo de sentencias consecutivas con la misma indentación.
+Bloque:
+ grupo de sentencias consecutivas con la misma indentación.
 \end_layout
 
 \begin_layout Description
-Cuerpo: el bloque, en una sentencia compuesta, que va después de la cabecera.
+Cuerpo:
+ el bloque,
+ en una sentencia compuesta,
+ que va después de la cabecera.
 \end_layout
 
 \begin_layout Description
-Anidamiento: situación en la que hay una estructura dentro de otra, tal
- como una sentencia condicional dentro de una rama de otra sentencia condicional.
+Anidamiento:
+ situación en la que hay una estructura dentro de otra,
+ tal como una sentencia condicional dentro de una rama de otra sentencia condicional.
 \end_layout
 
 \begin_layout Description
-Recursión: es el proceso de llamar la función que se está ejecutando actualmente.
+Recursión:
+ es el proceso de llamar la función que se está ejecutando actualmente.
 \end_layout
 
 \begin_layout Description
@@ -2516,8 +2835,8 @@ Caso base:
 
 \end_inset
 
- corresponde a una rama de la sentencia condicional dentro de una función
- recursiva, que no hace un llamado recursivo.
+ corresponde a una rama de la sentencia condicional dentro de una función recursiva,
+ que no hace un llamado recursivo.
 \end_layout
 
 \begin_layout Description
@@ -2531,10 +2850,8 @@ Recursión infinita:
 
 \end_inset
 
- función que se llama a sí misma recursivamente sin alcanzar nunca el caso
- base.
- En Python una recursión infinita eventualmente causa un error en tiempo
- de ejecución.
+ función que se llama a sí misma recursivamente sin alcanzar nunca el caso base.
+ En Python una recursión infinita eventualmente causa un error en tiempo de ejecución.
 \end_layout
 
 \begin_layout Description
@@ -2558,6 +2875,8 @@ Prompt (indicador de entrada):
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2568,6 +2887,8 @@ operador residuo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2578,6 +2899,8 @@ expresión booleana
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2588,6 +2911,8 @@ expresión!booleana
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2598,6 +2923,8 @@ sentencia condicional
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2608,6 +2935,8 @@ sentencia!condicional
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2618,6 +2947,8 @@ condición
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2628,6 +2959,8 @@ sentencia compuesta
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2638,6 +2971,8 @@ rama
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2648,6 +2983,8 @@ cuerpo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2658,6 +2995,8 @@ bloque
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2668,6 +3007,8 @@ anidamiento
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2678,6 +3019,8 @@ recursión
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2688,6 +3031,8 @@ caso base
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2698,6 +3043,8 @@ recursión infinita
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2741,42 +3088,57 @@ status open
 
 
 \backslash
-verb+comparar(x, y)+
+verb+comparar(x,
+ y)+
 \end_layout
 
 \end_inset
 
 .
- Llame a la función comparar tres veces: una en la que el primer argumento
- sea menor que el segundo, otra en la que aquel sea mayor que éste, y una
- tercera en la que los argumentos sean iguales.
+ Llame a la función comparar tres veces:
+ una en la que el primer argumento sea menor que el segundo,
+ otra en la que aquel sea mayor que éste,
+ y una tercera en la que los argumentos sean iguales.
  
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
+
  if x < y:
 \end_layout
 
 \begin_layout Plain Layout
-    print(x, "es menor que", y)
+
+    print(x,
+ "es menor que",
+ y)
 \end_layout
 
 \begin_layout Plain Layout
+
  elif x > y:
 \end_layout
 
 \begin_layout Plain Layout
-    print(x, "es mayor que", y)
+
+    print(x,
+ "es mayor que",
+ y)
 \end_layout
 
 \begin_layout Plain Layout
+
  else:
 \end_layout
 
 \begin_layout Plain Layout
-    print(x, "y", y, "son iguales")
+
+    print(x,
+ "y",
+ y,
+ "son iguales")
 \end_layout
 
 \end_inset
@@ -2785,24 +3147,29 @@ status open
 \end_layout
 
 \begin_layout Enumerate
-Copie este programa en un archivo llamado tabladeverdad.py: 
+Copie este programa en un archivo llamado tabladeverdad.py:
+ 
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
+
 def tabladeverdad(expresion):
 \end_layout
 
 \begin_layout Plain Layout
+
     print(" p      q      %s"  % expresion)
 \end_layout
 
 \begin_layout Plain Layout
+
     longitud = len( " p      q      %s"  % expresion)
 \end_layout
 
 \begin_layout Plain Layout
+
     print(longitud*"=")
 \end_layout
 
@@ -2811,15 +3178,22 @@ def tabladeverdad(expresion):
 \end_layout
 
 \begin_layout Plain Layout
-    for p in True, False:
+
+    for p in True,
+ False:
 \end_layout
 
 \begin_layout Plain Layout
-        for q in True, False:
+
+        for q in True,
+ False:
 \end_layout
 
 \begin_layout Plain Layout
-            print("%-7s %-7s %-7s" % (p, q, eval(expresion)))
+
+            print("%-7s %-7s %-7s" % (p,
+ q,
+ eval(expresion)))
 \end_layout
 
 \end_inset
@@ -2833,6 +3207,7 @@ def tabladeverdad(expresion):
 
 \begin_deeper
 \begin_layout Verbatim
+
  
 \end_layout
 
@@ -2851,7 +3226,8 @@ verb+tabladeverdad("p or q")+
 \end_inset
 
 .
- Ahora ejecútelo con las siguientes expresiones: 
+ Ahora ejecútelo con las siguientes expresiones:
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -2893,8 +3269,7 @@ verb+tabladeverdad("p or q")+
 \end_layout
 
 \begin_layout Standard
-¿Cuales de estas expresiones tienen el mismo valor de verdad (son lógicamente
- equivalentes)?
+¿Cuales de estas expresiones tienen el mismo valor de verdad (son lógicamente equivalentes)?
 \end_layout
 
 \end_deeper

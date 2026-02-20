@@ -1,15 +1,15 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package default
-\inputencoding utf8x
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -18,18 +18,24 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement class
+\float_alignment class
 \paperfontsize 10
 \spacing single
 \use_hyperref false
-\papersize letterpaper
+\papersize letter
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 0
@@ -50,6 +56,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -58,15 +67,23 @@
 \tocdepth 1
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language french
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
-\paperpagestyle fancyplain
+\paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -81,30 +98,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -121,13 +147,13 @@ Al comienzo de junio de 2007 tomé la iniciativa de traducir el texto
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a Computer Scientist, with Python
+How to think like a Computer Scientist,
+ with Python
 \begin_inset Quotes erd
 \end_inset
 
  al español.
- Rápidamente me dí cuenta de que ya había un trabajo inicial de traducción
- empezado por:
+ Rápidamente me dí cuenta de que ya había un trabajo inicial de traducción empezado por:
 \end_layout
 
 \begin_layout Itemize
@@ -147,26 +173,28 @@ Efrain Andia
 \end_layout
 
 \begin_layout Standard
-Ellos habían traducido los capítulos 1,2,10,11, y 12, así como el prefacio,
+Ellos habían traducido los capítulos 1,2,10,11,
+ y 12,
+ así como el prefacio,
  la introducción y la lista de colaboradores.
- Tomé su valioso trabajo como punto de partida, adapté los capítulos, traduje
- las secciones faltantes del libro y añadí un primer capítulo adicional
- sobre solución de problemas.
+ Tomé su valioso trabajo como punto de partida,
+ adapté los capítulos,
+ traduje las secciones faltantes del libro y añadí un primer capítulo adicional sobre solución de problemas.
 \end_layout
 
 \begin_layout Standard
-Aunque el libro traduce la primera edición del original, todo se ha corregido
- para que sea compatible con Python 2.7, por ejemplo se usan booleanos en
- vez de enteros en los condicionales y ciclos.
+Aunque el libro traduce la primera edición del original,
+ todo se ha corregido para que sea compatible con Python 2.7,
+ por ejemplo se usan booleanos en vez de enteros en los condicionales y ciclos.
 \end_layout
 
 \begin_layout Standard
 Para realizar este trabajo ha sido invaluable la colaboración de familiares,
- colegas, amigos y estudiantes que han señalado errores, expresiones confusas
- y han aportado toda clase de sugerencias constructivas.
- Mi agradecimiento va para los traductores antes mencionados y para los
- estudiantes de Biología que tomaron el curso de Informática en la Pontificia
- Universidad Javeriana (Cali-Colombia), durante el semestre 2014-1:
+ colegas,
+ amigos y estudiantes que han señalado errores,
+ expresiones confusas y han aportado toda clase de sugerencias constructivas.
+ Mi agradecimiento va para los traductores antes mencionados y para los estudiantes de Biología que tomaron el curso de Informática en la Pontificia Universidad Javeriana (Cali-Colombia),
+ durante el semestre 2014-1:
 \end_layout
 
 \begin_layout Itemize
@@ -221,13 +249,12 @@ Yisveire Fontalvo
 \end_layout
 
 \begin_layout Standard
-Para la segunda edición todo el código fuente se cambió para ejecutarse
- con Python 3 y se añadieron 2 capítulos interludios y un 
-\begin_inset Quotes fld
+Para la segunda edición todo el código fuente se cambió para ejecutarse con Python 3 y se añadieron 2 capítulos interludios y un 
+\begin_inset Quotes cld
 \end_inset
 
 posludio
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  como capítulo final.

@@ -118,7 +118,7 @@
 \maintain_unincluded_children false
 \language spanish
 \language_package default
-\inputencoding utf8x
+\inputencoding autox
 \fontencoding default
 \font_roman default
 \font_sans default

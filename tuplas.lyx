@@ -1,15 +1,15 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -18,14 +18,20 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 1
 \bibtex_command default
 \index_command default
+\float_placement class
+\float_alignment class
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -50,6 +56,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -58,15 +67,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -81,30 +98,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -125,6 +151,8 @@ name "tuplechap"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -142,6 +170,8 @@ Mutabilidad y tuplas
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -152,6 +182,8 @@ tupla
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -162,6 +194,8 @@ tipo de dato!tupla
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -174,12 +208,16 @@ tipo de dato!inmutable
 \end_layout
 
 \begin_layout Standard
-Hasta aquí, usted ha visto dos tipos de datos compuestos: cadenas, que están
- compuestas de caracteres; y listas, compuestas de elementos de cualquier
- tipo.
- Una de las diferencias que notamos es que los elementos de una lista pueden
- modificarse, pero los caracteres en una cadena no.
- En otras palabras, las cadenas son 
+Hasta aquí,
+ usted ha visto dos tipos de datos compuestos:
+ cadenas,
+ que están compuestas de caracteres;
+ y listas,
+ compuestas de elementos de cualquier tipo.
+ Una de las diferencias que notamos es que los elementos de una lista pueden modificarse,
+ pero los caracteres en una cadena no.
+ En otras palabras,
+ las cadenas son 
 \series bold
 inmutables
 \series default
@@ -192,6 +230,8 @@ mutables
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -202,6 +242,8 @@ mutable
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -218,15 +260,22 @@ Hay otro tipo de dato en Python denominado
 \series bold
 tupla
 \series default
-, que se parece a una lista, con la excepción de que es inmutable.
- Sintácticamente, una tupla es una lista de valores separados por comas:
+,
+ que se parece a una lista,
+ con la excepción de que es inmutable.
+ Sintácticamente,
+ una tupla es una lista de valores separados por comas:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> tupla = 'a', 'b', 'c', 'd', 'e'
+>>> tupla = 'a',
+ 'b',
+ 'c',
+ 'd',
+ 'e'
 \end_layout
 
 \end_inset
@@ -235,14 +284,19 @@ status open
 \end_layout
 
 \begin_layout Standard
-Aunque no es necesario, se pueden encerrar entre paréntesis:
+Aunque no es necesario,
+ se pueden encerrar entre paréntesis:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> tupla = ('a', 'b', 'c', 'd', 'e')
+>>> tupla = ('a',
+ 'b',
+ 'c',
+ 'd',
+ 'e')
 \end_layout
 
 \end_inset
@@ -251,23 +305,23 @@ status open
 \end_layout
 
 \begin_layout Standard
-Para crear una tupla con un único elemento, tenemos que incluir la coma
- final:
+Para crear una tupla con un único elemento,
+ tenemos que incluir la coma final:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> t1 = ('a',)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(t1)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 <type 'tuple'>
 \end_layout
@@ -278,7 +332,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Sin la coma, Python creería que 
+Sin la coma,
+ Python creería que 
 \family typewriter
 ('a')
 \family default
@@ -287,17 +342,17 @@ Sin la coma, Python creería que
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> t2 = ('a')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(t2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 <type 'string'>
 \end_layout
@@ -314,17 +369,21 @@ Las operaciones sobre tuplas son las mismas que vimos con las listas.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> tupla = ('a', 'b', 'c', 'd', 'e')
+>>> tupla = ('a',
+ 'b',
+ 'c',
+ 'd',
+ 'e')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> tupla[0]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 'a'
 \end_layout
@@ -340,14 +399,15 @@ Y el operador segmento selecciona un rango de elementos:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> tupla[1:3]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-('b', 'c')
+('b',
+ 'c')
 \end_layout
 
 \end_inset
@@ -361,6 +421,8 @@ Pero si intentamos modificar un elemento de la tupla obtenemos un error:
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -374,14 +436,15 @@ error en tiempo de ejecución
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> tupla[0] = 'A'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-TypeError: object doesn't support item assignment
+TypeError:
+ object doesn't support item assignment
 \end_layout
 
 \end_inset
@@ -390,33 +453,37 @@ TypeError: object doesn't support item assignment
 \end_layout
 
 \begin_layout Standard
-Aunque no podemos modificar los elementos, sí podemos modificar toda la
- tupla:
+Aunque no podemos modificar los elementos,
+ sí podemos modificar toda la tupla:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> tupla = ('A',) + tupla[1:]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> tupla
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-('A', 'b', 'c', 'd', 'e')
+('A',
+ 'b',
+ 'c',
+ 'd',
+ 'e')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> tupla = (1,2,3)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> tupla
 \end_layout
@@ -439,6 +506,8 @@ name "tuple assignment"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -449,6 +518,8 @@ asignación de tuplas
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -463,7 +534,8 @@ Asignación!de tuplas
 \begin_layout Standard
 De vez en cuando necesitamos intercambiar los valores de dos variables.
  Con el operador de asignación normal tenemos que usar una variable temporal.
- Por ejemplo, para intercambiar 
+ Por ejemplo,
+ para intercambiar 
 \family typewriter
 a
 \family default
@@ -476,17 +548,17 @@ b
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> temp = a
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> a = b
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> b = temp
 \end_layout
@@ -497,8 +569,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Si tenemos que intercambiar variables muchas veces, el código tiende a ser
- engorroso.
+Si tenemos que intercambiar variables muchas veces,
+ el código tiende a ser engorroso.
  Python proporciona una forma de 
 \series bold
 asignación de tuplas
@@ -508,9 +580,11 @@ asignación de tuplas
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> a, b = b, a
+>>> a,
+ b = b,
+ a
 \end_layout
 
 \end_inset
@@ -519,28 +593,34 @@ status open
 \end_layout
 
 \begin_layout Standard
-El lado izquierdo es una tupla de variables; el derecho es una tupla de
- valores.
+El lado izquierdo es una tupla de variables;
+ el derecho es una tupla de valores.
  Cada valor se asigna a su respectiva variable en el orden en que se presenta.
  Las expresiones en el lado derecho se evalúan antes de cualquier asignación.
  Esto hace a la asignación de tuplas una herramienta bastante versátil.
 \end_layout
 
 \begin_layout Standard
-Naturalmente, el número de variables a la izquierda y el número de valores
- a la derecha deben coincidir.
+Naturalmente,
+ el número de variables a la izquierda y el número de valores a la derecha deben coincidir.
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> a, b, c, d = 1, 2, 3
+>>> a,
+ b,
+ c,
+ d = 1,
+ 2,
+ 3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-ValueError: unpack tuple of wrong size
+ValueError:
+ unpack tuple of wrong size
 \end_layout
 
 \end_inset
@@ -554,6 +634,8 @@ Tuplas como valores de retorno
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -564,6 +646,8 @@ tupla
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -574,6 +658,8 @@ valor!tupla
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -584,6 +670,8 @@ valor de retorno!tupla
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -597,19 +685,22 @@ función!tupla como valor de retorno
 
 \begin_layout Standard
 Las funciones pueden tener tuplas como valores de retorno.
- Por ejemplo, podríamos escribir una función que intercambie sus dos parámetros:
+ Por ejemplo,
+ podríamos escribir una función que intercambie sus dos parámetros:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def intercambiar(x, y):
+def intercambiar(x,
+ y):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  return y, x
+  return y,
+ x
 \end_layout
 
 \end_inset
@@ -623,9 +714,11 @@ Así podemos asignar el valor de retorno a una tupla con dos variables:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-a, b = intercambiar(a, b)
+a,
+ b = intercambiar(a,
+ b)
 \end_layout
 
 \end_inset
@@ -634,28 +727,35 @@ a, b = intercambiar(a, b)
 \end_layout
 
 \begin_layout Standard
-En este caso, escribir una función 
+En este caso,
+ escribir una función 
 \family typewriter
 intercambio
 \family default
  no es muy provechoso.
- De hecho, hay un peligro al tratar de encapsular 
+ De hecho,
+ hay un peligro al tratar de encapsular 
 \family typewriter
 intercambio
 \family default
-, que consiste en el siguiente error:
+,
+ que consiste en el siguiente error:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def intercambio(x, y):      # version incorrecta
+def intercambio(x,
+ y):
+      # version incorrecta
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  x, y = y, x
+  x,
+ y = y,
+ x
 \end_layout
 
 \end_inset
@@ -669,9 +769,10 @@ Si llamamos a esta función así:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-intercambio(a, b)
+intercambio(a,
+ b)
 \end_layout
 
 \end_inset
@@ -701,7 +802,8 @@ intercambio
 \family typewriter
 x
 \family default
- se refiera a un valor diferente, pero no tiene efecto en la 
+ se refiera a un valor diferente,
+ pero no tiene efecto en la 
 \family typewriter
 a
 \family default
@@ -710,7 +812,8 @@ a
 __main__
 \family default
 .
- Igualmente, cambiar 
+ Igualmente,
+ cambiar 
 \family typewriter
 y
 \family default
@@ -722,12 +825,15 @@ b
 \end_layout
 
 \begin_layout Standard
-Esta función se ejecuta sin errores, pero no hace lo que se pretende.
+Esta función se ejecuta sin errores,
+ pero no hace lo que se pretende.
  Es un ejemplo de error semántico.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -745,6 +851,8 @@ Números aleatorios
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -755,6 +863,8 @@ número aleatorio
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -768,29 +878,32 @@ número!aleatorio
 
 \begin_layout Standard
 La gran mayoría de los programas hacen lo mismo cada vez que se ejecutan,
- esto es, son 
+ esto es,
+ son 
 \series bold
 determinísticos
 \series default
 .
- El determinismo generalmente es una buena propiedad, ya que usualmente
- esperamos que los cálculos produzcan el mismo resultado.
- Sin embargo, para algunas aplicaciones necesitamos que el computador sea
- impredecible.
- Los juegos son un ejemplo inmediato, pero hay más.
+ El determinismo generalmente es una buena propiedad,
+ ya que usualmente esperamos que los cálculos produzcan el mismo resultado.
+ Sin embargo,
+ para algunas aplicaciones necesitamos que el computador sea impredecible.
+ Los juegos son un ejemplo inmediato,
+ pero hay más.
 \end_layout
 
 \begin_layout Standard
-Lograr que un programa sea verdaderamente no determinístico no es una tarea
- fácil, pero hay formas de que parezca no determinístico.
- Una de ellas es generar números aleatorios y usarlos para determinar la
- salida de un programa.
+Lograr que un programa sea verdaderamente no determinístico no es una tarea fácil,
+ pero hay formas de que parezca no determinístico.
+ Una de ellas es generar números aleatorios y usarlos para determinar la salida de un programa.
  Python tiene una función primitiva que genera números 
 \series bold
 pseudoaleatorios
 \series default
-, que, aunque no sean aleatorios desde el punto de vista matemático, sirven
- para nuestros propósitos.
+,
+ que,
+ aunque no sean aleatorios desde el punto de vista matemático,
+ sirven para nuestros propósitos.
 \end_layout
 
 \begin_layout Standard
@@ -807,32 +920,33 @@ random
 \family typewriter
 random
 \family default
-, se obtiene el siguiente número de una serie muy larga.
+,
+ se obtiene el siguiente número de una serie muy larga.
  Para ver un ejemplo ejecute el siguiente ciclo:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 import random
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 for i in range(10):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   x = random.random()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   print(x)
 \end_layout
@@ -847,7 +961,8 @@ Para generar un número aleatorio entre 0.0 y un límite superior como
 \family typewriter
 sup
 \family default
-, multiplique 
+,
+ multiplique 
 \family typewriter
 x
 \family default
@@ -869,39 +984,40 @@ listaAleatoria
 \family default
  que cree una lista de números aleatorios.
  Recibirá un parámetro entero que especifique el número de elementos a generar.
- Primero, genera una lista de 
+ Primero,
+ genera una lista de 
 \family typewriter
 n
 \family default
  ceros.
- Luego cada vez que itera en un ciclo for, reemplaza uno de los ceros por
- un número aleatorio.
+ Luego cada vez que itera en un ciclo for,
+ reemplaza uno de los ceros por un número aleatorio.
  El valor de retorno es una referencia a la lista construida:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def listaAleatoria(n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   s = [0] * n
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   for i in range(n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     s[i] = random.random()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return s
 \end_layout
@@ -918,47 +1034,47 @@ La probaremos con ocho elementos.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> listaAleatoria(8)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0.15156642489
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0.498048560109
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0.810894847068
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0.360371157682
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0.275119183077
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0.328578797631
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0.759199803101
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0.800367163582
 \end_layout
@@ -973,8 +1089,8 @@ Los números generados por
 \family typewriter
 random
 \family default
- deben distribuirse uniformemente, lo que significa que cada valor es igualmente
- probable.
+ deben distribuirse uniformemente,
+ lo que significa que cada valor es igualmente probable.
 \end_layout
 
 \begin_layout Standard
@@ -986,14 +1102,12 @@ regiones
 \begin_inset Quotes erd
 \end_inset
 
- del mismo tamaño y contamos el número de veces que un valor aleatorio cae
- en cada región, deberíamos obtener un resultado aproximado en todas las
- regiones.
+ del mismo tamaño y contamos el número de veces que un valor aleatorio cae en cada región,
+ deberíamos obtener un resultado aproximado en todas las regiones.
 \end_layout
 
 \begin_layout Standard
-Podemos probar esta hipótesis escribiendo un programa que divida el rango
- en regiones y cuente el número de valores que caen en cada una.
+Podemos probar esta hipótesis escribiendo un programa que divida el rango en regiones y cuente el número de valores que caen en cada una.
 \end_layout
 
 \begin_layout Section
@@ -1002,6 +1116,8 @@ Conteo
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1014,14 +1130,12 @@ conteo
 \end_layout
 
 \begin_layout Standard
-Un enfoque que funciona en problemas como éste es dividir el problema en
- subproblemas que se puedan resolver con un patrón computacional que ya
- sepamos.
+Un enfoque que funciona en problemas como éste es dividir el problema en subproblemas que se puedan resolver con un patrón computacional que ya sepamos.
 \end_layout
 
 \begin_layout Standard
-En este caso, necesitamos recorrer una lista de números y contar el número
- de veces que un valor cae en un rango dado.
+En este caso,
+ necesitamos recorrer una lista de números y contar el número de veces que un valor cae en un rango dado.
  Esto parece familiar.
  En la Sección
 \begin_inset space ~
@@ -1031,42 +1145,42 @@ En este caso, necesitamos recorrer una lista de números y contar el número
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "counter"
+nolink "false"
 
 \end_inset
 
-, escribimos un programa que recorría una cadena y contaba el números de
- veces que aparecía una letra determinada.
+,
+ escribimos un programa que recorría una cadena y contaba el números de veces que aparecía una letra determinada.
 \end_layout
 
 \begin_layout Standard
-Entonces podemos copiar el programa viejo para adaptarlo posteriormente
- a nuestro problema actual.
+Entonces podemos copiar el programa viejo para adaptarlo posteriormente a nuestro problema actual.
  El original es:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 cont = 0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 for c in fruta:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if c == 'a':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     cont = cont + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print(cont)
 \end_layout
@@ -1094,7 +1208,8 @@ c
 num
 \family default
 .
- Esto no cambia el programa, sólo lo hace más legible.
+ Esto no cambia el programa,
+ sólo lo hace más legible.
 \end_layout
 
 \begin_layout Standard
@@ -1120,27 +1235,27 @@ sup
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 cont = 0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 for num in lista:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if inf < num < sup:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     cont = cont + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print(cont)
 \end_layout
@@ -1151,8 +1266,7 @@ print(cont)
 \end_layout
 
 \begin_layout Standard
-El último paso consiste en encapsular este código en una función denominada
- 
+El último paso consiste en encapsular este código en una función denominada 
 \family typewriter
 enRegion
 \family default
@@ -1170,32 +1284,34 @@ sup
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def enRegion(lista, inf, sup):
+def enRegion(lista,
+ inf,
+ sup):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   cont = 0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   for num in lista:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if inf < num < sup:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       cont = cont + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return cont
 \end_layout
@@ -1206,15 +1322,14 @@ def enRegion(lista, inf, sup):
 \end_layout
 
 \begin_layout Standard
-Copiando y modificando un programa existente fuimos capaces de escribir
- esta función rápidamente y ahorrarnos un buen tiempo de depuración.
+Copiando y modificando un programa existente fuimos capaces de escribir esta función rápidamente y ahorrarnos un buen tiempo de depuración.
  Este plan de desarrollo se denomina 
 \series bold
 concordancia de patrones
 \series default
 .
- Si se encuentra trabajando en un problema que ya ha resuelto antes, reutilice
- la solución.
+ Si se encuentra trabajando en un problema que ya ha resuelto antes,
+ reutilice la solución.
 \end_layout
 
 \begin_layout Section
@@ -1232,7 +1347,8 @@ name "muchasregiones"
 \end_layout
 
 \begin_layout Standard
-Como el número de regiones aumenta, 
+Como el número de regiones aumenta,
+ 
 \family typewriter
 enRegion
 \family default
@@ -1242,14 +1358,18 @@ enRegion
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-inf = enRegion(a, 0.0, 0.5)
+inf = enRegion(a,
+ 0.0,
+ 0.5)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-sup = enRegion(a, 0.5, 1)
+sup = enRegion(a,
+ 0.5,
+ 1)
 \end_layout
 
 \end_inset
@@ -1259,24 +1379,32 @@ sup = enRegion(a, 0.5, 1)
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-Region1 = enRegion(a, 0.0, 0.25)
+Region1 = enRegion(a,
+ 0.0,
+ 0.25)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-Region2 = enRegion(a, 0.25, 0.5)
+Region2 = enRegion(a,
+ 0.25,
+ 0.5)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-Region3 = enRegion(a, 0.5, 0.75)
+Region3 = enRegion(a,
+ 0.5,
+ 0.75)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-Region4 = enRegion(a, 0.75, 1.0)
+Region4 = enRegion(a,
+ 0.75,
+ 1.0)
 \end_layout
 
 \end_inset
@@ -1286,8 +1414,7 @@ Region4 = enRegion(a, 0.75, 1.0)
 
 \begin_layout Standard
 Hay dos problemas.
- Uno es que siempre tenemos que crear nuevos nombres de variables para cada
- resultado.
+ Uno es que siempre tenemos que crear nuevos nombres de variables para cada resultado.
  El otro es que tenemos que calcular el rango de cada región.
 \end_layout
 
@@ -1297,7 +1424,9 @@ Primero resolveremos el segundo problema.
 \family typewriter
 numRegiones
 \family default
-, entonces, el ancho de cada región está dado por la expresión 
+,
+ entonces,
+ el ancho de cada región está dado por la expresión 
 \family typewriter
 1.0/numRegiones
 \family default
@@ -1319,29 +1448,31 @@ numRegiones-1
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 ancho = 1.0 / numRegiones
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 for i in range(numRegiones):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   inf = i * ancho
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   sup = inf + ancho
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  print(inf, " hasta ", sup)
+  print(inf,
+ " hasta ",
+ sup)
 \end_layout
 
 \end_inset
@@ -1350,8 +1481,8 @@ for i in range(numRegiones):
 \end_layout
 
 \begin_layout Standard
-Para calcular el extremo inferior de cada región, multiplicamos la variable
- de ciclo por el ancho.
+Para calcular el extremo inferior de cada región,
+ multiplicamos la variable de ciclo por el ancho.
  El extremo superior está a un 
 \family typewriter
 ancho
@@ -1364,50 +1495,59 @@ Con
 \family typewriter
 numRegiones = 8
 \family default
-, la salida es:
+,
+ la salida es:
 \end_layout
 
 \begin_layout Verbatim
+
 0.0 hasta 0.125
 \end_layout
 
 \begin_layout Verbatim
+
 0.125 hasta 0.25
 \end_layout
 
 \begin_layout Verbatim
+
 0.25 hasta 0.375
 \end_layout
 
 \begin_layout Verbatim
+
 0.375 hasta 0.5
 \end_layout
 
 \begin_layout Verbatim
+
 0.5 hasta 0.625
 \end_layout
 
 \begin_layout Verbatim
+
 0.625 hasta 0.75
 \end_layout
 
 \begin_layout Verbatim
+
 0.75 hasta 0.875
 \end_layout
 
 \begin_layout Verbatim
+
 0.875 hasta 1.0
 \end_layout
 
 \begin_layout Standard
-Usted puede confirmar que cada región tiene el mismo ancho, que no se solapan
- y que cubren el rango completo de 0.0 a 1.0.
+Usted puede confirmar que cada región tiene el mismo ancho,
+ que no se solapan y que cubren el rango completo de 0.0 a 1.0.
 \end_layout
 
 \begin_layout Standard
 Ahora regresemos al primer problema.
- Necesitamos una manera de almacenar ocho enteros, usando una variable para
- indicarlos uno a uno.
+ Necesitamos una manera de almacenar ocho enteros,
+ usando una variable para indicarlos uno a uno.
  Usted debe estar pensando 
 \begin_inset Quotes eld
 \end_inset
@@ -1420,9 +1560,10 @@ Ahora regresemos al primer problema.
 \end_layout
 
 \begin_layout Standard
-Tenemos que crear la lista de regiones fuera del ciclo, porque esto sólo
- debe ocurrir una vez.
- Dentro del ciclo, llamaremos a 
+Tenemos que crear la lista de regiones fuera del ciclo,
+ porque esto sólo debe ocurrir una vez.
+ Dentro del ciclo,
+ llamaremos a 
 \family typewriter
 enRegion
 \family default
@@ -1435,42 +1576,44 @@ i
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 numRegiones = 8
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Regiones = [0] * numRegiones
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 ancho = 1.0 / numRegiones
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 for i in range(numRegiones):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   inf = i * ancho
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   sup = inf + ancho
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  Regiones[i] = enRegion(lista, inf, sup)
+  Regiones[i] = enRegion(lista,
+ inf,
+ sup)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print(Regiones)
 \end_layout
@@ -1481,18 +1624,27 @@ print(Regiones)
 \end_layout
 
 \begin_layout Standard
-Con una lista de 1000 valores, este código produce la siguiente lista de
- conteo:
+Con una lista de 1000 valores,
+ este código produce la siguiente lista de conteo:
 \end_layout
 
 \begin_layout Verbatim
-[138, 124, 128, 118, 130, 117, 114, 131]
+
+[138,
+ 124,
+ 128,
+ 118,
+ 130,
+ 117,
+ 114,
+ 131]
 \end_layout
 
 \begin_layout Standard
-Todos estos valores están muy cerca a 125, que es lo que esperamos.
- Al menos, están lo suficientemente cerca como para creer que el generador
- de números pseudoaleatorios está funcionando bien.
+Todos estos valores están muy cerca a 125,
+ que es lo que esperamos.
+ Al menos,
+ están lo suficientemente cerca como para creer que el generador de números pseudoaleatorios está funcionando bien.
 \end_layout
 
 \begin_layout Section
@@ -1508,6 +1660,8 @@ name "histograma"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1520,18 +1674,20 @@ histograma
 \end_layout
 
 \begin_layout Standard
-Aunque funciona, este programa no es tan eficiente como debería.
+Aunque funciona,
+ este programa no es tan eficiente como debería.
  Cada vez que llama a 
 \family typewriter
 enRegion
 \family default
-, recorre la lista entera.
- A medida que el número de regiones incrementa, va a hacer muchos recorridos.
+,
+ recorre la lista entera.
+ A medida que el número de regiones incrementa,
+ va a hacer muchos recorridos.
 \end_layout
 
 \begin_layout Standard
-Sería mejor hacer una sola pasada a través de la lista y calcular para cada
- región el índice de la región en la que cae.
+Sería mejor hacer una sola pasada a través de la lista y calcular para cada región el índice de la región en la que cae.
  Así podemos incrementar el contador apropiado.
 \end_layout
 
@@ -1549,8 +1705,8 @@ ancho
 \end_layout
 
 \begin_layout Standard
-Como este problema es el inverso del anterior, podemos intentar dividir
- por 
+Como este problema es el inverso del anterior,
+ podemos intentar dividir por 
 \family typewriter
 ancho
 \family default
@@ -1563,7 +1719,8 @@ Como
 \family typewriter
 ancho = 1.0 / numRegiones
 \family default
-, dividir por 
+,
+ dividir por 
 \family typewriter
 ancho
 \family default
@@ -1576,38 +1733,40 @@ numRegiones
 \family typewriter
 numRegiones
 \family default
-, obtenemos un número en el rango de 0.0 a 
+,
+ obtenemos un número en el rango de 0.0 a 
 \family typewriter
 numRegiones
 \family default
 .
- Si redondeamos ese número al entero más cercano por debajo, obtenemos lo
- que queremos, un índice de región:
+ Si redondeamos ese número al entero más cercano por debajo,
+ obtenemos lo que queremos,
+ un índice de región:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 numRegiones = 8
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Regiones = [0] * numRegiones
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 for i in lista:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   ind = int(i * numRegiones)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   Regiones[ind] = Regiones[ind] + 1
 \end_layout
@@ -1626,8 +1785,7 @@ int
 \end_layout
 
 \begin_layout Standard
-¿Es posible que este programa produzca un índice que esté fuera de rango
- (por ser negativo o mayor que 
+¿Es posible que este programa produzca un índice que esté fuera de rango (por ser negativo o mayor que 
 \family typewriter
 len(Regiones)-1
 \family default
@@ -1639,8 +1797,7 @@ Una lista como
 \family typewriter
 Regiones
 \family default
- que almacena los conteos del número de valores que hay en cada rango se
- denomina 
+ que almacena los conteos del número de valores que hay en cada rango se denomina 
 \series bold
 histograma
 \series default
@@ -1684,9 +1841,11 @@ Tipo mutable:
 \end_layout
 
 \begin_layout Description
-Tupla: tipo de dato secuencial similar a la lista, pero inmutable.
- Las tuplas se pueden usar donde se requiera un tipo inmutable, por ejemplo
- como llaves de un diccionario.
+Tupla:
+ tipo de dato secuencial similar a la lista,
+ pero inmutable.
+ Las tuplas se pueden usar donde se requiera un tipo inmutable,
+ por ejemplo como llaves de un diccionario.
 \end_layout
 
 \begin_layout Description
@@ -1706,17 +1865,20 @@ Asignación de tuplas:
 \end_layout
 
 \begin_layout Description
-Determinístico: programa que hace lo mismo cada vez que se llama.
+Determinístico:
+ programa que hace lo mismo cada vez que se llama.
 \end_layout
 
 \begin_layout Description
-Pseudoaleatoria: secuencia de números que parece aleatoria, pero en realidad
- es el resultado de un cómputo determinístico, bien diseñado.
+Pseudoaleatoria:
+ secuencia de números que parece aleatoria,
+ pero en realidad es el resultado de un cómputo determinístico,
+ bien diseñado.
 \end_layout
 
 \begin_layout Description
-Histograma: lista de enteros en la que cada elemento cuenta el número de
- veces que algo sucede.
+Histograma:
+ lista de enteros en la que cada elemento cuenta el número de veces que algo sucede.
 \end_layout
 
 \begin_layout Description
@@ -1730,8 +1892,7 @@ Correspondencia de patrones:
 
 \end_inset
 
- plan de desarrollo de programas que implica identificar un patrón computacional
- familiar y copiar la solución de un problema similar.
+ plan de desarrollo de programas que implica identificar un patrón computacional familiar y copiar la solución de un problema similar.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1741,6 +1902,8 @@ Correspondencia de patrones:
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1751,6 +1914,8 @@ tipo mutable
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1761,6 +1926,8 @@ tipo inmutable
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1771,6 +1938,8 @@ tupla
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1781,6 +1950,8 @@ asignación de tupla
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1791,6 +1962,8 @@ asignación!de tupla
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1801,6 +1974,8 @@ determinístico
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1811,6 +1986,8 @@ pseudoaleatorio
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1821,6 +1998,8 @@ histograma
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1838,14 +2017,13 @@ Ejercicios
 \end_layout
 
 \begin_layout Standard
-Para cada función, agregue chequeo de tipos y pruebas unitarias.
+Para cada función,
+ agregue chequeo de tipos y pruebas unitarias.
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función mas_frecuentes que tome una cadena e imprima las letras
- en orden descendente por frecuencia.
- Ejecútela con textos de diferentes lenguajes y observe como varían las
- frecuencias de letras.
+Escriba una función mas_frecuentes que tome una cadena e imprima las letras en orden descendente por frecuencia.
+ Ejecútela con textos de diferentes lenguajes y observe como varían las frecuencias de letras.
  Compare sus resultados con las tablas en:
 \begin_inset Separator latexpar
 \end_inset
@@ -1869,7 +2047,8 @@ http://en.wikipedia.org/wiki/Letter_frequencies
 \end_layout
 
 \begin_layout Standard
-Solución: 
+Solución:
+ 
 \begin_inset Flex URL
 status open
 
@@ -1885,8 +2064,7 @@ http://thinkpython.com/code/most_frequent.py
 
 \end_deeper
 \begin_layout Enumerate
-Escriba un programa que lea una lista de palabras de un archivo e imprima
- todos los conjuntos de palabras que son anagramas.
+Escriba un programa que lea una lista de palabras de un archivo e imprima todos los conjuntos de palabras que son anagramas.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1899,34 +2077,49 @@ Este es un ejemplo de la salida del programa con palabras en inglés:
 \end_layout
 
 \begin_layout Verbatim
-['deltas', 'desalt', 'lasted', 'salted', 'slated', 'staled'] 
+
+['deltas',
+ 'desalt',
+ 'lasted',
+ 'salted',
+ 'slated',
+ 'staled'] 
 \end_layout
 
 \begin_layout Verbatim
-['retainers', 'ternaries'] 
+
+['retainers',
+ 'ternaries'] 
 \end_layout
 
 \begin_layout Verbatim
-['generating', 'greatening']
+
+['generating',
+ 'greatening']
 \end_layout
 
 \begin_layout Verbatim
-['resmelts', 'smelters', 'termless']
+
+['resmelts',
+ 'smelters',
+ 'termless']
 \end_layout
 
 \begin_layout Standard
-Pista: cree un diccionario que asocie cada conjunto de letras a una lista
- de palabras que puedan ser formadas con esas letras.
- ¿Como se puede representar el conjunto de letras de forma que pueda ser
- usado como llave? Modifique el programa que obtuvo para que imprima en
- orden descendente por tamaño los conjuntos de anagramas.
- En el juego Scrabble, un 'bingo' se da cuando se juegan las 7 fichas, junto
- con otra letra en el tablero, para formar una palabra de 8 letras.
+Pista:
+ cree un diccionario que asocie cada conjunto de letras a una lista de palabras que puedan ser formadas con esas letras.
+ ¿Como se puede representar el conjunto de letras de forma que pueda ser usado como llave?
+ Modifique el programa que obtuvo para que imprima en orden descendente por tamaño los conjuntos de anagramas.
+ En el juego Scrabble,
+ un 'bingo' se da cuando se juegan las 7 fichas,
+ junto con otra letra en el tablero,
+ para formar una palabra de 8 letras.
  ¿Que conjunto de 8 letras forma los bingos mas posibles?
 \end_layout
 
 \begin_layout Standard
-Solución: 
+Solución:
+ 
 \begin_inset Flex URL
 status open
 
@@ -1942,12 +2135,12 @@ http://thinkpython.com/code/anagram_sets.py
 
 \end_deeper
 \begin_layout Enumerate
-Dos palabras forma un 'par de metatesis' si se puede transformar una en
- otra intercambiando dos letras.
- Por ejemplo, 'conversación' y 'conservación'.
- Escriba un programa que encuentre todos los pares de metatesis en el diccionari
-o.
- Pista: no pruebe todos los pares.
+Dos palabras forma un 'par de metatesis' si se puede transformar una en otra intercambiando dos letras.
+ Por ejemplo,
+ 'conversación' y 'conservación'.
+ Escriba un programa que encuentre todos los pares de metatesis en el diccionario.
+ Pista:
+ no pruebe todos los pares.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1956,7 +2149,8 @@ o.
 
 \begin_deeper
 \begin_layout Standard
-Solución: 
+Solución:
+ 
 \begin_inset Flex URL
 status open
 
@@ -1971,7 +2165,8 @@ http://thinkpython.com/code/metathesis.py
 \end_layout
 
 \begin_layout Standard
-Crédito: el ejercicio está inspirado por un ejemplo de 
+Crédito:
+ el ejercicio está inspirado por un ejemplo de 
 \begin_inset Flex URL
 status open
 
@@ -1987,11 +2182,16 @@ http://puzzlers.org
 
 \end_deeper
 \begin_layout Enumerate
-¿Cual es la palabra mas larga que sigue siendo válida a medida que se remueven
- una a una sus letras? Por ejemplo, en inglés, 'sprite' sin la 'r' es 'spite',
- que sin la 'e', es 'spit', que sin la 's' es 'pit', que sin la 'p' es 'it'
- que sin la 't' es 'i'.
- Las letras se pueden remover de cualquier posición, pero no se pueden reordenar.
+¿Cual es la palabra mas larga que sigue siendo válida a medida que se remueven una a una sus letras?
+ Por ejemplo,
+ en inglés,
+ 'sprite' sin la 'r' es 'spite',
+ que sin la 'e',
+ es 'spit',
+ que sin la 's' es 'pit',
+ que sin la 'p' es 'it' que sin la 't' es 'i'.
+ Las letras se pueden remover de cualquier posición,
+ pero no se pueden reordenar.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2000,8 +2200,7 @@ http://puzzlers.org
 
 \begin_deeper
 \begin_layout Standard
-Escriba un programa que encuentre todas las palabras que pueden reducirse
- de esta forma y que encuentre la mas larga.
+Escriba un programa que encuentre todas las palabras que pueden reducirse de esta forma y que encuentre la mas larga.
 \end_layout
 
 \begin_layout Standard
@@ -2009,15 +2208,16 @@ Pistas:
 \end_layout
 
 \begin_layout Standard
-Escriba una función que tome una palabra y calcule todas las palabras que
- pueden formarse al removerle una letra.
+Escriba una función que tome una palabra y calcule todas las palabras que pueden formarse al removerle una letra.
  Estas son las palabras 'hijas'.
- Recursivamente, una palabra es reducible si alguno de sus hijas es reducible.
+ Recursivamente,
+ una palabra es reducible si alguno de sus hijas es reducible.
  El caso base lo da la cadena vacía.
 \end_layout
 
 \begin_layout Standard
-Solución: 
+Solución:
+ 
 \begin_inset Flex URL
 status open
 

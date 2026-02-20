@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -11,10 +11,10 @@
 \newcommand{\adjustpage}[1]{\enlargethispage{#1\baselineskip}}
 \end_preamble
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8x
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -23,7 +23,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -33,6 +35,8 @@
 \output_sync 1
 \bibtex_command default
 \index_command default
+\float_placement class
+\float_alignment class
 \paperfontsize default
 \spacing single
 \use_hyperref false
@@ -57,7 +61,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -73,11 +79,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -92,30 +103,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -150,6 +170,8 @@ name "functionchap"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -160,6 +182,8 @@ llamada a función
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -204,12 +228,15 @@ El nombre de la función es
 \family typewriter
 type
 \family default
-, y despliega el tipo de un valor o variable.
- El valor o variable, que se denomina el 
+,
+ y despliega el tipo de un valor o variable.
+ El valor o variable,
+ que se denomina el 
 \series bold
 argumento
 \series default
- de la función, tiene que encerrarse entre paréntesis.
+ de la función,
+ tiene que encerrarse entre paréntesis.
  Es usual decir que una función 
 \begin_inset Quotes eld
 \end_inset
@@ -236,6 +263,8 @@ valor de retorno
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -246,6 +275,8 @@ argumento
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -258,7 +289,8 @@ valor de retorno
 \end_layout
 
 \begin_layout Standard
-En lugar de imprimir el valor de retorno, podemos asignarlo a una variable:
+En lugar de imprimir el valor de retorno,
+ podemos asignarlo a una variable:
 \end_layout
 
 \begin_layout Standard
@@ -291,8 +323,7 @@ Otro ejemplo es la función
 \family typewriter
 id
 \family default
- que toma un valor o una variable y retorna un entero que actúa como un
- identificador único:
+ que toma un valor o una variable y retorna un entero que actúa como un identificador único:
 \end_layout
 
 \begin_layout Standard
@@ -331,8 +362,7 @@ status open
 \family typewriter
 id
 \family default
- que es un número único relacionado con el lugar en la memoria en el que
- está almacenado.
+ que es un número único relacionado con el lugar en la memoria en el que está almacenado.
  El 
 \family typewriter
 id
@@ -350,6 +380,8 @@ Conversión de tipos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -360,6 +392,8 @@ conversión!tipo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -372,14 +406,14 @@ conversión
 \end_layout
 
 \begin_layout Standard
-Python proporciona una colección de funciones que convierten valores de
- un tipo a otro.
+Python proporciona una colección de funciones que convierten valores de un tipo a otro.
  La función 
 \family typewriter
 int
 \family default
- toma cualquier valor y lo convierte a un entero, si es posible, de lo contrario
- se queja:
+ toma cualquier valor y lo convierte a un entero,
+ si es posible,
+ de lo contrario se queja:
 \end_layout
 
 \begin_layout Standard
@@ -404,7 +438,9 @@ status open
 
 \begin_layout Plain Layout
 
-ValueError: invalid literal for int() with base 10: Hola
+ValueError:
+ invalid literal for int() with base 10:
+ Hola
 \end_layout
 
 \end_inset
@@ -413,8 +449,8 @@ ValueError: invalid literal for int() with base 10: Hola
 \family typewriter
 int
 \family default
- también puede convertir valores de punto flotante a enteros, pero hay que
- tener en cuenta que va a eliminar la parte decimal:
+ también puede convertir valores de punto flotante a enteros,
+ pero hay que tener en cuenta que va a eliminar la parte decimal:
 \end_layout
 
 \begin_layout Standard
@@ -478,7 +514,8 @@ status open
 
 \end_inset
 
- Finalmente, la función 
+ Finalmente,
+ la función 
 \family typewriter
 str
 \family default
@@ -526,8 +563,7 @@ status open
 \family default
 .
  Pueden representar el mismo número pero tienen diferentes tipos.
- La razón para esto es que su representación interna en la memoria del computado
-r es distinta.
+ La razón para esto es que su representación interna en la memoria del computador es distinta.
 \end_layout
 
 \begin_layout Section
@@ -536,6 +572,8 @@ Coerción de tipos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -546,6 +584,8 @@ coerción de tipos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -556,6 +596,8 @@ coerción!tipo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -566,6 +608,8 @@ división entera
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -584,11 +628,13 @@ Podemos sacar provecho de las reglas de conversión automática de tipos,
 coerción de tipos
 \series default
 .
- Para los operadores matemáticos, si algún operando es un número 
+ Para los operadores matemáticos,
+ si algún operando es un número 
 \family typewriter
 flotante
 \family default
-, el otro se convierte automáticamente a 
+,
+ el otro se convierte automáticamente a 
 \family typewriter
 flotante
 \family default
@@ -621,8 +667,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Así que haciendo el denominador flotante, forzamos a Python a realizar división
- en punto flotante.
+Así que haciendo el denominador flotante,
+ forzamos a Python a realizar división en punto flotante.
 \end_layout
 
 \begin_layout Section
@@ -631,6 +677,8 @@ Funciones matemáticas
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -641,6 +689,8 @@ función matemática
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -661,7 +711,8 @@ seno
 \family typewriter
 logaritmo
 \family default
-, y ha aprendido a evaluar expresiones como 
+,
+ y ha aprendido a evaluar expresiones como 
 \family typewriter
 sen(pi/2)
 \family default
@@ -670,12 +721,15 @@ sen(pi/2)
 log(1/x)
 \family default
 .
- Primero, se evalúa la expresión entre paréntesis (el argumento).
- Por ejemplo, 
+ Primero,
+ se evalúa la expresión entre paréntesis (el argumento).
+ Por ejemplo,
+ 
 \family typewriter
 pi/2
 \family default
- es aproximadamente 1.571, y 
+ es aproximadamente 1.571,
+ y 
 \family typewriter
 1/x
 \family default
@@ -687,13 +741,15 @@ x
 \end_layout
 
 \begin_layout Standard
-Entonces, se evalúa la función, ya sea mirando el resultado en una tabla
- o calculando varias operaciones.
+Entonces,
+ se evalúa la función,
+ ya sea mirando el resultado en una tabla o calculando varias operaciones.
  El 
 \family typewriter
 seno
 \family default
- de 1.571 es 1, y el 
+ de 1.571 es 1,
+ y el 
 \family typewriter
 logaritmo
 \family default
@@ -705,24 +761,25 @@ log
 \end_layout
 
 \begin_layout Standard
-Este proceso puede aplicarse repetidamente para evaluar expresiones más
- complicadas como 
+Este proceso puede aplicarse repetidamente para evaluar expresiones más complicadas como 
 \family typewriter
 log(1/sen(pi/2))
 \family default
 .
- Primero se evalúa el argumento de la función más interna, luego la función,
+ Primero se evalúa el argumento de la función más interna,
+ luego la función,
  y se continúa así.
 \end_layout
 
 \begin_layout Standard
-Python tiene un módulo matemático que proporciona la mayoría de las funciones
- matemáticas.
+Python tiene un módulo matemático que proporciona la mayoría de las funciones matemáticas.
  Un módulo es un archivo que contiene una colección de funciones relacionadas.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -735,7 +792,8 @@ módulo
 \end_layout
 
 \begin_layout Standard
-Antes de que podamos usar funciones de un módulo, tenemos que importarlas:
+Antes de que podamos usar funciones de un módulo,
+ tenemos que importarlas:
 \end_layout
 
 \begin_layout Standard
@@ -750,8 +808,9 @@ status open
 
 \end_inset
 
- Para llamar a una de las funciones, tenemos que especificar el nombre del
- módulo y el nombre de la función, separados por un punto.
+ Para llamar a una de las funciones,
+ tenemos que especificar el nombre del módulo y el nombre de la función,
+ separados por un punto.
  Este formato se denomina 
 \series bold
 notación punto
@@ -761,6 +820,8 @@ notación punto
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -798,7 +859,8 @@ status open
 \family typewriter
 decibel
 \family default
- el logaritmo de 17, en base 
+ el logaritmo de 17,
+ en base 
 \family typewriter
 10
 \family default
@@ -828,19 +890,21 @@ sin
 \family typewriter
 cos
 \family default
-, 
+,
+ 
 \family typewriter
 tan
 \family default
-, etc.) reciben sus argumentos en radianes.
- Para convertir de grados a radianes hay que dividir por 360 y multiplicar
- por 
+,
+ etc.) reciben sus argumentos en radianes.
+ Para convertir de grados a radianes hay que dividir por 360 y multiplicar por 
 \family typewriter
 2*pi
 \family default
 .
- Por ejemplo, para encontrar el seno de 45 grados, primero calculamos el
- ángulo en radianes y luego tomamos el seno:
+ Por ejemplo,
+ para encontrar el seno de 45 grados,
+ primero calculamos el ángulo en radianes y luego tomamos el seno:
 \end_layout
 
 \begin_layout Standard
@@ -870,8 +934,7 @@ status open
 pi
 \family default
  también hace parte del módulo matemático.
- Si usted recuerda geometría puede verificar el resultado comparándolo con
- la raíz cuadrada de 2 dividida por 2:
+ Si usted recuerda geometría puede verificar el resultado comparándolo con la raíz cuadrada de 2 dividida por 2:
 \end_layout
 
 \begin_layout Standard
@@ -900,6 +963,8 @@ Composición
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -910,6 +975,8 @@ composición
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -922,10 +989,11 @@ función!composición
 \end_layout
 
 \begin_layout Standard
-Así como las funciones matemáticas, las funciones de Python pueden componerse,
+Así como las funciones matemáticas,
+ las funciones de Python pueden componerse,
  de forma que una expresión sea parte de otra.
- Por ejemplo, usted puede usar cualquier expresión como argumento a una
- función:
+ Por ejemplo,
+ usted puede usar cualquier expresión como argumento a una función:
 \end_layout
 
 \begin_layout Standard
@@ -948,12 +1016,15 @@ Esta sentencia toma el valor de
 \family typewriter
 pi
 \family default
-, lo divide por 2, y suma este resultado al valor de 
+,
+ lo divide por 2,
+ y suma este resultado al valor de 
 \family typewriter
 angulo
 \family default
 .
- Después, la suma se le pasa como argumento a la función coseno (
+ Después,
+ la suma se le pasa como argumento a la función coseno (
 \family typewriter
 cos
 \family default
@@ -961,8 +1032,7 @@ cos
 \end_layout
 
 \begin_layout Standard
-También se puede tomar el resultado de una función y pasarlo como argumento
- a otra:
+También se puede tomar el resultado de una función y pasarlo como argumento a otra:
 \begin_inset listings
 inline false
 status open
@@ -999,32 +1069,32 @@ Agregando nuevas funciones
 \end_layout
 
 \begin_layout Standard
-Hasta aquí solo hemos usado las funciones que vienen con Python, pero también
- es posible agregar nuevas funciones.
- Crear nuevas funciones para resolver nuestros problemas particulares es
- una de las capacidades mas importantes de un lenguaje de programación de
- propósito general.
+Hasta aquí solo hemos usado las funciones que vienen con Python,
+ pero también es posible agregar nuevas funciones.
+ Crear nuevas funciones para resolver nuestros problemas particulares es una de las capacidades mas importantes de un lenguaje de programación de propósito general.
 \end_layout
 
 \begin_layout Standard
-En el contexto de la programación, una 
+En el contexto de la programación,
+ una 
 \series bold
 función
 \series default
- es una secuencia de sentencias que ejecuta una operación deseada y tiene
- un nombre.
+ es una secuencia de sentencias que ejecuta una operación deseada y tiene un nombre.
  Esta operación se especifica en una 
 \series bold
 definición de función
 \series default
 .
  Las funciones que hemos usado hasta ahora ya han sido definidas para nosotros.
- Esto es bueno, porque nos permite usarlas sin preocuparnos de los detalles
- de sus definiciones.
+ Esto es bueno,
+ porque nos permite usarlas sin preocuparnos de los detalles de sus definiciones.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1035,6 +1105,8 @@ función
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1045,6 +1117,8 @@ función definición
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1077,21 +1151,21 @@ def NOMBRE( LISTA DE PARAMETROS ):
 
 \end_inset
 
- Usted puede inventar los nombres que desee para sus funciones con tal de
- que no use una palabra reservada.
- La lista de parámetros especifica que información, si es que la hay, se
- debe proporcionar a fin de usar la nueva función.
+ Usted puede inventar los nombres que desee para sus funciones con tal de que no use una palabra reservada.
+ La lista de parámetros especifica que información,
+ si es que la hay,
+ se debe proporcionar a fin de usar la nueva función.
 \end_layout
 
 \begin_layout Standard
-Se puede incluir cualquier número de sentencias dentro de la función, pero
- tienen que sangrarse o indentarse a partir de la margen izquierda.
+Se puede incluir cualquier número de sentencias dentro de la función,
+ pero tienen que sangrarse o indentarse a partir de la margen izquierda.
  La práctica estándar de Python es usar 4 espacios.
 \end_layout
 
 \begin_layout Standard
-Las primeras funciones que vamos a escribir no tienen parámetros, así que
- la sintaxis luce así:
+Las primeras funciones que vamos a escribir no tienen parámetros,
+ así que la sintaxis luce así:
 \end_layout
 
 \begin_layout Standard
@@ -1117,7 +1191,8 @@ nuevaLinea
 \family default
 .
  Los paréntesis vacíos indican que no tiene parámetros.
- Contiene solamente una sentencia, que produce como salida una línea vacía.
+ Contiene solamente una sentencia,
+ que produce como salida una línea vacía.
  Eso es lo que ocurre cuando se usa el comando 
 \family typewriter
 print
@@ -1126,8 +1201,7 @@ print
 \end_layout
 
 \begin_layout Standard
-La sintaxis para llamar la nueva función es la misma que para las funciones
- predefinidas en Python:
+La sintaxis para llamar la nueva función es la misma que para las funciones predefinidas en Python:
 \end_layout
 
 \begin_layout Standard
@@ -1156,6 +1230,7 @@ print("Segunda Linea.")
 \end_layout
 
 \begin_layout Verbatim
+
 Primera Linea.
 \end_layout
 
@@ -1164,13 +1239,14 @@ Primera Linea.
 \end_layout
 
 \begin_layout Verbatim
+
 Segunda Linea.
 \end_layout
 
 \begin_layout Standard
 Note el espacio extra entre las dos líneas.
- ¿Qué pasa si deseamos más espacio entre las líneas? Podemos llamar la misma
- función repetidamente:
+ ¿Qué pasa si deseamos más espacio entre las líneas?
+ Podemos llamar la misma función repetidamente:
 \end_layout
 
 \begin_layout Standard
@@ -1262,9 +1338,10 @@ print("Segunda Linea.")
 
 \end_inset
 
- Esta función contiene tres sentencias, y todas están sangradas por dos
- espacios.
- Como la próxima sentencia, 
+ Esta función contiene tres sentencias,
+ y todas están sangradas por dos espacios.
+ Como la próxima sentencia,
+ 
 \family typewriter
 
 \begin_inset listings
@@ -1280,7 +1357,9 @@ print("Primera Linea")
 
 
 \family default
-, no está sangrada, Python la interpreta afuera de la función.
+,
+ no está sangrada,
+ Python la interpreta afuera de la función.
 \end_layout
 
 \begin_layout Standard
@@ -1289,11 +1368,13 @@ Hay que enfatizar dos hechos sobre este programa:
 
 \begin_layout Enumerate
 Usted puede llamar la misma función repetidamente.
- De hecho, es una práctica muy común y útil.
+ De hecho,
+ es una práctica muy común y útil.
 \end_layout
 
 \begin_layout Enumerate
-Usted puede llamar una función dentro de otra función; en este caso 
+Usted puede llamar una función dentro de otra función;
+ en este caso 
 \family typewriter
 tresLineas
 \family default
@@ -1305,24 +1386,23 @@ nuevaLinea
 \end_layout
 
 \begin_layout Standard
-Hasta este punto, puede que no parezca claro porque hay que tomarse la molestia
- de crear todas estas funciones.
- De hecho, hay muchas razones, y este ejemplo muestra dos:
+Hasta este punto,
+ puede que no parezca claro porque hay que tomarse la molestia de crear todas estas funciones.
+ De hecho,
+ hay muchas razones,
+ y este ejemplo muestra dos:
 \end_layout
 
 \begin_layout Itemize
-Crear una nueva función le da a usted la oportunidad de nombrar un grupo
- de sentencias.
- Las funciones pueden simplificar un programa escondiendo un cálculo complejo
- detrás de un comando único que usa palabras en lenguaje natural, en lugar
- de un código arcano.
+Crear una nueva función le da a usted la oportunidad de nombrar un grupo de sentencias.
+ Las funciones pueden simplificar un programa escondiendo un cálculo complejo detrás de un comando único que usa palabras en lenguaje natural,
+ en lugar de un código arcano.
 \end_layout
 
 \begin_layout Itemize
-Crear una nueva función puede recortar el tamaño de un programa eliminando
- el código repetitivo.
- Por ejemplo, una forma más corta de imprimir nueve líneas consecutivas
- consiste en llamar la función 
+Crear una nueva función puede recortar el tamaño de un programa eliminando el código repetitivo.
+ Por ejemplo,
+ una forma más corta de imprimir nueve líneas consecutivas consiste en llamar la función 
 \family typewriter
 tresLineas
 \family default
@@ -1334,7 +1414,8 @@ Definiciones y uso
 \end_layout
 
 \begin_layout Standard
-Uniendo los fragmentos de la sección 3.6, el programa completo luce así:
+Uniendo los fragmentos de la sección 3.6,
+ el programa completo luce así:
 \end_layout
 
 \begin_layout Standard
@@ -1397,7 +1478,8 @@ print("Segunda Linea.")
 
 \end_inset
 
- Este programa contiene dos definiciones de funciones: 
+ Este programa contiene dos definiciones de funciones:
+ 
 \family typewriter
 nuevaLinea
 \family default
@@ -1406,16 +1488,19 @@ nuevaLinea
 tresLineas
 \family default
 .
- Las definiciones de funciones se ejecutan como las otras sentencias, pero
- su efecto es crear nuevas funciones.
- Las sentencias, dentro de la función, no se ejecutan hasta que la función
- sea llamada, y la definición no genera salida.
+ Las definiciones de funciones se ejecutan como las otras sentencias,
+ pero su efecto es crear nuevas funciones.
+ Las sentencias,
+ dentro de la función,
+ no se ejecutan hasta que la función sea llamada,
+ y la definición no genera salida.
 \end_layout
 
 \begin_layout Standard
-Como usted puede imaginar, se tiene que crear una función antes de ejecutarla.
- En otras palabras, la definición de función tiene que ejecutarse antes
- de llamarla por primera vez.
+Como usted puede imaginar,
+ se tiene que crear una función antes de ejecutarla.
+ En otras palabras,
+ la definición de función tiene que ejecutarse antes de llamarla por primera vez.
 \end_layout
 
 \begin_layout Section
@@ -1424,6 +1509,8 @@ Flujo de ejecución
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1436,8 +1523,7 @@ flujo de ejecución
 \end_layout
 
 \begin_layout Standard
-Con el objetivo de asegurar que una función se defina antes de su primer
- uso usted tiene que saber el orden en el que las sentencias se ejecutan,
+Con el objetivo de asegurar que una función se defina antes de su primer uso usted tiene que saber el orden en el que las sentencias se ejecutan,
  lo que denominamos 
 \series bold
 flujo de ejecución
@@ -1447,32 +1533,35 @@ flujo de ejecución
 
 \begin_layout Standard
 La ejecución siempre empieza con la primera sentencia del programa.
- Las sentencias se ejecutan una a una, desde arriba hacia abajo.
+ Las sentencias se ejecutan una a una,
+ desde arriba hacia abajo.
 \end_layout
 
 \begin_layout Standard
 Las definiciones de funciones no alteran el flujo de ejecución del programa,
- recuerde que las sentencias que están adentro de las funciones no se ejecutan
- hasta que éstas sean llamadas.
- Aunque no es muy común, usted puede definir una función adentro de otra.
- En este caso, la definición interna no se ejecuta hasta que la otra función
- se llame.
+ recuerde que las sentencias que están adentro de las funciones no se ejecutan hasta que éstas sean llamadas.
+ Aunque no es muy común,
+ usted puede definir una función adentro de otra.
+ En este caso,
+ la definición interna no se ejecuta hasta que la otra función se llame.
 \end_layout
 
 \begin_layout Standard
 Las llamadas a función son como un desvío en el flujo de ejecución.
- En lugar de continuar con la siguiente sentencia, el flujo salta a la primera
- línea de la función llamada, ejecuta todas las sentencias internas, y regresa
- para continuar donde estaba previamente.
+ En lugar de continuar con la siguiente sentencia,
+ el flujo salta a la primera línea de la función llamada,
+ ejecuta todas las sentencias internas,
+ y regresa para continuar donde estaba previamente.
 \end_layout
 
 \begin_layout Standard
-Esto suena sencillo, hasta que tenemos en cuenta que una función puede llamar
- a otra.
- Mientras se está ejecutando una función, el programa puede ejecutar las
- sentencias en otra función.
- Pero, mientras se está ejecutando la nueva función, ¡el programa puede
- tener que ejecutar 
+Esto suena sencillo,
+ hasta que tenemos en cuenta que una función puede llamar a otra.
+ Mientras se está ejecutando una función,
+ el programa puede ejecutar las sentencias en otra función.
+ Pero,
+ mientras se está ejecutando la nueva función,
+ ¡el programa puede tener que ejecutar 
 \shape italic
 otra
 \shape default
@@ -1480,16 +1569,20 @@ otra
 \end_layout
 
 \begin_layout Standard
-Afortunadamente, Python lleva la pista de donde está fielmente, así que
- cada vez que una función termina, el programa continúa su ejecución en
- el punto donde se la llamó.
- Cuando llega al fin del programa, la ejecución termina.
+Afortunadamente,
+ Python lleva la pista de donde está fielmente,
+ así que cada vez que una función termina,
+ el programa continúa su ejecución en el punto donde se la llamó.
+ Cuando llega al fin del programa,
+ la ejecución termina.
 \end_layout
 
 \begin_layout Standard
-¿Cual es la moraleja de esta sórdida historia? Cuando lea un programa, no
- lo haga de arriba hacia abajo.
- En lugar de ésto, siga el flujo de ejecución.
+¿Cual es la moraleja de esta sórdida historia?
+ Cuando lea un programa,
+ no lo haga de arriba hacia abajo.
+ En lugar de ésto,
+ siga el flujo de ejecución.
 \end_layout
 
 \begin_layout Section
@@ -1505,6 +1598,8 @@ name "parameters"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1515,6 +1610,8 @@ parámetro
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1525,6 +1622,8 @@ función!parámetro
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1535,6 +1634,8 @@ argumento
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1549,9 +1650,11 @@ función!argumento
 \begin_layout Standard
 Algunas de las funciones primitivas que usted ha usado requieren argumentos,
  los valores que controlan el trabajo de la función.
- Por ejemplo, si usted quiere encontrar el seno de un número, tiene que
- indicar cual es el número.
- Así que, 
+ Por ejemplo,
+ si usted quiere encontrar el seno de un número,
+ tiene que indicar cual es el número.
+ Así que,
+ 
 \family typewriter
 sin
 \family default
@@ -1564,9 +1667,10 @@ Algunas funciones toman más de un argumento.
 \family typewriter
 pow
 \family default
- (potencia) toma dos argumentos, la base y el exponente.
- Dentro de una función, los valores que se pasan se asignan a variables
- llamadas 
+ (potencia) toma dos argumentos,
+ la base y el exponente.
+ Dentro de una función,
+ los valores que se pasan se asignan a variables llamadas 
 \series bold
 parámetros
 \series default
@@ -1574,8 +1678,7 @@ parámetros
 \end_layout
 
 \begin_layout Standard
-Aquí hay un ejemplo de una función definida por el programador que toma
- un parámetro:
+Aquí hay un ejemplo de una función definida por el programador que toma un parámetro:
 \end_layout
 
 \begin_layout Standard
@@ -1590,7 +1693,8 @@ def imprimaDoble(pedro):
 
 \begin_layout Plain Layout
 
-  print(pedro, pedro)
+  print(pedro,
+ pedro)
 \end_layout
 
 \end_inset
@@ -1600,15 +1704,17 @@ def imprimaDoble(pedro):
 pedro
 \family default
 .
- El valor del parámetro (en este momento no tenemos idea de lo que será)
- se imprime dos veces, y después, se imprime una línea vacía.
+ El valor del parámetro (en este momento no tenemos idea de lo que será) se imprime dos veces,
+ y después,
+ se imprime una línea vacía.
  El nombre 
 \family typewriter
 pedro
 \family default
- se escogió para sugerir que el nombre que se le asigna a un parámetro queda
- a su libertad; pero, en general, usted desea escoger algo mas ilustrativo
- que 
+ se escogió para sugerir que el nombre que se le asigna a un parámetro queda a su libertad;
+ pero,
+ en general,
+ usted desea escoger algo mas ilustrativo que 
 \family typewriter
 pedro
 \family default
@@ -1671,8 +1777,8 @@ float
 
 \begin_layout Standard
 Las mismas reglas de composición que se aplican a las funciones primitivas,
- se aplican a las definidas por el programador, así que podemos usar cualquier
- clase de expresión como un argumento para 
+ se aplican a las definidas por el programador,
+ así que podemos usar cualquier clase de expresión como un argumento para 
 \family typewriter
 imprimaDoble
 \family default
@@ -1706,8 +1812,8 @@ SpamSpamSpamSpam SpamSpamSpamSpam
 
 \end_inset
 
- Como de costumbre, la expresión se evalúa antes de que la función se ejecute
- así que 
+ Como de costumbre,
+ la expresión se evalúa antes de que la función se ejecute así que 
 \family typewriter
 imprimaDoble
 \family default
@@ -1733,7 +1839,8 @@ status open
 
 \begin_layout Plain Layout
 
->>> m = 'Oh, mundo cruel.'
+>>> m = 'Oh,
+ mundo cruel.'
 \end_layout
 
 \begin_layout Plain Layout
@@ -1743,14 +1850,16 @@ status open
 
 \begin_layout Plain Layout
 
-Oh, mundo cruel.
- Oh, mundo cruel.
+Oh,
+ mundo cruel.
+ Oh,
+ mundo cruel.
 \end_layout
 
 \end_inset
 
- Observe algo muy importante, el nombre de la variable que pasamos como
- argumento (
+ Observe algo muy importante,
+ el nombre de la variable que pasamos como argumento (
 \family typewriter
 m
 \family default
@@ -1759,12 +1868,13 @@ m
 pedro
 \family default
 ).
- No importa como se nombraba el valor originalmente (en el lugar donde se
- hace el llamado); en la función 
+ No importa como se nombraba el valor originalmente (en el lugar donde se hace el llamado);
+ en la función 
 \family typewriter
 imprimaDoble
 \family default
-, la seguimos llamando de la misma manera 
+,
+ la seguimos llamando de la misma manera 
 \family typewriter
 pedro
 \family default
@@ -1777,6 +1887,8 @@ Las variables y los parámetros son locales
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1787,6 +1899,8 @@ variable local
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1803,8 +1917,9 @@ Cuando usted crea una
 \series bold
 variable local
 \series default
- en una función, solamente existe dentro de ella, y no se puede usar por
- fuera.
+ en una función,
+ solamente existe dentro de ella,
+ y no se puede usar por fuera.
  Por ejemplo:
 \end_layout
 
@@ -1815,7 +1930,8 @@ status open
 
 \begin_layout Plain Layout
 
-def concatenarDoble(parte1, parte2):
+def concatenarDoble(parte1,
+ parte2):
 \end_layout
 
 \begin_layout Plain Layout
@@ -1830,8 +1946,9 @@ def concatenarDoble(parte1, parte2):
 
 \end_inset
 
- Esta función toma dos argumentos, los concatena, y luego imprime el resultado
- dos veces.
+ Esta función toma dos argumentos,
+ los concatena,
+ y luego imprime el resultado dos veces.
  Podemos llamar a la función con dos cadenas:
 \end_layout
 
@@ -1842,7 +1959,8 @@ status open
 
 \begin_layout Plain Layout
 
->>> cantar1 = "Pie Jesu domine, "
+>>> cantar1 = "Pie Jesu domine,
+ "
 \end_layout
 
 \begin_layout Plain Layout
@@ -1852,13 +1970,16 @@ status open
 
 \begin_layout Plain Layout
 
->>> concatenarDoble(cantar1, cantar2)
+>>> concatenarDoble(cantar1,
+ cantar2)
 \end_layout
 
 \begin_layout Plain Layout
 
-Pie Jesu domine, Dona eis requiem.
- Pie Jesu domine, Dona 
+Pie Jesu domine,
+ Dona eis requiem.
+ Pie Jesu domine,
+ Dona 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1876,7 +1997,8 @@ Cuando
 \family typewriter
 concatenarDoble
 \family default
- termina, la variable 
+ termina,
+ la variable 
 \family typewriter
 cat
 \family default
@@ -1896,17 +2018,20 @@ status open
 
 \begin_layout Plain Layout
 
-NameError: cat
+NameError:
+ cat
 \end_layout
 
 \end_inset
 
  Los parámetros también son locales.
- Por ejemplo, afuera de la función 
+ Por ejemplo,
+ afuera de la función 
 \family typewriter
 imprimaDoble
 \family default
-, no existe algo como 
+,
+ no existe algo como 
 \family typewriter
 pedro
 \family default
@@ -1927,6 +2052,8 @@ name "stackdiagram"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1937,6 +2064,8 @@ diagrama de pila
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1947,6 +2076,8 @@ marco de función
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1959,14 +2090,13 @@ marco
 \end_layout
 
 \begin_layout Standard
-Para llevar pista de los lugares en que pueden usarse las variables es útil
- dibujar un 
+Para llevar pista de los lugares en que pueden usarse las variables es útil dibujar un 
 \series bold
 diagrama de pila
 \series default
 .
- Como los diagramas de estados, los diagramas de pila muestran el valor
- de cada variable y además muestran a que función pertenece cada una.
+ Como los diagramas de estados,
+ los diagramas de pila muestran el valor de cada variable y además muestran a que función pertenece cada una.
 \end_layout
 
 \begin_layout Standard
@@ -1975,8 +2105,7 @@ Cada función se representa por un
 marco
 \series default
 .
- Un marco es una caja con el nombre de una función al lado y los parámetros
- y variables adentro.
+ Un marco es una caja con el nombre de una función al lado y los parámetros y variables adentro.
  El diagrama de pila para el ejemplo anterior luce así:
 \end_layout
 
@@ -2084,7 +2213,8 @@ imprimaDoble
 \family typewriter
 concatenarDoble
 \family default
-, y 
+,
+ y 
 \family typewriter
 concatenarDoble
 \family default
@@ -2092,10 +2222,11 @@ concatenarDoble
 \family typewriter
 __main__
 \family default
-, que es un nombre especial para la función más superior (la principal,
+,
+ que es un nombre especial para la función más superior (la principal,
  que tiene todo programa).
- Cuando usted crea una variable afuera de cualquier función, pertenece a
- 
+ Cuando usted crea una variable afuera de cualquier función,
+ pertenece a 
 \family typewriter
 __main__
 \family default
@@ -2112,7 +2243,8 @@ parte1
 \family typewriter
 cantar1
 \family default
-, 
+,
+ 
 \family typewriter
 parte2
 \family default
@@ -2120,7 +2252,8 @@ parte2
 \family typewriter
 cantar2
 \family default
-, y 
+,
+ y 
 \family typewriter
 pedro
 \family default
@@ -2132,9 +2265,10 @@ cat
 \end_layout
 
 \begin_layout Standard
-Si hay un error durante una llamada de función, Python imprime el nombre
- de ésta, el nombre de la función que la llamó, y así sucesivamente hasta
- llegar a 
+Si hay un error durante una llamada de función,
+ Python imprime el nombre de ésta,
+ el nombre de la función que la llamó,
+ y así sucesivamente hasta llegar a 
 \family typewriter
 __main__
 \family default
@@ -2142,7 +2276,8 @@ __main__
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, si intentamos acceder a 
+Por ejemplo,
+ si intentamos acceder a 
 \family typewriter
 cat
 \family default
@@ -2150,7 +2285,8 @@ cat
 \family typewriter
 imprimaDoble
 \family default
-, obtenemos un 
+,
+ obtenemos un 
 \family typewriter
 error de nombre (NameError)
 \family default
@@ -2158,35 +2294,51 @@ error de nombre (NameError)
 \end_layout
 
 \begin_layout Verbatim
+
 Traceback (innermost last):
 \end_layout
 
 \begin_layout Verbatim
-  File "test.py", line 13, in __main__
+
+  File "test.py",
+ line 13,
+ in __main__
 \end_layout
 
 \begin_layout Verbatim
-    concatenarDoble(cantar1, cantar2)
+
+    concatenarDoble(cantar1,
+ cantar2)
 \end_layout
 
 \begin_layout Verbatim
-  File "test.py", line 5, in concatenarDoble
+
+  File "test.py",
+ line 5,
+ in concatenarDoble
 \end_layout
 
 \begin_layout Verbatim
+
     imprimaDoble(cat)
 \end_layout
 
 \begin_layout Verbatim
-  File "test.py", line 9, in imprimaDoble
+
+  File "test.py",
+ line 9,
+ in imprimaDoble
 \end_layout
 
 \begin_layout Verbatim
+
     print(cat)
 \end_layout
 
 \begin_layout Verbatim
-NameError: cat
+
+NameError:
+ cat
 \end_layout
 
 \begin_layout Standard
@@ -2195,13 +2347,16 @@ Esta lista de funciones se denomina un
 trazado inverso
 \series default
 .
- Nos informa en qué archivo de programa ocurrió el error, en qué línea,
+ Nos informa en qué archivo de programa ocurrió el error,
+ en qué línea,
  y qué funciones se estaban ejecutando en ese momento.
  También muestra la línea de código que causó el error.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2224,18 +2379,20 @@ Funciones con resultados
 
 \begin_layout Standard
 Usted ya puede haber notado que algunas de las funciones que estamos usando,
- como las matemáticas, entregan resultados.
- Otras funciones, como 
+ como las matemáticas,
+ entregan resultados.
+ Otras funciones,
+ como 
 \family typewriter
 nuevaLinea
 \family default
-, ejecutan una acción pero no entregan un resultado.
+,
+ ejecutan una acción pero no entregan un resultado.
  Esto genera algunas preguntas:
 \end_layout
 
 \begin_layout Enumerate
-¿Qué pasa si usted llama a una función y no hace nada con el resultado (no
- lo asigna a una variable o no lo usa como parte de una expresión mas grande)?
+¿Qué pasa si usted llama a una función y no hace nada con el resultado (no lo asigna a una variable o no lo usa como parte de una expresión mas grande)?
 \end_layout
 
 \begin_layout Enumerate
@@ -2248,8 +2405,8 @@ nuevaLinea() + 7
 \end_layout
 
 \begin_layout Enumerate
-¿Se pueden escribir funciones que entreguen resultados, o estamos limitados
- a funciones tan simples como 
+¿Se pueden escribir funciones que entreguen resultados,
+ o estamos limitados a funciones tan simples como 
 \family typewriter
 nuevaLinea
 \family default
@@ -2261,11 +2418,11 @@ imprimaDoble
 \end_layout
 
 \begin_layout Standard
-La respuesta a la tercera pregunta es afirmativa y lo lograremos en el capítulo
- 
+La respuesta a la tercera pregunta es afirmativa y lo lograremos en el capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "funcReturn"
+nolink "false"
 
 \end_inset
 
@@ -2288,12 +2445,12 @@ Llamada a función:
 \end_inset
 
  sentencia que ejecuta una función.
- Consiste en el nombre de la función seguido por una lista de argumentos
- encerrados entre paréntesis.
+ Consiste en el nombre de la función seguido por una lista de argumentos encerrados entre paréntesis.
 \end_layout
 
 \begin_layout Description
-Argumento: valor que se le da a una función cuando se la está llamando.
+Argumento:
+ valor que se le da a una función cuando se la está llamando.
  Este valor se le asigna al parámetro correspondiente en la función.
 \end_layout
 
@@ -2309,8 +2466,8 @@ Valor de retorno:
 \end_inset
 
  es el resultado de una función.
- Si una llamada a función se usa como una expresión, el valor de ésta es
- el valor de retorno de la función.
+ Si una llamada a función se usa como una expresión,
+ el valor de ésta es el valor de retorno de la función.
 \end_layout
 
 \begin_layout Description
@@ -2324,8 +2481,7 @@ Conversión de tipo:
 
 \end_inset
 
- sentencia explícita que toma un valor de un tipo y calcula el valor correspondi
-ente de otro tipo.
+ sentencia explícita que toma un valor de un tipo y calcula el valor correspondiente de otro tipo.
 \end_layout
 
 \begin_layout Description
@@ -2339,12 +2495,12 @@ Coerción de tipos:
 
 \end_inset
 
- conversión de tipo que se hace automáticamente de acuerdo a las reglas
- de coerción del lenguaje de programación.
+ conversión de tipo que se hace automáticamente de acuerdo a las reglas de coerción del lenguaje de programación.
 \end_layout
 
 \begin_layout Description
-Módulo: archivo que contiene una colección de funciones y clases relacionadas.
+Módulo:
+ archivo que contiene una colección de funciones y clases relacionadas.
 \end_layout
 
 \begin_layout Description
@@ -2358,16 +2514,14 @@ Notación punto:
 
 \end_inset
 
- sintaxis para llamar una función que se encuentra en otro módulo, especificando
- el nombre módulo seguido por un punto y el nombre de la función (sin dejar
- espacios intermedios).
+ sintaxis para llamar una función que se encuentra en otro módulo,
+ especificando el nombre módulo seguido por un punto y el nombre de la función (sin dejar espacios intermedios).
 \end_layout
 
 \begin_layout Description
-Función: es la secuencia de sentencias que ejecuta alguna operación útil
- y que tiene un nombre definido.
- Las funciones pueden tomar o no tomar parámetros y pueden entregar o no
- entregar un resultado.
+Función:
+ es la secuencia de sentencias que ejecuta alguna operación útil y que tiene un nombre definido.
+ Las funciones pueden tomar o no tomar parámetros y pueden entregar o no entregar un resultado.
 \end_layout
 
 \begin_layout Description
@@ -2381,8 +2535,8 @@ Definición de función:
 
 \end_inset
 
- sentencia que crea una nueva función especificando su nombre, parámetros
- y las sentencias que ejecuta.
+ sentencia que crea una nueva función especificando su nombre,
+ parámetros y las sentencias que ejecuta.
 \end_layout
 
 \begin_layout Description
@@ -2400,8 +2554,8 @@ Flujo de ejecución:
 \end_layout
 
 \begin_layout Description
-Parámetro: nombre usado dentro de una función para referirse al valor que
- se pasa como argumento.
+Parámetro:
+ nombre usado dentro de una función para referirse al valor que se pasa como argumento.
 \end_layout
 
 \begin_layout Description
@@ -2430,12 +2584,14 @@ Diagrama de pila:
 
 \end_inset
 
- es la representación gráfica de una pila de funciones, sus variables, y
- los valores a los que se refieren.
+ es la representación gráfica de una pila de funciones,
+ sus variables,
+ y los valores a los que se refieren.
 \end_layout
 
 \begin_layout Description
-Marco: una caja en un diagrama de pila que representa un llamado de función.
+Marco:
+ una caja en un diagrama de pila que representa un llamado de función.
  Contiene las variables locales y los parámetros de la función.
 \end_layout
 
@@ -2450,8 +2606,7 @@ Trazado inverso:
 
 \end_inset
 
- lista de las funciones que se estaban ejecutando y que se imprime cuando
- ocurre un error en tiempo de ejecución.
+ lista de las funciones que se estaban ejecutando y que se imprime cuando ocurre un error en tiempo de ejecución.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2461,6 +2616,8 @@ Trazado inverso:
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2471,6 +2628,8 @@ llamada a función
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2481,6 +2640,8 @@ valor de retorno
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2491,6 +2652,8 @@ argumento
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2501,6 +2664,8 @@ coerción
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2511,6 +2676,8 @@ módulo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2521,6 +2688,8 @@ notación punto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2531,6 +2700,8 @@ función
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2541,6 +2712,8 @@ definición de función
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2551,6 +2724,8 @@ flujo de ejecución
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2561,6 +2736,8 @@ parámetro
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2571,6 +2748,8 @@ variable local
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2581,6 +2760,8 @@ diagrama de pila
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2591,6 +2772,8 @@ marco de función
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2601,6 +2784,8 @@ marco
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2693,28 +2878,24 @@ verb+limpiaPantalla+
 
  esté antes que la definición de función.
  Ejecute el programa y registre qué mensaje de error obtiene.
- ¿Puede establecer una regla sobre las definiciones de funciones y las llamadas
- a función que describa la posición relativa entre ellas en el programa?
+ ¿Puede establecer una regla sobre las definiciones de funciones y las llamadas a función que describa la posición relativa entre ellas en el programa?
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función que imprima la distancia que hay entre dos puntos ubicados
- sobre el eje X de un plano cartesiano conociendo sus coordenadas horizontales.
+Escriba una función que imprima la distancia que hay entre dos puntos ubicados sobre el eje X de un plano cartesiano conociendo sus coordenadas horizontales.
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función que imprima la distancia que hay entre dos puntos ubicados
- sobre el eje Y de un plano cartesiano conociendo sus coordenadas verticales.
+Escriba una función que imprima la distancia que hay entre dos puntos ubicados sobre el eje Y de un plano cartesiano conociendo sus coordenadas verticales.
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función que imprima la distancia que hay entre dos puntos en
- un plano coordenado, recordando el teorema de Pitágoras.
+Escriba una función que imprima la distancia que hay entre dos puntos en un plano coordenado,
+ recordando el teorema de Pitágoras.
 \end_layout
 
 \begin_layout Enumerate
-Tome la solución del último ejercicio del capítulo anterior y conviértala
- en una función que imprima la nota definitiva de su curso de programación.
+Tome la solución del último ejercicio del capítulo anterior y conviértala en una función que imprima la nota definitiva de su curso de programación.
 \end_layout
 
 \begin_layout Standard

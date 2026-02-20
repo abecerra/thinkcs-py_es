@@ -1,32 +1,11 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass book
 \begin_preamble
-% LyX source for the spanish traslation of the textbook ``How to think like a computer scientist''
-% Copyright (c)  2001,2002  Allen B. Downey.
-% Traslation to spanish completed by
-% Andrés Becerra Sandoval
-% abecerra@cic.javerianacali.edu.co
-
-
-% Permission is granted to copy, distribute and/or modify this
-% document under the terms of the GNU Free Documentation License,
-% Version 1.1  or any later version published by the Free Software
-% Foundation; with the Invariant Sections being "Contributor List",
-% with no Front-Cover Texts, and with no Back-Cover Texts. A copy of
-% the license is included in the section entitled "GNU Free
-% Documentation License".
-
-% This distribution includes a file named fdl.tex that contains the text
-% of the GNU Free Documentation License.  If it is missing, you can obtain
-% it from www.gnu.org or by writing to the Free Software Foundation,
-% Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
-%
-
 
 \usepackage[text={5in,7in},centering,twoside,letterpaper]{geometry}
 %\usepackage[utf8]{inputenc}
@@ -101,11 +80,11 @@
 \begin_modules
 customHeadersFooters
 \end_modules
-\maintain_unincluded_children true
+\maintain_unincluded_children strict
 \language spanish
 \language_package default
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "palatino" "default"
 \font_sans "kurier" "default"
 \font_typewriter "cmtt" "default"
@@ -113,7 +92,9 @@ customHeadersFooters
 \font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -123,6 +104,8 @@ customHeadersFooters
 \output_sync 1
 \bibtex_command default
 \index_command makeindex
+\float_placement class
+\float_alignment class
 \paperfontsize 10
 \spacing onehalf
 \use_hyperref true
@@ -139,7 +122,7 @@ customHeadersFooters
 \pdf_backref false
 \pdf_pdfusetitle true
 \pdf_quoted_options "urlcolor=blue,linkcolor=black"
-\papersize letterpaper
+\papersize letter
 \use_geometry false
 \use_package amsmath 1
 \use_package amssymb 0
@@ -160,7 +143,9 @@ customHeadersFooters
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -176,11 +161,16 @@ customHeadersFooters
 \papercolumns 1
 \papersides 2
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -200,25 +190,34 @@ How to think like a computer scientist''
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -283,6 +282,7 @@ LatexCommand tableofcontents
 \begin_inset CommandInset include
 LatexCommand input
 filename "foreword.lyx"
+literal "true"
 
 \end_inset
 
@@ -297,6 +297,7 @@ filename "foreword.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "preface.lyx"
+literal "true"
 
 \end_inset
 
@@ -314,6 +315,7 @@ filename "preface.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "contrib.lyx"
+literal "true"
 
 \end_inset
 
@@ -328,6 +330,7 @@ filename "contrib.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "traduccion.lyx"
+literal "true"
 
 \end_inset
 
@@ -365,6 +368,7 @@ mainmatter
 \begin_inset CommandInset include
 LatexCommand input
 filename "solucionProblemas.lyx"
+literal "true"
 
 \end_inset
 
@@ -382,6 +386,7 @@ filename "solucionProblemas.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "elCaminoHaciaElPrograma.lyx"
+literal "true"
 
 \end_inset
 
@@ -399,6 +404,7 @@ filename "elCaminoHaciaElPrograma.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "variablesExpresionesSentencias.lyx"
+literal "true"
 
 \end_inset
 
@@ -416,6 +422,7 @@ filename "variablesExpresionesSentencias.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "funciones.lyx"
+literal "true"
 
 \end_inset
 
@@ -427,6 +434,7 @@ filename "funciones.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "condicionalesYRecursion.lyx"
+literal "true"
 
 \end_inset
 
@@ -444,6 +452,7 @@ filename "condicionalesYRecursion.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "funcionesFructiferas.lyx"
+literal "true"
 
 \end_inset
 
@@ -458,6 +467,7 @@ filename "funcionesFructiferas.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "iteracion.lyx"
+literal "true"
 
 \end_inset
 
@@ -472,6 +482,7 @@ filename "iteracion.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "cadenas.lyx"
+literal "true"
 
 \end_inset
 
@@ -486,6 +497,7 @@ filename "cadenas.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "listas.lyx"
+literal "true"
 
 \end_inset
 
@@ -500,6 +512,7 @@ filename "listas.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "interludioTriqui.lyx"
+literal "true"
 
 \end_inset
 
@@ -514,6 +527,7 @@ filename "interludioTriqui.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "tuplas.lyx"
+literal "true"
 
 \end_inset
 
@@ -528,6 +542,7 @@ filename "tuplas.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "diccionarios.lyx"
+literal "true"
 
 \end_inset
 
@@ -542,6 +557,7 @@ filename "diccionarios.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "archivosYExcepciones.lyx"
+literal "true"
 
 \end_inset
 
@@ -556,6 +572,7 @@ filename "archivosYExcepciones.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "clasesYObjetos.lyx"
+literal "true"
 
 \end_inset
 
@@ -570,6 +587,7 @@ filename "clasesYObjetos.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "clasesYFunciones.lyx"
+literal "true"
 
 \end_inset
 
@@ -584,6 +602,7 @@ filename "clasesYFunciones.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "clasesYMetodos.lyx"
+literal "true"
 
 \end_inset
 
@@ -598,6 +617,7 @@ filename "clasesYMetodos.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "interludioFraccion.lyx"
+literal "true"
 
 \end_inset
 
@@ -612,6 +632,7 @@ filename "interludioFraccion.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "conjuntosDeObjetos.lyx"
+literal "true"
 
 \end_inset
 
@@ -626,6 +647,7 @@ filename "conjuntosDeObjetos.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "herencia.lyx"
+literal "true"
 
 \end_inset
 
@@ -640,6 +662,7 @@ filename "herencia.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "interludioTriquiGUI.lyx"
+literal "true"
 
 \end_inset
 
@@ -655,6 +678,7 @@ filename "interludioTriquiGUI.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "depuracion.lyx"
+literal "true"
 
 \end_inset
 
@@ -669,6 +693,7 @@ filename "depuracion.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "lecturasRecomendadas.lyx"
+literal "true"
 
 \end_inset
 
@@ -683,6 +708,7 @@ filename "lecturasRecomendadas.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "fdl.lyx"
+literal "true"
 
 \end_inset
 
@@ -697,6 +723,7 @@ filename "fdl.lyx"
 \begin_inset CommandInset include
 LatexCommand input
 filename "gfdles.lyx"
+literal "true"
 
 \end_inset
 

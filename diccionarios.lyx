@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -15,10 +15,10 @@
 \newcommand{\adjustpage}[1]{\enlargethispage{#1\baselineskip}}
 \end_preamble
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -27,9 +27,13 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -59,6 +63,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -67,15 +74,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -90,30 +105,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -127,6 +151,8 @@ Diccionarios
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -137,6 +163,8 @@ diccionarios
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -147,6 +175,8 @@ diccionario
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -157,6 +187,8 @@ tipo de datos!diccionario
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -167,6 +199,8 @@ clave
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -177,6 +211,8 @@ par clave-valor
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -189,8 +225,8 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Los tipos compuestos que ha visto hasta ahora (cadenas, listas y tuplas)
- usan enteros como índices.
+Los tipos compuestos que ha visto hasta ahora (cadenas,
+ listas y tuplas) usan enteros como índices.
  Si usted intenta usar cualquier otro tipo como índice provocará un error.
 \end_layout
 
@@ -199,11 +235,12 @@ Los
 \series bold
 diccionarios
 \series default
- son similares a otros tipos compuestos, excepto en que pueden usar como
- índice cualquier tipo inmutable.
- A modo de ejemplo, crearemos un diccionario que traduzca palabras inglesas
- al español.
- En este diccionario, los índices son cadenas 
+ son similares a otros tipos compuestos,
+ excepto en que pueden usar como índice cualquier tipo inmutable.
+ A modo de ejemplo,
+ crearemos un diccionario que traduzca palabras inglesas al español.
+ En este diccionario,
+ los índices son cadenas 
 \family typewriter
 (strings)
 \family default
@@ -211,8 +248,7 @@ diccionarios
 \end_layout
 
 \begin_layout Standard
-Una forma de crear un diccionario es empezar con el diccionario vacío y
- añadir elementos.
+Una forma de crear un diccionario es empezar con el diccionario vacío y añadir elementos.
  El diccionario vacío se expresa como 
 \family typewriter
 {}
@@ -222,17 +258,17 @@ Una forma de crear un diccionario es empezar con el diccionario vacío y
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> ing_a_esp = {}
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> ing_a_esp['one'] = 'uno'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> ing_a_esp['two'] = 'dos'
 \end_layout
@@ -247,20 +283,24 @@ La primera asignación crea un diccionario llamado
 \family typewriter
 ing_a_esp
 \family default
-; las otras asignaciones añaden nuevos elementos al diccionario.
+;
+ las otras asignaciones añaden nuevos elementos al diccionario.
  Podemos desplegar el valor actual del diccionario del modo habitual:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(ing_a_esp)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-{'one': 'uno', 'two': 'dos'}
+{'one':
+ 'uno',
+ 'two':
+ 'dos'}
 \end_layout
 
 \end_inset
@@ -271,11 +311,13 @@ status open
 \begin_layout Standard
 Los elementos de un diccionario aparecen en una lista separada por comas.
  Cada entrada contiene un índice y un valor separado por dos puntos (:).
- En un diccionario, los índices se llaman 
+ En un diccionario,
+ los índices se llaman 
 \series bold
 claves
 \series default
-, por eso los elementos se llaman 
+,
+ por eso los elementos se llaman 
 \series bold
 pares clave-valor
 \series default
@@ -283,15 +325,19 @@ pares clave-valor
 \end_layout
 
 \begin_layout Standard
-Otra forma de crear un diccionario es dando una lista de pares clave-valor
- con la misma sintaxis que la salida del ejemplo anterior:
+Otra forma de crear un diccionario es dando una lista de pares clave-valor con la misma sintaxis que la salida del ejemplo anterior:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> ing_a_esp={'one': 'uno', 'two': 'dos', 'three': 'tres'}
+>>> ing_a_esp={'one':
+ 'uno',
+ 'two':
+ 'dos',
+ 'three':
+ 'tres'}
 \end_layout
 
 \end_inset
@@ -304,19 +350,25 @@ Si volvemos a imprimir el valor de
 \family typewriter
 ing_a_esp
 \family default
-, nos llevamos una sorpresa:
+,
+ nos llevamos una sorpresa:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(ing_a_esp)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-{'one': 'uno', 'three': 'tres', 'two': 'dos'}
+{'one':
+ 'uno',
+ 'three':
+ 'tres',
+ 'two':
+ 'dos'}
 \end_layout
 
 \end_inset
@@ -325,20 +377,22 @@ status open
 \end_layout
 
 \begin_layout Standard
-¡Los pares clave-valor no están en orden! Afortunadamente, no necesitamos
- preocuparnos por el orden, ya que los elementos de un diccionario nunca
- se indexan con índices enteros.
- En lugar de eso, usamos las claves para buscar los valores correspondientes:
+¡Los pares clave-valor no están en orden!
+ Afortunadamente,
+ no necesitamos preocuparnos por el orden,
+ ya que los elementos de un diccionario nunca se indexan con índices enteros.
+ En lugar de eso,
+ usamos las claves para buscar los valores correspondientes:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(ing_a_esp['two'])
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 'dos'
 \end_layout
@@ -366,6 +420,8 @@ Operaciones sobre diccionarios
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -376,6 +432,8 @@ diccionario!operaciones
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -393,57 +451,77 @@ La sentencia
 del
 \family default
  elimina un par clave-valor de un diccionario.
- Por ejemplo, el diccionario siguiente contiene los nombres de varias frutas
- y el número de esas frutas en un almacén:
+ Por ejemplo,
+ el diccionario siguiente contiene los nombres de varias frutas y el número de esas frutas en un almacén:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> inventario = {'manzanas': 430, 'bananas': 312, 
+>>> inventario = {'manzanas':
+ 430,
+ 'bananas':
+ 312,
+ 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-       'naranjas': 525,   'peras': 217}
+       'naranjas':
+ 525,
+   'peras':
+ 217}
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(inventario)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-{'naranjas': 525, 'manzanas': 430, 'peras': 217, 
+{'naranjas':
+ 525,
+ 'manzanas':
+ 430,
+ 'peras':
+ 217,
+ 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
- 'bananas': 312}
+ 'bananas':
+ 312}
 \end_layout
 
 \end_inset
 
- Si alguien compra todas las peras, podemos eliminar la entrada del diccionario:
+ Si alguien compra todas las peras,
+ podemos eliminar la entrada del diccionario:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> del inventario['peras']
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(inventario)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-{'naranjas': 525, 'manzanas': 430, 'bananas': 312}
+{'naranjas':
+ 525,
+ 'manzanas':
+ 430,
+ 'bananas':
+ 312}
 \end_layout
 
 \end_inset
@@ -452,30 +530,37 @@ status open
 \end_layout
 
 \begin_layout Standard
-O si esperamos recibir más peras pronto, podemos simplemente cambiar el
- inventario asociado con las peras:
+O si esperamos recibir más peras pronto,
+ podemos simplemente cambiar el inventario asociado con las peras:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> inventario['peras'] = 0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(inventario)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-{'naranjas': 525, 'manzanas': 430, 'peras': 0, 
+{'naranjas':
+ 525,
+ 'manzanas':
+ 430,
+ 'peras':
+ 0,
+ 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
- 'bananas': 312}
+ 'bananas':
+ 312}
 \end_layout
 
 \end_inset
@@ -484,17 +569,18 @@ status open
 \family typewriter
 len
 \family default
- también funciona con diccionarios; devuelve el número de pares clave-valor:
+ también funciona con diccionarios;
+ devuelve el número de pares clave-valor:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> len(inventario)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 4
 \end_layout
@@ -510,6 +596,8 @@ Métodos del diccionario
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -520,6 +608,8 @@ diccionario!métodos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -530,6 +620,8 @@ método
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -540,6 +632,8 @@ método!invocación
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -550,6 +644,8 @@ diccionarios!métodos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -560,6 +656,8 @@ métodos sobre diccionarios
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -581,7 +679,8 @@ keys
 \family typewriter
 keys(ing_a_esp)
 \family default
-, usamos la sintaxis para un método 
+,
+ usamos la sintaxis para un método 
 \family typewriter
 ing_a_esp.keys()
 \family default
@@ -590,6 +689,8 @@ ing_a_esp.keys()
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -606,23 +707,28 @@ notación de punto
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> ing_a_esp.keys()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-['one', 'three', 'two']
+['one',
+ 'three',
+ 'two']
 \end_layout
 
 \end_inset
 
- Esta forma de notación punto especifica el nombre de la función, 
+ Esta forma de notación punto especifica el nombre de la función,
+ 
 \family typewriter
 keys
 \family default
-, y el nombre del objeto al que se va a aplicar la función, 
+,
+ y el nombre del objeto al que se va a aplicar la función,
+ 
 \family typewriter
 ing_a_esp
 \family default
@@ -635,19 +741,22 @@ El método
 \family typewriter
 values
 \family default
- es similar; devuelve una lista de los valores del diccionario:
+ es similar;
+ devuelve una lista de los valores del diccionario:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> ing_a_esp.values()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-['uno', 'tres', 'dos']
+['uno',
+ 'tres',
+ 'dos']
 \end_layout
 
 \end_inset
@@ -660,19 +769,24 @@ El método
 \family typewriter
 items
 \family default
- devuelve ambos, una lista de tuplas con los pares clave-valor del diccionario:
+ devuelve ambos,
+ una lista de tuplas con los pares clave-valor del diccionario:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> ing_a_esp.items()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-[('one','uno'), ('three', 'tres'), ('two', 'dos')]
+[('one','uno'),
+ ('three',
+ 'tres'),
+ ('two',
+ 'dos')]
 \end_layout
 
 \end_inset
@@ -687,7 +801,8 @@ La sintaxis nos proporciona información muy útil acerca del tipo de datos.
 \end_layout
 
 \begin_layout Standard
-Para averiguar si una clave aparece en el diccionario, se puede usar 
+Para averiguar si una clave aparece en el diccionario,
+ se puede usar 
 \family typewriter
 in
 \family default
@@ -696,22 +811,22 @@ in
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> 'one' in ing_a_esp
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 True
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> 'deux' in ing_a_esp
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 False
 \end_layout
@@ -723,6 +838,8 @@ False
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -740,6 +857,8 @@ Copiado y alias
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -750,6 +869,8 @@ asignación de alias
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -760,6 +881,8 @@ copiado
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -773,18 +896,18 @@ clonado
 
 \begin_layout Standard
 Usted debe estar atento a los alias debido a la mutabilidad de los diccionarios.
- Si dos variables se refieren al mismo objeto los cambios en una afectan
- a la otra.
+ Si dos variables se refieren al mismo objeto los cambios en una afectan a la otra.
 \end_layout
 
 \begin_layout Standard
-Si quiere modificar un diccionario y mantener una copia del original, se
- puede usar el método 
+Si quiere modificar un diccionario y mantener una copia del original,
+ se puede usar el método 
 \family typewriter
 copy
 \family default
 .
- Por ejemplo, 
+ Por ejemplo,
+ 
 \family typewriter
 opuestos
 \family default
@@ -793,22 +916,27 @@ opuestos
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> opuestos = {'arriba': 'abajo', 'derecho': 'torcido', 
+>>> opuestos = {'arriba':
+ 'abajo',
+ 'derecho':
+ 'torcido',
+ 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  'verdadero': 'falso'}
+  'verdadero':
+ 'falso'}
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> alias = opuestos
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> copia = opuestos.copy()
 \end_layout
@@ -827,7 +955,8 @@ alias
 \family typewriter
 opuestos
 \family default
- se refieren al mismo objeto; 
+ se refieren al mismo objeto;
+ 
 \family typewriter
 copia
 \family default
@@ -836,7 +965,8 @@ copia
 \family typewriter
 alias
 \family default
-, 
+,
+ 
 \family typewriter
 opuestos
 \family default
@@ -845,17 +975,17 @@ opuestos
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> alias['derecho'] = 'sentado'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> opuestos['derecho']
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 'sentado'
 \end_layout
@@ -870,7 +1000,8 @@ Si modificamos
 \family typewriter
 copia
 \family default
-, 
+,
+ 
 \family typewriter
 opuestos
 \family default
@@ -879,17 +1010,17 @@ opuestos
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> copia['derecho'] = 'privilegio'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> opuestos['derecho']
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 'sentado'
 \end_layout
@@ -905,6 +1036,8 @@ Matrices dispersas
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -915,6 +1048,8 @@ matriz!dispersa
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -925,6 +1060,8 @@ lista anidada
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -945,12 +1082,13 @@ En la Sección
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "nested lists"
+nolink "false"
 
 \end_inset
 
  usamos una lista de listas para representar una matriz.
- Es una buena opción para una matriz en la que la mayoría de los valores
- es diferente de cero, pero piense en una matriz como ésta:
+ Es una buena opción para una matriz en la que la mayoría de los valores es diferente de cero,
+ pero piense en una matriz como ésta:
 \end_layout
 
 \begin_layout Standard
@@ -1018,27 +1156,27 @@ La representación de la lista contiene un montón de ceros:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> matriz = [ [0,0,0,1,0],
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            [0,0,0,0,0],
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            [0,2,0,0,0],
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            [0,0,0,0,0],
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            [0,0,0,3,0] ]
 \end_layout
@@ -1050,15 +1188,23 @@ status open
 
 \begin_layout Standard
 Una posible alternativa consiste en usar un diccionario.
- Como claves, podemos usar tuplas que contengan los números de fila y columna.
+ Como claves,
+ podemos usar tuplas que contengan los números de fila y columna.
  Ésta es la representación de la misma matriz por medio de un diccionario:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> matriz = {(0,3): 1, (2, 1): 2, (4, 3): 3}
+>>> matriz = {(0,3):
+ 1,
+ (2,
+ 1):
+ 2,
+ (4,
+ 3):
+ 3}
 \end_layout
 
 \end_inset
@@ -1067,13 +1213,15 @@ status open
 \end_layout
 
 \begin_layout Standard
-Sólo hay tres pares clave-valor, uno para cada elemento de la matriz diferente
- de cero.
- Cada clave es una tupla, y cada valor es un entero.
+Sólo hay tres pares clave-valor,
+ uno para cada elemento de la matriz diferente de cero.
+ Cada clave es una tupla,
+ y cada valor es un entero.
 \end_layout
 
 \begin_layout Standard
-Para acceder a un elemento de la matriz, podemos usar el operador 
+Para acceder a un elemento de la matriz,
+ podemos usar el operador 
 \family typewriter
 []
 \family default
@@ -1082,12 +1230,12 @@ Para acceder a un elemento de la matriz, podemos usar el operador
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> matriz[0,3]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 1
 \end_layout
@@ -1098,20 +1246,21 @@ status open
 \end_layout
 
 \begin_layout Standard
-Observe que la sintaxis para la representación por medio del diccionario
- no es la misma de la representación por medio de la lista anidada.
- En lugar de dos índices enteros, usamos un índice compuesto que es una
- tupla de enteros.
+Observe que la sintaxis para la representación por medio del diccionario no es la misma de la representación por medio de la lista anidada.
+ En lugar de dos índices enteros,
+ usamos un índice compuesto que es una tupla de enteros.
 \end_layout
 
 \begin_layout Standard
 Hay un problema.
- Si apuntamos a un elemento que es cero, se produce un error porque en el
- diccionario no hay una entrada con esa clave:
+ Si apuntamos a un elemento que es cero,
+ se produce un error porque en el diccionario no hay una entrada con esa clave:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1125,14 +1274,16 @@ error en tiempo de ejecución
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> matriz[1,3]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-KeyError: (1, 3)
+KeyError:
+ (1,
+ 3)
 \end_layout
 
 \end_inset
@@ -1150,12 +1301,13 @@ get
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> matriz.get((0,3), 0)
+>>> matriz.get((0,3),
+ 0)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 1
 \end_layout
@@ -1166,8 +1318,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-El primer argumento es la clave; el segundo argumento es el valor que debe
- devolver 
+El primer argumento es la clave;
+ el segundo argumento es el valor que debe devolver 
 \family typewriter
 get
 \family default
@@ -1176,12 +1328,13 @@ get
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> matriz.get((1,3), 0)
+>>> matriz.get((1,3),
+ 0)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 0
 \end_layout
@@ -1206,6 +1359,8 @@ Pistas
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1216,6 +1371,8 @@ pista
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1240,21 +1397,27 @@ fibonacci
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "one more example"
+nolink "false"
 
 \end_inset
 
-, es posible que haya notado que cuanto más grande es el argumento que recibe,
+,
+ es posible que haya notado que cuanto más grande es el argumento que recibe,
  más tiempo le cuesta ejecutarse.
- De hecho, el tiempo de ejecución aumenta muy rápidamente.
- En nuestra máquina, 
+ De hecho,
+ el tiempo de ejecución aumenta muy rápidamente.
+ En nuestra máquina,
+ 
 \family typewriter
 fibonacci(20)
 \family default
- acaba instantáneamente, 
+ acaba instantáneamente,
+ 
 \family typewriter
 fibonacci(30)
 \family default
- tarda más o menos un segundo, y 
+ tarda más o menos un segundo,
+ y 
 \family typewriter
 fibonacci(40)
 \family default
@@ -1262,7 +1425,8 @@ fibonacci(40)
 \end_layout
 
 \begin_layout Standard
-Para entender por qué, observe este 
+Para entender por qué,
+ observe este 
 \series bold
 gráfico de llamadas
 \series default
@@ -1337,9 +1501,9 @@ afterfig
 \end_layout
 
 \begin_layout Standard
-Un gráfico de llamadas muestra un conjunto de cajas de función con líneas
- que conectan cada caja con las cajas de las funciones a las que llama.
- En lo alto del gráfico, 
+Un gráfico de llamadas muestra un conjunto de cajas de función con líneas que conectan cada caja con las cajas de las funciones a las que llama.
+ En lo alto del gráfico,
+ 
 \family typewriter
 fibonacci
 \family default
@@ -1360,7 +1524,8 @@ n=3
 n=2
 \family default
 .
- A su vez, 
+ A su vez,
+ 
 \family typewriter
 fibonacci
 \family default
@@ -1386,6 +1551,8 @@ n=1
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1396,6 +1563,8 @@ caja de función
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1406,6 +1575,8 @@ caja
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1427,15 +1598,13 @@ fibonacci(0)
 fibonacci(1)
 \family default
 .
- Esta función es una solución ineficiente para el problema, y empeora mucho
- a medida que crece el argumento.
+ Esta función es una solución ineficiente para el problema,
+ y empeora mucho a medida que crece el argumento.
 \end_layout
 
 \begin_layout Standard
-Una buena solución es llevar un registro de los valores que ya se han calculado
- almacenándolos en un diccionario.
- A un valor que ya ha sido calculado y almacenado para un uso posterior
- se le llama 
+Una buena solución es llevar un registro de los valores que ya se han calculado almacenándolos en un diccionario.
+ A un valor que ya ha sido calculado y almacenado para un uso posterior se le llama 
 \series bold
 pista
 \series default
@@ -1449,46 +1618,47 @@ fibonacci
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-anteriores = {0:1, 1:1}
+anteriores = {0:1,
+ 1:1}
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def fibonacci(n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if anteriores.has_key(n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return anteriores[n]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     nuevoValor = fibonacci(n-1) + fibonacci(n-2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     anteriores[n] = nuevoValor
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return nuevoValor
 \end_layout
@@ -1504,8 +1674,8 @@ El diccionario llamado
 anteriores
 \family default
  mantiene un registro de los valores de Fibonacci que ya conocemos.
- El programa comienza con sólo dos pares: 0 corresponde a 1 y 1 corresponde
- a 1.
+ El programa comienza con sólo dos pares:
+ 0 corresponde a 1 y 1 corresponde a 1.
 \end_layout
 
 \begin_layout Standard
@@ -1514,9 +1684,10 @@ Siempre que se llama a
 fibonacci
 \family default
  comprueba si el diccionario contiene el resultado ya calculado.
- Si está ahí, la función puede devolver el valor inmediatamente sin hacer
- más llamadas recursivas.
- Si no, tiene que calcular el nuevo valor.
+ Si está ahí,
+ la función puede devolver el valor inmediatamente sin hacer más llamadas recursivas.
+ Si no,
+ tiene que calcular el nuevo valor.
  El nuevo valor se añade al diccionario antes de que la función retorne.
 \end_layout
 
@@ -1525,7 +1696,8 @@ Con esta versión de
 \family typewriter
 fibonacci
 \family default
-, nuestra máquina puede calcular 
+,
+ nuestra máquina puede calcular 
 \family typewriter
 fibonacci(40)
 \family default
@@ -1534,11 +1706,14 @@ fibonacci(40)
 \family typewriter
 fibonacci(50)
 \family default
-, nos encontramos con otro problema:
+,
+ nos encontramos con otro problema:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1549,6 +1724,8 @@ error en tiempo de ejecución
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1565,14 +1742,15 @@ desbordamiento
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> fibonacci(50)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-OverflowError: integer addition
+OverflowError:
+ integer addition
 \end_layout
 
 \end_inset
@@ -1581,15 +1759,17 @@ OverflowError: integer addition
 \end_layout
 
 \begin_layout Standard
-La respuesta, como se verá en un momento, es 20.365.011.074.
- El problema es que este número es demasiado grande para caber en un entero
- de Python.
+La respuesta,
+ como se verá en un momento,
+ es 20.365.011.074.
+ El problema es que este número es demasiado grande para caber en un entero de Python.
  Se 
 \series bold
 desborda
 \series default
 .
- Afortunadamente, hay una solución fácil para este problema.
+ Afortunadamente,
+ hay una solución fácil para este problema.
 \end_layout
 
 \begin_layout Section
@@ -1598,6 +1778,8 @@ Enteros largos
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1608,6 +1790,8 @@ enteros largos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1618,6 +1802,8 @@ tipos de datos!enteros largos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1683,12 +1869,12 @@ status collapsed
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(1L)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 <type 'long int'>
 \end_layout
@@ -1713,32 +1899,32 @@ long
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> long(1)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 1L
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> long(3.9)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 3L
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> long('57')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 57L
 \end_layout
@@ -1753,7 +1939,8 @@ Todas las operaciones matemáticas funcionan sobre los datos de tipo
 \family typewriter
 long int
 \family default
-, así que no tenemos que hacer mucho para adaptar 
+,
+ así que no tenemos que hacer mucho para adaptar 
 \family typewriter
 fibonacci
 \family default
@@ -1762,17 +1949,18 @@ fibonacci
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> anteriores = {0:1L, 1:1L}
+>>> anteriores = {0:1L,
+ 1:1L}
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> fibonacci(50)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 20365011074L
 \end_layout
@@ -1796,11 +1984,14 @@ fibonacci
 \family typewriter
 long int
 \family default
-, así que todos los números subsiguientes lo serán también.
+,
+ así que todos los números subsiguientes lo serán también.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1811,6 +2002,8 @@ forzado de tipo de datos
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1828,6 +2021,8 @@ Contar letras
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1838,6 +2033,8 @@ recuento
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1848,6 +2045,8 @@ histograma
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1868,20 +2067,20 @@ En el capítulo
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "strings"
+nolink "false"
 
 \end_inset
 
- escribimos una función que contaba el número de apariciones de una letra
- en una cadena.
- Una versión más genérica de este problema es crear un histograma de las
- letras de la cadena, o sea, cuántas veces aparece cada letra.
+ escribimos una función que contaba el número de apariciones de una letra en una cadena.
+ Una versión más genérica de este problema es crear un histograma de las letras de la cadena,
+ o sea,
+ cuántas veces aparece cada letra.
 \end_layout
 
 \begin_layout Standard
 Ese histograma podría ser útil para comprimir un archivo de texto.
- Como las diferentes letras aparecen con frecuencias distintas, podemos
- comprimir un archivo usando códigos cortos para las letras más habituales
- y códigos más largos para las que aparecen con menor frecuencia.
+ Como las diferentes letras aparecen con frecuencias distintas,
+ podemos comprimir un archivo usando códigos cortos para las letras más habituales y códigos más largos para las que aparecen con menor frecuencia.
 \end_layout
 
 \begin_layout Standard
@@ -1890,36 +2089,44 @@ Los diccionarios facilitan una forma elegante de generar un histograma:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> cuentaLetras = {}
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> for letra in "Mississippi":
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-      cuentaLetras[letra] = cuentaLetras.get(letra, 0)+1
+      cuentaLetras[letra] = cuentaLetras.get(letra,
+ 0)+1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> cuentaLetras
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-{'M': 1, 's': 4, 'p': 2, 'i': 4}
+{'M':
+ 1,
+ 's':
+ 4,
+ 'p':
+ 2,
+ 'i':
+ 4}
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1929,10 +2136,12 @@ status open
 \end_layout
 
 \begin_layout Standard
-Inicialmente, tenemos un diccionario vacío.
- Para cada letra de la cadena, buscamos el recuento actual (posiblemente
- cero) y la incrementamos.
- Al final, el diccionario contiene pares de letras y sus frecuencias.
+Inicialmente,
+ tenemos un diccionario vacío.
+ Para cada letra de la cadena,
+ buscamos el recuento actual (posiblemente cero) y la incrementamos.
+ Al final,
+ el diccionario contiene pares de letras y sus frecuencias.
 \end_layout
 
 \begin_layout Standard
@@ -1950,24 +2159,31 @@ sort
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> itemsLetras = cuentaLetras.items()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> list(itemsLetras).sort()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(itemsLetras)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-[('M', 1), ('i', 4), ('p', 2), ('s', 4)]
+[('M',
+ 1),
+ ('i',
+ 4),
+ ('p',
+ 2),
+ ('s',
+ 4)]
 \end_layout
 
 \end_inset
@@ -1980,16 +2196,19 @@ Usted ya ha visto el método
 \family typewriter
 items
 \family default
- aplicable a los diccionarios; 
+ aplicable a los diccionarios;
+ 
 \family typewriter
 sort
 \family default
  es un método aplicable a listas.
- Hay varios más, como 
+ Hay varios más,
+ como 
 \family typewriter
 append
 \family default
-, 
+,
+ 
 \family typewriter
 extend
 \family default
@@ -2003,6 +2222,8 @@ reverse
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2013,6 +2234,8 @@ método!lista
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2029,14 +2252,15 @@ Glosario
 \end_layout
 
 \begin_layout Description
-Diccionario: es una colección de pares clave-valor que establece una corresponde
-ncia entre claves y valores.
- Las claves pueden ser de cualquier tipo inmutable, los valores pueden ser
- de cualquier tipo.
+Diccionario:
+ es una colección de pares clave-valor que establece una correspondencia entre claves y valores.
+ Las claves pueden ser de cualquier tipo inmutable,
+ los valores pueden ser de cualquier tipo.
 \end_layout
 
 \begin_layout Description
-Clave: un valor que se usa para buscar una entrada en un diccionario.
+Clave:
+ un valor que se usa para buscar una entrada en un diccionario.
 \end_layout
 
 \begin_layout Description
@@ -2050,7 +2274,8 @@ Par clave-valor:
 
 \end_inset
 
- uno de los elementos de un diccionario, también llamado 
+ uno de los elementos de un diccionario,
+ también llamado 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2062,8 +2287,8 @@ asociación
 \end_layout
 
 \begin_layout Description
-Método: tipo de función al que se llama con una sintaxis diferente y al
- que se invoca 
+Método:
+ tipo de función al que se llama con una sintaxis diferente y al que se invoca 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2075,17 +2300,19 @@ sobre
 \end_layout
 
 \begin_layout Description
-Invocar: llamar a un método.
+Invocar:
+ llamar a un método.
 \end_layout
 
 \begin_layout Description
-Pista: almacenamiento temporal de un valor precalculado, para evitar cálculos
- redundantes.
+Pista:
+ almacenamiento temporal de un valor precalculado,
+ para evitar cálculos redundantes.
 \end_layout
 
 \begin_layout Description
-Desbordamiento: resultado numérico que es demasiado grande para representarse
- en formato numérico.
+Desbordamiento:
+ resultado numérico que es demasiado grande para representarse en formato numérico.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2095,6 +2322,8 @@ Desbordamiento: resultado numérico que es demasiado grande para representarse
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2105,6 +2334,8 @@ diccionario
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2115,6 +2346,8 @@ clave
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2125,6 +2358,8 @@ par clave-valor
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2135,6 +2370,8 @@ pista
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2145,6 +2382,8 @@ método
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2162,11 +2401,13 @@ Ejercicios
 \end_layout
 
 \begin_layout Standard
-Para cada función, agregue chequeo de tipos y pruebas unitarias.
+Para cada función,
+ agregue chequeo de tipos y pruebas unitarias.
 \end_layout
 
 \begin_layout Enumerate
-Como ejercicio, modifique 
+Como ejercicio,
+ modifique 
 \family typewriter
 factorial
 \family default
@@ -2178,22 +2419,19 @@ long int
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función booleana que averigüe si una lista tiene algún elemento
- duplicado usando un diccionario.
+Escriba una función booleana que averigüe si una lista tiene algún elemento duplicado usando un diccionario.
 \end_layout
 
 \begin_layout Enumerate
-Una cadena de ARN puede representarse como una lista en la que los elementos
- pueden ser los caracteres A,C,G y U.
- Escriba una función booleana que averigüe si una lista de caracteres es
- una cadena de ARN válida.
+Una cadena de ARN puede representarse como una lista en la que los elementos pueden ser los caracteres A,C,G y U.
+ Escriba una función booleana que averigüe si una lista de caracteres es una cadena de ARN válida.
 \end_layout
 
 \begin_layout Enumerate
 Generalice la función anterior de forma que reciba una biosecuencia (ADN,
- ARN ó Proteína) y un alfabeto de referencia para averiguar si está bien
- formada.
- Para ADN el alfabeto es A,C,T y G, para las proteínas es:
+ ARN ó Proteína) y un alfabeto de referencia para averiguar si está bien formada.
+ Para ADN el alfabeto es A,C,T y G,
+ para las proteínas es:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2207,8 +2445,7 @@ A,R,N,D,C,E,Q,G,H,I,L,K,M,F,P,S,T,W,Y,V,U,O
 
 \end_deeper
 \begin_layout Enumerate
-Escriba una función que reciba una cadena de ADN y cuente cuantos nucleótidos
- de cada tipo tiene (cuantas veces tiene A,C,G y T) usando un diccionario.
+Escriba una función que reciba una cadena de ADN y cuente cuantos nucleótidos de cada tipo tiene (cuantas veces tiene A,C,G y T) usando un diccionario.
 \end_layout
 
 \begin_layout Enumerate
@@ -2218,26 +2455,29 @@ Generalice la función anterior de forma que reciba una biosecuencia (ADN,
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función producto que reciba una matriz dispersa M, implementada
- con un diccionario, y un número.
- Debe retornar la matriz que resulta de multiplicar cada elemento de M por
- el número.
+Escriba una función producto que reciba una matriz dispersa M,
+ implementada con un diccionario,
+ y un número.
+ Debe retornar la matriz que resulta de multiplicar cada elemento de M por el número.
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función que reciba dos matrices dispersas, implementadas con
- diccionarios, y las sume, produciendo otra matriz dispersa.
+Escriba una función que reciba dos matrices dispersas,
+ implementadas con diccionarios,
+ y las sume,
+ produciendo otra matriz dispersa.
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función que reciba dos matrices dispersas, implementadas con
- diccionarios, y las multiplique, produciendo otra matriz dispersa.
+Escriba una función que reciba dos matrices dispersas,
+ implementadas con diccionarios,
+ y las multiplique,
+ produciendo otra matriz dispersa.
  Base su solución en las dos soluciones anteriores.
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función booleana que reciba una matriz dispersa y averigüe si
- es la matriz identidad.
+Escriba una función booleana que reciba una matriz dispersa y averigüe si es la matriz identidad.
  
 \end_layout
 

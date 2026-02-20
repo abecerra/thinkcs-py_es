@@ -1,15 +1,15 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -18,9 +18,13 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -50,6 +54,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -58,15 +65,23 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -81,30 +96,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -113,7 +137,8 @@ This distribution includes a file named fdl.lyx that contains the text of
 \end_layout
 
 \begin_layout Chapter
-Interludio 1: Triqui 
+Interludio 1:
+ Triqui 
 \end_layout
 
 \begin_layout Standard
@@ -125,6 +150,8 @@ name "cap:inter1:triqui"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -141,15 +168,15 @@ Motivación
 \end_layout
 
 \begin_layout Standard
-Con el fin de poner en práctica los conceptos de los capítulos anteriores
- vamos a desarrollar un sencillo juego de triqui para dos jugadores.
- La idea es seguir un desarrollo iterativo que toma un pequeño programa
- y lo convierte, poco a poco, en un juego de triqui con toda la funcionalidad
- esperada.
+Con el fin de poner en práctica los conceptos de los capítulos anteriores vamos a desarrollar un sencillo juego de triqui para dos jugadores.
+ La idea es seguir un desarrollo iterativo que toma un pequeño programa y lo convierte,
+ poco a poco,
+ en un juego de triqui con toda la funcionalidad esperada.
 \end_layout
 
 \begin_layout Standard
-El código fuente tiene diez versiones, comenzando desde 
+El código fuente tiene diez versiones,
+ comenzando desde 
 \family typewriter
 triqui0.py
 \family default
@@ -175,11 +202,9 @@ status open
 \end_layout
 
 \begin_layout Standard
-Para comprender el capítulo hay que ejecutar cada versión del programa a
- medida que se avanza en la lectura.
- En las secciones a continuación se discuten los fragmentos del programa
- a medida que se van agregando, cada fragmento tiene el nombre del archivo
- en que se introdujo como comentario inicial.
+Para comprender el capítulo hay que ejecutar cada versión del programa a medida que se avanza en la lectura.
+ En las secciones a continuación se discuten los fragmentos del programa a medida que se van agregando,
+ cada fragmento tiene el nombre del archivo en que se introdujo como comentario inicial.
 \end_layout
 
 \begin_layout Section
@@ -188,18 +213,19 @@ Estructuras de datos
 
 \begin_layout Standard
 El código fuente de un programa extenso puede ser difícil de comprender.
- Esta es la razón por la que lo primero que se debe explicar de un software
- son sus estructuras de datos: las variables, listas, matrices que usa para
- representar la información.
+ Esta es la razón por la que lo primero que se debe explicar de un software son sus estructuras de datos:
+ las variables,
+ listas,
+ matrices que usa para representar la información.
 \end_layout
 
 \begin_layout Standard
-En nuestro triqui, el tablero de juego es una matriz de 3 filas y 3 columnas
- que se almacena en una lista de listas usando la representación usual del
- capítulo 
+En nuestro triqui,
+ el tablero de juego es una matriz de 3 filas y 3 columnas que se almacena en una lista de listas usando la representación usual del capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:listas"
+nolink "false"
 
 \end_inset
 
@@ -207,8 +233,7 @@ reference "cap:listas"
 \end_layout
 
 \begin_layout Standard
-Todos los elementos de la matriz serán caracteres de texto con la convención
- que sigue.
+Todos los elementos de la matriz serán caracteres de texto con la convención que sigue.
  Si el elemento de la matriz es:
 \end_layout
 
@@ -233,7 +258,8 @@ status collapsed
 
 \begin_layout Plain Layout
 
-'O': 
+'O':
+ 
 \end_layout
 
 \end_inset
@@ -243,7 +269,8 @@ status collapsed
 \end_layout
 
 \begin_layout Description
-'X': el segundo jugador jugó en esa casilla.
+'X':
+ el segundo jugador jugó en esa casilla.
  
 \end_layout
 
@@ -252,7 +279,8 @@ Inicio
 \end_layout
 
 \begin_layout Standard
-Con la convención anterior, nuestro triqui empieza humildemente:
+Con la convención anterior,
+ nuestro triqui empieza humildemente:
 \end_layout
 
 \begin_layout Standard
@@ -260,85 +288,85 @@ Con la convención anterior, nuestro triqui empieza humildemente:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui0.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def crear():
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     m =  [ [' ',' ',' '],
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            [' ',' ',' '],
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            [' ',' ',' '] ]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return m
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def imprimir(tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     for i in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         print("|"),
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         for j in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             print(tablero[i][j]),
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         print("|")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 triqui = crear()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 imprimir(triqui)
 \end_layout
@@ -349,7 +377,9 @@ imprimir(triqui)
 \end_layout
 
 \begin_layout Standard
-Ahora podemos agregar un ciclo para jugar, sencillo, con un solo jugador:
+Ahora podemos agregar un ciclo para jugar,
+ sencillo,
+ con un solo jugador:
 \begin_inset Newpage pagebreak
 \end_inset
 
@@ -361,37 +391,39 @@ Ahora podemos agregar un ciclo para jugar, sencillo, con un solo jugador:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui1.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 while True:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     print("Juegue jugador O")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    f = input("fila? ")
+    f = input("fila?
+ ")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    c = input("columna? ")
+    c = input("columna?
+ ")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     triqui[f][c] = "O"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     imprimir(triqui)
 \end_layout
@@ -402,8 +434,7 @@ while True:
 \end_layout
 
 \begin_layout Standard
-Agregar al segundo jugador es casi idéntico al fragmento anterior y está
- en el archivo triqui2.py.
+Agregar al segundo jugador es casi idéntico al fragmento anterior y está en el archivo triqui2.py.
 \end_layout
 
 \begin_layout Section
@@ -411,9 +442,9 @@ Agregar al segundo jugador es casi idéntico al fragmento anterior y está
 \end_layout
 
 \begin_layout Standard
-Para verificar si un jugador gana la partida, vamos a empezar por las diagonales
-, implementando un ciclo para la verificar si alguien gana en la diagonal
- principal:
+Para verificar si un jugador gana la partida,
+ vamos a empezar por las diagonales,
+ implementando un ciclo para la verificar si alguien gana en la diagonal principal:
 \end_layout
 
 \begin_layout Standard
@@ -421,32 +452,32 @@ Para verificar si un jugador gana la partida, vamos a empezar por las diagonales
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui3.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def ganaDiagonal1(jugador,tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     for i in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if tablero[i][i]!=jugador:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             return False
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return True
 \end_layout
@@ -457,10 +488,12 @@ def ganaDiagonal1(jugador,tablero):
 \end_layout
 
 \begin_layout Standard
-La idea es que si encuentra algo diferente del símbolo del jugador ('X'
- ó 'O'), retorna False.
- Sino, retorna True.
- La otra diagonal requiere mas trabajo, usamos el hecho de que 
+La idea es que si encuentra algo diferente del símbolo del jugador ('X' ó 'O'),
+ retorna False.
+ Sino,
+ retorna True.
+ La otra diagonal requiere mas trabajo,
+ usamos el hecho de que 
 \family typewriter
 tablero[i][2-i]
 \family default
@@ -473,32 +506,32 @@ tablero[i][2-i]
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui3.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def ganaDiagonal2(jugador,tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     for i in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if tablero[i][2-i]!=jugador:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             return False
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return True
 \end_layout
@@ -509,13 +542,15 @@ def ganaDiagonal2(jugador,tablero):
 \end_layout
 
 \begin_layout Standard
-Falta llamar las funciones en el ciclo del juego, y si alguien gana, terminamos
- el juego con la sentencia 
+Falta llamar las funciones en el ciclo del juego,
+ y si alguien gana,
+ terminamos el juego con la sentencia 
 \family typewriter
 break
 \family default
 .
- Por ejemplo, para el primer jugador:
+ Por ejemplo,
+ para el primer jugador:
 \end_layout
 
 \begin_layout Standard
@@ -523,47 +558,49 @@ break
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui3.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 print("Juegue jugador O")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    f = input("fila? ")
+    f = input("fila?
+ ")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    c = input("columna? ")
+    c = input("columna?
+ ")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     triqui[f][c] = "O"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     imprimir(triqui)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if ganaDiagonal1("O",triqui) or ganaDiagonal2("O",triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         print("Gana el jugador O!!!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         break
 \end_layout
@@ -574,13 +611,14 @@ print("Juegue jugador O")
 \end_layout
 
 \begin_layout Standard
-Agregar las funciones para verificar si alguien gana por alguna fila es
- sencillo.
- Seguimos la misma estructura de las diagonales, creando una función 
+Agregar las funciones para verificar si alguien gana por alguna fila es sencillo.
+ Seguimos la misma estructura de las diagonales,
+ creando una función 
 \family typewriter
 ganaFila
 \family default
-, que verifica si el jugador gana en una de las filas del tablero.
+,
+ que verifica si el jugador gana en una de las filas del tablero.
 \end_layout
 
 \begin_layout Standard
@@ -588,37 +626,37 @@ ganaFila
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui4.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def ganaFila(fila,jugador,tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """Chequea si el jugador gana en la fila dada"""
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     for i in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if tablero[fila][i]!=jugador:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             return False
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return True
 \end_layout
@@ -637,36 +675,36 @@ La función anterior debe ser llamada para todas las filas:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui4.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def ganaHorizontal(jugador,tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     for i in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if ganaFila(i,jugador,tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             return True
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return False
 \end_layout
@@ -679,7 +717,8 @@ def ganaHorizontal(jugador,tablero):
 \begin_layout Standard
 Las funciones para chequear las columnas son muy parecidas.
  Para llamarlas modificamos el ciclo del juego.
- Por ejemplo, para el jugador 'X':
+ Por ejemplo,
+ para el jugador 'X':
 \end_layout
 
 \begin_layout Standard
@@ -687,59 +726,61 @@ Las funciones para chequear las columnas son muy parecidas.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui4.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 while True:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     print("Juegue jugador X")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    f = input("fila? ")
+    f = input("fila?
+ ")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    c = input("columna? ")
+    c = input("columna?
+ ")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     triqui[f][c] = "X"
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     imprimir(triqui)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if ganaDiagonal1("X",triqui) or ganaDiagonal2("X",triqui) or 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
        ganaHorizontal("X",triqui) or ganaVertical("X",triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         print("Gana el jugador X!!!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         break
 \end_layout
@@ -755,6 +796,8 @@ Reestructurando el código
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -767,19 +810,17 @@ reestructuración
 \end_layout
 
 \begin_layout Standard
-Casi siempre que se está desarrollando un programa y uno encuentra que está
- copiando y pegando código para hacer pequeños cambios vale la pena analizar
- si se pueden crear funciones para evitar problemas futuros.
- Una función correcta, que se llama desde varias partes del programa es
- más fácil de mantener que una serie de porciones de código parecidas, pero
- con cambios, que se han copiado, pegado y modificado.
+Casi siempre que se está desarrollando un programa y uno encuentra que está copiando y pegando código para hacer pequeños cambios vale la pena analizar si se pueden crear funciones para evitar problemas futuros.
+ Una función correcta,
+ que se llama desde varias partes del programa es más fácil de mantener que una serie de porciones de código parecidas,
+ pero con cambios,
+ que se han copiado,
+ pegado y modificado.
 \end_layout
 
 \begin_layout Standard
-En el triqui podemos observar que el código dentro del ciclo para el jugador
- 'O' y el 'X' es muy parecido.
- Así que lo podemos poner en una función que tenga como parámetro el símbolo
- del jugador:
+En el triqui podemos observar que el código dentro del ciclo para el jugador 'O' y el 'X' es muy parecido.
+ Así que lo podemos poner en una función que tenga como parámetro el símbolo del jugador:
 \end_layout
 
 \begin_layout Standard
@@ -787,66 +828,69 @@ En el triqui podemos observar que el código dentro del ciclo para el jugador
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui5.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def jugar(jugador,tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    print("Juegue jugador ", jugador)
+    print("Juegue jugador ",
+ jugador)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    f = input("fila? ")
+    f = input("fila?
+ ")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    c = input("columna? ")
+    c = input("columna?
+ ")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     tablero[f][c] = jugador
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     imprimir(triqui)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     diag = ganaDiagonal1(jugador,tablero) or 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            ganaDiagonal2(jugador,tablero)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     linea = ganaHorizontal(jugador,tablero) or 
 \backslash
  
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             ganaVertical(jugador,tablero)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return  diag or linea
 \end_layout
@@ -857,8 +901,8 @@ def jugar(jugador,tablero):
 \end_layout
 
 \begin_layout Standard
-Con este cambio nuestro ciclo de juego es más pequeño, y el programa es
- más fácil de mantener:
+Con este cambio nuestro ciclo de juego es más pequeño,
+ y el programa es más fácil de mantener:
 \end_layout
 
 \begin_layout Standard
@@ -866,42 +910,42 @@ Con este cambio nuestro ciclo de juego es más pequeño, y el programa es
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui5.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 while True:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if jugar("O",triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         print("Gana el jugador O !!!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         break
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if jugar("X",triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         print("Gana el jugador X !!!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         break
 \end_layout
@@ -917,6 +961,8 @@ Validaciones
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -929,11 +975,9 @@ validación
 \end_layout
 
 \begin_layout Standard
-Los usuarios pueden cometer errores, por esta razón los programas deben
- revisar todos los datos que generan para ver si cumplen las condiciones
- para operar.
- El código que revisa una condición o restricción de este tipo se llama
- validación.
+Los usuarios pueden cometer errores,
+ por esta razón los programas deben revisar todos los datos que generan para ver si cumplen las condiciones para operar.
+ El código que revisa una condición o restricción de este tipo se llama validación.
 \end_layout
 
 \begin_layout Standard
@@ -946,10 +990,9 @@ f
 \family typewriter
 c
 \family default
-,los valores que el usuario digita para jugar en una fila y columna deben
- ser enteros en el intervalo [0,2] para que podamos representarlos en la
- matriz de 3 filas y 3 columnas.
- Además, la casilla 
+,los valores que el usuario digita para jugar en una fila y columna deben ser enteros en el intervalo [0,2] para que podamos representarlos en la matriz de 3 filas y 3 columnas.
+ Además,
+ la casilla 
 \family typewriter
 tablero[f][c]
 \family default
@@ -957,8 +1000,8 @@ tablero[f][c]
 \end_layout
 
 \begin_layout Standard
-Estas validaciones pueden ponerse en un ciclo que le pida al jugador digitar
- los valores para f y c varias veces, hasta que sean correctos:
+Estas validaciones pueden ponerse en un ciclo que le pida al jugador digitar los valores para f y c varias veces,
+ hasta que sean correctos:
 \end_layout
 
 \begin_layout Standard
@@ -966,109 +1009,113 @@ Estas validaciones pueden ponerse en un ciclo que le pida al jugador digitar
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui6.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def valido(n):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return 0<=n<=2
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def jugar(jugador,tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    while True:     
+    while True:
+     
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        print("Juegue jugador ", jugador)
+        print("Juegue jugador ",
+ jugador)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        f = int(input("fila? "))
+        f = int(input("fila?
+ "))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        c = int(input("columna? "))
+        c = int(input("columna?
+ "))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if type(f)==type(c)==type(1) and valido(f) 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            and valido(c) and tablero[f][c]==' ':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             tablero[f][c] = jugador
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             break      
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     imprimir(tablero)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     diag = ganaDiagonal1(jugador,tablero) or 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            ganaDiagonal2(jugador,tablero)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     linea = ganaHorizontal(jugador,tablero) or 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             ganaVertical(jugador,tablero)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return  diag or linea
 \end_layout
@@ -1084,8 +1131,8 @@ Empates
 
 \begin_layout Standard
 Ahora agregamos una función para chequear si hay empate entre los jugadores.
- Esto sucede si el tablero está lleno, o sea que no hay ninguna casilla
- vacía (con el carácter ' '):
+ Esto sucede si el tablero está lleno,
+ o sea que no hay ninguna casilla vacía (con el carácter ' '):
 \end_layout
 
 \begin_layout Standard
@@ -1093,46 +1140,46 @@ Ahora agregamos una función para chequear si hay empate entre los jugadores.
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui7.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def empate(tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     for i in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         for j in range(3):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             if tablero[i][j]==' ':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
                 return False
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return True
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1142,7 +1189,8 @@ def empate(tablero):
 \end_layout
 
 \begin_layout Standard
-Llamamos a empate después de cada jugador: 
+Llamamos a empate después de cada jugador:
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1150,72 +1198,72 @@ Llamamos a empate después de cada jugador:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui8.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 while True:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if jugar("O",triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         print("Gana el jugador O !!!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         break
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if empate(triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         print("Empate !!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         break
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if jugar("X",triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         print("Gana el jugador X !!!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         break
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if empate(triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         print("Empate !!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         break
 \end_layout
@@ -1226,8 +1274,7 @@ while True:
 \end_layout
 
 \begin_layout Standard
-Y también agregamos un mensaje de retroalimentación para el jugador cuando
- no ha escogido una casilla válida:
+Y también agregamos un mensaje de retroalimentación para el jugador cuando no ha escogido una casilla válida:
 \end_layout
 
 \begin_layout Standard
@@ -1235,100 +1282,104 @@ Y también agregamos un mensaje de retroalimentación para el jugador cuando
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui8.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def jugar(jugador,tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    while True:     
+    while True:
+     
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        print("Juegue jugador ", jugador)
+        print("Juegue jugador ",
+ jugador)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        f = input("fila? ")
+        f = input("fila?
+ ")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-        c = input("columna? ")
+        c = input("columna?
+ ")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if type(f)==type(c)==type(1) and valido(f) 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            and valido(c) and tablero[f][c]==' ':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             tablero[f][c] = jugador
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             break
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         else:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             print("Posición inválida!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     imprimir(triqui)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     diag = ganaDiagonal1(jugador,tablero) or 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            ganaDiagonal2(jugador,tablero)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     linea = ganaHorizontal(jugador,tablero) or 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             ganaVertical(jugador,tablero)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return  diag or linea
 \end_layout
@@ -1347,7 +1398,9 @@ Podemos crear una función
 \family typewriter
 gana
 \family default
-, fructífera, que nos permita que jugar sea mas pequeña:
+,
+ fructífera,
+ que nos permita que jugar sea mas pequeña:
 \end_layout
 
 \begin_layout Standard
@@ -1355,46 +1408,46 @@ gana
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui9.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def gana(jugador,tablero):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     """ Analiza si el jugador gana la partida """
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     diag = ganaDiagonal1(jugador,tablero) or 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
            ganaDiagonal2(jugador,tablero)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     linea = ganaHorizontal(jugador,tablero) or 
 \backslash
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             ganaVertical(jugador,tablero)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return  diag or linea
 \end_layout
@@ -1405,12 +1458,14 @@ def gana(jugador,tablero):
 \end_layout
 
 \begin_layout Standard
-Con este cambio también ganamos algo: la verificación de quien gana el juego
- puede hacerse con una sola función en otro programa, por ejemplo uno con
- una interfaz gráfica de usuario, como el del capítulo 
+Con este cambio también ganamos algo:
+ la verificación de quien gana el juego puede hacerse con una sola función en otro programa,
+ por ejemplo uno con una interfaz gráfica de usuario,
+ como el del capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "triqui-kivy"
+nolink "false"
 
 \end_inset
 
@@ -1418,7 +1473,8 @@ reference "triqui-kivy"
 \end_layout
 
 \begin_layout Standard
-Ahora, 
+Ahora,
+ 
 \family typewriter
 gana
 \family default
@@ -1431,101 +1487,101 @@ gana
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 # triqui9.py
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 if __name__ == '__main__':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     triqui = crear()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     imprimir(triqui)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     while True:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         jugar("O",triqui)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if gana("O",triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             print("Gana el jugador O !!!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             break
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if empate(triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             print("Empate !!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             break
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         jugar("X",triqui)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if gana("X",triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             print("Gana el jugador X !!!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             break
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
         if empate(triqui):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             print("Empate !!!")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
             break
 \end_layout
@@ -1536,9 +1592,9 @@ if __name__ == '__main__':
 \end_layout
 
 \begin_layout Standard
-Así terminamos con triqui9.py, un programa con 12 funciones y un ciclo de
- juego que tiene en total 124 líneas de código, ¡pero empezó como una simple
- impresión de una matriz vacía!
+Así terminamos con triqui9.py,
+ un programa con 12 funciones y un ciclo de juego que tiene en total 124 líneas de código,
+ ¡pero empezó como una simple impresión de una matriz vacía!
 \end_layout
 
 \begin_layout Section
@@ -1546,45 +1602,53 @@ Resumen
 \end_layout
 
 \begin_layout Description
-triqui0.py: crea e imprime el tablero vacío 
+triqui0.py:
+ crea e imprime el tablero vacío 
 \end_layout
 
 \begin_layout Description
-triqui1.py: permite que un solo jugador juegue por siempre 
+triqui1.py:
+ permite que un solo jugador juegue por siempre 
 \end_layout
 
 \begin_layout Description
-triqui2.py: permite que dos jugadores jueguen por siempre 
+triqui2.py:
+ permite que dos jugadores jueguen por siempre 
 \end_layout
 
 \begin_layout Description
-triqui3.py: revisa si algún jugador gana en las diagonales 
+triqui3.py:
+ revisa si algún jugador gana en las diagonales 
 \end_layout
 
 \begin_layout Description
-triqui4.py: revisa si algún jugador gana en filas o columnas 
+triqui4.py:
+ revisa si algún jugador gana en filas o columnas 
 \end_layout
 
 \begin_layout Description
-triqui5.py: evita la duplicación de código creando una función 'jugar' 
+triqui5.py:
+ evita la duplicación de código creando una función 'jugar' 
 \end_layout
 
 \begin_layout Description
-triqui6.py: introduce un ciclo en 'jugar' para validar las jugadas 
+triqui6.py:
+ introduce un ciclo en 'jugar' para validar las jugadas 
 \end_layout
 
 \begin_layout Description
-triqui7.py: introduce la verificación de empates en el juego 
+triqui7.py:
+ introduce la verificación de empates en el juego 
 \end_layout
 
 \begin_layout Description
-triqui8.py: llama a empate 2 veces en lugar de 1 y añade un mensaje al jugador
- 
+triqui8.py:
+ llama a empate 2 veces en lugar de 1 y añade un mensaje al jugador 
 \end_layout
 
 \begin_layout Description
-triqui9.py: crea una función 'gana' para que 'jugar' sea mas pequeña y pone
- el ciclo del juego en la parte principal.
+triqui9.py:
+ crea una función 'gana' para que 'jugar' sea mas pequeña y pone el ciclo del juego en la parte principal.
  
 \end_layout
 
@@ -1593,15 +1657,16 @@ Glosario
 \end_layout
 
 \begin_layout Description
-validación: análisis de los datos que genera un usuario humano para que
- estén dentro de los límites de operación del software.
+validación:
+ análisis de los datos que genera un usuario humano para que estén dentro de los límites de operación del software.
 \end_layout
 
 \begin_layout Description
-reestructuración: reescritura de porciones del código para mejorar la calidad
- del programa.
- Por ejemplo, se puede mejorar la legibilidad del código, también se puede
- eliminar la redundancia.
+reestructuración:
+ reescritura de porciones del código para mejorar la calidad del programa.
+ Por ejemplo,
+ se puede mejorar la legibilidad del código,
+ también se puede eliminar la redundancia.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1611,6 +1676,8 @@ reestructuración: reescritura de porciones del código para mejorar la calidad
 \begin_deeper
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1621,6 +1688,8 @@ validación
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1638,16 +1707,17 @@ Ejercicios
 \end_layout
 
 \begin_layout Enumerate
-Modifique el triqui para que el computador juegue automáticamente, seleccionando
- una casilla vacía al azar.
+Modifique el triqui para que el computador juegue automáticamente,
+ seleccionando una casilla vacía al azar.
 \end_layout
 
 \begin_layout Enumerate
-Modifique el triqui para que tenga un menú de entrada en el que se pueda
- escoger entre dos modalidades: 1 jugador contra el computador, 2 jugadores
- entre si por turnos y 3, salir del programa.
- Ahora, cada vez que termine una partida el flujo de ejecución del programa
- debe volver al menú.
+Modifique el triqui para que tenga un menú de entrada en el que se pueda escoger entre dos modalidades:
+ 1 jugador contra el computador,
+ 2 jugadores entre si por turnos y 3,
+ salir del programa.
+ Ahora,
+ cada vez que termine una partida el flujo de ejecución del programa debe volver al menú.
 \end_layout
 
 \end_body

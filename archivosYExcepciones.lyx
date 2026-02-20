@@ -1,15 +1,15 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding utf8
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -18,7 +18,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -52,7 +54,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -68,11 +72,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -87,30 +96,39 @@ status open
 \begin_inset Quotes eld
 \end_inset
 
-How to think like a computer scientist'' 
+How to think like a computer scientist''
 \end_layout
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Traslation to spanish completed by Andrés Becerra Sandoval <andres.becerra@gmail.com>
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
+\end_layout
+
+\begin_layout Plain Layout
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -124,6 +142,8 @@ Archivos y excepciones
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -136,19 +156,23 @@ archivos
 \end_layout
 
 \begin_layout Standard
-Cuando un programa se está ejecutando, sus datos están en la memoria.
- Cuando un programa termina, o se apaga el computador, los datos de la memoria
- desaparecen.
+Cuando un programa se está ejecutando,
+ sus datos están en la memoria.
+ Cuando un programa termina,
+ o se apaga el computador,
+ los datos de la memoria desaparecen.
  Para almacenar los datos de forma permanente se deben poner en un 
 \series bold
 archivo
 \series default
 .
- Normalmente los archivos se guardan en un disco duro, disquete o CD-ROM.
+ Normalmente los archivos se guardan en un disco duro,
+ disquete o CD-ROM.
 \end_layout
 
 \begin_layout Standard
-Cuando hay un gran número de archivos, suelen estar organizados en 
+Cuando hay un gran número de archivos,
+ suelen estar organizados en 
 \series bold
 directorios
 \series default
@@ -161,34 +185,39 @@ carpetas
 \end_inset
 
 ).
- Cada archivo se identifica con un nombre único, o una combinación de nombre
- de archivo y nombre de directorio.
+ Cada archivo se identifica con un nombre único,
+ o una combinación de nombre de archivo y nombre de directorio.
 \end_layout
 
 \begin_layout Standard
-Leyendo y escribiendo archivos, los programas pueden intercambiar información
- entre ellos y generar formatos imprimibles como PDF.
+Leyendo y escribiendo archivos,
+ los programas pueden intercambiar información entre ellos y generar formatos imprimibles como PDF.
 \end_layout
 
 \begin_layout Standard
 Trabajar con archivos se parece mucho a hacerlo con libros.
- Para usar un libro, hay que abrirlo.
- Cuando uno ha terminado, hay que cerrarlo.
- Mientras el libro está abierto, se puede escribir en él o leer de él.
- En cualquier caso, uno sabe en qué lugar del libro se encuentra.
- Casi siempre se lee un libro según su orden natural, pero también se puede
- ir saltando de página en página.
+ Para usar un libro,
+ hay que abrirlo.
+ Cuando uno ha terminado,
+ hay que cerrarlo.
+ Mientras el libro está abierto,
+ se puede escribir en él o leer de él.
+ En cualquier caso,
+ uno sabe en qué lugar del libro se encuentra.
+ Casi siempre se lee un libro según su orden natural,
+ pero también se puede ir saltando de página en página.
 \end_layout
 
 \begin_layout Standard
 Todo esto sirve también para los archivos.
- Para abrir un archivo, se especifica su nombre y se indica si se desea
- leer o escribir.
+ Para abrir un archivo,
+ se especifica su nombre y se indica si se desea leer o escribir.
 \end_layout
 
 \begin_layout Standard
 La apertura de un archivo crea un objeto archivo.
- En este ejemplo, la variable 
+ En este ejemplo,
+ la variable 
 \family typewriter
 f
 \family default
@@ -197,19 +226,20 @@ f
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f = open("test.dat","w")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(f)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-<open file 'test.dat', mode 'w' at fe820>
+<open file 'test.dat',
+ mode 'w' at fe820>
 \end_layout
 
 \end_inset
@@ -218,8 +248,10 @@ status open
 \end_layout
 
 \begin_layout Standard
-La función open toma dos argumentos: el primero, es el nombre del archivo
- y el segundo, el modo.
+La función open toma dos argumentos:
+ el primero,
+ es el nombre del archivo y el segundo,
+ el modo.
  El modo 
 \begin_inset ERT
 status collapsed
@@ -264,12 +296,14 @@ Si no hay un archivo llamado
 test.dat
 \family default
  se creará.
- Si ya hay uno, el archivo que estamos escribiendo lo reemplazará.
+ Si ya hay uno,
+ el archivo que estamos escribiendo lo reemplazará.
 \end_layout
 
 \begin_layout Standard
-Al imprimir el objeto archivo, vemos el nombre del archivo, el modo y la
- localización del objeto.
+Al imprimir el objeto archivo,
+ vemos el nombre del archivo,
+ el modo y la localización del objeto.
 \end_layout
 
 \begin_layout Standard
@@ -282,12 +316,12 @@ write
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f.write("Ya es hora")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f.write("de cerrar el archivo")
 \end_layout
@@ -298,13 +332,12 @@ status open
 \end_layout
 
 \begin_layout Standard
-El cierre del archivo le dice al sistema que hemos terminado de escribir
- y deja el archivo listo para leer:
+El cierre del archivo le dice al sistema que hemos terminado de escribir y deja el archivo listo para leer:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f.close()
 \end_layout
@@ -315,8 +348,9 @@ status open
 \end_layout
 
 \begin_layout Standard
-Ya podemos abrir el archivo de nuevo, esta vez para lectura, y poner su
- contenido en una cadena.
+Ya podemos abrir el archivo de nuevo,
+ esta vez para lectura,
+ y poner su contenido en una cadena.
  Esta vez el argumento de modo es 
 \begin_inset ERT
 status collapsed
@@ -352,12 +386,13 @@ status collapsed
 
 \end_inset
 
-, para lectura:
+,
+ para lectura:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f = open("test.dat","r")
 \end_layout
@@ -368,11 +403,14 @@ status open
 \end_layout
 
 \begin_layout Standard
-Si intentamos abrir un archivo que no existe, recibimos un mensaje de error:
+Si intentamos abrir un archivo que no existe,
+ recibimos un mensaje de error:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -386,14 +424,16 @@ error en tiempo de ejecución
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f = open("test.cat","r")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-IOError: [Errno 2] No such file or directory: 'test.cat'
+IOError:
+ [Errno 2] No such file or directory:
+ 'test.cat'
 \end_layout
 
 \end_inset
@@ -402,27 +442,29 @@ IOError: [Errno 2] No such file or directory: 'test.cat'
 \end_layout
 
 \begin_layout Standard
-Como era de esperar, el método 
+Como era de esperar,
+ el método 
 \family typewriter
 read
 \family default
  lee datos del archivo.
- Sin argumentos, lee el archivo completo:
+ Sin argumentos,
+ lee el archivo completo:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> texto = f.read()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(texto)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Ya es horade cerrar el archivo
 \end_layout
@@ -459,17 +501,17 @@ read
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f = open("test.dat","r")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(f.read(7))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Ya es h
 \end_layout
@@ -480,12 +522,14 @@ Ya es h
 \end_layout
 
 \begin_layout Standard
-Si no quedan suficientes caracteres en el archivo, 
+Si no quedan suficientes caracteres en el archivo,
+ 
 \family typewriter
 read
 \family default
  devuelve los que haya.
- Cuando llegamos al final del archivo, 
+ Cuando llegamos al final del archivo,
+ 
 \family typewriter
 read
 \family default
@@ -494,26 +538,26 @@ read
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(f.read(1000006))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 orade cerrar el archivo
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(f.read())
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>>
 \end_layout
@@ -524,65 +568,68 @@ orade cerrar el archivo
 \end_layout
 
 \begin_layout Standard
-La siguiente función copia un archivo, leyendo y escribiendo los caracteres
- de cincuenta en cincuenta.
- El primer argumento es el nombre del archivo original; el segundo es el
- nombre del archivo nuevo:
+La siguiente función copia un archivo,
+ leyendo y escribiendo los caracteres de cincuenta en cincuenta.
+ El primer argumento es el nombre del archivo original;
+ el segundo es el nombre del archivo nuevo:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def copiaArchivo(archViejo, archNuevo):
+def copiaArchivo(archViejo,
+ archNuevo):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  f1 = open(archViejo, "r")
+  f1 = open(archViejo,
+ "r")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  f2 = open(archNuevo, "w")
+  f2 = open(archNuevo,
+ "w")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   while True:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     texto = f1.read(50)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if texto == "":
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       break
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     f2.write(texto)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   f1.close()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   f2.close()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return
 \end_layout
@@ -598,12 +645,14 @@ La sentencia
 break
 \family default
  es nueva.
- Su ejecución interrumpe el ciclo; el flujo de la ejecución pasa a la primera
- sentencia después del while.
+ Su ejecución interrumpe el ciclo;
+ el flujo de la ejecución pasa a la primera sentencia después del while.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -614,6 +663,8 @@ sentencia break
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -626,7 +677,8 @@ sentencia!break
 \end_layout
 
 \begin_layout Standard
-En este ejemplo, el ciclo 
+En este ejemplo,
+ el ciclo 
 \family typewriter
 while
 \family default
@@ -674,11 +726,13 @@ status collapsed
 \family typewriter
 break
 \family default
-, lo que sucede cuando 
+,
+ lo que sucede cuando 
 \family typewriter
 texto
 \family default
- es una cadena vacía, y esto pasa cuando llegamos al final del archivo.
+ es una cadena vacía,
+ y esto pasa cuando llegamos al final del archivo.
 \end_layout
 
 \begin_layout Section
@@ -687,6 +741,8 @@ Archivos de texto
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -697,6 +753,8 @@ archivo de texto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -713,25 +771,24 @@ Un
 \series bold
 archivo de texto
 \series default
- contiene caracteres imprimibles y espacios organizados en líneas separadas
- por caracteres de salto de línea.
+ contiene caracteres imprimibles y espacios organizados en líneas separadas por caracteres de salto de línea.
  Como Python está diseñado específicamente para procesar archivos de texto,
  proporciona métodos que facilitan esta tarea.
 \end_layout
 
 \begin_layout Standard
-Para hacer una demostración, crearemos un archivo de texto con tres líneas
- de texto separadas por saltos de línea:
+Para hacer una demostración,
+ crearemos un archivo de texto con tres líneas de texto separadas por saltos de línea:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f = open("test.dat","w")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f.write("línea uno
 \backslash
@@ -742,7 +799,7 @@ nlínea tres
 n")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f.close()
 \end_layout
@@ -757,31 +814,33 @@ El método
 \family typewriter
 readline
 \family default
- lee todos los caracteres hasta, e incluyendo, el siguiente salto de línea:
+ lee todos los caracteres hasta,
+ e incluyendo,
+ el siguiente salto de línea:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f = open("test.dat","r")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(f.readline())
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 línea uno
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>>
 \end_layout
@@ -801,16 +860,17 @@ readlines
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(f.readlines())
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 ['línea dos
 \backslash
-012', 'línea tres
+012',
+ 'línea tres
 \backslash
 012']
 \end_layout
@@ -821,9 +881,9 @@ status open
 \end_layout
 
 \begin_layout Standard
-En este caso, la salida está en forma de lista, lo que significa que las
- cadenas aparecen con comillas y el carácter de salto de línea aparece como
- la secuencia de escape 
+En este caso,
+ la salida está en forma de lista,
+ lo que significa que las cadenas aparecen con comillas y el carácter de salto de línea aparece como la secuencia de escape 
 \family typewriter
 012
 \family default
@@ -831,7 +891,8 @@ En este caso, la salida está en forma de lista, lo que significa que las
 \end_layout
 
 \begin_layout Standard
-Al final del archivo, 
+Al final del archivo,
+ 
 \family typewriter
 readline
 \family default
@@ -844,21 +905,21 @@ readlines
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(f.readline())
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(f.readlines())
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 []
 \end_layout
@@ -878,7 +939,8 @@ filtraArchivo
 \family typewriter
 archViejo
 \family default
-, omitiendo las líneas que comienzan por 
+,
+ omitiendo las líneas que comienzan por 
 \family typewriter
 #
 \family default
@@ -887,67 +949,70 @@ archViejo
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def filtraArchivo(archViejo, archNuevo):
+def filtraArchivo(archViejo,
+ archNuevo):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  f1 = open(archViejo, "r")
+  f1 = open(archViejo,
+ "r")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  f2 = open(archNuevo, "w")
+  f2 = open(archNuevo,
+ "w")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   while 1:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     texto = f1.readline()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if texto == "":
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       break
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     if texto[0] == '#':
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
       continue
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     f2.write(texto)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   f1.close()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   f2.close()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return
 \end_layout
@@ -962,13 +1027,16 @@ La sentencia
 \family typewriter
 continue
 \family default
- termina la iteración actual del ciclo, pero sigue haciendo las que le faltan.
- El flujo de ejecución pasa al principio del ciclo, comprueba la condición
- y continúa normalmente.
+ termina la iteración actual del ciclo,
+ pero sigue haciendo las que le faltan.
+ El flujo de ejecución pasa al principio del ciclo,
+ comprueba la condición y continúa normalmente.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -979,6 +1047,8 @@ sentencia continue
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -991,11 +1061,13 @@ sentencia!continue
 \end_layout
 
 \begin_layout Standard
-Así, si 
+Así,
+ si 
 \family typewriter
 texto
 \family default
- es una cadena vacía, el ciclo termina.
+ es una cadena vacía,
+ el ciclo termina.
  Si el primer carácter de 
 \family typewriter
 texto
@@ -1004,7 +1076,8 @@ texto
 \family typewriter
 (#)
 \family default
-, el flujo de ejecución va al principio del ciclo.
+,
+ el flujo de ejecución va al principio del ciclo.
  Sólo si ambas condiciones fallan copiamos 
 \family typewriter
 texto
@@ -1018,6 +1091,8 @@ Escribir variables
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1028,6 +1103,8 @@ operador de formato
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1038,6 +1115,8 @@ cadena de formato
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1054,7 +1133,8 @@ El argumento de
 \family typewriter
 write
 \family default
- debe ser una cadena, así que si queremos poner otros valores en un archivo,
+ debe ser una cadena,
+ así que si queremos poner otros valores en un archivo,
  tenemos que convertirlos previamente en cadenas.
  La forma más fácil de hacerlo es con la función 
 \family typewriter
@@ -1065,12 +1145,12 @@ str
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> x = 52
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f.write (str(x))
 \end_layout
@@ -1090,12 +1170,14 @@ operador de formato
 %
 \family default
 .
- Cuando aplica a enteros, 
+ Cuando aplica a enteros,
+ 
 \family typewriter
 %
 \family default
  es el operador de módulo.
- Pero cuando el primer operando es una cadena, 
+ Pero cuando el primer operando es una cadena,
+ 
 \family typewriter
 %
 \family default
@@ -1107,13 +1189,16 @@ El primer operando es la
 \series bold
 cadena de formato
 \series default
-, y el segundo, una tupla de expresiones.
+,
+ y el segundo,
+ una tupla de expresiones.
  El resultado es una cadena que contiene los valores de las expresiones,
  formateados de acuerdo con la cadena de formato.
 \end_layout
 
 \begin_layout Standard
-A modo de ejemplo simple, la 
+A modo de ejemplo simple,
+ la 
 \series bold
 secuencia de formato
 \series default
@@ -1152,8 +1237,7 @@ status collapsed
 
 \end_inset
 
- significa que la primera expresión de la tupla debería formatearse como
- un entero.
+ significa que la primera expresión de la tupla debería formatearse como un entero.
  Aquí la letra 
 \begin_inset ERT
 status collapsed
@@ -1202,17 +1286,17 @@ decimal
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> motos = 52
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "%d" % motos
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 '52'
 \end_layout
@@ -1227,7 +1311,8 @@ El resultado es la cadena
 \family typewriter
 '52'
 \family default
-, que no debe confundirse con el valor entero 
+,
+ que no debe confundirse con el valor entero 
 \family typewriter
 52
 \family default
@@ -1235,23 +1320,23 @@ El resultado es la cadena
 \end_layout
 
 \begin_layout Standard
-Una secuencia de formato puede aparecer en cualquier lugar de la cadena
- de formato, de modo que podemos incrustar un valor en una frase:
+Una secuencia de formato puede aparecer en cualquier lugar de la cadena de formato,
+ de modo que podemos incrustar un valor en una frase:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> motos = 52
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "En julio vendimos %d motos." % motos
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 'En julio vendimos 52 motos.'
 \end_layout
@@ -1338,12 +1423,12 @@ status collapsed
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "En %d dias ganamos %f millones de %s." % (4,1.2,'pesos')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 'En 4 dias ganamos 1.200000 millones de pesos.'
 \end_layout
@@ -1354,18 +1439,20 @@ status open
 \end_layout
 
 \begin_layout Standard
-Por defecto, el formato de punto flotante imprime seis decimales.
+Por defecto,
+ el formato de punto flotante imprime seis decimales.
 \end_layout
 
 \begin_layout Standard
-El número de expresiones en la tupla tiene que coincidir con el número de
- secuencias de formato de la cadena.
- Igualmente, los tipos de las expresiones deben coincidir con las secuencias
- de formato:
+El número de expresiones en la tupla tiene que coincidir con el número de secuencias de formato de la cadena.
+ Igualmente,
+ los tipos de las expresiones deben coincidir con las secuencias de formato:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1379,24 +1466,26 @@ error en tiempo de ejecución
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "%d %d %d" % (1,2)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-TypeError: not enough arguments for format string
+TypeError:
+ not enough arguments for format string
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "%d" % 'dolares'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-TypeError: illegal argument type for built-in operation
+TypeError:
+ illegal argument type for built-in operation
 \end_layout
 
 \end_inset
@@ -1405,33 +1494,34 @@ TypeError: illegal argument type for built-in operation
 \end_layout
 
 \begin_layout Standard
-En el primer ejemplo no hay suficientes expresiones; en el segundo, la expresión
- es de un tipo incorrecto.
+En el primer ejemplo no hay suficientes expresiones;
+ en el segundo,
+ la expresión es de un tipo incorrecto.
 \end_layout
 
 \begin_layout Standard
-Para tener más control sobre el formato de los números, podemos detallar
- el número de dígitos como parte de la secuencia de formato:
+Para tener más control sobre el formato de los números,
+ podemos detallar el número de dígitos como parte de la secuencia de formato:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "%6d" % 62
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 '    62'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "%12f" % 6.1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 '    6.100000'
 \end_layout
@@ -1442,21 +1532,21 @@ status open
 \end_layout
 
 \begin_layout Standard
-El número tras el signo de porcentaje es el número mínimo de espacios que
- ocupará el número.
- Si el valor necesita menos dígitos, se añaden espacios en blanco delante
- del número.
- Si el número de espacios es negativo, se añaden los espacios tras el número:
+El número tras el signo de porcentaje es el número mínimo de espacios que ocupará el número.
+ Si el valor necesita menos dígitos,
+ se añaden espacios en blanco delante del número.
+ Si el número de espacios es negativo,
+ se añaden los espacios tras el número:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "%-6d" % 62
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 '62    '
 \end_layout
@@ -1467,18 +1557,17 @@ status open
 \end_layout
 
 \begin_layout Standard
-También podemos especificar el número de decimales para los números en coma
- flotante:
+También podemos especificar el número de decimales para los números en coma flotante:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> "%12.2f" % 6.1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 '        6.10'
 \end_layout
@@ -1489,13 +1578,15 @@ status open
 \end_layout
 
 \begin_layout Standard
-En este ejemplo, el resultado ocupa doce espacios e incluye dos dígitos
- tras la coma.
+En este ejemplo,
+ el resultado ocupa doce espacios e incluye dos dígitos tras la coma.
  Este formato es útil para imprimir cantidades de dinero con las comas alineadas.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1508,37 +1599,38 @@ diccionario
 \end_layout
 
 \begin_layout Standard
-Imagine, por ejemplo, un diccionario que contiene los nombres de los estudiantes
- como clave y las tarifas horarias como valores.
- He aquí una función que imprime el contenido del diccionario como de un
- informe formateado:
+Imagine,
+ por ejemplo,
+ un diccionario que contiene los nombres de los estudiantes como clave y las tarifas horarias como valores.
+ He aquí una función que imprime el contenido del diccionario como de un informe formateado:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def informe (tarifas) :
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   estudiantes = tarifas.keys()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   estudiantes.sort()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   for estudiante in estudiantes :
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    print("%-20s %12.02f"%(estudiante, tarifas[estudiante]))
+    print("%-20s %12.02f"%(estudiante,
+ tarifas[estudiante]))
 \end_layout
 
 \end_inset
@@ -1547,33 +1639,38 @@ def informe (tarifas) :
 \end_layout
 
 \begin_layout Standard
-Para probar la función, crearemos un pequeño diccionario e imprimiremos
- el contenido:
+Para probar la función,
+ crearemos un pequeño diccionario e imprimiremos el contenido:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> tarifas = {'maria': 6.23, 'jose': 5.45, 'jesus': 4.25}
+>>> tarifas = {'maria':
+ 6.23,
+ 'jose':
+ 5.45,
+ 'jesus':
+ 4.25}
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> informe (tarifas)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 jose                         5.45
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 jesus                        4.25
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 maria                        6.23
 \end_layout
@@ -1584,9 +1681,8 @@ maria                        6.23
 \end_layout
 
 \begin_layout Standard
-Controlando el ancho de cada valor nos aseguramos de que las columnas van
- a quedar alineadas, siempre que los nombre tengan menos de veintiún caracteres
- y las tarifas sean menos de mil millones la hora.
+Controlando el ancho de cada valor nos aseguramos de que las columnas van a quedar alineadas,
+ siempre que los nombre tengan menos de veintiún caracteres y las tarifas sean menos de mil millones la hora.
 \end_layout
 
 \begin_layout Section
@@ -1595,6 +1691,8 @@ Directorios
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1607,35 +1705,36 @@ directorio
 \end_layout
 
 \begin_layout Standard
-Cuando se crea un archivo nuevo abriéndolo y escribiendo, este va a quedar
- en el directorio en uso (aquél en el que se estuviese al ejecutar el programa).
- Del mismo modo, cuando se abre un archivo para leerlo, Python lo busca
- en el directorio en uso.
+Cuando se crea un archivo nuevo abriéndolo y escribiendo,
+ este va a quedar en el directorio en uso (aquél en el que se estuviese al ejecutar el programa).
+ Del mismo modo,
+ cuando se abre un archivo para leerlo,
+ Python lo busca en el directorio en uso.
 \end_layout
 
 \begin_layout Standard
-Si usted quiere abrir un archivo de cualquier otro sitio, tiene que especificar
- la 
+Si usted quiere abrir un archivo de cualquier otro sitio,
+ tiene que especificar la 
 \series bold
 ruta
 \series default
- del archivo, que es el nombre del directorio (o carpeta) donde se encuentra
- este:
+ del archivo,
+ que es el nombre del directorio (o carpeta) donde se encuentra este:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>>   f = open("/usr/share/dict/words","r")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>>   print(f.readline())
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 Aarhus
 \end_layout
@@ -1650,19 +1749,24 @@ Este ejemplo abre un archivo denominado
 \family typewriter
 words
 \family default
-, que se encuentra en un directorio llamado 
+,
+ que se encuentra en un directorio llamado 
 \family typewriter
 dict
 \family default
-, que está en 
+,
+ que está en 
 \family typewriter
 share
 \family default
-, en en 
+,
+ en en 
 \family typewriter
 usr
 \family default
-, que está en el directorio de nivel superior del sistema, llamado 
+,
+ que está en el directorio de nivel superior del sistema,
+ llamado 
 \family typewriter
 /
 \family default
@@ -1671,6 +1775,8 @@ usr
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1681,6 +1787,8 @@ ruta
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1697,8 +1805,8 @@ No se puede usar
 \family typewriter
 /
 \family default
- como parte del nombre de un archivo; está reservado como delimitador entre
- nombres de archivo y directorios.
+ como parte del nombre de un archivo;
+ está reservado como delimitador entre nombres de archivo y directorios.
 \end_layout
 
 \begin_layout Standard
@@ -1706,8 +1814,8 @@ El archivo
 \family typewriter
 /usr/share/dict/words
 \family default
- contiene una lista de palabras en orden alfabético, la primera de las cuales
- es el nombre de una universidad danesa.
+ contiene una lista de palabras en orden alfabético,
+ la primera de las cuales es el nombre de una universidad danesa.
 \end_layout
 
 \begin_layout Section
@@ -1716,6 +1824,8 @@ Encurtido
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1728,7 +1838,8 @@ encurtido
 \end_layout
 
 \begin_layout Standard
-Para poner valores en un archivo, se deben convertir a cadenas.
+Para poner valores en un archivo,
+ se deben convertir a cadenas.
  Usted ya ha visto cómo hacerlo con 
 \family typewriter
 str
@@ -1738,22 +1849,23 @@ str
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f.write (str(12.3))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f.write (str([1,2,3]))
 \end_layout
 
 \end_inset
 
- El problema es que cuando se vuelve a leer el valor, se obtiene una cadena.
+ El problema es que cuando se vuelve a leer el valor,
+ se obtiene una cadena.
  Se ha perdido la información del tipo de dato original.
- En realidad, no se puede distinguir dónde termina un valor y dónde comienza
- el siguiente:
+ En realidad,
+ no se puede distinguir dónde termina un valor y dónde comienza el siguiente:
 \end_layout
 
 \begin_layout Standard
@@ -1761,14 +1873,16 @@ status open
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>>   f.readline()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-'12.3[1, 2, 3]'
+'12.3[1,
+ 2,
+ 3]'
 \end_layout
 
 \end_inset
@@ -1777,7 +1891,8 @@ status open
 \series bold
 encurtido
 \series default
-, llamado así porque 
+,
+ llamado así porque 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1791,7 +1906,8 @@ encurte
 pickle
 \family default
  contiene las órdenes necesarias.
- Para usarlo, se importa 
+ Para usarlo,
+ se importa 
 \family typewriter
 pickle
 \family default
@@ -1800,12 +1916,12 @@ pickle
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> import pickle
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f = open("test.pck","w")
 \end_layout
@@ -1816,7 +1932,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-Para almacenar una estructura de datos, se usa el método 
+Para almacenar una estructura de datos,
+ se usa el método 
 \family typewriter
 dump
 \family default
@@ -1825,17 +1942,19 @@ dump
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> pickle.dump(12.3, f)
+>>> pickle.dump(12.3,
+ f)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
->>> pickle.dump([1,2,3], f)
+>>> pickle.dump([1,2,3],
+ f)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f.close()
 \end_layout
@@ -1846,8 +1965,7 @@ status open
 \end_layout
 
 \begin_layout Standard
-Ahora podemos abrir el archivo para leer y cargar las estructuras de datos
- que volcamos ahí:
+Ahora podemos abrir el archivo para leer y cargar las estructuras de datos que volcamos ahí:
 \end_layout
 
 \begin_layout Standard
@@ -1855,57 +1973,59 @@ Ahora podemos abrir el archivo para leer y cargar las estructuras de datos
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> f = open("test.pck","r")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> x = pickle.load(f)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> x
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 12.3
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(x)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 <type 'float'>
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> y = pickle.load(f)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> y
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-[1, 2, 3]
+[1,
+ 2,
+ 3]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> type(y)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 <type 'list'>
 \end_layout
@@ -1925,6 +2045,8 @@ Excepciones
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1935,6 +2057,8 @@ sentencia try
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1945,6 +2069,8 @@ sentencia!try
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1955,6 +2081,8 @@ lanzar una excepción
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1965,6 +2093,8 @@ manejar una excepción
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1975,6 +2105,8 @@ sentencia except
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1985,6 +2117,8 @@ sentencia!except
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1997,7 +2131,8 @@ excepción
 \end_layout
 
 \begin_layout Standard
-Siempre que ocurre un error en tiempo de ejecución, se crea una 
+Siempre que ocurre un error en tiempo de ejecución,
+ se crea una 
 \series bold
 excepción
 \series default
@@ -2006,19 +2141,21 @@ excepción
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, la división por cero crea una excepción:
+Por ejemplo,
+ la división por cero crea una excepción:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(55/0)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-ZeroDivisionError: integer division or modulo
+ZeroDivisionError:
+ integer division or modulo
 \end_layout
 
 \end_inset
@@ -2032,19 +2169,20 @@ Un elemento no existente en una lista hace lo mismo:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> a = []
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(a[5])
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-IndexError: list index out of range
+IndexError:
+ list index out of range
 \end_layout
 
 \end_inset
@@ -2058,19 +2196,20 @@ O el acceso a una clave que no está en el diccionario:
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> b = {}
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> print(b['qué'])
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-KeyError: qué
+KeyError:
+ qué
 \end_layout
 
 \end_inset
@@ -2079,14 +2218,18 @@ KeyError: qué
 \end_layout
 
 \begin_layout Standard
-En cada caso, el mensaje de error tiene dos partes: el tipo de error antes
- de los dos puntos y detalles sobre el error después de los dos puntos.
- Normalmente, Python también imprime una traza de dónde se encontraba el
- programa, pero la hemos omitido en los ejemplos.
+En cada caso,
+ el mensaje de error tiene dos partes:
+ el tipo de error antes de los dos puntos y detalles sobre el error después de los dos puntos.
+ Normalmente,
+ Python también imprime una traza de dónde se encontraba el programa,
+ pero la hemos omitido en los ejemplos.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2117,37 +2260,41 @@ except
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, podemos preguntar al usuario por el nombre de un archivo y
- luego intentar abrirlo.
- Si el archivo no existe, no queremos que el programa se aborte; queremos
- manejar la excepción.
+Por ejemplo,
+ podemos preguntar al usuario por el nombre de un archivo y luego intentar abrirlo.
+ Si el archivo no existe,
+ no queremos que el programa se aborte;
+ queremos manejar la excepción.
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-nombreArch = input('Introduce un nombre de archivo: ')
+nombreArch = input('Introduce un nombre de archivo:
+ ')
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 try:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  f = open (nombreArch, "r")
+  f = open (nombreArch,
+ "r")
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 except:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  print('No hay ningún archivo que se llame', nombreArch)
+  print('No hay ningún archivo que se llame',
+ nombreArch)
 \end_layout
 
 \end_inset
@@ -2161,12 +2308,14 @@ La sentencia
 try
 \family default
  ejecuta las sentencias del primer bloque.
- Si no se produce ninguna excepción, pasa por alto la sentencia 
+ Si no se produce ninguna excepción,
+ pasa por alto la sentencia 
 \family typewriter
 except
 \family default
 .
- Si ocurre cualquier excepción, ejecuta las sentencias de la rama 
+ Si ocurre cualquier excepción,
+ ejecuta las sentencias de la rama 
 \family typewriter
 except
 \family default
@@ -2174,47 +2323,48 @@ except
 \end_layout
 
 \begin_layout Standard
-Podemos encapsular esta capacidad en una función: 
+Podemos encapsular esta capacidad en una función:
+ 
 \family typewriter
 existe
 \family default
-, que acepta un nombre de archivo y devuelve verdadero si el archivo existe
- y falso si no:
+,
+ que acepta un nombre de archivo y devuelve verdadero si el archivo existe y falso si no:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 def existe(nombreArch):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   try:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     f = open(nombreArch)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     f.close()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return True
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   except:
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
     return False
 \end_layout
@@ -2265,45 +2415,49 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-Si su programa detecta una condición de error, se puede lanzar (
+Si su programa detecta una condición de error,
+ se puede lanzar (
 \series bold
 raise
 \series default
  en inglés) una excepción.
- Aquí hay un ejemplo que acepta una entrada del usuario y comprueba si es
- 17.
- Suponiendo que 17 no es una entrada válida por cualquier razón, lanzamos
- una excepción.
+ Aquí hay un ejemplo que acepta una entrada del usuario y comprueba si es 17.
+ Suponiendo que 17 no es una entrada válida por cualquier razón,
+ lanzamos una excepción.
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-# -*- coding: utf-8 -*-
+# -*- coding:
+ utf-8 -*-
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-def tomaNumero () :                 
+def tomaNumero () :
+                 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-  x = input ('Elige un número: ')   
+  x = input ('Elige un número:
+ ')   
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   if x == 17 :
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-    raise 'ErrorNumeroMalo', '17 es un mal número'
+    raise 'ErrorNumeroMalo',
+ '17 es un mal número'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
   return x
 \end_layout
@@ -2318,8 +2472,8 @@ La sentencia
 \family typewriter
 raise
 \family default
- acepta dos argumentos: el tipo de excepción e información específica acerca
- del error.
+ acepta dos argumentos:
+ el tipo de excepción e información específica acerca del error.
  
 \family typewriter
 ErrorNumeroMalo
@@ -2332,25 +2486,29 @@ Si la función llamada
 \family typewriter
 tomaNumero
 \family default
- maneja el error, el programa puede continuar; en caso contrario, Python
- imprime el mensaje de error y sale:
+ maneja el error,
+ el programa puede continuar;
+ en caso contrario,
+ Python imprime el mensaje de error y sale:
 \begin_inset listings
 inline false
 status open
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 >>> tomaNumero ()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-Elige un número: 17
+Elige un número:
+ 17
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
-ErrorNumeroMalo: 17 es un mal número
+ErrorNumeroMalo:
+ 17 es un mal número
 \end_layout
 
 \end_inset
@@ -2359,8 +2517,7 @@ ErrorNumeroMalo: 17 es un mal número
 \end_layout
 
 \begin_layout Standard
-El mensaje de error incluye el tipo de excepción y la información adicional
- proporcionada.
+El mensaje de error incluye el tipo de excepción y la información adicional proporcionada.
 \end_layout
 
 \begin_layout Section
@@ -2369,6 +2526,8 @@ Glosario
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2379,6 +2538,8 @@ archivo
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2389,6 +2550,8 @@ archivo de texto
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2399,6 +2562,8 @@ sentencia break
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2409,6 +2574,8 @@ sentencia!break
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2419,6 +2586,8 @@ sentencia continue
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2429,6 +2598,8 @@ sentencia!continue
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2439,6 +2610,8 @@ operador de formato
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2449,6 +2622,8 @@ cadena de formato
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2459,6 +2634,8 @@ operador!formato
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2469,6 +2646,8 @@ directorio
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2479,6 +2658,8 @@ encurtido
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2489,6 +2670,8 @@ try
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2499,6 +2682,8 @@ lanzar excepción
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2509,6 +2694,8 @@ manejar excepción
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2519,6 +2706,8 @@ sentencia except
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2531,17 +2720,23 @@ excepción
 \end_layout
 
 \begin_layout Description
-Archivo: entidad con nombre, normalmente almacenada en un disco duro, disquete
- o CD-ROM, que contiene una secuencia de caracteres.
+Archivo:
+ entidad con nombre,
+ normalmente almacenada en un disco duro,
+ disquete o CD-ROM,
+ que contiene una secuencia de caracteres.
 \end_layout
 
 \begin_layout Description
-Directorio: colección de archivos, con nombre, también llamado carpeta.
+Directorio:
+ colección de archivos,
+ con nombre,
+ también llamado carpeta.
 \end_layout
 
 \begin_layout Description
-Ruta: secuencia de nombres de directorio que especifica la localización
- exacta de un archivo.
+Ruta:
+ secuencia de nombres de directorio que especifica la localización exacta de un archivo.
 \end_layout
 
 \begin_layout Description
@@ -2555,8 +2750,7 @@ Archivo de texto:
 
 \end_inset
 
- un archivo que contiene caracteres imprimibles organizados en líneas separadas
- por caracteres de salto de línea.
+ un archivo que contiene caracteres imprimibles organizados en líneas separadas por caracteres de salto de línea.
 \end_layout
 
 \begin_layout Description
@@ -2585,7 +2779,8 @@ Sentencia continue:
 \end_inset
 
  sentencia que provoca que termine la iteración actual de un ciclo.
- El flujo de la ejecución va al principio del ciclo, evalúa la condición,
+ El flujo de la ejecución va al principio del ciclo,
+ evalúa la condición,
  y procede en consecuencia.
 \end_layout
 
@@ -2604,8 +2799,8 @@ Operador de formato:
 \family typewriter
 %
 \family default
- toma una cadena de formato y una tupla de expresiones y entrega una cadena
- que incluye las expresiones, formateadas de acuerdo con la cadena de formato.
+ toma una cadena de formato y una tupla de expresiones y entrega una cadena que incluye las expresiones,
+ formateadas de acuerdo con la cadena de formato.
 \end_layout
 
 \begin_layout Description
@@ -2619,8 +2814,7 @@ Cadena de formato:
 
 \end_inset
 
- una cadena que contiene caracteres imprimibles y secuencias de formato
- que indican cómo dar formato a valores.
+ una cadena que contiene caracteres imprimibles y secuencias de formato que indican cómo dar formato a valores.
 \end_layout
 
 \begin_layout Description
@@ -2642,17 +2836,18 @@ Secuencia de formato:
 \end_layout
 
 \begin_layout Description
-Encurtir: escribir el valor de un dato en un archivo junto con la información
- sobre su tipo de forma que pueda ser reconstituido más tarde.
+Encurtir:
+ escribir el valor de un dato en un archivo junto con la información sobre su tipo de forma que pueda ser reconstituido más tarde.
 \end_layout
 
 \begin_layout Description
-Excepción: error que ocurre en tiempo de ejecución.
+Excepción:
+ error que ocurre en tiempo de ejecución.
 \end_layout
 
 \begin_layout Description
-Manejar: impedir que una excepción detenga un programa utilizando las sentencias
- 
+Manejar:
+ impedir que una excepción detenga un programa utilizando las sentencias 
 \family typewriter
 except
 \family default
@@ -2664,7 +2859,8 @@ try
 \end_layout
 
 \begin_layout Description
-Lanzar: causar una excepción usando la sentencia 
+Lanzar:
+ causar una excepción usando la sentencia 
 \family typewriter
 raise
 \family default
@@ -2676,7 +2872,8 @@ Ejercicios
 \end_layout
 
 \begin_layout Standard
-Para cada función, agregue chequeo de tipos y pruebas unitarias.
+Para cada función,
+ agregue chequeo de tipos y pruebas unitarias.
 \end_layout
 
 \begin_layout Enumerate
@@ -2690,34 +2887,40 @@ ErrorNumeroMalo
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función que reciba el nombre de un archivo y averigüe si contiene
- una cadena de ADN válida.
- Es decir, cada carácter del archivo es A,C,T, ó G.
+Escriba una función que reciba el nombre de un archivo y averigüe si contiene una cadena de ADN válida.
+ Es decir,
+ cada carácter del archivo es A,C,T,
+ ó G.
 \end_layout
 
 \begin_layout Enumerate
-Generalice la función anterior para trabajar con cualquier biosecuencia
- (ARN, ADN, proteína).
+Generalice la función anterior para trabajar con cualquier biosecuencia (ARN,
+ ADN,
+ proteína).
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función que permita escribir una matriz, implementada como una
- lista de listas, en un archivo.
+Escriba una función que permita escribir una matriz,
+ implementada como una lista de listas,
+ en un archivo.
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función que permita leer una matriz, implementada como una lista
- de listas, de un archivo.
+Escriba una función que permita leer una matriz,
+ implementada como una lista de listas,
+ de un archivo.
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función que permita escribir una matriz dispersa, implementada
- con un diccionario, en un archivo.
+Escriba una función que permita escribir una matriz dispersa,
+ implementada con un diccionario,
+ en un archivo.
 \end_layout
 
 \begin_layout Enumerate
-Escriba una función que permita leer una matriz dispersa, implementada con
- un diccionario, de un archivo.
+Escriba una función que permita leer una matriz dispersa,
+ implementada con un diccionario,
+ de un archivo.
 \end_layout
 
 \end_body
