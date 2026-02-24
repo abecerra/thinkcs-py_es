@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -52,11 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -82,6 +90,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -189,12 +198,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Hora:
 \end_layout
 
 \begin_layout Plain Layout
-
   pass
 \end_layout
 
@@ -215,22 +222,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 tiempo = Hora()
 \end_layout
 
 \begin_layout Plain Layout
-
 tiempo.hora = 11
 \end_layout
 
 \begin_layout Plain Layout
-
 tiempo.minutos = 59
 \end_layout
 
 \begin_layout Plain Layout
-
 tiempo.segundos = 30
 \end_layout
 
@@ -253,7 +256,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -265,7 +267,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -284,7 +285,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -295,7 +295,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -329,7 +328,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-tipo función!pura
+tipo función
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+pura
 \end_layout
 
 \end_inset
@@ -366,33 +375,27 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def sumarHoras(t1,
  t2):
 \end_layout
 
 \begin_layout Plain Layout
-
   sum = Hora()
 \end_layout
 
 \begin_layout Plain Layout
-
   sum.hora = t1.hora + t2.hora
 \end_layout
 
 \begin_layout Plain Layout
-
   sum.minutos = t1.minutos + t2.minutos
 \end_layout
 
 \begin_layout Plain Layout
-
   sum.segundos = t1.segundos + t2.segundos
 \end_layout
 
 \begin_layout Plain Layout
-
   return sum
 \end_layout
 
@@ -458,22 +461,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> horaActual = Hora()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> horaActual.hora = 9
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> horaActual.minutos = 14
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> horaActual.segundos =  30
 \end_layout
 
@@ -482,22 +481,18 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> horaPan = Hora()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> horaPan.hora =  3
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> horaPan.minutos =  35
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> horaPan.segundos =  0
 \end_layout
 
@@ -506,13 +501,11 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> horaComer = sumarHoras(horaActual,
  horaPan)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> imprimirHora(horaComer)
 \end_layout
 
@@ -550,28 +543,23 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def sumarHoras(t1,
  t2):
 \end_layout
 
 \begin_layout Plain Layout
-
   sum = Hora()
 \end_layout
 
 \begin_layout Plain Layout
-
   sum.hora = t1.hora + t2.hora
 \end_layout
 
 \begin_layout Plain Layout
-
   sum.minutos = t1.minutos + t2.minutos
 \end_layout
 
 \begin_layout Plain Layout
-
   sum.segundos = t1.segundos + t2.segundos
 \end_layout
 
@@ -580,17 +568,14 @@ def sumarHoras(t1,
 \end_layout
 
 \begin_layout Plain Layout
-
   if sum.segundos >= 60:
 \end_layout
 
 \begin_layout Plain Layout
-
     sum.segundos = sum.segundos - 60
 \end_layout
 
 \begin_layout Plain Layout
-
     sum.minutos = sum.minutos + 1
 \end_layout
 
@@ -599,17 +584,14 @@ def sumarHoras(t1,
 \end_layout
 
 \begin_layout Plain Layout
-
   if sum.minutos >= 60:
 \end_layout
 
 \begin_layout Plain Layout
-
     sum.minutos = sum.minutos - 60
 \end_layout
 
 \begin_layout Plain Layout
-
     sum.hora = sum.hora + 1
 \end_layout
 
@@ -618,7 +600,6 @@ def sumarHoras(t1,
 \end_layout
 
 \begin_layout Plain Layout
-
   return sum
 \end_layout
 
@@ -663,7 +644,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-tipo función!modificadora
+tipo función
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+modificadora
 \end_layout
 
 \end_inset
@@ -701,13 +692,11 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def incrementar(h,
  segundos):
 \end_layout
 
 \begin_layout Plain Layout
-
   h.segundos = h.segundos + segundos
 \end_layout
 
@@ -716,17 +705,14 @@ def incrementar(h,
 \end_layout
 
 \begin_layout Plain Layout
-
   if h.segundos >= 60:
 \end_layout
 
 \begin_layout Plain Layout
-
     h.segundos = h.segundos - 60
 \end_layout
 
 \begin_layout Plain Layout
-
     h.minutos = h.minutos + 1
 \end_layout
 
@@ -735,17 +721,14 @@ def incrementar(h,
 \end_layout
 
 \begin_layout Plain Layout
-
   if h.minuto >= 60:
 \end_layout
 
 \begin_layout Plain Layout
-
     h.minutos = h.minutos - 60
 \end_layout
 
 \begin_layout Plain Layout
-
     h.hora = h.hora + 1
 \end_layout
 
@@ -754,7 +737,6 @@ def incrementar(h,
 \end_layout
 
 \begin_layout Plain Layout
-
   return h
 \end_layout
 
@@ -796,13 +778,11 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def incrementar(hora,
  segundos):
 \end_layout
 
 \begin_layout Plain Layout
-
   hora.segundos = hora.segundos + segundos
 \end_layout
 
@@ -811,17 +791,14 @@ def incrementar(hora,
 \end_layout
 
 \begin_layout Plain Layout
-
   while hora.segundos >= 60:
 \end_layout
 
 \begin_layout Plain Layout
-
     hora.segundos = hora.segundos - 60
 \end_layout
 
 \begin_layout Plain Layout
-
     hora.minutos = hora.minutos + 1
 \end_layout
 
@@ -830,17 +807,14 @@ def incrementar(hora,
 \end_layout
 
 \begin_layout Plain Layout
-
   while hora.minutos >= 60:
 \end_layout
 
 \begin_layout Plain Layout
-
     hora.minutos = hora.minutos - 60
 \end_layout
 
 \begin_layout Plain Layout
-
     hora.hora = hora.hora + 1
 \end_layout
 
@@ -849,7 +823,6 @@ def incrementar(hora,
 \end_layout
 
 \begin_layout Plain Layout
-
   return hora
 \end_layout
 
@@ -858,7 +831,6 @@ def incrementar(hora,
 \end_layout
 
 \begin_layout Plain Layout
-
   time.segundos = time.segundos + segundos
 \end_layout
 
@@ -1047,22 +1019,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def convertirASegundos(t):
 \end_layout
 
 \begin_layout Plain Layout
-
   minutos = t.hora * 60 + t.minutos
 \end_layout
 
 \begin_layout Plain Layout
-
   segundos = minutos * 60 + t.segundos
 \end_layout
 
 \begin_layout Plain Layout
-
   return segundos
 \end_layout
 
@@ -1082,42 +1050,34 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def crearHora(segundos):
 \end_layout
 
 \begin_layout Plain Layout
-
   h = Hora()
 \end_layout
 
 \begin_layout Plain Layout
-
   h.hora = segundos/3600
 \end_layout
 
 \begin_layout Plain Layout
-
   segundos = segundos - h.hora * 3600
 \end_layout
 
 \begin_layout Plain Layout
-
   h.minutos = segundos/60
 \end_layout
 
 \begin_layout Plain Layout
-
   segundos = segundos - h.minutos * 60
 \end_layout
 
 \begin_layout Plain Layout
-
   h.segundos = segundos
 \end_layout
 
 \begin_layout Plain Layout
-
   return h
 \end_layout
 
@@ -1144,18 +1104,15 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def sumarHoras(t1,
  t2):
 \end_layout
 
 \begin_layout Plain Layout
-
   segundos = convertirASegundos(t1) + convertirASegundos(t2)
 \end_layout
 
 \begin_layout Plain Layout
-
   return crearHora(segundos)
 \end_layout
 
@@ -1331,7 +1288,6 @@ Algunas cosas que la gente hace naturalmente sin dificultad o pensamiento consci
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1342,7 +1298,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1355,7 +1310,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1374,7 +1328,6 @@ Glosario
 status collapsed
 
 \begin_layout Plain Layout
-
 Función pura:
 \end_layout
 
@@ -1395,7 +1348,6 @@ Modificadora:
 status collapsed
 
 \begin_layout Plain Layout
-
 Estilo de programación funcional
 \end_layout
 
@@ -1409,7 +1361,6 @@ Estilo de programación funcional
 status collapsed
 
 \begin_layout Plain Layout
-
 Desarrollo con prototipos:
 \end_layout
 
@@ -1423,7 +1374,6 @@ Desarrollo con prototipos:
 status collapsed
 
 \begin_layout Plain Layout
-
 Desarrollo planeado:
 \end_layout
 
@@ -1498,7 +1448,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-desarrollo!incremental
+desarrollo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+incremental
 \end_layout
 
 \end_inset
@@ -1522,7 +1482,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-desarrollo!planeado
+desarrollo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+planeado
 \end_layout
 
 \end_inset

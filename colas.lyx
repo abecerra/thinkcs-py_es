@@ -1,24 +1,30 @@
-#LyX 2.1 created this file. For more info see http://www.lyx.org/
-\lyxformat 474
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding auto
+\inputencoding auto-legacy
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -46,8 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -56,15 +73,24 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -74,7 +100,8 @@
 status open
 
 \begin_layout Plain Layout
-LyX source for textbook 
+\SpecialChar LyX
+ source for textbook 
 \begin_inset Quotes eld
 \end_inset
 
@@ -83,25 +110,30 @@ How to think like a computer scientist''
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -122,6 +154,8 @@ name "Cola"
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -132,16 +166,30 @@ cola
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-TAD!Cola
+TAD
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+Cola
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -152,16 +200,30 @@ cola de prioridad
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-TAD!cola de prioridad
+TAD
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+cola de prioridad
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -172,6 +234,8 @@ PEPS
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -182,6 +246,8 @@ política para meter
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -194,19 +260,22 @@ cola de prioridad
 \end_layout
 
 \begin_layout Standard
-Este capítulo presenta dos TADs: la cola y la cola de prioridad.
+Este capítulo presenta dos TADs:
+ la cola y la cola de prioridad.
  En la vida real una 
 \series bold
 Cola
 \series default
  es una línea de clientes esperando por algún servicio.
- En la mayoría de los casos, el primer cliente en la línea es el próximo
- en ser atendido.
- Sin embargo, hay excepciones.
- En los aeropuertos, los clientes cuyos vuelos están próximos a partir se
- atienden, sin importar su posición en la cola.
- En los supermercados, un cliente cortés puede dejar pasar a alguien que
- va a pagar unos pocos víveres.
+ En la mayoría de los casos,
+ el primer cliente en la línea es el próximo en ser atendido.
+ Sin embargo,
+ hay excepciones.
+ En los aeropuertos,
+ los clientes cuyos vuelos están próximos a partir se atienden,
+ sin importar su posición en la cola.
+ En los supermercados,
+ un cliente cortés puede dejar pasar a alguien que va a pagar unos pocos víveres.
 \end_layout
 
 \begin_layout Standard
@@ -219,7 +288,8 @@ política de atención
 \series bold
 PEPS
 \series default
-, por la frase 
+,
+ por la frase 
 \begin_inset Quotes eld
 \end_inset
 
@@ -232,11 +302,13 @@ Primero que Entra - Primero que Sale
 \series bold
 cola de prioridad
 \series default
-, en la que cada cliente tiene asignada una prioridad y siempre se atiende
- el cliente con la prioridad más alta, sin importar el orden de llegada.
- Es la política más general en el sentido de que la prioridad puede asignarse
- bajo cualquier criterio: la hora de partida de un vuelo, cuántos víveres
- se van a pagar, o qué tan importante es el cliente.
+,
+ en la que cada cliente tiene asignada una prioridad y siempre se atiende el cliente con la prioridad más alta,
+ sin importar el orden de llegada.
+ Es la política más general en el sentido de que la prioridad puede asignarse bajo cualquier criterio:
+ la hora de partida de un vuelo,
+ cuántos víveres se van a pagar,
+ o qué tan importante es el cliente.
  No todas las políticas de atención son 
 \begin_inset Quotes eld
 \end_inset
@@ -250,8 +322,8 @@ justas,
 
 \begin_layout Standard
 El TAD Cola y la cola de prioridad TAD tienen el mismo conjunto de operaciones.
- La diferencia está en la semántica de ellas: una cola utiliza la política
- PEPS y una cola de prioridad usa la política de prioridad.
+ La diferencia está en la semántica de ellas:
+ una cola utiliza la política PEPS y una cola de prioridad usa la política de prioridad.
 \end_layout
 
 \begin_layout Standard
@@ -259,7 +331,6 @@ El TAD Cola y la cola de prioridad TAD tienen el mismo conjunto de operaciones.
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 adjustpage
@@ -272,7 +343,6 @@ adjustpage
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -283,7 +353,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -298,16 +367,30 @@ El TAD Cola
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-TAD!Cola
+TAD
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+Cola
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -318,20 +401,44 @@ Cola TAD
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-implementación!Cola
+implementación
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+Cola
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-Cola!implementación con lista
+Cola
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+implementación con lista
 \end_layout
 
 \end_inset
@@ -349,7 +456,6 @@ texttt
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -360,13 +466,13 @@ __init__
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
 \end_inset
 
-: inicializa una Cola vacía.
+:
+ inicializa una Cola vacía.
 \end_layout
 
 \begin_layout Description
@@ -375,7 +481,6 @@ texttt
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -386,13 +491,13 @@ meter
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
 \end_inset
 
-: agrega un nuevo objeto a la cola.
+:
+ agrega un nuevo objeto a la cola.
 \end_layout
 
 \begin_layout Description
@@ -401,7 +506,6 @@ texttt
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -412,15 +516,15 @@ sacar
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
 \end_inset
 
-: elimina y retorna un objeto de la Cola.
- Entre todos los que están dentro de la cola, el objeto retornado fue el
- primero en agregarse
+:
+ elimina y retorna un objeto de la Cola.
+ Entre todos los que están dentro de la cola,
+ el objeto retornado fue el primero en agregarse
 \end_layout
 
 \begin_layout Description
@@ -429,7 +533,6 @@ texttt
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -440,13 +543,13 @@ estaVacia
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
 \end_inset
 
-: revisa si la cola está vacía.
+:
+ revisa si la cola está vacía.
 \end_layout
 
 \begin_layout Section
@@ -455,6 +558,8 @@ Cola enlazada
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -465,10 +570,22 @@ Cola enlazada
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-Cola!implementación enlazada
+Cola
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+implementación enlazada
 \end_layout
 
 \end_inset
@@ -494,7 +611,6 @@ Nodo
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 beforeverb
@@ -538,7 +654,8 @@ class Cola:
 \end_layout
 
 \begin_layout Verbatim
-  def meter(self, carga):
+  def meter(self,
+ carga):
 \end_layout
 
 \begin_layout Verbatim
@@ -574,7 +691,8 @@ class Cola:
 \end_layout
 
 \begin_layout Verbatim
-      while ultimo.siguiente: ultimo = ultimo.siguiente
+      while ultimo.siguiente:
+ ultimo = ultimo.siguiente
 \end_layout
 
 \begin_layout Verbatim
@@ -619,7 +737,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 afterverb
 \end_layout
@@ -634,7 +751,8 @@ estaVacia
 \family typewriter
 ListaEnlazada
 \family default
-, 
+,
+ 
 \family typewriter
 sacar
 \family default
@@ -647,7 +765,8 @@ meter
 \end_layout
 
 \begin_layout Standard
-Si la cola está vacía, le asignamos a 
+Si la cola está vacía,
+ le asignamos a 
 \family typewriter
 primero
 \family default
@@ -655,10 +774,9 @@ primero
 \end_layout
 
 \begin_layout Standard
-Si tiene elementos, recorremos la lista hasta el último nodo y pegamos el
- nuevo nodo al final.
- Podemos detectar si hemos llegado al final de la lista porque el atributo
- 
+Si tiene elementos,
+ recorremos la lista hasta el último nodo y pegamos el nuevo nodo al final.
+ Podemos detectar si hemos llegado al final de la lista porque el atributo 
 \family typewriter
 siguiente
 \family default
@@ -679,8 +797,8 @@ Cola
 \family typewriter
 numElementos
 \family default
- debe ser el número de nodos en la Cola, y el último nodo debe tener en
- 
+ debe ser el número de nodos en la Cola,
+ y el último nodo debe tener en 
 \family typewriter
 siguiente
 \family default
@@ -698,6 +816,8 @@ Desempeño
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -710,9 +830,11 @@ desempeño
 \end_layout
 
 \begin_layout Standard
-Usualmente, cuando llamamos un método, no nos interesan los detalles de
- la implementación.
- Sin embargo, hay un 
+Usualmente,
+ cuando llamamos un método,
+ no nos interesan los detalles de la implementación.
+ Sin embargo,
+ hay un 
 \begin_inset Quotes eld
 \end_inset
 
@@ -720,9 +842,9 @@ detalle
 \begin_inset Quotes erd
 \end_inset
 
- que quisiéramos saber ---el desempeño del nuevo método.
- ¿Cuánto tarda en ejecutarse y cómo cambia el tiempo de ejecución a medida
- que el número de objetos en la Cola crece?
+ que quisiéramos saber —
+el desempeño del nuevo método.
+ ¿Cuánto tarda en ejecutarse y cómo cambia el tiempo de ejecución a medida que el número de objetos en la Cola crece?
 \end_layout
 
 \begin_layout Standard
@@ -734,20 +856,22 @@ sacar
 \end_layout
 
 \begin_layout Standard
-No hay ciclos ni llamados a funciones, así que el tiempo de ejecución de
- este método es el mismo cada vez que se ejecuta.
+No hay ciclos ni llamados a funciones,
+ así que el tiempo de ejecución de este método es el mismo cada vez que se ejecuta.
  Los métodos de este tipo se denominan operaciones de 
 \series bold
 tiempo constante
 \series default
 .
- De hecho, el método puede ser mas rápido cuando la lista está vacía ya
- que no entra al cuerpo del condicional, pero esta diferencia no es significativ
-a.
+ De hecho,
+ el método puede ser mas rápido cuando la lista está vacía ya que no entra al cuerpo del condicional,
+ pero esta diferencia no es significativa.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -765,24 +889,26 @@ El desempeño de
 meter
 \family default
  es muy diferente.
- En el caso general, tenemos que recorrer la lista para encontrar el último
- elemento.
+ En el caso general,
+ tenemos que recorrer la lista para encontrar el último elemento.
 \end_layout
 
 \begin_layout Standard
-Este recorrido toma un tiempo proporcional al atributo numElementos de la
- lista.
- Ya que el tiempo de ejecución es una función lineal de numElementos, se
- dice que este método tiene un tiempo de ejecución de 
+Este recorrido toma un tiempo proporcional al atributo numElementos de la lista.
+ Ya que el tiempo de ejecución es una función lineal de numElementos,
+ se dice que este método tiene un tiempo de ejecución de 
 \series bold
 tiempo lineal
 \series default
 .
- Comparado con el tiempo constante, es bastante malo.
+ Comparado con el tiempo constante,
+ es bastante malo.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -800,16 +926,30 @@ Cola Enlazada mejorada
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-Cola!implementación mejorada
+Cola
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+implementación mejorada
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -822,10 +962,10 @@ Cola mejorada
 \end_layout
 
 \begin_layout Standard
-Nos gustaría contar con una implementación del TAD Cola, cuyas operaciones
- tomen tiempo constante.
- Una forma de hacerlo es manteniendo una referencia al último nodo, como
- se ilustra en la figura siguiente:
+Nos gustaría contar con una implementación del TAD Cola,
+ cuyas operaciones tomen tiempo constante.
+ Una forma de hacerlo es manteniendo una referencia al último nodo,
+ como se ilustra en la figura siguiente:
 \end_layout
 
 \begin_layout Standard
@@ -833,7 +973,6 @@ Nos gustaría contar con una implementación del TAD Cola, cuyas operaciones
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 beforefig
@@ -846,7 +985,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -865,7 +1003,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -876,7 +1013,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -900,7 +1036,6 @@ ColaMejorada
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 beforeverb
@@ -949,7 +1084,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 afterverb
 \end_layout
@@ -978,7 +1112,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforeverb
 \end_layout
@@ -997,7 +1130,8 @@ class ColaMejorada:
 \end_layout
 
 \begin_layout Verbatim
-  def meter(self, carga):
+  def meter(self,
+ carga):
 \end_layout
 
 \begin_layout Verbatim
@@ -1013,7 +1147,8 @@ class ColaMejorada:
 \end_layout
 
 \begin_layout Verbatim
-      # si está vacía, el nuevo nodo es primero y ultimo
+      # si está vacía,
+ el nuevo nodo es primero y ultimo
 \end_layout
 
 \begin_layout Verbatim
@@ -1054,7 +1189,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 afterverb
 \end_layout
@@ -1065,8 +1199,10 @@ afterverb
 \family typewriter
 ultimo
 \family default
- lleva la pista del último nodo, no tenemos que buscarlo.
- Como resultado, este método tiene un tiempo constante de ejecución.
+ lleva la pista del último nodo,
+ no tenemos que buscarlo.
+ Como resultado,
+ este método tiene un tiempo constante de ejecución.
 \end_layout
 
 \begin_layout Standard
@@ -1091,7 +1227,6 @@ None
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 beforeverb
@@ -1144,16 +1279,15 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 afterverb
 \end_layout
 
 \end_inset
 
- Esta implementación es más compleja que la inicial y es más difícil demostrar
- su corrección.
- La ventaja es que hemos logrado el objetivo ---
+ Esta implementación es más compleja que la inicial y es más difícil demostrar su corrección.
+ La ventaja es que hemos logrado el objetivo —
+
 \family typewriter
 meter
 \family default
@@ -1169,7 +1303,6 @@ sacar
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1181,15 +1314,14 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 em
 \end_layout
 
 \end_inset
 
- Como ejercicio, escriba una implementación del TAD Cola usando una lista
- de Python.
+ Como ejercicio,
+ escriba una implementación del TAD Cola usando una lista de Python.
  Compare el desempeño de esta implementación con el de la 
 \family typewriter
 ColaMejorada
@@ -1199,7 +1331,6 @@ ColaMejorada
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1214,20 +1345,44 @@ Cola de prioridad
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-cola de prioridad!TAD
+cola de prioridad
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+TAD
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-TAD!cola de prioridad
+TAD
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+cola de prioridad
 \end_layout
 
 \end_inset
@@ -1236,8 +1391,8 @@ TAD!cola de prioridad
 \end_layout
 
 \begin_layout Standard
-El TAD cola de prioridad tiene la misma interfaz que el TAD Cola, pero su
- semántica es distinta.
+El TAD cola de prioridad tiene la misma interfaz que el TAD Cola,
+ pero su semántica es distinta.
 \end_layout
 
 \begin_layout Description
@@ -1246,7 +1401,6 @@ texttt
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1257,13 +1411,13 @@ __init__
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
 \end_inset
 
-: inicializa una Cola vacía.
+:
+ inicializa una Cola vacía.
 \end_layout
 
 \begin_layout Description
@@ -1272,7 +1426,6 @@ texttt
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1283,13 +1436,13 @@ meter
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
 \end_inset
 
-: agrega un objeto a la Cola.
+:
+ agrega un objeto a la Cola.
 \end_layout
 
 \begin_layout Description
@@ -1298,7 +1451,6 @@ texttt
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1309,13 +1461,13 @@ sacar
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
 \end_inset
 
-: saca y retorna un objeto de la Cola.
+:
+ saca y retorna un objeto de la Cola.
  El objeto que se retorna es el de la mas alta prioridad.
 \end_layout
 
@@ -1325,7 +1477,6 @@ texttt
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1336,36 +1487,37 @@ estaVacia
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
 \end_inset
 
-: verifica si la Cola está vacía.
+:
+ verifica si la Cola está vacía.
 \end_layout
 
 \begin_layout Standard
-La diferencia semántica está en el objeto que se saca, que necesariamente
- no es el primero que se agregó.
- En vez de esto, es el que tiene el mayor valor de prioridad.
- Las prioridades y la manera de compararlas no se especifica en la implementació
-n de la cola de prioridad.
+La diferencia semántica está en el objeto que se saca,
+ que necesariamente no es el primero que se agregó.
+ En vez de esto,
+ es el que tiene el mayor valor de prioridad.
+ Las prioridades y la manera de compararlas no se especifica en la implementación de la cola de prioridad.
  Depende de cuáles objetos estén en la Cola.
 \end_layout
 
 \begin_layout Standard
-Por ejemplo, si los objetos en la Cola tienen nombres, podríamos escogerlos
- en orden alfabético.
- Si son puntajes de bolos iríamos sacando del más alto al más bajo; pero
- si son puntajes de golf, iríamos del más bajo al más alto.
- En tanto que podamos comparar los objetos en la Cola, podemos encontrar
- y sacar el que tenga la prioridad más alta.
+Por ejemplo,
+ si los objetos en la Cola tienen nombres,
+ podríamos escogerlos en orden alfabético.
+ Si son puntajes de bolos iríamos sacando del más alto al más bajo;
+ pero si son puntajes de golf,
+ iríamos del más bajo al más alto.
+ En tanto que podamos comparar los objetos en la Cola,
+ podemos encontrar y sacar el que tenga la prioridad más alta.
 \end_layout
 
 \begin_layout Standard
-Esta implementación de la cola de prioridad tiene como atributo una lista
- de Python que contiene los elementos en la Cola.
+Esta implementación de la cola de prioridad tiene como atributo una lista de Python que contiene los elementos en la Cola.
 \end_layout
 
 \begin_layout Standard
@@ -1373,7 +1525,6 @@ Esta implementación de la cola de prioridad tiene como atributo una lista
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 beforeverb
@@ -1413,7 +1564,8 @@ class ColaPrioridad:
 \end_layout
 
 \begin_layout Verbatim
-  def meter(self, item):
+  def meter(self,
+ item):
 \end_layout
 
 \begin_layout Verbatim
@@ -1426,18 +1578,19 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 afterverb
 \end_layout
 
 \end_inset
 
- El método de inicialización, 
+ El método de inicialización,
+ 
 \family typewriter
 estaVacia
 \family default
-, y 
+,
+ y 
 \family typewriter
 meter
 \family default
@@ -1454,7 +1607,6 @@ sacar
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 beforeverb
@@ -1511,24 +1663,22 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 afterverb
 \end_layout
 
 \end_inset
 
- Al iniciar cada iteración, 
+ Al iniciar cada iteración,
+ 
 \family typewriter
 maxi
 \family default
- almacena el índice del ítem más grande (con la prioridad más alta) que
- hayamos encontrado 
+ almacena el índice del ítem más grande (con la prioridad más alta) que hayamos encontrado 
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1539,7 +1689,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1552,19 +1701,20 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
 \end_inset
 
 .
- En cada iteración, el programa compara el 
+ En cada iteración,
+ el programa compara el 
 \family typewriter
 i
 \family default
 ésimo ítem con el que iba ganando.
- Si el nuevo es mejor, el valor de 
+ Si el nuevo es mejor,
+ el valor de 
 \family typewriter
 maxi
 \family default
@@ -1577,6 +1727,8 @@ i
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1593,7 +1745,8 @@ Cuando el
 \family typewriter
 for
 \family default
- se completa, 
+ se completa,
+ 
 \family typewriter
 maxi
 \family default
@@ -1610,7 +1763,6 @@ Probemos la implementación:
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 beforeverb
@@ -1642,7 +1794,8 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
->>> while not q.estaVacia(): print(q.sacar())
+>>> while not q.estaVacia():
+ print(q.sacar())
 \end_layout
 
 \begin_layout Verbatim
@@ -1667,22 +1820,22 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 afterverb
 \end_layout
 
 \end_inset
 
- Si la Cola contiene números o cadenas, se sacan en orden alfabético o numérico,
+ Si la Cola contiene números o cadenas,
+ se sacan en orden alfabético o numérico,
  del más alto al más bajo.
- Python puede encontrar el mayor entero o cadena a través de los operadores
- de comparación primitivos.
+ Python puede encontrar el mayor entero o cadena a través de los operadores de comparación primitivos.
 \end_layout
 
 \begin_layout Standard
-Si la Cola contiene otro tipo de objeto, creado por el programador, tiene
- que proporcionar el método 
+Si la Cola contiene otro tipo de objeto,
+ creado por el programador,
+ tiene que proporcionar el método 
 \family typewriter
 __cmp__
 \family default
@@ -1695,7 +1848,8 @@ sacar
 \family typewriter
 >
 \family default
- para comparar items, estaría llamando el método 
+ para comparar items,
+ estaría llamando el método 
 \family typewriter
 __cmp__
 \family default
@@ -1704,7 +1858,8 @@ __cmp__
 \family typewriter
 __cmp__
 \family default
- funcione correctamente, la cola de prioridad será correcta.
+ funcione correctamente,
+ la cola de prioridad será correcta.
 \end_layout
 
 \begin_layout Section
@@ -1715,6 +1870,8 @@ golfista
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1725,16 +1882,30 @@ golfista
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-clase!golfista
+clase
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+golfista
 \end_layout
 
 \end_inset
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1745,6 +1916,8 @@ prioridad
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1755,10 +1928,22 @@ sobrecarga de operadores
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sobrecarga!operador
+sobrecarga
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+operador
 \end_layout
 
 \end_inset
@@ -1789,7 +1974,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforeverb
 \end_layout
@@ -1804,7 +1988,9 @@ class golfista:
 \end_layout
 
 \begin_layout Verbatim
-  def __init__(self, nombre, puntaje):
+  def __init__(self,
+ nombre,
+ puntaje):
 \end_layout
 
 \begin_layout Verbatim
@@ -1824,7 +2010,9 @@ class golfista:
 \end_layout
 
 \begin_layout Verbatim
-    return "%-16s: %d" % (self.nombre, self.puntaje)
+    return "%-16s:
+ %d" % (self.nombre,
+ self.puntaje)
 \end_layout
 
 \begin_layout Standard
@@ -1832,7 +2020,6 @@ class golfista:
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterverb
@@ -1844,12 +2031,13 @@ afterverb
 \family typewriter
 __str__
 \family default
- utiliza el operador de formato para poner los nombres y los puntajes en
- dos columnas.
+ utiliza el operador de formato para poner los nombres y los puntajes en dos columnas.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -1860,10 +2048,22 @@ operador de formato
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operador!de formato
+operador
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de formato
 \end_layout
 
 \end_inset
@@ -1897,7 +2097,8 @@ mayor que
 \family typewriter
 otro
 \family default
-, -1 si 
+,
+ -1 si 
 \family typewriter
 self
 \family default
@@ -1909,7 +2110,8 @@ menor
 \begin_inset Quotes erd
 \end_inset
 
- otro, y 0 si son iguales.
+ otro,
+ y 0 si son iguales.
 \end_layout
 
 \begin_layout Standard
@@ -1917,7 +2119,6 @@ menor
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 beforeverb
@@ -1937,7 +2138,8 @@ class golfista:
 \end_layout
 
 \begin_layout Verbatim
-  def __cmp__(self, otro):
+  def __cmp__(self,
+ otro):
 \end_layout
 
 \begin_layout Verbatim
@@ -1945,11 +2147,13 @@ class golfista:
 \end_layout
 
 \begin_layout Verbatim
-    if self.puntaje < otro.puntaje: return  1   
+    if self.puntaje < otro.puntaje:
+ return  1   
 \end_layout
 
 \begin_layout Verbatim
-    if self.puntaje > otro.puntaje: return -1
+    if self.puntaje > otro.puntaje:
+ return -1
 \end_layout
 
 \begin_layout Verbatim
@@ -1962,15 +2166,13 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 afterverb
 \end_layout
 
 \end_inset
 
- Ahora estamos listos para probar la cola de prioridad almacenando instancias
- de la clase 
+ Ahora estamos listos para probar la cola de prioridad almacenando instancias de la clase 
 \family typewriter
 golfista
 \family default
@@ -1983,7 +2185,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforeverb
 \end_layout
@@ -1994,15 +2195,18 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
->>> tiger = golfista("Tiger Woods",    61)
+>>> tiger = golfista("Tiger Woods",
+    61)
 \end_layout
 
 \begin_layout Verbatim
->>> phil  = golfista("Phil Mickelson", 72)
+>>> phil  = golfista("Phil Mickelson",
+ 72)
 \end_layout
 
 \begin_layout Verbatim
->>> hal   = golfista("Hal Sutton",     69)
+>>> hal   = golfista("Hal Sutton",
+     69)
 \end_layout
 
 \begin_layout Verbatim
@@ -2026,19 +2230,23 @@ beforeverb
 \end_layout
 
 \begin_layout Verbatim
->>> while not pq.estaVacia(): print(pq.sacar())
+>>> while not pq.estaVacia():
+ print(pq.sacar())
 \end_layout
 
 \begin_layout Verbatim
-Tiger Woods    : 61
+Tiger Woods    :
+ 61
 \end_layout
 
 \begin_layout Verbatim
-Hal Sutton     : 69
+Hal Sutton     :
+ 69
 \end_layout
 
 \begin_layout Verbatim
-Phil Mickelson : 72
+Phil Mickelson :
+ 72
 \end_layout
 
 \begin_layout Standard
@@ -2046,7 +2254,6 @@ Phil Mickelson : 72
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterverb
@@ -2062,7 +2269,6 @@ afterverb
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -2074,24 +2280,21 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 em
 \end_layout
 
 \end_inset
 
- Como ejercicio, escriba una implementación del TAD cola de prioridad TAD
- usando una lista enlazada.
- Ésta debe mantenerse ordenada, de forma que sacar sea una operación de
- tiempo constante.
- Compare el desempeño de esta implementación con la implementación basada
- en listas de Python.
+ Como ejercicio,
+ escriba una implementación del TAD cola de prioridad TAD usando una lista enlazada.
+ Ésta debe mantenerse ordenada,
+ de forma que sacar sea una operación de tiempo constante.
+ Compare el desempeño de esta implementación con la implementación basada en listas de Python.
 \begin_inset ERT
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2106,6 +2309,8 @@ Glosario
 
 \begin_layout Standard
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2116,6 +2321,8 @@ Cola
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2126,6 +2333,8 @@ política de atención
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2136,6 +2345,8 @@ PEPS
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2146,6 +2357,8 @@ cola de prioridad
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2156,6 +2369,8 @@ barniz
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2166,6 +2381,8 @@ tiempo constante
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2176,6 +2393,8 @@ tiempo lineal
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2186,6 +2405,8 @@ desempeño
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2196,6 +2417,8 @@ Cola enlazada
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2206,6 +2429,8 @@ buffer circular
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2216,6 +2441,8 @@ clase abstracta
 
  
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -2228,12 +2455,13 @@ interfaz
 \end_layout
 
 \begin_layout Description
-Cola: conjunto ordenado de objetos (o personas) esperando a que se les preste
- algún servicio
+Cola:
+ conjunto ordenado de objetos (o personas) esperando a que se les preste algún servicio
 \end_layout
 
 \begin_layout Description
-Cola: TAD con las operaciones que se realizan en una Cola.
+Cola:
+ TAD con las operaciones que se realizan en una Cola.
 \end_layout
 
 \begin_layout Description
@@ -2241,26 +2469,27 @@ Cola: TAD con las operaciones que se realizan en una Cola.
 status collapsed
 
 \begin_layout Plain Layout
-
 Política de atención:
 \end_layout
 
 \end_inset
 
- reglas que determinan cuál es el siguiente objeto que se saca (atiende)
- en una Cola.
+ reglas que determinan cuál es el siguiente objeto que se saca (atiende) en una Cola.
 \end_layout
 
 \begin_layout Description
-PEPS: 
+PEPS:
+ 
 \begin_inset Quotes eld
 \end_inset
 
-Primero que Entra, Primero que Sale
+Primero que Entra,
+ Primero que Sale
 \begin_inset Quotes erd
 \end_inset
 
- , política de atención en la que se saca el primer elemento de la Cola.
+ ,
+ política de atención en la que se saca el primer elemento de la Cola.
 \end_layout
 
 \begin_layout Description
@@ -2268,14 +2497,12 @@ Primero que Entra, Primero que Sale
 status collapsed
 
 \begin_layout Plain Layout
-
 Atención por prioridad:
 \end_layout
 
 \end_inset
 
- una política de atención en la que se saca el elemento de la Cola que tenga
- la mayor prioridad.
+ una política de atención en la que se saca el elemento de la Cola que tenga la mayor prioridad.
 \end_layout
 
 \begin_layout Description
@@ -2283,14 +2510,12 @@ Atención por prioridad:
 status collapsed
 
 \begin_layout Plain Layout
-
 Cola de prioridad:
 \end_layout
 
 \end_inset
 
- un TAD que define las operaciones que se pueden realizar en una cola de
- prioridad.
+ un TAD que define las operaciones que se pueden realizar en una cola de prioridad.
 \end_layout
 
 \begin_layout Description
@@ -2298,7 +2523,6 @@ Cola de prioridad:
 status collapsed
 
 \begin_layout Plain Layout
-
 Cola enlazada:
 \end_layout
 
@@ -2308,10 +2532,9 @@ Cola enlazada:
 \end_layout
 
 \begin_layout Description
-Desempeño: toda función de un TAD realiza un número de operaciones básicas
- que dependen del número de elementos que éste contiene en un momento dado.
- Por medio de este número de operaciones básicas se pueden comparar distintas
- alternativas de implementación de una operación.
+Desempeño:
+ toda función de un TAD realiza un número de operaciones básicas que dependen del número de elementos que éste contiene en un momento dado.
+ Por medio de este número de operaciones básicas se pueden comparar distintas alternativas de implementación de una operación.
 \end_layout
 
 \begin_layout Description
@@ -2319,14 +2542,13 @@ Desempeño: toda función de un TAD realiza un número de operaciones básicas
 status collapsed
 
 \begin_layout Plain Layout
-
 Tiempo constante:
 \end_layout
 
 \end_inset
 
- desempeño de una operación, cuyo tiempo de ejecución no depende del tamaño
- de la estructura de datos.
+ desempeño de una operación,
+ cuyo tiempo de ejecución no depende del tamaño de la estructura de datos.
 \end_layout
 
 \begin_layout Description
@@ -2334,14 +2556,13 @@ Tiempo constante:
 status collapsed
 
 \begin_layout Plain Layout
-
 Tiempo lineal:
 \end_layout
 
 \end_inset
 
- desempeño de una operación, cuyo tiempo de ejecución es una función lineal
- del tamaño de la estructura de datos.
+ desempeño de una operación,
+ cuyo tiempo de ejecución es una función lineal del tamaño de la estructura de datos.
 \end_layout
 
 \begin_layout Standard

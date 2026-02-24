@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -61,11 +61,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -91,6 +99,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -146,7 +155,7 @@ This distribution includes a file named fdl.lyx that contains the text of the GN
 \end_layout
 
 \begin_layout Chapter
-Funciones fructíferas 
+Funciones fructíferas
 \end_layout
 
 \begin_layout Standard
@@ -189,12 +198,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 e = math.exp(1.0)
 \end_layout
 
 \begin_layout Plain Layout
-
 altura = radio * math.sin(angulo)
 \end_layout
 
@@ -252,7 +259,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 import math
 \end_layout
 
@@ -261,17 +267,14 @@ import math
 \end_layout
 
 \begin_layout Plain Layout
-
 def area(radio):
 \end_layout
 
 \begin_layout Plain Layout
-
   temp = math.pi * radio**2
 \end_layout
 
 \begin_layout Plain Layout
-
   return temp
 \end_layout
 
@@ -316,12 +319,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def area(radio):
 \end_layout
 
 \begin_layout Plain Layout
-
   return math.pi * radio**2
 \end_layout
 
@@ -364,7 +365,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-variable!temporal
+variable
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+temporal
 \end_layout
 
 \end_inset
@@ -383,27 +394,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def valorAbsoluto(x):
 \end_layout
 
 \begin_layout Plain Layout
-
   if x < 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     return -x
 \end_layout
 
 \begin_layout Plain Layout
-
   else:
 \end_layout
 
 \begin_layout Plain Layout
-
     return x
 \end_layout
 
@@ -467,27 +473,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def valorAbsoluto(x):
 \end_layout
 
 \begin_layout Plain Layout
-
   if x < 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     return -x
 \end_layout
 
 \begin_layout Plain Layout
-
   elif x > 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     return x
 \end_layout
 
@@ -528,12 +529,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> print(valorAbsoluto(0))
 \end_layout
 
 \begin_layout Plain Layout
-
 None
 \end_layout
 
@@ -606,7 +605,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-desarrollo!incremental
+desarrollo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+incremental
 \end_layout
 
 \end_inset
@@ -664,7 +673,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def distancia(x1,
  y1,
  x2,
@@ -672,7 +680,6 @@ def distancia(x1,
 \end_layout
 
 \begin_layout Plain Layout
-
   return 0.0
 \end_layout
 
@@ -695,7 +702,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> distancia(1,
  2,
  4,
@@ -703,7 +709,6 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 0.0
 \end_layout
 
@@ -751,7 +756,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def distancia(x1,
  y1,
  x2,
@@ -759,29 +763,24 @@ def distancia(x1,
 \end_layout
 
 \begin_layout Plain Layout
-
   dx = x2 - x1
 \end_layout
 
 \begin_layout Plain Layout
-
   dy = y2 - y1
 \end_layout
 
 \begin_layout Plain Layout
-
   print("dx es",
  dx)
 \end_layout
 
 \begin_layout Plain Layout
-
   print("dy es",
  dy)
 \end_layout
 
 \begin_layout Plain Layout
-
   return 0.0
 \end_layout
 
@@ -813,7 +812,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def distancia(x1,
  y1,
  x2,
@@ -821,29 +819,24 @@ def distancia(x1,
 \end_layout
 
 \begin_layout Plain Layout
-
   dx = x2 - x1
 \end_layout
 
 \begin_layout Plain Layout
-
   dy = y2 - y1
 \end_layout
 
 \begin_layout Plain Layout
-
   discuadrado = dx**2 + dy**2
 \end_layout
 
 \begin_layout Plain Layout
-
   print("discuadrado es:
  ",
  discuadrado)
 \end_layout
 
 \begin_layout Plain Layout
-
   return 0.0
 \end_layout
 
@@ -882,7 +875,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def distancia(x1,
  y1,
  x2,
@@ -890,27 +882,22 @@ def distancia(x1,
 \end_layout
 
 \begin_layout Plain Layout
-
   dx = x2 - x1
 \end_layout
 
 \begin_layout Plain Layout
-
   dy = y2 - y1
 \end_layout
 
 \begin_layout Plain Layout
-
   discuadrado = dx**2 + dy**2
 \end_layout
 
 \begin_layout Plain Layout
-
   resultado = math.sqrt(discuadrado)
 \end_layout
 
 \begin_layout Plain Layout
-
   return resultado
 \end_layout
 
@@ -980,7 +967,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-función!composición
+función
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+composición
 \end_layout
 
 \end_inset
@@ -1041,7 +1038,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 radio = distancia(xc,
  yc,
  xp,
@@ -1063,12 +1059,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 resultado = area(radio)
 \end_layout
 
 \begin_layout Plain Layout
-
 return resultado
 \end_layout
 
@@ -1083,7 +1077,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def area2(xc,
  yc,
  xp,
@@ -1091,7 +1084,6 @@ def area2(xc,
 \end_layout
 
 \begin_layout Plain Layout
-
   radio = distancia(xc,
  yc,
  xp,
@@ -1099,12 +1091,10 @@ def area2(xc,
 \end_layout
 
 \begin_layout Plain Layout
-
   resultado = area(radio)
 \end_layout
 
 \begin_layout Plain Layout
-
   return resultado
 \end_layout
 
@@ -1141,7 +1131,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def area2(xc,
  yc,
  xp,
@@ -1149,7 +1138,6 @@ def area2(xc,
 \end_layout
 
 \begin_layout Plain Layout
-
   return area(distancia(xc,
  yc,
  xp,
@@ -1210,28 +1198,23 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def esDivisible(x,
  y):
 \end_layout
 
 \begin_layout Plain Layout
-
   if x % y == 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     return True       #  es cierto
 \end_layout
 
 \begin_layout Plain Layout
-
   else:
 \end_layout
 
 \begin_layout Plain Layout
-
     return False      # es falso
 \end_layout
 
@@ -1278,13 +1261,11 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def esDivisible(x,
  y):
 \end_layout
 
 \begin_layout Plain Layout
-
   return x % y == 0
 \end_layout
 
@@ -1299,24 +1280,20 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>>   esDivisible(6,
  4)
 \end_layout
 
 \begin_layout Plain Layout
-
 False
 \end_layout
 
 \begin_layout Plain Layout
-
 >>>   esDivisible(6,
  3)
 \end_layout
 
 \begin_layout Plain Layout
-
 True
 \end_layout
 
@@ -1335,23 +1312,19 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if esDivisible(x,
  y):
 \end_layout
 
 \begin_layout Plain Layout
-
   print("x es divisible por y")
 \end_layout
 
 \begin_layout Plain Layout
-
 else:
 \end_layout
 
 \begin_layout Plain Layout
-
   print("x no es divisible por y")
 \end_layout
 
@@ -1366,7 +1339,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if esDivisible(x,
  y) == True:
 \end_layout
@@ -1411,7 +1383,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lenguaje!completo
+lenguaje
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+completo
 \end_layout
 
 \end_inset
@@ -1453,7 +1435,6 @@ Hasta aquí,
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1464,7 +1445,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1477,7 +1457,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1548,7 +1527,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-definición!circular
+definición
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+circular
 \end_layout
 
 \end_inset
@@ -1650,7 +1639,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-función!factorial
+función
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+factorial
 \end_layout
 
 \end_inset
@@ -1675,7 +1674,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def factorial(n):
 \end_layout
 
@@ -1695,17 +1693,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def factorial(n):
 \end_layout
 
 \begin_layout Plain Layout
-
   if n == 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     return 1
 \end_layout
 
@@ -1733,37 +1728,30 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def factorial(n):
 \end_layout
 
 \begin_layout Plain Layout
-
   if n == 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     return 1
 \end_layout
 
 \begin_layout Plain Layout
-
   else:
 \end_layout
 
 \begin_layout Plain Layout
-
     recur = factorial(n-1)
 \end_layout
 
 \begin_layout Plain Layout
-
     da = n * recur
 \end_layout
 
 \begin_layout Plain Layout
-
     return da
 \end_layout
 
@@ -1803,7 +1791,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 adjustpage
 \end_layout
@@ -1815,7 +1802,6 @@ adjustpage
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1826,7 +1812,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1878,7 +1863,6 @@ Como 0
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1889,7 +1873,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1902,7 +1885,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1963,7 +1945,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -1975,7 +1956,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -1994,7 +1974,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2005,7 +1984,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -2101,7 +2079,6 @@ salto de fe.
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -2112,7 +2089,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -2125,7 +2101,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2237,27 +2212,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def factorial(n):
 \end_layout
 
 \begin_layout Plain Layout
-
   if n == 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     return 1
 \end_layout
 
 \begin_layout Plain Layout
-
   else:
 \end_layout
 
 \begin_layout Plain Layout
-
     return n * factorial(n-1)
 \end_layout
 
@@ -2325,27 +2295,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def fibonacci (n):
 \end_layout
 
 \begin_layout Plain Layout
-
   if n == 0 or n == 1:
 \end_layout
 
 \begin_layout Plain Layout
-
     return 1
 \end_layout
 
 \begin_layout Plain Layout
-
   else:
 \end_layout
 
 \begin_layout Plain Layout
-
     return fibonacci(n-1) + fibonacci(n-2)
 \end_layout
 
@@ -2421,12 +2386,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> factorial (1.5)
 \end_layout
 
 \begin_layout Plain Layout
-
 RuntimeError:
  Maximum recursion depth exceeded
 \end_layout
@@ -2450,7 +2413,6 @@ n
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -2461,7 +2423,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -2474,7 +2435,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2502,7 +2462,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-recursión!infinita
+recursión
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+infinita
 \end_layout
 
 \end_inset
@@ -2563,57 +2533,46 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def factorial (n):
 \end_layout
 
 \begin_layout Plain Layout
-
   if type(n) != type(1):
 \end_layout
 
 \begin_layout Plain Layout
-
     print("Factorial solo esta definido para enteros.")
 \end_layout
 
 \begin_layout Plain Layout
-
     return -1
 \end_layout
 
 \begin_layout Plain Layout
-
   elif n < 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     print("Factorial solo esta definido para positivos")
 \end_layout
 
 \begin_layout Plain Layout
-
     return -1
 \end_layout
 
 \begin_layout Plain Layout
-
   elif n == 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     return 1
 \end_layout
 
 \begin_layout Plain Layout
-
   else:
 \end_layout
 
 \begin_layout Plain Layout
-
     return n * factorial(n-1)
 \end_layout
 
@@ -2634,32 +2593,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> factorial ("pedro")
 \end_layout
 
 \begin_layout Plain Layout
-
 Factorial solo esta definido para enteros.
 \end_layout
 
 \begin_layout Plain Layout
-
 -1
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> factorial (-2)
 \end_layout
 
 \begin_layout Plain Layout
-
 Factorial solo esta definido para positivos.
 \end_layout
 
 \begin_layout Plain Layout
-
 -1
 \end_layout
 
@@ -2706,33 +2659,27 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def area(lado):
 \end_layout
 
 \begin_layout Plain Layout
-
     """ Calcula el area de un cuadrado
 \end_layout
 
 \begin_layout Plain Layout
-
         Parámetros:
 \end_layout
 
 \begin_layout Plain Layout
-
             radio:
  número
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
 \begin_layout Plain Layout
-
     return lado**2
 \end_layout
 
@@ -2752,48 +2699,39 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def area(lado):
 \end_layout
 
 \begin_layout Plain Layout
-
     """ Calcula el area de un cuadrado
 \end_layout
 
 \begin_layout Plain Layout
-
         Parámetros:
 \end_layout
 
 \begin_layout Plain Layout
-
             radio:
  número
 \end_layout
 
 \begin_layout Plain Layout
-
         Pruebas:
 \end_layout
 
 \begin_layout Plain Layout
-
         >>> area(1)
 \end_layout
 
 \begin_layout Plain Layout
-
         1        
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
 \begin_layout Plain Layout
-
     return lado**2
 \end_layout
 
@@ -2815,83 +2753,67 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def area(lado):
 \end_layout
 
 \begin_layout Plain Layout
-
     """ Calcula el area de un cuadrado
 \end_layout
 
 \begin_layout Plain Layout
-
         Parámetros:
 \end_layout
 
 \begin_layout Plain Layout
-
             radio:
  número
 \end_layout
 
 \begin_layout Plain Layout
-
         Pruebas:
 \end_layout
 
 \begin_layout Plain Layout
-
         >>> area(1)
 \end_layout
 
 \begin_layout Plain Layout
-
         1
 \end_layout
 
 \begin_layout Plain Layout
-
         >>> area(2)
 \end_layout
 
 \begin_layout Plain Layout
-
         4
 \end_layout
 
 \begin_layout Plain Layout
-
         >>> area(4)
 \end_layout
 
 \begin_layout Plain Layout
-
         16
 \end_layout
 
 \begin_layout Plain Layout
-
         >>> area(10)
 \end_layout
 
 \begin_layout Plain Layout
-
         100
 \end_layout
 
 \begin_layout Plain Layout
-
         
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
 \begin_layout Plain Layout
-
     return lado**2
 \end_layout
 
@@ -2900,17 +2822,14 @@ def area(lado):
 \end_layout
 
 \begin_layout Plain Layout
-
 if __name__ == '__main__':
 \end_layout
 
 \begin_layout Plain Layout
-
     import doctest
 \end_layout
 
 \begin_layout Plain Layout
-
     doctest.testmod()
 \end_layout
 
@@ -2928,7 +2847,6 @@ Si se ejecuta el guión se ejecutarán todas las pruebas unitarias de todas las 
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+python -m doctest -v guión.py+
@@ -2948,7 +2866,6 @@ Glosario
 status collapsed
 
 \begin_layout Plain Layout
-
 Función fructífera:
 \end_layout
 
@@ -2962,7 +2879,6 @@ Función fructífera:
 status collapsed
 
 \begin_layout Plain Layout
-
 Valor de retorno:
 \end_layout
 
@@ -2976,7 +2892,6 @@ Valor de retorno:
 status collapsed
 
 \begin_layout Plain Layout
-
 Variable temporal:
 \end_layout
 
@@ -2990,7 +2905,6 @@ Variable temporal:
 status collapsed
 
 \begin_layout Plain Layout
-
 Código muerto:
 \end_layout
 
@@ -3015,7 +2929,6 @@ None:
 status collapsed
 
 \begin_layout Plain Layout
-
 Desarrollo incremental:
 \end_layout
 
@@ -3060,7 +2973,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-variable!temporal
+variable
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+temporal
 \end_layout
 
 \end_inset
@@ -3152,7 +3075,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 verb+comparar(a,b)+
 \end_layout
@@ -3191,7 +3113,6 @@ Escriba la función
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+pendiente(x1,

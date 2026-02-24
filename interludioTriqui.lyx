@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -52,11 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -82,6 +90,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -193,7 +202,7 @@ triqui9.py
 status open
 
 \begin_layout Plain Layout
-
+https://github.com/abecerra/thinkcs-py_es/tree/master/codigo/triqui-kivy
 \end_layout
 
 \end_inset
@@ -242,7 +251,6 @@ Todos los elementos de la matriz serán caracteres de texto con la convención q
 status collapsed
 
 \begin_layout Plain Layout
-
 ' ' (esto es el caracter espacio):
 \end_layout
 
@@ -257,7 +265,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 'O':
  
 \end_layout
@@ -289,32 +296,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui0.py
 \end_layout
 
 \begin_layout Plain Layout
-
 def crear():
 \end_layout
 
 \begin_layout Plain Layout
-
     m =  [ [' ',' ',' '],
 \end_layout
 
 \begin_layout Plain Layout
-
            [' ',' ',' '],
 \end_layout
 
 \begin_layout Plain Layout
-
            [' ',' ',' '] ]
 \end_layout
 
 \begin_layout Plain Layout
-
     return m
 \end_layout
 
@@ -327,47 +328,38 @@ def crear():
 \end_layout
 
 \begin_layout Plain Layout
-
 def imprimir(tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     for i in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
         print("|"),
 \end_layout
 
 \begin_layout Plain Layout
-
         for j in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
             print(tablero[i][j]),
 \end_layout
 
 \begin_layout Plain Layout
-
         print("|")
 \end_layout
 
 \begin_layout Plain Layout
-
         
 \end_layout
 
 \begin_layout Plain Layout
-
 triqui = crear()
 \end_layout
 
 \begin_layout Plain Layout
-
 imprimir(triqui)
 \end_layout
 
@@ -392,39 +384,32 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui1.py
 \end_layout
 
 \begin_layout Plain Layout
-
 while True:
 \end_layout
 
 \begin_layout Plain Layout
-
     print("Juegue jugador O")
 \end_layout
 
 \begin_layout Plain Layout
-
     f = input("fila?
  ")
 \end_layout
 
 \begin_layout Plain Layout
-
     c = input("columna?
  ")
 \end_layout
 
 \begin_layout Plain Layout
-
     triqui[f][c] = "O"
 \end_layout
 
 \begin_layout Plain Layout
-
     imprimir(triqui)
 \end_layout
 
@@ -453,32 +438,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui3.py
 \end_layout
 
 \begin_layout Plain Layout
-
 def ganaDiagonal1(jugador,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     for i in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
         if tablero[i][i]!=jugador:
 \end_layout
 
 \begin_layout Plain Layout
-
             return False
 \end_layout
 
 \begin_layout Plain Layout
-
     return True
 \end_layout
 
@@ -507,32 +486,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui3.py
 \end_layout
 
 \begin_layout Plain Layout
-
 def ganaDiagonal2(jugador,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     for i in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
         if tablero[i][2-i]!=jugador:
 \end_layout
 
 \begin_layout Plain Layout
-
             return False
 \end_layout
 
 \begin_layout Plain Layout
-
     return True
 \end_layout
 
@@ -559,49 +532,40 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui3.py
 \end_layout
 
 \begin_layout Plain Layout
-
 print("Juegue jugador O")
 \end_layout
 
 \begin_layout Plain Layout
-
     f = input("fila?
  ")
 \end_layout
 
 \begin_layout Plain Layout
-
     c = input("columna?
  ")
 \end_layout
 
 \begin_layout Plain Layout
-
     triqui[f][c] = "O"
 \end_layout
 
 \begin_layout Plain Layout
-
     imprimir(triqui)
 \end_layout
 
 \begin_layout Plain Layout
-
     if ganaDiagonal1("O",triqui) or ganaDiagonal2("O",triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
         print("Gana el jugador O!!!!")
 \end_layout
 
 \begin_layout Plain Layout
-
         break
 \end_layout
 
@@ -627,37 +591,30 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui4.py
 \end_layout
 
 \begin_layout Plain Layout
-
 def ganaFila(fila,jugador,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     """Chequea si el jugador gana en la fila dada"""
 \end_layout
 
 \begin_layout Plain Layout
-
     for i in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
         if tablero[fila][i]!=jugador:
 \end_layout
 
 \begin_layout Plain Layout
-
             return False
 \end_layout
 
 \begin_layout Plain Layout
-
     return True
 \end_layout
 
@@ -676,7 +633,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui4.py
 \end_layout
 
@@ -685,27 +641,22 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 def ganaHorizontal(jugador,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     for i in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
         if ganaFila(i,jugador,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
             return True
 \end_layout
 
 \begin_layout Plain Layout
-
     return False
 \end_layout
 
@@ -727,61 +678,50 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui4.py
 \end_layout
 
 \begin_layout Plain Layout
-
 while True:
 \end_layout
 
 \begin_layout Plain Layout
-
     print("Juegue jugador X")
 \end_layout
 
 \begin_layout Plain Layout
-
     f = input("fila?
  ")
 \end_layout
 
 \begin_layout Plain Layout
-
     c = input("columna?
  ")
 \end_layout
 
 \begin_layout Plain Layout
-
     triqui[f][c] = "X"
 \end_layout
 
 \begin_layout Plain Layout
-
     imprimir(triqui)
 \end_layout
 
 \begin_layout Plain Layout
-
     if ganaDiagonal1("X",triqui) or ganaDiagonal2("X",triqui) or 
 \backslash
 
 \end_layout
 
 \begin_layout Plain Layout
-
        ganaHorizontal("X",triqui) or ganaVertical("X",triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
         print("Gana el jugador X!!!!")
 \end_layout
 
 \begin_layout Plain Layout
-
         break
 \end_layout
 
@@ -829,69 +769,57 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui5.py
 \end_layout
 
 \begin_layout Plain Layout
-
 def jugar(jugador,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     print("Juegue jugador ",
  jugador)
 \end_layout
 
 \begin_layout Plain Layout
-
     f = input("fila?
  ")
 \end_layout
 
 \begin_layout Plain Layout
-
     c = input("columna?
  ")
 \end_layout
 
 \begin_layout Plain Layout
-
     tablero[f][c] = jugador
 \end_layout
 
 \begin_layout Plain Layout
-
     imprimir(triqui)
 \end_layout
 
 \begin_layout Plain Layout
-
     diag = ganaDiagonal1(jugador,tablero) or 
 \backslash
 
 \end_layout
 
 \begin_layout Plain Layout
-
            ganaDiagonal2(jugador,tablero)
 \end_layout
 
 \begin_layout Plain Layout
-
     linea = ganaHorizontal(jugador,tablero) or 
 \backslash
  
 \end_layout
 
 \begin_layout Plain Layout
-
             ganaVertical(jugador,tablero)
 \end_layout
 
 \begin_layout Plain Layout
-
     return  diag or linea
 \end_layout
 
@@ -911,42 +839,34 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui5.py
 \end_layout
 
 \begin_layout Plain Layout
-
 while True:
 \end_layout
 
 \begin_layout Plain Layout
-
     if jugar("O",triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
         print("Gana el jugador O !!!!")
 \end_layout
 
 \begin_layout Plain Layout
-
         break
 \end_layout
 
 \begin_layout Plain Layout
-
     if jugar("X",triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
         print("Gana el jugador X !!!!")
 \end_layout
 
 \begin_layout Plain Layout
-
         break
 \end_layout
 
@@ -1010,7 +930,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui6.py
 \end_layout
 
@@ -1019,66 +938,54 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 def valido(n):
 \end_layout
 
 \begin_layout Plain Layout
-
     return 0<=n<=2
 \end_layout
 
 \begin_layout Plain Layout
-
     
 \end_layout
 
 \begin_layout Plain Layout
-
 def jugar(jugador,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     while True:
      
 \end_layout
 
 \begin_layout Plain Layout
-
         print("Juegue jugador ",
  jugador)
 \end_layout
 
 \begin_layout Plain Layout
-
         f = int(input("fila?
  "))
 \end_layout
 
 \begin_layout Plain Layout
-
         c = int(input("columna?
  "))
 \end_layout
 
 \begin_layout Plain Layout
-
         if type(f)==type(c)==type(1) and valido(f) 
 \end_layout
 
 \begin_layout Plain Layout
-
            and valido(c) and tablero[f][c]==' ':
 \end_layout
 
 \begin_layout Plain Layout
-
             tablero[f][c] = jugador
 \end_layout
 
 \begin_layout Plain Layout
-
             break      
 \end_layout
 
@@ -1087,36 +994,30 @@ def jugar(jugador,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     imprimir(tablero)
 \end_layout
 
 \begin_layout Plain Layout
-
     diag = ganaDiagonal1(jugador,tablero) or 
 \backslash
 
 \end_layout
 
 \begin_layout Plain Layout
-
            ganaDiagonal2(jugador,tablero)
 \end_layout
 
 \begin_layout Plain Layout
-
     linea = ganaHorizontal(jugador,tablero) or 
 \backslash
 
 \end_layout
 
 \begin_layout Plain Layout
-
             ganaVertical(jugador,tablero)
 \end_layout
 
 \begin_layout Plain Layout
-
     return  diag or linea
 \end_layout
 
@@ -1141,7 +1042,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui7.py
 \end_layout
 
@@ -1150,32 +1050,26 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 def empate(tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     for i in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
         for j in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
             if tablero[i][j]==' ':
 \end_layout
 
 \begin_layout Plain Layout
-
                 return False
 \end_layout
 
 \begin_layout Plain Layout
-
     return True
 \end_layout
 
@@ -1199,72 +1093,58 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui8.py
 \end_layout
 
 \begin_layout Plain Layout
-
 while True:
 \end_layout
 
 \begin_layout Plain Layout
-
     if jugar("O",triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
         print("Gana el jugador O !!!!")
 \end_layout
 
 \begin_layout Plain Layout
-
         break
 \end_layout
 
 \begin_layout Plain Layout
-
     if empate(triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
         print("Empate !!!")
 \end_layout
 
 \begin_layout Plain Layout
-
         break
 \end_layout
 
 \begin_layout Plain Layout
-
     if jugar("X",triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
         print("Gana el jugador X !!!!")
 \end_layout
 
 \begin_layout Plain Layout
-
         break
 \end_layout
 
 \begin_layout Plain Layout
-
     if empate(triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
         print("Empate !!!")
 \end_layout
 
 \begin_layout Plain Layout
-
         break
 \end_layout
 
@@ -1283,66 +1163,54 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui8.py
 \end_layout
 
 \begin_layout Plain Layout
-
 def jugar(jugador,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     while True:
      
 \end_layout
 
 \begin_layout Plain Layout
-
         print("Juegue jugador ",
  jugador)
 \end_layout
 
 \begin_layout Plain Layout
-
         f = input("fila?
  ")
 \end_layout
 
 \begin_layout Plain Layout
-
         c = input("columna?
  ")
 \end_layout
 
 \begin_layout Plain Layout
-
         if type(f)==type(c)==type(1) and valido(f) 
 \end_layout
 
 \begin_layout Plain Layout
-
            and valido(c) and tablero[f][c]==' ':
 \end_layout
 
 \begin_layout Plain Layout
-
             tablero[f][c] = jugador
 \end_layout
 
 \begin_layout Plain Layout
-
             break
 \end_layout
 
 \begin_layout Plain Layout
-
         else:
 \end_layout
 
 \begin_layout Plain Layout
-
             print("Posición inválida!")
 \end_layout
 
@@ -1351,36 +1219,30 @@ def jugar(jugador,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     imprimir(triqui)
 \end_layout
 
 \begin_layout Plain Layout
-
     diag = ganaDiagonal1(jugador,tablero) or 
 \backslash
 
 \end_layout
 
 \begin_layout Plain Layout
-
            ganaDiagonal2(jugador,tablero)
 \end_layout
 
 \begin_layout Plain Layout
-
     linea = ganaHorizontal(jugador,tablero) or 
 \backslash
 
 \end_layout
 
 \begin_layout Plain Layout
-
             ganaVertical(jugador,tablero)
 \end_layout
 
 \begin_layout Plain Layout
-
     return  diag or linea
 \end_layout
 
@@ -1409,46 +1271,38 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui9.py
 \end_layout
 
 \begin_layout Plain Layout
-
 def gana(jugador,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
     """ Analiza si el jugador gana la partida """
 \end_layout
 
 \begin_layout Plain Layout
-
     diag = ganaDiagonal1(jugador,tablero) or 
 \backslash
 
 \end_layout
 
 \begin_layout Plain Layout
-
            ganaDiagonal2(jugador,tablero)
 \end_layout
 
 \begin_layout Plain Layout
-
     linea = ganaHorizontal(jugador,tablero) or 
 \backslash
 
 \end_layout
 
 \begin_layout Plain Layout
-
             ganaVertical(jugador,tablero)
 \end_layout
 
 \begin_layout Plain Layout
-
     return  diag or linea
 \end_layout
 
@@ -1488,22 +1342,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui9.py
 \end_layout
 
 \begin_layout Plain Layout
-
 if __name__ == '__main__':
 \end_layout
 
 \begin_layout Plain Layout
-
     triqui = crear()
 \end_layout
 
 \begin_layout Plain Layout
-
     imprimir(triqui)
 \end_layout
 
@@ -1512,77 +1362,62 @@ if __name__ == '__main__':
 \end_layout
 
 \begin_layout Plain Layout
-
     while True:
 \end_layout
 
 \begin_layout Plain Layout
-
         jugar("O",triqui)
 \end_layout
 
 \begin_layout Plain Layout
-
         if gana("O",triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
             print("Gana el jugador O !!!!")
 \end_layout
 
 \begin_layout Plain Layout
-
             break
 \end_layout
 
 \begin_layout Plain Layout
-
         if empate(triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
             print("Empate !!!")
 \end_layout
 
 \begin_layout Plain Layout
-
             break
 \end_layout
 
 \begin_layout Plain Layout
-
         jugar("X",triqui)
 \end_layout
 
 \begin_layout Plain Layout
-
         if gana("X",triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
             print("Gana el jugador X !!!!")
 \end_layout
 
 \begin_layout Plain Layout
-
             break
 \end_layout
 
 \begin_layout Plain Layout
-
         if empate(triqui):
 \end_layout
 
 \begin_layout Plain Layout
-
             print("Empate !!!")
 \end_layout
 
 \begin_layout Plain Layout
-
             break
 \end_layout
 

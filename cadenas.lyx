@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -62,11 +62,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -92,6 +100,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -147,7 +156,7 @@ This distribution includes a file named fdl.lyx that contains the text of the GN
 \end_layout
 
 \begin_layout Chapter
-Cadenas 
+Cadenas
 \end_layout
 
 \begin_layout Standard
@@ -183,7 +192,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-tipo de dato!compuesto
+tipo de dato
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+compuesto
 \end_layout
 
 \end_inset
@@ -255,7 +274,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operador!corchete
+operador
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+corchete
 \end_layout
 
 \end_inset
@@ -273,17 +302,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> fruta = "banano"
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> letra = fruta[1]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(letra)	
 \end_layout
 
@@ -316,7 +342,6 @@ letra
 \end_layout
 
 \begin_layout Verbatim
-
 a
 \end_layout
 
@@ -367,17 +392,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> letra = fruta[0]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(letra)
 \end_layout
 
 \begin_layout Plain Layout
-
 b
 \end_layout
 
@@ -399,7 +421,6 @@ La expresión en corchetes se denomina
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -410,7 +431,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -423,7 +443,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -460,7 +479,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-cadena!longitud
+cadena
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+longitud
 \end_layout
 
 \end_inset
@@ -494,17 +523,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> fruta = "banano"
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> len(fruta)
 \end_layout
 
 \begin_layout Plain Layout
-
 6
 \end_layout
 
@@ -516,12 +542,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 longitud = len(fruta)
 \end_layout
 
 \begin_layout Plain Layout
-
 ultima = fruta[longitud]       # ERROR!
 \end_layout
 
@@ -580,12 +604,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 longitud = len(fruta)
 \end_layout
 
 \begin_layout Plain Layout
-
 ultima = fruta[longitud-1]
 \end_layout
 
@@ -617,7 +639,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-índice!negativo
+índice
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+negativo
 \end_layout
 
 \end_inset
@@ -660,7 +692,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-ciclo!recorrido
+ciclo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+recorrido
 \end_layout
 
 \end_inset
@@ -684,7 +726,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-ciclo!ciclo for
+ciclo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+ciclo for
 \end_layout
 
 \end_inset
@@ -712,27 +764,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 indice = 0
 \end_layout
 
 \begin_layout Plain Layout
-
 while indice < len(fruta):
 \end_layout
 
 \begin_layout Plain Layout
-
   letra = fruta[indice]
 \end_layout
 
 \begin_layout Plain Layout
-
   print(letra)
 \end_layout
 
 \begin_layout Plain Layout
-
   indice = indice + 1
 \end_layout
 
@@ -779,12 +826,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 for caracter in fruta:
 \end_layout
 
 \begin_layout Plain Layout
-
    print(caracter)
 \end_layout
 
@@ -851,7 +896,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -862,7 +906,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -875,7 +918,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -902,7 +944,6 @@ for
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -913,7 +954,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -926,7 +966,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -947,12 +986,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 prefijos = "JKLMNOPQ"
 \end_layout
 
 \begin_layout Plain Layout
-
 sufijo = "ack"
 \end_layout
 
@@ -961,12 +998,10 @@ sufijo = "ack"
 \end_layout
 
 \begin_layout Plain Layout
-
 for letra in prefijos:
 \end_layout
 
 \begin_layout Plain Layout
-
   print(letra + sufijo)
 \end_layout
 
@@ -982,42 +1017,34 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 Jack
 \end_layout
 
 \begin_layout Plain Layout
-
 Kack
 \end_layout
 
 \begin_layout Plain Layout
-
 Lack
 \end_layout
 
 \begin_layout Plain Layout
-
 Mack
 \end_layout
 
 \begin_layout Plain Layout
-
 Nack
 \end_layout
 
 \begin_layout Plain Layout
-
 Oack
 \end_layout
 
 \begin_layout Plain Layout
-
 Pack
 \end_layout
 
 \begin_layout Plain Layout
-
 Qack
 \end_layout
 
@@ -1077,7 +1104,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-cadena!segmento
+cadena
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+segmento
 \end_layout
 
 \end_inset
@@ -1097,39 +1134,32 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> s = "Pedro,
  Pablo,
  y Maria"
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(s[0:5])
 \end_layout
 
 \begin_layout Plain Layout
-
 Pedro
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(s[7:12])
 \end_layout
 
 \begin_layout Plain Layout
-
 Pablo
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(s[16:21])
 \end_layout
 
 \begin_layout Plain Layout
-
 Maria
 \end_layout
 
@@ -1151,7 +1181,6 @@ El operador
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1162,7 +1191,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1175,7 +1203,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1191,7 +1218,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -1203,7 +1229,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -1222,7 +1247,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1233,7 +1257,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -1255,27 +1278,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> fruta  = "banano"
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> fruta[:3]
 \end_layout
 
 \begin_layout Plain Layout
-
 'ban'
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> f[3:]
 \end_layout
 
 \begin_layout Plain Layout
-
 'ano'
 \end_layout
 
@@ -1311,7 +1329,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-comparación!de cadenas
+comparación
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de cadenas
 \end_layout
 
 \end_inset
@@ -1327,12 +1355,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if palabra == "banana":
 \end_layout
 
 \begin_layout Plain Layout
-
   print("No hay bananas!")
 \end_layout
 
@@ -1344,34 +1370,28 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if palabra < "banana":
 \end_layout
 
 \begin_layout Plain Layout
-
   print("Su palabra," + palabra + ",
  va antes que banana.")
 \end_layout
 
 \begin_layout Plain Layout
-
 elif palabra > "banana":
 \end_layout
 
 \begin_layout Plain Layout
-
   print("Su palabra," + palabra + ",
  va después de banana.")
 \end_layout
 
 \begin_layout Plain Layout
-
 else:
 \end_layout
 
 \begin_layout Plain Layout
-
   print("No hay banana!")
 \end_layout
 
@@ -1396,7 +1416,6 @@ Zebra
 \end_layout
 
 \begin_layout Verbatim
-
 Su palabra,
  Zebra,
  va antes que banana.
@@ -1444,7 +1463,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-cadena!inmutable
+cadena
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+inmutable
 \end_layout
 
 \end_inset
@@ -1464,17 +1493,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 saludo = "Hola mundo"
 \end_layout
 
 \begin_layout Plain Layout
-
 saludo[0] = 'J'            # ERROR!
 \end_layout
 
 \begin_layout Plain Layout
-
 print(saludo)
 \end_layout
 
@@ -1521,17 +1547,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 saludo = "Hola mundo!"
 \end_layout
 
 \begin_layout Plain Layout
-
 nuevoSaludo = 'J' + saludo[1:]
 \end_layout
 
 \begin_layout Plain Layout
-
 print(nuevoSaludo)
 \end_layout
 
@@ -1641,38 +1664,31 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def buscar(cad,
  c):
 \end_layout
 
 \begin_layout Plain Layout
-
   indice = 0
 \end_layout
 
 \begin_layout Plain Layout
-
   while indice < len(cad):
 \end_layout
 
 \begin_layout Plain Layout
-
     if cad[indice] == c:
 \end_layout
 
 \begin_layout Plain Layout
-
       return indice
 \end_layout
 
 \begin_layout Plain Layout
-
     indice = indice + 1
 \end_layout
 
 \begin_layout Plain Layout
-
   return -1
 \end_layout
 
@@ -1792,32 +1808,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 fruta = "banano"
 \end_layout
 
 \begin_layout Plain Layout
-
 cont = 0
 \end_layout
 
 \begin_layout Plain Layout
-
 for car in fruta:
 \end_layout
 
 \begin_layout Plain Layout
-
   if car == 'a':
 \end_layout
 
 \begin_layout Plain Layout
-
     cont = cont + 1
 \end_layout
 
 \begin_layout Plain Layout
-
 print(cont)
 \end_layout
 
@@ -1879,7 +1889,17 @@ pageformat default
 status open
 
 \begin_layout Plain Layout
-cadenas!métodos
+cadenas
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+métodos
 \end_layout
 
 \end_inset
@@ -1903,7 +1923,17 @@ pageformat default
 status open
 
 \begin_layout Plain Layout
-método!invocación
+método
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+invocación
 \end_layout
 
 \end_inset
@@ -1915,7 +1945,17 @@ pageformat default
 status open
 
 \begin_layout Plain Layout
-métodos!cadenas
+métodos
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+cadenas
 \end_layout
 
 \end_inset
@@ -1988,22 +2028,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> fruta = "banano"
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> ind = fruta.find("a")
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(ind)
 \end_layout
 
 \begin_layout Plain Layout
-
 1
 \end_layout
 
@@ -2025,12 +2061,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> "banano".find("na")
 \end_layout
 
 \begin_layout Plain Layout
-
 2
 \end_layout
 
@@ -2046,12 +2080,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> "banana".find("na",3) 
 \end_layout
 
 \begin_layout Plain Layout
-
 4
 \end_layout
 
@@ -2068,12 +2100,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> "bob".find("b",1,2) 
 \end_layout
 
 \begin_layout Plain Layout
-
 -1
 \end_layout
 
@@ -2088,7 +2118,6 @@ Aquí la búsqueda falló porque la letra
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -2099,7 +2128,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -2112,7 +2140,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2195,7 +2222,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-clasificación!de caracteres
+clasificación
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de caracteres
 \end_layout
 
 \end_inset
@@ -2267,22 +2304,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> import string
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(string.ascii_lowercase)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(string.ascii_uppercase)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(string.digits)
 \end_layout
 
@@ -2313,7 +2346,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 import string
 \end_layout
 
@@ -2322,12 +2354,10 @@ import string
 \end_layout
 
 \begin_layout Plain Layout
-
 def esMinuscula(c):
 \end_layout
 
 \begin_layout Plain Layout
-
   return string.ascii_lowercase.find(c) != -1
 \end_layout
 
@@ -2347,12 +2377,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def esMinuscula(c):
 \end_layout
 
 \begin_layout Plain Layout
-
   return c in string.ascii_lowercase
 \end_layout
 
@@ -2365,12 +2393,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def esMinuscula(c):
 \end_layout
 
 \begin_layout Plain Layout
-
   return 'a' <= c <= 'z'
 \end_layout
 
@@ -2389,7 +2415,6 @@ c
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -2400,7 +2425,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -2413,7 +2437,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2424,7 +2447,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -2435,7 +2457,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -2448,7 +2469,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2469,7 +2489,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> print(string.whitespace)
 \end_layout
 
@@ -2497,7 +2516,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 verb+
 \backslash
@@ -2512,7 +2530,6 @@ t+
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+
@@ -2544,7 +2561,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-módulo!string
+módulo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+string
 \end_layout
 
 \end_inset
@@ -2560,7 +2587,6 @@ Hay otras funciones útiles en el módulo string,
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -2571,7 +2597,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -2584,7 +2609,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2610,7 +2634,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -2621,7 +2644,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -2634,7 +2656,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2657,7 +2678,6 @@ Glosario
 status collapsed
 
 \begin_layout Plain Layout
-
 Tipo de dato compuesto:
 \end_layout
 
@@ -2717,7 +2737,6 @@ Decrementar:
 status collapsed
 
 \begin_layout Plain Layout
-
 Espacio en blanco:
 \end_layout
 
@@ -2925,7 +2944,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 verb+cadenas.py+
 \end_layout
@@ -2946,57 +2964,46 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
   def invertir(s):
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> invertir('feliz')
 \end_layout
 
 \begin_layout Plain Layout
-
       'zilef'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> invertir('Python')
 \end_layout
 
 \begin_layout Plain Layout
-
       'nohtyP'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> invertir("")
 \end_layout
 
 \begin_layout Plain Layout
-
       ''
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> invertir("P")
 \end_layout
 
 \begin_layout Plain Layout
-
       'P'
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
@@ -3005,17 +3012,14 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
   if __name__ == '__main__':
 \end_layout
 
 \begin_layout Plain Layout
-
     import doctest
 \end_layout
 
 \begin_layout Plain Layout
-
     doctest.testmod()
 \end_layout
 
@@ -3030,7 +3034,6 @@ Agregue al archivo
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+cadenas.py+
@@ -3050,67 +3053,54 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
   def reflejar(s):
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> reflejar("bien")
 \end_layout
 
 \begin_layout Plain Layout
-
       'bienneib'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> reflejar("sí")
 \end_layout
 
 \begin_layout Plain Layout
-
       'síís'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> reflejar('Python')
 \end_layout
 
 \begin_layout Plain Layout
-
       'PythonnohtyP'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> reflejar("")
 \end_layout
 
 \begin_layout Plain Layout
-
       ''
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> reflejar("a")
 \end_layout
 
 \begin_layout Plain Layout
-
       'aa'
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
@@ -3126,62 +3116,51 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
   def elimina_letra(letra,
  cadena):
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina_letra('a',
  'manzana')
 \end_layout
 
 \begin_layout Plain Layout
-
       'mnzn'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina_letra('a',
  'banana')
 \end_layout
 
 \begin_layout Plain Layout
-
       'bnn'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina_letra('z',
  'banana')
 \end_layout
 
 \begin_layout Plain Layout
-
       'banana'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina_letra('i',
  'Mississippi')
 \end_layout
 
 \begin_layout Plain Layout
-
       'Msssspp'
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
@@ -3197,67 +3176,54 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
   def es_palindromo(s):
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> es_palindromo('abba')
 \end_layout
 
 \begin_layout Plain Layout
-
       True
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> es_palindromo('abab')
 \end_layout
 
 \begin_layout Plain Layout
-
       False
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> es_palindromo('tenet')
 \end_layout
 
 \begin_layout Plain Layout
-
       True
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> es_palindromo('banana')
 \end_layout
 
 \begin_layout Plain Layout
-
       False
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> es_palindromo('zorra arroz')
 \end_layout
 
 \begin_layout Plain Layout
-
       True
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
@@ -3273,73 +3239,60 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
   def cuenta(sub,
  s):
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> cuenta('is',
  'Mississippi')
 \end_layout
 
 \begin_layout Plain Layout
-
       2
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> cuenta('an',
  'banana')
 \end_layout
 
 \begin_layout Plain Layout
-
       2
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> cuenta('ana',
  'banana')
 \end_layout
 
 \begin_layout Plain Layout
-
       2
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> cuenta('nana',
  'banana')
 \end_layout
 
 \begin_layout Plain Layout
-
       1
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> cuenta('nanan',
  'banana')
 \end_layout
 
 \begin_layout Plain Layout
-
       0
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
@@ -3360,62 +3313,51 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
   def elimina(sub,
  s):
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina('an',
  'banana')
 \end_layout
 
 \begin_layout Plain Layout
-
       'bana'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina('cic',
  'bicicleta')
 \end_layout
 
 \begin_layout Plain Layout
-
       'bileta'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina('iss',
  'Mississippi')
 \end_layout
 
 \begin_layout Plain Layout
-
       'Missippi'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina('huevo',
  'bicicleta')
 \end_layout
 
 \begin_layout Plain Layout
-
       'bicicleta'
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
@@ -3435,62 +3377,51 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
   def elimina_todo(sub,
  s):
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina_todo('an',
  'banana')
 \end_layout
 
 \begin_layout Plain Layout
-
       'ba'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina_todo('cic',
  'bicicleta')
 \end_layout
 
 \begin_layout Plain Layout
-
       'bileta'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina_todo('iss',
  'Mississippi')
 \end_layout
 
 \begin_layout Plain Layout
-
       'Mippi'
 \end_layout
 
 \begin_layout Plain Layout
-
       >>> elimina_todo('huevos',
  'bicicleta')
 \end_layout
 
 \begin_layout Plain Layout
-
       'bicicleta'
 \end_layout
 
 \begin_layout Plain Layout
-
     """
 \end_layout
 

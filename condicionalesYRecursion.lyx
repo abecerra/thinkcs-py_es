@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -56,11 +56,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -86,6 +94,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -167,7 +176,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operador!residuo
+operador
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+residuo
 \end_layout
 
 \end_inset
@@ -195,32 +214,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> cociente = 7 // 3
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(cociente)
 \end_layout
 
 \begin_layout Plain Layout
-
 2
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> residuo = 7 % 3
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(residuo)
 \end_layout
 
 \begin_layout Plain Layout
-
 1
 \end_layout
 
@@ -296,7 +309,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-expresión!booleana
+expresión
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+booleana
 \end_layout
 
 \end_inset
@@ -320,7 +343,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operador!lógico
+operador
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+lógico
 \end_layout
 
 \end_inset
@@ -355,22 +388,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> 5 == 5
 \end_layout
 
 \begin_layout Plain Layout
-
 True
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> 5 == 6
 \end_layout
 
 \begin_layout Plain Layout
-
 False
 \end_layout
 
@@ -400,27 +429,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
       x != y               # x no es igual y
 \end_layout
 
 \begin_layout Plain Layout
-
       x > y                # x es mayor que y
 \end_layout
 
 \begin_layout Plain Layout
-
       x < y                # x es menor que y
 \end_layout
 
 \begin_layout Plain Layout
-
       x >= y               # x es mayor o igual a y
 \end_layout
 
 \begin_layout Plain Layout
-
       x <= y               # x es menor o igual a y
 \end_layout
 
@@ -484,7 +508,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operador!lógicos
+operador
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+lógicos
 \end_layout
 
 \end_inset
@@ -528,7 +562,6 @@ x
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -539,7 +572,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -552,7 +584,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -571,7 +602,6 @@ n%2 == 0 or n%3 == 0
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -582,7 +612,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -595,7 +624,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -608,7 +636,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -619,7 +646,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -632,7 +658,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -687,32 +712,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>>  x = 5
 \end_layout
 
 \begin_layout Plain Layout
-
 >>>  x and 1
 \end_layout
 
 \begin_layout Plain Layout
-
 1
 \end_layout
 
 \begin_layout Plain Layout
-
 >>>  y = 0
 \end_layout
 
 \begin_layout Plain Layout
-
 >>>  y and 1
 \end_layout
 
 \begin_layout Plain Layout
-
 0
 \end_layout
 
@@ -785,12 +804,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if x > 0:
 \end_layout
 
 \begin_layout Plain Layout
-
   print("x es positivo")
 \end_layout
 
@@ -834,7 +851,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia compuesta!cabecera
+sentencia compuesta
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+cabecera
 \end_layout
 
 \end_inset
@@ -846,7 +873,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia compuesta!cuerpo
+sentencia compuesta
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+cuerpo
 \end_layout
 
 \end_inset
@@ -858,7 +895,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia compuesta!bloque de sentencias
+sentencia compuesta
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+bloque de sentencias
 \end_layout
 
 \end_inset
@@ -870,7 +917,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia!compuesta
+sentencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+compuesta
 \end_layout
 
 \end_inset
@@ -888,22 +945,18 @@ if
 \end_layout
 
 \begin_layout Verbatim
-
 CABECERA:
 \end_layout
 
 \begin_layout Verbatim
-
   PRIMERA SENTENCIA
 \end_layout
 
 \begin_layout Verbatim
-
   ...
 \end_layout
 
 \begin_layout Verbatim
-
   ULTIMA SENTENCIA
 \end_layout
 
@@ -941,7 +994,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia!bloque
+sentencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+bloque
 \end_layout
 
 \end_inset
@@ -995,7 +1058,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia!pass
+sentencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+pass
 \end_layout
 
 \end_inset
@@ -1029,23 +1102,19 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if x%2 == 0:
 \end_layout
 
 \begin_layout Plain Layout
-
   print(x,
  "es par")
 \end_layout
 
 \begin_layout Plain Layout
-
 else:
 \end_layout
 
 \begin_layout Plain Layout
-
   print(x,
  "es impar")
 \end_layout
@@ -1123,28 +1192,23 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def imprimirParidad(x):
 \end_layout
 
 \begin_layout Plain Layout
-
   if x%2 == 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     print(x,
  "es par")
 \end_layout
 
 \begin_layout Plain Layout
-
   else:
 \end_layout
 
 \begin_layout Plain Layout
-
     print(x,
  "es impar")
 \end_layout
@@ -1172,12 +1236,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 imprimirParidad(17)
 \end_layout
 
 \begin_layout Plain Layout
-
 imprimirParidad(y+1)
 \end_layout
 
@@ -1213,7 +1275,17 @@ pageformat default
 status open
 
 \begin_layout Plain Layout
-condicional!encadenado
+condicional
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+encadenado
 \end_layout
 
 \end_inset
@@ -1241,36 +1313,30 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if x < y:
 \end_layout
 
 \begin_layout Plain Layout
-
   print(x,
  "es menor que",
  y)
 \end_layout
 
 \begin_layout Plain Layout
-
 elif x > y:
 \end_layout
 
 \begin_layout Plain Layout
-
   print(x,
  "es mayor que",
  y)
 \end_layout
 
 \begin_layout Plain Layout
-
 else:
 \end_layout
 
 \begin_layout Plain Layout
-
   print(x,
  "y",
  y,
@@ -1312,42 +1378,34 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if eleccion == 'A':
 \end_layout
 
 \begin_layout Plain Layout
-
   funcionA()
 \end_layout
 
 \begin_layout Plain Layout
-
 elif eleccion == 'B':
 \end_layout
 
 \begin_layout Plain Layout
-
   funcionB()
 \end_layout
 
 \begin_layout Plain Layout
-
 elif eleccion == 'C':
 \end_layout
 
 \begin_layout Plain Layout
-
   funcionC()
 \end_layout
 
 \begin_layout Plain Layout
-
 else:
 \end_layout
 
 \begin_layout Plain Layout
-
   print("Eleccion incorrecta.")
 \end_layout
 
@@ -1382,12 +1440,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if x == y:
 \end_layout
 
 \begin_layout Plain Layout
-
   print(x,
  "y",
  y,
@@ -1395,29 +1451,24 @@ if x == y:
 \end_layout
 
 \begin_layout Plain Layout
-
 else:
 \end_layout
 
 \begin_layout Plain Layout
-
   if x < y:
 \end_layout
 
 \begin_layout Plain Layout
-
     print(x,
  "es menor que",
  y)
 \end_layout
 
 \begin_layout Plain Layout
-
   else:
 \end_layout
 
 \begin_layout Plain Layout
-
     print(x,
  "es mayor que",
  y)
@@ -1453,17 +1504,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if 0 < x:
 \end_layout
 
 \begin_layout Plain Layout
-
   if x < 10:
 \end_layout
 
 \begin_layout Plain Layout
-
     print("x es un digito positivo.")
 \end_layout
 
@@ -1488,12 +1536,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if 0 < x and x < 10:
 \end_layout
 
 \begin_layout Plain Layout
-
   print("x es un digito positivo.")
 \end_layout
 
@@ -1510,12 +1556,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 if 0 < x < 10:
 \end_layout
 
 \begin_layout Plain Layout
-
   print("x es un digito positivo")
 \end_layout
 
@@ -1555,7 +1599,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia!return
+sentencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+return
 \end_layout
 
 \end_inset
@@ -1578,7 +1632,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 import math
 \end_layout
 
@@ -1587,23 +1640,19 @@ import math
 \end_layout
 
 \begin_layout Plain Layout
-
 def imprimirLogaritmo(x):
 \end_layout
 
 \begin_layout Plain Layout
-
   if x <= 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     print("Numeros positivos solamente.
  Por favor")
 \end_layout
 
 \begin_layout Plain Layout
-
     return
 \end_layout
 
@@ -1612,12 +1661,10 @@ def imprimirLogaritmo(x):
 \end_layout
 
 \begin_layout Plain Layout
-
   result = math.log(x)
 \end_layout
 
 \begin_layout Plain Layout
-
   print("El logaritmo de ",
   x ," es ",
  result)
@@ -1701,32 +1748,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def conteo(n):
 \end_layout
 
 \begin_layout Plain Layout
-
   if n == 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     print("Despegue!")
 \end_layout
 
 \begin_layout Plain Layout
-
   else:
 \end_layout
 
 \begin_layout Plain Layout
-
     print(n)
 \end_layout
 
 \begin_layout Plain Layout
-
     conteo(n-1)
 \end_layout
 
@@ -1785,7 +1826,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> conteo(3)
 \end_layout
 
@@ -1939,22 +1979,18 @@ __main__
 \end_layout
 
 \begin_layout Verbatim
-
 3
 \end_layout
 
 \begin_layout Verbatim
-
 2
 \end_layout
 
 \begin_layout Verbatim
-
 1
 \end_layout
 
 \begin_layout Verbatim
-
 Despegue!
 \end_layout
 
@@ -1977,12 +2013,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def nuevalinea():
 \end_layout
 
 \begin_layout Plain Layout
-
   print()
 \end_layout
 
@@ -1991,22 +2025,18 @@ def nuevalinea():
 \end_layout
 
 \begin_layout Plain Layout
-
 def tresLineas():
 \end_layout
 
 \begin_layout Plain Layout
-
   nuevaLinea()
 \end_layout
 
 \begin_layout Plain Layout
-
   nuevaLinea()
 \end_layout
 
 \begin_layout Plain Layout
-
   nuevaLinea()
 \end_layout
 
@@ -2026,22 +2056,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def nLineas(n):
 \end_layout
 
 \begin_layout Plain Layout
-
   if n > 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     print()
 \end_layout
 
 \begin_layout Plain Layout
-
     nLineas(n-1)
 \end_layout
 
@@ -2104,7 +2130,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-función!recursiva
+función
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+recursiva
 \end_layout
 
 \end_inset
@@ -2198,7 +2234,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -2210,7 +2245,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -2229,7 +2263,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2240,7 +2273,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -2309,7 +2341,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-recursión!caso base
+recursión
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+caso base
 \end_layout
 
 \end_inset
@@ -2340,7 +2382,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-recursión!infinita
+recursión
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+infinita
 \end_layout
 
 \end_inset
@@ -2364,7 +2416,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-error!de tiempo de ejecución
+error
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de tiempo de ejecución
 \end_layout
 
 \end_inset
@@ -2403,12 +2465,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def recurrir():
 \end_layout
 
 \begin_layout Plain Layout
-
   recurrir()
 \end_layout
 
@@ -2419,26 +2479,22 @@ def recurrir():
 \end_layout
 
 \begin_layout Verbatim
-
   File "<stdin>",
  line 2,
  in recurrir
 \end_layout
 
 \begin_layout Verbatim
-
   (98 repeticiones omitidas)
 \end_layout
 
 \begin_layout Verbatim
-
   File "<stdin>",
  line 2,
  in recurrir
 \end_layout
 
 \begin_layout Verbatim
-
 RuntimeError:
  Maximum recursion depth exceeded
 \end_layout
@@ -2488,22 +2544,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> entrada = input ()
 \end_layout
 
 \begin_layout Plain Layout
-
 Que esta esperando?
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(entrada)
 \end_layout
 
 \begin_layout Plain Layout
-
 Que esta esperando?
 \end_layout
 
@@ -2547,25 +2599,21 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> nombre = input ("Cual es tu nombre?
  ")
 \end_layout
 
 \begin_layout Plain Layout
-
 Cual es tu nombre?
  Arturo,
  Rey de los Bretones!
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(nombre)
 \end_layout
 
 \begin_layout Plain Layout
-
 Arturo,
  Rey de los Bretones!
 \end_layout
@@ -2590,14 +2638,12 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 prompt = "¿Cual es la velocidad de una golondrina sin carga?
 \backslash
 n"
 \end_layout
 
 \begin_layout Plain Layout
-
 velocidad = input(prompt)
 \end_layout
 
@@ -2620,19 +2666,16 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> prompt = "¿Cual es la velocidad una golondrina sin carga?
 \backslash
 n"
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> velocidad = input (prompt)
 \end_layout
 
 \begin_layout Plain Layout
-
 ¿Que quiere decir,
  una golondria Africana o Europea?
 \end_layout
@@ -2665,7 +2708,6 @@ Glosario
 status collapsed
 
 \begin_layout Plain Layout
-
 Operador residuo:
 \end_layout
 
@@ -2684,7 +2726,6 @@ Operador residuo:
 status collapsed
 
 \begin_layout Plain Layout
-
 Expresión booleana:
 \end_layout
 
@@ -2698,7 +2739,6 @@ Expresión booleana:
 status collapsed
 
 \begin_layout Plain Layout
-
 Operador de comparación:
 \end_layout
 
@@ -2742,7 +2782,6 @@ Operador de comparación:
 status collapsed
 
 \begin_layout Plain Layout
-
 Operador lógico:
 \end_layout
 
@@ -2771,7 +2810,6 @@ not
 status collapsed
 
 \begin_layout Plain Layout
-
 Sentencia condicional:
 \end_layout
 
@@ -2790,7 +2828,6 @@ Condición:
 status collapsed
 
 \begin_layout Plain Layout
-
 Sentencia compuesta:
 \end_layout
 
@@ -2829,7 +2866,6 @@ Recursión:
 status collapsed
 
 \begin_layout Plain Layout
-
 Caso base:
 \end_layout
 
@@ -2844,7 +2880,6 @@ Caso base:
 status collapsed
 
 \begin_layout Plain Layout
-
 Recursión infinita:
 \end_layout
 
@@ -2859,7 +2894,6 @@ Recursión infinita:
 status collapsed
 
 \begin_layout Plain Layout
-
 Prompt (indicador de entrada):
 \end_layout
 
@@ -2904,7 +2938,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-expresión!booleana
+expresión
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+booleana
 \end_layout
 
 \end_inset
@@ -2928,7 +2972,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia!condicional
+sentencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+condicional
 \end_layout
 
 \end_inset
@@ -3068,7 +3122,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 verb+7 % 0+
 \end_layout
@@ -3085,7 +3138,6 @@ Envuelva el código que viene a continuación en una función llamada
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+comparar(x,
@@ -3105,36 +3157,30 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
  if x < y:
 \end_layout
 
 \begin_layout Plain Layout
-
     print(x,
  "es menor que",
  y)
 \end_layout
 
 \begin_layout Plain Layout
-
  elif x > y:
 \end_layout
 
 \begin_layout Plain Layout
-
     print(x,
  "es mayor que",
  y)
 \end_layout
 
 \begin_layout Plain Layout
-
  else:
 \end_layout
 
 \begin_layout Plain Layout
-
     print(x,
  "y",
  y,
@@ -3154,22 +3200,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def tabladeverdad(expresion):
 \end_layout
 
 \begin_layout Plain Layout
-
     print(" p      q      %s"  % expresion)
 \end_layout
 
 \begin_layout Plain Layout
-
     longitud = len( " p      q      %s"  % expresion)
 \end_layout
 
 \begin_layout Plain Layout
-
     print(longitud*"=")
 \end_layout
 
@@ -3178,19 +3220,16 @@ def tabladeverdad(expresion):
 \end_layout
 
 \begin_layout Plain Layout
-
     for p in True,
  False:
 \end_layout
 
 \begin_layout Plain Layout
-
         for q in True,
  False:
 \end_layout
 
 \begin_layout Plain Layout
-
             print("%-7s %-7s %-7s" % (p,
  q,
  eval(expresion)))
@@ -3207,7 +3246,6 @@ def tabladeverdad(expresion):
 
 \begin_deeper
 \begin_layout Verbatim
-
  
 \end_layout
 
@@ -3217,7 +3255,6 @@ Pruébelo con el llamado
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+tabladeverdad("p or q")+

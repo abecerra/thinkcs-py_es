@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -52,11 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -82,6 +90,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -197,7 +206,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-tipo de datos!compuesto
+tipo de datos
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+compuesto
 \end_layout
 
 \end_inset
@@ -221,7 +240,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-tipo de datos!definido por el usuario
+tipo de datos
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+definido por el usuario
 \end_layout
 
 \end_inset
@@ -320,12 +349,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Punto:
 \end_layout
 
 \begin_layout Plain Layout
-
   pass
 \end_layout
 
@@ -342,15 +369,11 @@ import
 \family default
 ).
  Las reglas sintácticas de la definición de clases son las mismas que para las otras sentencias compuestas.
- (ver la Sección
-\begin_inset space ~
-\end_inset
-
-
+ (ver la Sección 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "alternative execution"
-nolink "false"
+reference "alternative execution2"
+filenames "alternative execution2@condicionalesYRecursion.lyx"
 
 \end_inset
 
@@ -414,7 +437,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-instancia!objeto
+instancia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+objeto
 \end_layout
 
 \end_inset
@@ -449,7 +482,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 limpio = Punto()
 \end_layout
 
@@ -505,12 +537,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> limpio.x = 3.0
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> limpio.y = 4.0
 \end_layout
 
@@ -550,7 +580,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -562,7 +591,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -581,7 +609,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -592,7 +619,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -623,27 +649,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> print(limpio.y)
 \end_layout
 
 \begin_layout Plain Layout
-
 4.0
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> x = limpio.x
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(x)
 \end_layout
 
 \begin_layout Plain Layout
-
 3.0
 \end_layout
 
@@ -702,18 +723,15 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 print('(' + str(limpio.x) + ',
  ' + str(limpio.y) + ')')
 \end_layout
 
 \begin_layout Plain Layout
-
 distanciaAlCuadrado = limpio.x * limpio.x + 
 \end_layout
 
 \begin_layout Plain Layout
-
                       limpio.y * limpio.y
 \end_layout
 
@@ -743,12 +761,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> print(limpio)
 \end_layout
 
 \begin_layout Plain Layout
-
 <__main__.Point instance at 80f8e70>
 \end_layout
 
@@ -792,7 +808,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-imprimir!objeto
+imprimir
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+objeto
 \end_layout
 
 \end_inset
@@ -839,12 +865,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def imprimePunto(p):
 \end_layout
 
 \begin_layout Plain Layout
-
   print('(' + str(p.x) + ',
  ' + str(p.y) + ')')
 \end_layout
@@ -1047,42 +1071,34 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> p1 = Punto()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p1.x = 3
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p1.y = 4
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p2 = Punto()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p2.x = 3
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p2.y = 4
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p1 == p2
 \end_layout
 
 \begin_layout Plain Layout
-
 False
 \end_layout
 
@@ -1117,17 +1133,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> p2 = p1
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p1 == p2
 \end_layout
 
 \begin_layout Plain Layout
-
 True
 \end_layout
 
@@ -1215,13 +1228,11 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def mismoPunto(p1,
  p2) :
 \end_layout
 
 \begin_layout Plain Layout
-
   return (p1.x == p2.x) and (p1.y == p2.y)
 \end_layout
 
@@ -1240,43 +1251,35 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> p1 = Punto()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p1.x = 3
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p1.y = 4
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p2 = Punto()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p2.x = 3
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p2.y = 4
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> mismoPunto(p1,
  p2)
 \end_layout
 
 \begin_layout Plain Layout
-
 True
 \end_layout
 
@@ -1341,12 +1344,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Rectangulo:	
 \end_layout
 
 \begin_layout Plain Layout
-
   pass
 \end_layout
 
@@ -1366,17 +1367,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 caja = Rectangulo()
 \end_layout
 
 \begin_layout Plain Layout
-
 caja.ancho = 100.0
 \end_layout
 
 \begin_layout Plain Layout
-
 caja.altura = 200.0
 \end_layout
 
@@ -1397,17 +1395,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 caja.esquina = Punto()
 \end_layout
 
 \begin_layout Plain Layout
-
 caja.esquina.x = 0.0;
 \end_layout
 
 \begin_layout Plain Layout
-
 caja.esquina.y = 0.0;
 \end_layout
 
@@ -1452,7 +1447,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -1464,7 +1458,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -1483,7 +1476,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1494,7 +1486,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -1561,27 +1552,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def encuentraCentro(caja):
 \end_layout
 
 \begin_layout Plain Layout
-
   p = Punto()
 \end_layout
 
 \begin_layout Plain Layout
-
   p.x = caja.esquina.x + caja.ancho/2.0
 \end_layout
 
 \begin_layout Plain Layout
-
   p.y = caja.esquina.y + caja.altura/2.0
 \end_layout
 
 \begin_layout Plain Layout
-
   return p
 \end_layout
 
@@ -1602,17 +1588,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> centro = encuentraCentro(caja)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> imprimePunto(centro)
 \end_layout
 
 \begin_layout Plain Layout
-
 (50.0,
  100.0)
 \end_layout
@@ -1633,7 +1616,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-objeto!mutable
+objeto
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+mutable
 \end_layout
 
 \end_inset
@@ -1671,12 +1664,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 caja.ancho = caja.ancho + 50
 \end_layout
 
 \begin_layout Plain Layout
-
 caja.altura = caja.altura + 100
 \end_layout
 
@@ -1719,19 +1710,16 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def agrandarRect(caja,
  dancho,
  daltura) :
 \end_layout
 
 \begin_layout Plain Layout
-
   caja.ancho = caja.ancho + dancho
 \end_layout
 
 \begin_layout Plain Layout
-
   caja.altura = caja.altura + daltura
 \end_layout
 
@@ -1777,37 +1765,30 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> b = Rectangulo()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> b.ancho = 100.0
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> b.altura = 200.0
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> b.esquina = Punto()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> b.esquina.x = 0.0;
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> b.esquina.y = 0.0;
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> agrandarRect(b,
  50,
  100)
@@ -1891,7 +1872,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-módulo!copy
+módulo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+copy
 \end_layout
 
 \end_inset
@@ -1923,48 +1914,39 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> import copy
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p1 = Punto()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p1.x = 3
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p1.y = 4
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p2 = copy.copy(p1)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> p1 == p2
 \end_layout
 
 \begin_layout Plain Layout
-
 False
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> mismoPunto(p1,
  p2)
 \end_layout
 
 \begin_layout Plain Layout
-
 True
 \end_layout
 
@@ -2078,7 +2060,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -2090,7 +2071,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -2109,7 +2089,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2120,7 +2099,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -2176,7 +2154,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> b2 = copy.deepcopy(b1)
 \end_layout
 
@@ -2220,34 +2197,28 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def agrandaRect(caja,
  dancho,
  daltura) :
 \end_layout
 
 \begin_layout Plain Layout
-
   import copy
 \end_layout
 
 \begin_layout Plain Layout
-
   nuevaCaja = copy.deepcopy(caja)
 \end_layout
 
 \begin_layout Plain Layout
-
   nuevaCaja.ancho = nuevaCaja.ancho + dancho
 \end_layout
 
 \begin_layout Plain Layout
-
   nuevaCaja.altura = nuevaCaja.altura + daltura
 \end_layout
 
 \begin_layout Plain Layout
-
   return nuevaCaja
 \end_layout
 
@@ -2296,7 +2267,6 @@ Atributo:
 status collapsed
 
 \begin_layout Plain Layout
-
 Igualdad superficial:
 \end_layout
 
@@ -2311,7 +2281,6 @@ Igualdad superficial:
 status collapsed
 
 \begin_layout Plain Layout
-
 Igualdad profunda:
 \end_layout
 
@@ -2326,7 +2295,6 @@ Igualdad profunda:
 status collapsed
 
 \begin_layout Plain Layout
-
 Copia superficial:
 \end_layout
 
@@ -2350,7 +2318,6 @@ copy
 status collapsed
 
 \begin_layout Plain Layout
-
 Copia profunda:
 \end_layout
 
@@ -2521,15 +2488,11 @@ Reescriba la función
 \family typewriter
 distancia
 \family default
- de la Sección
-\begin_inset space ~
-\end_inset
-
-
+ de la Sección 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "program development"
-nolink "false"
+filenames "program development@funcionesFructiferas.lyx"
 
 \end_inset
 

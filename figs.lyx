@@ -1,24 +1,30 @@
-#LyX file created by tex2lyx 2.1
-\lyxformat 474
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding auto
+\inputencoding auto-legacy
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -46,8 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -56,15 +73,24 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -74,7 +100,6 @@ illustrations/assign2.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -87,7 +112,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/assign2.eps
 
 \end_inset
@@ -110,7 +135,6 @@ illustrations/banana.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -123,7 +147,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/banana.eps
 
 \end_inset
@@ -146,7 +170,6 @@ illustrations/compile.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -159,7 +182,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/compile.eps
 
 \end_inset
@@ -182,7 +205,6 @@ illustrations/fibonacci.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -195,7 +217,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/fibonacci.eps
 
 \end_inset
@@ -218,7 +240,6 @@ illustrations/interpret.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -231,7 +252,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/interpret.eps
 
 \end_inset
@@ -254,7 +275,6 @@ illustrations/link1.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -267,7 +287,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/link1.eps
 
 \end_inset
@@ -290,7 +310,6 @@ illustrations/link2.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -303,7 +322,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/link2.eps
 
 \end_inset
@@ -326,7 +345,6 @@ illustrations/link3.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -339,7 +357,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/link3.eps
 
 \end_inset
@@ -362,7 +380,6 @@ illustrations/link4.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -375,7 +392,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/link4.eps
 
 \end_inset
@@ -398,7 +415,6 @@ illustrations/link5.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -411,7 +427,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/link5.eps
 
 \end_inset
@@ -434,7 +450,6 @@ illustrations/list1.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -447,7 +462,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/list1.eps
 
 \end_inset
@@ -470,7 +485,6 @@ illustrations/list2.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -483,7 +497,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/list2.eps
 
 \end_inset
@@ -506,7 +520,6 @@ illustrations/list3.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -519,7 +532,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/list3.eps
 
 \end_inset
@@ -542,7 +555,6 @@ illustrations/list4.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -564,7 +576,6 @@ illustrations/list5.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -586,7 +597,6 @@ illustrations/matrix.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -599,7 +609,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/matrix.eps
 
 \end_inset
@@ -622,7 +632,6 @@ illustrations/point.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -635,7 +644,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/point.eps
 
 \end_inset
@@ -654,7 +663,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -668,7 +676,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -686,7 +693,6 @@ includegraphics{illustrations/queue1.eps}}
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -700,7 +706,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -718,7 +723,6 @@ includegraphics{illustrations/queue2.eps}}
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -732,7 +736,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -750,7 +753,6 @@ includegraphics{illustrations/queue3.eps}}
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -764,7 +766,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -782,7 +783,6 @@ includegraphics{illustrations/queue4.eps}}
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -796,7 +796,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -818,7 +817,6 @@ illustrations/rectangle2.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -831,7 +829,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/rectangle2.eps
 
 \end_inset
@@ -854,7 +852,6 @@ illustrations/rectangle.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -867,7 +864,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/rectangle.eps
 
 \end_inset
@@ -890,7 +887,6 @@ illustrations/sparse.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -903,7 +899,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/sparse.eps
 
 \end_inset
@@ -926,7 +922,6 @@ illustrations/stack2.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -939,7 +934,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/stack2.eps
 
 \end_inset
@@ -962,7 +957,6 @@ illustrations/stack3.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -975,7 +969,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/stack3.eps
 
 \end_inset
@@ -998,7 +992,6 @@ illustrations/stack4.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -1011,7 +1004,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/stack4.eps
 
 \end_inset
@@ -1034,7 +1027,6 @@ illustrations/stack.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -1047,7 +1039,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/stack.eps
 
 \end_inset
@@ -1070,7 +1062,6 @@ illustrations/state.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -1083,7 +1074,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/state.eps
 
 \end_inset
@@ -1106,7 +1097,6 @@ illustrations/time.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -1119,7 +1109,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/time.eps
 
 \end_inset
@@ -1142,7 +1132,6 @@ illustrations/tree1.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -1155,7 +1144,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/tree1.eps
 
 \end_inset
@@ -1178,7 +1167,6 @@ illustrations/tree2.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -1191,7 +1179,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/tree2.eps
 
 \end_inset
@@ -1214,7 +1202,6 @@ illustrations/tree3.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -1227,7 +1214,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/tree3.eps
 
 \end_inset
@@ -1250,7 +1237,6 @@ illustrations/tree4.eps
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -1263,7 +1249,7 @@ centerline{
 \end_inset
 
 
-\begin_inset Graphics 
+\begin_inset Graphics
 	filename illustrations/tree4.eps
 
 \end_inset
@@ -1282,7 +1268,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 
@@ -1296,7 +1281,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
 \begin_inset ERT
 status collapsed
 

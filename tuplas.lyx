@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -54,11 +54,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -84,6 +92,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -187,7 +196,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-tipo de dato!tupla
+tipo de dato
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+tupla
 \end_layout
 
 \end_inset
@@ -199,7 +218,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-tipo de dato!inmutable
+tipo de dato
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+inmutable
 \end_layout
 
 \end_inset
@@ -270,7 +299,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> tupla = 'a',
  'b',
  'c',
@@ -291,7 +319,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> tupla = ('a',
  'b',
  'c',
@@ -312,17 +339,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> t1 = ('a',)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> type(t1)
 \end_layout
 
 \begin_layout Plain Layout
-
 <type 'tuple'>
 \end_layout
 
@@ -343,17 +367,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> t2 = ('a')
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> type(t2)
 \end_layout
 
 \begin_layout Plain Layout
-
 <type 'string'>
 \end_layout
 
@@ -370,7 +391,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> tupla = ('a',
  'b',
  'c',
@@ -379,12 +399,10 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> tupla[0]
 \end_layout
 
 \begin_layout Plain Layout
-
 'a'
 \end_layout
 
@@ -400,12 +418,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> tupla[1:3]
 \end_layout
 
 \begin_layout Plain Layout
-
 ('b',
  'c')
 \end_layout
@@ -437,12 +453,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> tupla[0] = 'A'
 \end_layout
 
 \begin_layout Plain Layout
-
 TypeError:
  object doesn't support item assignment
 \end_layout
@@ -460,17 +474,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> tupla = ('A',) + tupla[1:]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> tupla
 \end_layout
 
 \begin_layout Plain Layout
-
 ('A',
  'b',
  'c',
@@ -479,12 +490,10 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> tupla = (1,2,3)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> tupla
 \end_layout
 
@@ -523,7 +532,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-Asignación!de tuplas
+Asignación
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de tuplas
 \end_layout
 
 \end_inset
@@ -549,17 +568,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> temp = a
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> a = b
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> b = temp
 \end_layout
 
@@ -581,7 +597,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> a,
  b = b,
  a
@@ -608,7 +623,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> a,
  b,
  c,
@@ -618,7 +632,6 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 ValueError:
  unpack tuple of wrong size
 \end_layout
@@ -651,7 +664,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-valor!tupla
+valor
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+tupla
 \end_layout
 
 \end_inset
@@ -663,7 +686,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-valor de retorno!tupla
+valor de retorno
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+tupla
 \end_layout
 
 \end_inset
@@ -675,7 +708,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-función!tupla como valor de retorno
+función
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+tupla como valor de retorno
 \end_layout
 
 \end_inset
@@ -692,13 +735,11 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def intercambiar(x,
  y):
 \end_layout
 
 \begin_layout Plain Layout
-
   return y,
  x
 \end_layout
@@ -715,7 +756,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 a,
  b = intercambiar(a,
  b)
@@ -745,14 +785,12 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def intercambio(x,
  y):
       # version incorrecta
 \end_layout
 
 \begin_layout Plain Layout
-
   x,
  y = y,
  x
@@ -770,7 +808,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 intercambio(a,
  b)
 \end_layout
@@ -868,7 +905,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-número!aleatorio
+número
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+aleatorio
 \end_layout
 
 \end_inset
@@ -928,7 +975,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 import random
 \end_layout
 
@@ -937,17 +983,14 @@ import random
 \end_layout
 
 \begin_layout Plain Layout
-
 for i in range(10):
 \end_layout
 
 \begin_layout Plain Layout
-
   x = random.random()
 \end_layout
 
 \begin_layout Plain Layout
-
   print(x)
 \end_layout
 
@@ -998,27 +1041,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def listaAleatoria(n):
 \end_layout
 
 \begin_layout Plain Layout
-
   s = [0] * n
 \end_layout
 
 \begin_layout Plain Layout
-
   for i in range(n):
 \end_layout
 
 \begin_layout Plain Layout
-
     s[i] = random.random()
 \end_layout
 
 \begin_layout Plain Layout
-
   return s
 \end_layout
 
@@ -1035,47 +1073,38 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> listaAleatoria(8)
 \end_layout
 
 \begin_layout Plain Layout
-
 0.15156642489
 \end_layout
 
 \begin_layout Plain Layout
-
 0.498048560109
 \end_layout
 
 \begin_layout Plain Layout
-
 0.810894847068
 \end_layout
 
 \begin_layout Plain Layout
-
 0.360371157682
 \end_layout
 
 \begin_layout Plain Layout
-
 0.275119183077
 \end_layout
 
 \begin_layout Plain Layout
-
 0.328578797631
 \end_layout
 
 \begin_layout Plain Layout
-
 0.759199803101
 \end_layout
 
 \begin_layout Plain Layout
-
 0.800367163582
 \end_layout
 
@@ -1161,27 +1190,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 cont = 0
 \end_layout
 
 \begin_layout Plain Layout
-
 for c in fruta:
 \end_layout
 
 \begin_layout Plain Layout
-
   if c == 'a':
 \end_layout
 
 \begin_layout Plain Layout
-
     cont = cont + 1
 \end_layout
 
 \begin_layout Plain Layout
-
 print(cont)
 \end_layout
 
@@ -1236,27 +1260,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 cont = 0
 \end_layout
 
 \begin_layout Plain Layout
-
 for num in lista:
 \end_layout
 
 \begin_layout Plain Layout
-
   if inf < num < sup:
 \end_layout
 
 \begin_layout Plain Layout
-
     cont = cont + 1
 \end_layout
 
 \begin_layout Plain Layout
-
 print(cont)
 \end_layout
 
@@ -1285,34 +1304,28 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def enRegion(lista,
  inf,
  sup):
 \end_layout
 
 \begin_layout Plain Layout
-
   cont = 0
 \end_layout
 
 \begin_layout Plain Layout
-
   for num in lista:
 \end_layout
 
 \begin_layout Plain Layout
-
     if inf < num < sup:
 \end_layout
 
 \begin_layout Plain Layout
-
       cont = cont + 1
 \end_layout
 
 \begin_layout Plain Layout
-
   return cont
 \end_layout
 
@@ -1359,14 +1372,12 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 inf = enRegion(a,
  0.0,
  0.5)
 \end_layout
 
 \begin_layout Plain Layout
-
 sup = enRegion(a,
  0.5,
  1)
@@ -1380,28 +1391,24 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 Region1 = enRegion(a,
  0.0,
  0.25)
 \end_layout
 
 \begin_layout Plain Layout
-
 Region2 = enRegion(a,
  0.25,
  0.5)
 \end_layout
 
 \begin_layout Plain Layout
-
 Region3 = enRegion(a,
  0.5,
  0.75)
 \end_layout
 
 \begin_layout Plain Layout
-
 Region4 = enRegion(a,
  0.75,
  1.0)
@@ -1449,27 +1456,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 ancho = 1.0 / numRegiones
 \end_layout
 
 \begin_layout Plain Layout
-
 for i in range(numRegiones):
 \end_layout
 
 \begin_layout Plain Layout
-
   inf = i * ancho
 \end_layout
 
 \begin_layout Plain Layout
-
   sup = inf + ancho
 \end_layout
 
 \begin_layout Plain Layout
-
   print(inf,
  " hasta ",
  sup)
@@ -1500,42 +1502,34 @@ numRegiones = 8
 \end_layout
 
 \begin_layout Verbatim
-
 0.0 hasta 0.125
 \end_layout
 
 \begin_layout Verbatim
-
 0.125 hasta 0.25
 \end_layout
 
 \begin_layout Verbatim
-
 0.25 hasta 0.375
 \end_layout
 
 \begin_layout Verbatim
-
 0.375 hasta 0.5
 \end_layout
 
 \begin_layout Verbatim
-
 0.5 hasta 0.625
 \end_layout
 
 \begin_layout Verbatim
-
 0.625 hasta 0.75
 \end_layout
 
 \begin_layout Verbatim
-
 0.75 hasta 0.875
 \end_layout
 
 \begin_layout Verbatim
-
 0.875 hasta 1.0
 \end_layout
 
@@ -1577,44 +1571,36 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 numRegiones = 8
 \end_layout
 
 \begin_layout Plain Layout
-
 Regiones = [0] * numRegiones
 \end_layout
 
 \begin_layout Plain Layout
-
 ancho = 1.0 / numRegiones
 \end_layout
 
 \begin_layout Plain Layout
-
 for i in range(numRegiones):
 \end_layout
 
 \begin_layout Plain Layout
-
   inf = i * ancho
 \end_layout
 
 \begin_layout Plain Layout
-
   sup = inf + ancho
 \end_layout
 
 \begin_layout Plain Layout
-
   Regiones[i] = enRegion(lista,
  inf,
  sup)
 \end_layout
 
 \begin_layout Plain Layout
-
 print(Regiones)
 \end_layout
 
@@ -1629,7 +1615,6 @@ Con una lista de 1000 valores,
 \end_layout
 
 \begin_layout Verbatim
-
 [138,
  124,
  128,
@@ -1747,27 +1732,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 numRegiones = 8
 \end_layout
 
 \begin_layout Plain Layout
-
 Regiones = [0] * numRegiones
 \end_layout
 
 \begin_layout Plain Layout
-
 for i in lista:
 \end_layout
 
 \begin_layout Plain Layout
-
   ind = int(i * numRegiones)
 \end_layout
 
 \begin_layout Plain Layout
-
   Regiones[ind] = Regiones[ind] + 1
 \end_layout
 
@@ -1813,7 +1793,6 @@ Glosario
 status collapsed
 
 \begin_layout Plain Layout
-
 Tipo inmutable:
 \end_layout
 
@@ -1829,7 +1808,6 @@ Tipo inmutable:
 status collapsed
 
 \begin_layout Plain Layout
-
 Tipo mutable:
 \end_layout
 
@@ -1853,7 +1831,6 @@ Tupla:
 status collapsed
 
 \begin_layout Plain Layout
-
 Asignación de tuplas:
 \end_layout
 
@@ -1886,7 +1863,6 @@ Histograma:
 status collapsed
 
 \begin_layout Plain Layout
-
 Correspondencia de patrones:
 \end_layout
 
@@ -1955,7 +1931,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-asignación!de tupla
+asignación
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de tupla
 \end_layout
 
 \end_inset
@@ -2037,7 +2023,6 @@ Escriba una función mas_frecuentes que tome una cadena e imprima las letras en 
 status open
 
 \begin_layout Plain Layout
-
 http://en.wikipedia.org/wiki/Letter_frequencies
 \end_layout
 
@@ -2053,7 +2038,6 @@ Solución:
 status open
 
 \begin_layout Plain Layout
-
 http://thinkpython.com/code/most_frequent.py
 \end_layout
 
@@ -2077,7 +2061,6 @@ Este es un ejemplo de la salida del programa con palabras en inglés:
 \end_layout
 
 \begin_layout Verbatim
-
 ['deltas',
  'desalt',
  'lasted',
@@ -2087,19 +2070,16 @@ Este es un ejemplo de la salida del programa con palabras en inglés:
 \end_layout
 
 \begin_layout Verbatim
-
 ['retainers',
  'ternaries'] 
 \end_layout
 
 \begin_layout Verbatim
-
 ['generating',
  'greatening']
 \end_layout
 
 \begin_layout Verbatim
-
 ['resmelts',
  'smelters',
  'termless']
@@ -2124,7 +2104,6 @@ Solución:
 status open
 
 \begin_layout Plain Layout
-
 http://thinkpython.com/code/anagram_sets.py
 \end_layout
 
@@ -2155,7 +2134,6 @@ Solución:
 status open
 
 \begin_layout Plain Layout
-
 http://thinkpython.com/code/metathesis.py
 \end_layout
 
@@ -2171,7 +2149,6 @@ Crédito:
 status open
 
 \begin_layout Plain Layout
-
 http://puzzlers.org
 \end_layout
 
@@ -2222,7 +2199,6 @@ Solución:
 status open
 
 \begin_layout Plain Layout
-
 http://thinkpython.com/code/reducible.py
 \end_layout
 

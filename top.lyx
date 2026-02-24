@@ -1,7 +1,9 @@
-#LyX file created by tex2lyx 2.1
-\lyxformat 474
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \begin_preamble
 % LaTeX source for the spanish traslation of the textbook ``How to think like a computer scientist''
@@ -112,24 +114,31 @@
 
 
 
+% Added by lyx2lyx
+\setlength{\parskip}{1.7ex plus 0.5ex minus 0.5ex}
+\setlength{\parindent}{0pt}
 \end_preamble
 \options letter
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package default
-\inputencoding autox
+\inputencoding auto-legacyx
 \fontencoding default
-\font_roman default
-\font_sans default
-\font_typewriter default
-\font_math auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -157,33 +166,50 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
 \end_index
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation skip
-\defskip 1.7ex plus 0.5ex minus 0.5ex
-\quotes_language french
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle fancyplain
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -199,9 +225,6 @@ frontmatter
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -224,13 +247,14 @@ thispagestyle{empty}
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \align right
-
-\lang spanish
-
 \begin_inset VSpace 2.5in*
 \end_inset
 
@@ -254,9 +278,6 @@ con Python
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -318,9 +339,6 @@ vspace*{6in}
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -347,13 +365,14 @@ thispagestyle{empty}
 \end_inset
 
 
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \align right
-
-\lang spanish
-
 \begin_inset VSpace 2.5in*
 \end_inset
 
@@ -377,15 +396,12 @@ con Python
 \end_layout
 
 \begin_layout Author
-
-\lang spanish
-Allen Downey, Jeffrey Elkner y Chris Meyers
+Allen Downey,
+ Jeffrey Elkner y Chris Meyers
 \end_layout
 
 \begin_layout Standard
 \align right
-
-\lang spanish
 
 \size small
 Allen Downey
@@ -401,15 +417,10 @@ Allen Downey
 \end_inset
 
  
-\size default
-
 \end_layout
 
 \begin_layout Standard
 \align right
-
-\lang spanish
-
 \begin_inset VSpace 0.25in
 \end_inset
 
@@ -418,8 +429,6 @@ Allen Downey
 
 \begin_layout Standard
 \align right
-
-\lang spanish
 
 \size small
 Traducido y adaptado por
@@ -431,15 +440,10 @@ Traducido y adaptado por
 \end_inset
 
  
-\size default
-
 \end_layout
 
 \begin_layout Standard
 \align right
-
-\lang spanish
-
 \begin_inset VSpace 0.5in
 \end_inset
 
@@ -453,7 +457,8 @@ Pontificia Universidad Javeriana
 
  
 \size small
-Santiago de Cali, Colombia
+Santiago de Cali,
+ Colombia
 \size default
  
 \begin_inset ERT
@@ -475,9 +480,6 @@ includegraphics{illustrations/logo1.eps,width=1in}
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -517,10 +519,12 @@ copyright
 
  
 \begin_inset space ~
-
 \end_inset
 
-2002 Allen Downey, Jeffrey Elkner, y Chris Meyers. 
+2002 Allen Downey,
+ Jeffrey Elkner,
+ y Chris Meyers.
+ 
 \begin_inset VSpace 0.25in
 \end_inset
 
@@ -548,9 +552,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset VSpace 0.25in
 \end_inset
 
@@ -559,21 +560,23 @@ status collapsed
 
 \begin_layout Standard
 \align left
-
-\lang spanish
 Pontificia Universidad Javeriana 
 \begin_inset Newline newline
 \end_inset
 
- Calle 18 No. 118-250 
+ Calle 18 No.
+ 118-250 
 \begin_inset Newline newline
 \end_inset
 
- A.A. No. 26239 
+ A.A.
+ No.
+ 26239 
 \begin_inset Newline newline
 \end_inset
 
- Cali, Colombia 
+ Cali,
+ Colombia 
 \begin_inset Newline newline
 \end_inset
 
@@ -596,7 +599,8 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-%1 Grove St.           
+%1 Grove St.
+           
 \backslash
 
 \backslash
@@ -610,7 +614,8 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-%P.O. Box 812901       
+%P.O.
+ Box 812901       
 \backslash
 
 \backslash
@@ -624,7 +629,8 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-%Wellesley, MA 02482   
+%Wellesley,
+ MA 02482   
 \backslash
 
 \backslash
@@ -637,9 +643,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset VSpace 0.25in
 \end_inset
 
@@ -647,9 +650,11 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-Se concede permiso para copiar, distribuir, y/o modificar este documento bajo los terminos de la GNU Free Documentation License, Versión 1.1 o cualquier versión posterior publicada por la Free Software Foundation; manteniendo sin variaciones las secciones 
+Se concede permiso para copiar,
+ distribuir,
+ y/o modificar este documento bajo los terminos de la GNU Free Documentation License,
+ Versión 1.1 o cualquier versión posterior publicada por la Free Software Foundation;
+ manteniendo sin variaciones las secciones 
 \begin_inset Quotes eld
 \end_inset
 
@@ -673,7 +678,9 @@ Lista de contribuidores,
 \begin_inset Quotes erd
 \end_inset
 
- sin texto de cubierta, y sin texto de contracubierta. Una copia de la licencia está incluida en el apéndice titulado 
+ sin texto de cubierta,
+ y sin texto de contracubierta.
+ Una copia de la licencia está incluida en el apéndice titulado 
 \begin_inset Quotes eld
 \end_inset
 
@@ -685,32 +692,32 @@ GNU Free Documentation License
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 La GNU Free Documentation License está disponible a través de 
 \family typewriter
 www.gnu.org
 \family default
- o escribiendo a la Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307, USA.
+ o escribiendo a la Free Software Foundation,
+ Inc.,
+ 59 Temple Place,
+ Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \begin_layout Standard
+La forma original de este libro es código fuente \SpecialChar LaTeX
 
-\lang spanish
-La forma original de este libro es código fuente LaTeX
 \begin_inset space \space{}
-
 \end_inset
 
 y compilarlo tiene el efecto de generar un libro de texto en una repesentacion independiente del dispositivo que puede ser convertida a otros formatos e imprimirse.
 \end_layout
 
 \begin_layout Standard
+El código fuente \SpecialChar LaTeX
 
-\lang spanish
-El código fuente LaTeX
 \begin_inset space \space{}
-
 \end_inset
 
 para este libro y mas información sobre este proyecto se encuentra en:
@@ -721,20 +728,17 @@ para este libro y mas información sobre este proyecto se encuentra en:
 \end_layout
 
 \begin_layout Standard
+Este libro ha sido preparado utilizando \SpecialChar LaTeX
 
-\lang spanish
-Este libro ha sido preparado utilizando LaTeX
 \begin_inset space \space{}
-
 \end_inset
 
-y las figuras se han realizado con xfig. Todos estos son programas de código abierto, gratuito.
+y las figuras se han realizado con xfig.
+ Todos estos son programas de código abierto,
+ gratuito.
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset VSpace 0.25in
 \end_inset
 
@@ -742,15 +746,10 @@ y las figuras se han realizado con xfig. Todos estos son programas de código ab
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
 Historia de la impresión:
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -790,9 +789,6 @@ end{description}
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -810,9 +806,6 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -826,13 +819,10 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "foreword.tex"
+literal "true"
 
 \end_inset
 
@@ -851,8 +841,8 @@ clearemptydoublepage
  
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "preface.tex"
+literal "true"
 
 \end_inset
 
@@ -871,8 +861,8 @@ clearemptydoublepage
  
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "contrib.tex"
+literal "true"
 
 \end_inset
 
@@ -891,8 +881,8 @@ clearemptydoublepage
  
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "traduccion.tex"
+literal "true"
 
 \end_inset
 
@@ -912,9 +902,6 @@ clearemptydoublepage
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -948,7 +935,7 @@ makeatletter
 
  
 \begin_inset FormulaMacro
-\renewcommand{\l@section}{\@dottedtocline{1}{1.5em}{3.0em}}
+\newcommand{\}{}
 \end_inset
 
  
@@ -979,9 +966,6 @@ setcounter{tocdepth}{1}
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -1003,9 +987,6 @@ clearemptydoublepage
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -1021,9 +1002,6 @@ mainmatter
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -1040,8 +1018,8 @@ clearemptydoublepage  % solucion de problemas
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap01.tex"
+literal "true"
 
 \end_inset
 
@@ -1070,8 +1048,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap02.tex"
+literal "true"
 
 \end_inset
 
@@ -1092,7 +1070,9 @@ clearemptydoublepage
 status collapsed
 
 \begin_layout Plain Layout
-% variables, expresiones, sentencias
+% variables,
+ expresiones,
+ sentencias
 \end_layout
 
 \end_inset
@@ -1100,8 +1080,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap03.tex"
+literal "true"
 
 \end_inset
 
@@ -1130,8 +1110,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap04.tex"
+literal "true"
 
 \end_inset
 
@@ -1160,8 +1140,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap05.tex"
+literal "true"
 
 \end_inset
 
@@ -1190,8 +1170,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap06.tex"
+literal "true"
 
 \end_inset
 
@@ -1220,8 +1200,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap07.tex"
+literal "true"
 
 \end_inset
 
@@ -1250,8 +1230,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap08.tex"
+literal "true"
 
 \end_inset
 
@@ -1280,8 +1260,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap09.tex"
+literal "true"
 
 \end_inset
 
@@ -1310,8 +1290,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap10.tex"
+literal "true"
 
 \end_inset
 
@@ -1340,8 +1320,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap11.tex"
+literal "true"
 
 \end_inset
 
@@ -1370,8 +1350,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap12.tex"
+literal "true"
 
 \end_inset
 
@@ -1400,8 +1380,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap13.tex"
+literal "true"
 
 \end_inset
 
@@ -1430,8 +1410,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap14.tex"
+literal "true"
 
 \end_inset
 
@@ -1472,8 +1452,8 @@ setcounter{page}{168}
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap15.tex"
+literal "true"
 
 \end_inset
 
@@ -1502,8 +1482,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap16.tex"
+literal "true"
 
 \end_inset
 
@@ -1532,8 +1512,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap17.tex"
+literal "true"
 
 \end_inset
 
@@ -1562,8 +1542,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap18.tex"
+literal "true"
 
 \end_inset
 
@@ -1592,8 +1572,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap19.tex"
+literal "true"
 
 \end_inset
 
@@ -1622,8 +1602,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "chap20.tex"
+literal "true"
 
 \end_inset
 
@@ -1654,9 +1634,6 @@ status collapsed
 
 \begin_layout Standard
 \start_of_appendix
-
-\lang spanish
-
 \begin_inset ERT
 status collapsed
 
@@ -1669,8 +1646,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "app01.tex"
+literal "true"
 
 \end_inset
 
@@ -1699,8 +1676,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "app02.tex"
+literal "true"
 
 \end_inset
 
@@ -1729,8 +1706,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "app03.tex"
+literal "true"
 
 \end_inset
 
@@ -1759,8 +1736,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "app04.tex"
+literal "true"
 
 \end_inset
 
@@ -1789,8 +1766,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "gfdles.tex"
+literal "true"
 
 \end_inset
 
@@ -1819,8 +1796,8 @@ status collapsed
 
 \begin_inset CommandInset include
 LatexCommand include
-preview false
 filename "fdl.tex"
+literal "true"
 
 \end_inset
 
@@ -1850,12 +1827,11 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-
-\lang spanish
-
 \begin_inset CommandInset index_print
 LatexCommand printindex
 type "idx"
+name "Index"
+literal "true"
 
 \end_inset
 

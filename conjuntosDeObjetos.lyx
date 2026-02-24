@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -52,11 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -82,6 +90,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -237,7 +246,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-clase!Carta
+clase
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+Carta
 \end_layout
 
 \end_inset
@@ -402,7 +421,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -554,7 +572,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 afterfig
 \end_layout
@@ -578,7 +595,6 @@ Una característica notable de esta correspondencia es que las figuras aparecen 
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 beforefig
@@ -731,7 +747,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 afterfig
 \end_layout
@@ -755,24 +770,20 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Carta:
 \end_layout
 
 \begin_layout Plain Layout
-
   def __init__(self,
  figura=0,
  valor=0):
 \end_layout
 
 \begin_layout Plain Layout
-
     self.figura = figura
 \end_layout
 
 \begin_layout Plain Layout
-
     self.valor = valor
 \end_layout
 
@@ -805,7 +816,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 tresTreboles = Carta(0,
  3)
 \end_layout
@@ -850,7 +860,16 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-atributo!
+atributo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
  de clase
 \end_layout
 
@@ -877,12 +896,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Carta:
 \end_layout
 
 \begin_layout Plain Layout
-
   listaFiguras = ["Treboles",
  "Diamantes",
  "Corazones",
@@ -890,12 +907,10 @@ class Carta:
 \end_layout
 
 \begin_layout Plain Layout
-
   "Picas"]
 \end_layout
 
 \begin_layout Plain Layout
-
   listaValores = ["narf",
  "As",
  "2",
@@ -907,7 +922,6 @@ class Carta:
 \end_layout
 
 \begin_layout Plain Layout
-
   "7","8",
  "9",
  "10",
@@ -921,7 +935,6 @@ class Carta:
 \end_layout
 
 \begin_layout Plain Layout
-
   # se omite el metodo init
 \end_layout
 
@@ -930,17 +943,14 @@ class Carta:
 \end_layout
 
 \begin_layout Plain Layout
-
   def __str__(self):
 \end_layout
 
 \begin_layout Plain Layout
-
     return self.listaFiguras[self.valor] + " de " + 
 \end_layout
 
 \begin_layout Plain Layout
-
             self.listaValores[self.figura]
 \end_layout
 
@@ -982,7 +992,6 @@ valor
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+self.listaFiguras[self.figura]+
@@ -1048,18 +1057,15 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> c1 = Carta(1,
  11)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(c1)
 \end_layout
 
 \begin_layout Plain Layout
-
 Jota de Diamantes
 \end_layout
 
@@ -1087,28 +1093,23 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> c2 = Carta(1,
  3)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(c2)
 \end_layout
 
 \begin_layout Plain Layout
-
 3 de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(c2.listaFiguras[1])
 \end_layout
 
 \begin_layout Plain Layout
-
 Diamantes
 \end_layout
 
@@ -1143,7 +1144,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-instancia!objeto
+instancia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+objeto
 \end_layout
 
 \end_inset
@@ -1169,17 +1180,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> c1.listaFiguras[1] = "Caballero de Rombos rojos"
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(c1)
 \end_layout
 
 \begin_layout Plain Layout
-
 Caballero de Rombos rojos
 \end_layout
 
@@ -1190,7 +1198,6 @@ Caballero de Rombos rojos
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1201,7 +1208,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1214,7 +1220,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1229,12 +1234,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> print(c2)
 \end_layout
 
 \begin_layout Plain Layout
-
 3 de Rombos rojos
 \end_layout
 
@@ -1261,7 +1264,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operador!condicional
+operador
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+condicional
 \end_layout
 
 \end_inset
@@ -1452,54 +1465,45 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def __cmp__(self,
  otro):
 \end_layout
 
 \begin_layout Plain Layout
-
   # chequea las figuras
 \end_layout
 
 \begin_layout Plain Layout
-
   if self.figura > otro.figura:
  return 1
 \end_layout
 
 \begin_layout Plain Layout
-
   if self.figura < otro.figura:
  return -1
 \end_layout
 
 \begin_layout Plain Layout
-
   # Si tienen la misma figura...
  
 \end_layout
 
 \begin_layout Plain Layout
-
   if self.valor > otro.valor:
  return 1
 \end_layout
 
 \begin_layout Plain Layout
-
   if self.valor < otro.valor:
  return -1
 \end_layout
 
 \begin_layout Plain Layout
-
   # si los valores son iguales...
  hay un empate
 \end_layout
 
 \begin_layout Plain Layout
-
   return 0
 \end_layout
 
@@ -1523,7 +1527,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!de objetos
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de objetos
 \end_layout
 
 \end_inset
@@ -1535,7 +1549,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-objeto!lista de
+objeto
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+lista de
 \end_layout
 
 \end_inset
@@ -1594,7 +1618,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-método!de inicialización
+método
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de inicialización
 \end_layout
 
 \end_inset
@@ -1634,7 +1668,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-ciclo!anidado
+ciclo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+anidado
 \end_layout
 
 \end_inset
@@ -1648,33 +1692,27 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mazo:
 \end_layout
 
 \begin_layout Plain Layout
-
   def __init__(self):
 \end_layout
 
 \begin_layout Plain Layout
-
     self.cartas = []
 \end_layout
 
 \begin_layout Plain Layout
-
     for figura in range(4):
 \end_layout
 
 \begin_layout Plain Layout
-
       for valor in range(1,
  14):
 \end_layout
 
 \begin_layout Plain Layout
-
         self.cartas.append(Carta(figura,
  valor))
 \end_layout
@@ -1740,7 +1778,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-método!de lista
+método
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de lista
 \end_layout
 
 \end_inset
@@ -1766,7 +1814,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-imprimir!objeto mazo
+imprimir
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+objeto mazo
 \end_layout
 
 \end_inset
@@ -1793,27 +1851,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mazo:
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def imprimirMazo(self):
 \end_layout
 
 \begin_layout Plain Layout
-
     for carta in self.cartas:
 \end_layout
 
 \begin_layout Plain Layout
-
       print(carta)
 \end_layout
 
@@ -1868,39 +1921,32 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mazo:
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def __str__(self):
 \end_layout
 
 \begin_layout Plain Layout
-
     s = ""
 \end_layout
 
 \begin_layout Plain Layout
-
     for i in range(len(self.cartas)):
 \end_layout
 
 \begin_layout Plain Layout
-
       s = s + " "*i + str(self.cartas[i]) + "
 \backslash
 n"
 \end_layout
 
 \begin_layout Plain Layout
-
     return s
 \end_layout
 
@@ -1932,7 +1978,6 @@ Segundo,
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+" "*i+
@@ -2025,82 +2070,66 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> mazo = Mazo()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(mazo)
 \end_layout
 
 \begin_layout Plain Layout
-
 As de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
  2 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
   3 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
    4 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
     5 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
      6 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
       7 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
        8 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
         9 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
          10 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
           J de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
            Reina de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
             Rey de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
              As de Diamantes
 \end_layout
 
@@ -2112,7 +2141,6 @@ As de Picas
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+(
@@ -2222,7 +2250,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 random.randrange(0,
  len(self.cartas))
 \end_layout
@@ -2243,43 +2270,35 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mazo:
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def barajar(self):
 \end_layout
 
 \begin_layout Plain Layout
-
     import random
 \end_layout
 
 \begin_layout Plain Layout
-
     nCartas = len(self.cartas)
 \end_layout
 
 \begin_layout Plain Layout
-
     for i in range(nCartas):
 \end_layout
 
 \begin_layout Plain Layout
-
       j = random.randrange(i,
  nCartas)
 \end_layout
 
 \begin_layout Plain Layout
-
       self.cartas[i],
  self.cartas[j] = self.cartas[j],
  
@@ -2288,7 +2307,6 @@ class Mazo:
 \end_layout
 
 \begin_layout Plain Layout
-
                                        self.cartas[i]
 \end_layout
 
@@ -2333,7 +2351,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-asignación!de tuplas
+asignación
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de tuplas
 \end_layout
 
 \end_inset
@@ -2374,7 +2402,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 self.cartas[i],
  self.cartas[j] = self.cartas[j],
  
@@ -2383,7 +2410,6 @@ self.cartas[i],
 \end_layout
 
 \begin_layout Plain Layout
-
                                  self.cartas[i]
 \end_layout
 
@@ -2431,44 +2457,36 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mazo:
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def eliminarCarta(self,
  carta):
 \end_layout
 
 \begin_layout Plain Layout
-
     if carta in self.cartas:
 \end_layout
 
 \begin_layout Plain Layout
-
       self.cartas.remove(carta)
 \end_layout
 
 \begin_layout Plain Layout
-
       return True
 \end_layout
 
 \begin_layout Plain Layout
-
     else:
  
 \end_layout
 
 \begin_layout Plain Layout
-
       return True
 \end_layout
 
@@ -2521,7 +2539,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operador!in
+operador
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+in
 \end_layout
 
 \end_inset
@@ -2541,22 +2569,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mazo:
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def entregarCarta(self):
 \end_layout
 
 \begin_layout Plain Layout
-
     return self.cards.pop()
 \end_layout
 
@@ -2572,7 +2596,6 @@ pop
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -2583,7 +2606,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -2596,7 +2618,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2626,7 +2647,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-función!booleana
+función
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+booleana
 \end_layout
 
 \end_inset
@@ -2649,22 +2680,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mazo:
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def estaVacio(self):
 \end_layout
 
 \begin_layout Plain Layout
-
     return (len(self.cartas) == 0)
 \end_layout
 
@@ -2687,7 +2714,6 @@ Codificar:
 status collapsed
 
 \begin_layout Plain Layout
-
 Atributo de clase:
 \end_layout
 
@@ -2740,7 +2766,16 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-atributo!
+atributo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
  de clase
 \end_layout
 

@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -52,11 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -82,6 +90,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -138,7 +147,7 @@ This distribution includes a file named fdl.lyx that contains the text of the GN
 
 \begin_layout Chapter
 Postludio:
- Triqui con interfaz gráfica 
+ Triqui con interfaz gráfica
 \end_layout
 
 \begin_layout Standard
@@ -175,7 +184,7 @@ En el capítulo
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:inter1:triqui"
-nolink "false"
+filenames "cap:inter1:triqui@interludioTriqui.lyx"
 
 \end_inset
 
@@ -198,7 +207,6 @@ El programa utiliza la biblioteca Kivy,
 status open
 
 \begin_layout Plain Layout
-
  http://kivy.org
 \end_layout
 
@@ -216,7 +224,6 @@ Los archivos triqui0.py a triqui8.py están en:
 status open
 
 \begin_layout Plain Layout
-
 https://github.com/abecerra/thinkcs-py_es/releases/download/thinkcs-py_es_e2-rc1/triqui-kivy-python3.zip
 \end_layout
 
@@ -350,27 +357,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui0.py
 \end_layout
 
 \begin_layout Plain Layout
-
 import kivy
 \end_layout
 
 \begin_layout Plain Layout
-
 kivy.require('1.9.1')
 \end_layout
 
 \begin_layout Plain Layout
-
 from kivy.app import App
 \end_layout
 
 \begin_layout Plain Layout
-
 from kivy.uix.gridlayout import GridLayout
 \end_layout
 
@@ -379,24 +381,20 @@ from kivy.uix.gridlayout import GridLayout
 \end_layout
 
 \begin_layout Plain Layout
-
 class Triqui(GridLayout):
 \end_layout
 
 \begin_layout Plain Layout
-
     def __init__(self,
  **kwargs):
 \end_layout
 
 \begin_layout Plain Layout
-
         super(Triqui,
  self).__init__(**kwargs)
 \end_layout
 
 \begin_layout Plain Layout
-
    
 \end_layout
 
@@ -405,22 +403,18 @@ class Triqui(GridLayout):
 \end_layout
 
 \begin_layout Plain Layout
-
 class Programa(App):
 \end_layout
 
 \begin_layout Plain Layout
-
     def build(self):
 \end_layout
 
 \begin_layout Plain Layout
-
         self.title = 'Triqui'
 \end_layout
 
 \begin_layout Plain Layout
-
         return Triqui()
 \end_layout
 
@@ -429,12 +423,10 @@ class Programa(App):
 \end_layout
 
 \begin_layout Plain Layout
-
 if __name__ == '__main__':
 \end_layout
 
 \begin_layout Plain Layout
-
     Programa().run()
 \end_layout
 
@@ -517,51 +509,42 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui1.py
 \end_layout
 
 \begin_layout Plain Layout
-
 class Triqui(GridLayout):
 \end_layout
 
 \begin_layout Plain Layout
-
     def __init__(self,
  **kwargs):
 \end_layout
 
 \begin_layout Plain Layout
-
         super(Triqui,
  self).__init__(**kwargs)
 \end_layout
 
 \begin_layout Plain Layout
-
         self.add_widget(Button(font_size=100,
  
 \end_layout
 
 \begin_layout Plain Layout
-
                         on_press=self.boton_presionado))
 \end_layout
 
 \begin_layout Plain Layout
-
     
 \end_layout
 
 \begin_layout Plain Layout
-
     def boton_presionado(self,
  w):
 \end_layout
 
 \begin_layout Plain Layout
-
         pass
 \end_layout
 
@@ -609,49 +592,40 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui2.py
 \end_layout
 
 \begin_layout Plain Layout
-
 class Triqui(GridLayout):
 \end_layout
 
 \begin_layout Plain Layout
-
     def __init__(self,
  **kwargs):
 \end_layout
 
 \begin_layout Plain Layout
-
         super(Triqui,
  self).__init__(**kwargs)
 \end_layout
 
 \begin_layout Plain Layout
-
         self.cols = 3
 \end_layout
 
 \begin_layout Plain Layout
-
         self.rows = 3
 \end_layout
 
 \begin_layout Plain Layout
-
         for i in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
             for j in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
                 self.add_widget(Button(font_size=100,
  
 \backslash
@@ -659,23 +633,19 @@ class Triqui(GridLayout):
 \end_layout
 
 \begin_layout Plain Layout
-
                                 on_press=self.boton_presionado))
 \end_layout
 
 \begin_layout Plain Layout
-
         
 \end_layout
 
 \begin_layout Plain Layout
-
     def boton_presionado(self,
  w):
 \end_layout
 
 \begin_layout Plain Layout
-
         MostrarMensaje("Titulo","Presionaste una casilla")
 \end_layout
 
@@ -707,18 +677,15 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui2.py
 \end_layout
 
 \begin_layout Plain Layout
-
 class MostrarMensaje(Popup):
  
 \end_layout
 
 \begin_layout Plain Layout
-
     def __init__(self,
  titulo,
  mensaje,
@@ -726,23 +693,19 @@ class MostrarMensaje(Popup):
 \end_layout
 
 \begin_layout Plain Layout
-
         self.size_hint_x = self.size_hint_y = .5
 \end_layout
 
 \begin_layout Plain Layout
-
         self.title = titulo
 \end_layout
 
 \begin_layout Plain Layout
-
         super(MostrarMensaje,
  self).__init__(**kwargs)
 \end_layout
 
 \begin_layout Plain Layout
-
         self.add_widget(Button(text=mensaje,
  
 \backslash
@@ -750,12 +713,10 @@ class MostrarMensaje(Popup):
 \end_layout
 
 \begin_layout Plain Layout
-
                         on_press=lambda x:self.dismiss()))
 \end_layout
 
 \begin_layout Plain Layout
-
         self.open()
 \end_layout
 
@@ -774,7 +735,6 @@ inline true
 status open
 
 \begin_layout Plain Layout
-
 on_press
 \end_layout
 
@@ -786,7 +746,6 @@ inline true
 status open
 
 \begin_layout Plain Layout
-
 lambda x:
  self.dismiss()
 \end_layout
@@ -819,49 +778,40 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui3.py
 \end_layout
 
 \begin_layout Plain Layout
-
 class Triqui(GridLayout):
 \end_layout
 
 \begin_layout Plain Layout
-
     def __init__(self,
  **kwargs):
 \end_layout
 
 \begin_layout Plain Layout
-
         super(Triqui,
  self).__init__(**kwargs)
 \end_layout
 
 \begin_layout Plain Layout
-
         self.cols = 3
 \end_layout
 
 \begin_layout Plain Layout
-
         self.rows = 3
 \end_layout
 
 \begin_layout Plain Layout
-
         for i in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
             for j in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
                 self.add_widget(Button(font_size=100,
  
 \backslash
@@ -869,13 +819,11 @@ class Triqui(GridLayout):
 \end_layout
 
 \begin_layout Plain Layout
-
                   on_press=self.boton_presionado,
  text=' '))
 \end_layout
 
 \begin_layout Plain Layout
-
         self.turno = 'O'
 \end_layout
 
@@ -884,18 +832,15 @@ class Triqui(GridLayout):
 \end_layout
 
 \begin_layout Plain Layout
-
     def boton_presionado(self,
  w):
 \end_layout
 
 \begin_layout Plain Layout
-
         if w.text != ' ':
 \end_layout
 
 \begin_layout Plain Layout
-
             MostrarMensaje('Error!',
  "Ya se ha jugado 
 \backslash
@@ -903,42 +848,34 @@ class Triqui(GridLayout):
 \end_layout
 
 \begin_layout Plain Layout
-
                             en esa casilla!")
 \end_layout
 
 \begin_layout Plain Layout
-
             return
 \end_layout
 
 \begin_layout Plain Layout
-
         if self.turno == 'O':
 \end_layout
 
 \begin_layout Plain Layout
-
             w.text =  'O'
 \end_layout
 
 \begin_layout Plain Layout
-
             self.turno = 'X'
 \end_layout
 
 \begin_layout Plain Layout
-
         else:
 \end_layout
 
 \begin_layout Plain Layout
-
             w.text = 'X'
 \end_layout
 
 \begin_layout Plain Layout
-
             self.turno = 'O'
 \end_layout
 
@@ -991,50 +928,41 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui4.py
 \end_layout
 
 \begin_layout Plain Layout
-
 class Boton(Button):
 \end_layout
 
 \begin_layout Plain Layout
-
     fila = NumericProperty(0)
 \end_layout
 
 \begin_layout Plain Layout
-
     columna = NumericProperty(0)
 \end_layout
 
 \begin_layout Plain Layout
-
     
 \end_layout
 
 \begin_layout Plain Layout
-
     def __init__(self,
  **kwargs):
       
 \end_layout
 
 \begin_layout Plain Layout
-
         super(Boton,
  self).__init__(**kwargs)
 \end_layout
 
 \begin_layout Plain Layout
-
         self.font_size=100
 \end_layout
 
 \begin_layout Plain Layout
-
         self.text=' '
 \end_layout
 
@@ -1057,32 +985,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui4.py
 \end_layout
 
 \begin_layout Plain Layout
-
     def botones_a_matriz(self,tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
         for i in self.children:
 \end_layout
 
 \begin_layout Plain Layout
-
             f = i.fila
 \end_layout
 
 \begin_layout Plain Layout
-
             c = i.columna
 \end_layout
 
 \begin_layout Plain Layout
-
             self.tablero[f][c]=i.text
 \end_layout
 
@@ -1112,7 +1034,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui4.py
 \end_layout
 
@@ -1121,61 +1042,50 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 from validar import *
 \end_layout
 
 \begin_layout Plain Layout
-
     def __init__(self,
  **kwargs):
 \end_layout
 
 \begin_layout Plain Layout
-
         super(Triqui,
  self).__init__(**kwargs)
 \end_layout
 
 \begin_layout Plain Layout
-
         self.cols = 3
 \end_layout
 
 \begin_layout Plain Layout
-
         self.rows = 3
 \end_layout
 
 \begin_layout Plain Layout
-
         for i in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
             for j in range(3):
 \end_layout
 
 \begin_layout Plain Layout
-
                 self.add_widget(Boton(on_press=self.boton_presionado,
 \backslash
 
 \end_layout
 
 \begin_layout Plain Layout
-
                        fila=i,columna=j))
 \end_layout
 
 \begin_layout Plain Layout
-
         self.turno = 'O'
 \end_layout
 
 \begin_layout Plain Layout
-
         self.tablero = crear()
 \end_layout
 
@@ -1194,23 +1104,19 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui5.py
 \end_layout
 
 \begin_layout Plain Layout
-
     def boton_presionado(self,
  w):
 \end_layout
 
 \begin_layout Plain Layout
-
         if w.text != ' ':
 \end_layout
 
 \begin_layout Plain Layout
-
             MostrarMensaje('Error!',
  
 \backslash
@@ -1218,58 +1124,47 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
                   "Ya se ha jugado en esa casilla!")
 \end_layout
 
 \begin_layout Plain Layout
-
             return
 \end_layout
 
 \begin_layout Plain Layout
-
         else:
 \end_layout
 
 \begin_layout Plain Layout
-
             if self.turno == 'O':
 \end_layout
 
 \begin_layout Plain Layout
-
                 w.text =  'O'                
 \end_layout
 
 \begin_layout Plain Layout
-
                 self.turno = 'X'
 \end_layout
 
 \begin_layout Plain Layout
-
                 self.botones_a_matriz()
 \end_layout
 
 \begin_layout Plain Layout
-
                 if gana("O",self.tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
                     MostrarMensaje("Fin",
  "Gana el jugador O")
 \end_layout
 
 \begin_layout Plain Layout
-
             else:
 \end_layout
 
 \begin_layout Plain Layout
-
                 # Muy similar para el otro jugador!
 \end_layout
 
@@ -1297,27 +1192,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui6.py
 \end_layout
 
 \begin_layout Plain Layout
-
    def reset(self):
 \end_layout
 
 \begin_layout Plain Layout
-
         for i in self.children:
 \end_layout
 
 \begin_layout Plain Layout
-
             i.text = ' '
 \end_layout
 
 \begin_layout Plain Layout
-
         self.turno = 'O'
 \end_layout
 
@@ -1341,54 +1231,44 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui6.py
 \end_layout
 
 \begin_layout Plain Layout
-
     def boton_presionado(self,
  w):
 \end_layout
 
 \begin_layout Plain Layout
-
         # Todo lo anterior igual
 \end_layout
 
 \begin_layout Plain Layout
-
         else:
 \end_layout
 
 \begin_layout Plain Layout
-
                 w.text = 'X'
 \end_layout
 
 \begin_layout Plain Layout
-
                 self.turno = 'O'
 \end_layout
 
 \begin_layout Plain Layout
-
                 self.botones_a_matriz()
 \end_layout
 
 \begin_layout Plain Layout
-
                 if gana("X",self.tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
                     MostrarMensaje("Fin",
  "Gana el jugador X")
 \end_layout
 
 \begin_layout Plain Layout
-
                     self.reset()
 \end_layout
 
@@ -1408,34 +1288,28 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui7.py
 \end_layout
 
 \begin_layout Plain Layout
-
     def boton_presionado(self,
  w):
 \end_layout
 
 \begin_layout Plain Layout
-
         # Todo lo anterior igual
 \end_layout
 
 \begin_layout Plain Layout
-
             if empate(self.tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
                 MostrarMensaje("Fin",
  "Empate!")
 \end_layout
 
 \begin_layout Plain Layout
-
                 self.reset()
 \end_layout
 
@@ -1481,60 +1355,49 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui8.py
 \end_layout
 
 \begin_layout Plain Layout
-
   def revisar(self):
           
 \end_layout
 
 \begin_layout Plain Layout
-
         if gana(self.turno,self.tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
             mensaje = "Gana el jugador "+self.turno+"."
 \end_layout
 
 \begin_layout Plain Layout
-
             MostrarMensaje("Fin",
  mensaje)
 \end_layout
 
 \begin_layout Plain Layout
-
             self.reset()
 \end_layout
 
 \begin_layout Plain Layout
-
         elif empate(self.tablero):
 \end_layout
 
 \begin_layout Plain Layout
-
             MostrarMensaje("Fin",
  "Empate!")
 \end_layout
 
 \begin_layout Plain Layout
-
             self.reset()
 \end_layout
 
 \begin_layout Plain Layout
-
         else:
 \end_layout
 
 \begin_layout Plain Layout
-
             self.turno = self.otro()
 \end_layout
 
@@ -1553,32 +1416,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # triqui8.py
 \end_layout
 
 \begin_layout Plain Layout
-
     def otro(self):
 \end_layout
 
 \begin_layout Plain Layout
-
         if self.turno == 'O':
 \end_layout
 
 \begin_layout Plain Layout
-
             return 'X'
 \end_layout
 
 \begin_layout Plain Layout
-
         else:
 \end_layout
 
 \begin_layout Plain Layout
-
             return 'O'
 \end_layout
 
@@ -1616,7 +1473,6 @@ Por ejemplo,
 status open
 
 \begin_layout Plain Layout
-
 https://github.com/abecerra/thinkcs-py_es/releases/download/thinkcs-py_es_e2-rc1/KivyTriquiABe-1.1.0-debug.apk
 \end_layout
 
