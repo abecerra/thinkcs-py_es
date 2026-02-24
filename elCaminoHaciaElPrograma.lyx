@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -52,11 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -82,6 +90,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -209,7 +218,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lenguaje!programación
+lenguaje
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+programación
 \end_layout
 
 \end_inset
@@ -294,7 +313,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lenguaje!alto nivel
+lenguaje
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+alto nivel
 \end_layout
 
 \end_inset
@@ -306,7 +335,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lenguaje!bajo nivel
+lenguaje
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+bajo nivel
 \end_layout
 
 \end_inset
@@ -392,7 +431,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 centerline{
 \end_layout
@@ -411,7 +449,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -456,7 +493,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 centerline{
 \end_layout
@@ -475,7 +511,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -497,19 +532,16 @@ A Python se lo considera un lenguaje interpretado,
 \end_layout
 
 \begin_layout Verbatim
-
 $python
 \end_layout
 
 \begin_layout Verbatim
-
 Python 3.6.1 (default,
  Apr 29 2017,
  15:32:44) [GCC 5.4.0] on linux 
 \end_layout
 
 \begin_layout Verbatim
-
 Type "help",
  "copyright",
  "credits" or "license" for more information.
@@ -517,12 +549,10 @@ Type "help",
 \end_layout
 
 \begin_layout Verbatim
-
 >>>1+1
 \end_layout
 
 \begin_layout Verbatim
-
 2
 \end_layout
 
@@ -534,7 +564,6 @@ La primera línea de este ejemplo es el comando que pone en marcha al intérpret
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -545,7 +574,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+>>>+
@@ -558,7 +586,6 @@ verb+>>>+
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -601,7 +628,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 print(1 + 1)
 \end_layout
 
@@ -627,12 +653,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 $ python unomasuno.py
 \end_layout
 
 \begin_layout Plain Layout
-
 2
 \end_layout
 
@@ -715,7 +739,6 @@ Matemáticas:
 status collapsed
 
 \begin_layout Plain Layout
-
 Operación condicional:
 \end_layout
 
@@ -829,7 +852,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-error!sintaxis
+error
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+sintaxis
 \end_layout
 
 \end_inset
@@ -909,7 +942,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-error!en tiempo de ejecución
+error
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+en tiempo de ejecución
 \end_layout
 
 \end_inset
@@ -945,7 +988,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-seguro!lenguaje
+seguro
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+lenguaje
 \end_layout
 
 \end_inset
@@ -1004,7 +1057,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-semántico!error
+semántico
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+error
 \end_layout
 
 \end_inset
@@ -1073,7 +1136,6 @@ Cuando se ha descartado lo imposible,
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1084,7 +1146,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1097,7 +1158,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1166,7 +1226,6 @@ Uno de los proyectos tempranos de Linus fue un programa que intercambiaría la i
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1177,7 +1236,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1190,7 +1248,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1253,7 +1310,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-formal!lenguaje
+formal
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+lenguaje
 \end_layout
 
 \end_inset
@@ -1265,7 +1332,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-natural!lenguaje
+natural
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+lenguaje
 \end_layout
 
 \end_inset
@@ -1647,7 +1724,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 print("Hola todo el mundo!")
 \end_layout
 
@@ -1662,7 +1738,6 @@ Este es un ejemplo de llamado a la función
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1673,7 +1748,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1686,7 +1760,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1705,7 +1778,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 Hola todo el mundo!
 \end_layout
 
@@ -1738,7 +1810,17 @@ pageformat default
 status open
 
 \begin_layout Plain Layout
-print!función
+print
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+función
 \end_layout
 
 \end_inset
@@ -1769,7 +1851,6 @@ Glosario
 status collapsed
 
 \begin_layout Plain Layout
-
 Solución de problemas:
 \end_layout
 
@@ -1784,7 +1865,6 @@ Solución de problemas:
 status collapsed
 
 \begin_layout Plain Layout
-
 Lenguaje de alto nivel:
 \end_layout
 
@@ -1798,7 +1878,6 @@ Lenguaje de alto nivel:
 status collapsed
 
 \begin_layout Plain Layout
-
 Lenguaje de bajo nivel:
 \end_layout
 
@@ -1845,7 +1924,6 @@ Compilar:
 status collapsed
 
 \begin_layout Plain Layout
-
 Código fuente:
 \end_layout
 
@@ -1859,7 +1937,6 @@ Código fuente:
 status collapsed
 
 \begin_layout Plain Layout
-
 Código objeto:
 \end_layout
 
@@ -1873,7 +1950,6 @@ Código objeto:
 status collapsed
 
 \begin_layout Plain Layout
-
 Programa ejecutable:
 \end_layout
 
@@ -1887,7 +1963,6 @@ Programa ejecutable:
 status collapsed
 
 \begin_layout Plain Layout
-
 Guión (Script):
 \end_layout
 
@@ -1911,7 +1986,6 @@ Algoritmo:
 status collapsed
 
 \begin_layout Plain Layout
-
 Error (bug):
 \end_layout
 
@@ -1935,7 +2009,6 @@ Sintaxis:
 status collapsed
 
 \begin_layout Plain Layout
-
 Error sintáctico:
 \end_layout
 
@@ -1949,7 +2022,6 @@ Error sintáctico:
 status collapsed
 
 \begin_layout Plain Layout
-
 Error en tiempo de ejecución:
 \end_layout
 
@@ -1968,7 +2040,6 @@ Excepción:
 status open
 
 \begin_layout Plain Layout
-
 Error semántico:
 \end_layout
 
@@ -1987,7 +2058,6 @@ Semántica:
 status collapsed
 
 \begin_layout Plain Layout
-
 Lenguaje natural:
 \end_layout
 
@@ -2001,7 +2071,6 @@ Lenguaje natural:
 status collapsed
 
 \begin_layout Plain Layout
-
 Lenguaje formal:
 \end_layout
 
@@ -2023,7 +2092,6 @@ Unidad:
 status collapsed
 
 \begin_layout Plain Layout
-
 Análisis sintáctico:
 \end_layout
 
@@ -2037,7 +2105,6 @@ Análisis sintáctico:
 status collapsed
 
 \begin_layout Plain Layout
-
 Función print:
 \end_layout
 
@@ -2358,7 +2425,17 @@ pageformat default
 status open
 
 \begin_layout Plain Layout
-print!función
+print
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+función
 \end_layout
 
 \end_inset
@@ -2430,30 +2507,25 @@ Escriba 1 2 y presione la tecla Entrar.
 
 \begin_deeper
 \begin_layout Verbatim
-
  
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
-
 File "<stdin>",
  line 1
 \end_layout
 
 \begin_layout Plain Layout
-
     1 2
 \end_layout
 
 \begin_layout Plain Layout
-
       ^
 \end_layout
 
 \begin_layout Plain Layout
-
 SyntaxError:
  invalid syntax
 \end_layout
@@ -2487,7 +2559,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 verb+print('hola')+
 \end_layout
@@ -2502,7 +2573,6 @@ verb+print('hola')+
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+print('"hola"')+
@@ -2520,7 +2590,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 verb+print(queso)+
 \end_layout
@@ -2537,7 +2606,6 @@ Escriba
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+'Esta es una prueba...'+
@@ -2571,7 +2639,6 @@ Ahora cambie el contenido del guión a:
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+print('Esta es una prueba...')+

@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -62,11 +62,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -92,6 +100,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -232,7 +241,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 verb+[+
 \end_layout
@@ -244,7 +252,6 @@ verb+[+
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+]+
@@ -258,7 +265,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 [10,
  20,
  30,
@@ -266,7 +272,6 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 ["correo",
  "lapiz",
  "carro"]
@@ -290,7 +295,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 ["hola",
  2.0,
  5,
@@ -318,7 +322,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!anidada
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+anidada
 \end_layout
 
 \end_inset
@@ -334,12 +348,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> list(range(1,5))
 \end_layout
 
 \begin_layout Plain Layout
-
 [1,
  2,
  3,
@@ -375,12 +387,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> list(range(10))
 \end_layout
 
 \begin_layout Plain Layout
-
 [0,
  1,
  2,
@@ -412,14 +422,12 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> list(range(1,
  10,
  2))
 \end_layout
 
 \begin_layout Plain Layout
-
 [1,
  3,
  5,
@@ -452,32 +460,27 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> vocabulario = ["mejorar",
  "castigar",
  "derrocar"]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> numeros = [17,
  123]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> vacia = []
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(vocabulario,
  numeros,
  vacia)
 \end_layout
 
 \begin_layout Plain Layout
-
 ["mejorar",
  "castigar",
  "derrocar"] [17,
@@ -500,7 +503,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!elemento
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+elemento
 \end_layout
 
 \end_inset
@@ -534,12 +547,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 print(numeros[0])
 \end_layout
 
 \begin_layout Plain Layout
-
 numeros[1] = 5
 \end_layout
 
@@ -566,22 +577,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> numeros[3-2]
 \end_layout
 
 \begin_layout Plain Layout
-
 5
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> numeros[1.0]
 \end_layout
 
 \begin_layout Plain Layout
-
 TypeError:
  sequence index must be integer
 \end_layout
@@ -614,12 +621,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> numeros[2] = 5
 \end_layout
 
 \begin_layout Plain Layout
-
 IndexError:
  list assignment index out of range
 \end_layout
@@ -637,32 +642,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> numeros[-1]
 \end_layout
 
 \begin_layout Plain Layout
-
 5
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> numeros[-2]
 \end_layout
 
 \begin_layout Plain Layout
-
 17
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> numeros[-3]
 \end_layout
 
 \begin_layout Plain Layout
-
 IndexError:
  list index out of range
 \end_layout
@@ -697,7 +696,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 combatientes = ["guerra",
  "hambruna",
  "peste",
@@ -709,22 +707,18 @@ combatientes = ["guerra",
 \end_layout
 
 \begin_layout Plain Layout
-
 i = 0
 \end_layout
 
 \begin_layout Plain Layout
-
 while i < 4:
 \end_layout
 
 \begin_layout Plain Layout
-
   print(combatientes[i])
 \end_layout
 
 \begin_layout Plain Layout
-
   i = i + 1
 \end_layout
 
@@ -781,7 +775,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!recorrido de una
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+recorrido de una
 \end_layout
 
 \end_inset
@@ -793,7 +797,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-recorrido!lista
+recorrido
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+lista
 \end_layout
 
 \end_inset
@@ -824,7 +838,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!longitud
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+longitud
 \end_layout
 
 \end_inset
@@ -848,7 +872,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 combatientes = ["guerra",
  "hambruna",
  "peste",
@@ -860,22 +883,18 @@ combatientes = ["guerra",
 \end_layout
 
 \begin_layout Plain Layout
-
 i = 0
 \end_layout
 
 \begin_layout Plain Layout
-
 while i < len(combatientes):
 \end_layout
 
 \begin_layout Plain Layout
-
   print(combatientes[i])
 \end_layout
 
 \begin_layout Plain Layout
-
   i = i + 1
 \end_layout
 
@@ -922,7 +941,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 ['basura!',
  1,
  ['Brie',
@@ -932,7 +950,6 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
  [1,
  2,
  3]]
@@ -954,7 +971,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!pertenencia 
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+pertenencia 
 \end_layout
 
 \end_inset
@@ -978,7 +1005,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operador!in
+operador
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+in
 \end_layout
 
 \end_inset
@@ -1011,7 +1048,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> combatientes = ["guerra",
  "hambruna",
  "peste",
@@ -1019,22 +1055,18 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> 'peste' in combatientes
 \end_layout
 
 \begin_layout Plain Layout
-
 True
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> 'corrupcion' in combatientes
 \end_layout
 
 \begin_layout Plain Layout
-
 False
 \end_layout
 
@@ -1093,12 +1125,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> 'corrupcion' not in combatientes
 \end_layout
 
 \begin_layout Plain Layout
-
 True
 \end_layout
 
@@ -1132,7 +1162,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!ciclo for
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+ciclo for
 \end_layout
 
 \end_inset
@@ -1180,12 +1220,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 for VARIABLE in LISTA:
 \end_layout
 
 \begin_layout Plain Layout
-
   CUERPO
 \end_layout
 
@@ -1201,27 +1239,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 i = 0
 \end_layout
 
 \begin_layout Plain Layout
-
 while i < len(LISTA):
 \end_layout
 
 \begin_layout Plain Layout
-
   VARIABLE = LISTA[i]
 \end_layout
 
 \begin_layout Plain Layout
-
   CUERPO
 \end_layout
 
 \begin_layout Plain Layout
-
   i = i + 1
 \end_layout
 
@@ -1251,12 +1284,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 for combatiente in combatientes:
 \end_layout
 
 \begin_layout Plain Layout
-
   print(combatiente)
 \end_layout
 
@@ -1290,17 +1321,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 for numero in range(20):
 \end_layout
 
 \begin_layout Plain Layout
-
   if numero % 2 == 0:
 \end_layout
 
 \begin_layout Plain Layout
-
     print(numero)
 \end_layout
 
@@ -1309,14 +1337,12 @@ for numero in range(20):
 \end_layout
 
 \begin_layout Plain Layout
-
 for fruta in ["banano",
  "manzana",
  "pera"]:
 \end_layout
 
 \begin_layout Plain Layout
-
   print("Me gustaria comer " + fruta + "s!")
 \end_layout
 
@@ -1353,7 +1379,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operación!sobre listas
+operación
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+sobre listas
 \end_layout
 
 \end_inset
@@ -1376,7 +1412,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-concatenación!de listas
+concatenación
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de listas
 \end_layout
 
 \end_inset
@@ -1387,31 +1433,26 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> a = [1,
  2,
  3]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> b = [4,
  5,
  6]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> c = a + b
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(c)
 \end_layout
 
 \begin_layout Plain Layout
-
 [1,
  2,
  3,
@@ -1441,7 +1482,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-repetición!de listas
+repetición
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de listas
 \end_layout
 
 \end_inset
@@ -1452,12 +1503,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> [0] * 4
 \end_layout
 
 \begin_layout Plain Layout
-
 [0,
  0,
  0,
@@ -1465,14 +1514,12 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> [1,
  2,
  3] * 3
 \end_layout
 
 \begin_layout Plain Layout
-
 [1,
  2,
  3,
@@ -1527,7 +1574,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!segmento
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+segmento
 \end_layout
 
 \end_inset
@@ -1554,7 +1611,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> lista = ['a',
  'b',
  'c',
@@ -1564,23 +1620,19 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> lista[1:3]
 \end_layout
 
 \begin_layout Plain Layout
-
 ['b',
  'c']
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> lista[:4]
 \end_layout
 
 \begin_layout Plain Layout
-
 ['a',
  'b',
  'c',
@@ -1588,24 +1640,20 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> lista[3:]
 \end_layout
 
 \begin_layout Plain Layout
-
 ['d',
  'e',
  'f']
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> lista[:]
 \end_layout
 
 \begin_layout Plain Layout
-
 ['a',
  'b',
  'c',
@@ -1630,7 +1678,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-mutable!lista
+mutable
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+lista
 \end_layout
 
 \end_inset
@@ -1642,7 +1700,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!mutable
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+mutable
 \end_layout
 
 \end_inset
@@ -1658,29 +1726,24 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> fruta = ["banano",
  "manzana",
  "pera"]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> fruta[0] = "mandarina"
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> fruta[-1] = "naranja"
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(fruta)
 \end_layout
 
 \begin_layout Plain Layout
-
 ['mandarina',
  'manzana',
  'naranja']
@@ -1694,7 +1757,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> lista = ['a',
  'b',
  'c',
@@ -1704,18 +1766,15 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> lista[1:3] = ['x',
  'y']
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(lista)
 \end_layout
 
 \begin_layout Plain Layout
-
 ['a',
  'x',
  'y',
@@ -1736,7 +1795,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> lista = ['a',
  'b',
  'c',
@@ -1746,17 +1804,14 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> lista[1:3] = []
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(lista)
 \end_layout
 
 \begin_layout Plain Layout
-
 ['a',
  'd',
  'e',
@@ -1776,25 +1831,21 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> lista = ['a',
  'd',
  'f']
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> lista[1:1] = ['b',
  'c']
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(lista)
 \end_layout
 
 \begin_layout Plain Layout
-
 ['a',
  'b',
  'c',
@@ -1803,17 +1854,14 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> lista[4:4] = ['e']
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(lista)
 \end_layout
 
 \begin_layout Plain Layout
-
 ['a',
  'b',
  'c',
@@ -1862,7 +1910,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-borrado!en listas
+borrado
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+en listas
 \end_layout
 
 \end_inset
@@ -1897,24 +1955,20 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> a = ['one',
  'two',
  'three']
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> del a[1]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> a
 \end_layout
 
 \begin_layout Plain Layout
-
 ['one',
  'three']
 \end_layout
@@ -1945,7 +1999,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> lista = ['a',
  'b',
  'c',
@@ -1955,17 +2008,14 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> del lista[1:5]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(lista)
 \end_layout
 
 \begin_layout Plain Layout
-
 ['a',
  'f']
 \end_layout
@@ -1992,18 +2042,15 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> a = ['uno',
  'dos']
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> a.append('tres')
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(a)
 \end_layout
 
@@ -2063,12 +2110,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 a = "banana"
 \end_layout
 
 \begin_layout Plain Layout
-
 b = "banana"
 \end_layout
 
@@ -2104,7 +2149,6 @@ banana
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -2115,7 +2159,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -2128,7 +2171,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2147,7 +2189,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -2159,7 +2200,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -2178,7 +2218,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2189,7 +2228,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -2256,22 +2294,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> id(a)
 \end_layout
 
 \begin_layout Plain Layout
-
 135044008
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> id(b)
 \end_layout
 
 \begin_layout Plain Layout
-
 135044008
 \end_layout
 
@@ -2305,36 +2339,30 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> a = [1,
  2,
  3]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> b = [1,
  2,
  3]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> id(a)
 \end_layout
 
 \begin_layout Plain Layout
-
 135045528
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> id(b)
 \end_layout
 
 \begin_layout Plain Layout
-
 135041704
 \end_layout
 
@@ -2353,7 +2381,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -2365,7 +2392,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -2384,7 +2410,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2395,7 +2420,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -2441,7 +2465,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-referencia!alias
+referencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+alias
 \end_layout
 
 \end_inset
@@ -2458,14 +2492,12 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> a = [1,
  2,
  3]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> b = a
 \end_layout
 
@@ -2484,7 +2516,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -2496,7 +2527,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -2515,7 +2545,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2526,7 +2555,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -2559,17 +2587,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> b[0] = 5
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(a)
 \end_layout
 
 \begin_layout Plain Layout
-
 [5,
  2,
  3]
@@ -2602,7 +2627,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!clonando
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+clonando
 \end_layout
 
 \end_inset
@@ -2649,24 +2684,20 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> a = [1,
  2,
  3]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> b = a[:]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(b)
 \end_layout
 
 \begin_layout Plain Layout
-
 [1,
  2,
  3]
@@ -2701,17 +2732,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> b[0] = 5
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(a)
 \end_layout
 
 \begin_layout Plain Layout
-
 [1,
  2,
  3]
@@ -2746,7 +2774,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-listas!como parámetros
+listas
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+como parámetros
 \end_layout
 
 \end_inset
@@ -2770,7 +2808,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-parámetro!lista
+parámetro
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+lista
 \end_layout
 
 \end_inset
@@ -2792,12 +2840,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def cabeza(lista):
 \end_layout
 
 \begin_layout Plain Layout
-
   return lista[0]
 \end_layout
 
@@ -2813,19 +2859,16 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> numeros = [1,
  2,
  3]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> cabeza(numeros)
 \end_layout
 
 \begin_layout Plain Layout
-
 1
 \end_layout
 
@@ -2853,7 +2896,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -2865,7 +2907,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -2884,7 +2925,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2895,7 +2935,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -2925,12 +2964,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def borrarCabeza(lista):
 \end_layout
 
 \begin_layout Plain Layout
-
   del lista[0]
 \end_layout
 
@@ -2946,24 +2983,20 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> numeros = [1,
  2,
  3]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> borrarCabeza(numeros)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(numeros)
 \end_layout
 
 \begin_layout Plain Layout
-
 [2,
  3]
 \end_layout
@@ -2988,12 +3021,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def cola(lista):
 \end_layout
 
 \begin_layout Plain Layout
-
   return lista[1:]
 \end_layout
 
@@ -3013,24 +3044,20 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> numeros = [1,
  2,
  3]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> resto = cola(numeros)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(resto)
 \end_layout
 
 \begin_layout Plain Layout
-
 [2,
  3]
 \end_layout
@@ -3085,7 +3112,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!anidada
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+anidada
 \end_layout
 
 \end_inset
@@ -3102,7 +3139,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> lista = ["hola",
  2.0,
  5,
@@ -3133,17 +3169,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> elt = lista[3]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> elt[0]
 \end_layout
 
 \begin_layout Plain Layout
-
 10
 \end_layout
 
@@ -3156,12 +3189,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> lista[3][1]
 \end_layout
 
 \begin_layout Plain Layout
-
 20
 \end_layout
 
@@ -3202,7 +3233,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-lista!anidada
+lista
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+anidada
 \end_layout
 
 \end_inset
@@ -3222,7 +3263,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 beforefig
 \end_layout
@@ -3234,7 +3274,6 @@ beforefig
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 centerline{
@@ -3253,7 +3292,6 @@ centerline{
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -3264,7 +3302,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 afterfig
@@ -3282,7 +3319,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> matriz = [[1,
  2,
  3],
@@ -3312,12 +3348,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> matriz[1]
 \end_layout
 
 \begin_layout Plain Layout
-
 [4,
  5,
  6]
@@ -3335,12 +3369,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> matriz[1][1]
 \end_layout
 
 \begin_layout Plain Layout
-
 5
 \end_layout
 
@@ -3441,17 +3473,14 @@ split
 \end_layout
 
 \begin_layout Verbatim
-
 >>> cancion = "La vida es un ratico..."
 \end_layout
 
 \begin_layout Verbatim
-
 >>> str.split(cancion)
 \end_layout
 
 \begin_layout Verbatim
-
 ['La',
  'vida',
  'es',
@@ -3475,13 +3504,11 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> str.split( "La rana que canta",
  "an")
 \end_layout
 
 \begin_layout Plain Layout
-
 ['La r',
  'a que c',
  'ta']
@@ -3512,7 +3539,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> m = ['La',
  'vida',
  'es',
@@ -3521,12 +3547,10 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> " ".join(m)
 \end_layout
 
 \begin_layout Plain Layout
-
 'La vida es un ratico'
 \end_layout
 
@@ -3543,12 +3567,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> "_".join(m)
 \end_layout
 
 \begin_layout Plain Layout
-
 'La_vida_es_un_ratico'
 \end_layout
 
@@ -3589,7 +3611,6 @@ Secuencia:
 status collapsed
 
 \begin_layout Plain Layout
-
 Lista anidada:
 \end_layout
 
@@ -3603,7 +3624,6 @@ Lista anidada:
 status collapsed
 
 \begin_layout Plain Layout
-
 Recorrido de una lista:
 \end_layout
 
@@ -3831,7 +3851,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 verb+esta_ordenada+
 \end_layout
@@ -3854,7 +3873,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 verb+esta_ordenada([1,2,2])+
 \end_layout
@@ -3869,7 +3887,6 @@ verb+esta_ordenada([1,2,2])+
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+esta_ordenada(['b','a'])+
@@ -3889,7 +3906,6 @@ status collapsed
 
 \begin_layout Plain Layout
 
-
 \backslash
 verb+es_anagrama+
 \end_layout
@@ -3905,7 +3921,6 @@ Escriba una función llamada
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+eliminar_duplicados+
@@ -3938,7 +3953,6 @@ palabras.txt:
 status open
 
 \begin_layout Plain Layout
-
 https://github.com/abecerra/thinkcs-py_es/releases/download/thinkcs-py_es_e2-rc1/palabras.txt
 \end_layout
 
@@ -3954,7 +3968,6 @@ Solución:
 status open
 
 \begin_layout Plain Layout
-
 http://thinkpython.com/code/wordlist.py
 \end_layout
 
@@ -3984,7 +3997,6 @@ Solución:
 status open
 
 \begin_layout Plain Layout
-
 http://thinkpython.com/code/birthday.py
 \end_layout
 
@@ -4019,7 +4031,6 @@ Solución:
 status open
 
 \begin_layout Plain Layout
-
 http://thinkpython.com/code/reverse_pair.py
 \end_layout
 
@@ -4049,7 +4060,6 @@ Solución:
 status open
 
 \begin_layout Plain Layout
-
 http://thinkpython.com/code/interlock.py
 \end_layout
 

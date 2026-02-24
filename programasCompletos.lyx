@@ -1,15 +1,15 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass book
 \use_default_options false
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language spanish
 \language_package none
-\inputencoding auto
+\inputencoding auto-legacy
 \fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -18,7 +18,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -50,9 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -68,11 +80,17 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -92,25 +110,30 @@ How to think like a computer scientist''
 
 \begin_layout Plain Layout
 Copyright (c) 2001 Allen B.
- Downey, Jeffrey Elkner, and Chris Meyers.
+ Downey,
+ Jeffrey Elkner,
+ and Chris Meyers.
 \end_layout
 
 \begin_layout Plain Layout
-Permission is granted to copy, distribute and/or modify this document under
- the terms of the GNU Free Documentation License, Version 1.1 or any later
- version published by the Free Software Foundation; with the Invariant Sections
- being "Contributor List", with no Front-Cover Texts, and with no Back-Cover
- Texts.
- A copy of the license is included in the section entitled "GNU Free Documentati
-on License".
+Permission is granted to copy,
+ distribute and/or modify this document under the terms of the GNU Free Documentation License,
+ Version 1.1 or any later version published by the Free Software Foundation;
+ with the Invariant Sections being "Contributor List",
+ with no Front-Cover Texts,
+ and with no Back-Cover Texts.
+ A copy of the license is included in the section entitled "GNU Free Documentation License".
 \end_layout
 
 \begin_layout Plain Layout
-This distribution includes a file named fdl.lyx that contains the text of
- the GNU Free Documentation License.
- If it is missing, you can obtain it from www.gnu.org or by writing to the
- Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
- 02111-1307, USA.
+This distribution includes a file named fdl.lyx that contains the text of the GNU Free Documentation License.
+ If it is missing,
+ you can obtain it from www.gnu.org or by writing to the Free Software Foundation,
+ Inc.,
+ 59 Temple Place - Suite 330,
+ Boston,
+ MA 02111-1307,
+ USA.
 \end_layout
 
 \end_inset
@@ -131,136 +154,126 @@ Clase punto
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class Punto:
 \end_layout
 
-\begin_layout Verbatim
-
-  def __init__(self, x=0, y=0):
+\begin_layout Plain Layout
+  def __init__(self,
+ x=0,
+ y=0):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.x = x
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.y = y
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __str__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return '(' + str(self.x) + ',' + str(self.y) + ')'
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def __add__(self, otro):
+\begin_layout Plain Layout
+  def __add__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
-
-    return Punto(self.x + otro.x, self.y + otro.y)
+\begin_layout Plain Layout
+    return Punto(self.x + otro.x,
+ self.y + otro.y)
 \end_layout
 
-\begin_layout Verbatim
-
-\end_layout
-
-\begin_layout Verbatim
-
-  def __sub__(self, otro):
-\end_layout
-
-\begin_layout Verbatim
-
-    return Punto(self.x - otro.x, self.y - otro.y)
-\end_layout
-
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def __mul__(self, otro):
+\begin_layout Plain Layout
+  def __sub__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
+    return Punto(self.x - otro.x,
+ self.y - otro.y)
+\end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+  def __mul__(self,
+ otro):
+\end_layout
+
+\begin_layout Plain Layout
     return self.x * otro.x + self.y * otro.y
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def __rmul__(self, otro):
+\begin_layout Plain Layout
+  def __rmul__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
-
-    return Punto(otro * self.x, otro * self.y)
+\begin_layout Plain Layout
+    return Punto(otro * self.x,
+ otro * self.y)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def invertir(self):
 \end_layout
 
-\begin_layout Verbatim
-
-    self.x, self.y = self.y, self.x
+\begin_layout Plain Layout
+    self.x,
+ self.y = self.y,
+ self.x
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def DerechoYAlReves(derecho):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     from copy import copy
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     alreves = copy(derecho)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     alreves.invertir()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(str(derecho) + str(alreves))
 \end_layout
 
@@ -278,158 +291,135 @@ Clase hora
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class Hora:
 \end_layout
 
-\begin_layout Verbatim
-
-  def __init__(self, hora=0, minutos=0, segundos=0):
+\begin_layout Plain Layout
+  def __init__(self,
+ hora=0,
+ minutos=0,
+ segundos=0):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.hora = hora
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.minutos = minutos
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.segundos = segundos
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __str__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return str(self.hora) + ":" + str(self.minutos) + 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
            ":" + str(self.segundos)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def convertirAsegundoss(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     minutos = self.hora * 60 + self.minutos
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     segundos = self.minutos * 60 + self.segundos
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return segundos
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def incrementar(self, segs):
+\begin_layout Plain Layout
+  def incrementar(self,
+ segs):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     segs = segs + self.segundos
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.hora = self.hora + segs/3600
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     segs = segs % 3600
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.minutos = self.minutos + segs/60
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     segs = segs % 60
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.segundos = segs
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def crearHora(segs):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   H = Hora()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   H.hora = segs/3600
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   segs = segs - H.hora * 3600
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   H.minutos = segs/60
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   segs = segs - H.minutos * 60
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   H.segundos = segs
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   return H
 \end_layout
 
@@ -439,7 +429,8 @@ def crearHora(segs):
 \end_layout
 
 \begin_layout Section
-Cartas, mazos y juegos
+Cartas,
+ mazos y juegos
 \end_layout
 
 \begin_layout Standard
@@ -447,842 +438,741 @@ Cartas, mazos y juegos
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 import random
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class Carta:
 \end_layout
 
-\begin_layout Verbatim
-
-  listaFiguras = ["Treboles", "Diamantes", 
+\begin_layout Plain Layout
+  listaFiguras = ["Treboles",
+ "Diamantes",
+ 
 \end_layout
 
-\begin_layout Verbatim
-
-                  "Corazones", "Picas"]
+\begin_layout Plain Layout
+                  "Corazones",
+ "Picas"]
 \end_layout
 
-\begin_layout Verbatim
-
-  listaValores = [ "narf", "As", "2", "3", "4", "5", "6", 
+\begin_layout Plain Layout
+  listaValores = [ "narf",
+ "As",
+ "2",
+ "3",
+ "4",
+ "5",
+ "6",
+ 
 \end_layout
 
-\begin_layout Verbatim
-
-               "7","8", "9", "10","Jota", "Reina", "Rey"]
+\begin_layout Plain Layout
+               "7","8",
+ "9",
+ "10","Jota",
+ "Reina",
+ "Rey"]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def __init__(self, figura=0, valor=0):
+\begin_layout Plain Layout
+  def __init__(self,
+ figura=0,
+ valor=0):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.figura = figura
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.valor = valor
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __str__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return self.listaValores[self.valor] + " de " 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
            + self.listaFiguras[self.figura]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def __cmp__(self, otro):
+\begin_layout Plain Layout
+  def __cmp__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # revisa las figuras
 \end_layout
 
-\begin_layout Verbatim
-
-    if self.figura > otro.figura: 
+\begin_layout Plain Layout
+    if self.figura > otro.figura:
+ 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
        return 1
 \end_layout
 
-\begin_layout Verbatim
-
-    if self.figura < otro.figura: 
+\begin_layout Plain Layout
+    if self.figura < otro.figura:
+ 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
        return -1
 \end_layout
 
-\begin_layout Verbatim
-
-    # las figuras son iguales, se chequean los valores
+\begin_layout Plain Layout
+    # las figuras son iguales,
+ se chequean los valores
 \end_layout
 
-\begin_layout Verbatim
-
-    if self.valor > otro.valor: 
+\begin_layout Plain Layout
+    if self.valor > otro.valor:
+ 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       return 1
 \end_layout
 
-\begin_layout Verbatim
-
-    if self.valor < otro.valor: 
+\begin_layout Plain Layout
+    if self.valor < otro.valor:
+ 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       return -1
 \end_layout
 
-\begin_layout Verbatim
-
-    # los valores son iguales,  hay empate
+\begin_layout Plain Layout
+    # los valores son iguales,
+  hay empate
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return 0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class Mazo:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __init__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.Cartas = []
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     for figura in range(4):
 \end_layout
 
-\begin_layout Verbatim
-
-      for valor in range(1, 14):
+\begin_layout Plain Layout
+      for valor in range(1,
+ 14):
 \end_layout
 
-\begin_layout Verbatim
-
-        self.Cartas.append(Carta(figura, valor))
+\begin_layout Plain Layout
+        self.Cartas.append(Carta(figura,
+ valor))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def imprimirMazo(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     for Carta in self.Cartas:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       print(Carta)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __str__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     s = ""
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     for i in range(len(self.Cartas)):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       s = s + " "*i + str(self.Cartas[i]) + "
 \backslash
 n"
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return s
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def barajar(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     import random
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     nCartas = len(self.Cartas)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     for i in range(nCartas):
 \end_layout
 
-\begin_layout Verbatim
-
-      j = random.randrange(i, nCartas)
+\begin_layout Plain Layout
+      j = random.randrange(i,
+ nCartas)
 \end_layout
 
-\begin_layout Verbatim
-
-      [self.Cartas[i], self.Cartas[j]] = [self.Cartas[j], 
+\begin_layout Plain Layout
+      [self.Cartas[i],
+ self.Cartas[j]] = [self.Cartas[j],
+ 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
                                           self.Cartas[i]]
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def eliminarCarta(self, Carta):
+\begin_layout Plain Layout
+  def eliminarCarta(self,
+ Carta):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if Carta in self.Cartas:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       self.Cartas.remove(Carta)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       return 1
 \end_layout
 
-\begin_layout Verbatim
-
-    else: return 0
+\begin_layout Plain Layout
+    else:
+ return 0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def entregarCarta(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return self.Cartas.pop()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def estaVacio(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return (len(self.Cartas) == 0)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def repartir(self, manos, nCartas=999):
+\begin_layout Plain Layout
+  def repartir(self,
+ manos,
+ nCartas=999):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     nmanos = len(manos)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     for i in range(nCartas):
 \end_layout
 
-\begin_layout Verbatim
-
-      if self.estaVacio(): 
+\begin_layout Plain Layout
+      if self.estaVacio():
+ 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
          break    # rompe el ciclo si no hay cartas
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       # quita la carta del tope
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       Carta = self.entregarCarta()      
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       # quien tiene el proximo turnoo?
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       mano = manos[i % nmanos]    
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       # agrega la carta a la mano
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       mano.agregarCarta(Carta)         
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class mano(Mazo):
 \end_layout
 
-\begin_layout Verbatim
-
-  def __init__(self, nombre=""):
+\begin_layout Plain Layout
+  def __init__(self,
+ nombre=""):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.Cartas = []
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.nombre = nombre
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def agregarCarta(self,Carta) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.Cartas.append(Carta)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __str__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     s = "mano " + self.nombre
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if self.estaVacio():
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       s = s + " esta vacia
 \backslash
 n"
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       s = s + " contiene
 \backslash
 n"
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return s + Mazo.__str__(self)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class JuegoCartas:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __init__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.Mazo = Mazo()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.Mazo.barajar()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class ManoJuegoSolterona(mano):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def eliminarParejas(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     cont = 0
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     originalCartas = self.Cartas[:]
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     for carta in originalCartas:
 \end_layout
 
-\begin_layout Verbatim
-
-      m = Carta(3-carta.figura, carta.valor)
+\begin_layout Plain Layout
+      m = Carta(3-carta.figura,
+ carta.valor)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       if m in self.Cartas:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
         self.Cartas.remove(carta)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
         self.Cartas.remove(m)
 \end_layout
 
-\begin_layout Verbatim
-
-        print("mano %s: %s parejas %s" % 
+\begin_layout Plain Layout
+        print("mano %s:
+ %s parejas %s" % 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
                  (self.nombre,carta,m))
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
         cont = cont+1
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return cont
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class JuegoSolterona(JuegoCartas):
 \end_layout
 
-\begin_layout Verbatim
-
-  def jugar(self, nombres):
+\begin_layout Plain Layout
+  def jugar(self,
+ nombres):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # elimina la reina de treboles
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.Mazo.eliminarCarta(Carta(0,12))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # crea manos con base en los nombres
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.manos = []
 \end_layout
 
-\begin_layout Verbatim
-
-    for nombre in nombres : 
+\begin_layout Plain Layout
+    for nombre in nombres :
+ 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
         self.manos.append(ManoJuegoSolterona(nombre))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # reparte las Cartas
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.Mazo.repartir(self.manos)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print("---------- Cartas se han repartido")
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.imprimirmanos()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # eliminar parejas iniciales
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     parejas = self.eliminarParejas()
 \end_layout
 
-\begin_layout Verbatim
-
-    print("----- parejas descartadas, empieza el juego")
+\begin_layout Plain Layout
+    print("----- parejas descartadas,
+ empieza el juego")
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.imprimirmanos()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # jugar hasta que se eliminan 50 cartas
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     turno = 0
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     nummanos = len(self.manos)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     while parejas < 25:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       parejas = parejas + self.jugarUnturno(turno)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       turno = (turno + 1) % nummanos
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print("---------- Juego Terminado")
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.imprimirmanos ()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def eliminarParejas(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     cont = 0
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     for mano in self.manos:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       cont = cont + mano.eliminarParejas()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return cont
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def jugarUnturno(self, i):
+\begin_layout Plain Layout
+  def jugarUnturno(self,
+ i):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if self.manos[i].estaVacio():
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       return 0
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     vecino = self.encontrarvecino(i)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     cartaEscogida = self.manos[vecino].entregarCarta()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.manos[i].agregarCarta(cartaEscogida)
 \end_layout
 
-\begin_layout Verbatim
-
-    print("mano", self.manos[i].nombre, 
+\begin_layout Plain Layout
+    print("mano",
+ self.manos[i].nombre,
+ 
 \end_layout
 
-\begin_layout Verbatim
-
-          "escogió", cartaEscogida)
+\begin_layout Plain Layout
+          "escogió",
+ cartaEscogida)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     count = self.manos[i].eliminarParejas()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.manos[i].barajar()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return count
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def encontrarvecino(self, i):
+\begin_layout Plain Layout
+  def encontrarvecino(self,
+ i):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     nummanos = len(self.manos)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     for siguiente in range(1,nummanos):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       vecino = (i + siguiente) % nummanos
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       if not self.manos[vecino].estaVacio():
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
         return vecino
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def imprimirmanos(self) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     for mano in self.manos :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       print(mano)
 \end_layout
 
@@ -1304,299 +1194,251 @@ Listas enlazadas
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def imprimirlista(Nodo) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   while Nodo :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(Nodo),
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     Nodo = Nodo.siguiente
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def imprimirAlReves(lista) :
 \end_layout
 
-\begin_layout Verbatim
-
-  if lista == None : 
+\begin_layout Plain Layout
+  if lista == None :
+ 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       return
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   cabeza = lista
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   resto = lista.siguiente
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   imprimirAlReves(resto)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print(cabeza),
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def imprimirAlRevesBien(lista) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print("("),
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if lista != None :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     cabeza = lista
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     resto = lista.siguiente
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     imprimirAlReves(resto)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(cabeza),
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print(")"),
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def eliminarSegundo(lista) :
 \end_layout
 
-\begin_layout Verbatim
-
-  if lista == None : return
+\begin_layout Plain Layout
+  if lista == None :
+ return
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   first  = lista
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   second = lista.siguiente
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   first.siguiente = second.siguiente
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   second.siguiente = None
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   return second
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class Nodo :
 \end_layout
 
-\begin_layout Verbatim
-
-  def __init__(self, carga=None) :
+\begin_layout Plain Layout
+  def __init__(self,
+ carga=None) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.carga = carga
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.siguiente  = None
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __str__(self) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return str(self.carga)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def imprimirAlReves(self) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if self.siguiente != None :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       resto = self.siguiente
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       resto.imprimirAlReves()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(self.carga),
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class ListaEnlazada :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __init__(self) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.numElementos = 0
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.cabeza   = None
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def imprimirAlReves(self) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print("("),
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if self.cabeza != None :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       self.cabeza.imprimirAlReves()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(")"),
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def agregarAlPrincipio(self, carga) :
+\begin_layout Plain Layout
+  def agregarAlPrincipio(self,
+ carga) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     nodo = Nodo(carga)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     nodo.siguiente = self.cabeza
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.cabeza = nodo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.numElementos = self.numElementos + 1
 \end_layout
 
@@ -1614,144 +1456,122 @@ Clase pila
 inline false
 status open
 
-\begin_layout Verbatim
-
-class Pila:              
+\begin_layout Plain Layout
+class Pila:
+              
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __init__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.items = []
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def meter(self, item):
+\begin_layout Plain Layout
+  def meter(self,
+ item):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.items.append(item)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def sacar(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return self.items.pop()
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def estaVacia(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return(self.items == [])
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def evalPostfija(expr) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   import re
 \end_layout
 
-\begin_layout Verbatim
-
-  expr = re.split("([^0-9])", expr)
+\begin_layout Plain Layout
+  expr = re.split("([^0-9])",
+ expr)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   pila = Pila()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   for lexema in expr :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if  lexema == '' or lexema == ' ':
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       continue
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if  lexema == '+' :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       suma = pila.sacar() + pila.sacar()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       pila.meter(suma)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     elif lexema == '*' :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       producto = pila.sacar() * pila.sacar()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       pila.meter(producto)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     else :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       pila.meter(int(lexema))
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   return pila.sacar()
 \end_layout
 
@@ -1773,506 +1593,427 @@ Colas PEPS y de colas de prioridad
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class Cola:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __init__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.numElementos = 0
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.primero = None
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def estaVacia(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return (self.numElementos == 0)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def meter(self, carga):
+\begin_layout Plain Layout
+  def meter(self,
+ carga):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     nodo = Nodo(carga) 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     nodo.siguiente = None
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if self.primero == None:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
        # si esta vacia este nodo sera el primero
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
        self.primero = nodo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
        # encontrar el ultimo nodo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
        ultimo = self.primero
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
        while ultimo.siguiente:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 	 ultimo = ultimo.siguiente
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 	 # pegar el nuevo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 	 ultimo.siguiente = nodo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
        self.numElementos = self.numElementos + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def sacar(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     carga = self.primero.carga
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.primero = self.primero.siguiente
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.numElementos = self.numElementos - 1
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return carga
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class ColaMejorada:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __init__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.numElementos = 0
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.primero = None
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.ultimo = None
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
         
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def estaVacia(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return (self.numElementos == 0)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def meter(self, carga):
+\begin_layout Plain Layout
+  def meter(self,
+ carga):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     nodo = Nodo(carga) 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     nodo.siguiente = None
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if self.numElementos == 0:
 \end_layout
 
-\begin_layout Verbatim
-
-      # si esta vacia, el nuevo nodo 
+\begin_layout Plain Layout
+      # si esta vacia,
+ el nuevo nodo 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       # es primero y ultimo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       self.primero = self.ultimo = nodo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       # encontrar el ultimo nodo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       ultimo = self.ultimo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       # pegar el nuevo nodo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       ultimo.siguiente = nodo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       self.ultimo = nodo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       self.numElementos = self.numElementos + 1
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     def sacar(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       carga = self.primero.carga
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       self.primero = self.primero.siguiente
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       self.numElementos = self.numElementos - 1
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       if self.numElementos == 0:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
         self.ultimo = None
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       return carga
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class ColaPrioridad:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __init__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.items = []
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def estaVacia(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return self.items == []
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   
 \end_layout
 
-\begin_layout Verbatim
-
-  def meter(self, item):
+\begin_layout Plain Layout
+  def meter(self,
+ item):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.items.append(item)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def eliminar(self) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     maxi = 0
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     for i in range(1,len(self.items)) :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       if self.items[i] > self.items[maxi] :
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 	maxi = i
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     item = self.items[maxi]
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.items[maxi:maxi+1] = []
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return item
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def sacar(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     maxi = 0
 \end_layout
 
-\begin_layout Verbatim
-
-    for i in range(0,len(self.items)): 
+\begin_layout Plain Layout
+    for i in range(0,len(self.items)):
+ 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       if self.items[i] > self.items[maxi]:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 	maxi = i
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       item = self.items[maxi]
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       self.items[maxi:maxi+1] = []
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       return item
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class golfista:
 \end_layout
 
-\begin_layout Verbatim
-
-  def __init__(self, nombre, puntaje):
+\begin_layout Plain Layout
+  def __init__(self,
+ nombre,
+ puntaje):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.nombre = nombre
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.puntaje= puntaje
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __str__(self):
 \end_layout
 
-\begin_layout Verbatim
-
-    return "%-16s: %d" % (self.nombre, self.puntaje)
+\begin_layout Plain Layout
+    return "%-16s:
+ %d" % (self.nombre,
+ self.puntaje)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-  def __cmp__(self, otro):
+\begin_layout Plain Layout
+  def __cmp__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # el menor tiene mayor prioridad
 \end_layout
 
-\begin_layout Verbatim
-
-    if self.puntaje < otro.puntaje: return 1
+\begin_layout Plain Layout
+    if self.puntaje < otro.puntaje:
+ return 1
 \end_layout
 
-\begin_layout Verbatim
-
-      if self.puntaje > otro.puntaje: return -1
+\begin_layout Plain Layout
+      if self.puntaje > otro.puntaje:
+ return -1
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
         return 0
 \end_layout
 
@@ -2290,310 +2031,261 @@ class golfista:
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class Arbol:
 \end_layout
 
-\begin_layout Verbatim
-
-  def __init__(self, carga, izquierdo=None, derecho=None):
+\begin_layout Plain Layout
+  def __init__(self,
+ carga,
+ izquierdo=None,
+ derecho=None):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.carga = carga
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.izquierdo = izquierdo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.derecho = derecho
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __str__(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return str(self.carga)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def obtenerizquierdo(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return self.izquierdo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def obtenerderecho(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return self.derecho
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def obtenercarga(self):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return self.carga
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     
 \end_layout
 
-\begin_layout Verbatim
-
-  def asignarcarga(self, carga):
+\begin_layout Plain Layout
+  def asignarcarga(self,
+ carga):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.carga = carga
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   
 \end_layout
 
-\begin_layout Verbatim
-
-  def asignarizquierdo(self, i):
+\begin_layout Plain Layout
+  def asignarizquierdo(self,
+ i):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.izquierdo = i
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     
 \end_layout
 
-\begin_layout Verbatim
-
-  def asignarderecho(self, d):
+\begin_layout Plain Layout
+  def asignarderecho(self,
+ d):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.derecho = d
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def total(arbol):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if arbol.izquierdo == None or arbol.derecho== None:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return arbol.carga
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return total(arbol.izquierdo) + total(arbol.derecho) + 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
              arbol.carga
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
    
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def imprimirarbol(arbol):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if arbol == None:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(arbol.carga)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     imprimirarbol(arbol.izquierdo)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     imprimirarbol(arbol.derecho)
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def imprimirarbolPostorden(arbol):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if arbol == None:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     imprimirarbolPostorden(arbol.izquierdo)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     imprimirarbolPostorden(arbol.derecho)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print(arbol.carga)   
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def imprimirabolEnOrden(arbol):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if arbol == None:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   imprimirabolEnOrden(arbol.izquierdo)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print(arbol.carga,imprimirabolEnOrden(arbol.derecho))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
-def imprimirarbolSangrado(arbol, nivel=0):
+\begin_layout Plain Layout
+def imprimirarbolSangrado(arbol,
+ nivel=0):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if arbol == None:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return
 \end_layout
 
-\begin_layout Verbatim
-
-  imprimirarbolSangrado(arbol.derecho, nivel+1)
+\begin_layout Plain Layout
+  imprimirarbolSangrado(arbol.derecho,
+ nivel+1)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   print(" "*nivel + str(arbol.carga))
 \end_layout
 
-\begin_layout Verbatim
-
-  imprimirarbolSangrado(arbol.izquierdo, nivel+1)
+\begin_layout Plain Layout
+  imprimirarbolSangrado(arbol.izquierdo,
+ nivel+1)
 \end_layout
 
 \end_inset
@@ -2610,180 +2302,158 @@ def imprimirarbolSangrado(arbol, nivel=0):
 inline false
 status open
 
-\begin_layout Verbatim
-
-def obtenerLexema(listaLexemas, esperado):
+\begin_layout Plain Layout
+def obtenerLexema(listaLexemas,
+ esperado):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if listaLexemas[0] == esperado:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       del listaLexemas[0]
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       return 1
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       return 0
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def obtenerNumero(listaLexemas):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   x = listaLexemas[0]
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   if type(x) != type(0):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       return None
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   del listaLexemas[0]
 \end_layout
 
-\begin_layout Verbatim
-
-  return arbol (x, None, None)
+\begin_layout Plain Layout
+  return arbol (x,
+ None,
+ None)
 \end_layout
 
-\begin_layout Verbatim
-
-\end_layout
-
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
 def obtenerProducto(listaLexemas):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   a = obtenerNumero(listaLexemas)
 \end_layout
 
-\begin_layout Verbatim
-
-  if obtenerLexema(listaLexemas, "*"):
+\begin_layout Plain Layout
+  if obtenerLexema(listaLexemas,
+ "*"):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     b = obtenerProducto(listaLexemas) 
 \end_layout
 
-\begin_layout Verbatim
-
-    return arbol ("*", a, b)
+\begin_layout Plain Layout
+    return arbol ("*",
+ a,
+ b)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return a
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def obtenerNumero(listaLexemas):
 \end_layout
 
-\begin_layout Verbatim
-
-  if obtenerLexema(listaLexemas, "("):
+\begin_layout Plain Layout
+  if obtenerLexema(listaLexemas,
+ "("):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # obtiene la subexpresión
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     x = obtenerSuma(listaLexemas) 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # elimina los paréntesis
 \end_layout
 
-\begin_layout Verbatim
-
-    obtenerLexema(listaLexemas, ")") 
+\begin_layout Plain Layout
+    obtenerLexema(listaLexemas,
+ ")") 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return x
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     x = listaLexemas[0]
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if type(x) != type(0):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       return None
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     listaLexemas[0:1] = []
 \end_layout
 
-\begin_layout Verbatim
-
-   return Arbol (x, None, None)  
+\begin_layout Plain Layout
+   return Arbol (x,
+ None,
+ None)  
 \end_layout
 
 \end_inset
@@ -2800,217 +2470,181 @@ Adivinar el animal
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def animal():
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   # Un solo nodo
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   raiz = Arbol("pajaro")
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       # Hasta que el usuario salga
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   while True:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     print()
 \end_layout
 
-\begin_layout Verbatim
-
-    if not si("Esta pensando en un animal? "):
+\begin_layout Plain Layout
+    if not si("Esta pensando en un animal?
+ "):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 	break
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # Recorrer el arbol
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     arbol = raiz
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     while arbol.obtenerizquierdo() != None:
 \end_layout
 
-\begin_layout Verbatim
-
-      pregunta = arbol.obtenercarga() + "? "
+\begin_layout Plain Layout
+      pregunta = arbol.obtenercarga() + "?
+ "
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       if si(pregunta):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 	  arbol = arbol.obtenerderecho()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 	  arbol = arbol.obtenerizquierdo()
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # conjetura
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     conjetura = arbol.obtenercarga()
 \end_layout
 
-\begin_layout Verbatim
-
-    pregunta = "¿Es un" + conjetura + "? "
+\begin_layout Plain Layout
+    pregunta = "¿Es un" + conjetura + "?
+ "
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if si(pregunta):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       print("¡Soy el mejor!")
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       continue
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # obtener mas informacion
 \end_layout
 
-\begin_layout Verbatim
-
-    pregunta = "¿Cual es el nombre el animal? "
+\begin_layout Plain Layout
+    pregunta = "¿Cual es el nombre el animal?
+ "
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     animal = input(pregunta)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     pregunta = "¿Que pregunta permitiria distinguir 
 \end_layout
 
-\begin_layout Verbatim
-
-		un %s de un %s? "
+\begin_layout Plain Layout
+		un %s de un %s?
+ "
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     q = input(pregunta % (animal,conjetura))
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     # agrega un nuevo nodo arbol
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     arbol.asignarcarga(q)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     pregunta = "¿Si el animal fuera %s 
 \end_layout
 
-\begin_layout Verbatim
-
-		la respuesta sería? "
+\begin_layout Plain Layout
+		la respuesta sería?
+ "
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if si(pregunta % animal):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       arbol.asignarizquierdo(Arbol(conjetura))
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       arbol.asignarderecho(Arbol(animal))
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       arbol.asignarizquierdo(Arbol(animal))
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       arbol.asignarderecho(Arbol(conjetura))
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def si(preg):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   from string import lower
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   r = lower(input(preg))
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   return (r[0] == 's')
 \end_layout
 
@@ -3033,205 +2667,174 @@ lstparams "language=Python,showstringspaces=false,tabsize=4"
 inline false
 status open
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 class Fraccion:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __init__(self,numerador,denominador=1):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.numerador = numerador
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.denominador = denominador
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   def __str__(self):
 \end_layout
 
-\begin_layout Verbatim
-
-    return "%d/%d" % (self.numerador, self.denominador)
+\begin_layout Plain Layout
+    return "%d/%d" % (self.numerador,
+ self.denominador)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   
 \end_layout
 
-\begin_layout Verbatim
-
-  def __mul__(self, otro):
+\begin_layout Plain Layout
+  def __mul__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if type(otro) == type(5):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       otro = Fraccion(otro)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return Fraccion(self.numerador * otro.numerador,
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 		    self.denominador * otro.denominador)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   __rmul__ = __mul__ 
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   #suma de fracciones
 \end_layout
 
-\begin_layout Verbatim
-
-  def __add__(self, otro):
+\begin_layout Plain Layout
+  def __add__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     if type(otro) == type(5):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       otro = Fraccion(otro)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return Fraccion(self.numerador * otro.denominador +
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 		    self.denominador * otro.numerador,
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 		    self.denominador * otro.denominador)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   __radd__ = __add__
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   
 \end_layout
 
-\begin_layout Verbatim
-
-  def __init__(self, numerador, denominador=1):      
+\begin_layout Plain Layout
+  def __init__(self,
+ numerador,
+ denominador=1):
+      
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     g=MDC(numerador,denominador)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.numerador=numerador / g
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     self.denominador=denominador / g
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
   
 \end_layout
 
-\begin_layout Verbatim
-
-  def __cmp__(self, otro):
+\begin_layout Plain Layout
+  def __cmp__(self,
+ otro):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     dif = (self.numerador * otro.denominador -
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 	   otro.numerador * self.denominador)
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
     return dif
 \end_layout
 
-\begin_layout Verbatim
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 def MDC (m,n):
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       if m%n==0:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 	  return n
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
       else:
 \end_layout
 
-\begin_layout Verbatim
-
+\begin_layout Plain Layout
 	  return MDC(n,m%n)
 \end_layout
 

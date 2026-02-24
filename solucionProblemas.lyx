@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -52,11 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -82,6 +90,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -1180,7 +1189,6 @@ status collapsed
 status open
 
 \begin_layout Plain Layout
-
 http://www.cbs.com/primetime/csi/
 \end_layout
 
@@ -1446,7 +1454,6 @@ Cuando notamos que la pareja (6,4) no puede colocarse en la columna central del 
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1457,7 +1464,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1470,7 +1476,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1677,7 +1682,6 @@ Un ejemplo que ilustra esto es la multiplicación.
 status collapsed
 
 \begin_layout Plain Layout
-
 %
 \backslash
 newpage
@@ -1896,7 +1900,6 @@ Acertijo:
 status collapsed
 
 \begin_layout Plain Layout
-
 Solución de problemas:
 \end_layout
 
@@ -1911,7 +1914,6 @@ Solución de problemas:
 status collapsed
 
 \begin_layout Plain Layout
-
 Método de solución de problemas:
 \end_layout
 
@@ -1931,7 +1933,6 @@ Problema:
 status collapsed
 
 \begin_layout Plain Layout
-
 Problema computacional:
 \end_layout
 
@@ -1945,7 +1946,6 @@ Problema computacional:
 status collapsed
 
 \begin_layout Plain Layout
-
 Solución a un problema:
 \end_layout
 
@@ -1960,7 +1960,6 @@ Solución a un problema:
 status collapsed
 
 \begin_layout Plain Layout
-
 Solución a un problema computacional:
 \end_layout
 
@@ -2022,7 +2021,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-método!de solución de problemas
+método
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de solución de problemas
 \end_layout
 
 \end_inset
@@ -2058,7 +2067,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-problema!solución
+problema
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+solución
 \end_layout
 
 \end_inset

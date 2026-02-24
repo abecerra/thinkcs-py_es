@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -52,11 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -82,6 +90,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -354,7 +363,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-clase!madre
+clase
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+madre
 \end_layout
 
 \end_inset
@@ -373,12 +392,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mano(Mazo):
 \end_layout
 
 \begin_layout Plain Layout
-
   pass
 \end_layout
 
@@ -431,23 +448,19 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mano(Mazo):
 \end_layout
 
 \begin_layout Plain Layout
-
   def __init__(self,
  nombre=""):
 \end_layout
 
 \begin_layout Plain Layout
-
     self.cartas = []
 \end_layout
 
 \begin_layout Plain Layout
-
     self.nombre = nombre
 \end_layout
 
@@ -478,22 +491,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mano(Mazo):
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def agregarCarta(self,carta) :
 \end_layout
 
 \begin_layout Plain Layout
-
     self.cartas.append(carta)
 \end_layout
 
@@ -586,70 +595,57 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mazo:
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def repartir(self,
  manos,
  nCartas=999):
 \end_layout
 
 \begin_layout Plain Layout
-
     nManos = len(manos)
 \end_layout
 
 \begin_layout Plain Layout
-
     for i in range(nCartas):
 \end_layout
 
 \begin_layout Plain Layout
-
       if self.estaVacia():
  
 \end_layout
 
 \begin_layout Plain Layout
-
             break    # se detiene si no hay cartas
 \end_layout
 
 \begin_layout Plain Layout
-
       # toma la carta en el tope
 \end_layout
 
 \begin_layout Plain Layout
-
       carta = self.eliminarCarta() 
 \end_layout
 
 \begin_layout Plain Layout
-
       # siguiente turno!
 \end_layout
 
 \begin_layout Plain Layout
-
       mano = manos[i % nManos] 
 \end_layout
 
 \begin_layout Plain Layout
-
       # agrega la carta a la mano
 \end_layout
 
 \begin_layout Plain Layout
-
       mano.agregarCarta(carta) 
 \end_layout
 
@@ -684,7 +680,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-variable!de ciclo
+variable
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+de ciclo
 \end_layout
 
 \end_inset
@@ -729,7 +735,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operador!residuo
+operador
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+residuo
 \end_layout
 
 \end_inset
@@ -770,7 +786,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-imprimiendo!manos de cartas
+imprimiendo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+manos de cartas
 \end_layout
 
 \end_inset
@@ -801,58 +827,47 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> mazo = Mazo()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> mazo.barajar()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> mano = Mano("Rafael")
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> mazo.repartir([mano],
  5)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(mano)
 \end_layout
 
 \begin_layout Plain Layout
-
 La Mano Rafael contiene
 \end_layout
 
 \begin_layout Plain Layout
-
 2 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
  3 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
   4 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
    As de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
     9 de tréboles
 \end_layout
 
@@ -886,51 +901,42 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class Mano(Mazo)
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def __str__(self):
 \end_layout
 
 \begin_layout Plain Layout
-
     s = "Mano " + self.nombre
 \end_layout
 
 \begin_layout Plain Layout
-
     if self.estaVacia():
 \end_layout
 
 \begin_layout Plain Layout
-
       s = s + " esta vacia
 \backslash
 n"
 \end_layout
 
 \begin_layout Plain Layout
-
     else:
 \end_layout
 
 \begin_layout Plain Layout
-
       s = s + " contiene
 \backslash
 n"
 \end_layout
 
 \begin_layout Plain Layout
-
     return s + Mazo.__str__(self)
 \end_layout
 
@@ -1039,7 +1045,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-clase!padre
+clase
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+padre
 \end_layout
 
 \end_inset
@@ -1073,22 +1089,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class JuegoDeCartas:
 \end_layout
 
 \begin_layout Plain Layout
-
   def __init__(self):
 \end_layout
 
 \begin_layout Plain Layout
-
     self.mazo = Mazo()
 \end_layout
 
 \begin_layout Plain Layout
-
     self.mazo.barajar()
 \end_layout
 
@@ -1164,7 +1176,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-clase!ManoSolterona
+clase
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+ManoSolterona
 \end_layout
 
 \end_inset
@@ -1200,53 +1222,43 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class ManoSolterona(Mano):
 \end_layout
 
 \begin_layout Plain Layout
-
   def quitarPareja(self):
 \end_layout
 
 \begin_layout Plain Layout
-
     conteo = 0
 \end_layout
 
 \begin_layout Plain Layout
-
     cartasOriginales = self.cartas[:]
 \end_layout
 
 \begin_layout Plain Layout
-
     for carta in cartasOriginales:
 \end_layout
 
 \begin_layout Plain Layout
-
       m = Carta(3 - carta.figura,
  carta.valor)
 \end_layout
 
 \begin_layout Plain Layout
-
       if pareja in self.cartas:
 \end_layout
 
 \begin_layout Plain Layout
-
         self.cartas.remove(carta)
 \end_layout
 
 \begin_layout Plain Layout
-
         self.cartas.remove(m)
 \end_layout
 
 \begin_layout Plain Layout
-
         print("Mano %s:
  %s se empareja con %s" % 
 \backslash
@@ -1254,17 +1266,14 @@ class ManoSolterona(Mano):
 \end_layout
 
 \begin_layout Plain Layout
-
               (self.name,carta,m))
 \end_layout
 
 \begin_layout Plain Layout
-
         cont = cont + 1
 \end_layout
 
 \begin_layout Plain Layout
-
     return cont
 \end_layout
 
@@ -1325,93 +1334,75 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> juego = JuegoDeCartas()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> mano = ManoSolterona("frank")
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> juego.mazo.repartir([mano],
  13)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(mano)
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano frank contiene
 \end_layout
 
 \begin_layout Plain Layout
-
 As de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
  2 de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
   7 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
    8 de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
     6 de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
      8 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
       7 de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
        Reina de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
         7 de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
          5 de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
           Jota de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
            10 de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
             10 de Corazones
 \end_layout
 
@@ -1420,70 +1411,57 @@ As de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> mano.quitarPareja()
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano frank:
  7 de Picas se empareja con 7 de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano frank:
  8 de Picas se empareja con 8 de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano frank:
  10 de Diamantes se empareja con 10 de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(mano)
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano frank contiene
 \end_layout
 
 \begin_layout Plain Layout
-
 Ace de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
  2 de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
   6 de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
    Reina de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
     7 de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
      5 de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
       Jota de Diamantes
 \end_layout
 
@@ -1518,7 +1496,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-clase!JuegoSolterona
+clase
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+JuegoSolterona
 \end_layout
 
 \end_inset
@@ -1566,23 +1554,19 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class JuegoSolterona(JuegoDeCartas):
 \end_layout
 
 \begin_layout Plain Layout
-
   def jugar(self,
  nombres):
 \end_layout
 
 \begin_layout Plain Layout
-
     # elimina la Reina de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
     self.mazo.eliminarCarta(Carta(0,12))
 \end_layout
 
@@ -1591,22 +1575,18 @@ class JuegoSolterona(JuegoDeCartas):
 \end_layout
 
 \begin_layout Plain Layout
-
     # prepara una mano para cada jugador
 \end_layout
 
 \begin_layout Plain Layout
-
     self.manos = []
 \end_layout
 
 \begin_layout Plain Layout
-
     for nombre in nombres :
 \end_layout
 
 \begin_layout Plain Layout
-
       self.manos.append(ManoJuegoSolterona(nombre))
 \end_layout
 
@@ -1615,22 +1595,18 @@ class JuegoSolterona(JuegoDeCartas):
 \end_layout
 
 \begin_layout Plain Layout
-
     # reparte las  cartas
 \end_layout
 
 \begin_layout Plain Layout
-
     self.mazo.repartir(self.cartas)
 \end_layout
 
 \begin_layout Plain Layout
-
     print("---------- Cartas repartidas!")
 \end_layout
 
 \begin_layout Plain Layout
-
     self.imprimirManos()
 \end_layout
 
@@ -1639,23 +1615,19 @@ class JuegoSolterona(JuegoDeCartas):
 \end_layout
 
 \begin_layout Plain Layout
-
     # quitar parejas iniciales
 \end_layout
 
 \begin_layout Plain Layout
-
     parejas = self.eliminarParejas()
 \end_layout
 
 \begin_layout Plain Layout
-
     print("---------- Parejas descartadas,
  comienza el juego")
 \end_layout
 
 \begin_layout Plain Layout
-
     self.imprimirManos()
 \end_layout
 
@@ -1664,32 +1636,26 @@ class JuegoSolterona(JuegoDeCartas):
 \end_layout
 
 \begin_layout Plain Layout
-
     # jugar hasta que las 50 cartas sean descartadas
 \end_layout
 
 \begin_layout Plain Layout
-
     turno = 0
 \end_layout
 
 \begin_layout Plain Layout
-
     numManos = len(self.manos)
 \end_layout
 
 \begin_layout Plain Layout
-
     while parejas < 25:
 \end_layout
 
 \begin_layout Plain Layout
-
       parejas = parejas+self.jugarUnTurno(turno)
 \end_layout
 
 \begin_layout Plain Layout
-
       turno = (turno + 1) % numManos
 \end_layout
 
@@ -1698,12 +1664,10 @@ class JuegoSolterona(JuegoDeCartas):
 \end_layout
 
 \begin_layout Plain Layout
-
     print("-------- Juego terminado")
 \end_layout
 
 \begin_layout Plain Layout
-
     self.printManos()
 \end_layout
 
@@ -1724,37 +1688,30 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class JuegoSolterona(JuegoDeCartas):
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def eliminarParejas(self):
 \end_layout
 
 \begin_layout Plain Layout
-
     cont = 0
 \end_layout
 
 \begin_layout Plain Layout
-
     for mano in self.manos:
 \end_layout
 
 \begin_layout Plain Layout
-
       cont = cont + mano.eliminarParejas()
 \end_layout
 
 \begin_layout Plain Layout
-
     return cont
 \end_layout
 
@@ -1822,71 +1779,58 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class JuegoSolterona(JuegoDeCartas):
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def jugarUnTurno(self,
  i):
 \end_layout
 
 \begin_layout Plain Layout
-
     if self.manos[i].estaVacia():
 \end_layout
 
 \begin_layout Plain Layout
-
       return 0
 \end_layout
 
 \begin_layout Plain Layout
-
     vecino = self.encontrarVecino(i)
 \end_layout
 
 \begin_layout Plain Layout
-
     cartaEscogida = self.manos[vecino].eliminarCarta()
 \end_layout
 
 \begin_layout Plain Layout
-
     self.manos[i].agregarCarta(cartaEscogida)
 \end_layout
 
 \begin_layout Plain Layout
-
     print("Mano",
  self.manos[i].nombre,
  
 \end_layout
 
 \begin_layout Plain Layout
-
           "escogio",
  cartaEscogida)
 \end_layout
 
 \begin_layout Plain Layout
-
     cont = self.manos[i].eliminarParejas()
 \end_layout
 
 \begin_layout Plain Layout
-
     self.manos[i].barajar()
 \end_layout
 
 \begin_layout Plain Layout
-
     return cont
 \end_layout
 
@@ -1917,43 +1861,35 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 class JuegoSolterona(JuegoDeCartas):
 \end_layout
 
 \begin_layout Plain Layout
-
   ...
 \end_layout
 
 \begin_layout Plain Layout
-
   def encontrarVecino(self,
  i):
 \end_layout
 
 \begin_layout Plain Layout
-
     numManos = len(self.manos)
 \end_layout
 
 \begin_layout Plain Layout
-
     for siguiente in range(1,numManos):
 \end_layout
 
 \begin_layout Plain Layout
-
       vecino = (i + siguiente) % numManos
 \end_layout
 
 \begin_layout Plain Layout
-
       if not self.manos[vecino].estaVacia():
 \end_layout
 
 \begin_layout Plain Layout
-
         return vecino
 \end_layout
 
@@ -1996,52 +1932,42 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> import cartas
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> juego = cartas.JuegoSolterona()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> juego.jugar(["Allen","Jeff","Chris"])
 \end_layout
 
 \begin_layout Plain Layout
-
 ---------- Las cartas se han repartido
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Allen contiene
 \end_layout
 
 \begin_layout Plain Layout
-
 Rey de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
  Jota de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
   Reina de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
    Rey de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
     10 de Diamantes
 \end_layout
 
@@ -2050,32 +1976,26 @@ Rey de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Jeff contiene
 \end_layout
 
 \begin_layout Plain Layout
-
 Reina de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
  Jota de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
   Jota de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
    Rey de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
     Reina de Diamantes
 \end_layout
 
@@ -2084,32 +2004,26 @@ Reina de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Chris contiene
 \end_layout
 
 \begin_layout Plain Layout
-
 Jota de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
  Rey de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
   10 de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
    10 de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
     10 de Treboles
 \end_layout
 
@@ -2118,55 +2032,45 @@ Jota de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Jeff:
  Reina de Corazones se empareja con Reina de 
 \end_layout
 
 \begin_layout Plain Layout
-
 Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Chris:
  10 de Picas se empareja con 10 de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
 ----------  Parejas eliminadas,
  comienza el juego
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Allen contiene
 \end_layout
 
 \begin_layout Plain Layout
-
 Rey de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
  Jota de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
   Reina de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
    Rey de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
     10 de Diamantes
 \end_layout
 
@@ -2175,22 +2079,18 @@ Rey de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Jeff contiene
 \end_layout
 
 \begin_layout Plain Layout
-
 Jota de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
  Jota de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
   Rey de Diamantes
 \end_layout
 
@@ -2199,22 +2099,18 @@ Jota de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Chris contiene
 \end_layout
 
 \begin_layout Plain Layout
-
 Jota de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
  Rey de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
   10 de Corazones
 \end_layout
 
@@ -2223,117 +2119,95 @@ Jota de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Allen escogio Rey de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Allen:
  Rey de Corazones se empareja con Rey de 
 \end_layout
 
 \begin_layout Plain Layout
-
 Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Jeff escogio 10 de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Chris escogio Jota de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Allen escogio Jota de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Jeff escogio Jota de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Chris escogio Reina de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Allen escogio Jota de Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Allen:
  Jota de Corazones se empareja con Jota de 
 \end_layout
 
 \begin_layout Plain Layout
-
 Diamantes
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Jeff escogio Rey de Treboles
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Chris escogio Rey de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Allen escogio 10 de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Allen:
  10 de Diamantes se empareja con 10 de Corazones
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Jeff escogio Reina de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Chris escogio Jota de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Chris:
  Jota de Treboles se empareja con Jota de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Jeff escogio Rey de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Jeff:
  Rey de Treboles se empareja con Rey de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
 ---------- Game is Over
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Allen esta vacia
 \end_layout
 
@@ -2342,12 +2216,10 @@ Mano Allen esta vacia
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Jeff contiene
 \end_layout
 
 \begin_layout Plain Layout
-
 Reina de Picas
 \end_layout
 
@@ -2356,7 +2228,6 @@ Reina de Picas
 \end_layout
 
 \begin_layout Plain Layout
-
 Mano Chris esta vacia
 \end_layout
 
@@ -2388,7 +2259,6 @@ Herencia:
 status collapsed
 
 \begin_layout Plain Layout
-
 Clase madre:
 \end_layout
 
@@ -2402,7 +2272,6 @@ Clase madre:
 status collapsed
 
 \begin_layout Plain Layout
-
 Clase hija:
 \end_layout
 

@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -52,11 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -82,6 +90,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -227,17 +236,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> f = open("test.dat","w")
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(f)
 \end_layout
 
 \begin_layout Plain Layout
-
 <open file 'test.dat',
  mode 'w' at fe820>
 \end_layout
@@ -257,7 +263,6 @@ La función open toma dos argumentos:
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -268,7 +273,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+"w"+
@@ -281,7 +285,6 @@ verb+"w"+
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -317,12 +320,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> f.write("Ya es hora")
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> f.write("de cerrar el archivo")
 \end_layout
 
@@ -338,7 +339,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> f.close()
 \end_layout
 
@@ -356,7 +356,6 @@ Ya podemos abrir el archivo de nuevo,
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -367,7 +366,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+"r"+
@@ -380,7 +378,6 @@ verb+"r"+
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -393,7 +390,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> f = open("test.dat","r")
 \end_layout
 
@@ -425,12 +421,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> f = open("test.cat","r")
 \end_layout
 
 \begin_layout Plain Layout
-
 IOError:
  [Errno 2] No such file or directory:
  'test.cat'
@@ -455,17 +449,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> texto = f.read()
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(texto)
 \end_layout
 
 \begin_layout Plain Layout
-
 Ya es horade cerrar el archivo
 \end_layout
 
@@ -502,17 +493,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> f = open("test.dat","r")
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(f.read(7))
 \end_layout
 
 \begin_layout Plain Layout
-
 Ya es h
 \end_layout
 
@@ -539,17 +527,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> print(f.read(1000006))
 \end_layout
 
 \begin_layout Plain Layout
-
 orade cerrar el archivo
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(f.read())
 \end_layout
 
@@ -558,7 +543,6 @@ orade cerrar el archivo
 \end_layout
 
 \begin_layout Plain Layout
-
 >>>
 \end_layout
 
@@ -577,60 +561,49 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def copiaArchivo(archViejo,
  archNuevo):
 \end_layout
 
 \begin_layout Plain Layout
-
   f1 = open(archViejo,
  "r")
 \end_layout
 
 \begin_layout Plain Layout
-
   f2 = open(archNuevo,
  "w")
 \end_layout
 
 \begin_layout Plain Layout
-
   while True:
 \end_layout
 
 \begin_layout Plain Layout
-
     texto = f1.read(50)
 \end_layout
 
 \begin_layout Plain Layout
-
     if texto == "":
 \end_layout
 
 \begin_layout Plain Layout
-
       break
 \end_layout
 
 \begin_layout Plain Layout
-
     f2.write(texto)
 \end_layout
 
 \begin_layout Plain Layout
-
   f1.close()
 \end_layout
 
 \begin_layout Plain Layout
-
   f2.close()
 \end_layout
 
 \begin_layout Plain Layout
-
   return
 \end_layout
 
@@ -668,7 +641,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia!break
+sentencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+break
 \end_layout
 
 \end_inset
@@ -692,7 +675,6 @@ True
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -703,7 +685,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -716,7 +697,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -758,7 +738,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-archivo!texto
+archivo
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+texto
 \end_layout
 
 \end_inset
@@ -784,12 +774,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> f = open("test.dat","w")
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> f.write("línea uno
 \backslash
 nlínea dos
@@ -800,7 +788,6 @@ n")
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> f.close()
 \end_layout
 
@@ -822,17 +809,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> f = open("test.dat","r")
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(f.readline())
 \end_layout
 
 \begin_layout Plain Layout
-
 línea uno
 \end_layout
 
@@ -841,7 +825,6 @@ línea uno
 \end_layout
 
 \begin_layout Plain Layout
-
 >>>
 \end_layout
 
@@ -861,12 +844,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> print(f.readlines())
 \end_layout
 
 \begin_layout Plain Layout
-
 ['línea dos
 \backslash
 012',
@@ -906,7 +887,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> print(f.readline())
 \end_layout
 
@@ -915,12 +895,10 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(f.readlines())
 \end_layout
 
 \begin_layout Plain Layout
-
 []
 \end_layout
 
@@ -950,70 +928,57 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def filtraArchivo(archViejo,
  archNuevo):
 \end_layout
 
 \begin_layout Plain Layout
-
   f1 = open(archViejo,
  "r")
 \end_layout
 
 \begin_layout Plain Layout
-
   f2 = open(archNuevo,
  "w")
 \end_layout
 
 \begin_layout Plain Layout
-
   while 1:
 \end_layout
 
 \begin_layout Plain Layout
-
     texto = f1.readline()
 \end_layout
 
 \begin_layout Plain Layout
-
     if texto == "":
 \end_layout
 
 \begin_layout Plain Layout
-
       break
 \end_layout
 
 \begin_layout Plain Layout
-
     if texto[0] == '#':
 \end_layout
 
 \begin_layout Plain Layout
-
       continue
 \end_layout
 
 \begin_layout Plain Layout
-
     f2.write(texto)
 \end_layout
 
 \begin_layout Plain Layout
-
   f1.close()
 \end_layout
 
 \begin_layout Plain Layout
-
   f2.close()
 \end_layout
 
 \begin_layout Plain Layout
-
   return
 \end_layout
 
@@ -1052,7 +1017,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia!continue
+sentencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+continue
 \end_layout
 
 \end_inset
@@ -1120,7 +1095,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operador!formato
+operador
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+formato
 \end_layout
 
 \end_inset
@@ -1146,12 +1131,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> x = 52
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> f.write (str(x))
 \end_layout
 
@@ -1207,7 +1190,6 @@ secuencia de formato
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1218,7 +1200,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+"%d"+
@@ -1231,7 +1212,6 @@ verb+"%d"+
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1243,7 +1223,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1254,7 +1233,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1267,7 +1245,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1287,17 +1264,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> motos = 52
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> "%d" % motos
 \end_layout
 
 \begin_layout Plain Layout
-
 '52'
 \end_layout
 
@@ -1327,17 +1301,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> motos = 52
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> "En julio vendimos %d motos." % motos
 \end_layout
 
 \begin_layout Plain Layout
-
 'En julio vendimos 52 motos.'
 \end_layout
 
@@ -1352,7 +1323,6 @@ La secuencia de formato
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1363,7 +1333,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+"%f"+
@@ -1376,7 +1345,6 @@ verb+"%f"+
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1388,7 +1356,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1399,7 +1366,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 verb+"%s"+
@@ -1412,7 +1378,6 @@ verb+"%s"+
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1424,12 +1389,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> "En %d dias ganamos %f millones de %s." % (4,1.2,'pesos')
 \end_layout
 
 \begin_layout Plain Layout
-
 'En 4 dias ganamos 1.200000 millones de pesos.'
 \end_layout
 
@@ -1467,23 +1430,19 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> "%d %d %d" % (1,2)
 \end_layout
 
 \begin_layout Plain Layout
-
 TypeError:
  not enough arguments for format string
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> "%d" % 'dolares'
 \end_layout
 
 \begin_layout Plain Layout
-
 TypeError:
  illegal argument type for built-in operation
 \end_layout
@@ -1507,22 +1466,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> "%6d" % 62
 \end_layout
 
 \begin_layout Plain Layout
-
 '    62'
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> "%12f" % 6.1
 \end_layout
 
 \begin_layout Plain Layout
-
 '    6.100000'
 \end_layout
 
@@ -1542,12 +1497,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> "%-6d" % 62
 \end_layout
 
 \begin_layout Plain Layout
-
 '62    '
 \end_layout
 
@@ -1563,12 +1516,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> "%12.2f" % 6.1
 \end_layout
 
 \begin_layout Plain Layout
-
 '        6.10'
 \end_layout
 
@@ -1608,27 +1559,22 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def informe (tarifas) :
 \end_layout
 
 \begin_layout Plain Layout
-
   estudiantes = tarifas.keys()
 \end_layout
 
 \begin_layout Plain Layout
-
   estudiantes.sort()
 \end_layout
 
 \begin_layout Plain Layout
-
   for estudiante in estudiantes :
 \end_layout
 
 \begin_layout Plain Layout
-
     print("%-20s %12.02f"%(estudiante,
  tarifas[estudiante]))
 \end_layout
@@ -1646,7 +1592,6 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> tarifas = {'maria':
  6.23,
  'jose':
@@ -1656,22 +1601,18 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> informe (tarifas)
 \end_layout
 
 \begin_layout Plain Layout
-
 jose                         5.45
 \end_layout
 
 \begin_layout Plain Layout
-
 jesus                        4.25
 \end_layout
 
 \begin_layout Plain Layout
-
 maria                        6.23
 \end_layout
 
@@ -1725,17 +1666,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>>   f = open("/usr/share/dict/words","r")
 \end_layout
 
 \begin_layout Plain Layout
-
 >>>   print(f.readline())
 \end_layout
 
 \begin_layout Plain Layout
-
 Aarhus
 \end_layout
 
@@ -1850,12 +1788,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> f.write (str(12.3))
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> f.write (str([1,2,3]))
 \end_layout
 
@@ -1874,12 +1810,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>>   f.readline()
 \end_layout
 
 \begin_layout Plain Layout
-
 '12.3[1,
  2,
  3]'
@@ -1917,12 +1851,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> import pickle
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> f = open("test.pck","w")
 \end_layout
 
@@ -1943,19 +1875,16 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> pickle.dump(12.3,
  f)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> pickle.dump([1,2,3],
  f)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> f.close()
 \end_layout
 
@@ -1974,59 +1903,48 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> f = open("test.pck","r")
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> x = pickle.load(f)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> x
 \end_layout
 
 \begin_layout Plain Layout
-
 12.3
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> type(x)
 \end_layout
 
 \begin_layout Plain Layout
-
 <type 'float'>
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> y = pickle.load(f)
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> y
 \end_layout
 
 \begin_layout Plain Layout
-
 [1,
  2,
  3]
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> type(y)
 \end_layout
 
 \begin_layout Plain Layout
-
 <type 'list'>
 \end_layout
 
@@ -2062,7 +1980,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia!try
+sentencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+try
 \end_layout
 
 \end_inset
@@ -2110,7 +2038,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia!except
+sentencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+except
 \end_layout
 
 \end_inset
@@ -2148,12 +2086,10 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> print(55/0)
 \end_layout
 
 \begin_layout Plain Layout
-
 ZeroDivisionError:
  integer division or modulo
 \end_layout
@@ -2170,17 +2106,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> a = []
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(a[5])
 \end_layout
 
 \begin_layout Plain Layout
-
 IndexError:
  list index out of range
 \end_layout
@@ -2197,17 +2130,14 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> b = {}
 \end_layout
 
 \begin_layout Plain Layout
-
 >>> print(b['qué'])
 \end_layout
 
 \begin_layout Plain Layout
-
 KeyError:
  qué
 \end_layout
@@ -2270,29 +2200,24 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 nombreArch = input('Introduce un nombre de archivo:
  ')
 \end_layout
 
 \begin_layout Plain Layout
-
 try:
 \end_layout
 
 \begin_layout Plain Layout
-
   f = open (nombreArch,
  "r")
 \end_layout
 
 \begin_layout Plain Layout
-
 except:
 \end_layout
 
 \begin_layout Plain Layout
-
   print('No hay ningún archivo que se llame',
  nombreArch)
 \end_layout
@@ -2335,37 +2260,30 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 def existe(nombreArch):
 \end_layout
 
 \begin_layout Plain Layout
-
   try:
 \end_layout
 
 \begin_layout Plain Layout
-
     f = open(nombreArch)
 \end_layout
 
 \begin_layout Plain Layout
-
     f.close()
 \end_layout
 
 \begin_layout Plain Layout
-
     return True
 \end_layout
 
 \begin_layout Plain Layout
-
   except:
 \end_layout
 
 \begin_layout Plain Layout
-
     return False
 \end_layout
 
@@ -2381,7 +2299,6 @@ except
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -2392,7 +2309,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -2405,7 +2321,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -2429,36 +2344,30 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 # -*- coding:
  utf-8 -*-
 \end_layout
 
 \begin_layout Plain Layout
-
 def tomaNumero () :
                  
 \end_layout
 
 \begin_layout Plain Layout
-
   x = input ('Elige un número:
  ')   
 \end_layout
 
 \begin_layout Plain Layout
-
   if x == 17 :
 \end_layout
 
 \begin_layout Plain Layout
-
     raise 'ErrorNumeroMalo',
  '17 es un mal número'
 \end_layout
 
 \begin_layout Plain Layout
-
   return x
 \end_layout
 
@@ -2495,18 +2404,15 @@ inline false
 status open
 
 \begin_layout Plain Layout
-
 >>> tomaNumero ()
 \end_layout
 
 \begin_layout Plain Layout
-
 Elige un número:
  17
 \end_layout
 
 \begin_layout Plain Layout
-
 ErrorNumeroMalo:
  17 es un mal número
 \end_layout
@@ -2567,7 +2473,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia!break
+sentencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+break
 \end_layout
 
 \end_inset
@@ -2591,7 +2507,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-sentencia!continue
+sentencia
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+continue
 \end_layout
 
 \end_inset
@@ -2627,7 +2553,17 @@ pageformat default
 status collapsed
 
 \begin_layout Plain Layout
-operador!formato
+operador
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+!
+\end_layout
+
+\end_inset
+
+formato
 \end_layout
 
 \end_inset
@@ -2744,7 +2680,6 @@ Ruta:
 status collapsed
 
 \begin_layout Plain Layout
-
 Archivo de texto:
 \end_layout
 
@@ -2758,7 +2693,6 @@ Archivo de texto:
 status collapsed
 
 \begin_layout Plain Layout
-
 Sentencia break:
 \end_layout
 
@@ -2772,7 +2706,6 @@ Sentencia break:
 status collapsed
 
 \begin_layout Plain Layout
-
 Sentencia continue:
 \end_layout
 
@@ -2789,7 +2722,6 @@ Sentencia continue:
 status collapsed
 
 \begin_layout Plain Layout
-
 Operador de formato:
 \end_layout
 
@@ -2808,7 +2740,6 @@ Operador de formato:
 status collapsed
 
 \begin_layout Plain Layout
-
 Cadena de formato:
 \end_layout
 
@@ -2822,7 +2753,6 @@ Cadena de formato:
 status collapsed
 
 \begin_layout Plain Layout
-
 Secuencia de formato:
 \end_layout
 

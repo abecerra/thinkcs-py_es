@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -52,11 +52,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -82,6 +90,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -184,7 +193,6 @@ Lloyd Hugh Allen remitió una corrección a la Sección 8.4.
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -203,7 +211,6 @@ Yvon Boulianne corrigió un error semántico en el Capítulo 5.
 status collapsed
 
 \begin_layout Plain Layout
-
 %She can be reached at:
  
 \backslash
@@ -222,7 +229,6 @@ Fred Bremmer hizo una corrección en la Sección 2.1.
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
   
 \backslash
@@ -240,7 +246,6 @@ Jonah Cohen escribió los guiones en Perl para convertir la fuente
 status collapsed
 
 \begin_layout Plain Layout
-
 LaTeX
 \end_layout
 
@@ -261,7 +266,6 @@ LaTeX
 status collapsed
 
 \begin_layout Plain Layout
-
 %His Web page is 
 \backslash
 texttt{jonah.ticalc.org}
@@ -274,7 +278,6 @@ texttt{jonah.ticalc.org}
 status collapsed
 
 \begin_layout Plain Layout
-
 %and his email is 
 \backslash
 texttt{JonahCohen@aol.com}
@@ -301,7 +304,6 @@ Michael Conlon remitió una corrección de gramática en el Capítulo 3 una mejo
 status collapsed
 
 \begin_layout Plain Layout
-
 %Michael can be reached at:
  
 \backslash
@@ -328,7 +330,6 @@ Benoit Girard envió una corrección a un extraño error en la Sección 5.6.
 status collapsed
 
 \begin_layout Plain Layout
-
 %Benoit can be reached at:
 \end_layout
 
@@ -339,7 +340,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 %
 \backslash
 texttt{benoit.girard@gouv.qc.ca}
@@ -371,7 +371,6 @@ horsebet.py
 status collapsed
 
 \begin_layout Plain Layout
-
 %Courtney can be reached at:
  {
 \backslash
@@ -385,7 +384,6 @@ tt
 status collapsed
 
 \begin_layout Plain Layout
-
 %orion1558@aol.com}
 \end_layout
 
@@ -412,7 +410,6 @@ Lee Harr sometió más correcciones de las que tenemos espacio para enumerar aqu
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -440,7 +437,6 @@ James Kaylin es un estudiante usando el texto.
 status collapsed
 
 \begin_layout Plain Layout
-
 %James can be reached by email at:
  
 \backslash
@@ -471,7 +467,6 @@ imprimaDoble
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -505,7 +500,6 @@ Eddie Lam ha enviado numerosas correcciones a los Capítulos 1,
 status collapsed
 
 \begin_layout Plain Layout
-
 %Eddie can be reached at:
 \end_layout
 
@@ -516,7 +510,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 %
 \backslash
 texttt{nautilus@yoyo.cc.monash.edu.au}
@@ -542,7 +535,6 @@ Man-Yong Lee envió una corrección al código de ejemplo en la Sección 2.4.
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reaced at:
  
 \backslash
@@ -585,7 +577,6 @@ subconscientemente
 status collapsed
 
 \begin_layout Plain Layout
-
 %David can be reached at:
 \backslash
 texttt{bdbear44@netscape.net}
@@ -611,7 +602,6 @@ Chris McAloon envió varias correcciones a las Secciones 3.9 y 3.10.
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -639,7 +629,6 @@ Matthew J.
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
 \end_layout
 
@@ -650,7 +639,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 %
 \backslash
 texttt{mmoelter@calpoly.edu}
@@ -681,7 +669,6 @@ incrementar
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -716,7 +703,6 @@ valor de retorno
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -743,7 +729,6 @@ Kevin Parks envió sugerencias valiosas para mejorar la distribución del libro.
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -770,7 +755,6 @@ David Pool envió la corrección de un error en el glosario del Capítulo 1 y pa
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -797,7 +781,6 @@ Michael Schmitt envió una corrección al capítulo de archivos y excepciones.
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -827,7 +810,6 @@ Robin Shaw notó un error en la Sección 13.1,
 status collapsed
 
 \begin_layout Plain Layout
-
 %Robin can be reached at:
  
 \backslash
@@ -846,7 +828,6 @@ Paul Sleigh encontró un error en el Capítulo 7 y otro en los guiones de Perl d
 status collapsed
 
 \begin_layout Plain Layout
-
 LaTeX
 \end_layout
 
@@ -865,7 +846,6 @@ LaTeX
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -882,7 +862,6 @@ texttt{bat@atdot.dotat.org}
 status collapsed
 
 \begin_layout Plain Layout
-
 %
 \backslash
 item Christopher Smith is a computer science teacher at the Blake
@@ -895,7 +874,6 @@ item Christopher Smith is a computer science teacher at the Blake
 status collapsed
 
 \begin_layout Plain Layout
-
 %School in Minnesota who teaches Python to his beginning students.
 \end_layout
 
@@ -909,7 +887,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -938,7 +915,6 @@ Craig T.
 status collapsed
 
 \begin_layout Plain Layout
-
 %and can be reached at:
  
 \backslash
@@ -966,7 +942,6 @@ Ian Thomas y sus estudiantes están usando el texto en un curso de programación
 status collapsed
 
 \begin_layout Plain Layout
-
 %Ian can be reached at:
  
 \backslash
@@ -993,7 +968,6 @@ Keith Verheyden envió una corrección al Capítulo 3.
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -1021,7 +995,6 @@ Peter Winstanley descubrió un viejo error en nuestro Latín,
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
 \backslash
 texttt{Peter.Winstanley@scotland.gsi.gov.uk} 
@@ -1048,7 +1021,6 @@ Chris Wrobel hizo correcciones al código en el capítulo sobre archivos,
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -1077,7 +1049,6 @@ Moshe Zadka hizo contribuciones inestimables a este proyecto.
 status collapsed
 
 \begin_layout Plain Layout
-
 %He can be reached at:
  
 \backslash
@@ -1097,7 +1068,6 @@ Christoph Zwerschke envió varias correcciones y sugerencias pedagógicas,
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1108,7 +1078,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1121,7 +1090,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1132,7 +1100,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 {
 \end_layout
 
@@ -1143,7 +1110,6 @@ status collapsed
 status collapsed
 
 \begin_layout Plain Layout
-
 
 \backslash
 em
@@ -1156,7 +1122,6 @@ em
 status collapsed
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -1180,7 +1145,6 @@ James Mayer nos envió un montón de errores tipográficos y de deletreo,
 status collapsed
 
 \begin_layout Plain Layout
-
 % james.mayer@acm.org
 \end_layout
 
